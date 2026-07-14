@@ -10,6 +10,8 @@
 9. If you skip one of these, we will not provide any support for the project.
 10. Enjoy CODING!
 
+11. Use `should_load_separate_core_block_assets` filter to load block assets only when the block is used on the frontend. Use `__return_true` in that filter.
+
 The folder structure that `plugin-zip` accepts is:
 
 ```
