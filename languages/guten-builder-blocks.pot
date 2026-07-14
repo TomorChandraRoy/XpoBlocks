@@ -1,0 +1,190 @@
+# Copyright (C) 2026 Tomor Roy
+# This file is distributed under the GPL-3.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Guten Builder Blocks 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/guten-builder-blocks\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-06-29T11:48:52+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: guten-builder-blocks\n"
+
+#. Plugin Name of the plugin
+#: guten-builder-blocks.php
+msgid "Guten Builder Blocks"
+msgstr ""
+
+#. Description of the plugin
+#: guten-builder-blocks.php
+msgid "Build beautiful WordPress websites with Pricing Table, Slider, Testimonial, Review, Team, Gallery, FAQ, Accordion, Tabs, Cards, and 30+ Gutenberg Blocks."
+msgstr ""
+
+#. Author of the plugin
+#: guten-builder-blocks.php
+msgid "Tomor Roy"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/General/General.js:18
+msgid "Link Settings"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/General/General.js:20
+msgid "Action Type"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/General/General.js:23
+msgid "Link"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/General/General.js:24
+msgid "Popup"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/General/General.js:25
+#: src/blocks/button/Components/Backend/Settings/General/General.js:51
+msgid "None"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/General/General.js:33
+msgid "URL"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/General/General.js:38
+msgid "Open in new tab"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/General/General.js:46
+msgid "Security & Access"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/General/General.js:48
+msgid "Security Type"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/General/General.js:52
+#: src/blocks/button/Components/Backend/Settings/General/General.js:60
+msgid "Password"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/General/General.js:53
+#: src/blocks/button/Components/Backend/Settings/General/General.js:69
+msgid "User Role"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/General/General.js:72
+msgid "Administrator"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/General/General.js:73
+msgid "Editor"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/General/General.js:74
+msgid "Author"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/General/General.js:75
+msgid "Subscriber"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/General/General.js:82
+msgid "Tooltip Settings"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/General/General.js:84
+msgid "Tooltip Text"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/General/General.js:91
+msgid "Tooltip Position"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/General/General.js:94
+msgid "Top"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/General/General.js:95
+msgid "Bottom"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/General/General.js:96
+msgid "Left"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/General/General.js:97
+msgid "Right"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/Style/Style.js:15
+msgid "Spacing"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/Style/Style.js:18
+msgid "Padding"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/Style/Style.js:25
+msgid "Margin"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/Style/Style.js:35
+msgid "Colors"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/Style/Style.js:38
+msgid "Background Color"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Backend/Settings/Style/Style.js:52
+msgid "Text Color"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/Components/Common/Button.jsx:22
+msgid "Add text..."
+msgstr ""
+
+#: build/blocks/button/block.json
+#: src/blocks/button/block.json
+msgctxt "block title"
+msgid "GB Button"
+msgstr ""
+
+#: build/blocks/button/block.json
+#: src/blocks/button/block.json
+msgctxt "block description"
+msgid "A simple button block."
+msgstr ""

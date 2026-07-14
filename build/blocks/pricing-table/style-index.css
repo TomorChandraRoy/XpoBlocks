@@ -1,0 +1,122 @@
+/*!************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/pricing-table/style.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************/
+.gbb-pricing-grid-container {
+  display: grid;
+  grid-template-columns: repeat(var(--gbb-price-columns, 3), 1fr);
+  gap: var(--gbb-price-gap, 24px);
+  width: 100%;
+  box-sizing: border-box;
+}
+.gbb-pricing-grid-container .gbb-pricing-card {
+  box-sizing: border-box;
+  position: relative;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gbb-pricing-grid-container .gbb-pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1) !important;
+}
+.gbb-pricing-grid-container .gbb-pricing-card.is-featured {
+  z-index: 2;
+}
+.gbb-pricing-grid-container .gbb-pricing-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.gbb-pricing-grid-container .gbb-pricing-header {
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.gbb-pricing-grid-container .gbb-pricing-name {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+.gbb-pricing-grid-container .gbb-pricing-rate {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin: 15px 0;
+}
+.gbb-pricing-grid-container .gbb-pricing-currency {
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 2px;
+}
+.gbb-pricing-grid-container .gbb-pricing-price {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1;
+}
+.gbb-pricing-grid-container .gbb-pricing-period-separator {
+  font-size: 14px;
+  opacity: 0.7;
+  margin-left: 4px;
+}
+.gbb-pricing-grid-container .gbb-pricing-period {
+  font-size: 14px;
+  opacity: 0.7;
+}
+.gbb-pricing-grid-container .gbb-pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.gbb-pricing-grid-container .gbb-pricing-feature-item {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.gbb-pricing-grid-container .gbb-pricing-feature-item.is-disabled {
+  text-decoration: line-through;
+}
+.gbb-pricing-grid-container .gbb-feature-icon {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+.gbb-pricing-grid-container .gbb-pricing-button {
+  display: inline-block;
+  text-align: center;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: auto;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.gbb-pricing-grid-container .gbb-pricing-button:hover {
+  opacity: 0.95;
+  transform: scale(1.02);
+}
+@media (max-width: 900px) {
+  .gbb-pricing-grid-container {
+    grid-template-columns: repeat(min(2, var(--gbb-price-columns, 3)), 1fr) !important;
+  }
+}
+@media (max-width: 600px) {
+  .gbb-pricing-grid-container {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/*# sourceMappingURL=style-index.css.map*/

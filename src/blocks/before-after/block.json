@@ -1,0 +1,149 @@
+{
+  "apiVersion": 3,
+  "name": "guten-builder-blocks/before-after",
+  "version": "1.0.0",
+  "title": "Guten Before/After",
+  "description": "Interactive image comparison slider with CSS-based masking and hardware-accelerated transitions.",
+  "category": "guten-builder",
+  "keywords": [
+    "before after",
+    "image comparison",
+    "slider",
+    "photo compare",
+    "comparison"
+  ],
+  "attributes": {
+    "beforeImage": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "alt": {
+          "type": "string"
+        }
+      },
+      "default": null
+    },
+    "afterImage": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "alt": {
+          "type": "string"
+        }
+      },
+      "default": null
+    },
+    "initialOffset": {
+      "type": "number",
+      "default": 50
+    },
+    "aspectRatio": {
+      "type": "string",
+      "default": "auto"
+    },
+    "hoverZoom": {
+      "type": "boolean",
+      "default": false
+    },
+    "dividerStyle": {
+      "type": "string",
+      "default": "solid"
+    },
+    "beforeLabel": {
+      "type": "string",
+      "default": "Before"
+    },
+    "afterLabel": {
+      "type": "string",
+      "default": "After"
+    },
+    "showLabels": {
+      "type": "boolean",
+      "default": true
+    },
+    "handleColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "handleIconColor": {
+      "type": "string",
+      "default": "#333333"
+    },
+    "containerShadow": {
+      "type": "boolean",
+      "default": true
+    },
+    "shadowStyle": {
+      "type": "string",
+      "default": "soft"
+    },
+    "forceFullWidth": {
+      "type": "boolean",
+      "default": false
+    },
+    "afterFilter": {
+      "type": "string",
+      "default": "none"
+    },
+    "afterBlurIntensity": {
+      "type": "number",
+      "default": 4
+    },
+    "clickToMove": {
+      "type": "boolean",
+      "default": true
+    },
+    "autoPlayIntro": {
+      "type": "boolean",
+      "default": true
+    },
+    "hideLabelsOnMove": {
+      "type": "boolean",
+      "default": true
+    },
+    "afterOverlayColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "afterOverlayOpacity": {
+      "type": "number",
+      "default": 0.4
+    },
+    "hideOnMobile": {
+      "type": "boolean",
+      "default": false
+    },
+    "hideOnDesktop": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    },
+    "__experimentalBorder": {
+      "color": true,
+      "radius": true,
+      "width": true,
+      "style": true
+    }
+  },
+  "textdomain": "guten-builder-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js"
+}

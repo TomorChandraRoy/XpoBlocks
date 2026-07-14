@@ -1,0 +1,113 @@
+{
+  "apiVersion": 3,
+  "name": "guten-builder-blocks/accordion",
+  "version": "1.0.0",
+  "title": "FAQ Accordion",
+  "description": "High-performance responsive FAQ accordion with smooth animations and customizable themes.",
+  "category": "guten-builder",
+  "keywords": [
+    "faq",
+    "accordion",
+    "toggle",
+    "collapse"
+  ],
+  "attributes": {
+    "blockId": {
+      "type": "string",
+      "default": ""
+    },
+    "items": {
+      "type": "array",
+      "default": [
+        {
+          "title": "What is FAQ Accordion?",
+          "content": "An accordion is a list of items that can be expanded or collapsed to show and hide content.",
+          "isOpen": false
+        },
+        {
+          "title": "Is this block fully responsive?",
+          "content": "Yes! All options are fully responsive and optimized for mobile, tablet, and desktop views.",
+          "isOpen": false
+        }
+      ]
+    },
+    "allowMultiple": {
+      "type": "boolean",
+      "default": false
+    },
+    "headerBgColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "headerTextColor": {
+      "type": "string",
+      "default": "#1e293b"
+    },
+    "activeHeaderBgColor": {
+      "type": "string",
+      "default": "#f8fafc"
+    },
+    "activeHeaderTextColor": {
+      "type": "string",
+      "default": "#0f172a"
+    },
+    "contentBgColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "contentTextColor": {
+      "type": "string",
+      "default": "#475569"
+    },
+    "borderColor": {
+      "type": "string",
+      "default": "#e2e8f0"
+    },
+    "activeBorderColor": {
+      "type": "string",
+      "default": "#cbd5e1"
+    },
+    "iconColor": {
+      "type": "string",
+      "default": "#64748b"
+    },
+    "activeIconColor": {
+      "type": "string",
+      "default": "#0f172a"
+    },
+    "borderRadius": {
+      "type": "number",
+      "default": 8
+    },
+    "borderWidth": {
+      "type": "number",
+      "default": 1
+    },
+    "gap": {
+      "type": "number",
+      "default": 12
+    },
+    "titleFontSize": {
+      "type": "number",
+      "default": 16
+    },
+    "contentFontSize": {
+      "type": "number",
+      "default": 14
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "guten-builder-blocks",
+  "editorScript": "file:./index.js",
+  "viewScript": "file:./view.js",
+  "style": "file:./style-index.css",
+  "editorStyle": "file:./index.css",
+  "render": "file:./render.php"
+}

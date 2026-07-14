@@ -1,0 +1,11 @@
+/* Editor specific styling for FAQ Accordion block */
+.wp-block-guten-builder-blocks-accordion {
+	.gbb-accordion-title {
+		width: 100%;
+		display: inline-block;
+	}
+	.gbb-accordion-answer {
+		width: 100%;
+		min-height: 20px;
+	}
+}

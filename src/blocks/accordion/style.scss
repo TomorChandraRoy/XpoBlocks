@@ -1,0 +1,39 @@
+.gbb-accordion-container {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gbb-faq-gap, 12px);
+	width: 100%;
+	box-sizing: border-box;
+
+	.gbb-accordion-item {
+		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		box-sizing: border-box;
+	}
+
+	.gbb-accordion-header {
+		transition: color 0.3s ease;
+		font-family: inherit;
+		box-shadow: none !important;
+		outline: none !important;
+		margin: 0;
+
+		&:hover {
+			opacity: 0.95;
+		}
+
+		&:focus-visible {
+			outline: 2px dashed var(--gbb-faq-active-icon-color, #0f172a) !important;
+			outline-offset: -2px;
+		}
+	}
+
+	.gbb-accordion-title {
+		margin-right: 15px;
+	}
+
+	.gbb-accordion-content {
+		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+
+}

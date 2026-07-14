@@ -1,0 +1,144 @@
+{
+  "apiVersion": 3,
+  "name": "guten-builder-blocks/pricing-table",
+  "version": "1.0.0",
+  "title": "Guten Pricing Table",
+  "description": "Showcase your subscription plans or products with a stunning pricing grid.",
+  "category": "guten-builder",
+  "keywords": [
+    "pricing",
+    "price list",
+    "table",
+    "grid"
+  ],
+  "attributes": {
+    "blockId": {
+      "type": "string",
+      "default": ""
+    },
+    "pricingTables": {
+      "type": "array",
+      "default": [
+        {
+          "name": "Starter",
+          "price": "9",
+          "yearlyPrice": "79",
+          "priceCurrency": "$",
+          "period": "mo",
+          "yearlyPeriod": "yr",
+          "link": "#",
+          "linkLabel": "Get Started",
+          "color": "#3b82f6",
+          "isFeatured": false,
+          "badgeText": "",
+          "features": [
+            {
+              "label": "Up to 5 Projects",
+              "isEnable": true
+            },
+            {
+              "label": "Basic Support",
+              "isEnable": true
+            },
+            {
+              "label": "Custom Domains",
+              "isEnable": false
+            }
+          ]
+        },
+        {
+          "name": "Growth",
+          "price": "29",
+          "yearlyPrice": "249",
+          "priceCurrency": "$",
+          "period": "mo",
+          "yearlyPeriod": "yr",
+          "link": "#",
+          "linkLabel": "Upgrade Now",
+          "color": "#10b981",
+          "isFeatured": true,
+          "badgeText": "POPULAR",
+          "features": [
+            {
+              "label": "Unlimited Projects",
+              "isEnable": true
+            },
+            {
+              "label": "24/7 Priority Support",
+              "isEnable": true
+            },
+            {
+              "label": "Custom Domains",
+              "isEnable": true
+            }
+          ]
+        }
+      ]
+    },
+    "showToggle": {
+      "type": "boolean",
+      "default": false
+    },
+    "toggleLabelLeft": {
+      "type": "string",
+      "default": "Monthly"
+    },
+    "toggleLabelRight": {
+      "type": "string",
+      "default": "Yearly"
+    },
+    "discountText": {
+      "type": "string",
+      "default": "Save 20%"
+    },
+    "columns": {
+      "type": "number",
+      "default": 2
+    },
+    "columnGap": {
+      "type": "number",
+      "default": 24
+    },
+    "borderRadius": {
+      "type": "number",
+      "default": 12
+    },
+    "cardBgColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "cardTextColor": {
+      "type": "string",
+      "default": "#1e293b"
+    },
+    "buttonBgColor": {
+      "type": "string",
+      "default": "#3b82f6"
+    },
+    "buttonTextColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "featuredButtonBgColor": {
+      "type": "string",
+      "default": "#10b981"
+    },
+    "featuredButtonTextColor": {
+      "type": "string",
+      "default": "#ffffff"
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "textdomain": "guten-builder-blocks",
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "editorStyle": "file:./index.css",
+  "render": "file:./render.php"
+}

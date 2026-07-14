@@ -1,0 +1,308 @@
+/*!*********************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/admin/style.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************/
+.guten-builder-admin-wrap {
+  max-width: 1000px;
+  margin: 20px auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  /* Top Banner */
+}
+.guten-builder-admin-wrap .guten-builder-banner {
+  background: #152230;
+  border-radius: 12px;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: #fff;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.guten-builder-admin-wrap .guten-builder-banner .banner-subtitle {
+  color: #10b981;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.guten-builder-admin-wrap .guten-builder-banner .banner-title {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+.guten-builder-admin-wrap .guten-builder-banner .banner-description {
+  color: #94a3b8;
+  font-size: 14px;
+  margin: 0;
+}
+.guten-builder-admin-wrap .guten-builder-banner .banner-badge {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.guten-builder-admin-wrap .guten-builder-banner .banner-badge .dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+}
+.guten-builder-admin-wrap {
+  /* Tabs */
+}
+.guten-builder-admin-wrap .guten-builder-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.guten-builder-admin-wrap .guten-builder-tabs .tab-btn {
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  color: #1e293b;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.guten-builder-admin-wrap .guten-builder-tabs .tab-btn:hover {
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+.guten-builder-admin-wrap .guten-builder-tabs .tab-btn.active {
+  background: #3b82f6;
+  color: #fff;
+  border-color: #3b82f6;
+}
+.guten-builder-admin-wrap {
+  /* Stats Grid */
+}
+.guten-builder-admin-wrap .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.guten-builder-admin-wrap .stats-grid .stat-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+.guten-builder-admin-wrap .stats-grid .stat-card .stat-label {
+  color: #10b981;
+  font-size: 11px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.guten-builder-admin-wrap .stats-grid .stat-card .stat-value {
+  font-size: 36px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+.guten-builder-admin-wrap .stats-grid .stat-card .stat-desc {
+  color: #64748b;
+  font-size: 13px;
+  margin: 0;
+}
+.guten-builder-admin-wrap {
+  /* Main Card */
+}
+.guten-builder-admin-wrap .main-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+.guten-builder-admin-wrap .main-card .main-card-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 10px;
+}
+.guten-builder-admin-wrap .main-card .main-card-desc {
+  color: #64748b;
+  font-size: 14px;
+  margin: 0 0 20px;
+}
+.guten-builder-admin-wrap .main-card .main-card-actions {
+  display: flex;
+  gap: 15px;
+}
+.guten-builder-admin-wrap .main-card .main-card-actions button {
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.guten-builder-admin-wrap .main-card .main-card-actions .btn-primary {
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+}
+.guten-builder-admin-wrap .main-card .main-card-actions .btn-primary:hover {
+  background: rgb(11.1512195122, 99.1219512195, 242.8487804878);
+}
+.guten-builder-admin-wrap .main-card .main-card-actions .btn-secondary {
+  background: transparent;
+  color: #3b82f6;
+  border: 1px solid #3b82f6;
+}
+.guten-builder-admin-wrap .main-card .main-card-actions .btn-secondary:hover {
+  background: rgba(59, 130, 246, 0.05);
+}
+.guten-builder-admin-wrap {
+  /* Bottom Pro Banner */
+}
+.guten-builder-admin-wrap .guten-builder-pro-banner {
+  background: #0f172a;
+  border-radius: 12px;
+  padding: 24px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.guten-builder-admin-wrap .guten-builder-pro-banner .pro-title {
+  color: #10b981;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 5px;
+}
+.guten-builder-admin-wrap .guten-builder-pro-banner .pro-desc {
+  color: #94a3b8;
+  font-size: 13px;
+  margin: 0;
+}
+.guten-builder-admin-wrap .guten-builder-pro-banner .btn-pro {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #10b981;
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.guten-builder-admin-wrap .guten-builder-pro-banner .btn-pro:hover {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: #10b981;
+}
+.guten-builder-admin-wrap {
+  /* My Suite Page */
+}
+.guten-builder-admin-wrap .my-suite-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.guten-builder-admin-wrap .my-suite-header .my-suite-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 4px;
+}
+.guten-builder-admin-wrap .my-suite-header .my-suite-desc {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+.guten-builder-admin-wrap .my-suite-header .btn-save {
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.guten-builder-admin-wrap .my-suite-header .btn-save:hover {
+  background: rgb(11.1512195122, 99.1219512195, 242.8487804878);
+}
+.guten-builder-admin-wrap .my-suite-header .btn-save:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+.guten-builder-admin-wrap .blocks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.guten-builder-admin-wrap .blocks-grid .block-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+.guten-builder-admin-wrap .blocks-grid .block-card .block-image {
+  height: 160px;
+  background: #152230;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  /* Add a subtle gradient for placeholder */
+  background: linear-gradient(-135deg, #152230, #23354a);
+}
+.guten-builder-admin-wrap .blocks-grid .block-card .block-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.guten-builder-admin-wrap .blocks-grid .block-card .block-content .block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+.guten-builder-admin-wrap .blocks-grid .block-card .block-content .block-header .block-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+.guten-builder-admin-wrap .blocks-grid .block-card .block-content .block-header .block-badge {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+.guten-builder-admin-wrap .blocks-grid .block-card .block-content .block-desc {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0 0 20px;
+  line-height: 1.5;
+  flex: 1;
+}
+.guten-builder-admin-wrap .blocks-grid .block-card .block-content .block-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 15px;
+}
+.guten-builder-admin-wrap .blocks-grid .block-card .block-content .block-toggle .components-toggle-control {
+  margin-bottom: 0;
+}

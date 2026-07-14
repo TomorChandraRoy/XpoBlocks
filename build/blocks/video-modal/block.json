@@ -1,0 +1,101 @@
+{
+  "apiVersion": 3,
+  "name": "guten-builder-blocks/video-modal",
+  "version": "1.0.0",
+  "title": "Guten Video Modal",
+  "category": "guten-builder",
+  "description": "Enterprise-ready video container with graceful lazy loading, inline playback, and strict URL safelists.",
+  "keywords": [
+    "video",
+    "modal",
+    "youtube",
+    "vimeo",
+    "player"
+  ],
+  "attributes": {
+    "videoUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "coverImage": {
+      "type": "object",
+      "default": null
+    },
+    "autoExtractCover": {
+      "type": "boolean",
+      "default": true
+    },
+    "playbackMode": {
+      "type": "string",
+      "default": "modal"
+    },
+    "preloadLocalVideo": {
+      "type": "string",
+      "default": "metadata"
+    },
+    "buttonStyle": {
+      "type": "string",
+      "default": "solid"
+    },
+    "buttonColor": {
+      "type": "string",
+      "default": "#10b981"
+    },
+    "iconColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "buttonSize": {
+      "type": "number",
+      "default": 80
+    },
+    "dialogAriaLabel": {
+      "type": "string",
+      "default": "Video Player"
+    },
+    "playButtonAriaLabel": {
+      "type": "string",
+      "default": "Play Video"
+    },
+    "closeButtonAriaLabel": {
+      "type": "string",
+      "default": "Close Video"
+    },
+    "backdropStyle": {
+      "type": "string",
+      "default": "glass-dark"
+    },
+    "aspectRatio": {
+      "type": "string",
+      "default": "16x9"
+    },
+    "closeOnBackdrop": {
+      "type": "boolean",
+      "default": true
+    },
+    "showCloseButtonOutside": {
+      "type": "boolean",
+      "default": false
+    },
+    "imageOverlayOpacity": {
+      "type": "number",
+      "default": 0.3
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "textdomain": "guten-builder-blocks",
+  "editorScript": "file:./index.js",
+  "viewScript": "file:./view.js",
+  "style": "file:./style-index.css",
+  "editorStyle": "file:./index.css",
+  "render": "file:./render.php"
+}

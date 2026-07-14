@@ -1,0 +1,1 @@
+{"version":3,"file":"blocks/video-modal/index.css","mappings":";;;AAAA;AACA;EACC;AACD,C","sources":["webpack://guten-builder-blocks/./src/blocks/video-modal/editor.scss"],"sourcesContent":["/* Editor specific styles for Video Modal block */\n.kh-video-modal-container {\n\tborder: 1px dashed rgba(0, 0, 0, 0.08);\n}\n"],"names":[],"sourceRoot":""}
