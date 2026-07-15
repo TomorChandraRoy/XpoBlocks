@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "guten-builder-blocks/contact-form",
+  "version": "1.0.0",
+  "title": "Contact Form",
+  "category": "guten-builder",
+  "icon": "email",
+  "description": "A contact form block.",
+  "textdomain": "guten-builder-blocks",
+  "attributes": {
+    "formTitle": {
+      "type": "string",
+      "default": "Contact Us"
+    },
+    "showTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "submitButtonText": {
+      "type": "string",
+      "default": "Send Message"
+    },
+    "formId": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js"
+}
