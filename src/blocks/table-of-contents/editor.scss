@@ -1,0 +1,12 @@
+/* Editor specific styling for Table of Contents block */
+.wp-block-guten-builder-blocks-table-of-contents {
+    .gbb-toc-container {
+        // Any editor-specific overrides for TOC
+        .gbb-toc-empty-msg {
+            text-align: center;
+            padding: 20px;
+            color: #718096;
+            font-style: italic;
+        }
+    }
+}
