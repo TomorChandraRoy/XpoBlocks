@@ -4,7 +4,7 @@ import './editor.scss';
 import Edit from './Components/Edit';
 import metadata from './block.json';
 
-registerBlockType( metadata.name, {
+registerBlockType(metadata.name, {
 	edit: Edit,
-	save: () => null // Rendered dynamically on server side
-} );
+	save: () => null,
+});

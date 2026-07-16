@@ -1,0 +1,1 @@
+{"version":3,"file":"blocks/scroll-story/index.css","mappings":";;;AAAA;EACI;EACA;AACJ,C","sources":["webpack://guten-builder-blocks/./src/blocks/scroll-story/editor.scss"],"sourcesContent":[".wp-block-guten-builder-blocks-scroll-story {\n    outline: 1px dashed #ccc;\n    padding: 10px;\n}\n"],"names":[],"sourceRoot":""}

@@ -1,0 +1,82 @@
+{
+  "apiVersion": 3,
+  "name": "guten-builder-blocks/scroll-story",
+  "version": "1.0.0",
+  "title": "Scroll Story",
+  "description": "Showcase features or timelines with a beautiful scrolling sticky layout.",
+  "category": "guten-builder",
+  "icon": "align-pull-left",
+  "keywords": [
+    "scroll",
+    "story",
+    "sticky",
+    "timeline",
+    "features"
+  ],
+  "attributes": {
+    "blockId": {
+      "type": "string",
+      "default": ""
+    },
+    "layout": {
+      "type": "string",
+      "default": "sticky-right"
+    },
+    "steps": {
+      "type": "array",
+      "default": [
+        {
+          "title": "Welcome to our story",
+          "description": "This is the first step. Scroll down to see the magic happen.",
+          "mediaType": "image",
+          "mediaUrl": "",
+          "lottieUrl": ""
+        },
+        {
+          "title": "Second Step",
+          "description": "As you scroll, the content changes and progress updates automatically.",
+          "mediaType": "image",
+          "mediaUrl": "",
+          "lottieUrl": ""
+        },
+        {
+          "title": "Final Step",
+          "description": "You can add Lottie animations or images to each step.",
+          "mediaType": "image",
+          "mediaUrl": "",
+          "lottieUrl": ""
+        }
+      ]
+    },
+    "progressColor": {
+      "type": "string",
+      "default": "#3b82f6"
+    },
+    "activeTitleColor": {
+      "type": "string",
+      "default": "#1e293b"
+    },
+    "inactiveTitleColor": {
+      "type": "string",
+      "default": "#94a3b8"
+    },
+    "descColor": {
+      "type": "string",
+      "default": "#475569"
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "textdomain": "guten-builder-blocks",
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "editorStyle": "file:./index.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js"
+}

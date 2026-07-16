@@ -1,8 +1,8 @@
 import { InspectorControls } from '@wordpress/block-editor';
 import { TabPanel } from '@wordpress/components';
-import { generalStyleTabs } from '../../../utils/options';
-import General from './General/General';
-import Style from './Style/Style';
+import { generalStyleTabs } from '../../utils/options';
+import General from './General';
+import Style from './Style';
 
 const Settings = ({ attributes, setAttributes, clientId }) => {
   return (

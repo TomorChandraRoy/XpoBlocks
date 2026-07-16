@@ -30,6 +30,13 @@ const General = ({ attributes, setAttributes, clientId }) => {
 	};
 
 	const addTable = () => {
+		const templateFeatures = pricingTables.length > 0 && pricingTables[0].features 
+			? pricingTables[0].features.map(f => ({ label: f.label, isEnable: true }))
+			: [
+				{ label: __( 'Everything in Starter', 'guten-builder-blocks' ), isEnable: true },
+				{ label: __( 'Advanced Customization', 'guten-builder-blocks' ), isEnable: true }
+			];
+
 		const newTables = [
 			...pricingTables,
 			{
@@ -42,10 +49,7 @@ const General = ({ attributes, setAttributes, clientId }) => {
 				color: '#ec4899',
 				isFeatured: false,
 				badgeText: '',
-				features: [
-					{ label: __( 'Everything in Starter', 'guten-builder-blocks' ), isEnable: true },
-					{ label: __( 'Advanced Customization', 'guten-builder-blocks' ), isEnable: true }
-				]
+				features: templateFeatures
 			}
 		];
 		setAttributes( { pricingTables: newTables } );
@@ -57,33 +61,56 @@ const General = ({ attributes, setAttributes, clientId }) => {
 	};
 
 	const updateFeature = ( tableIndex, featureIndex, key, value ) => {
-		const newTables = [ ...pricingTables ];
-		const features = [ ...newTables[ tableIndex ].features ];
-		features[ featureIndex ] = { ...features[ featureIndex ], [ key ]: value };
-		newTables[ tableIndex ] = { ...newTables[ tableIndex ], features };
+		let newTables = [ ...pricingTables ];
+		
+		if ( key === 'label' ) {
+			newTables = newTables.map( t => {
+				const features = [ ...(t.features || []) ];
+				if ( features[ featureIndex ] ) {
+					features[ featureIndex ] = { ...features[ featureIndex ], label: value };
+				}
+				return { ...t, features };
+			});
+		} else {
+			const features = [ ...newTables[ tableIndex ].features ];
+			features[ featureIndex ] = { ...features[ featureIndex ], [ key ]: value };
+			newTables[ tableIndex ] = { ...newTables[ tableIndex ], features };
+		}
+		
 		setAttributes( { pricingTables: newTables } );
 	};
 
 	const addFeature = ( tableIndex ) => {
-		const newTables = [ ...pricingTables ];
-		const features = [
-			...newTables[ tableIndex ].features,
-			{ label: __( 'New Feature Item', 'guten-builder-blocks' ), isEnable: true }
-		];
-		newTables[ tableIndex ] = { ...newTables[ tableIndex ], features };
+		const newTables = pricingTables.map( t => ({
+			...t,
+			features: [
+				...(t.features || []),
+				{ label: __( 'New Feature Item', 'guten-builder-blocks' ), isEnable: true }
+			]
+		}) );
 		setAttributes( { pricingTables: newTables } );
 	};
 
 	const deleteFeature = ( tableIndex, featureIndex ) => {
-		const newTables = [ ...pricingTables ];
-		const features = newTables[ tableIndex ].features.filter( ( _, i ) => i !== featureIndex );
-		newTables[ tableIndex ] = { ...newTables[ tableIndex ], features };
+		const newTables = pricingTables.map( t => ({
+			...t,
+			features: (t.features || []).filter( ( _, i ) => i !== featureIndex )
+		}) );
 		setAttributes( { pricingTables: newTables } );
 	};
 
 	return (
 		<>
 			<PanelBody title={ __( '⚙️ Grid Layout', 'guten-builder-blocks' ) } initialOpen={ true }>
+				<SelectControl
+					label={ __( 'Theme Style', 'guten-builder-blocks' ) }
+					value={ attributes.themeStyle || 'style-1' }
+					options={ [
+						{ label: __( 'Style 1 (Default)', 'guten-builder-blocks' ), value: 'style-1' },
+						{ label: __( 'Style 2 (Dark Hover)', 'guten-builder-blocks' ), value: 'style-2' },
+					] }
+					onChange={ ( val ) => setAttributes( { themeStyle: val } ) }
+				/>
 				<SelectControl
 					label={ __( 'Columns (Desktop)', 'guten-builder-blocks' ) }
 					value={ columns }

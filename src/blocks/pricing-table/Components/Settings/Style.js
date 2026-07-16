@@ -64,6 +64,13 @@ const Style = ( { attributes, setAttributes } ) => {
 					value={ featuredButtonTextColor }
 					onChange={ ( val ) => setAttributes( { featuredButtonTextColor: val || '#ffffff' } ) }
 				/>
+
+				<hr />
+				<p style={ { fontWeight: 'bold', margin: '10px 0 5px 0' } }>{ __( 'Hover Highlight Color (Style 2)', 'guten-builder-blocks' ) }</p>
+				<ColorPalette
+					value={ attributes.hoverHighlightColor }
+					onChange={ ( val ) => setAttributes( { hoverHighlightColor: val || '#ffd700' } ) }
+				/>
 			</PanelBody>
 		</>
 	);

@@ -108,6 +108,14 @@
     "featuredButtonTextColor": {
       "type": "string",
       "default": "#ffffff"
+    },
+    "themeStyle": {
+      "type": "string",
+      "default": "style-1"
+    },
+    "hoverHighlightColor": {
+      "type": "string",
+      "default": "#ffd700"
     }
   },
   "supports": {
@@ -122,5 +130,6 @@
   "editorScript": "file:./index.js",
   "style": "file:./style-index.css",
   "editorStyle": "file:./index.css",
-  "render": "file:./render.php"
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js"
 }
