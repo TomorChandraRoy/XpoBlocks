@@ -1,54 +1,70 @@
-// import { RichText } from '@wordpress/block-editor';
-// import { __ } from '@wordpress/i18n';
-// import { renderFaqIcon } from '../../../utils/functions';
-import { useState } from 'react';
+import { RichText } from '@wordpress/block-editor';
+import { __ } from '@wordpress/i18n';
+import { renderFaqIcon } from '../../../utils/functions';
 
 const TemplateTwo = ({ attributes, setAttributes, openIndices = [], toggleItem, updateFaqQuestion, updateFaqAnswer, isEditor, id }) => {
-    const [openIndex, setOpenIndex] = useState(null);
-    const faqs = [
-        {
-            question: "How to use this component?",
-            answer: "To use this component, you need to import it in your project and use it in your JSX code. Here's an example of how to use it:",
-        },
-        {
-            question: "Are there any other components available?",
-            answer: "Yes, there are many other components available in this library. You can find them in the 'Components' section of the website.",
-        },
-        {
-            question: "Are components responsive?",
-            answer: "Yes, all components are responsive and can be used on different screen sizes.",
-        },
-        {
-            question: "Can I customize the components?",
-            answer: "Yes, you can customize the components by passing props to them. You can find more information about customizing components in the 'Customization' section of the website.",
-        },
-    ];
+    const { subtitle, title, description, faqsData = [], showHeader, iconPosition = 'left', iconType = 'chevron', iconSize = 22, iconColor = '' } = attributes || {};
 
   return (
     <div className="gbb-faq-wrapper-theme gbb-template-two" id={id}>
-
-            <div className="gbb-faq-container">
-                <p className="gbb-faq-subtitle">FAQ's</p>
-                <h1 className="gbb-faq-title">Looking for answer?</h1>
-                <p className="gbb-faq-description">
-                    Ship Beautiful Frontends Without the Overhead — Customizable, Scalable and Developer-Friendly UI Components.
-                </p>
-                {faqs.map((faq, index) => (
-                    <div className="gbb-faq-item" key={index} onClick={() => setOpenIndex(openIndex === index ? null : index)}>
-                        <div className="gbb-faq-header">
-                            <h3 className="gbb-faq-question">
-                                {faq.question}
-                            </h3>
-                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className={`gbb-faq-arrow ${openIndex === index ? "is-open" : ""}`}>
-                                <path d="m4.5 7.2 3.793 3.793a1 1 0 0 0 1.414 0L13.5 7.2" stroke="#1D293D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
+        <div className="gbb-faq-container">
+            {showHeader &&
+                (isEditor ? (
+                    <>
+                        <RichText tagName="p" className="gbb-faq-subtitle" value={subtitle} onChange={val => setAttributes({ subtitle: val })} placeholder={__('Enter Subtitle...', 'guten-builder-blocks')} />
+                        <RichText tagName="h1" className="gbb-faq-title" value={title} onChange={val => setAttributes({ title: val })} placeholder={__('Enter Title...', 'guten-builder-blocks')} />
+                        <RichText
+                            tagName="p"
+                            className="gbb-faq-description"
+                            value={description}
+                            onChange={val => setAttributes({ description: val })}
+                            placeholder={__('Enter Description...', 'guten-builder-blocks')}
+                        />
+                    </>
+                ) : (
+                    <>
+                        {subtitle && <RichText.Content tagName="p" className="gbb-faq-subtitle" value={subtitle} />}
+                        {title && <RichText.Content tagName="h1" className="gbb-faq-title" value={title} />}
+                        {description && <RichText.Content tagName="p" className="gbb-faq-description" value={description} />}
+                    </>
+                ))
+            }
+            {faqsData.map((faq, index) => {
+                const isOpen = openIndices.includes(index);
+                return (
+                    <div className="gbb-faq-item" key={index}>
+                        <div className={`gbb-faq-header gbb-icon-${iconPosition}`} onClick={() => toggleItem(index)}>
+                            {iconPosition === 'left' && renderFaqIcon(isOpen, iconType, iconSize, iconColor)}
+                            {isEditor ? (
+                                <RichText
+                                    tagName="h3"
+                                    className="gbb-faq-question"
+                                    value={faq.question}
+                                    onChange={val => updateFaqQuestion(index, val)}
+                                    onClick={e => e.stopPropagation()}
+                                    placeholder={__('Enter Question...', 'guten-builder-blocks')}
+                                />
+                            ) : (
+                                <RichText.Content tagName="h3" className="gbb-faq-question" value={faq.question} />
+                            )}
+                            {iconPosition === 'right' && renderFaqIcon(isOpen, iconType, iconSize, iconColor)}
                         </div>
-                        <p className={`gbb-faq-answer ${openIndex === index ? "is-open" : "is-closed"}`} >
-                            {faq.answer}
-                        </p>
+                        {isEditor ? (
+                            <RichText
+                                tagName="p"
+                                className={`gbb-faq-answer ${isOpen ? "is-open" : "is-closed"}`}
+                                value={faq.answer}
+                                onChange={val => updateFaqAnswer(index, val)}
+                                onClick={e => e.stopPropagation()}
+                                placeholder={__('Enter Answer...', 'guten-builder-blocks')}
+                            />
+                        ) : (
+                            <RichText.Content tagName="p" className={`gbb-faq-answer ${isOpen ? "is-open" : "is-closed"}`} value={faq.answer} />
+                        )}
                     </div>
-                ))}
-            </div>
+                );
+            })}
+        </div>
   </div>
 
   );

@@ -295,7 +295,7 @@ export const templateData = {
       tag: __("Center Aligned", "guten-builder-blocks"),
       icon: TemplateTwoSvg,
       attributes: {
-        iconType: "chevron",
+        iconType: "plus-minus",
         iconPosition: "right",
       }
     },
