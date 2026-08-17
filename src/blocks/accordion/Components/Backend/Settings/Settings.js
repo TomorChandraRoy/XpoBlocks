@@ -3,8 +3,8 @@ import { TabPanel } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { subStyleTabs } from '../../../utils/options';
 import { DocsLink } from 'tr-tools';
-import General from './Customization/General/General';
-import Style from './Customization/Style/Style';
+import General from './General/General';
+import Style from './Style/Style';
 
 const Settings = ({ attributes, setAttributes, clientId }) => {
   const { selectedTemplate = '' } = attributes;
