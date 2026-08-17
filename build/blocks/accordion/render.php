@@ -1,30 +1,27 @@
 <?php
-/**
- * FAQ Accordion Block - Server Render
- */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit;
 }
 
-// Generate a unique block ID if not provided
-$block_id = ! empty( $attributes['blockId'] ) ? sanitize_html_class( $attributes['blockId'] ) : wp_unique_id( 'gbb-faq-' );
+// প্রতিটি ব্লকের জন্য একটি ইউনিক আইডি (Unique Block ID) তৈরি করা
+$block_id = wp_unique_id( 'gbb-faq-' );
 
-// Prepare necessary custom classes for the wrapper as an array
-$wrapper_classes = array('gbb-accordion-container', $block_id);
+// কাস্টম কন্টেইনার ক্লাস এবং ইউনিক আইডি একসাথে অ্যারে হিসেবে রাখা
+$wrapper_classes = array( 'gbb-accordion-container', $block_id );
 
-// get_block_wrapper_attributes automatically applies Gutenberg sidebar styles (margin, padding, border etc.)
-// implode(' ', $wrapper_classes) converts the array of classes into a single space-separated string, 
-// which is required by the 'class' attribute.
-$wrapper_attrs = get_block_wrapper_attributes(array('class' => implode( ' ', $wrapper_classes ),));
+// WordPress Gutenberg-এর ডিফল্ট অ্যাট্রিবিউট (margin, padding, class) এবং আমাদের কাস্টম ক্লাসগুলোকে একসাথে মার্জ করা
+$wrapper_attrs = get_block_wrapper_attributes( array( 'class' => implode( ' ', $wrapper_classes ) ) );
 ?>
 
-<!-- 
-  This empty div acts as a placeholder wrapper for Client-Side React Rendering (view.js). 
-  It passes all necessary block attributes as a JSON string to the frontend via data-attributes. 
--->
-<div 
+<?php
+// এই ফাঁকা div-টি Client-Side JavaScript (view.js)-এর জন্য প্লেসহোল্ডার হিসেবে কাজ করে।
+// এটি data-attributes-এর মাধ্যমে ব্লকের সমস্ত ডাটা JSON আকারে ফ্রন্টএন্ডে পাস করে।
+?>
+
+<div
 	<?php echo $wrapper_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 	id="<?php echo esc_attr( $block_id ); ?>"
 	data-attributes='<?php echo esc_attr( wp_json_encode( $attributes ) ); ?>'
 ></div>
+

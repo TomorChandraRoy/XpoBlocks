@@ -1,0 +1,128 @@
+/* ==========================================================================
+   Admin Data Banner & Mockup Preview Styles
+   ========================================================================== */
+
+.block-card-banner {
+	height: 220px;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	padding: 24px 22px;
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	background: linear-gradient(135deg, #090d16 0%, #0d172a 60%, #152540 100%);
+	border-bottom: 1px solid #1e293b;
+	box-sizing: border-box;
+
+	.banner-bg-effects {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		pointer-events: none;
+		background: radial-gradient(circle at 85% 30%, rgba(16, 185, 129, 0.22), transparent 50%),
+					radial-gradient(circle at 10% 80%, rgba(59, 130, 246, 0.18), transparent 50%);
+
+		.speed-line {
+			position: absolute;
+			background: linear-gradient(90deg, transparent, rgba(52, 211, 153, 0.3), transparent);
+			height: 1px;
+			transform: rotate(-25deg);
+			
+			&.sl-1 { width: 160px; top: 18%; right: 8%; }
+			&.sl-2 { width: 110px; top: 58%; right: 32%; }
+			&.sl-3 { width: 200px; bottom: 12%; right: 4%; }
+		}
+	}
+
+	.banner-content-left {
+		position: relative;
+		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		max-width: 50%;
+
+		.banner-brand-logo {
+			display: flex;
+			align-items: center;
+			gap: 7px;
+
+			.brand-icon {
+				filter: drop-shadow(0 0 6px rgba(16, 185, 129, 0.8));
+			}
+
+			.brand-text {
+				font-size: 13px;
+				font-weight: 700;
+				color: #f8fafc;
+				letter-spacing: 0.3px;
+			}
+		}
+
+		.banner-heading-group {
+			.banner-title {
+				font-size: 20px;
+				font-weight: 900;
+				color: #ffffff;
+				margin: 0 0 5px;
+				letter-spacing: 0.5px;
+				line-height: 1.15;
+				text-shadow: 0 0 14px rgba(52, 211, 153, 0.4);
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+			}
+
+			.banner-tag {
+				font-size: 10.5px;
+				font-weight: 700;
+				color: #34d399;
+				margin: 0;
+				letter-spacing: 0.5px;
+				text-transform: uppercase;
+				line-height: 1.3;
+			}
+		}
+	}
+
+	.banner-content-right {
+		position: relative;
+		z-index: 2;
+		width: 44%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.banner-preview-box {
+			width: 100%;
+			height: 100%;
+			background: rgba(15, 23, 42, 0.75);
+			border: 1px solid rgba(255, 255, 255, 0.15);
+			border-radius: 8px;
+			backdrop-filter: blur(6px);
+			box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+			overflow: hidden;
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 4px;
+			box-sizing: border-box;
+
+			.banner-preview-img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+				object-position: center;
+				border-radius: 6px;
+				display: block;
+				transition: transform 0.3s ease;
+
+				&:hover {
+					transform: scale(1.03);
+				}
+			}
+		}
+	}
+}

@@ -11,11 +11,6 @@
  * Text Domain: guten-builder-blocks
  */
 
-namespace GutenBuilder;
-
-use GutenBuilder\Includes\Core;
-use GutenBuilder\Includes\Admin;
-use GutenBuilder\Includes\API;
 
 // ABS PATH
 if ( !defined( 'ABSPATH' ) ) { exit; }
@@ -27,39 +22,33 @@ define( 'GUTEN_BUILDER_DIR_PATH', plugin_dir_path( __FILE__ ) );
 define( 'GUTEN_BUILDER_BASENAME', plugin_basename( __FILE__ ) );
 define( 'GUTEN_BUILDER_FILE', __FILE__ );
 
-// Include Core Classes
-require_once GUTEN_BUILDER_DIR_PATH . 'includes/class-guten-builder-core.php';
-require_once GUTEN_BUILDER_DIR_PATH . 'includes/class-guten-builder-admin.php';
-require_once GUTEN_BUILDER_DIR_PATH . 'includes/class-guten-builder-api.php';
+// Include Loader Class
+require_once GUTEN_BUILDER_DIR_PATH . 'includes/class-guten-builder-loader.php';
 
-if ( !class_exists( __NAMESPACE__ . '\Plugin' ) ) {
-	class Plugin {
+if ( !class_exists( 'Guten_Builder_Plugin' ) ) {
+	class Guten_Builder_Plugin {
 		function __construct() {
-			// Initialize sub-components
-			Core::init();
-			Admin::init();
-			API::init();
-
-			// Register blocks
-			add_action( 'init', [ $this, 'register_blocks' ] );
+			add_action( 'init', [ $this, 'onInit' ] ); // Register blocks
+			Guten_Builder_Loader::init(); // Loader এর মাধ্যমে Core ও Admin ফাইল লোড ও Init করা
 		}
 
-		function register_blocks() {
-			$settings = Core::get_settings();
-			$active_blocks = isset( $settings['activeBlocks'] ) ? $settings['activeBlocks'] : [];
-
+		/**
+		 * অন-ইনিট হুক (Register Dynamic Blocks)
+		 * glob() এর মাধ্যমে build/blocks ফোল্ডারের সকল সাব-ডিরেক্টরি স্ক্যান করে অটোমেটিক্যালি ব্লকসমূহ রেজিস্টার করে।
+		 */
+		function onInit() {
+			// build/blocks/ ডিরেক্টরির অন্তর্গত সকল ব্লকের ফোল্ডার পাথ স্ক্যান করা (GLOB_ONLYDIR ব্যবহার করে ফাইল বাদ দিয়ে শুধু ফোল্ডার নেওয়া হয়)
 			$blocks = glob( __DIR__ . '/build/blocks/*', GLOB_ONLYDIR );
 			if ( $blocks ) {
 				foreach ( $blocks as $block ) {
-					$block_name = basename( $block );
-					$is_active = !isset( $active_blocks[$block_name] ) || rest_sanitize_boolean( $active_blocks[$block_name] );
-					
-					if ( $is_active ) {
-						register_block_type( $block );
-					}
+					// প্রতিটি ব্লক ফোল্ডারের block.json রিড করে ডায়নামিকভাবে ব্লক রেজিস্টার করা
+					register_block_type( $block );
 				}
 			}
 		}
 	}
-	new Plugin();
+	new Guten_Builder_Plugin();
 }
+
+
+

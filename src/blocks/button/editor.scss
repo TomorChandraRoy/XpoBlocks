@@ -1,9 +1,11 @@
+/* stylelint-disable CssSyntaxError */
 // Gutenberg Tab Panel styling
+// Unified Tab Panel styling for all Guten Builder Blocks
 .guten-builder-blocks-tab-panel {
 	.components-tab-panel__tabs {
 		display: flex;
 		border-bottom: 1px solid #e0e0e0;
-		margin-bottom: 15px;
+
 
 		.components-tab-panel__tabs-item {
 			flex: 1;
@@ -21,13 +23,11 @@
 			cursor: pointer;
 			transition: all 0.3s ease;
 
-			&:hover {
-				color: #00a36c;
-			}
+
 
 			&.guten-builder-blocks-active-tab {
-				color: #00a36c;
-				border-bottom-color: #00a36c;
+				color: #F62477;
+				border-bottom-color: #F62477;
 				font-weight: 600;
 			}
 		}

@@ -1,8 +1,15 @@
 <?php
+/**
+ * Render.php হলো Gutenberg Dynamic Block (Server-Side Rendering) ফাইল। ওয়েবসাইটের Frontend (মূল পাতায়) কোনো ব্লক কিভাবে প্রদর্শন বা রেন্ডার হবে, তা এই ফাইলের মাধ্যমে চালনা করা হয়।
+ */
+
+if (!defined('ABSPATH')) {
+	exit;
+}
 $id = wp_unique_id( 'guten-builder-blocks-test-purpose-' );
 ?>
-<div <?php echo get_block_wrapper_attributes(); ?> 
-     id='<?php echo esc_attr( $id ); ?>' 
+<div <?php echo get_block_wrapper_attributes(); ?>
+     id='<?php echo esc_attr( $id ); ?>'
      data-attributes='<?php echo esc_attr( wp_json_encode( $attributes ) ); ?>'>
 </div>
 
@@ -76,13 +83,13 @@ Use না করলে JS targeting, CSS conflict, editor/frontend mismatch হ
 <?php
 $id = wp_unique_id( 'myBlock-' );
 ?>
-<div <?php echo get_block_wrapper_attributes(); ?> 
-     id='<?php echo esc_attr( $id ); ?>' 
+<div <?php echo get_block_wrapper_attributes(); ?>
+     id='<?php echo esc_attr( $id ); ?>'
      data-attributes='<?php echo esc_attr( wp_json_encode( $attributes ) ); ?>'>
     <?php echo esc_html($attributes['title'] ?? 'Default Title'); ?>
 </div>
 
- **Frontend Output (2 blocks):** 
+ **Frontend Output (2 blocks):**
 
  <div class="wp-block-my-plugin" id="myBlock-1" data-attributes='{"title":"Block 1"}'>
   Block 1

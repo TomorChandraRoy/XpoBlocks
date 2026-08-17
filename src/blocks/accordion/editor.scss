@@ -1,11 +1,77 @@
 /* Editor specific styling for FAQ Accordion block */
-.wp-block-guten-builder-blocks-accordion {
-	.gbb-accordion-title {
-		width: 100%;
-		display: inline-block;
+/* .wp-block-guten-builder-blocks-accordion {
+
+} */
+
+// Unified ***Tab Panel*** styling for all Guten Builder Blocks
+.guten-builder-blocks-tab-panel {
+	.components-tab-panel__tabs {
+		display: flex;
+		border-bottom: 1px solid #e0e0e0;
+
+
+		.components-tab-panel__tabs-item {
+			flex: 1;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			padding: 10px 0;
+			font-weight: 500;
+			font-size: 13px;
+			color: #757575;
+			border: none;
+			background: transparent;
+			border-bottom: 2px solid transparent;
+			cursor: pointer;
+			transition: all 0.3s ease;
+
+
+
+			&.guten-builder-blocks-active-tab {
+				color: #F62477;
+				border-bottom-color: #F62477;
+				font-weight: 600;
+			}
+		}
 	}
-	.gbb-accordion-answer {
-		width: 100%;
-		min-height: 20px;
-	}
+}
+
+/* Editor Panel Customization */
+.block-editor-block-inspector {
+    .components-panel__body.bPlPanelBody {
+
+        /* Remove extra WordPress focus shadow/outline for both Open and Closed states */
+        .components-panel__body-title button {
+            &:focus, &:active, &:focus-visible {
+                box-shadow: none !important;
+                outline: none !important;
+            }
+
+            &:hover {
+                background-color: #e5096229 !important;
+								color: #e91776f5 !important;
+            }
+        }
+
+        &.is-opened {
+            border: 1px solid #F62477 !important;
+            margin-bottom: 1px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+            .components-panel__body-title {
+                background-color: #e6f0f9 !important;
+
+                button {
+                    background-color: #e5096229 !important;
+                    color: #e91776f5 !important;
+                    font-weight: 500;
+
+                    &:hover {
+                        background-color: #e5096229 !important;
+                    }
+                }
+            }
+        }
+    }
 }

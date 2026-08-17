@@ -1,36 +1,181 @@
 /*!********************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/accordion/style.scss ***!
   \********************************************************************************************************************************************************************************************************************************************************/
-.gbb-accordion-container {
+.wp-block-guten-builder-blocks-accordion {
+  /*Template One Styles*/
+}
+.wp-block-guten-builder-blocks-accordion .gbb-faq-wrapper {
   display: flex;
   flex-direction: column;
-  gap: var(--gbb-faq-gap, 12px);
-  width: 100%;
+  align-items: center;
+  text-align: center;
+  color: #1e293b;
+  padding: 20px 12px;
   box-sizing: border-box;
 }
-.gbb-accordion-container .gbb-accordion-item {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-sizing: border-box;
-}
-.gbb-accordion-container .gbb-accordion-header {
-  transition: color 0.3s ease;
-  font-family: inherit;
-  box-shadow: none !important;
-  outline: none !important;
+.wp-block-guten-builder-blocks-accordion .gbb-faq-wrapper .gbb-faq-subtitle {
+  font-size: 16px;
+  font-weight: 500;
+  /* color: #475569; */
   margin: 0;
 }
-.gbb-accordion-container .gbb-accordion-header:hover {
-  opacity: 0.95;
+.wp-block-guten-builder-blocks-accordion .gbb-faq-wrapper .gbb-faq-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-top: 8px;
+  margin-bottom: 0;
+  color: #0f172a;
 }
-.gbb-accordion-container .gbb-accordion-header:focus-visible {
-  outline: 2px dashed var(--gbb-faq-active-icon-color, #0f172a) !important;
-  outline-offset: -2px;
+@media (min-width: 768px) {
+  .wp-block-guten-builder-blocks-accordion .gbb-faq-wrapper .gbb-faq-title {
+    font-size: 36px;
+  }
 }
-.gbb-accordion-container .gbb-accordion-title {
-  margin-right: 15px;
+.wp-block-guten-builder-blocks-accordion .gbb-faq-wrapper .gbb-faq-description {
+  font-size: 14px;
+  color: #64748b;
+  margin-top: 16px;
+  margin-bottom: 0;
+  max-width: 384px;
 }
-.gbb-accordion-container .gbb-accordion-content {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.wp-block-guten-builder-blocks-accordion .gbb-faq-wrapper .gbb-faq-list {
+  width: 100%;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  text-align: left;
+}
+.wp-block-guten-builder-blocks-accordion .gbb-faq-wrapper .gbb-faq-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+.wp-block-guten-builder-blocks-accordion .gbb-faq-wrapper .gbb-faq-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+  /* border: 1px solid #e0e7ff; */
+  padding: 16px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.wp-block-guten-builder-blocks-accordion .gbb-faq-wrapper .gbb-faq-header:hover {
+  background-color: #f8fafc;
+}
+.wp-block-guten-builder-blocks-accordion .gbb-faq-wrapper .gbb-faq-question {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  color: #1e293b;
+}
+.wp-block-guten-builder-blocks-accordion .gbb-faq-wrapper .gbb-faq-arrow {
+  transition: transform 0.5s ease-in-out;
+  flex-shrink: 0;
+}
+.wp-block-guten-builder-blocks-accordion .gbb-faq-wrapper .gbb-faq-arrow.is-open {
+  transform: rotate(180deg);
+}
+.wp-block-guten-builder-blocks-accordion .gbb-faq-wrapper .gbb-faq-answer {
+  font-size: 14px;
+  color: #64748b;
+  padding-left: 16px;
+  padding-right: 16px;
+  transition: all 0.5s ease-in-out;
+  margin: 0;
+  overflow: hidden;
+}
+.wp-block-guten-builder-blocks-accordion .gbb-faq-wrapper .gbb-faq-answer.is-open {
+  opacity: 1;
+  max-height: 300px;
+  transform: translateY(0);
+  padding-top: 16px;
+}
+.wp-block-guten-builder-blocks-accordion .gbb-faq-wrapper .gbb-faq-answer.is-closed {
+  opacity: 0;
+  max-height: 0;
+  transform: translateY(-8px);
+  padding-top: 0;
+}
+.wp-block-guten-builder-blocks-accordion {
+  /* Template Two Styles */
+}
+.wp-block-guten-builder-blocks-accordion .gbb-template-two .gbb-faq-container {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 20px;
+}
+.wp-block-guten-builder-blocks-accordion .gbb-template-two .gbb-faq-subtitle {
+  color: #4f46e5;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0;
+}
+.wp-block-guten-builder-blocks-accordion .gbb-template-two .gbb-faq-title {
+  font-size: 1.875rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+}
+.wp-block-guten-builder-blocks-accordion .gbb-template-two .gbb-faq-description {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-top: 0.5rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  margin-bottom: 0;
+}
+.wp-block-guten-builder-blocks-accordion .gbb-template-two .gbb-faq-item {
+  border-bottom: 1px solid #e2e8f0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  cursor: pointer;
+  width: 100%;
+}
+.wp-block-guten-builder-blocks-accordion .gbb-template-two .gbb-faq-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wp-block-guten-builder-blocks-accordion .gbb-template-two .gbb-faq-question {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+}
+.wp-block-guten-builder-blocks-accordion .gbb-template-two .gbb-faq-arrow {
+  transition: all 0.5s ease-in-out;
+}
+.wp-block-guten-builder-blocks-accordion .gbb-template-two .gbb-faq-arrow.is-open {
+  transform: rotate(180deg);
+}
+.wp-block-guten-builder-blocks-accordion .gbb-template-two .gbb-faq-answer {
+  font-size: 0.875rem;
+  color: #64748b;
+  transition: all 0.5s ease-in-out;
+  max-width: 28rem;
+  margin: 0;
+  overflow: hidden;
+}
+.wp-block-guten-builder-blocks-accordion .gbb-template-two .gbb-faq-answer.is-open {
+  opacity: 1;
+  max-height: 300px;
+  transform: translateY(0);
+  padding-top: 1rem;
+}
+.wp-block-guten-builder-blocks-accordion .gbb-template-two .gbb-faq-answer.is-closed {
+  opacity: 0;
+  max-height: 0;
+  transform: translateY(-0.5rem);
 }
 
 /*# sourceMappingURL=style-view.css.map*/

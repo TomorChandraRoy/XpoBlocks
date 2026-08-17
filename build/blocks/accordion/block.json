@@ -11,89 +11,199 @@
     "toggle",
     "collapse"
   ],
+  "textdomain": "guten-builder-blocks",
   "attributes": {
-    "blockId": {
+    "align": {
       "type": "string",
       "default": ""
     },
-    "items": {
+    "selectedTemplate": {
+      "type": "string",
+      "default": ""
+    },
+    "subtitle": {
+      "type": "string",
+      "default": "FAQ"
+    },
+    "title": {
+      "type": "string",
+      "default": "Frequently Asked Questions"
+    },
+    "description": {
+      "type": "string",
+      "default": "Proactively answering FAQs boosts user confidence and cuts down on support tickets."
+    },
+    "faqsData": {
       "type": "array",
       "default": [
         {
-          "title": "What is FAQ Accordion?",
-          "content": "An accordion is a list of items that can be expanded or collapsed to show and hide content.",
-          "isOpen": false
+          "question": "What is FAQ Accordion?",
+          "answer": "An accordion is a list of stacked items that can be expanded or collapsed to show and hide content seamlessly."
         },
         {
-          "title": "Is this block fully responsive?",
-          "content": "Yes! All options are fully responsive and optimized for mobile, tablet, and desktop views.",
-          "isOpen": false
+          "question": "Is this block fully responsive?",
+          "answer": "Yes! All options are fully responsive and optimized for mobile, tablet, and desktop viewport sizes."
+        },
+        {
+          "question": "Can I customize colors and typography?",
+          "answer": "Absolutely! You can easily adjust text colors, background styles, fonts, and borders directly from the settings panel."
+        },
+        {
+          "question": "Does it impact site performance?",
+          "answer": "Not at all. It is engineered with lightweight code and optimized CSS to ensure super-fast page loading speeds."
         }
       ]
+    },
+    "showHeader": {
+      "type": "boolean",
+      "default": false
     },
     "allowMultiple": {
       "type": "boolean",
       "default": false
     },
-    "headerBgColor": {
+    "iconPosition": {
       "type": "string",
-      "default": "#ffffff"
+      "default": "right"
     },
-    "headerTextColor": {
+    "iconType": {
       "type": "string",
-      "default": "#1e293b"
+      "default": "chevron"
     },
-    "activeHeaderBgColor": {
-      "type": "string",
-      "default": "#f8fafc"
-    },
-    "activeHeaderTextColor": {
-      "type": "string",
-      "default": "#0f172a"
-    },
-    "contentBgColor": {
-      "type": "string",
-      "default": "#ffffff"
-    },
-    "contentTextColor": {
-      "type": "string",
-      "default": "#475569"
-    },
-    "borderColor": {
-      "type": "string",
-      "default": "#e2e8f0"
-    },
-    "activeBorderColor": {
-      "type": "string",
-      "default": "#cbd5e1"
+    "iconSize": {
+      "type": "number",
+      "default": 22
     },
     "iconColor": {
       "type": "string",
-      "default": "#64748b"
+      "default": ""
     },
-    "activeIconColor": {
+    "subtitleColor": {
+      "type": "string",
+      "default": "#475569"
+    },
+    "subtitleTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": "16px",
+          "tablet": "14px",
+          "mobile": "12px"
+        },
+        "fontFamily": "",
+        "fontWeight": "400",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "textTransform": "none",
+        "textDecoration": "none",
+        "fontStyle": "normal"
+      }
+    },
+    "titleColor": {
       "type": "string",
       "default": "#0f172a"
     },
-    "borderRadius": {
-      "type": "number",
-      "default": 8
+    "titleTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": "24px",
+          "tablet": "23px",
+          "mobile": "22px"
+        },
+        "fontFamily": "",
+        "fontWeight": "700",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "textTransform": "none",
+        "textDecoration": "none",
+        "fontStyle": "normal"
+      }
     },
-    "borderWidth": {
-      "type": "number",
-      "default": 1
+    "descriptionColor": {
+      "type": "string",
+      "default": "#64748b"
     },
-    "gap": {
-      "type": "number",
-      "default": 12
+    "descriptionTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": "14px",
+          "tablet": "14px",
+          "mobile": "13px"
+        },
+        "fontFamily": "",
+        "fontWeight": "400",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "textTransform": "none",
+        "textDecoration": "none",
+        "fontStyle": "normal"
+      }
     },
-    "titleFontSize": {
-      "type": "number",
-      "default": 16
+    "questionBg": {
+      "type": "object",
+      "default": {}
     },
-    "contentFontSize": {
-      "type": "number",
-      "default": 14
+    "questionBorder": {
+      "type": "object",
+      "default": {
+        "color": "#e0e7ff",
+        "width": "1px",
+        "style": "solid",
+        "side": "all"
+      }
+    },
+    "questionBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "6px",
+        "right": "6px",
+        "bottom": "6px",
+        "left": "6px"
+      }
+    },
+    "questionTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": "16px",
+          "tablet": "16px",
+          "mobile": "14px"
+        },
+        "fontFamily": "",
+        "fontWeight": "600",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "textTransform": "none",
+        "textDecoration": "none",
+        "fontStyle": "normal"
+      }
+    },
+    "answerTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": "14px",
+          "tablet": "14px",
+          "mobile": "13px"
+        },
+        "fontFamily": "",
+        "fontWeight": "400",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "textTransform": "none",
+        "textDecoration": "none",
+        "fontStyle": "normal"
+      }
+    },
+    "questionColor": {
+      "type": "string",
+      "default": "#0f172a"
+    },
+    "answerColor": {
+      "type": "string",
+      "default": "#475569"
     }
   },
   "supports": {
@@ -104,10 +214,9 @@
       "full"
     ]
   },
-  "textdomain": "guten-builder-blocks",
   "editorScript": "file:./index.js",
-  "viewScript": "file:./view.js",
-  "style": "file:./style-index.css",
   "editorStyle": "file:./index.css",
+  "viewScript": "file:./view.js",
+  "style": "file:./style-view.css",
   "render": "file:./render.php"
 }

@@ -4,7 +4,7 @@
 🧾 Main PHP File	     carousel.php	              সাধারণত ফোল্ডার নামের সাথে মিল রেখে main PHP ফাইল রাখা হয়
 🔤 Text Domain	       carousel	                  ফোল্ডার নামের সাথে মিলিয়ে রাখা বেস্ট
 📦 block.json এর name	 "carousel/react-carousel"	namespace/block-name — এখানে namespace = carousel
-                                                   namespace‑এuppercase (capital letter) দেওয়া যাবে না only lowercase ami jekno lowercase namespace dite parbo same  block-name tao
+                                                   namespace‑এ uppercase (capital letter) দেওয়া যাবে না only lowercase ami jekno lowercase namespace dite parbo same  block-name tao
 
 2️⃣ কোনগুলো মিল থাকলে সব ঠিক থাকে
 
@@ -28,7 +28,7 @@ optional, কিন্তু convention‑এর জন্য ভালো।
 
 
 main.php aer  Plugin Name, Description ta dekabe plugin aer page
-block.json aer Title, Description ta dekabe kono page giye genaral,style aer upore 
+block.json aer Title, Description ta dekabe kono page giye genaral,style aer upore
 
 1️**PREFIX_VERSION:**
 
