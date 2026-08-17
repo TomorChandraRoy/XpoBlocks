@@ -23,34 +23,34 @@
     },
     "subtitle": {
       "type": "string",
-      "default": "FAQ"
+      "default": ""
     },
     "title": {
       "type": "string",
-      "default": "Frequently Asked Questions"
+      "default": ""
     },
     "description": {
       "type": "string",
-      "default": "Proactively answering FAQs boosts user confidence and cuts down on support tickets."
+      "default": ""
     },
     "faqsData": {
       "type": "array",
       "default": [
         {
-          "question": "What is FAQ Accordion?",
-          "answer": "An accordion is a list of stacked items that can be expanded or collapsed to show and hide content seamlessly."
+          "question": "",
+          "answer": ""
         },
         {
-          "question": "Is this block fully responsive?",
-          "answer": "Yes! All options are fully responsive and optimized for mobile, tablet, and desktop viewport sizes."
+          "question": "",
+          "answer": ""
         },
         {
-          "question": "Can I customize colors and typography?",
-          "answer": "Absolutely! You can easily adjust text colors, background styles, fonts, and borders directly from the settings panel."
+          "question": "",
+          "answer": ""
         },
         {
-          "question": "Does it impact site performance?",
-          "answer": "Not at all. It is engineered with lightweight code and optimized CSS to ensure super-fast page loading speeds."
+          "question": "",
+          "answer": ""
         }
       ]
     },

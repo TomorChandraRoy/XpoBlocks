@@ -1,9 +1,9 @@
 import { __ } from '@wordpress/i18n';
-import { PanelBody, ToggleControl, SelectControl, RangeControl, Button } from '@wordpress/components';
+import { PanelBody, ToggleControl, SelectControl, RangeControl, Button, TextControl, TextareaControl } from '@wordpress/components';
 import { ItemsPanel, ColorControl } from 'tr-tools';
 
 const General = ({ attributes, setAttributes }) => {
-  const { faqsData = [], allowMultiple, showHeader, iconPosition = 'left', iconType = 'chevron', iconSize, iconColor} = attributes;
+  const { faqsData = [], allowMultiple, showHeader, iconPosition = 'left', iconType = 'chevron', iconSize, iconColor, subtitle, title, description} = attributes;
 
   return (
     <>
@@ -15,19 +15,43 @@ const General = ({ attributes, setAttributes }) => {
       </PanelBody>
 
       <PanelBody className="bPlPanelBody" title={__('Layout', 'guten-builder-blocks')} initialOpen={false}>
-        
+
         <ToggleControl label={__('Show Header', 'guten-builder-blocks')} checked={showHeader} onChange={val => setAttributes({ showHeader: val })} help={__('Toggle to show or hide the subtitle, title, and description section.', 'guten-builder-blocks')} />
 
         <ToggleControl label={__('Allow Multiple Open', 'guten-builder-blocks')} checked={allowMultiple} onChange={val => setAttributes({ allowMultiple: val })} help={__('If disabled, expanding one item collapses the others.', 'guten-builder-blocks')} />
       </PanelBody>
+
+      {showHeader && (
+        <PanelBody className="bPlPanelBody" title={__('Header Content', 'guten-builder-blocks')} initialOpen={false}>
+          <TextControl
+            label={__('Subtitle', 'guten-builder-blocks')}
+            value={subtitle}
+            onChange={val => setAttributes({ subtitle: val })}
+            placeholder={__('Add your subtitle here', 'guten-builder-blocks')}
+          />
+          <TextControl
+            label={__('Title', 'guten-builder-blocks')}
+            value={title}
+            onChange={val => setAttributes({ title: val })}
+            placeholder={__('Add your title here', 'guten-builder-blocks')}
+          />
+          <TextareaControl
+            label={__('Description', 'guten-builder-blocks')}
+            value={description}
+            onChange={val => setAttributes({ description: val })}
+            placeholder={__('Add your description here', 'guten-builder-blocks')}
+            rows={3}
+          />
+        </PanelBody>
+      )}
 
       <ItemsPanel
         title={__('FAQ Items Manager', 'guten-builder-blocks')}
         items={faqsData}
         onChange={newFaqs => setAttributes({ faqsData: newFaqs })}
         defaultItem={{
-          question: __('New FAQ Question', 'guten-builder-blocks'),
-          answer: __('Add your FAQ answer content here.', 'guten-builder-blocks'),
+          question: __('', 'guten-builder-blocks'),
+          answer: __('', 'guten-builder-blocks'),
         }}
         addButtonLabel={__('Add FAQ Item', 'guten-builder-blocks')}
         itemTitleKey="question"

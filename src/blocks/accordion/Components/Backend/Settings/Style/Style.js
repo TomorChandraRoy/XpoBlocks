@@ -5,7 +5,7 @@ import { pxUnit, remUnit, emUnit, vwUnit, perUnit } from 'tr-tools/utils/options
 import { defaultSubtitleTypo, defaultTitleTypo, defaultDescriptionTypo, defaultQuestionTypo, defaultAnswerTypo } from '../../../../utils/options';
 
 const Style = ({ attributes, setAttributes }) => {
-  const { subtitleColor, subtitleTypography, titleColor, titleTypography, descriptionColor, descriptionTypography, questionBg = '#FFFFFF', questionBorder, questionBorderRadius, questionTypography, answerTypography, questionColor, answerColor, showHeader } = attributes;
+  const { selectedTemplate = 'template-1', subtitleColor, subtitleTypography, titleColor, titleTypography, descriptionColor, descriptionTypography, questionBg = '#FFFFFF', questionBorder, questionBorderRadius, questionTypography, answerTypography, questionColor, answerColor, showHeader } = attributes;
 
   return (
     <>
@@ -68,30 +68,51 @@ const Style = ({ attributes, setAttributes }) => {
       )}
 
       <PanelBody className="bPlPanelBody" title={__('Q/A Content', 'guten-builder-blocks')} initialOpen={false}>
-        <BackgroundControl label={__('Question Bg :', 'guten-builder-blocks')} value={questionBg} onChange={val => setAttributes({ questionBg: val })} />
+        {selectedTemplate === 'template-1' && (
+          <>
+            <BackgroundControl label={__('Question Bg :', 'guten-builder-blocks')} value={questionBg} onChange={val => setAttributes({ questionBg: val })} />
+            <Spacer />
+          </>
+        )}
 
-        <Spacer />
+        {(selectedTemplate === 'template-1' || selectedTemplate === 'template-2') && (
+          <>
+            <BorderControl
+              label={__('Question Border :', 'guten-builder-blocks')}
+              value={questionBorder}
+              onChange={val => setAttributes({ questionBorder: val })}
+              defaultBorder={
+                selectedTemplate === 'template-2'
+                  ? {
+                      color: '#e2e8f0',
+                      width: '1px',
+                      style: 'solid',
+                      side: 'bottom',
+                    }
+                  : {
+                      color: '#e0e7ff',
+                      width: '1px',
+                      style: 'solid',
+                      side: 'all',
+                    }
+              }
+            />
+            <Spacer />
+          </>
+        )}
 
-        <BorderControl
-          label={__('Question Border :', 'guten-builder-blocks')}
-          value={questionBorder}
-          onChange={val => setAttributes({ questionBorder: val })}
-          defaultBorder={{
-            color: '#e0e7ff',
-            width: '1px',
-            style: 'solid',
-            side: 'all',
-          }}
-        />
-        <SpacingControl
-          label={__('Border Radius :', 'guten-builder-blocks')}
-          value={questionBorderRadius}
-          onChange={val => setAttributes({ questionBorderRadius: val })}
-          units={[pxUnit(), remUnit(), emUnit(), vwUnit(), perUnit()]}
-          defaultVal={{ top: '6px', right: '6px', bottom: '6px', left: '6px' }}
-        />
-
-        <Spacer />
+        {selectedTemplate === 'template-1' && (
+          <>
+            <SpacingControl
+              label={__('Border Radius :', 'guten-builder-blocks')}
+              value={questionBorderRadius}
+              onChange={val => setAttributes({ questionBorderRadius: val })}
+              units={[pxUnit(), remUnit(), emUnit(), vwUnit(), perUnit()]}
+              defaultVal={{ top: '6px', right: '6px', bottom: '6px', left: '6px' }}
+            />
+            <Spacer />
+          </>
+        )}
         <ColorControl
           label={__('Question Color', 'guten-builder-blocks')}
           value={questionColor}

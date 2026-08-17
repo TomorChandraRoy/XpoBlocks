@@ -1,11 +1,12 @@
-import { getTypographyCss, getBackgroundCss, getBorderCss } from 'tr-tools';
+import { getTypographyCss, getBackgroundCss, getBorderCss, getBorderRadiusCss } from 'tr-tools';
 
 const DynamicStyles = ({ attributes, id }) => {
   const { subtitleColor, titleColor, descriptionColor, subtitleTypography, titleTypography, descriptionTypography, questionBg, questionBorder, questionBorderRadius = '6px', questionColor, answerColor, questionTypography, answerTypography, iconColor } = attributes || {};
 
   const mainSl = `#${id}`;
 
-  const wrapper = `${mainSl} .gbb-faq-wrapper`;
+  const wrapper = mainSl;
+
   const subtitle = `${wrapper} .gbb-faq-subtitle`;
   const title = `${wrapper} .gbb-faq-title`;
   const description = `${wrapper} .gbb-faq-description`;
@@ -13,6 +14,7 @@ const DynamicStyles = ({ attributes, id }) => {
   const question = `${wrapper} .gbb-faq-question`;
   const answer = `${wrapper} .gbb-faq-answer`;
   const icon = `${wrapper} .gbb-faq-arrow`;
+
 
   return (
     <style
@@ -34,9 +36,17 @@ const DynamicStyles = ({ attributes, id }) => {
         }
 
         ${header} {
+
+        }
+
+        ${mainSl}.gbb-template-one-wapper .gbb-faq-header {
           ${getBackgroundCss(questionBg) ? `background: ${getBackgroundCss(questionBg)};` : ''}
           ${getBorderCss(questionBorder)}
-          ${questionBorderRadius ? `border-radius: ${questionBorderRadius};` : ''}
+          ${getBorderRadiusCss(questionBorderRadius)}
+        }
+
+        ${mainSl}.gbb-template-two-wapper .gbb-faq-item {
+          ${getBorderCss(questionBorder)}
         }
 
         ${question} {

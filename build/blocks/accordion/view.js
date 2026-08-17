@@ -460,8 +460,7 @@ const BackgroundControl = ({
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   DEFAULT_BORDER: () => (/* binding */ DEFAULT_BORDER),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   getBorderCss: () => (/* binding */ getBorderCss)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
@@ -481,23 +480,6 @@ const DEFAULT_BORDER = {
   style: 'solid',
   color: '',
   side: 'all'
-};
-const getBorderCss = border => {
-  if (!border || typeof border !== 'object') return '';
-  const {
-    width,
-    style,
-    color,
-    side
-  } = border;
-  if (!width) return '';
-  const borderValue = `${width} ${style || 'solid'} ${color || 'transparent'}`;
-  if (side === 'all' || !side) {
-    return `border: ${borderValue};`;
-  } else {
-    const sides = side.split('-');
-    return sides.map(s => `border-${s}: ${borderValue};`).join(' ');
-  }
 };
 const BorderControl = ({
   label = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border', 'guten-builder-blocks'),
@@ -3103,7 +3085,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   Typography: () => (/* reexport safe */ _Typography_Typography__WEBPACK_IMPORTED_MODULE_4__["default"]),
 /* harmony export */   UnitControl: () => (/* reexport safe */ _UnitControl_UnitControl__WEBPACK_IMPORTED_MODULE_8__["default"]),
 /* harmony export */   getBackgroundCss: () => (/* reexport safe */ _BackgroundControl_BackgroundControl__WEBPACK_IMPORTED_MODULE_5__.getBackgroundCss),
-/* harmony export */   getBorderCss: () => (/* reexport safe */ _BorderControl_BorderControl__WEBPACK_IMPORTED_MODULE_9__.getBorderCss),
 /* harmony export */   getGradientCss: () => (/* reexport safe */ _GradientControl_GradientControl__WEBPACK_IMPORTED_MODULE_6__.getGradientCss)
 /* harmony export */ });
 /* harmony import */ var _TemplateSelector_TemplateSelector__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TemplateSelector/TemplateSelector */ "../tr-tools/Components/TemplateSelector/TemplateSelector.jsx");
@@ -3157,7 +3138,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   UnitControl: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.UnitControl),
 /* harmony export */   emUnit: () => (/* reexport safe */ _utils__WEBPACK_IMPORTED_MODULE_1__.emUnit),
 /* harmony export */   getBackgroundCss: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss),
-/* harmony export */   getBorderCss: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.getBorderCss),
+/* harmony export */   getBorderCss: () => (/* reexport safe */ _utils__WEBPACK_IMPORTED_MODULE_1__.getBorderCss),
+/* harmony export */   getBorderRadiusCss: () => (/* reexport safe */ _utils__WEBPACK_IMPORTED_MODULE_1__.getBorderRadiusCss),
 /* harmony export */   getGradientCss: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.getGradientCss),
 /* harmony export */   getTypographyCss: () => (/* reexport safe */ _utils__WEBPACK_IMPORTED_MODULE_1__.getTypographyCss),
 /* harmony export */   loadGoogleFont: () => (/* reexport safe */ _utils__WEBPACK_IMPORTED_MODULE_1__.loadGoogleFont),
@@ -3182,6 +3164,8 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getBorderCss: () => (/* binding */ getBorderCss),
+/* harmony export */   getBorderRadiusCss: () => (/* binding */ getBorderRadiusCss),
 /* harmony export */   getTypographyCss: () => (/* binding */ getTypographyCss),
 /* harmony export */   loadGoogleFont: () => (/* binding */ loadGoogleFont)
 /* harmony export */ });
@@ -3283,6 +3267,40 @@ const getTypographyCss = (typo = {}, important = false) => {
   return styles.join("\n");
 };
 
+/**
+ * Helper function to generate CSS string for border radius
+ * @param {Object|string} radius - Border radius value object or string
+ * @returns {string} CSS border-radius string
+ */
+const getBorderRadiusCss = radius => {
+  if (!radius) return "";
+  if (typeof radius === "string") return `border-radius: ${radius};`;
+  return `border-radius: ${radius?.top || "0px"} ${radius?.right || "0px"} ${radius?.bottom || "0px"} ${radius?.left || "0px"};`;
+};
+
+/**
+ * Helper function to generate CSS string for border
+ * @param {Object} border - Border value object
+ * @returns {string} CSS border string
+ */
+const getBorderCss = border => {
+  if (!border || typeof border !== 'object') return '';
+  const {
+    width,
+    style,
+    color,
+    side
+  } = border;
+  if (!width) return '';
+  const borderValue = `${width} ${style || 'solid'} ${color || 'transparent'}`;
+  if (side === 'all' || !side) {
+    return `border: ${borderValue};`;
+  } else {
+    const sides = side.split('-');
+    return sides.map(s => `border-${s}: ${borderValue};`).join(' ');
+  }
+};
+
 /***/ },
 
 /***/ "../tr-tools/utils/index.js"
@@ -3294,6 +3312,8 @@ const getTypographyCss = (typo = {}, important = false) => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   emUnit: () => (/* reexport safe */ _options__WEBPACK_IMPORTED_MODULE_1__.emUnit),
+/* harmony export */   getBorderCss: () => (/* reexport safe */ _getCSS__WEBPACK_IMPORTED_MODULE_0__.getBorderCss),
+/* harmony export */   getBorderRadiusCss: () => (/* reexport safe */ _getCSS__WEBPACK_IMPORTED_MODULE_0__.getBorderRadiusCss),
 /* harmony export */   getTypographyCss: () => (/* reexport safe */ _getCSS__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss),
 /* harmony export */   loadGoogleFont: () => (/* reexport safe */ _getCSS__WEBPACK_IMPORTED_MODULE_0__.loadGoogleFont),
 /* harmony export */   perUnit: () => (/* reexport safe */ _options__WEBPACK_IMPORTED_MODULE_1__.perUnit),
@@ -3393,7 +3413,7 @@ const DynamicStyles = ({
     iconColor
   } = attributes || {};
   const mainSl = `#${id}`;
-  const wrapper = `${mainSl} .gbb-faq-wrapper`;
+  const wrapper = mainSl;
   const subtitle = `${wrapper} .gbb-faq-subtitle`;
   const title = `${wrapper} .gbb-faq-title`;
   const description = `${wrapper} .gbb-faq-description`;
@@ -3420,9 +3440,17 @@ const DynamicStyles = ({
         }
 
         ${header} {
+
+        }
+
+        ${mainSl}.gbb-template-one-wapper .gbb-faq-header {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(questionBg) ? `background: ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(questionBg)};` : ''}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderCss)(questionBorder)}
-          ${questionBorderRadius ? `border-radius: ${questionBorderRadius};` : ''}
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderRadiusCss)(questionBorderRadius)}
+        }
+
+        ${mainSl}.gbb-template-two-wapper .gbb-faq-item {
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderCss)(questionBorder)}
         }
 
         ${question} {
@@ -3568,7 +3596,7 @@ const TemplateOne = ({
     iconColor = ''
   } = attributes || {};
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-    className: "gbb-faq-wrapper gbb-template-one",
+    className: "gbb-template-one-wapper",
     id: id,
     children: [showHeader && (isEditor ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
@@ -3578,7 +3606,7 @@ const TemplateOne = ({
         onChange: val => setAttributes({
           subtitle: val
         }),
-        placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter Subtitle...', 'guten-builder-blocks')
+        placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your subtitle here', 'guten-builder-blocks')
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
         tagName: "h1",
         className: "gbb-faq-title",
@@ -3586,7 +3614,7 @@ const TemplateOne = ({
         onChange: val => setAttributes({
           title: val
         }),
-        placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter Title...', 'guten-builder-blocks')
+        placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your title here', 'guten-builder-blocks')
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
         tagName: "p",
         className: "gbb-faq-description",
@@ -3594,7 +3622,7 @@ const TemplateOne = ({
         onChange: val => setAttributes({
           description: val
         }),
-        placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter Description...', 'guten-builder-blocks')
+        placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your description here', 'guten-builder-blocks')
       })]
     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
       children: [subtitle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
@@ -3625,7 +3653,7 @@ const TemplateOne = ({
               value: faq.question,
               onChange: val => updateFaqQuestion(index, val),
               onClick: e => e.stopPropagation(),
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter Question...', 'guten-builder-blocks')
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your accordion Question here', 'guten-builder-blocks')
             }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
               tagName: "h2",
               className: "gbb-faq-question",
@@ -3637,7 +3665,7 @@ const TemplateOne = ({
             value: faq.answer,
             onChange: val => updateFaqAnswer(index, val),
             onClick: e => e.stopPropagation(),
-            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter Answer...', 'guten-builder-blocks')
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your accordion answer here ...', 'guten-builder-blocks')
           }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
             tagName: "p",
             className: `gbb-faq-answer ${isOpen ? 'is-open' : 'is-closed'}`,
@@ -3837,7 +3865,7 @@ const TemplateTwo = ({
     iconColor = ''
   } = attributes || {};
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-    className: "gbb-faq-wrapper-theme gbb-template-two",
+    className: "gbb-template-two-wapper",
     id: id,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "gbb-faq-container",
@@ -3849,7 +3877,7 @@ const TemplateTwo = ({
           onChange: val => setAttributes({
             subtitle: val
           }),
-          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter Subtitle...', 'guten-builder-blocks')
+          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your subtitle here', 'guten-builder-blocks')
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
           tagName: "h1",
           className: "gbb-faq-title",
@@ -3857,7 +3885,7 @@ const TemplateTwo = ({
           onChange: val => setAttributes({
             title: val
           }),
-          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter Title...', 'guten-builder-blocks')
+          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your title here', 'guten-builder-blocks')
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
           tagName: "p",
           className: "gbb-faq-description",
@@ -3865,7 +3893,7 @@ const TemplateTwo = ({
           onChange: val => setAttributes({
             description: val
           }),
-          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter Description...', 'guten-builder-blocks')
+          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your description here', 'guten-builder-blocks')
         })]
       }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
         children: [subtitle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
@@ -3894,7 +3922,7 @@ const TemplateTwo = ({
               value: faq.question,
               onChange: val => updateFaqQuestion(index, val),
               onClick: e => e.stopPropagation(),
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter Question...', 'guten-builder-blocks')
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your question here', 'guten-builder-blocks')
             }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
               tagName: "h3",
               className: "gbb-faq-question",
@@ -3902,14 +3930,14 @@ const TemplateTwo = ({
             }), iconPosition === 'right' && (0,_utils_functions__WEBPACK_IMPORTED_MODULE_2__.renderFaqIcon)(isOpen, iconType, iconSize, iconColor)]
           }), isEditor ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
             tagName: "p",
-            className: `gbb-faq-answer ${isOpen ? "is-open" : "is-closed"}`,
+            className: `gbb-faq-answer ${isOpen ? 'is-open' : 'is-closed'}`,
             value: faq.answer,
             onChange: val => updateFaqAnswer(index, val),
             onClick: e => e.stopPropagation(),
-            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter Answer...', 'guten-builder-blocks')
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your answer here', 'guten-builder-blocks')
           }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
             tagName: "p",
-            className: `gbb-faq-answer ${isOpen ? "is-open" : "is-closed"}`,
+            className: `gbb-faq-answer ${isOpen ? 'is-open' : 'is-closed'}`,
             value: faq.answer
           })]
         }, index);
