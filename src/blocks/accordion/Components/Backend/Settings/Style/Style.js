@@ -2,7 +2,7 @@ import { __ } from '@wordpress/i18n';
 import { PanelBody, __experimentalSpacer as Spacer } from '@wordpress/components';
 import { ColorControl, Typography, BackgroundControl, BorderControl, SpacingControl } from 'tr-tools';
 import { pxUnit, remUnit, emUnit, vwUnit, perUnit } from 'tr-tools/utils/options';
-import { defaultSubtitleTypo, defaultTitleTypo, defaultDescriptionTypo, defaultQuestionTypo, defaultAnswerTypo } from '../../../../../utils/options';
+import { defaultSubtitleTypo, defaultTitleTypo, defaultDescriptionTypo, defaultQuestionTypo, defaultAnswerTypo } from '../../../../utils/options';
 
 const Style = ({ attributes, setAttributes }) => {
   const { subtitleColor, subtitleTypography, titleColor, titleTypography, descriptionColor, descriptionTypography, questionBg = '#FFFFFF', questionBorder, questionBorderRadius, questionTypography, answerTypography, questionColor, answerColor, showHeader } = attributes;
