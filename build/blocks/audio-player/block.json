@@ -33,11 +33,11 @@
     },
     "labelText": {
       "type": "string",
-      "default": "Now Playing"
+      "default": ""
     },
     "text": {
       "type": "string",
-      "default": "Listen to Message"
+      "default": ""
     },
     "subtitle": {
       "type": "string",

@@ -25,8 +25,8 @@ const Edit = props => {
             title={templateData.title}
             subtitle={templateData.subtitle}
             templates={templateData.templates}
-            isPro={true}  //isPro prop ta set korle
-            proTemplates={['template-1', 'template-3']}
+            isPro={true} //akne freemius aer true/false jabe 
+            proTemplates={['template-3']}
           />
         </div>
       ) : (

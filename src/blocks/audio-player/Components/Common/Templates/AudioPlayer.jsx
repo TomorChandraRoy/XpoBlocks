@@ -4,7 +4,9 @@ import { useRef } from 'react';
 
 
 const AudioPlayer = ( { attributes, setAttributes, id } ) => {
-	const {blockId} = attributes;
+
+const { audioUrl = '', text = '', subtitle = '', coverUrl = '', labelText = '', preloadStrategy = 'metadata' } = attributes || {};
+
 const audioRef = useRef(null);
 
 	const [isPlaying, setIsPlaying] = useState(false);
@@ -12,9 +14,10 @@ const audioRef = useRef(null);
 	const [currentTime, setCurrentTime] = useState(0);
 	const [duration, setDuration] = useState(0);
 	const [volume, setVolume] = useState(1);
+	const prevVolumeRef = useRef(1);
 
 const togglePlay = () => {
-		if (!audioRef.current) return;
+		if (!audioRef.current || !audioUrl) return;
 
 		if (isPlaying) {
 			audioRef.current.pause();
@@ -62,6 +65,22 @@ const togglePlay = () => {
 		}
 	};
 
+	const toggleMute = () => {
+		if (volume > 0) {
+			prevVolumeRef.current = volume;
+			setVolume(0);
+			if (audioRef.current) {
+				audioRef.current.volume = 0;
+			}
+		} else {
+			const restoreVal = prevVolumeRef.current > 0 ? prevVolumeRef.current : 1;
+			setVolume(restoreVal);
+			if (audioRef.current) {
+				audioRef.current.volume = restoreVal;
+			}
+		}
+	};
+
 	const formatTime = (time) => {
 		if (!time || Number.isNaN(time)) {
 			return '00:00';
@@ -93,6 +112,19 @@ const togglePlay = () => {
 	}, []);
 
 	useEffect(() => {
+		if (!audioUrl) {
+			setIsPlaying(false);
+			setProgress(0);
+			setCurrentTime(0);
+			setDuration(0);
+			if (audioRef.current) {
+				audioRef.current.pause();
+			}
+		}
+	}, [audioUrl]);
+
+
+	useEffect(() => {
 		let animationFrameId;
 
 		const updateSmoothProgress = () => {
@@ -117,13 +149,7 @@ const togglePlay = () => {
 		};
 	}, [isPlaying]);
 
-	const {
-		audioUrl = '',
-		text = '',
-		subtitle = '',
-		coverUrl = '',
-		labelText = 'Now Playing'
-	} = attributes || {};
+
 
 	return (
 		<div className="gbb-audio-player-one">
@@ -135,7 +161,7 @@ const togglePlay = () => {
         </div>
 
         <div className="gbb-audio-player-one__content">
-          <span className="gbb-audio-player-one__label">{labelText}</span>
+          <span className="gbb-audio-player-one__label">{labelText || 'Now Playing'}</span>
 
           <h3 className="gbb-audio-player-one__title">{text || 'Your Audio Title'}</h3>
 
@@ -149,6 +175,7 @@ const togglePlay = () => {
               step="any"
               value={currentTime}
               onChange={handleProgressChange}
+              disabled={!audioUrl}
               style={{
                 '--progress': progress,
               }}
@@ -163,22 +190,50 @@ const togglePlay = () => {
       </div>
 
       <div className="gbb-audio-player-one__controls">
-        <button type="button" onClick={() => skipTime(-10)} aria-label="Backward 10 seconds">
+        <button type="button" onClick={() => skipTime(-10)} aria-label="Backward 10 seconds" disabled={!audioUrl}>
           ◀◀
         </button>
 
-        <button type="button" className="gbb-audio-player-one__play" onClick={togglePlay} aria-label="Play audio">
+        <button type="button" className="gbb-audio-player-one__play" onClick={togglePlay} aria-label="Play audio" disabled={!audioUrl}>
           {isPlaying ? '❚❚' : '▶'}
         </button>
 
-        <button type="button" onClick={() => skipTime(10)} aria-label="Forward 10 seconds">
+        <button type="button" onClick={() => skipTime(10)} aria-label="Forward 10 seconds" disabled={!audioUrl}>
           ▶▶
         </button>
 
         <div className="gbb-audio-player-one__volume">
-          <span>🔊</span>
+          <button
+            type="button"
+            onClick={toggleMute}
+            className="gbb-audio-player-one__mute-btn"
+            aria-label={volume > 0 ? 'Mute' : 'Unmute'}
+          >
+            {volume > 0 ? (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
+              </svg>
+            ) : (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                <line x1="23" y1="9" x2="17" y2="15" />
+                <line x1="17" y1="9" x2="23" y2="15" />
+              </svg>
+            )}
+          </button>
 
-          <input type="range" min="0" max="1" step="0.01" value={volume} onChange={handleVolumeChange} />
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value={volume}
+            onChange={handleVolumeChange}
+            style={{
+              '--volume-progress': volume * 100,
+            }}
+          />
         </div>
       </div>
     </div>

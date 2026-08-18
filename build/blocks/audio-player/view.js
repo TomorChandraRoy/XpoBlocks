@@ -91,16 +91,22 @@ const AudioPlayer = ({
   id
 }) => {
   const {
-    blockId
-  } = attributes;
+    audioUrl = '',
+    text = '',
+    subtitle = '',
+    coverUrl = '',
+    labelText = '',
+    preloadStrategy = 'metadata'
+  } = attributes || {};
   const audioRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
   const [isPlaying, setIsPlaying] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   const [progress, setProgress] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
   const [currentTime, setCurrentTime] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
   const [duration, setDuration] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
   const [volume, setVolume] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(1);
+  const prevVolumeRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(1);
   const togglePlay = () => {
-    if (!audioRef.current) return;
+    if (!audioRef.current || !audioUrl) return;
     if (isPlaying) {
       audioRef.current.pause();
     } else {
@@ -134,6 +140,21 @@ const AudioPlayer = ({
       audioRef.current.volume = value;
     }
   };
+  const toggleMute = () => {
+    if (volume > 0) {
+      prevVolumeRef.current = volume;
+      setVolume(0);
+      if (audioRef.current) {
+        audioRef.current.volume = 0;
+      }
+    } else {
+      const restoreVal = prevVolumeRef.current > 0 ? prevVolumeRef.current : 1;
+      setVolume(restoreVal);
+      if (audioRef.current) {
+        audioRef.current.volume = restoreVal;
+      }
+    }
+  };
   const formatTime = time => {
     if (!time || Number.isNaN(time)) {
       return '00:00';
@@ -155,6 +176,17 @@ const AudioPlayer = ({
     };
   }, []);
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    if (!audioUrl) {
+      setIsPlaying(false);
+      setProgress(0);
+      setCurrentTime(0);
+      setDuration(0);
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+    }
+  }, [audioUrl]);
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     let animationFrameId;
     const updateSmoothProgress = () => {
       if (audioRef.current && !audioRef.current.paused) {
@@ -175,13 +207,6 @@ const AudioPlayer = ({
       cancelAnimationFrame(animationFrameId);
     };
   }, [isPlaying]);
-  const {
-    audioUrl = '',
-    text = '',
-    subtitle = '',
-    coverUrl = '',
-    labelText = 'Now Playing'
-  } = attributes || {};
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     className: "gbb-audio-player-one",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("audio", {
@@ -200,7 +225,7 @@ const AudioPlayer = ({
         className: "gbb-audio-player-one__content",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
           className: "gbb-audio-player-one__label",
-          children: labelText
+          children: labelText || 'Now Playing'
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
           className: "gbb-audio-player-one__title",
           children: text || 'Your Audio Title'
@@ -216,6 +241,7 @@ const AudioPlayer = ({
             step: "any",
             value: currentTime,
             onChange: handleProgressChange,
+            disabled: !audioUrl,
             style: {
               '--progress': progress
             }
@@ -235,29 +261,75 @@ const AudioPlayer = ({
         type: "button",
         onClick: () => skipTime(-10),
         "aria-label": "Backward 10 seconds",
+        disabled: !audioUrl,
         children: "\u25C0\u25C0"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
         type: "button",
         className: "gbb-audio-player-one__play",
         onClick: togglePlay,
         "aria-label": "Play audio",
+        disabled: !audioUrl,
         children: isPlaying ? '❚❚' : '▶'
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
         type: "button",
         onClick: () => skipTime(10),
         "aria-label": "Forward 10 seconds",
+        disabled: !audioUrl,
         children: "\u25B6\u25B6"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "gbb-audio-player-one__volume",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-          children: "\uD83D\uDD0A"
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          type: "button",
+          onClick: toggleMute,
+          className: "gbb-audio-player-one__mute-btn",
+          "aria-label": volume > 0 ? 'Mute' : 'Unmute',
+          children: volume > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
+            width: "18",
+            height: "18",
+            viewBox: "0 0 24 24",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: "2.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("polygon", {
+              points: "11 5 6 9 2 9 2 15 6 15 11 19 11 5"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+              d: "M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"
+            })]
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
+            width: "18",
+            height: "18",
+            viewBox: "0 0 24 24",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: "2.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("polygon", {
+              points: "11 5 6 9 2 9 2 15 6 15 11 19 11 5"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
+              x1: "23",
+              y1: "9",
+              x2: "17",
+              y2: "15"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
+              x1: "17",
+              y1: "9",
+              x2: "23",
+              y2: "15"
+            })]
+          })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
           type: "range",
           min: "0",
           max: "1",
           step: "0.01",
           value: volume,
-          onChange: handleVolumeChange
+          onChange: handleVolumeChange,
+          style: {
+            '--volume-progress': volume * 100
+          }
         })]
       })]
     })]

@@ -1646,6 +1646,82 @@ const ItemsPanel = ({
 
 /***/ },
 
+/***/ "../tr-tools/Components/MediaControl/MediaControl.jsx"
+/*!************************************************************!*\
+  !*** ../tr-tools/Components/MediaControl/MediaControl.jsx ***!
+  \************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _MediaControl_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MediaControl.scss */ "../tr-tools/Components/MediaControl/MediaControl.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+const MediaControl = ({
+  label,
+  value,
+  onChange,
+  allowedTypes = ['audio'],
+  buttonLabel = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Upload / Select', 'tr-tools'),
+  help
+}) => {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    className: "gbb-media-control",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+      label: label,
+      value: value || '',
+      onChange: onChange,
+      placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Paste URL or select file...', 'tr-tools'),
+      help: help
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      className: "gbb-media-control__actions",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
+          onSelect: media => {
+            if (media && media.url) {
+              onChange(media.url);
+            }
+          },
+          allowedTypes: allowedTypes,
+          value: value,
+          render: ({
+            open
+          }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+            variant: "secondary",
+            isSmall: true,
+            onClick: open,
+            className: "gbb-media-control__upload-btn",
+            children: buttonLabel
+          })
+        })
+      }), value && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+        variant: "secondary",
+        isDestructive: true,
+        isSmall: true,
+        onClick: () => onChange(''),
+        className: "gbb-media-control__remove-btn",
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove', 'tr-tools')
+      })]
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MediaControl);
+
+/***/ },
+
 /***/ "../tr-tools/Components/SpacingControl/SpacingControl.js"
 /*!***************************************************************!*\
   !*** ../tr-tools/Components/SpacingControl/SpacingControl.js ***!
@@ -3079,6 +3155,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   DocsLink: () => (/* reexport safe */ _DocsLink_DocsLink__WEBPACK_IMPORTED_MODULE_11__["default"]),
 /* harmony export */   GradientControl: () => (/* reexport safe */ _GradientControl_GradientControl__WEBPACK_IMPORTED_MODULE_6__["default"]),
 /* harmony export */   ItemsPanel: () => (/* reexport safe */ _ItemsPanel_ItemsPanel__WEBPACK_IMPORTED_MODULE_1__["default"]),
+/* harmony export */   MediaControl: () => (/* reexport safe */ _MediaControl_MediaControl__WEBPACK_IMPORTED_MODULE_12__["default"]),
 /* harmony export */   SpacingControl: () => (/* reexport safe */ _SpacingControl_SpacingControl__WEBPACK_IMPORTED_MODULE_10__["default"]),
 /* harmony export */   TabButton: () => (/* reexport safe */ _TabButton_TabButton__WEBPACK_IMPORTED_MODULE_2__["default"]),
 /* harmony export */   TemplateSelector: () => (/* reexport safe */ _TemplateSelector_TemplateSelector__WEBPACK_IMPORTED_MODULE_0__["default"]),
@@ -3099,6 +3176,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _BorderControl_BorderControl__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./BorderControl/BorderControl */ "../tr-tools/Components/BorderControl/BorderControl.js");
 /* harmony import */ var _SpacingControl_SpacingControl__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./SpacingControl/SpacingControl */ "../tr-tools/Components/SpacingControl/SpacingControl.js");
 /* harmony import */ var _DocsLink_DocsLink__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./DocsLink/DocsLink */ "../tr-tools/Components/DocsLink/DocsLink.js");
+/* harmony import */ var _MediaControl_MediaControl__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./MediaControl/MediaControl */ "../tr-tools/Components/MediaControl/MediaControl.jsx");
+
 
 
 
@@ -3131,6 +3210,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   DocsLink: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.DocsLink),
 /* harmony export */   GradientControl: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.GradientControl),
 /* harmony export */   ItemsPanel: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.ItemsPanel),
+/* harmony export */   MediaControl: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.MediaControl),
 /* harmony export */   SpacingControl: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.SpacingControl),
 /* harmony export */   TabButton: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.TabButton),
 /* harmony export */   TemplateSelector: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.TemplateSelector),
@@ -3426,7 +3506,10 @@ const Edit = props => {
         setAttributes,
         title: _utils_data__WEBPACK_IMPORTED_MODULE_5__.templateData.title,
         subtitle: _utils_data__WEBPACK_IMPORTED_MODULE_5__.templateData.subtitle,
-        templates: _utils_data__WEBPACK_IMPORTED_MODULE_5__.templateData.templates
+        templates: _utils_data__WEBPACK_IMPORTED_MODULE_5__.templateData.templates,
+        isPro: true //isPro prop ta set korle
+        ,
+        proTemplates: ['template-1']
       })
     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
       ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)(),
@@ -3463,8 +3546,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var tr_tools__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tr-tools */ "../tr-tools/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+
 
 
 
@@ -3507,18 +3592,19 @@ const General = ({
     }
   }, [blockId, clientId, setAttributes]);
   const isCompact = playerLayout === 'compact';
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      className: "bPlPanelBody",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template Presets', 'guten-builder-blocks'),
       initialOpen: true,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
         style: {
           fontSize: '12px',
           color: '#64748b',
           marginBottom: '12px'
         },
         children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Switch or apply a predefined audio player template style.', 'guten-builder-blocks')
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
         isSecondary: true,
         onClick: () => setAttributes({
           selectedTemplate: ''
@@ -3529,255 +3615,51 @@ const General = ({
         },
         children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Change Template', 'guten-builder-blocks')
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('🎧 Audio Source & Media', 'guten-builder-blocks'),
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      className: "bPlPanelBody",
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Audio Source & Media', 'guten-builder-blocks'),
       initialOpen: false,
-      children: [audioUrl ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        style: {
-          marginBottom: '15px'
-        },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Audio URL', 'guten-builder-blocks'),
-          value: audioUrl,
-          onChange: val => setAttributes({
-            audioUrl: val
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-          variant: "secondary",
-          isDestructive: true,
-          onClick: () => setAttributes({
-            audioUrl: ''
-          }),
-          style: {
-            width: '100%',
-            justifyContent: 'center'
-          },
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove Audio', 'guten-builder-blocks')
-        })]
-      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaPlaceholder, {
-        accept: "audio/*",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_4__.MediaControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Audio Source / URL :', 'guten-builder-blocks'),
+        value: audioUrl,
+        onChange: val => setAttributes({
+          audioUrl: val
+        }),
         allowedTypes: ['audio'],
-        multiple: false,
-        labels: {
-          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Audio Source', 'guten-builder-blocks'),
-          instructions: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Upload an audio file or pick one from the library.', 'guten-builder-blocks')
-        },
-        onSelect: media => {
-          if (media && media.url) {
-            setAttributes({
-              audioUrl: media.url
-            });
-          }
-        }
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
-          onSelect: media => setAttributes({
-            coverUrl: media.url
-          }),
-          allowedTypes: ['image'],
-          value: coverUrl,
-          render: ({
-            open
-          }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-            variant: "secondary",
-            onClick: open,
-            style: {
-              width: '100%',
-              justifyContent: 'center'
-            },
-            children: coverUrl ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Change Cover Image', 'guten-builder-blocks') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Add Cover Image', 'guten-builder-blocks')
-          })
-        })
-      }), coverUrl && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-        variant: "link",
-        isDestructive: true,
-        onClick: () => setAttributes({
-          coverUrl: ''
+        buttonLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Upload / Select Audio', 'guten-builder-blocks'),
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Provide a direct audio file URL (e.g., ending with .mp3, .wav) or CDN/hosting link. Shared landing pages (like Jumpshare, Dropbox) will not work.', 'guten-builder-blocks')
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_4__.MediaControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Cover Image URL / Source :', 'guten-builder-blocks'),
+        value: coverUrl,
+        onChange: val => setAttributes({
+          coverUrl: val
         }),
-        style: {
-          marginTop: '5px'
-        },
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove Image', 'guten-builder-blocks')
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        style: {
-          marginTop: '20px'
-        },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Label Text', 'guten-builder-blocks'),
-          value: labelText,
-          onChange: val => setAttributes({
-            labelText: val
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Track Title', 'guten-builder-blocks'),
-          value: text,
-          onChange: val => setAttributes({
-            text: val
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Artist / Author', 'guten-builder-blocks'),
-          value: subtitle,
-          onChange: val => setAttributes({
-            subtitle: val
-          })
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        style: {
-          marginTop: '20px'
-        },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Preload Strategy', 'guten-builder-blocks'),
-          value: preloadStrategy,
-          options: [{
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Metadata Only (Recommended)', 'guten-builder-blocks'),
-            value: 'metadata'
-          }, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Auto (Load full file)', 'guten-builder-blocks'),
-            value: 'auto'
-          }, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('None (Do not load)', 'guten-builder-blocks'),
-            value: 'none'
-          }],
-          onChange: val => setAttributes({
-            preloadStrategy: val
-          }),
-          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Controls how much of the file the browser downloads automatically.', 'guten-builder-blocks')
-        })
+        allowedTypes: ['image'],
+        buttonLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Upload / Select Image', 'guten-builder-blocks'),
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Provide a direct image URL (e.g., ending with .jpg, .png, .webp) or CDN/hosting link.', 'guten-builder-blocks')
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('⚙️ Layout & Position', 'guten-builder-blocks'),
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      className: "bPlPanelBody",
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Track Information', 'guten-builder-blocks'),
       initialOpen: false,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Player Style', 'guten-builder-blocks'),
-        value: playerLayout,
-        options: [{
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Standard (Extended)', 'guten-builder-blocks'),
-          value: 'extended'
-        }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Compact (Circle)', 'guten-builder-blocks'),
-          value: 'compact'
-        }],
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Label Text :', 'guten-builder-blocks'),
+        value: labelText,
         onChange: val => setAttributes({
-          playerLayout: val
-        }),
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Extended bar or compact circle.', 'guten-builder-blocks')
-      }), isCompact && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Circle Size (px)', 'guten-builder-blocks'),
-        value: compactSize,
-        onChange: val => setAttributes({
-          compactSize: val
-        }),
-        min: 60,
-        max: 300,
-        step: 5,
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Diameter of the circle player.', 'guten-builder-blocks')
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Block Alignment', 'guten-builder-blocks'),
-        value: align,
-        options: [{
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Left', 'guten-builder-blocks'),
-          value: 'flex-start'
-        }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Center', 'guten-builder-blocks'),
-          value: 'center'
-        }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Right', 'guten-builder-blocks'),
-          value: 'flex-end'
-        }],
-        onChange: val => setAttributes({
-          align: val
-        }),
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Player position in the container.', 'guten-builder-blocks')
-      }), !isCompact && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Time Display Mode', 'guten-builder-blocks'),
-        value: timeDisplayMode,
-        options: [{
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Hidden', 'guten-builder-blocks'),
-          value: 'none'
-        }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Elapsed Time', 'guten-builder-blocks'),
-          value: 'elapsed'
-        }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remaining Time', 'guten-builder-blocks'),
-          value: 'remaining'
-        }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Total Duration', 'guten-builder-blocks'),
-          value: 'total'
-        }],
-        onChange: val => setAttributes({
-          timeDisplayMode: val
-        }),
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Shows current, remaining, or total play times.', 'guten-builder-blocks')
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('🧠 Engine Settings', 'guten-builder-blocks'),
-      initialOpen: false,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Show Animated Waveform', 'guten-builder-blocks'),
-        checked: showWaveform,
-        onChange: val => setAttributes({
-          showWaveform: val
-        }),
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Animated bars synced to audio.', 'guten-builder-blocks')
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enable Interactive Seekbar', 'guten-builder-blocks'),
-        checked: enableSeekbar,
-        onChange: val => setAttributes({
-          enableSeekbar: val
-        }),
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Click to jump to any position.', 'guten-builder-blocks')
-      }), !isCompact && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Show Volume Control', 'guten-builder-blocks'),
-        checked: enableVolume,
-        onChange: val => setAttributes({
-          enableVolume: val
-        }),
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Volume button and slider.', 'guten-builder-blocks')
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('📱 Visibility & Entrance', 'guten-builder-blocks'),
-      initialOpen: false,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Hide on Mobile', 'guten-builder-blocks'),
-        checked: hideOnMobile,
-        onChange: val => setAttributes({
-          hideOnMobile: val
+          labelText: val
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Hide on Desktop', 'guten-builder-blocks'),
-        checked: hideOnDesktop,
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Track Title :', 'guten-builder-blocks'),
+        value: text,
         onChange: val => setAttributes({
-          hideOnDesktop: val
+          text: val
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Entrance Animation', 'guten-builder-blocks'),
-        value: entranceAnimation,
-        options: [{
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('None', 'guten-builder-blocks'),
-          value: 'none'
-        }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Fade In', 'guten-builder-blocks'),
-          value: 'fade'
-        }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Slide Up', 'guten-builder-blocks'),
-          value: 'slide'
-        }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Zoom In', 'guten-builder-blocks'),
-          value: 'zoom'
-        }],
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Artist / Author :', 'guten-builder-blocks'),
+        value: subtitle,
         onChange: val => setAttributes({
-          entranceAnimation: val
+          subtitle: val
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Animation Delay (s)', 'guten-builder-blocks'),
-        value: entranceDelay,
-        onChange: val => setAttributes({
-          entranceDelay: val
-        }),
-        min: 0,
-        max: 2,
-        step: 0.1,
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Delays the entrance animation on page load.', 'guten-builder-blocks')
       })]
     })]
   });
@@ -4103,16 +3985,22 @@ const AudioPlayer = ({
   id
 }) => {
   const {
-    blockId
-  } = attributes;
+    audioUrl = '',
+    text = '',
+    subtitle = '',
+    coverUrl = '',
+    labelText = '',
+    preloadStrategy = 'metadata'
+  } = attributes || {};
   const audioRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
   const [isPlaying, setIsPlaying] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   const [progress, setProgress] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
   const [currentTime, setCurrentTime] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
   const [duration, setDuration] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
   const [volume, setVolume] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(1);
+  const prevVolumeRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(1);
   const togglePlay = () => {
-    if (!audioRef.current) return;
+    if (!audioRef.current || !audioUrl) return;
     if (isPlaying) {
       audioRef.current.pause();
     } else {
@@ -4146,6 +4034,21 @@ const AudioPlayer = ({
       audioRef.current.volume = value;
     }
   };
+  const toggleMute = () => {
+    if (volume > 0) {
+      prevVolumeRef.current = volume;
+      setVolume(0);
+      if (audioRef.current) {
+        audioRef.current.volume = 0;
+      }
+    } else {
+      const restoreVal = prevVolumeRef.current > 0 ? prevVolumeRef.current : 1;
+      setVolume(restoreVal);
+      if (audioRef.current) {
+        audioRef.current.volume = restoreVal;
+      }
+    }
+  };
   const formatTime = time => {
     if (!time || Number.isNaN(time)) {
       return '00:00';
@@ -4167,6 +4070,17 @@ const AudioPlayer = ({
     };
   }, []);
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    if (!audioUrl) {
+      setIsPlaying(false);
+      setProgress(0);
+      setCurrentTime(0);
+      setDuration(0);
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+    }
+  }, [audioUrl]);
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     let animationFrameId;
     const updateSmoothProgress = () => {
       if (audioRef.current && !audioRef.current.paused) {
@@ -4187,13 +4101,6 @@ const AudioPlayer = ({
       cancelAnimationFrame(animationFrameId);
     };
   }, [isPlaying]);
-  const {
-    audioUrl = '',
-    text = '',
-    subtitle = '',
-    coverUrl = '',
-    labelText = 'Now Playing'
-  } = attributes || {};
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     className: "gbb-audio-player-one",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("audio", {
@@ -4212,7 +4119,7 @@ const AudioPlayer = ({
         className: "gbb-audio-player-one__content",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
           className: "gbb-audio-player-one__label",
-          children: labelText
+          children: labelText || 'Now Playing'
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
           className: "gbb-audio-player-one__title",
           children: text || 'Your Audio Title'
@@ -4228,6 +4135,7 @@ const AudioPlayer = ({
             step: "any",
             value: currentTime,
             onChange: handleProgressChange,
+            disabled: !audioUrl,
             style: {
               '--progress': progress
             }
@@ -4247,29 +4155,75 @@ const AudioPlayer = ({
         type: "button",
         onClick: () => skipTime(-10),
         "aria-label": "Backward 10 seconds",
+        disabled: !audioUrl,
         children: "\u25C0\u25C0"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
         type: "button",
         className: "gbb-audio-player-one__play",
         onClick: togglePlay,
         "aria-label": "Play audio",
+        disabled: !audioUrl,
         children: isPlaying ? '❚❚' : '▶'
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
         type: "button",
         onClick: () => skipTime(10),
         "aria-label": "Forward 10 seconds",
+        disabled: !audioUrl,
         children: "\u25B6\u25B6"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "gbb-audio-player-one__volume",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-          children: "\uD83D\uDD0A"
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          type: "button",
+          onClick: toggleMute,
+          className: "gbb-audio-player-one__mute-btn",
+          "aria-label": volume > 0 ? 'Mute' : 'Unmute',
+          children: volume > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
+            width: "18",
+            height: "18",
+            viewBox: "0 0 24 24",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: "2.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("polygon", {
+              points: "11 5 6 9 2 9 2 15 6 15 11 19 11 5"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+              d: "M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"
+            })]
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
+            width: "18",
+            height: "18",
+            viewBox: "0 0 24 24",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: "2.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("polygon", {
+              points: "11 5 6 9 2 9 2 15 6 15 11 19 11 5"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
+              x1: "23",
+              y1: "9",
+              x2: "17",
+              y2: "15"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
+              x1: "17",
+              y1: "9",
+              x2: "23",
+              y2: "15"
+            })]
+          })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
           type: "range",
           min: "0",
           max: "1",
           step: "0.01",
           value: volume,
-          onChange: handleVolumeChange
+          onChange: handleVolumeChange,
+          style: {
+            '--volume-progress': volume * 100
+          }
         })]
       })]
     })]
@@ -4496,7 +4450,7 @@ const templateData = {
     tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Modern Audio Card', 'guten-builder-blocks'),
     icon: TemplateOneSvg,
     attributes: {
-      labelText: 'Now Playing'
+      labelText: ''
     }
   }]
 };
@@ -4767,6 +4721,18 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ },
 
+/***/ "../tr-tools/Components/MediaControl/MediaControl.scss"
+/*!*************************************************************!*\
+  !*** ../tr-tools/Components/MediaControl/MediaControl.scss ***!
+  \*************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
 /***/ "../tr-tools/Components/SpacingControl/SpacingControl.scss"
 /*!*****************************************************************!*\
   !*** ../tr-tools/Components/SpacingControl/SpacingControl.scss ***!
@@ -4927,7 +4893,7 @@ module.exports = window["wp"]["i18n"];
   \********************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/audio-player","version":"1.0.0","title":"Audio Player","description":"Ultra-optimized Gutenberg audio player with seek controls and accessible playback UI.","category":"guten-builder","keywords":["audio player","audio","music player","podcast","sound","media player"],"textdomain":"guten-builder-blocks","attributes":{"blockId":{"type":"string","default":""},"selectedTemplate":{"type":"string","default":""},"audioUrl":{"type":"string","default":""},"coverUrl":{"type":"string","default":""},"labelText":{"type":"string","default":"Now Playing"},"text":{"type":"string","default":"Listen to Message"},"subtitle":{"type":"string","default":""}},"supports":{"html":false,"anchor":true,"align":["wide","full"]},"editorScript":"file:./index.js","viewScript":"file:./view.js","style":"file:./style-view.css","editorStyle":"file:./index.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/audio-player","version":"1.0.0","title":"Audio Player","description":"Ultra-optimized Gutenberg audio player with seek controls and accessible playback UI.","category":"guten-builder","keywords":["audio player","audio","music player","podcast","sound","media player"],"textdomain":"guten-builder-blocks","attributes":{"blockId":{"type":"string","default":""},"selectedTemplate":{"type":"string","default":""},"audioUrl":{"type":"string","default":""},"coverUrl":{"type":"string","default":""},"labelText":{"type":"string","default":""},"text":{"type":"string","default":""},"subtitle":{"type":"string","default":""}},"supports":{"html":false,"anchor":true,"align":["wide","full"]},"editorScript":"file:./index.js","viewScript":"file:./view.js","style":"file:./style-view.css","editorStyle":"file:./index.css","render":"file:./render.php"}');
 
 /***/ }
 

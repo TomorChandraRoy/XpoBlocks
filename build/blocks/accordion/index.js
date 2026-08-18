@@ -1646,6 +1646,82 @@ const ItemsPanel = ({
 
 /***/ },
 
+/***/ "../tr-tools/Components/MediaControl/MediaControl.jsx"
+/*!************************************************************!*\
+  !*** ../tr-tools/Components/MediaControl/MediaControl.jsx ***!
+  \************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _MediaControl_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MediaControl.scss */ "../tr-tools/Components/MediaControl/MediaControl.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+const MediaControl = ({
+  label,
+  value,
+  onChange,
+  allowedTypes = ['audio'],
+  buttonLabel = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Upload / Select', 'tr-tools'),
+  help
+}) => {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    className: "gbb-media-control",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+      label: label,
+      value: value || '',
+      onChange: onChange,
+      placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Paste URL or select file...', 'tr-tools'),
+      help: help
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      className: "gbb-media-control__actions",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
+          onSelect: media => {
+            if (media && media.url) {
+              onChange(media.url);
+            }
+          },
+          allowedTypes: allowedTypes,
+          value: value,
+          render: ({
+            open
+          }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+            variant: "secondary",
+            isSmall: true,
+            onClick: open,
+            className: "gbb-media-control__upload-btn",
+            children: buttonLabel
+          })
+        })
+      }), value && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+        variant: "secondary",
+        isDestructive: true,
+        isSmall: true,
+        onClick: () => onChange(''),
+        className: "gbb-media-control__remove-btn",
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove', 'tr-tools')
+      })]
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MediaControl);
+
+/***/ },
+
 /***/ "../tr-tools/Components/SpacingControl/SpacingControl.js"
 /*!***************************************************************!*\
   !*** ../tr-tools/Components/SpacingControl/SpacingControl.js ***!
@@ -3079,6 +3155,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   DocsLink: () => (/* reexport safe */ _DocsLink_DocsLink__WEBPACK_IMPORTED_MODULE_11__["default"]),
 /* harmony export */   GradientControl: () => (/* reexport safe */ _GradientControl_GradientControl__WEBPACK_IMPORTED_MODULE_6__["default"]),
 /* harmony export */   ItemsPanel: () => (/* reexport safe */ _ItemsPanel_ItemsPanel__WEBPACK_IMPORTED_MODULE_1__["default"]),
+/* harmony export */   MediaControl: () => (/* reexport safe */ _MediaControl_MediaControl__WEBPACK_IMPORTED_MODULE_12__["default"]),
 /* harmony export */   SpacingControl: () => (/* reexport safe */ _SpacingControl_SpacingControl__WEBPACK_IMPORTED_MODULE_10__["default"]),
 /* harmony export */   TabButton: () => (/* reexport safe */ _TabButton_TabButton__WEBPACK_IMPORTED_MODULE_2__["default"]),
 /* harmony export */   TemplateSelector: () => (/* reexport safe */ _TemplateSelector_TemplateSelector__WEBPACK_IMPORTED_MODULE_0__["default"]),
@@ -3099,6 +3176,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _BorderControl_BorderControl__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./BorderControl/BorderControl */ "../tr-tools/Components/BorderControl/BorderControl.js");
 /* harmony import */ var _SpacingControl_SpacingControl__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./SpacingControl/SpacingControl */ "../tr-tools/Components/SpacingControl/SpacingControl.js");
 /* harmony import */ var _DocsLink_DocsLink__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./DocsLink/DocsLink */ "../tr-tools/Components/DocsLink/DocsLink.js");
+/* harmony import */ var _MediaControl_MediaControl__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./MediaControl/MediaControl */ "../tr-tools/Components/MediaControl/MediaControl.jsx");
+
 
 
 
@@ -3131,6 +3210,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   DocsLink: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.DocsLink),
 /* harmony export */   GradientControl: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.GradientControl),
 /* harmony export */   ItemsPanel: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.ItemsPanel),
+/* harmony export */   MediaControl: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.MediaControl),
 /* harmony export */   SpacingControl: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.SpacingControl),
 /* harmony export */   TabButton: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.TabButton),
 /* harmony export */   TemplateSelector: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.TemplateSelector),
@@ -3428,9 +3508,9 @@ const Edit = props => {
         title: _utils_data__WEBPACK_IMPORTED_MODULE_5__.templateData.title,
         subtitle: _utils_data__WEBPACK_IMPORTED_MODULE_5__.templateData.subtitle,
         templates: _utils_data__WEBPACK_IMPORTED_MODULE_5__.templateData.templates,
-        isPro: true //isPro prop ta set korle
+        isPro: true //akne freemius aer true/false jabe 
         ,
-        proTemplates: ['template-1', 'template-3']
+        proTemplates: ['template-3']
       })
     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
       ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)(),
@@ -4959,7 +5039,6 @@ const templateData = {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template 3', 'guten-builder-blocks'),
     tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('FAQ Gradient', 'guten-builder-blocks'),
     icon: TemplateThreeSvg,
-    isPro: true,
     attributes: {
       iconType: 'chevron',
       iconPosition: 'right',
@@ -5361,6 +5440,18 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************************************************!*\
   !*** ../tr-tools/Components/ItemsPanel/ItemsPanel.scss ***!
   \*********************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "../tr-tools/Components/MediaControl/MediaControl.scss"
+/*!*************************************************************!*\
+  !*** ../tr-tools/Components/MediaControl/MediaControl.scss ***!
+  \*************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);

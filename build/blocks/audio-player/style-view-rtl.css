@@ -59,7 +59,11 @@
   cursor: pointer;
   appearance: none;
   border-radius: 10px;
-  background: linear-gradient(to left, #111827 calc(7px + var(--progress) * 1% - 14px * var(--progress) / 100), #e5e7eb calc(7px + var(--progress) * 1% - 14px * var(--progress) / 100));
+  background: linear-gradient(to left, #F62477 calc(7px + var(--progress) * 1% - 14px * var(--progress) / 100), #e5e7eb calc(7px + var(--progress) * 1% - 14px * var(--progress) / 100));
+}
+.wp-block-guten-builder-blocks-audio-player .gbb-audio-player-one__progress input:focus {
+  outline: none;
+  box-shadow: none;
 }
 .wp-block-guten-builder-blocks-audio-player .gbb-audio-player-one__progress input::-webkit-slider-thumb {
   width: 14px;
@@ -67,7 +71,7 @@
   appearance: none;
   border: 0;
   border-radius: 50%;
-  background: #111827;
+  background: #F62477;
   cursor: pointer;
 }
 .wp-block-guten-builder-blocks-audio-player .gbb-audio-player-one__progress input::-moz-range-thumb {
@@ -75,7 +79,7 @@
   height: 14px;
   border: 0;
   border-radius: 50%;
-  background: #111827;
+  background: #F62477;
   cursor: pointer;
 }
 .wp-block-guten-builder-blocks-audio-player .gbb-audio-player-one__time {
@@ -101,20 +105,51 @@
   padding: 0;
   border: 0;
   background: transparent;
-  color: #111827;
+  color: #F62477;
   font-size: 18px;
   cursor: pointer;
+}
+.wp-block-guten-builder-blocks-audio-player .gbb-audio-player-one__controls button:focus {
+  outline: none;
+  box-shadow: none;
+}
+.wp-block-guten-builder-blocks-audio-player .gbb-audio-player-one__controls button:disabled {
+  color: #d1d5db;
+  cursor: not-allowed;
 }
 .wp-block-guten-builder-blocks-audio-player .gbb-audio-player-one__play {
   width: 52px !important;
   height: 52px !important;
   border-radius: 50% !important;
-  background: #111827 !important;
+  background: #F62477 !important;
   color: #ffffff !important;
   font-size: 20px !important;
 }
-.wp-block-guten-builder-blocks-audio-player .gbb-audio-player-one__play:hover {
+.wp-block-guten-builder-blocks-audio-player .gbb-audio-player-one__play:hover:not(:disabled) {
   transform: scale(1.05);
+}
+.wp-block-guten-builder-blocks-audio-player .gbb-audio-player-one__play:disabled {
+  background: #e5e7eb !important;
+  color: #9ca3af !important;
+  cursor: not-allowed;
+}
+.wp-block-guten-builder-blocks-audio-player .gbb-audio-player-one__mute-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #F62477;
+  transition: transform 0.2s ease;
+}
+.wp-block-guten-builder-blocks-audio-player .gbb-audio-player-one__mute-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+.wp-block-guten-builder-blocks-audio-player .gbb-audio-player-one__mute-btn:hover {
+  transform: scale(1.1);
 }
 .wp-block-guten-builder-blocks-audio-player .gbb-audio-player-one__volume {
   display: flex;
@@ -122,11 +157,34 @@
   gap: 8px;
   margin-right: 10px;
 }
-.wp-block-guten-builder-blocks-audio-player .gbb-audio-player-one__volume span {
-  font-size: 18px;
-}
 .wp-block-guten-builder-blocks-audio-player .gbb-audio-player-one__volume input {
   width: 80px;
+  height: 6px;
+  margin: 0;
+  cursor: pointer;
+  appearance: none;
+  border-radius: 10px;
+  background: linear-gradient(to left, #F62477 calc(6px + var(--volume-progress) * 1% - 12px * var(--volume-progress) / 100), #e5e7eb calc(6px + var(--volume-progress) * 1% - 12px * var(--volume-progress) / 100));
+}
+.wp-block-guten-builder-blocks-audio-player .gbb-audio-player-one__volume input:focus {
+  outline: none;
+  box-shadow: none;
+}
+.wp-block-guten-builder-blocks-audio-player .gbb-audio-player-one__volume input::-webkit-slider-thumb {
+  width: 12px;
+  height: 12px;
+  appearance: none;
+  border: 0;
+  border-radius: 50%;
+  background: #F62477;
+  cursor: pointer;
+}
+.wp-block-guten-builder-blocks-audio-player .gbb-audio-player-one__volume input::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: 0;
+  border-radius: 50%;
+  background: #F62477;
   cursor: pointer;
 }
 @media (max-width: 600px) {

@@ -2012,3 +2012,21 @@
 .gbb-inspector-docs-wrapper a svg {
   margin-right: 4px;
 }
+/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!../tr-tools/Components/MediaControl/MediaControl.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************/
+.gbb-media-control {
+  margin-bottom: 20px;
+}
+.gbb-media-control .components-base-control {
+  margin-bottom: 8px;
+}
+.gbb-media-control .gbb-media-control__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.gbb-media-control .gbb-media-control__actions .components-button {
+  height: 30px;
+  line-height: 1;
+}

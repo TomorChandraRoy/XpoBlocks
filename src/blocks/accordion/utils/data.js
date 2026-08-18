@@ -311,7 +311,6 @@ export const templateData = {
       label: __('Template 3', 'guten-builder-blocks'),
       tag: __('FAQ Gradient', 'guten-builder-blocks'),
       icon: TemplateThreeSvg,
-      isPro: true,
       attributes: {
         iconType: 'chevron',
         iconPosition: 'right',
