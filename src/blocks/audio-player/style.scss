@@ -67,8 +67,8 @@
 			border-radius: 10px;
 			background: linear-gradient(
 				to right,
-				#111827 var(--progress),
-				#e5e7eb var(--progress)
+				#111827 calc(7px + var(--progress) * 1% - 14px * var(--progress) / 100),
+				#e5e7eb calc(7px + var(--progress) * 1% - 14px * var(--progress) / 100)
 			);
 
 			&::-webkit-slider-thumb {

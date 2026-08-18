@@ -1,5 +1,3 @@
-import { __ } from '@wordpress/i18n';
-import { RichText } from '@wordpress/block-editor';
 import { useState, useEffect } from '@wordpress/element';
 import { useRef } from 'react';
 
@@ -43,10 +41,9 @@ const togglePlay = () => {
 
 		if (!audioRef.current || !duration) return;
 
-		const newTime = (value / 100) * duration;
-
-		audioRef.current.currentTime = newTime;
-		setProgress(value);
+		audioRef.current.currentTime = value;
+		setCurrentTime(value);
+		setProgress((value / duration) * 100 || 0);
 	};
 
 	const skipTime = (seconds) => {
@@ -130,7 +127,7 @@ const togglePlay = () => {
 
 	return (
 		<div className="gbb-audio-player-one">
-			<audio ref={audioRef} src={audioUrl || "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"} onLoadedMetadata={updateProgress} />
+			<audio ref={audioRef} src={audioUrl} onLoadedMetadata={updateProgress} />
 
       <div className="gbb-audio-player-one__top">
         <div className="gbb-audio-player-one__cover">
@@ -148,11 +145,12 @@ const togglePlay = () => {
             <input
               type="range"
               min="0"
-              max="100"
-              value={progress}
+              max={duration || 100}
+              step="any"
+              value={currentTime}
               onChange={handleProgressChange}
               style={{
-                '--progress': `${progress}%`,
+                '--progress': progress,
               }}
             />
           </div>

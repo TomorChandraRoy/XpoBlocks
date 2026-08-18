@@ -1,1 +1,553 @@
-(()=>{"use strict";var e={289(){const e=window.ReactDOM,t=window.ReactJSXRuntime,n=({attributes:e,id:n})=>{const{playerLayout:r="extended",compactSize:a=160,enableSeekbar:s=!1,bgColor:o="#111111",textColor:i="#ffffff",accentColor:c="var(--gbb-ap-accent, #10b981)",progressColor:l="rgba(255,255,255,0.15)",borderRadius:u=50,paddingV:d=16,paddingH:b=32,align:p="center"}=e||{},g="compact"===r,m=`#${n}`,x=`${m} .gbb-ap-button`;return(0,t.jsx)("style",{dangerouslySetInnerHTML:{__html:`\n        ${m} {\n          display: flex;\n          justify-content: ${p};\n          align-items: center;\n          width: 100%;\n        }\n\n        ${x} {\n          --gbb-ap-bg: ${o};\n          --gbb-ap-text: ${i};\n          --gbb-ap-accent: ${c};\n          --gbb-ap-progress: ${s?l:"transparent"};\n          --gbb-ap-br: ${g?"50%":`${u}px`};\n          --gbb-ap-pad-v: ${g?"0px":`${d}px`};\n          --gbb-ap-pad-h: ${g?"0px":`${b}px`};\n          --gbb-ap-width: ${g?`${a}px`:"auto"};\n          --gbb-ap-height: ${g?`${a}px`:"auto"};\n          --gbb-ap-jc: ${g?"center":"flex-start"};\n        }\n        `}})},r=(window.wp.i18n,window.wp.blockEditor,window.wp.element),a=window.React,s=({attributes:e,setAttributes:n,id:s})=>{const{blockId:o}=e,i=(0,a.useRef)(null),[c,l]=(0,r.useState)(!1),[u,d]=(0,r.useState)(0),[b,p]=(0,r.useState)(0),[g,m]=(0,r.useState)(0),[x,h]=(0,r.useState)(1),f=e=>{i.current&&(i.current.currentTime+=e)},v=e=>{if(!e||Number.isNaN(e))return"00:00";const t=Math.floor(e/60),n=Math.floor(e%60);return`${String(t).padStart(2,"0")}:${String(n).padStart(2,"0")}`};(0,r.useEffect)((()=>{const e=i.current;if(!e)return;const t=()=>{l(!1),d(0)};return e.addEventListener("ended",t),()=>{e.removeEventListener("ended",t)}}),[]),(0,r.useEffect)((()=>{let e;const t=()=>{if(i.current&&!i.current.paused){const n=i.current.currentTime,r=i.current.duration||0;p(n),m(r),d(n/r*100||0),e=requestAnimationFrame(t)}};return c?e=requestAnimationFrame(t):cancelAnimationFrame(e),()=>{cancelAnimationFrame(e)}}),[c]);const{audioUrl:y="",text:j="",subtitle:w="",coverUrl:_="",labelText:$="Now Playing"}=e||{};return(0,t.jsxs)("div",{className:"gbb-audio-player-one",children:[(0,t.jsx)("audio",{ref:i,src:y||"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",onLoadedMetadata:()=>{if(!i.current)return;const e=i.current.currentTime,t=i.current.duration||0;p(e),m(t),d(e/t*100||0)}}),(0,t.jsxs)("div",{className:"gbb-audio-player-one__top",children:[(0,t.jsx)("div",{className:"gbb-audio-player-one__cover",children:(0,t.jsx)("img",{src:_||"https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f",alt:"Audio Cover"})}),(0,t.jsxs)("div",{className:"gbb-audio-player-one__content",children:[(0,t.jsx)("span",{className:"gbb-audio-player-one__label",children:$}),(0,t.jsx)("h3",{className:"gbb-audio-player-one__title",children:j||"Your Audio Title"}),(0,t.jsx)("p",{className:"gbb-audio-player-one__artist",children:w||"Artist / Author Name"}),(0,t.jsx)("div",{className:"gbb-audio-player-one__progress",children:(0,t.jsx)("input",{type:"range",min:"0",max:"100",value:u,onChange:e=>{const t=Number(e.target.value);if(!i.current||!g)return;const n=t/100*g;i.current.currentTime=n,d(t)},style:{"--progress":`${u}%`}})}),(0,t.jsxs)("div",{className:"gbb-audio-player-one__time",children:[(0,t.jsx)("span",{children:v(b)}),(0,t.jsx)("span",{children:v(g)})]})]})]}),(0,t.jsxs)("div",{className:"gbb-audio-player-one__controls",children:[(0,t.jsx)("button",{type:"button",onClick:()=>f(-10),"aria-label":"Backward 10 seconds",children:"◀◀"}),(0,t.jsx)("button",{type:"button",className:"gbb-audio-player-one__play",onClick:()=>{i.current&&(c?i.current.pause():i.current.play(),l(!c))},"aria-label":"Play audio",children:c?"❚❚":"▶"}),(0,t.jsx)("button",{type:"button",onClick:()=>f(10),"aria-label":"Forward 10 seconds",children:"▶▶"}),(0,t.jsxs)("div",{className:"gbb-audio-player-one__volume",children:[(0,t.jsx)("span",{children:"🔊"}),(0,t.jsx)("input",{type:"range",min:"0",max:"1",step:"0.01",value:x,onChange:e=>{const t=Number(e.target.value);h(t),i.current&&(i.current.volume=t)}})]})]})]})};document.addEventListener("DOMContentLoaded",(()=>{document.querySelectorAll(".wp-block-guten-builder-blocks-audio-player").forEach((r=>{if(r.dataset.initialized)return;r.dataset.initialized="true";const a=JSON.parse(r.dataset.attributes);(0,e.createRoot)(r).render((0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)(n,{attributes:a,id:r.id}),(0,t.jsx)(s,{attributes:a,id:r.id})]})),r?.removeAttribute("data-attributes")}))}))}};const t={};function n(r){const a=t[r];if(void 0!==a)return a.exports;const s=t[r]={exports:{}};return e[r](s,s.exports,n),s.exports}n.m=e,(()=>{const e=[];n.O=(t,r,a,s)=>{if(r){s=s||0;for(var o=e.length;o>0&&e[o-1][2]>s;o--)e[o]=e[o-1];return void(e[o]=[r,a,s])}let i=1/0;for(o=0;o<e.length;o++){let[r,a,s]=e[o],l=!0;for(var c=0;c<r.length;c++)(!1&s||i>=s)&&Object.keys(n.O).every((e=>n.O[e](r[c])))?r.splice(c--,1):(l=!1,s<i&&(i=s));if(l){e.splice(o--,1);const n=a();void 0!==n&&(t=n)}}return t}})(),n.o=(e,t)=>Object.hasOwn(e,t),(()=>{const e={492:0,296:0};n.O.j=t=>0===e[t];const t=(t,r)=>{let[a,s,o]=r;var i,c,l=0;if(a.some((t=>0!==e[t]))){for(i in s)n.o(s,i)&&(n.m[i]=s[i]);if(o)var u=o(n)}for(t&&t(r);l<a.length;l++)c=a[l],n.o(e,c)&&e[c]&&e[c][0](),e[c]=0;return n.O(u)},r=globalThis.webpackChunkguten_builder_blocks||=[];r.forEach(t.bind(null,0)),r.push=t.bind(null,r.push.bind(r))})();let r=n.O(void 0,[296],(()=>n(289)));r=n.O(r)})();
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/blocks/audio-player/Components/Common/DynamicStyles.js"
+/*!********************************************************************!*\
+  !*** ./src/blocks/audio-player/Components/Common/DynamicStyles.js ***!
+  \********************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+
+const DynamicStyles = ({
+  attributes,
+  id
+}) => {
+  const {
+    playerLayout = 'extended',
+    compactSize = 160,
+    enableSeekbar = false,
+    bgColor = '#111111',
+    textColor = '#ffffff',
+    accentColor = 'var(--gbb-ap-accent, #10b981)',
+    progressColor = 'rgba(255,255,255,0.15)',
+    borderRadius = 50,
+    paddingV = 16,
+    paddingH = 32,
+    align = 'center'
+  } = attributes || {};
+  const isCompact = playerLayout === 'compact';
+  const mainSl = `#${id}`;
+  const wrapper = mainSl;
+  const button = `${wrapper} .gbb-ap-button`;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("style", {
+    dangerouslySetInnerHTML: {
+      __html: `
+        ${wrapper} {
+          display: flex;
+          justify-content: ${align};
+          align-items: center;
+          width: 100%;
+        }
+
+        ${button} {
+          --gbb-ap-bg: ${bgColor};
+          --gbb-ap-text: ${textColor};
+          --gbb-ap-accent: ${accentColor};
+          --gbb-ap-progress: ${enableSeekbar ? progressColor : 'transparent'};
+          --gbb-ap-br: ${isCompact ? '50%' : `${borderRadius}px`};
+          --gbb-ap-pad-v: ${isCompact ? '0px' : `${paddingV}px`};
+          --gbb-ap-pad-h: ${isCompact ? '0px' : `${paddingH}px`};
+          --gbb-ap-width: ${isCompact ? `${compactSize}px` : 'auto'};
+          --gbb-ap-height: ${isCompact ? `${compactSize}px` : 'auto'};
+          --gbb-ap-jc: ${isCompact ? 'center' : 'flex-start'};
+        }
+        `
+    }
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DynamicStyles);
+
+/***/ },
+
+/***/ "./src/blocks/audio-player/Components/Common/Templates/AudioPlayer.jsx"
+/*!*****************************************************************************!*\
+  !*** ./src/blocks/audio-player/Components/Common/Templates/AudioPlayer.jsx ***!
+  \*****************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+const AudioPlayer = ({
+  attributes,
+  setAttributes,
+  id
+}) => {
+  const {
+    blockId
+  } = attributes;
+  const audioRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
+  const [isPlaying, setIsPlaying] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const [progress, setProgress] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
+  const [currentTime, setCurrentTime] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
+  const [duration, setDuration] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
+  const [volume, setVolume] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(1);
+  const togglePlay = () => {
+    if (!audioRef.current) return;
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+  const updateProgress = () => {
+    if (!audioRef.current) return;
+    const current = audioRef.current.currentTime;
+    const total = audioRef.current.duration || 0;
+    setCurrentTime(current);
+    setDuration(total);
+    setProgress(current / total * 100 || 0);
+  };
+  const handleProgressChange = event => {
+    const value = Number(event.target.value);
+    if (!audioRef.current || !duration) return;
+    audioRef.current.currentTime = value;
+    setCurrentTime(value);
+    setProgress(value / duration * 100 || 0);
+  };
+  const skipTime = seconds => {
+    if (!audioRef.current) return;
+    audioRef.current.currentTime += seconds;
+  };
+  const handleVolumeChange = event => {
+    const value = Number(event.target.value);
+    setVolume(value);
+    if (audioRef.current) {
+      audioRef.current.volume = value;
+    }
+  };
+  const formatTime = time => {
+    if (!time || Number.isNaN(time)) {
+      return '00:00';
+    }
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+  };
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    const handleEnded = () => {
+      setIsPlaying(false);
+      setProgress(0);
+    };
+    audio.addEventListener('ended', handleEnded);
+    return () => {
+      audio.removeEventListener('ended', handleEnded);
+    };
+  }, []);
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    let animationFrameId;
+    const updateSmoothProgress = () => {
+      if (audioRef.current && !audioRef.current.paused) {
+        const current = audioRef.current.currentTime;
+        const total = audioRef.current.duration || 0;
+        setCurrentTime(current);
+        setDuration(total);
+        setProgress(current / total * 100 || 0);
+        animationFrameId = requestAnimationFrame(updateSmoothProgress);
+      }
+    };
+    if (isPlaying) {
+      animationFrameId = requestAnimationFrame(updateSmoothProgress);
+    } else {
+      cancelAnimationFrame(animationFrameId);
+    }
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, [isPlaying]);
+  const {
+    audioUrl = '',
+    text = '',
+    subtitle = '',
+    coverUrl = '',
+    labelText = 'Now Playing'
+  } = attributes || {};
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: "gbb-audio-player-one",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("audio", {
+      ref: audioRef,
+      src: audioUrl,
+      onLoadedMetadata: updateProgress
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "gbb-audio-player-one__top",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "gbb-audio-player-one__cover",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+          src: coverUrl || "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f",
+          alt: "Audio Cover"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "gbb-audio-player-one__content",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          className: "gbb-audio-player-one__label",
+          children: labelText
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+          className: "gbb-audio-player-one__title",
+          children: text || 'Your Audio Title'
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          className: "gbb-audio-player-one__artist",
+          children: subtitle || 'Artist / Author Name'
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "gbb-audio-player-one__progress",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+            type: "range",
+            min: "0",
+            max: duration || 100,
+            step: "any",
+            value: currentTime,
+            onChange: handleProgressChange,
+            style: {
+              '--progress': progress
+            }
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "gbb-audio-player-one__time",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            children: formatTime(currentTime)
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            children: formatTime(duration)
+          })]
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "gbb-audio-player-one__controls",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+        type: "button",
+        onClick: () => skipTime(-10),
+        "aria-label": "Backward 10 seconds",
+        children: "\u25C0\u25C0"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+        type: "button",
+        className: "gbb-audio-player-one__play",
+        onClick: togglePlay,
+        "aria-label": "Play audio",
+        children: isPlaying ? '❚❚' : '▶'
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+        type: "button",
+        onClick: () => skipTime(10),
+        "aria-label": "Forward 10 seconds",
+        children: "\u25B6\u25B6"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "gbb-audio-player-one__volume",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          children: "\uD83D\uDD0A"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+          type: "range",
+          min: "0",
+          max: "1",
+          step: "0.01",
+          value: volume,
+          onChange: handleVolumeChange
+        })]
+      })]
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AudioPlayer);
+
+/***/ },
+
+/***/ "./src/blocks/audio-player/view.js"
+/*!*****************************************!*\
+  !*** ./src/blocks/audio-player/view.js ***!
+  \*****************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-dom/client */ "react-dom/client");
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_dom_client__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/blocks/audio-player/style.scss");
+/* harmony import */ var _Components_Common_DynamicStyles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Components/Common/DynamicStyles */ "./src/blocks/audio-player/Components/Common/DynamicStyles.js");
+/* harmony import */ var _Components_Common_Templates_AudioPlayer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Components/Common/Templates/AudioPlayer */ "./src/blocks/audio-player/Components/Common/Templates/AudioPlayer.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+// পেজের সমস্ত HTML লোড সম্পন্ন হওয়ার পর স্ক্রিপ্টটি চালু হবে
+
+document.addEventListener('DOMContentLoaded', () => {
+  const containers = document.querySelectorAll('.wp-block-guten-builder-blocks-audio-player');
+  containers.forEach(container => {
+    if (container.dataset.initialized) return;
+    container.dataset.initialized = 'true';
+    const attributes = JSON.parse(container.dataset.attributes);
+    (0,react_dom_client__WEBPACK_IMPORTED_MODULE_0__.createRoot)(container).render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Common_DynamicStyles__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        attributes: attributes,
+        id: container.id
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Common_Templates_AudioPlayer__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        attributes,
+        id: container.id
+      })]
+    }));
+
+    // React UI রেন্ডারিং সম্পন্ন হওয়ার পর HTML DOM থেকে অপ্রয়োজনীয় data-attributes মুছে দিয়ে HTML ক্লিন করা
+    container?.removeAttribute('data-attributes');
+  });
+});
+
+/***/ },
+
+/***/ "./src/blocks/audio-player/style.scss"
+/*!********************************************!*\
+  !*** ./src/blocks/audio-player/style.scss ***!
+  \********************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "react"
+/*!************************!*\
+  !*** external "React" ***!
+  \************************/
+(module) {
+
+module.exports = window["React"];
+
+/***/ },
+
+/***/ "react-dom/client"
+/*!***************************!*\
+  !*** external "ReactDOM" ***!
+  \***************************/
+(module) {
+
+module.exports = window["ReactDOM"];
+
+/***/ },
+
+/***/ "react/jsx-runtime"
+/*!**********************************!*\
+  !*** external "ReactJSXRuntime" ***!
+  \**********************************/
+(module) {
+
+module.exports = window["ReactJSXRuntime"];
+
+/***/ },
+
+/***/ "@wordpress/element"
+/*!*********************************!*\
+  !*** external ["wp","element"] ***!
+  \*********************************/
+(module) {
+
+module.exports = window["wp"]["element"];
+
+/***/ }
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	const __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		const cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		const module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		if (!(moduleId in __webpack_modules__)) {
+/******/ 			delete __webpack_module_cache__[moduleId];
+/******/ 			const e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		const deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			let notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				let [chunkIds, fn, priority] = deferred[i];
+/******/ 				let fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					const r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			const getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter/value functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			if(Array.isArray(definition)) {
+/******/ 				var i = 0;
+/******/ 				while(i < definition.length) {
+/******/ 					var key = definition[i++];
+/******/ 					var binding = definition[i++];
+/******/ 					if(!__webpack_require__.o(exports, key)) {
+/******/ 						if(binding === 0) {
+/******/ 							Object.defineProperty(exports, key, { enumerable: true, value: definition[i++] });
+/******/ 						} else {
+/******/ 							Object.defineProperty(exports, key, { enumerable: true, get: binding });
+/******/ 						}
+/******/ 					} else if(binding === 0) { i++; }
+/******/ 				}
+/******/ 			} else {
+/******/ 				for(var key in definition) {
+/******/ 					if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 						Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 					}
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.hasOwn(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		const installedChunks = {
+/******/ 			"blocks/audio-player/view": 0,
+/******/ 			"blocks/audio-player/style-view": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		const webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			let [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		const chunkLoadingGlobal = globalThis["webpackChunkguten_builder_blocks"] ||= [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["blocks/audio-player/style-view"], () => (__webpack_require__("./src/blocks/audio-player/view.js")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
+/******/ })()
+;
+//# sourceMappingURL=view.js.map

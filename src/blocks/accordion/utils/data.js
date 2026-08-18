@@ -309,7 +309,7 @@ export const templateData = {
     {
       id: 'template-3',
       label: __('Template 3', 'guten-builder-blocks'),
-      tag: __('Premium', 'guten-builder-blocks'),
+      tag: __('FAQ Gradient', 'guten-builder-blocks'),
       icon: TemplateThreeSvg,
       isPro: true,
       attributes: {

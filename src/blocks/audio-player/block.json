@@ -3,18 +3,14 @@
   "name": "guten-builder-blocks/audio-player",
   "version": "1.0.0",
   "title": "Audio Player",
-  "description": "Ultra-optimized Gutenberg audio player with waveform, seek controls, and accessible playback UI.",
+  "description": "Ultra-optimized Gutenberg audio player with seek controls and accessible playback UI.",
   "category": "guten-builder",
   "keywords": ["audio player", "audio", "music player", "podcast", "sound", "media player"],
   "textdomain": "guten-builder-blocks",
   "attributes": {
     "blockId": {
-      "type": "string",
+      "type": "string", 
       "default": ""
-    },
-    "labelText": {
-      "type": "string",
-      "default": "Now Playing"
     },
     "selectedTemplate": {
       "type": "string",
@@ -27,6 +23,10 @@
     "coverUrl": {
       "type": "string",
       "default": ""
+    },
+    "labelText": {
+      "type": "string",
+      "default": "Now Playing"
     },
     "text": {
       "type": "string",
