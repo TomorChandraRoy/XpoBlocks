@@ -3,7 +3,7 @@ import { __ } from '@wordpress/i18n';
 import { renderFaqIcon } from '../../../utils/functions';
 
 const TemplateTwo = ({ attributes, setAttributes, openIndices = [], toggleItem, updateFaqQuestion, updateFaqAnswer, isEditor, id }) => {
-    const { subtitle, title, description, faqsData = [], showHeader, iconPosition = 'left', iconType = 'chevron', iconSize = 22, iconColor = '' } = attributes || {};
+  const { subtitle, title, description, faqsData = [], showHeader, iconPosition = 'left', iconType = 'chevron', iconSize = 22, iconColor = '' } = attributes || {};
 
   return (
     <div className="gbb-template-two-wapper" id={id}>
@@ -35,11 +35,11 @@ const TemplateTwo = ({ attributes, setAttributes, openIndices = [], toggleItem, 
                 )}
                 {iconPosition === 'right' && renderFaqIcon(isOpen, iconType, iconSize, iconColor)}
               </div>
-              {isEditor ? (
+                {isEditor ? (
                 <RichText tagName="p" className={`gbb-faq-answer ${isOpen ? 'is-open' : 'is-closed'}`} value={faq.answer} onChange={val => updateFaqAnswer(index, val)} onClick={e => e.stopPropagation()} placeholder={__('Add your answer here', 'guten-builder-blocks')} />
-              ) : (
+                ) : (
                 <RichText.Content tagName="p" className={`gbb-faq-answer ${isOpen ? 'is-open' : 'is-closed'}`} value={faq.answer} />
-              )}
+                )}
             </div>
           );
         })}

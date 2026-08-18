@@ -40,12 +40,12 @@ const TemplateOne = ({attributes,setAttributes, openIndices = [], toggleItem, up
                 {iconPosition === 'right' && renderFaqIcon(isOpen, iconType, iconSize, iconColor)}
               </div>
 
-              {isEditor ? (
+                {isEditor ? (
                 <RichText tagName="p" className={`gbb-faq-answer ${isOpen ? 'is-open' : 'is-closed'}`} value={faq.answer} onChange={val => updateFaqAnswer(index, val)} onClick={e => e.stopPropagation()} placeholder={__('Add your accordion answer here ...', 'guten-builder-blocks')} />
-              ) : (
+                ) : (
                 <RichText.Content tagName="p" className={`gbb-faq-answer ${isOpen ? 'is-open' : 'is-closed'}`} value={faq.answer} />
-              )}
-              
+                )}
+
             </div>
           );
         })}

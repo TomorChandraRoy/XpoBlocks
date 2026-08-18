@@ -68,14 +68,14 @@ const Style = ({ attributes, setAttributes }) => {
       )}
 
       <PanelBody className="bPlPanelBody" title={__('Q/A Content', 'guten-builder-blocks')} initialOpen={false}>
-        {selectedTemplate === 'template-1' && (
+        {(selectedTemplate === 'template-1' || selectedTemplate === 'template-3') && (
           <>
             <BackgroundControl label={__('Question Bg :', 'guten-builder-blocks')} value={questionBg} onChange={val => setAttributes({ questionBg: val })} />
             <Spacer />
           </>
         )}
 
-        {(selectedTemplate === 'template-1' || selectedTemplate === 'template-2') && (
+        {(selectedTemplate === 'template-1' || selectedTemplate === 'template-2' || selectedTemplate === 'template-3') && (
           <>
             <BorderControl
               label={__('Question Border :', 'guten-builder-blocks')}
@@ -101,7 +101,7 @@ const Style = ({ attributes, setAttributes }) => {
           </>
         )}
 
-        {selectedTemplate === 'template-1' && (
+        {(selectedTemplate === 'template-1' || selectedTemplate === 'template-3') && (
           <>
             <SpacingControl
               label={__('Border Radius :', 'guten-builder-blocks')}

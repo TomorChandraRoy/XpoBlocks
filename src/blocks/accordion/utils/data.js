@@ -152,123 +152,108 @@ export const TemplateOneSvg = () => (
 );
 
 export const TemplateTwoSvg = () => (
-  <svg viewBox="0 0 160 105" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Active Item 1 */}
-    <rect x="8" y="6" width="144" height="38" rx="5" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.2" />
-    <rect x="16" y="13" width="75" height="4" rx="2" fill="#0f172a" />
-    <path d="M138 13L142 17L146 13" stroke="#0f172a" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-    <rect x="16" y="23" width="120" height="3" rx="1.5" fill="#94a3b8" />
-    <rect x="16" y="30" width="100" height="3" rx="1.5" fill="#cbd5e1" />
+  <svg width="100%" height="100%" viewBox="0 0 646 434" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="646" height="434" fill="#F9FAFB" />
 
-    {/* Collapsed Items */}
-    <rect x="8" y="49" width="144" height="14" rx="4" fill="#ffffff" stroke="#e2e8f0" strokeWidth="1" />
-    <rect x="16" y="54" width="65" height="3.5" rx="1.75" fill="#475569" />
-    <path d="M138 54L142 57.5L146 54" stroke="#64748b" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <text x="323" y="25" text-anchor="middle" fill="#64748B" font-family="Arial, sans-serif" font-size="14">
+      FAQ
+    </text>
 
-    <rect x="8" y="67" width="144" height="14" rx="4" fill="#ffffff" stroke="#e2e8f0" strokeWidth="1" />
-    <rect x="16" y="72" width="70" height="3.5" rx="1.75" fill="#475569" />
-    <path d="M138 72L142 75.5L146 72" stroke="#64748b" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <text x="323" y="62" text-anchor="middle" fill="#1E293B" font-family="Arial, sans-serif" font-size="24" font-weight="700">
+      Frequently asked questions
+    </text>
 
-    <rect x="8" y="85" width="144" height="14" rx="4" fill="#ffffff" stroke="#e2e8f0" strokeWidth="1" />
-    <rect x="16" y="90" width="55" height="3.5" rx="1.75" fill="#475569" />
-    <path d="M138 90L142 93.5L146 90" stroke="#64748b" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <text x="323" y="97" text-anchor="middle" fill="#64748B" font-family="Arial, sans-serif" font-size="14">
+      Everything you need to know about the product and billing.
+    </text>
+
+    <text x="24" y="166" fill="#1E293B" font-family="Arial, sans-serif" font-size="16" font-weight="500">
+      Is there a free trial available?
+    </text>
+
+    <path d="M616 153V167M609 160H623" stroke="#334155" stroke-width="2" stroke-linecap="round" />
+
+    <line x1="24" y1="186.5" x2="628" y2="186.5" stroke="#D1D5DB" />
+
+    <text x="24" y="221" fill="#1E293B" font-family="Arial, sans-serif" font-size="16" font-weight="500">
+      Can I change my plan later?
+    </text>
+
+    <path d="M610 214H622" stroke="#334155" stroke-width="2" stroke-linecap="round" />
+
+    <text x="24" y="257" fill="#64748B" font-family="Arial, sans-serif" font-size="14">
+      Of course. Our pricing scales with your company. Chat to our friendly
+    </text>
+
+    <text x="24" y="279" fill="#64748B" font-family="Arial, sans-serif" font-size="14">
+      team to find a solution that works for you.
+    </text>
+
+    <line x1="24" y1="297.5" x2="628" y2="297.5" stroke="#D1D5DB" />
+
+    <text x="24" y="331" fill="#1E293B" font-family="Arial, sans-serif" font-size="16" font-weight="500">
+      What is your cancellation policy?
+    </text>
+
+    <path d="M616 318V332M609 325H623" stroke="#334155" stroke-width="2" stroke-linecap="round" />
+
+    <line x1="24" y1="353.5" x2="628" y2="353.5" stroke="#D1D5DB" />
+
+    <text x="24" y="386" fill="#1E293B" font-family="Arial, sans-serif" font-size="16" font-weight="500">
+      Can other info be added to an invoice?
+    </text>
+
+    <path d="M616 373V387M609 380H623" stroke="#334155" stroke-width="2" stroke-linecap="round" />
+
+    <line x1="24" y1="407.5" x2="628" y2="407.5" stroke="#D1D5DB" />
   </svg>
 );
 
 export const TemplateThreeSvg = () => (
-  <svg
-    viewBox="0 0 800 580"
-    width="100%"
-    height="100%"
-    style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
-  >
-    <rect width="800" height="580" fill="#ffffff" rx="8" />
+  <svg width="100%" height="100%" viewBox="0 0 597 451" xmlns="http://www.w3.org/2000/svg">
+    <rect width="597" height="451" fill="#ffffff" />
 
-    {/* Q & A Box 1 (Expanded) */}
-    <rect
-      x="50"
-      y="50"
-      width="700"
-      height="150"
-      fill="#f8fafc"
-      stroke="#e2e8f0"
-      strokeWidth="2"
-      rx="6"
-    />
-    <rect x="80" y="75" width="30" height="30" fill="#e2e8f0" rx="4" />
-    <text
-      x="95"
-      y="95"
-      fontSize="16"
-      fontWeight="bold"
-      fill="#94a3b8"
-      textAnchor="middle"
-    >
-      Q
+    <text x="298.5" y="32" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#07152f">
+      Frequently asked questions
     </text>
-    <rect x="130" y="80" width="300" height="16" fill="#cbd5e1" rx="4" />
 
-    <rect x="80" y="135" width="30" height="30" fill="#e2e8f0" rx="4" />
-    <text
-      x="95"
-      y="155"
-      fontSize="16"
-      fontWeight="bold"
-      fill="#94a3b8"
-      textAnchor="middle"
-    >
-      A
+    <text x="298.5" y="64" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#6b7c9a">
+      Everything you need to know about the product and billing.
     </text>
-    <rect x="130" y="140" width="450" height="12" fill="#cbd5e1" rx="4" />
-    <rect x="130" y="160" width="350" height="12" fill="#cbd5e1" rx="4" />
 
-    {/* Q Box 2 (Collapsed) */}
-    <rect
-      x="50"
-      y="220"
-      width="700"
-      height="70"
-      fill="#f8fafc"
-      stroke="#e2e8f0"
-      strokeWidth="2"
-      rx="6"
-    />
-    <rect x="80" y="240" width="30" height="30" fill="#e2e8f0" rx="4" />
-    <text
-      x="95"
-      y="260"
-      fontSize="16"
-      fontWeight="bold"
-      fill="#94a3b8"
-      textAnchor="middle"
-    >
-      Q
+    <text x="23" y="165" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#07152f">
+      Is there a free trial available?
     </text>
-    <rect x="130" y="247" width="250" height="16" fill="#cbd5e1" rx="4" />
 
-    {/* Q Box 3 (Collapsed) */}
-    <rect
-      x="50"
-      y="310"
-      width="700"
-      height="70"
-      fill="#f8fafc"
-      stroke="#e2e8f0"
-      strokeWidth="2"
-      rx="6"
-    />
-    <rect x="80" y="330" width="30" height="30" fill="#e2e8f0" rx="4" />
-    <text
-      x="95"
-      y="350"
-      fontSize="16"
-      fontWeight="bold"
-      fill="#94a3b8"
-      textAnchor="middle"
-    >
-      Q
+    <path d="M556 157 L561 162 L566 157" fill="none" stroke="#07152f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <rect x="7" y="195" width="581" height="129" rx="8" fill="#b9bec8" />
+
+    <text x="23" y="227" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#07152f">
+      Can I change my plan later?
     </text>
-    <rect x="130" y="337" width="320" height="16" fill="#cbd5e1" rx="4" />
+
+    <path d="M556 224 L561 219 L566 224" fill="none" stroke="#07152f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <text x="23" y="256" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#07152f">
+      Of course. Our pricing scales with your company. Chat to our friendly team to find a
+    </text>
+
+    <text x="23" y="287" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#07152f">
+      solution that works for you.
+    </text>
+
+    <text x="23" y="365" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#07152f">
+      What is your cancellation policy?
+    </text>
+
+    <path d="M556 353 L561 358 L566 353" fill="none" stroke="#07152f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <text x="23" y="427" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#07152f">
+      Can other info be added to an invoice?
+    </text>
+
+    <path d="M556 415 L561 420 L566 415" fill="none" stroke="#07152f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
   </svg>
 );
 
@@ -328,8 +313,9 @@ export const templateData = {
       icon: TemplateThreeSvg,
       isPro: true,
       attributes: {
-        iconType: 'plus',
-        iconPosition: 'left',
+        iconType: 'chevron',
+        iconPosition: 'right',
+        showHeader: true,
       },
     },
   ],

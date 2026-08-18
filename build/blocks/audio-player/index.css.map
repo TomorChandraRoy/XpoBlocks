@@ -1,1 +1,0 @@
-{"version":3,"file":"blocks/audio-player/index.css","mappings":";;;AAAA;AACA;EACC;AACD,C","sources":["webpack://guten-builder-blocks/./src/blocks/audio-player/editor.scss"],"sourcesContent":["/* Editor specific styles for Audio Player block */\r\n.kh-ap-button.kh-ap-editor-preview {\r\n\tborder: 1px dashed rgba(0,0,0,0.08);\r\n}\r\n"],"names":[],"sourceRoot":""}

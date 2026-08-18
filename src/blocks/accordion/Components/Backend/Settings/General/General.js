@@ -3,7 +3,7 @@ import { PanelBody, ToggleControl, SelectControl, RangeControl, Button, TextCont
 import { ItemsPanel, ColorControl } from 'tr-tools';
 
 const General = ({ attributes, setAttributes }) => {
-  const { faqsData = [], allowMultiple, showHeader, iconPosition = 'left', iconType = 'chevron', iconSize, iconColor, subtitle, title, description} = attributes;
+  const { faqsData = [], allowMultiple, showHeader, iconPosition = 'left', iconType = 'chevron', iconSize = 22, iconColor = '', subtitle, title, description} = attributes;
 
   return (
     <>

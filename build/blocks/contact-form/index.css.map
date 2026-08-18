@@ -1,1 +1,0 @@
-{"version":3,"file":"blocks/contact-form/index.css","mappings":";;;AAAA;EACE;AACF,C","sources":["webpack://guten-builder-blocks/./src/blocks/contact-form/editor.scss"],"sourcesContent":[".wp-block-guten-builder-blocks-contact-form {\r\n  border: 1px dashed #ccc;\r\n}\r\n"],"names":[],"sourceRoot":""}

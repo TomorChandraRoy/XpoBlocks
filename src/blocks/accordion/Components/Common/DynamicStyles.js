@@ -11,7 +11,7 @@ const DynamicStyles = ({ attributes, id }) => {
   const title = `${wrapper} .gbb-faq-title`;
   const description = `${wrapper} .gbb-faq-description`;
   const header = `${wrapper} .gbb-faq-header`;
-  const question = `${wrapper} .gbb-faq-question`;
+  const question = `${wrapper} .gbb-faq-question, ${wrapper} .gbb-faq-question-text`;
   const answer = `${wrapper} .gbb-faq-answer`;
   const icon = `${wrapper} .gbb-faq-arrow`;
 
@@ -38,8 +38,8 @@ const DynamicStyles = ({ attributes, id }) => {
         ${header} {
 
         }
-
-        ${mainSl}.gbb-template-one-wapper .gbb-faq-header {
+        ${mainSl}.gbb-template-one-wapper .gbb-faq-header,
+        ${mainSl}.gbb-template-three-wapper .gbb-faq-item {
           ${getBackgroundCss(questionBg) ? `background: ${getBackgroundCss(questionBg)};` : ''}
           ${getBorderCss(questionBorder)}
           ${getBorderRadiusCss(questionBorderRadius)}
