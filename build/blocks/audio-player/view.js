@@ -30,7 +30,7 @@ const DynamicStyles = ({
     borderRadius = 50,
     paddingV = 16,
     paddingH = 32,
-    align = 'center'
+    playerAlign = 'center'
   } = attributes || {};
   const isCompact = playerLayout === 'compact';
   const mainSl = `#${id}`;
@@ -41,7 +41,7 @@ const DynamicStyles = ({
       __html: `
         ${wrapper} {
           display: flex;
-          justify-content: ${align};
+          justify-content: ${playerAlign};
           align-items: center;
           width: 100%;
         }
@@ -96,7 +96,8 @@ const AudioPlayer = ({
     subtitle = '',
     coverUrl = '',
     labelText = '',
-    preloadStrategy = 'metadata'
+    preloadStrategy = 'metadata',
+    timeDisplayMode = 'total'
   } = attributes || {};
   const audioRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
   const [isPlaying, setIsPlaying] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
@@ -246,12 +247,12 @@ const AudioPlayer = ({
               '--progress': progress
             }
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        }), timeDisplayMode !== 'none' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "gbb-audio-player-one__time",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
             children: formatTime(currentTime)
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-            children: formatTime(duration)
+          }), timeDisplayMode !== 'elapsed' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            children: timeDisplayMode === 'remaining' ? `-${formatTime(Math.max(0, duration - currentTime))}` : formatTime(duration)
           })]
         })]
       })]

@@ -6,7 +6,7 @@ import { MediaControl } from 'tr-tools';
 
 
 const General = ({ attributes, setAttributes, clientId }) => {
-	const { blockId, audioUrl, coverUrl, playerLayout, compactSize, preloadStrategy, showWaveform, enableSeekbar, enableVolume, timeDisplayMode, align, hideOnMobile, hideOnDesktop, entranceAnimation, entranceDelay, text, subtitle, labelText
+	const { blockId, audioUrl, coverUrl, playerLayout, compactSize, preloadStrategy, showWaveform, enableSeekbar, enableVolume, timeDisplayMode, playerAlign, hideOnMobile, hideOnDesktop, entranceAnimation, entranceDelay, text, subtitle, labelText
 	} = attributes;
 
 	const prevClientId = useRef( clientId );
@@ -63,7 +63,7 @@ const General = ({ attributes, setAttributes, clientId }) => {
 
 
 
-      {/* <PanelBody className="bPlPanelBody" title={__('Performance Settings', 'guten-builder-blocks')} initialOpen={false}>
+      <PanelBody className="bPlPanelBody" title={__('Performance Settings', 'guten-builder-blocks')} initialOpen={false}>
         <SelectControl
           label={__('Preload Strategy', 'guten-builder-blocks')}
           value={preloadStrategy}
@@ -75,35 +75,33 @@ const General = ({ attributes, setAttributes, clientId }) => {
           onChange={val => setAttributes({ preloadStrategy: val })}
           help={__('Controls how much of the file the browser downloads automatically.', 'guten-builder-blocks')}
         />
-      </PanelBody> */}
+      </PanelBody>
 
-      {/* <PanelBody className="bPlPanelBody" title={__('Layout', 'guten-builder-blocks')} initialOpen={false}>
-
+      <PanelBody className="bPlPanelBody" title={__('Layout Settings', 'guten-builder-blocks')} initialOpen={false}>
         <SelectControl
           label={__('Block Alignment', 'guten-builder-blocks')}
-          value={align}
+          value={playerAlign}
           options={[
             { label: __('Left', 'guten-builder-blocks'), value: 'flex-start' },
             { label: __('Center', 'guten-builder-blocks'), value: 'center' },
             { label: __('Right', 'guten-builder-blocks'), value: 'flex-end' },
           ]}
-          onChange={val => setAttributes({ align: val })}
+          onChange={val => setAttributes({ playerAlign: val })}
           help={__('Player position in the container.', 'guten-builder-blocks')}
         />
-          <SelectControl
-            label={__('Time Display Mode', 'guten-builder-blocks')}
-            value={timeDisplayMode}
-            options={[
-              { label: __('Hidden', 'guten-builder-blocks'), value: 'none' },
-              { label: __('Elapsed Time', 'guten-builder-blocks'), value: 'elapsed' },
-              { label: __('Remaining Time', 'guten-builder-blocks'), value: 'remaining' },
-              { label: __('Total Duration', 'guten-builder-blocks'), value: 'total' },
-            ]}
-            onChange={val => setAttributes({ timeDisplayMode: val })}
-            help={__('Shows current, remaining, or total play times.', 'guten-builder-blocks')}
-          />
-
-      </PanelBody> */}
+        <SelectControl
+          label={__('Time Display Mode', 'guten-builder-blocks')}
+          value={timeDisplayMode}
+          options={[
+            { label: __('Hidden', 'guten-builder-blocks'), value: 'none' },
+            { label: __('Elapsed Time', 'guten-builder-blocks'), value: 'elapsed' },
+            { label: __('Remaining Time', 'guten-builder-blocks'), value: 'remaining' },
+            { label: __('Total Duration', 'guten-builder-blocks'), value: 'total' },
+          ]}
+          onChange={val => setAttributes({ timeDisplayMode: val })}
+          help={__('Shows current, remaining, or total play times.', 'guten-builder-blocks')}
+        />
+      </PanelBody>
     </>
   );
 };

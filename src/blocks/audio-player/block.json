@@ -35,6 +35,14 @@
     "subtitle": {
       "type": "string",
       "default": ""
+    },
+    "playerAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "timeDisplayMode": {
+      "type": "string",
+      "default": "total"
     }
   },
   "supports": {

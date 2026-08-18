@@ -3571,7 +3571,7 @@ const General = ({
     enableSeekbar,
     enableVolume,
     timeDisplayMode,
-    align,
+    playerAlign,
     hideOnMobile,
     hideOnDesktop,
     entranceAnimation,
@@ -3660,6 +3660,70 @@ const General = ({
         onChange: val => setAttributes({
           subtitle: val
         })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      className: "bPlPanelBody",
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Performance Settings', 'guten-builder-blocks'),
+      initialOpen: false,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Preload Strategy', 'guten-builder-blocks'),
+        value: preloadStrategy,
+        options: [{
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Metadata Only (Recommended)', 'guten-builder-blocks'),
+          value: 'metadata'
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Auto (Load full file)', 'guten-builder-blocks'),
+          value: 'auto'
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('None (Do not load)', 'guten-builder-blocks'),
+          value: 'none'
+        }],
+        onChange: val => setAttributes({
+          preloadStrategy: val
+        }),
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Controls how much of the file the browser downloads automatically.', 'guten-builder-blocks')
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      className: "bPlPanelBody",
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Layout Settings', 'guten-builder-blocks'),
+      initialOpen: false,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Block Alignment', 'guten-builder-blocks'),
+        value: playerAlign,
+        options: [{
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Left', 'guten-builder-blocks'),
+          value: 'flex-start'
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Center', 'guten-builder-blocks'),
+          value: 'center'
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Right', 'guten-builder-blocks'),
+          value: 'flex-end'
+        }],
+        onChange: val => setAttributes({
+          playerAlign: val
+        }),
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Player position in the container.', 'guten-builder-blocks')
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Time Display Mode', 'guten-builder-blocks'),
+        value: timeDisplayMode,
+        options: [{
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Hidden', 'guten-builder-blocks'),
+          value: 'none'
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Elapsed Time', 'guten-builder-blocks'),
+          value: 'elapsed'
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remaining Time', 'guten-builder-blocks'),
+          value: 'remaining'
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Total Duration', 'guten-builder-blocks'),
+          value: 'total'
+        }],
+        onChange: val => setAttributes({
+          timeDisplayMode: val
+        }),
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Shows current, remaining, or total play times.', 'guten-builder-blocks')
       })]
     })]
   });
@@ -3924,7 +3988,7 @@ const DynamicStyles = ({
     borderRadius = 50,
     paddingV = 16,
     paddingH = 32,
-    align = 'center'
+    playerAlign = 'center'
   } = attributes || {};
   const isCompact = playerLayout === 'compact';
   const mainSl = `#${id}`;
@@ -3935,7 +3999,7 @@ const DynamicStyles = ({
       __html: `
         ${wrapper} {
           display: flex;
-          justify-content: ${align};
+          justify-content: ${playerAlign};
           align-items: center;
           width: 100%;
         }
@@ -3990,7 +4054,8 @@ const AudioPlayer = ({
     subtitle = '',
     coverUrl = '',
     labelText = '',
-    preloadStrategy = 'metadata'
+    preloadStrategy = 'metadata',
+    timeDisplayMode = 'total'
   } = attributes || {};
   const audioRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
   const [isPlaying, setIsPlaying] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
@@ -4140,12 +4205,12 @@ const AudioPlayer = ({
               '--progress': progress
             }
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        }), timeDisplayMode !== 'none' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "gbb-audio-player-one__time",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
             children: formatTime(currentTime)
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-            children: formatTime(duration)
+          }), timeDisplayMode !== 'elapsed' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            children: timeDisplayMode === 'remaining' ? `-${formatTime(Math.max(0, duration - currentTime))}` : formatTime(duration)
           })]
         })]
       })]
@@ -4893,7 +4958,7 @@ module.exports = window["wp"]["i18n"];
   \********************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/audio-player","version":"1.0.0","title":"Audio Player","description":"Ultra-optimized Gutenberg audio player with seek controls and accessible playback UI.","category":"guten-builder","keywords":["audio player","audio","music player","podcast","sound","media player"],"textdomain":"guten-builder-blocks","attributes":{"blockId":{"type":"string","default":""},"selectedTemplate":{"type":"string","default":""},"audioUrl":{"type":"string","default":""},"coverUrl":{"type":"string","default":""},"labelText":{"type":"string","default":""},"text":{"type":"string","default":""},"subtitle":{"type":"string","default":""}},"supports":{"html":false,"anchor":true,"align":["wide","full"]},"editorScript":"file:./index.js","viewScript":"file:./view.js","style":"file:./style-view.css","editorStyle":"file:./index.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/audio-player","version":"1.0.0","title":"Audio Player","description":"Ultra-optimized Gutenberg audio player with seek controls and accessible playback UI.","category":"guten-builder","keywords":["audio player","audio","music player","podcast","sound","media player"],"textdomain":"guten-builder-blocks","attributes":{"blockId":{"type":"string","default":""},"selectedTemplate":{"type":"string","default":""},"audioUrl":{"type":"string","default":""},"coverUrl":{"type":"string","default":""},"labelText":{"type":"string","default":""},"text":{"type":"string","default":""},"subtitle":{"type":"string","default":""},"playerAlign":{"type":"string","default":"center"},"timeDisplayMode":{"type":"string","default":"total"}},"supports":{"html":false,"anchor":true,"align":["wide","full"]},"editorScript":"file:./index.js","viewScript":"file:./view.js","style":"file:./style-view.css","editorStyle":"file:./index.css","render":"file:./render.php"}');
 
 /***/ }
 

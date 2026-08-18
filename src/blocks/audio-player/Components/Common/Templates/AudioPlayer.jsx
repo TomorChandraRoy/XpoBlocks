@@ -5,7 +5,7 @@ import { useRef } from 'react';
 
 const AudioPlayer = ( { attributes, setAttributes, id } ) => {
 
-const { audioUrl = '', text = '', subtitle = '', coverUrl = '', labelText = '', preloadStrategy = 'metadata' } = attributes || {};
+const { audioUrl = '', text = '', subtitle = '', coverUrl = '', labelText = '', preloadStrategy = 'metadata', timeDisplayMode = 'total' } = attributes || {};
 
 const audioRef = useRef(null);
 
@@ -182,10 +182,18 @@ const togglePlay = () => {
             />
           </div>
 
-          <div className="gbb-audio-player-one__time">
-            <span>{formatTime(currentTime)}</span>
-            <span>{formatTime(duration)}</span>
-          </div>
+          {timeDisplayMode !== 'none' && (
+            <div className="gbb-audio-player-one__time">
+              <span>{formatTime(currentTime)}</span>
+              {timeDisplayMode !== 'elapsed' && (
+                <span>
+                  {timeDisplayMode === 'remaining'
+                    ? `-${formatTime(Math.max(0, duration - currentTime))}`
+                    : formatTime(duration)}
+                </span>
+              )}
+            </div>
+          )}
         </div>
       </div>
 

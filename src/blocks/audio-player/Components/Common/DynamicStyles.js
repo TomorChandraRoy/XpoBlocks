@@ -10,7 +10,7 @@ const DynamicStyles = ({ attributes, id }) => {
     borderRadius = 50,
     paddingV = 16,
     paddingH = 32,
-    align = 'center',
+    playerAlign = 'center',
   } = attributes || {};
 
   const isCompact = playerLayout === 'compact';
@@ -25,7 +25,7 @@ const DynamicStyles = ({ attributes, id }) => {
         __html: `
         ${wrapper} {
           display: flex;
-          justify-content: ${align};
+          justify-content: ${playerAlign};
           align-items: center;
           width: 100%;
         }
