@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) {
 }
 
 // প্রতিটি ব্লকের জন্য একটি ইউনিক আইডি (Unique Block ID) তৈরি করা
-$block_id = wp_unique_id( 'gbb-faq-' );
+$block_id = wp_unique_id( 'guten-builder-faq-' );
 
 // কাস্টম কন্টেইনার ক্লাস এবং ইউনিক আইডি একসাথে অ্যারে হিসেবে রাখা
 $wrapper_classes = array( 'gbb-accordion-container', $block_id );

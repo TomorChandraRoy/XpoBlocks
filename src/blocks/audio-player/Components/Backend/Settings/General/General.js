@@ -19,7 +19,10 @@ const General = ({ attributes, setAttributes, clientId }) => {
 		hideOnMobile,
 		hideOnDesktop,
 		entranceAnimation,
-		entranceDelay
+		entranceDelay,
+		text,
+		subtitle,
+		labelText
 	} = attributes;
 
 	const prevClientId = useRef( clientId );
@@ -30,7 +33,7 @@ const General = ({ attributes, setAttributes, clientId }) => {
 			const uuid = window.crypto && crypto.randomUUID 
 				? crypto.randomUUID().split( '-' )[ 0 ] 
 				: Math.random().toString( 36 ).substring( 2, 9 );
-			setAttributes( { blockId: `kh-ap-${ uuid }` } );
+			setAttributes( { blockId: `gbb-ap-${ uuid }` } );
 			prevClientId.current = clientId;
 		}
 	}, [ blockId, clientId, setAttributes ] );
@@ -39,7 +42,14 @@ const General = ({ attributes, setAttributes, clientId }) => {
 
 	return (
 		<>
-			<PanelBody title={ __( '🎧 Audio Source & Media', 'guten-builder-blocks' ) } initialOpen={ true }>
+			<PanelBody title={__('Template Presets', 'guten-builder-blocks')} initialOpen={true}>
+				<p style={{ fontSize: '12px', color: '#64748b', marginBottom: '12px' }}>{__('Switch or apply a predefined audio player template style.', 'guten-builder-blocks')}</p>
+				<Button isSecondary onClick={() => setAttributes({ selectedTemplate: '' })} style={{ width: '100%', justifyContent: 'center' }}>
+					{__('Change Template', 'guten-builder-blocks')}
+				</Button>
+			</PanelBody>
+
+			<PanelBody title={ __( '🎧 Audio Source & Media', 'guten-builder-blocks' ) } initialOpen={ false }>
 				{ audioUrl ? (
 					<div style={ { marginBottom: '15px' } }>
 						<TextControl
@@ -88,6 +98,24 @@ const General = ({ attributes, setAttributes, clientId }) => {
 						{ __( 'Remove Image', 'guten-builder-blocks' ) }
 					</Button>
 				) }
+
+				<div style={ { marginTop: '20px' } }>
+					<TextControl
+						label={ __( 'Label Text', 'guten-builder-blocks' ) }
+						value={ labelText }
+						onChange={ ( val ) => setAttributes( { labelText: val } ) }
+					/>
+					<TextControl
+						label={ __( 'Track Title', 'guten-builder-blocks' ) }
+						value={ text }
+						onChange={ ( val ) => setAttributes( { text: val } ) }
+					/>
+					<TextControl
+						label={ __( 'Artist / Author', 'guten-builder-blocks' ) }
+						value={ subtitle }
+						onChange={ ( val ) => setAttributes( { subtitle: val } ) }
+					/>
+				</div>
 
 				<div style={ { marginTop: '20px' } }>
 					<SelectControl

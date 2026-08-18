@@ -2,7 +2,7 @@
   "apiVersion": 3,
   "name": "guten-builder-blocks/audio-player",
   "version": "1.0.0",
-  "title": "Guten Audio Player",
+  "title": "Audio Player",
   "description": "Ultra-optimized Gutenberg audio player with waveform, seek controls, and accessible playback UI.",
   "category": "guten-builder",
   "keywords": [
@@ -13,12 +13,25 @@
     "sound",
     "media player"
   ],
+  "textdomain": "guten-builder-blocks",
   "attributes": {
     "blockId": {
       "type": "string",
       "default": ""
     },
+    "labelText": {
+      "type": "string",
+      "default": "Now Playing"
+    },
+    "selectedTemplate": {
+      "type": "string",
+      "default": ""
+    },
     "audioUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "coverUrl": {
       "type": "string",
       "default": ""
     },
@@ -29,112 +42,19 @@
     "subtitle": {
       "type": "string",
       "default": ""
-    },
-    "coverUrl": {
-      "type": "string",
-      "default": ""
-    },
-    "playerLayout": {
-      "type": "string",
-      "default": "extended"
-    },
-    "compactSize": {
-      "type": "number",
-      "default": 160
-    },
-    "preloadStrategy": {
-      "type": "string",
-      "default": "metadata"
-    },
-    "showWaveform": {
-      "type": "boolean",
-      "default": true
-    },
-    "waveformStyle": {
-      "type": "string",
-      "default": "default"
-    },
-    "enableSeekbar": {
-      "type": "boolean",
-      "default": true
-    },
-    "enableVolume": {
-      "type": "boolean",
-      "default": true
-    },
-    "timeDisplayMode": {
-      "type": "string",
-      "default": "elapsed"
-    },
-    "bgColor": {
-      "type": "string",
-      "default": "#111111"
-    },
-    "textColor": {
-      "type": "string",
-      "default": "#ffffff"
-    },
-    "accentColor": {
-      "type": "string",
-      "default": "#10b981"
-    },
-    "progressColor": {
-      "type": "string",
-      "default": "rgba(255,255,255,0.15)"
-    },
-    "borderRadius": {
-      "type": "number",
-      "default": 50
-    },
-    "paddingV": {
-      "type": "number",
-      "default": 16
-    },
-    "paddingH": {
-      "type": "number",
-      "default": 32
-    },
-    "align": {
-      "type": "string",
-      "default": "center"
-    },
-    "containerShadow": {
-      "type": "boolean",
-      "default": false
-    },
-    "shadowStyle": {
-      "type": "string",
-      "default": "soft"
-    },
-    "entranceAnimation": {
-      "type": "string",
-      "default": "none"
-    },
-    "entranceDelay": {
-      "type": "number",
-      "default": 0
-    },
-    "hideOnMobile": {
-      "type": "boolean",
-      "default": false
-    },
-    "hideOnDesktop": {
-      "type": "boolean",
-      "default": false
     }
   },
   "supports": {
     "html": false,
     "anchor": true,
-    "spacing": {
-      "margin": true,
-      "padding": true
-    }
+    "align": [
+      "wide",
+      "full"
+    ]
   },
-  "textdomain": "guten-builder-blocks",
   "editorScript": "file:./index.js",
   "viewScript": "file:./view.js",
-  "style": "file:./style-index.css",
+  "style": "file:./style-view.css",
   "editorStyle": "file:./index.css",
   "render": "file:./render.php"
 }

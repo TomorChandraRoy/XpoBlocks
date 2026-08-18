@@ -1,15 +1,34 @@
 import { useBlockProps } from '@wordpress/block-editor';
 import Settings from './Settings/Settings';
-import AudioPlayer from '../Common/AudioPlayer';
+import AudioPlayer from '../Common/Templates/AudioPlayer.jsx';
+import DynamicStyles from '../Common/DynamicStyles';
+import { TemplateSelector } from 'tr-tools';
+import { templateData } from '../../utils/data';
 
 const Edit = props => {
   const { attributes, setAttributes, clientId } = props;
+  const { selectedTemplate = '' } = attributes;
+  const isTemplateSelected = Boolean(selectedTemplate);
+  const id = `block-${clientId}`;
+
   return (
     <>
       <Settings {...{ attributes, setAttributes, clientId }} />
-      <div {...useBlockProps()}>
-        <AudioPlayer attributes={attributes} setAttributes={setAttributes} />
-      </div>
+      {!isTemplateSelected ? (
+        <div {...useBlockProps()}>
+          <TemplateSelector
+            {...{ attributes, setAttributes }}
+            title={templateData.title}
+            subtitle={templateData.subtitle}
+            templates={templateData.templates}
+          />
+        </div>
+      ) : (
+        <div {...useBlockProps()}>
+          <DynamicStyles attributes={attributes} id={id} />
+          <AudioPlayer attributes={attributes} setAttributes={setAttributes} id={id} />
+        </div>
+      )}
     </>
   );
 };

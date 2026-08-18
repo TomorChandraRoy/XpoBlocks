@@ -1,34 +1,15 @@
 export const faqIcon = {
-  background: '#F3E8FF',
-  foreground: '#7C3AED',
+  background: '#FFE4E6',
+  foreground: '#E63956',
   src: (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={ { color: '#7C3AED' } }>
-      <rect width="24" height="24" rx="4" fill="#F3E8FF" />
-      { /* Speech Bubble / FAQ badge on top right */ }
-      <path
-        d="M14 3.5C14 2.67157 14.6716 2 15.5 2H20.5C21.3284 2 22 2.67157 22 3.5V6.5C22 7.32843 21.3284 8 20.5 8H18.5L16.5 9.5V8H15.5C14.6716 8 14 7.32843 14 6.5V3.5Z"
-        fill="#7C3AED"
-        fillOpacity="0.25"
-        stroke="#7C3AED"
-        strokeWidth="1.2"
-      />
-      <path d="M18.25 4C18.25 3.7 18.5 3.5 18.75 3.5C19.1 3.5 19.3 3.8 19.15 4.1C19 4.4 18.75 4.6 18.75 4.9V5.1M18.75 6.1V6.2" stroke="#7C3AED" strokeWidth="1.2" strokeLinecap="round" />
-
-      { /* Item 1 - Top Collapsed */ }
-      <rect x="2" y="4" width="10.5" height="4" rx="1.5" stroke="#7C3AED" strokeWidth="1.5" />
-      <path d="M4.5 6H8" stroke="#7C3AED" strokeWidth="1.2" strokeLinecap="round" />
-
-      { /* Item 2 - Middle Expanded */ }
-      <rect x="2" y="10" width="20" height="8" rx="2" fill="#7C3AED" fillOpacity="0.15" stroke="#7C3AED" strokeWidth="1.5" />
-      <path d="M5 12.5H13" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" />
-      <path d="M5 15H10" stroke="#7C3AED" strokeWidth="1.2" strokeOpacity="0.7" strokeLinecap="round" />
-      { /* Open Chevron Circle */ }
-      <circle cx="18" cy="14" r="2.5" fill="#7C3AED" fillOpacity="0.2" />
-      <path d="M17 13.5L18 14.5L19 13.5" stroke="#7C3AED" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-
-      { /* Item 3 - Bottom Collapsed */ }
-      <rect x="2" y="19.5" width="20" height="3.5" rx="1.5" stroke="#7C3AED" strokeWidth="1.2" />
-      <path d="M5 21.25H11" stroke="#7C3AED" strokeWidth="1.2" strokeLinecap="round" />
+    <svg width="24" height="24" viewBox="50 35 235 220" xmlns="http://www.w3.org/2000/svg" fill="none" style={{ color: '#E63956' }}>
+      <rect x="50" y="35" width="235" height="220" rx="30" fill="#FFE4E6" />
+      <g transform="translate(210, 90) scale(1.25) translate(-225, -80)">
+        <path d="M 195 40 L 255 40 A 25 25 0 0 1 280 65 L 280 95 A 25 25 0 0 1 255 120 L 242 120 L 258 143 L 230 120 L 195 120 A 25 25 0 0 1 170 95 L 170 65 A 25 25 0 0 1 195 40 Z" fill="#FBBF24" />
+        <path d="M 226 67.5 C 226 60.5 233 55.5 240.5 55.5 C 247.5 55.5 253.5 60.5 253.5 67.5 C 253.5 73.5 249.5 76.5 245.5 80 C 242.5 82.5 240.5 86 240.5 90 L 240.5 92" stroke="#FFFFFF" strokeWidth="4.5" strokeLinecap="round" />
+        <circle cx="240.5" cy="101" r="2.5" fill="#FFFFFF" />
+      </g>
+      <path d="M 96 82 L 204 82 A 38 38 0 0 1 242 120 L 242 172 A 38 38 0 0 1 204 210 L 165 210 L 123 248 A 5 5 0 0 1 114 244 L 117 210 L 96 210 A 38 38 0 0 1 58 172 L 58 120 A 38 38 0 0 1 96 82 Z" fill="#f62477c2" />
     </svg>
   ),
 };

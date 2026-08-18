@@ -79,7 +79,7 @@ const General = ({ attributes, setAttributes }) => {
             { label: __('Chevron', 'guten-builder-blocks'), value: 'chevron' },
             { label: __('Plus / Minus', 'guten-builder-blocks'), value: 'plus-minus' },
             { label: __('Caret', 'guten-builder-blocks'), value: 'caret' },
-            { label: __('None (Hide Icon)', ' guten-builder-blocks'), value: 'none' },
+            { label: __('None (Hide Icon)', 'guten-builder-blocks'), value: 'none' },
           ]}
           __next40pxDefaultSize
           onChange={val => setAttributes({ iconType: val })}
