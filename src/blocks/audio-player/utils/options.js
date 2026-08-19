@@ -37,7 +37,7 @@ export const defaultTitleTypo = {
   fontSize: { desktop: "22px", tablet: "22px", mobile: "22px" },
   fontFamily: '',
   fontWeight: '700',
-  lineHeight: '1.3',
+  lineHeight: '',
   letterSpacing: '',
   textTransform: 'none',
   textDecoration: 'none',

@@ -135,6 +135,14 @@
         "textDecoration": "none",
         "fontStyle": "normal"
       }
+    },
+    "progressColor": {
+      "type": "string",
+      "default": "#F62477"
+    },
+    "progressBg": {
+      "type": "string",
+      "default": "#e5e7eb"
     }
   },
   "supports": {

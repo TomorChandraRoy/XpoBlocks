@@ -5,7 +5,7 @@ import { pxUnit, remUnit, emUnit, vwUnit, perUnit } from 'tr-tools/utils/options
 import { defaultLabelTypo, defaultTitleTypo, defaultArtistTypo } from '../../../../utils/options';
 
 const Style = ( { attributes, setAttributes } ) => {
-	const { playerBorder, playerBorderRadius, playerBg, labelColor, titleColor, artistColor, labelTypography, titleTypography, artistTypography } = attributes;
+	const { playerBorder, playerBorderRadius, playerBg, labelColor, titleColor, artistColor, labelTypography, titleTypography, artistTypography, progressColor, progressBg } = attributes;
 
 
 
@@ -81,6 +81,22 @@ const Style = ( { attributes, setAttributes } ) => {
 					value={artistTypography}
 					onChange={val => setAttributes({ artistTypography: val })}
 					defaultTypography={defaultArtistTypo}
+				/>
+			</PanelBody>
+
+			<PanelBody className="bPlPanelBody" title={ __( 'Progress Bar', 'guten-builder-blocks' ) } initialOpen={ false }>
+				<ColorControl
+					label={__( 'Progress Color :', 'guten-builder-blocks' )}
+					value={progressColor}
+					onChange={color => setAttributes({ progressColor: color })}
+					defaultColor="#F62477"
+				/>
+
+				<ColorControl
+					label={__( 'Progress Background :', 'guten-builder-blocks' )}
+					value={progressBg}
+					onChange={color => setAttributes({ progressBg: color })}
+					defaultColor="#e5e7eb"
 				/>
 			</PanelBody>
 		</>
