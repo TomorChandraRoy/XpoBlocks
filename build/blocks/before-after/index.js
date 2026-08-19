@@ -3472,8 +3472,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Settings_Settings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Settings/Settings */ "./src/blocks/before-after/Components/Backend/Settings/Settings.js");
 /* harmony import */ var _Common_BeforeAfter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Common/BeforeAfter */ "./src/blocks/before-after/Components/Common/BeforeAfter.jsx");
 /* harmony import */ var _Common_DynamicStyles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Common/DynamicStyles */ "./src/blocks/before-after/Components/Common/DynamicStyles.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var tr_tools__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tr-tools */ "../tr-tools/index.js");
+/* harmony import */ var _utils_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/data */ "./src/blocks/before-after/utils/data.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
+
+
 
 
 
@@ -3485,17 +3489,36 @@ const Edit = props => {
     setAttributes,
     clientId
   } = props;
+  const {
+    selectedTemplate = ''
+  } = attributes;
+  const isTemplateSelected = Boolean(selectedTemplate);
   const id = `block-${clientId}`;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Settings_Settings__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Settings_Settings__WEBPACK_IMPORTED_MODULE_1__["default"], {
       attributes,
       setAttributes
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    }), !isTemplateSelected ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)(),
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Common_DynamicStyles__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_4__.TemplateSelector, {
+        attributes,
+        setAttributes,
+        title: _utils_data__WEBPACK_IMPORTED_MODULE_5__.templateData.title,
+        subtitle: _utils_data__WEBPACK_IMPORTED_MODULE_5__.templateData.subtitle,
+        templates: _utils_data__WEBPACK_IMPORTED_MODULE_5__.templateData.templates,
+        isPro: true,
+        proTemplates: ['template-1']
+      })
+    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+      ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
+        style: {
+          padding: '3px'
+        }
+      }),
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Common_DynamicStyles__WEBPACK_IMPORTED_MODULE_3__["default"], {
         attributes: attributes,
         id: id
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Common_BeforeAfter__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Common_BeforeAfter__WEBPACK_IMPORTED_MODULE_2__["default"], {
         attributes: attributes,
         setAttributes: setAttributes,
         id: id
@@ -3553,8 +3576,30 @@ const General = ({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Images', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template Presets', 'guten-builder-blocks'),
       initialOpen: true,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+        style: {
+          fontSize: '12px',
+          color: '#64748b',
+          marginBottom: '12px'
+        },
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Switch or apply a predefined before/after slider template style.', 'guten-builder-blocks')
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+        isSecondary: true,
+        onClick: () => setAttributes({
+          selectedTemplate: ''
+        }),
+        style: {
+          width: '100%',
+          justifyContent: 'center'
+        },
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Change Template', 'guten-builder-blocks')
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      className: "bPlPanelBody",
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Images', 'guten-builder-blocks'),
+      initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_3__.TabButton, {
         activeTab: activeTab,
         onChange: setActiveTab,
@@ -3567,6 +3612,18 @@ const General = ({
           title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('After', 'guten-builder-blocks'),
           icon: null
         }]
+      }), (beforeImage?.url || afterImage?.url) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+        isSecondary: true,
+        onClick: () => setAttributes({
+          beforeImage: afterImage,
+          afterImage: beforeImage
+        }),
+        style: {
+          width: '100%',
+          justifyContent: 'center',
+          marginTop: '12px'
+        },
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('🔄 Swap Images', 'guten-builder-blocks')
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         style: {
           marginTop: '20px'
@@ -3918,65 +3975,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _utils_functions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/functions */ "./src/blocks/before-after/utils/functions.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Templates_TemplateOne__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Templates/TemplateOne */ "./src/blocks/before-after/Components/Common/Templates/TemplateOne.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
 
 
-
+const TEMPLATES = {
+  'template-1': _Templates_TemplateOne__WEBPACK_IMPORTED_MODULE_0__["default"]
+};
 const BeforeAfter = ({
-  attributes
+  attributes,
+  setAttributes
 }) => {
-  const [position, setPosition] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(50);
-  const beforeUrl = attributes?.beforeImage?.url || 'https://images.unsplash.com/photo-1558370781-d6196949e317?q=80&w=2958&auto=format&fit=crop';
-  const afterUrl = attributes?.afterImage?.url || 'https://images.unsplash.com/photo-1558370781-d6196949e317?q=80&w=2958&auto=format&fit=crop&sat=-100';
-  const handleSliderChange = event => {
-    setPosition(event.target.value);
-  };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    className: "gbb-before-after-one",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "gbb-before-after-one__wrapper",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-        src: afterUrl,
-        alt: "After",
-        className: "gbb-before-after-one__image"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "gbb-before-after-one__before-image-wrapper",
-        style: {
-          '--position': position
-        },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-          src: beforeUrl,
-          alt: "Before",
-          className: "gbb-before-after-one__image gbb-before-after-one__before-image"
-        })
-      }), attributes?.showLabels !== false && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-          className: "gbb-before-after-one__label gbb-before-after-one__label--before",
-          children: attributes?.beforeLabel || 'Before'
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-          className: "gbb-before-after-one__label gbb-before-after-one__label--after",
-          children: attributes?.afterLabel || 'After'
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "gbb-before-after-one__divider",
-        style: {
-          left: `${position}%`
-        },
-        children: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_1__.renderDividerIcon)(attributes)
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-        type: "range",
-        min: "0",
-        max: "100",
-        value: position,
-        onChange: handleSliderChange,
-        className: "gbb-before-after-one__slider",
-        "aria-label": "Before after comparison slider"
-      })]
-    })
+  const {
+    selectedTemplate = 'template-1'
+  } = attributes || {};
+  const TemplateComponent = TEMPLATES[selectedTemplate] || TEMPLATES['template-1'];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(TemplateComponent, {
+    attributes: attributes,
+    setAttributes: setAttributes
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BeforeAfter);
@@ -4056,6 +4073,83 @@ const DynamicStyles = ({
 
 /***/ },
 
+/***/ "./src/blocks/before-after/Components/Common/Templates/TemplateOne.jsx"
+/*!*****************************************************************************!*\
+  !*** ./src/blocks/before-after/Components/Common/Templates/TemplateOne.jsx ***!
+  \*****************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_functions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../utils/functions */ "./src/blocks/before-after/utils/functions.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+const TemplateOne = ({
+  attributes
+}) => {
+  const [position, setPosition] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(50);
+  const defaultBefore = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='100%25' height='100%25' fill='%23e2e8f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='32' font-weight='bold' fill='%2394a3b8'%3EBefore Image%3C/text%3E%3C/svg%3E";
+  const defaultAfter = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='100%25' height='100%25' fill='%23cbd5e1'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='32' font-weight='bold' fill='%2364748b'%3EAfter Image%3C/text%3E%3C/svg%3E";
+  const beforeUrl = attributes?.beforeImage?.url || defaultBefore;
+  const afterUrl = attributes?.afterImage?.url || defaultAfter;
+  const handleSliderChange = event => {
+    setPosition(event.target.value);
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "gbb-before-after-one",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "gbb-before-after-one__wrapper",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+        src: afterUrl,
+        alt: "After",
+        className: "gbb-before-after-one__image"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "gbb-before-after-one__before-image-wrapper",
+        style: {
+          '--position': position
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+          src: beforeUrl,
+          alt: "Before",
+          className: "gbb-before-after-one__image gbb-before-after-one__before-image"
+        })
+      }), attributes?.showLabels !== false && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          className: "gbb-before-after-one__label gbb-before-after-one__label--before",
+          children: attributes?.beforeLabel || 'Before'
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          className: "gbb-before-after-one__label gbb-before-after-one__label--after",
+          children: attributes?.afterLabel || 'After'
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "gbb-before-after-one__divider",
+        style: {
+          left: `${position}%`
+        },
+        children: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_1__.renderDividerIcon)(attributes)
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+        type: "range",
+        min: "0",
+        max: "100",
+        value: position,
+        onChange: handleSliderChange,
+        className: "gbb-before-after-one__slider",
+        "aria-label": "Before after comparison slider"
+      })]
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TemplateOne);
+
+/***/ },
+
 /***/ "./src/blocks/before-after/index.js"
 /*!******************************************!*\
   !*** ./src/blocks/before-after/index.js ***!
@@ -4081,6 +4175,35 @@ __webpack_require__.r(__webpack_exports__);
   edit: _Components_Backend_Edit__WEBPACK_IMPORTED_MODULE_3__["default"],
   save: () => null
 });
+
+/***/ },
+
+/***/ "./src/blocks/before-after/utils/data.js"
+/*!***********************************************!*\
+  !*** ./src/blocks/before-after/utils/data.js ***!
+  \***********************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   templateData: () => (/* binding */ templateData)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./icons */ "./src/blocks/before-after/utils/icons.js");
+
+
+const templateData = {
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select Before/After Template', 'guten-builder-blocks'),
+  subtitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Choose a design template for your before/after slider.', 'guten-builder-blocks'),
+  templates: [{
+    id: 'template-1',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template 1', 'guten-builder-blocks'),
+    tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Classic Slider', 'guten-builder-blocks'),
+    icon: _icons__WEBPACK_IMPORTED_MODULE_1__.TemplateOneSvg,
+    attributes: {}
+  }]
+};
 
 /***/ },
 
@@ -4206,7 +4329,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   GripperIcon: () => (/* binding */ GripperIcon),
 /* harmony export */   LinesIcon: () => (/* binding */ LinesIcon),
 /* harmony export */   PlusIcon: () => (/* binding */ PlusIcon),
-/* harmony export */   StyleIcon: () => (/* binding */ StyleIcon)
+/* harmony export */   StyleIcon: () => (/* binding */ StyleIcon),
+/* harmony export */   TemplateOneSvg: () => (/* binding */ TemplateOneSvg)
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
@@ -4238,6 +4362,71 @@ const BeforeAfterIcon = {
     })]
   })
 };
+const TemplateOneSvg = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 800 500",
+  width: "100%",
+  height: "100%",
+  style: {
+    fontFamily: 'system-ui, -apple-system, sans-serif'
+  },
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+    x: "0",
+    y: "0",
+    width: "800",
+    height: "500",
+    fill: "#e2e8f0",
+    rx: "10"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "200",
+    y: "260",
+    fontSize: "32",
+    fontWeight: "bold",
+    fill: "#94a3b8",
+    children: "Before"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+    x: "400",
+    y: "0",
+    width: "400",
+    height: "500",
+    fill: "#cbd5e1",
+    rx: "10"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "600",
+    y: "260",
+    fontSize: "32",
+    fontWeight: "bold",
+    fill: "#64748b",
+    children: "After"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+    x: "398",
+    y: "0",
+    width: "4",
+    height: "500",
+    fill: "#ffffff"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("circle", {
+    cx: "400",
+    cy: "250",
+    r: "24",
+    fill: "#111111",
+    stroke: "#ffffff",
+    strokeWidth: "3"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+    d: "M 390 240 L 380 250 L 390 260",
+    stroke: "#ffffff",
+    strokeWidth: "3",
+    fill: "none",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+    d: "M 410 240 L 420 250 L 410 260",
+    stroke: "#ffffff",
+    strokeWidth: "3",
+    fill: "none",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  })]
+});
 const GeneralIcon = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
   width: "16",
   height: "16",
@@ -6395,7 +6584,7 @@ var castImmutable = (value) => value;
   \********************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/before-after","version":"1.0.0","title":"Guten Before/After","description":"Interactive image comparison slider with CSS-based masking and hardware-accelerated transitions.","category":"guten-builder","keywords":["before after","image comparison","slider","photo compare","comparison"],"textdomain":"guten-builder-blocks","attributes":{"beforeImage":{"type":"object","properties":{"url":{"type":"string"},"alt":{"type":"string"}},"default":null},"afterImage":{"type":"object","properties":{"url":{"type":"string"},"alt":{"type":"string"}},"default":null},"showLabels":{"type":"boolean","default":true},"beforeLabel":{"type":"string","default":"Before"},"afterLabel":{"type":"string","default":"After"},"dividerIcon":{"type":"string","default":"dots"},"customDividerIcon":{"type":"string","default":""},"dividerIconSize":{"type":"number","default":16},"labelColor":{"type":"string","default":"#ffffff"},"labelBg":{"type":"object","default":{"type":"solid","color":"rgba(0, 0, 0, 0.6)"}},"labelTypography":{"type":"object","default":{"fontSize":{"desktop":"14px","tablet":"14px","mobile":"14px"},"fontFamily":"","fontWeight":"600","lineHeight":"","letterSpacing":"","textTransform":"none","textDecoration":"none","fontStyle":"normal"}},"labelBorderRadius":{"type":"object","default":{"top":"5px","right":"5px","bottom":"5px","left":"5px"}},"wrapperBorderRadius":{"type":"object","default":{"top":"5px","right":"5px","bottom":"5px","left":"5px"}},"dividerStyle":{"type":"string","default":"solid"},"dividerColor":{"type":"string","default":"#ffffff"},"handleColor":{"type":"string","default":"#111111"},"handleIconColor":{"type":"string","default":"#ffffff"}},"supports":{"html":false,"anchor":true,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","viewScript":"file:./view.js","style":"file:./style-view.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/before-after","version":"1.0.0","title":"Guten Before/After","description":"Interactive image comparison slider with CSS-based masking and hardware-accelerated transitions.","category":"guten-builder","keywords":["before after","image comparison","slider","photo compare","comparison"],"textdomain":"guten-builder-blocks","attributes":{"beforeImage":{"type":"object","properties":{"url":{"type":"string"},"alt":{"type":"string"}},"default":null},"afterImage":{"type":"object","properties":{"url":{"type":"string"},"alt":{"type":"string"}},"default":null},"showLabels":{"type":"boolean","default":true},"beforeLabel":{"type":"string","default":"Before"},"afterLabel":{"type":"string","default":"After"},"dividerIcon":{"type":"string","default":"dots"},"customDividerIcon":{"type":"string","default":""},"dividerIconSize":{"type":"number","default":16},"labelColor":{"type":"string","default":"#ffffff"},"labelBg":{"type":"object","default":{"type":"solid","color":"rgba(0, 0, 0, 0.6)"}},"labelTypography":{"type":"object","default":{"fontSize":{"desktop":"14px","tablet":"14px","mobile":"14px"},"fontFamily":"","fontWeight":"600","lineHeight":"","letterSpacing":"","textTransform":"none","textDecoration":"none","fontStyle":"normal"}},"labelBorderRadius":{"type":"object","default":{"top":"5px","right":"5px","bottom":"5px","left":"5px"}},"wrapperBorderRadius":{"type":"object","default":{"top":"5px","right":"5px","bottom":"5px","left":"5px"}},"dividerStyle":{"type":"string","default":"solid"},"dividerColor":{"type":"string","default":"#ffffff"},"handleColor":{"type":"string","default":"#111111"},"handleIconColor":{"type":"string","default":"#ffffff"},"selectedTemplate":{"type":"string","default":""}},"supports":{"html":false,"anchor":true,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","viewScript":"file:./view.js","style":"file:./style-view.css","render":"file:./render.php"}');
 
 /***/ }
 

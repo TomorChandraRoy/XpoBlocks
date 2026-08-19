@@ -123,6 +123,10 @@
     "handleIconColor": {
       "type": "string",
       "default": "#ffffff"
+    },
+    "selectedTemplate": {
+      "type": "string",
+      "default": ""
     }
   },
   "supports": {

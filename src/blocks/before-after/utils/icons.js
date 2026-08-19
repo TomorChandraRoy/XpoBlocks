@@ -9,6 +9,30 @@ export const BeforeAfterIcon = {
   ),
 };
 
+export const TemplateOneSvg = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+    {/* Background / Before Image Placeholder */}
+    <rect x="0" y="0" width="800" height="500" fill="#e2e8f0" rx="10" />
+    <text x="200" y="260" fontSize="32" fontWeight="bold" fill="#94a3b8">
+      Before
+    </text>
+
+    {/* After Image Placeholder (right half) */}
+    <rect x="400" y="0" width="400" height="500" fill="#cbd5e1" rx="10" />
+    <text x="600" y="260" fontSize="32" fontWeight="bold" fill="#64748b">
+      After
+    </text>
+
+    {/* Divider Line */}
+    <rect x="398" y="0" width="4" height="500" fill="#ffffff" />
+
+    {/* Handle */}
+    <circle cx="400" cy="250" r="24" fill="#111111" stroke="#ffffff" strokeWidth="3" />
+    <path d="M 390 240 L 380 250 L 390 260" stroke="#ffffff" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M 410 240 L 420 250 L 410 260" stroke="#ffffff" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
 export const GeneralIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}>
     <line x1="4" y1="6" x2="20" y2="6" />
