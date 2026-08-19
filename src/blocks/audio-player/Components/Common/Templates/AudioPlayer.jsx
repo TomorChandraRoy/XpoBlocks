@@ -3,9 +3,10 @@ import { useRef } from 'react';
 
 
 
-const AudioPlayer = ( { attributes, setAttributes, id } ) => {
+const AudioPlayer = ( { attributes, id } ) => {
 
-const { audioUrl = '', text = '', subtitle = '', coverUrl = '', labelText = '', preloadStrategy = 'metadata', timeDisplayMode = 'total' } = attributes || {};
+
+const { audioUrl = '', text = '', subtitle = '', coverUrl = '', labelText = '',  timeDisplayMode = 'total' } = attributes || {};
 
 const audioRef = useRef(null);
 
@@ -152,7 +153,7 @@ const togglePlay = () => {
 
 
 	return (
-		<div className="gbb-audio-player-one">
+		<div className={`gbb-audio-player-one ${id}`} >
 			<audio ref={audioRef} src={audioUrl} onLoadedMetadata={updateProgress} />
 
       <div className="gbb-audio-player-one__top">

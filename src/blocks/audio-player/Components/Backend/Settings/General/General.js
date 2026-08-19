@@ -1,13 +1,11 @@
 import { __ } from '@wordpress/i18n';
-import { PanelBody, ToggleControl, SelectControl, RangeControl, TextControl, Button } from '@wordpress/components';
-import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
+import { PanelBody, SelectControl, TextControl, Button } from '@wordpress/components';
 import { useEffect, useRef } from '@wordpress/element';
 import { MediaControl } from 'tr-tools';
 
 
 const General = ({ attributes, setAttributes, clientId }) => {
-	const { blockId, audioUrl, coverUrl, playerLayout, compactSize, preloadStrategy, showWaveform, enableSeekbar, enableVolume, timeDisplayMode, playerAlign, hideOnMobile, hideOnDesktop, entranceAnimation, entranceDelay, text, subtitle, labelText
-	} = attributes;
+	const { blockId, audioUrl, coverUrl,   timeDisplayMode, playerAlign, text, subtitle, labelText} = attributes;
 
 	const prevClientId = useRef( clientId );
 
@@ -22,7 +20,6 @@ const General = ({ attributes, setAttributes, clientId }) => {
 		}
 	}, [ blockId, clientId, setAttributes ] );
 
-	const isCompact = playerLayout === 'compact';
 
 	return (
     <>
@@ -61,7 +58,7 @@ const General = ({ attributes, setAttributes, clientId }) => {
         <TextControl label={__('Artist / Author :', 'guten-builder-blocks')} value={subtitle} onChange={val => setAttributes({ subtitle: val })} />
       </PanelBody>
 
-
+{/*
 
       <PanelBody className="bPlPanelBody" title={__('Performance Settings', 'guten-builder-blocks')} initialOpen={false}>
         <SelectControl
@@ -75,7 +72,7 @@ const General = ({ attributes, setAttributes, clientId }) => {
           onChange={val => setAttributes({ preloadStrategy: val })}
           help={__('Controls how much of the file the browser downloads automatically.', 'guten-builder-blocks')}
         />
-      </PanelBody>
+      </PanelBody> */}
 
       <PanelBody className="bPlPanelBody" title={__('Layout Settings', 'guten-builder-blocks')} initialOpen={false}>
         <SelectControl

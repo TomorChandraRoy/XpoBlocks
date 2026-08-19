@@ -3512,7 +3512,9 @@ const Edit = props => {
         proTemplates: ['template-1']
       })
     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-      ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)(),
+      ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
+        className: 'gbb-audio-player-container'
+      }),
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Common_DynamicStyles__WEBPACK_IMPORTED_MODULE_3__["default"], {
         attributes: attributes,
         id: id
@@ -3542,14 +3544,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var tr_tools__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tr-tools */ "../tr-tools/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
-
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var tr_tools__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tr-tools */ "../tr-tools/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
@@ -3564,24 +3563,14 @@ const General = ({
     blockId,
     audioUrl,
     coverUrl,
-    playerLayout,
-    compactSize,
-    preloadStrategy,
-    showWaveform,
-    enableSeekbar,
-    enableVolume,
     timeDisplayMode,
     playerAlign,
-    hideOnMobile,
-    hideOnDesktop,
-    entranceAnimation,
-    entranceDelay,
     text,
     subtitle,
     labelText
   } = attributes;
-  const prevClientId = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useRef)(clientId);
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useEffect)(() => {
+  const prevClientId = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useRef)(clientId);
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useEffect)(() => {
     const clientChanged = prevClientId.current !== clientId;
     if (!blockId || clientChanged) {
       const uuid = window.crypto && crypto.randomUUID ? crypto.randomUUID().split('-')[0] : Math.random().toString(36).substring(2, 9);
@@ -3591,20 +3580,19 @@ const General = ({
       prevClientId.current = clientId;
     }
   }, [blockId, clientId, setAttributes]);
-  const isCompact = playerLayout === 'compact';
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template Presets', 'guten-builder-blocks'),
       initialOpen: true,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
         style: {
           fontSize: '12px',
           color: '#64748b',
           marginBottom: '12px'
         },
         children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Switch or apply a predefined audio player template style.', 'guten-builder-blocks')
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
         isSecondary: true,
         onClick: () => setAttributes({
           selectedTemplate: ''
@@ -3615,11 +3603,11 @@ const General = ({
         },
         children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Change Template', 'guten-builder-blocks')
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Audio Source & Media', 'guten-builder-blocks'),
       initialOpen: false,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_4__.MediaControl, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_3__.MediaControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Audio Source / URL :', 'guten-builder-blocks'),
         value: audioUrl,
         onChange: val => setAttributes({
@@ -3628,7 +3616,7 @@ const General = ({
         allowedTypes: ['audio'],
         buttonLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Upload / Select Audio', 'guten-builder-blocks'),
         help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Provide a direct audio file URL (e.g., ending with .mp3, .wav) or CDN/hosting link. Shared landing pages (like Jumpshare, Dropbox) will not work.', 'guten-builder-blocks')
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_4__.MediaControl, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_3__.MediaControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Cover Image URL / Source :', 'guten-builder-blocks'),
         value: coverUrl,
         onChange: val => setAttributes({
@@ -3638,56 +3626,34 @@ const General = ({
         buttonLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Upload / Select Image', 'guten-builder-blocks'),
         help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Provide a direct image URL (e.g., ending with .jpg, .png, .webp) or CDN/hosting link.', 'guten-builder-blocks')
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Track Information', 'guten-builder-blocks'),
       initialOpen: false,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Label Text :', 'guten-builder-blocks'),
         value: labelText,
         onChange: val => setAttributes({
           labelText: val
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Track Title :', 'guten-builder-blocks'),
         value: text,
         onChange: val => setAttributes({
           text: val
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Artist / Author :', 'guten-builder-blocks'),
         value: subtitle,
         onChange: val => setAttributes({
           subtitle: val
         })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-      className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Performance Settings', 'guten-builder-blocks'),
-      initialOpen: false,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Preload Strategy', 'guten-builder-blocks'),
-        value: preloadStrategy,
-        options: [{
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Metadata Only (Recommended)', 'guten-builder-blocks'),
-          value: 'metadata'
-        }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Auto (Load full file)', 'guten-builder-blocks'),
-          value: 'auto'
-        }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('None (Do not load)', 'guten-builder-blocks'),
-          value: 'none'
-        }],
-        onChange: val => setAttributes({
-          preloadStrategy: val
-        }),
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Controls how much of the file the browser downloads automatically.', 'guten-builder-blocks')
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Layout Settings', 'guten-builder-blocks'),
       initialOpen: false,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Block Alignment', 'guten-builder-blocks'),
         value: playerAlign,
         options: [{
@@ -3704,7 +3670,7 @@ const General = ({
           playerAlign: val
         }),
         help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Player position in the container.', 'guten-builder-blocks')
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Time Display Mode', 'guten-builder-blocks'),
         value: timeDisplayMode,
         options: [{
@@ -3805,8 +3771,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var tr_tools__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tr-tools */ "../tr-tools/index.js");
+/* harmony import */ var tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tr-tools/utils/options */ "../tr-tools/utils/options.js");
+/* harmony import */ var _utils_options__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../utils/options */ "./src/blocks/audio-player/utils/options.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
 
 
 
@@ -3815,143 +3787,99 @@ const Style = ({
   setAttributes
 }) => {
   const {
-    bgColor,
-    textColor,
-    accentColor,
-    progressColor,
-    borderRadius,
-    paddingV,
-    paddingH,
-    playerLayout,
-    containerShadow,
-    shadowStyle
+    playerBorder,
+    playerBorderRadius,
+    playerBg,
+    labelColor,
+    titleColor,
+    artistColor,
+    labelTypography,
+    titleTypography,
+    artistTypography
   } = attributes;
-  const isCompact = playerLayout === 'compact';
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('🎨 Colors & Styling', 'guten-builder-blocks'),
-      initialOpen: true,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-        style: {
-          fontWeight: 'bold',
-          margin: '0 0 5px 0'
-        },
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Player Background Color', 'guten-builder-blocks')
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
-        value: bgColor,
-        onChange: val => setAttributes({
-          bgColor: val || '#111111'
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-        style: {
-          fontWeight: 'bold',
-          margin: '10px 0 5px 0'
-        },
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text & Icon Color', 'guten-builder-blocks')
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
-        value: textColor,
-        onChange: val => setAttributes({
-          textColor: val || '#ffffff'
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-        style: {
-          fontWeight: 'bold',
-          margin: '10px 0 5px 0'
-        },
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Accent Color', 'guten-builder-blocks')
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
-        value: accentColor,
-        onChange: val => setAttributes({
-          accentColor: val || '#10b981'
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-        style: {
-          fontWeight: 'bold',
-          margin: '10px 0 5px 0'
-        },
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Progress Background Color', 'guten-builder-blocks')
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
-        value: progressColor,
-        onChange: val => setAttributes({
-          progressColor: val || 'rgba(255,255,255,0.15)'
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("hr", {}), !isCompact && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border Radius', 'guten-builder-blocks'),
-          value: borderRadius,
-          onChange: val => setAttributes({
-            borderRadius: val
-          }),
-          min: 0,
-          max: 50,
-          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Rounds the player corners.', 'guten-builder-blocks')
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          style: {
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '10px',
-            marginTop: '10px'
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Inner V-Padding', 'guten-builder-blocks'),
-            value: paddingV,
-            onChange: val => setAttributes({
-              paddingV: val
-            }),
-            min: 5,
-            max: 40
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Inner H-Padding', 'guten-builder-blocks'),
-            value: paddingH,
-            onChange: val => setAttributes({
-              paddingH: val
-            }),
-            min: 10,
-            max: 60
-          })]
-        })]
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('📦 Shadow & Depth', 'guten-builder-blocks'),
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      className: "bPlPanelBody",
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Player', 'guten-builder-blocks'),
       initialOpen: false,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enable Container Shadow', 'guten-builder-blocks'),
-        checked: containerShadow,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BackgroundControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background :', 'guten-builder-blocks'),
+        value: playerBg,
         onChange: val => setAttributes({
-          containerShadow: val
+          playerBg: val
         })
-      }), containerShadow && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        style: {
-          background: '#f8f9fa',
-          padding: '12px',
-          borderRadius: '6px',
-          border: '1px solid #e2e8f0',
-          marginTop: '10px'
-        },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Shadow Style', 'guten-builder-blocks'),
-          value: shadowStyle,
-          options: [{
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Soft (Classic)', 'guten-builder-blocks'),
-            value: 'soft'
-          }, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Crisp (Solid)', 'guten-builder-blocks'),
-            value: 'crisp'
-          }, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Floating (Diffused)', 'guten-builder-blocks'),
-            value: 'float'
-          }, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Dynamic Glow', 'guten-builder-blocks'),
-            value: 'glow'
-          }, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Elegant Luxury', 'guten-builder-blocks'),
-            value: 'elegant'
-          }],
-          onChange: val => setAttributes({
-            shadowStyle: val
-          }),
-          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Dynamic Glow uses the accent color automatically!', 'guten-builder-blocks')
-        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BorderControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border :', 'guten-builder-blocks'),
+        value: playerBorder,
+        onChange: val => setAttributes({
+          playerBorder: val
+        }),
+        defaultBorder: {
+          color: '#e5e7eb',
+          width: '1px',
+          style: 'solid',
+          side: 'all'
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.SpacingControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border Radius :', 'guten-builder-blocks'),
+        value: playerBorderRadius,
+        onChange: val => setAttributes({
+          playerBorderRadius: val
+        }),
+        units: [(0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.pxUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.remUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.emUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.vwUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.perUnit)()],
+        defaultVal: {
+          top: '16px',
+          right: '16px',
+          bottom: '16px',
+          left: '16px'
+        }
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      className: "bPlPanelBody",
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Track Info', 'guten-builder-blocks'),
+      initialOpen: false,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Label Color :', 'guten-builder-blocks'),
+        value: labelColor,
+        onChange: color => setAttributes({
+          labelColor: color
+        }),
+        defaultColor: "#6b7280"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Label Typography :', 'guten-builder-blocks'),
+        value: labelTypography,
+        onChange: val => setAttributes({
+          labelTypography: val
+        }),
+        defaultTypography: _utils_options__WEBPACK_IMPORTED_MODULE_4__.defaultLabelTypo
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title Color :', 'guten-builder-blocks'),
+        value: titleColor,
+        onChange: color => setAttributes({
+          titleColor: color
+        }),
+        defaultColor: "#111827"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title Typography :', 'guten-builder-blocks'),
+        value: titleTypography,
+        onChange: val => setAttributes({
+          titleTypography: val
+        }),
+        defaultTypography: _utils_options__WEBPACK_IMPORTED_MODULE_4__.defaultTitleTypo
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Artist Color :', 'guten-builder-blocks'),
+        value: artistColor,
+        onChange: color => setAttributes({
+          artistColor: color
+        }),
+        defaultColor: "#6b7280"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Artist Typography :', 'guten-builder-blocks'),
+        value: artistTypography,
+        onChange: val => setAttributes({
+          artistTypography: val
+        }),
+        defaultTypography: _utils_options__WEBPACK_IMPORTED_MODULE_4__.defaultArtistTypo
       })]
     })]
   });
@@ -3970,51 +3898,60 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var tr_tools__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tr-tools */ "../tr-tools/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
 
 const DynamicStyles = ({
   attributes,
   id
 }) => {
   const {
-    playerLayout = 'extended',
-    compactSize = 160,
-    enableSeekbar = false,
-    bgColor = '#111111',
-    textColor = '#ffffff',
-    accentColor = 'var(--gbb-ap-accent, #10b981)',
-    progressColor = 'rgba(255,255,255,0.15)',
-    borderRadius = 50,
-    paddingV = 16,
-    paddingH = 32,
-    playerAlign = 'center'
+    playerAlign,
+    playerBorder,
+    playerBorderRadius,
+    playerBg,
+    labelColor,
+    titleColor,
+    artistColor,
+    labelTypography,
+    titleTypography,
+    artistTypography
   } = attributes || {};
-  const isCompact = playerLayout === 'compact';
   const mainSl = `#${id}`;
   const wrapper = mainSl;
-  const button = `${wrapper} .gbb-ap-button`;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("style", {
+  const topPart = `${mainSl} .gbb-audio-player-one__top`;
+  const infoContent = `${topPart} .gbb-audio-player-one__content`;
+  const labelText = `${infoContent} .gbb-audio-player-one__label `;
+  const titleText = `${infoContent} .gbb-audio-player-one__title`;
+  const artistText = `${infoContent} .gbb-audio-player-one__artist`;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("style", {
     dangerouslySetInnerHTML: {
       __html: `
         ${wrapper} {
-          display: flex;
           justify-content: ${playerAlign};
-          align-items: center;
-          width: 100%;
         }
 
-        ${button} {
-          --gbb-ap-bg: ${bgColor};
-          --gbb-ap-text: ${textColor};
-          --gbb-ap-accent: ${accentColor};
-          --gbb-ap-progress: ${enableSeekbar ? progressColor : 'transparent'};
-          --gbb-ap-br: ${isCompact ? '50%' : `${borderRadius}px`};
-          --gbb-ap-pad-v: ${isCompact ? '0px' : `${paddingV}px`};
-          --gbb-ap-pad-h: ${isCompact ? '0px' : `${paddingH}px`};
-          --gbb-ap-width: ${isCompact ? `${compactSize}px` : 'auto'};
-          --gbb-ap-height: ${isCompact ? `${compactSize}px` : 'auto'};
-          --gbb-ap-jc: ${isCompact ? 'center' : 'flex-start'};
+        ${wrapper} .gbb-audio-player-one {
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(playerBg) ? `background: ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(playerBg)};` : ''}
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderCss)(playerBorder)}
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderRadiusCss)(playerBorderRadius)}
+        }
+
+        ${labelText} {
+          ${labelColor ? `color: ${labelColor};` : ''}
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(labelTypography)}
+        }
+
+        ${titleText} {
+          ${titleColor ? `color: ${titleColor};` : ''}
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(titleTypography)}
+        }
+
+        ${artistText} {
+          ${artistColor ? `color: ${artistColor};` : ''}
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(artistTypography)}
         }
         `
     }
@@ -4045,7 +3982,6 @@ __webpack_require__.r(__webpack_exports__);
 
 const AudioPlayer = ({
   attributes,
-  setAttributes,
   id
 }) => {
   const {
@@ -4054,7 +3990,6 @@ const AudioPlayer = ({
     subtitle = '',
     coverUrl = '',
     labelText = '',
-    preloadStrategy = 'metadata',
     timeDisplayMode = 'total'
   } = attributes || {};
   const audioRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
@@ -4167,7 +4102,7 @@ const AudioPlayer = ({
     };
   }, [isPlaying]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    className: "gbb-audio-player-one",
+    className: `gbb-audio-player-one ${id}`,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("audio", {
       ref: audioRef,
       src: audioUrl,
@@ -4682,6 +4617,9 @@ const audioPlayerIcon = {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   defaultArtistTypo: () => (/* binding */ defaultArtistTypo),
+/* harmony export */   defaultLabelTypo: () => (/* binding */ defaultLabelTypo),
+/* harmony export */   defaultTitleTypo: () => (/* binding */ defaultTitleTypo),
 /* harmony export */   generalStyleTabs: () => (/* binding */ generalStyleTabs)
 /* harmony export */ });
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
@@ -4711,6 +4649,48 @@ const generalStyleTabs = [{
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icon__WEBPACK_IMPORTED_MODULE_1__.StyleIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style', 'guten-builder-blocks')]
   })
 }];
+const defaultLabelTypo = {
+  fontSize: {
+    desktop: "13px",
+    tablet: "13px",
+    mobile: "13px"
+  },
+  fontFamily: '',
+  fontWeight: '600',
+  lineHeight: '',
+  letterSpacing: '0.08em',
+  textTransform: 'uppercase',
+  textDecoration: 'none',
+  fontStyle: 'normal'
+};
+const defaultTitleTypo = {
+  fontSize: {
+    desktop: "22px",
+    tablet: "22px",
+    mobile: "22px"
+  },
+  fontFamily: '',
+  fontWeight: '700',
+  lineHeight: '1.3',
+  letterSpacing: '',
+  textTransform: 'none',
+  textDecoration: 'none',
+  fontStyle: 'normal'
+};
+const defaultArtistTypo = {
+  fontSize: {
+    desktop: "15px",
+    tablet: "15px",
+    mobile: "15px"
+  },
+  fontFamily: '',
+  fontWeight: '400',
+  lineHeight: '',
+  letterSpacing: '',
+  textTransform: 'none',
+  textDecoration: 'none',
+  fontStyle: 'normal'
+};
 
 /***/ },
 
@@ -4958,7 +4938,7 @@ module.exports = window["wp"]["i18n"];
   \********************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/audio-player","version":"1.0.0","title":"Audio Player","description":"Ultra-optimized Gutenberg audio player with seek controls and accessible playback UI.","category":"guten-builder","keywords":["audio player","audio","music player","podcast","sound","media player"],"textdomain":"guten-builder-blocks","attributes":{"blockId":{"type":"string","default":""},"selectedTemplate":{"type":"string","default":""},"audioUrl":{"type":"string","default":""},"coverUrl":{"type":"string","default":""},"labelText":{"type":"string","default":""},"text":{"type":"string","default":""},"subtitle":{"type":"string","default":""},"playerAlign":{"type":"string","default":"center"},"timeDisplayMode":{"type":"string","default":"total"}},"supports":{"html":false,"anchor":true,"align":["wide","full"]},"editorScript":"file:./index.js","viewScript":"file:./view.js","style":"file:./style-view.css","editorStyle":"file:./index.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/audio-player","version":"1.0.0","title":"Audio Player","description":"Ultra-optimized Gutenberg audio player with seek controls and accessible playback UI.","category":"guten-builder","keywords":["audio player","audio","music player","podcast","sound","media player"],"textdomain":"guten-builder-blocks","attributes":{"blockId":{"type":"string","default":""},"selectedTemplate":{"type":"string","default":""},"audioUrl":{"type":"string","default":""},"coverUrl":{"type":"string","default":""},"labelText":{"type":"string","default":""},"text":{"type":"string","default":""},"subtitle":{"type":"string","default":""},"playerAlign":{"type":"string","default":"center"},"timeDisplayMode":{"type":"string","default":"total"},"playerBorder":{"type":"object","default":{"color":"#e5e7eb","width":"1px","style":"solid","side":"all"}},"playerBorderRadius":{"type":"object","default":{"top":"16px","right":"16px","bottom":"16px","left":"16px"}},"playerBg":{"type":"object","default":{}},"labelColor":{"type":"string","default":"#6b7280"},"titleColor":{"type":"string","default":"#111827"},"artistColor":{"type":"string","default":"#6b7280"},"labelTypography":{"type":"object","default":{"fontSize":{"desktop":"13px","tablet":"13px","mobile":"13px"},"fontFamily":"","fontWeight":"600","lineHeight":"","letterSpacing":"0.08em","textTransform":"uppercase","textDecoration":"none","fontStyle":"normal"}},"titleTypography":{"type":"object","default":{"fontSize":{"desktop":"22px","tablet":"22px","mobile":"22px"},"fontFamily":"","fontWeight":"700","lineHeight":"","letterSpacing":"","textTransform":"none","textDecoration":"none","fontStyle":"normal"}},"artistTypography":{"type":"object","default":{"fontSize":{"desktop":"15px","tablet":"15px","mobile":"15px"},"fontFamily":"","fontWeight":"400","lineHeight":"","letterSpacing":"","textTransform":"none","textDecoration":"none","fontStyle":"normal"}}},"supports":{"html":false,"anchor":true,"align":["wide","full"]},"editorScript":"file:./index.js","viewScript":"file:./view.js","style":"file:./style-view.css","editorStyle":"file:./index.css","render":"file:./render.php"}');
 
 /***/ }
 

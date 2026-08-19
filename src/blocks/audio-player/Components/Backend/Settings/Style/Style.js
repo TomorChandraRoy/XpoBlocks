@@ -1,106 +1,87 @@
 import { __ } from '@wordpress/i18n';
-import { PanelBody, ToggleControl, SelectControl, RangeControl, ColorPalette } from '@wordpress/components';
+import { PanelBody} from '@wordpress/components';
+import { BorderControl, SpacingControl, BackgroundControl, ColorControl, Typography } from 'tr-tools';
+import { pxUnit, remUnit, emUnit, vwUnit, perUnit } from 'tr-tools/utils/options';
+import { defaultLabelTypo, defaultTitleTypo, defaultArtistTypo } from '../../../../utils/options';
 
 const Style = ( { attributes, setAttributes } ) => {
-	const {
-		bgColor,
-		textColor,
-		accentColor,
-		progressColor,
-		borderRadius,
-		paddingV,
-		paddingH,
-		playerLayout,
-		containerShadow,
-		shadowStyle
-	} = attributes;
+	const { playerBorder, playerBorderRadius, playerBg, labelColor, titleColor, artistColor, labelTypography, titleTypography, artistTypography } = attributes;
 
-	const isCompact = playerLayout === 'compact';
+
 
 	return (
 		<>
-			<PanelBody title={ __( '🎨 Colors & Styling', 'guten-builder-blocks' ) } initialOpen={ true }>
-				<p style={ { fontWeight: 'bold', margin: '0 0 5px 0' } }>{ __( 'Player Background Color', 'guten-builder-blocks' ) }</p>
-				<ColorPalette
-					value={ bgColor }
-					onChange={ ( val ) => setAttributes( { bgColor: val || '#111111' } ) }
+			<PanelBody className="bPlPanelBody" title={ __( 'Player', 'guten-builder-blocks' ) } initialOpen={ false }>
+				<BackgroundControl
+					label={__( 'Background :', 'guten-builder-blocks' )}
+					value={playerBg}
+					onChange={val => setAttributes({ playerBg: val })}
 				/>
 
-				<p style={ { fontWeight: 'bold', margin: '10px 0 5px 0' } }>{ __( 'Text & Icon Color', 'guten-builder-blocks' ) }</p>
-				<ColorPalette
-					value={ textColor }
-					onChange={ ( val ) => setAttributes( { textColor: val || '#ffffff' } ) }
+				<BorderControl
+					label={ __( 'Border :', 'guten-builder-blocks' ) }
+					value={ playerBorder }
+					onChange={ ( val ) => setAttributes( { playerBorder: val } ) }
+					defaultBorder={ {
+						color: '#e5e7eb',
+						width: '1px',
+						style: 'solid',
+						side: 'all'
+					} }
 				/>
 
-				<p style={ { fontWeight: 'bold', margin: '10px 0 5px 0' } }>{ __( 'Accent Color', 'guten-builder-blocks' ) }</p>
-				<ColorPalette
-					value={ accentColor }
-					onChange={ ( val ) => setAttributes( { accentColor: val || '#10b981' } ) }
+				<SpacingControl
+					label={__( 'Border Radius :', 'guten-builder-blocks' )}
+					value={playerBorderRadius}
+					onChange={val => setAttributes({ playerBorderRadius: val })}
+					units={[pxUnit(), remUnit(), emUnit(), vwUnit(), perUnit()]}
+					defaultVal={{ top: '16px', right: '16px', bottom: '16px', left: '16px' }}
 				/>
 
-				<p style={ { fontWeight: 'bold', margin: '10px 0 5px 0' } }>{ __( 'Progress Background Color', 'guten-builder-blocks' ) }</p>
-				<ColorPalette
-					value={ progressColor }
-					onChange={ ( val ) => setAttributes( { progressColor: val || 'rgba(255,255,255,0.15)' } ) }
-				/>
-
-				<hr />
-
-				{ ! isCompact && (
-					<>
-						<RangeControl
-							label={ __( 'Border Radius', 'guten-builder-blocks' ) }
-							value={ borderRadius }
-							onChange={ ( val ) => setAttributes( { borderRadius: val } ) }
-							min={ 0 }
-							max={ 50 }
-							help={ __( 'Rounds the player corners.', 'guten-builder-blocks' ) }
-						/>
-
-						<div style={ { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginTop: '10px' } }>
-							<RangeControl
-								label={ __( 'Inner V-Padding', 'guten-builder-blocks' ) }
-								value={ paddingV }
-								onChange={ ( val ) => setAttributes( { paddingV: val } ) }
-								min={ 5 }
-								max={ 40 }
-							/>
-							<RangeControl
-								label={ __( 'Inner H-Padding', 'guten-builder-blocks' ) }
-								value={ paddingH }
-								onChange={ ( val ) => setAttributes( { paddingH: val } ) }
-								min={ 10 }
-								max={ 60 }
-							/>
-						</div>
-					</>
-				) }
 			</PanelBody>
 
-			<PanelBody title={ __( '📦 Shadow & Depth', 'guten-builder-blocks' ) } initialOpen={ false }>
-				<ToggleControl
-					label={ __( 'Enable Container Shadow', 'guten-builder-blocks' ) }
-					checked={ containerShadow }
-					onChange={ ( val ) => setAttributes( { containerShadow: val } ) }
+			<PanelBody className="bPlPanelBody" title={ __( 'Track Info', 'guten-builder-blocks' ) } initialOpen={ false }>
+				<ColorControl
+					label={__( 'Label Color :', 'guten-builder-blocks' )}
+					value={labelColor}
+					onChange={color => setAttributes({ labelColor: color })}
+					defaultColor="#6b7280"
 				/>
 
-				{ containerShadow && (
-					<div style={ { background: '#f8f9fa', padding: '12px', borderRadius: '6px', border: '1px solid #e2e8f0', marginTop: '10px' } }>
-						<SelectControl
-							label={ __( 'Shadow Style', 'guten-builder-blocks' ) }
-							value={ shadowStyle }
-							options={ [
-								{ label: __( 'Soft (Classic)', 'guten-builder-blocks' ), value: 'soft' },
-								{ label: __( 'Crisp (Solid)', 'guten-builder-blocks' ), value: 'crisp' },
-								{ label: __( 'Floating (Diffused)', 'guten-builder-blocks' ), value: 'float' },
-								{ label: __( 'Dynamic Glow', 'guten-builder-blocks' ), value: 'glow' },
-								{ label: __( 'Elegant Luxury', 'guten-builder-blocks' ), value: 'elegant' }
-							] }
-							onChange={ ( val ) => setAttributes( { shadowStyle: val } ) }
-							help={ __( 'Dynamic Glow uses the accent color automatically!', 'guten-builder-blocks' ) }
-						/>
-					</div>
-				) }
+				<Typography
+					label={__( 'Label Typography :', 'guten-builder-blocks' )}
+					value={labelTypography}
+					onChange={val => setAttributes({ labelTypography: val })}
+					defaultTypography={defaultLabelTypo}
+				/>
+
+				<ColorControl
+					label={__( 'Title Color :', 'guten-builder-blocks' )}
+					value={titleColor}
+					onChange={color => setAttributes({ titleColor: color })}
+					defaultColor="#111827"
+				/>
+
+				<Typography
+					label={__( 'Title Typography :', 'guten-builder-blocks' )}
+					value={titleTypography}
+					onChange={val => setAttributes({ titleTypography: val })}
+					defaultTypography={defaultTitleTypo}
+				/>
+
+				<ColorControl
+					label={__( 'Artist Color :', 'guten-builder-blocks' )}
+					value={artistColor}
+					onChange={color => setAttributes({ artistColor: color })}
+					defaultColor="#6b7280"
+				/>
+
+				<Typography
+					label={__( 'Artist Typography :', 'guten-builder-blocks' )}
+					value={artistTypography}
+					onChange={val => setAttributes({ artistTypography: val })}
+					defaultTypography={defaultArtistTypo}
+				/>
 			</PanelBody>
 		</>
 	);

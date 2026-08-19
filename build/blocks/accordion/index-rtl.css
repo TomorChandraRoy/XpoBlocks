@@ -1981,6 +1981,7 @@
   flex: 1;
 }
 
+.bPlBoxControl .bplUnitControlWrapper .components-base-control,
 .bPlBoxControl .bplUnitControlWrapper .components-base-control__field {
   margin-bottom: 0;
 }

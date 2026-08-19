@@ -43,6 +43,79 @@
     "timeDisplayMode": {
       "type": "string",
       "default": "total"
+    },
+    "playerBorder": {
+      "type": "object",
+      "default": {
+        "color": "#e5e7eb",
+        "width": "1px",
+        "style": "solid",
+        "side": "all"
+      }
+    },
+    "playerBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "16px",
+        "right": "16px",
+        "bottom": "16px",
+        "left": "16px"
+      }
+    },
+    "playerBg": {
+      "type": "object",
+      "default": {}
+    },
+    "labelColor": {
+      "type": "string",
+      "default": "#6b7280"
+    },
+    "titleColor": {
+      "type": "string",
+      "default": "#111827"
+    },
+    "artistColor": {
+      "type": "string",
+      "default": "#6b7280"
+    },
+    "labelTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": { "desktop": "13px", "tablet": "13px", "mobile": "13px" },
+        "fontFamily": "",
+        "fontWeight": "600",
+        "lineHeight": "",
+        "letterSpacing": "0.08em",
+        "textTransform": "uppercase",
+        "textDecoration": "none",
+        "fontStyle": "normal"
+      }
+    },
+    "titleTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": { "desktop": "22px", "tablet": "22px", "mobile": "22px" },
+        "fontFamily": "",
+        "fontWeight": "700",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "textTransform": "none",
+        "textDecoration": "none",
+        "fontStyle": "normal"
+      }
+    },
+    "artistTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": { "desktop": "15px", "tablet": "15px", "mobile": "15px" },
+        "fontFamily": "",
+        "fontWeight": "400",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "textTransform": "none",
+        "textDecoration": "none",
+        "fontStyle": "normal"
+      }
     }
   },
   "supports": {

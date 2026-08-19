@@ -1,4 +1,8 @@
-.wp-block-guten-builder-blocks-audio-player {
+.gbb-audio-player-container {
+	display: flex;
+	align-items: center;
+	width: 100%;
+
 	.gbb-audio-player-one {
 	width: 100%;
 	max-width: 700px;
@@ -111,7 +115,7 @@
 		justify-content: center;
 		gap: 18px;
 		margin-top: 24px;
-
+    margin-left: 47px;
 		button {
 			display: flex;
 			align-items: center;

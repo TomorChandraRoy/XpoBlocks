@@ -1,46 +1,44 @@
-const DynamicStyles = ({ attributes, id }) => {
-  const {
-    playerLayout = 'extended',
-    compactSize = 160,
-    enableSeekbar = false,
-    bgColor = '#111111',
-    textColor = '#ffffff',
-    accentColor = 'var(--gbb-ap-accent, #10b981)',
-    progressColor = 'rgba(255,255,255,0.15)',
-    borderRadius = 50,
-    paddingV = 16,
-    paddingH = 32,
-    playerAlign = 'center',
-  } = attributes || {};
+import { getBorderCss, getBorderRadiusCss, getBackgroundCss, getTypographyCss } from 'tr-tools';
 
-  const isCompact = playerLayout === 'compact';
+const DynamicStyles = ({ attributes, id }) => {
+  const { playerAlign, playerBorder, playerBorderRadius, playerBg, labelColor, titleColor, artistColor, labelTypography, titleTypography, artistTypography } = attributes || {};
 
   const mainSl = `#${id}`;
   const wrapper = mainSl;
-  const button = `${wrapper} .gbb-ap-button`;
+  const topPart = `${mainSl} .gbb-audio-player-one__top`;
+  const infoContent = `${topPart} .gbb-audio-player-one__content`;
+  const labelText = `${infoContent} .gbb-audio-player-one__label `;
+  const titleText = `${infoContent} .gbb-audio-player-one__title`;
+  const artistText = `${infoContent} .gbb-audio-player-one__artist`;
+
 
   return (
     <style
       dangerouslySetInnerHTML={{
         __html: `
         ${wrapper} {
-          display: flex;
           justify-content: ${playerAlign};
-          align-items: center;
-          width: 100%;
         }
 
-        ${button} {
-          --gbb-ap-bg: ${bgColor};
-          --gbb-ap-text: ${textColor};
-          --gbb-ap-accent: ${accentColor};
-          --gbb-ap-progress: ${enableSeekbar ? progressColor : 'transparent'};
-          --gbb-ap-br: ${isCompact ? '50%' : `${borderRadius}px`};
-          --gbb-ap-pad-v: ${isCompact ? '0px' : `${paddingV}px`};
-          --gbb-ap-pad-h: ${isCompact ? '0px' : `${paddingH}px`};
-          --gbb-ap-width: ${isCompact ? `${compactSize}px` : 'auto'};
-          --gbb-ap-height: ${isCompact ? `${compactSize}px` : 'auto'};
-          --gbb-ap-jc: ${isCompact ? 'center' : 'flex-start'};
+        ${wrapper} .gbb-audio-player-one {
+          ${getBackgroundCss(playerBg) ? `background: ${getBackgroundCss(playerBg)};` : ''}
+          ${getBorderCss(playerBorder)}
+          ${getBorderRadiusCss(playerBorderRadius)}
+        }
+
+        ${labelText} {
+          ${labelColor ? `color: ${labelColor};` : ''}
+          ${getTypographyCss(labelTypography)}
+        }
+
+        ${titleText} {
+          ${titleColor ? `color: ${titleColor};` : ''}
+          ${getTypographyCss(titleTypography)}
+        }
+
+        ${artistText} {
+          ${artistColor ? `color: ${artistColor};` : ''}
+          ${getTypographyCss(artistTypography)}
         }
         `,
       }}
