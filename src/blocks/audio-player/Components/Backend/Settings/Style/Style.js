@@ -5,7 +5,7 @@ import { pxUnit, remUnit, emUnit, vwUnit, perUnit } from 'tr-tools/utils/options
 import { defaultLabelTypo, defaultTitleTypo, defaultArtistTypo } from '../../../../utils/options';
 
 const Style = ( { attributes, setAttributes } ) => {
-	const { playerBorder, playerBorderRadius, playerBg, labelColor, titleColor, artistColor, labelTypography, titleTypography, artistTypography, progressColor, progressBg } = attributes;
+	const { playerBorder, playerBorderRadius, playerBg, labelColor, titleColor, artistColor, labelTypography, titleTypography, artistTypography, progressColor, progressBg, timeColor } = attributes;
 
 
 
@@ -97,6 +97,13 @@ const Style = ( { attributes, setAttributes } ) => {
 					value={progressBg}
 					onChange={color => setAttributes({ progressBg: color })}
 					defaultColor="#e5e7eb"
+				/>
+
+				<ColorControl
+					label={__( 'Time Color :', 'guten-builder-blocks' )}
+					value={timeColor}
+					onChange={color => setAttributes({ timeColor: color })}
+					defaultColor="#9ca3af"
 				/>
 			</PanelBody>
 		</>

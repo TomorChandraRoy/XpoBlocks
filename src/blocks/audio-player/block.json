@@ -124,6 +124,10 @@
     "progressBg": {
       "type": "string",
       "default": "#e5e7eb"
+    },
+    "timeColor": {
+      "type": "string",
+      "default": "#9ca3af"
     }
   },
   "supports": {

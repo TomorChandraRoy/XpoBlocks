@@ -1,7 +1,7 @@
 import { getBorderCss, getBorderRadiusCss, getBackgroundCss, getTypographyCss } from 'tr-tools';
 
 const DynamicStyles = ({ attributes, id }) => {
-  const { playerAlign, playerBorder, playerBorderRadius, playerBg, labelColor, titleColor, artistColor, labelTypography, titleTypography, artistTypography, progressColor, progressBg } = attributes || {};
+  const { playerAlign, playerBorder, playerBorderRadius, playerBg, labelColor, titleColor, artistColor, labelTypography, titleTypography, artistTypography, progressColor, progressBg, timeColor } = attributes || {};
 
   const mainSl = `#${id}`;
   const wrapper = mainSl;
@@ -10,6 +10,7 @@ const DynamicStyles = ({ attributes, id }) => {
   const labelText = `${infoContent} .gbb-audio-player-one__label `;
   const titleText = `${infoContent} .gbb-audio-player-one__title`;
   const artistText = `${infoContent} .gbb-audio-player-one__artist`;
+  const timeText = `${infoContent} .gbb-audio-player-one__time`;
 
 
   return (
@@ -55,6 +56,10 @@ const DynamicStyles = ({ attributes, id }) => {
 
         ${wrapper} .gbb-audio-player-one__progress input::-moz-range-thumb {
           background: ${progressColor ? progressColor : '#F62477'} !important;
+        }
+
+        ${timeText} {
+          ${timeColor ? `color: ${timeColor};` : ''}
         }
         `,
       }}
