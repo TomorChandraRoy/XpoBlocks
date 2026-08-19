@@ -203,7 +203,7 @@ const togglePlay = () => {
           ◀◀
         </button>
 
-        <button type="button" className="gbb-audio-player-one__play" onClick={togglePlay} aria-label="Play audio" disabled={!audioUrl}>
+        <button type="button" className={`gbb-audio-player-one__play ${isPlaying ? 'is-playing' : 'is-paused'}`} onClick={togglePlay} aria-label="Play audio" disabled={!audioUrl}>
           {isPlaying ? '❚❚' : '▶'}
         </button>
 

@@ -115,7 +115,12 @@
 		justify-content: center;
 		gap: 18px;
 		margin-top: 24px;
-    margin-left: 47px;
+		margin-left: 47px;
+
+		@media (max-width: 600px) {
+			margin-left: 0;
+		}
+
 		button {
 			display: flex;
 			align-items: center;
@@ -142,12 +147,25 @@
 	}
 
 	&__play {
+		display: flex !important;
+		align-items: center !important;
+		justify-content: center !important;
 		width: 52px !important;
 		height: 52px !important;
 		border-radius: 50% !important;
 		background: #F62477 !important;
 		color: #ffffff !important;
-		font-size: 20px !important;
+		line-height: 1 !important;
+
+		&.is-paused {
+			font-size: 30px !important;
+			padding-left: 7px !important;
+		}
+
+		&.is-playing {
+			font-size: 30px !important;
+			padding-left: 0 !important;
+		}
 
 		&:hover:not(:disabled) {
 			transform: scale(1.05);
@@ -155,7 +173,7 @@
 
 		&:disabled {
 			background: #e5e7eb !important;
-			color: #9ca3af !important;
+			color: #fdfcfc !important;
 			cursor: not-allowed;
 		}
 	}
