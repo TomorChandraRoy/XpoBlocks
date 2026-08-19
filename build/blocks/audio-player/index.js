@@ -4065,6 +4065,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _TemplateOne__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TemplateOne */ "./src/blocks/audio-player/Components/Common/Templates/TemplateOne.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const TEMPLATES = {
+  'template-1': _TemplateOne__WEBPACK_IMPORTED_MODULE_0__["default"]
+};
+const AudioPlayer = ({
+  attributes,
+  setAttributes,
+  id
+}) => {
+  const {
+    selectedTemplate = 'template-1'
+  } = attributes || {};
+  const TemplateComponent = TEMPLATES[selectedTemplate] || TEMPLATES['template-1'];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(TemplateComponent, {
+    attributes: attributes,
+    setAttributes: setAttributes,
+    id: id
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AudioPlayer);
+
+/***/ },
+
+/***/ "./src/blocks/audio-player/Components/Common/Templates/TemplateOne.jsx"
+/*!*****************************************************************************!*\
+  !*** ./src/blocks/audio-player/Components/Common/Templates/TemplateOne.jsx ***!
+  \*****************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
@@ -4074,7 +4111,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const AudioPlayer = ({
+const TemplateOne = ({
   attributes,
   id
 }) => {
@@ -4206,7 +4243,7 @@ const AudioPlayer = ({
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "gbb-audio-player-one__cover",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-          src: coverUrl || "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f",
+          src: coverUrl || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='100%25' height='100%25' fill='%23cbd5e1'/%3E%3Ccircle cx='150' cy='150' r='50' fill='%2394a3b8'/%3E%3Ccircle cx='150' cy='150' r='15' fill='%23cbd5e1'/%3E%3C/svg%3E",
           alt: "Audio Cover"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
@@ -4323,7 +4360,7 @@ const AudioPlayer = ({
     })]
   });
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AudioPlayer);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TemplateOne);
 
 /***/ },
 
