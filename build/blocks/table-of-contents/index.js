@@ -1,1 +1,2729 @@
-(()=>{"use strict";var e={500(){const e=window.wp.blocks,t=window.wp.blockEditor,l=window.wp.components,n=window.wp.i18n,o=[{name:"general",title:(0,n.__)("General","textdomain")},{name:"style",title:(0,n.__)("Style","textdomain")}],i=window.wp.element,s=window.ReactJSXRuntime,r=(e,t)=>[...e,t],a=(e,t)=>e.filter(((e,l)=>l!==t)),c=(e,t)=>{const l=[...e],n={...l[t]};return l.splice(t+1,0,n),l},d=({label:e,value:t,onChange:n,defaultVal:o="#ffffff",marginTop:i="10px"})=>(0,s.jsxs)(s.Fragment,{children:[(0,s.jsx)("p",{style:{fontWeight:"bold",margin:`${i} 0 5px 0`},children:e}),(0,s.jsx)(l.ColorPalette,{value:t,onChange:e=>n(e||o)})]}),u=({attributes:e,setAttributes:t,clientId:o})=>{const{blockId:d,items:u=[],allowMultiple:b}=e,g=(0,i.useRef)(o);(0,i.useEffect)((()=>{const e=g.current!==o;if(!d||e){const e=window.crypto&&crypto.randomUUID?crypto.randomUUID().split("-")[0]:Math.random().toString(36).substring(2,9);t({blockId:`gbb-faq-${e}`}),g.current=o}}),[d,o,t]);const h=(e,l,n)=>{const o=[...u];o[e]={...o[e],[l]:n},t({items:o})};return(0,s.jsxs)(s.Fragment,{children:[(0,s.jsx)(l.PanelBody,{title:(0,n.__)("⚙️ Layout","guten-builder-blocks"),initialOpen:!0,children:(0,s.jsx)(l.ToggleControl,{label:(0,n.__)("Allow Multiple Open","guten-builder-blocks"),checked:b,onChange:e=>t({allowMultiple:e}),help:(0,n.__)("If disabled, expanding one item collapses the others.","guten-builder-blocks")})}),(0,s.jsxs)(l.PanelBody,{title:(0,n.__)("📋 FAQ Items Manager","guten-builder-blocks"),initialOpen:!0,children:[u.map(((e,o)=>(0,s.jsxs)("div",{style:{background:"#f8fafc",border:"1px solid #e2e8f0",borderRadius:"6px",padding:"12px",marginBottom:"12px",position:"relative"},children:[(0,s.jsxs)("div",{style:{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"8px"},children:[(0,s.jsxs)("span",{style:{fontWeight:"bold",fontSize:"12px",color:"#475569"},children:[(0,n.__)("Item #","guten-builder-blocks")," ",o+1]}),(0,s.jsxs)("div",{style:{display:"flex",gap:"10px"},children:[(0,s.jsx)(l.Button,{variant:"link",onClick:()=>(e=>{t({items:c(u,e)})})(o),style:{padding:0,height:"auto",minWidth:"auto",textDecoration:"none"},children:(0,n.__)("Duplicate","guten-builder-blocks")}),(0,s.jsx)(l.Button,{isDestructive:!0,variant:"link",onClick:()=>(e=>{t({items:a(u,e)})})(o),style:{padding:0,height:"auto",minWidth:"auto",textDecoration:"none"},children:(0,n.__)("Remove","guten-builder-blocks")})]})]}),(0,s.jsx)(l.TextControl,{label:(0,n.__)("Question","guten-builder-blocks"),value:e.title,onChange:e=>h(o,"title",e)}),(0,s.jsx)(l.TextareaControl,{label:(0,n.__)("Answer","guten-builder-blocks"),value:e.content,onChange:e=>h(o,"content",e),rows:3})]},o))),(0,s.jsx)(l.Button,{variant:"secondary",onClick:()=>{const e={title:(0,n.__)("New FAQ Question","guten-builder-blocks"),content:(0,n.__)("Add your FAQ answer content here.","guten-builder-blocks"),isOpen:!1};t({items:r(u,e)})},style:{width:"100%",justifyContent:"center",marginTop:"8px"},children:(0,n.__)("＋ Add FAQ Item","guten-builder-blocks")})]})]})},b=({attributes:e,setAttributes:t})=>{const{headerBgColor:o,headerTextColor:i,activeHeaderBgColor:r,activeHeaderTextColor:a,contentBgColor:c,contentTextColor:u,borderColor:b,activeBorderColor:g,iconColor:h,activeIconColor:p,borderRadius:x,borderWidth:m,gap:v,titleFontSize:f,contentFontSize:k}=e;return(0,s.jsxs)(s.Fragment,{children:[(0,s.jsxs)(l.PanelBody,{title:(0,n.__)("🎨 Header Color & Style","guten-builder-blocks"),initialOpen:!0,children:[(0,s.jsx)(d,{label:(0,n.__)("Header Background","guten-builder-blocks"),value:o,onChange:e=>t({headerBgColor:e}),marginTop:"0",defaultVal:"#ffffff"}),(0,s.jsx)(d,{label:(0,n.__)("Header Text","guten-builder-blocks"),value:i,onChange:e=>t({headerTextColor:e}),defaultVal:"#1e293b"}),(0,s.jsx)(d,{label:(0,n.__)("Active Header Background","guten-builder-blocks"),value:r,onChange:e=>t({activeHeaderBgColor:e}),defaultVal:"#f8fafc"}),(0,s.jsx)(d,{label:(0,n.__)("Active Header Text","guten-builder-blocks"),value:a,onChange:e=>t({activeHeaderTextColor:e}),defaultVal:"#0f172a"})]}),(0,s.jsxs)(l.PanelBody,{title:(0,n.__)("📄 Content Color & Style","guten-builder-blocks"),initialOpen:!1,children:[(0,s.jsx)(d,{label:(0,n.__)("Content Background","guten-builder-blocks"),value:c,onChange:e=>t({contentBgColor:e}),marginTop:"0",defaultVal:"#ffffff"}),(0,s.jsx)(d,{label:(0,n.__)("Content Text","guten-builder-blocks"),value:u,onChange:e=>t({contentTextColor:e}),defaultVal:"#475569"})]}),(0,s.jsxs)(l.PanelBody,{title:(0,n.__)("✏️ Border & Icon Styling","guten-builder-blocks"),initialOpen:!1,children:[(0,s.jsx)(d,{label:(0,n.__)("Border Color","guten-builder-blocks"),value:b,onChange:e=>t({borderColor:e}),marginTop:"0",defaultVal:"#e2e8f0"}),(0,s.jsx)(d,{label:(0,n.__)("Active Border Color","guten-builder-blocks"),value:g,onChange:e=>t({activeBorderColor:e}),defaultVal:"#cbd5e1"}),(0,s.jsx)(d,{label:(0,n.__)("Icon Color","guten-builder-blocks"),value:h,onChange:e=>t({iconColor:e}),defaultVal:"#64748b"}),(0,s.jsx)(d,{label:(0,n.__)("Active Icon Color","guten-builder-blocks"),value:p,onChange:e=>t({activeIconColor:e}),defaultVal:"#0f172a"}),(0,s.jsx)("hr",{}),(0,s.jsx)(l.RangeControl,{label:(0,n.__)("Border Radius (px)","guten-builder-blocks"),value:x,onChange:e=>t({borderRadius:e}),min:0,max:30}),(0,s.jsx)(l.RangeControl,{label:(0,n.__)("Border Width (px)","guten-builder-blocks"),value:m,onChange:e=>t({borderWidth:e}),min:0,max:10}),(0,s.jsx)(l.RangeControl,{label:(0,n.__)("Spacing Between Items (px)","guten-builder-blocks"),value:v,onChange:e=>t({gap:e}),min:0,max:40})]}),(0,s.jsxs)(l.PanelBody,{title:(0,n.__)("🔤 Typography Settings","guten-builder-blocks"),initialOpen:!1,children:[(0,s.jsx)(l.RangeControl,{label:(0,n.__)("Header Title Size (px)","guten-builder-blocks"),value:f,onChange:e=>t({titleFontSize:e}),min:12,max:36}),(0,s.jsx)(l.RangeControl,{label:(0,n.__)("Content Text Size (px)","guten-builder-blocks"),value:k,onChange:e=>t({contentFontSize:e}),min:10,max:24})]})]})},g=({attributes:e,setAttributes:n,clientId:i})=>(0,s.jsx)(t.InspectorControls,{children:(0,s.jsx)(l.TabPanel,{className:"guten-builder-blocks-tab-panel wp-block-guten-builder-blocks-table-of-contents",activeClass:"guten-builder-blocks-active-tab",tabs:o,children:t=>(0,s.jsxs)(s.Fragment,{children:["general"===t.name&&(0,s.jsx)(u,{attributes:e,setAttributes:n,clientId:i}),"style"===t.name&&(0,s.jsx)(b,{attributes:e,setAttributes:n})]})})}),h=({attributes:e,setAttributes:t})=>{const[l,n]=(0,i.useState)(!0),[o,r]=(0,i.useState)(null),a=[{id:"defining-project-scope",title:"Defining Your Plugin Project Scope",level:2},{id:"technical-skills-matter",title:"The Technical Skills That Actually Matter",level:2},{id:"core-wordpress-knowledge",title:"Core WordPress Development Knowledge",level:3},{id:"php-proficiency",title:"PHP Proficiency",level:3},{id:"database-practices",title:"Database Practices",level:3},{id:"javascript-gutenberg",title:"JavaScript and the Block Editor",level:3},{id:"where-to-find-developers",title:"Where to Find WordPress Plugin Developers",level:2},{id:"freelance-platforms",title:"Freelance Platforms",level:3},{id:"developer-communities",title:"Developer Communities",level:3},{id:"wordpress-agencies",title:"Agencies with WordPress Expertise",level:3},{id:"vetting-candidates-framework",title:"How to Vet Candidates: An Interview Framework",level:2},{id:"red-flags",title:"Red Flags to Watch For",level:2},{id:"pricing-expectations",title:"Pricing: What to Expect",level:2},{id:"solo-vs-team",title:"When a Full Team Makes More Sense",level:2},{id:"faqs",title:"FAQs",level:2}];return(0,s.jsxs)("div",{className:"toc-wrapper",children:[(0,s.jsx)("div",{className:"toc-sidebar",children:(0,s.jsxs)("div",{className:"toc-sticky-box",children:[(0,s.jsxs)("div",{className:"toc-header",onClick:()=>n(!l),children:[(0,s.jsxs)("div",{className:"toc-header-title",children:[(0,s.jsx)("svg",{className:"toc-header-icon",fill:"none",stroke:"currentColor",strokeWidth:"2",viewBox:"0 0 24 24",children:(0,s.jsx)("path",{strokeLinecap:"round",strokeLinejoin:"round",d:"M4 6h16M4 12h16M4 18h7"})}),(0,s.jsx)("span",{className:"toc-header-text",children:"Table of Contents"})]}),(0,s.jsx)("svg",{className:"toc-arrow-icon "+(l?"open":"closed"),fill:"none",stroke:"currentColor",strokeWidth:"2",viewBox:"0 0 24 24",children:(0,s.jsx)("path",{strokeLinecap:"round",strokeLinejoin:"round",d:"M19 9l-7 7-7-7"})})]}),(0,s.jsx)("div",{className:"toc-body "+(l?"open":"closed"),children:(0,s.jsx)("div",{className:"toc-list-container",children:(0,s.jsx)("ul",{className:"toc-list",children:a.map(((e,t)=>(0,s.jsx)("li",{className:`toc-item level-${e.level} ${o===e.id?"is-active":""}`,children:(0,s.jsxs)("button",{onClick:t=>((e,t)=>{r(e);const l=(t?t.target.ownerDocument:document).getElementById(e);l&&l.scrollIntoView({behavior:"smooth",block:"start"})})(e.id,t),className:`toc-link level-${e.level}`,style:{display:"flex",alignItems:"center",gap:"6px"},children:[e.level>2&&(0,s.jsx)("svg",{width:"12",height:"12",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",style:{flexShrink:0},children:(0,s.jsx)("polyline",{points:"9 18 15 12 9 6"})}),(0,s.jsx)("span",{children:e.title})]})},t)))})})})]})}),(0,s.jsxs)("div",{className:"content-area",children:[(0,s.jsx)("h1",{className:"content-title",children:"WordPress Plugin Developer Hiring Guide"}),(0,s.jsx)("p",{className:"content-subtitle",children:"Click the custom items mapped at your Left TOC module to observe functional smooth scroll animation targets."}),(0,s.jsx)("div",{className:"section-wrapper",children:a.map((e=>(0,s.jsxs)("div",{id:e.id,className:"section-block",children:[(0,s.jsx)("h2",{className:2===e.level?"section-heading-2":"section-heading-3",children:e.title}),(0,s.jsx)("p",{className:"section-paragraph",children:"This area contains the contextual contents mapped perfectly from the reference URL. Custom logic structure applies standard WordPress ecosystem optimization procedures natively."})]},e.id)))})]})]})},p=JSON.parse('{"UU":"guten-builder-blocks/table-of-contents"}');(0,e.registerBlockType)(p.UU,{edit:e=>{const{attributes:l,setAttributes:n,clientId:o}=e;return(0,s.jsxs)(s.Fragment,{children:[(0,s.jsx)(g,{attributes:l,setAttributes:n,clientId:o}),(0,s.jsx)("div",{...(0,t.useBlockProps)({draggable:!1}),children:(0,s.jsx)(h,{attributes:l,setAttributes:n})})]})},save:()=>null})}};const t={};function l(n){const o=t[n];if(void 0!==o)return o.exports;const i=t[n]={exports:{}};return e[n](i,i.exports,l),i.exports}l.m=e,(()=>{const e=[];l.O=(t,n,o,i)=>{if(n){i=i||0;for(var s=e.length;s>0&&e[s-1][2]>i;s--)e[s]=e[s-1];return void(e[s]=[n,o,i])}let r=1/0;for(s=0;s<e.length;s++){let[n,o,i]=e[s],c=!0;for(var a=0;a<n.length;a++)(!1&i||r>=i)&&Object.keys(l.O).every((e=>l.O[e](n[a])))?n.splice(a--,1):(c=!1,i<r&&(r=i));if(c){e.splice(s--,1);const l=o();void 0!==l&&(t=l)}}return t}})(),l.o=(e,t)=>Object.hasOwn(e,t),(()=>{const e={768:0,111:0};l.O.j=t=>0===e[t];const t=(t,n)=>{let[o,i,s]=n;var r,a,c=0;if(o.some((t=>0!==e[t]))){for(r in i)l.o(i,r)&&(l.m[r]=i[r]);if(s)var d=s(l)}for(t&&t(n);c<o.length;c++)a=o[c],l.o(e,a)&&e[a]&&e[a][0](),e[a]=0;return l.O(d)},n=globalThis.webpackChunkguten_builder_blocks||=[];n.forEach(t.bind(null,0)),n.push=t.bind(null,n.push.bind(n))})();let n=l.O(void 0,[111],(()=>l(500)));n=l.O(n)})();
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/blocks/table-of-contents/Components/Backend/Edit.js"
+/*!*****************************************************************!*\
+  !*** ./src/blocks/table-of-contents/Components/Backend/Edit.js ***!
+  \*****************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Settings_Settings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Settings/Settings */ "./src/blocks/table-of-contents/Components/Backend/Settings/Settings.js");
+/* harmony import */ var _Common_TableOfContents__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Common/TableOfContents */ "./src/blocks/table-of-contents/Components/Common/TableOfContents.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+const Edit = props => {
+  const {
+    attributes,
+    setAttributes,
+    clientId
+  } = props;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Settings_Settings__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      attributes,
+      setAttributes,
+      clientId
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
+        draggable: false
+      }),
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Common_TableOfContents__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        attributes: attributes,
+        setAttributes: setAttributes
+      })
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Edit);
+
+/***/ },
+
+/***/ "./src/blocks/table-of-contents/Components/Backend/Settings/General/General.js"
+/*!*************************************************************************************!*\
+  !*** ./src/blocks/table-of-contents/Components/Backend/Settings/General/General.js ***!
+  \*************************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _utils_functions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../utils/functions */ "./src/blocks/table-of-contents/utils/functions.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+const General = ({
+  attributes,
+  setAttributes,
+  clientId
+}) => {
+  const {
+    blockId,
+    items = [],
+    allowMultiple
+  } = attributes;
+  const prevClientId = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useRef)(clientId);
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useEffect)(() => {
+    const clientChanged = prevClientId.current !== clientId;
+    if (!blockId || clientChanged) {
+      const uuid = window.crypto && crypto.randomUUID ? crypto.randomUUID().split('-')[0] : Math.random().toString(36).substring(2, 9);
+      setAttributes({
+        blockId: `gbb-faq-${uuid}`
+      });
+      prevClientId.current = clientId;
+    }
+  }, [blockId, clientId, setAttributes]);
+  const updateItem = (index, key, value) => {
+    const newItems = [...items];
+    newItems[index] = {
+      ...newItems[index],
+      [key]: value
+    };
+    setAttributes({
+      items: newItems
+    });
+  };
+  const addItem = () => {
+    const newItem = {
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('New FAQ Question', 'guten-builder-blocks'),
+      content: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Add your FAQ answer content here.', 'guten-builder-blocks'),
+      isOpen: false
+    };
+    setAttributes({
+      items: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.getAddedItems)(items, newItem)
+    });
+  };
+  const deleteItem = index => {
+    setAttributes({
+      items: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.getDeletedItems)(items, index)
+    });
+  };
+  const duplicateItem = index => {
+    setAttributes({
+      items: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.getDuplicatedItems)(items, index)
+    });
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('⚙️ Layout', 'guten-builder-blocks'),
+      initialOpen: true,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Allow Multiple Open', 'guten-builder-blocks'),
+        checked: allowMultiple,
+        onChange: val => setAttributes({
+          allowMultiple: val
+        }),
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('If disabled, expanding one item collapses the others.', 'guten-builder-blocks')
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('📋 FAQ Items Manager', 'guten-builder-blocks'),
+      initialOpen: true,
+      children: [items.map((item, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        style: {
+          background: '#f8fafc',
+          border: '1px solid #e2e8f0',
+          borderRadius: '6px',
+          padding: '12px',
+          marginBottom: '12px',
+          position: 'relative'
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          style: {
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: '8px'
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
+            style: {
+              fontWeight: 'bold',
+              fontSize: '12px',
+              color: '#475569'
+            },
+            children: [(0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Item #', 'guten-builder-blocks'), " ", index + 1]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            style: {
+              display: 'flex',
+              gap: '10px'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+              variant: "link",
+              onClick: () => duplicateItem(index),
+              style: {
+                padding: 0,
+                height: 'auto',
+                minWidth: 'auto',
+                textDecoration: 'none'
+              },
+              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Duplicate', 'guten-builder-blocks')
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+              isDestructive: true,
+              variant: "link",
+              onClick: () => deleteItem(index),
+              style: {
+                padding: 0,
+                height: 'auto',
+                minWidth: 'auto',
+                textDecoration: 'none'
+              },
+              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove', 'guten-builder-blocks')
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Question', 'guten-builder-blocks'),
+          value: item.title,
+          onChange: val => updateItem(index, 'title', val)
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextareaControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Answer', 'guten-builder-blocks'),
+          value: item.content,
+          onChange: val => updateItem(index, 'content', val),
+          rows: 3
+        })]
+      }, index)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+        variant: "secondary",
+        onClick: addItem,
+        style: {
+          width: '100%',
+          justifyContent: 'center',
+          marginTop: '8px'
+        },
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('＋ Add FAQ Item', 'guten-builder-blocks')
+      })]
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (General);
+
+/***/ },
+
+/***/ "./src/blocks/table-of-contents/Components/Backend/Settings/Settings.js"
+/*!******************************************************************************!*\
+  !*** ./src/blocks/table-of-contents/Components/Backend/Settings/Settings.js ***!
+  \******************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_options__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../utils/options */ "./src/blocks/table-of-contents/utils/options.js");
+/* harmony import */ var _General_General__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./General/General */ "./src/blocks/table-of-contents/Components/Backend/Settings/General/General.js");
+/* harmony import */ var _Style_Style__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Style/Style */ "./src/blocks/table-of-contents/Components/Backend/Settings/Style/Style.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+const Settings = ({
+  attributes,
+  setAttributes,
+  clientId
+}) => {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TabPanel, {
+      className: "guten-builder-blocks-tab-panel wp-block-guten-builder-blocks-table-of-contents",
+      activeClass: "guten-builder-blocks-active-tab",
+      tabs: _utils_options__WEBPACK_IMPORTED_MODULE_2__.generalStyleTabs,
+      children: tab => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+        children: ['general' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_General_General__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          attributes: attributes,
+          setAttributes: setAttributes,
+          clientId: clientId
+        }), 'style' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Style_Style__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          attributes: attributes,
+          setAttributes: setAttributes
+        })]
+      })
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Settings);
+
+/***/ },
+
+/***/ "./src/blocks/table-of-contents/Components/Backend/Settings/Style/Style.js"
+/*!*********************************************************************************!*\
+  !*** ./src/blocks/table-of-contents/Components/Backend/Settings/Style/Style.js ***!
+  \*********************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_functions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../utils/functions */ "./src/blocks/table-of-contents/utils/functions.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+const Style = ({
+  attributes,
+  setAttributes
+}) => {
+  const {
+    headerBgColor,
+    headerTextColor,
+    activeHeaderBgColor,
+    activeHeaderTextColor,
+    contentBgColor,
+    contentTextColor,
+    borderColor,
+    activeBorderColor,
+    iconColor,
+    activeIconColor,
+    borderRadius,
+    borderWidth,
+    gap,
+    titleFontSize,
+    contentFontSize
+  } = attributes;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('🎨 Header Color & Style', 'guten-builder-blocks'),
+      initialOpen: true,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_utils_functions__WEBPACK_IMPORTED_MODULE_2__.CustomColorPicker, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Header Background', 'guten-builder-blocks'),
+        value: headerBgColor,
+        onChange: val => setAttributes({
+          headerBgColor: val
+        }),
+        marginTop: "0",
+        defaultVal: "#ffffff"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_utils_functions__WEBPACK_IMPORTED_MODULE_2__.CustomColorPicker, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Header Text', 'guten-builder-blocks'),
+        value: headerTextColor,
+        onChange: val => setAttributes({
+          headerTextColor: val
+        }),
+        defaultVal: "#1e293b"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_utils_functions__WEBPACK_IMPORTED_MODULE_2__.CustomColorPicker, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Active Header Background', 'guten-builder-blocks'),
+        value: activeHeaderBgColor,
+        onChange: val => setAttributes({
+          activeHeaderBgColor: val
+        }),
+        defaultVal: "#f8fafc"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_utils_functions__WEBPACK_IMPORTED_MODULE_2__.CustomColorPicker, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Active Header Text', 'guten-builder-blocks'),
+        value: activeHeaderTextColor,
+        onChange: val => setAttributes({
+          activeHeaderTextColor: val
+        }),
+        defaultVal: "#0f172a"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('📄 Content Color & Style', 'guten-builder-blocks'),
+      initialOpen: false,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_utils_functions__WEBPACK_IMPORTED_MODULE_2__.CustomColorPicker, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Background', 'guten-builder-blocks'),
+        value: contentBgColor,
+        onChange: val => setAttributes({
+          contentBgColor: val
+        }),
+        marginTop: "0",
+        defaultVal: "#ffffff"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_utils_functions__WEBPACK_IMPORTED_MODULE_2__.CustomColorPicker, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Text', 'guten-builder-blocks'),
+        value: contentTextColor,
+        onChange: val => setAttributes({
+          contentTextColor: val
+        }),
+        defaultVal: "#475569"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('✏️ Border & Icon Styling', 'guten-builder-blocks'),
+      initialOpen: false,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_utils_functions__WEBPACK_IMPORTED_MODULE_2__.CustomColorPicker, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border Color', 'guten-builder-blocks'),
+        value: borderColor,
+        onChange: val => setAttributes({
+          borderColor: val
+        }),
+        marginTop: "0",
+        defaultVal: "#e2e8f0"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_utils_functions__WEBPACK_IMPORTED_MODULE_2__.CustomColorPicker, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Active Border Color', 'guten-builder-blocks'),
+        value: activeBorderColor,
+        onChange: val => setAttributes({
+          activeBorderColor: val
+        }),
+        defaultVal: "#cbd5e1"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_utils_functions__WEBPACK_IMPORTED_MODULE_2__.CustomColorPicker, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Icon Color', 'guten-builder-blocks'),
+        value: iconColor,
+        onChange: val => setAttributes({
+          iconColor: val
+        }),
+        defaultVal: "#64748b"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_utils_functions__WEBPACK_IMPORTED_MODULE_2__.CustomColorPicker, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Active Icon Color', 'guten-builder-blocks'),
+        value: activeIconColor,
+        onChange: val => setAttributes({
+          activeIconColor: val
+        }),
+        defaultVal: "#0f172a"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border Radius (px)', 'guten-builder-blocks'),
+        value: borderRadius,
+        onChange: val => setAttributes({
+          borderRadius: val
+        }),
+        min: 0,
+        max: 30
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border Width (px)', 'guten-builder-blocks'),
+        value: borderWidth,
+        onChange: val => setAttributes({
+          borderWidth: val
+        }),
+        min: 0,
+        max: 10
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Spacing Between Items (px)', 'guten-builder-blocks'),
+        value: gap,
+        onChange: val => setAttributes({
+          gap: val
+        }),
+        min: 0,
+        max: 40
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('🔤 Typography Settings', 'guten-builder-blocks'),
+      initialOpen: false,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Header Title Size (px)', 'guten-builder-blocks'),
+        value: titleFontSize,
+        onChange: val => setAttributes({
+          titleFontSize: val
+        }),
+        min: 12,
+        max: 36
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Text Size (px)', 'guten-builder-blocks'),
+        value: contentFontSize,
+        onChange: val => setAttributes({
+          contentFontSize: val
+        }),
+        min: 10,
+        max: 24
+      })]
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Style);
+
+/***/ },
+
+/***/ "./src/blocks/table-of-contents/Components/Common/TableOfContents.jsx"
+/*!****************************************************************************!*\
+  !*** ./src/blocks/table-of-contents/Components/Common/TableOfContents.jsx ***!
+  \****************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const TableOfContents = ({
+  attributes,
+  setAttributes
+}) => {
+  const [isOpen, setIsOpen] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(true);
+  const [activeId, setActiveId] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+
+  // Exact headings collection from the specified path guidelines
+  const tocItems = [{
+    id: "defining-project-scope",
+    title: "Defining Your Plugin Project Scope",
+    level: 2
+  }, {
+    id: "technical-skills-matter",
+    title: "The Technical Skills That Actually Matter",
+    level: 2
+  }, {
+    id: "core-wordpress-knowledge",
+    title: "Core WordPress Development Knowledge",
+    level: 3
+  }, {
+    id: "php-proficiency",
+    title: "PHP Proficiency",
+    level: 3
+  }, {
+    id: "database-practices",
+    title: "Database Practices",
+    level: 3
+  }, {
+    id: "javascript-gutenberg",
+    title: "JavaScript and the Block Editor",
+    level: 3
+  }, {
+    id: "where-to-find-developers",
+    title: "Where to Find WordPress Plugin Developers",
+    level: 2
+  }, {
+    id: "freelance-platforms",
+    title: "Freelance Platforms",
+    level: 3
+  }, {
+    id: "developer-communities",
+    title: "Developer Communities",
+    level: 3
+  }, {
+    id: "wordpress-agencies",
+    title: "Agencies with WordPress Expertise",
+    level: 3
+  }, {
+    id: "vetting-candidates-framework",
+    title: "How to Vet Candidates: An Interview Framework",
+    level: 2
+  }, {
+    id: "red-flags",
+    title: "Red Flags to Watch For",
+    level: 2
+  }, {
+    id: "pricing-expectations",
+    title: "Pricing: What to Expect",
+    level: 2
+  }, {
+    id: "solo-vs-team",
+    title: "When a Full Team Makes More Sense",
+    level: 2
+  }, {
+    id: "faqs",
+    title: "FAQs",
+    level: 2
+  }];
+  const handleSmoothScroll = (id, event) => {
+    setActiveId(id);
+    const doc = event ? event.target.ownerDocument : document;
+    const targetElement = doc.getElementById(id);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "toc-wrapper",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "toc-sidebar",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "toc-sticky-box",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "toc-header",
+          onClick: () => setIsOpen(!isOpen),
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "toc-header-title",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+              className: "toc-header-icon",
+              fill: "none",
+              stroke: "currentColor",
+              strokeWidth: "2",
+              viewBox: "0 0 24 24",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                d: "M4 6h16M4 12h16M4 18h7"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+              className: "toc-header-text",
+              children: "Table of Contents"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+            className: `toc-arrow-icon ${isOpen ? 'open' : 'closed'}`,
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: "2",
+            viewBox: "0 0 24 24",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+              strokeLinecap: "round",
+              strokeLinejoin: "round",
+              d: "M19 9l-7 7-7-7"
+            })
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: `toc-body ${isOpen ? 'open' : 'closed'}`,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "toc-list-container",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
+              className: "toc-list",
+              children: tocItems.map((item, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+                className: `toc-item level-${item.level} ${activeId === item.id ? 'is-active' : ''}`,
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
+                  onClick: e => handleSmoothScroll(item.id, e),
+                  className: `toc-link level-${item.level}`,
+                  style: {
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px'
+                  },
+                  children: [item.level > 2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+                    width: "12",
+                    height: "12",
+                    viewBox: "0 0 24 24",
+                    fill: "none",
+                    stroke: "currentColor",
+                    strokeWidth: "2",
+                    strokeLinecap: "round",
+                    strokeLinejoin: "round",
+                    style: {
+                      flexShrink: 0
+                    },
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polyline", {
+                      points: "9 18 15 12 9 6"
+                    })
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                    children: item.title
+                  })]
+                })
+              }, index))
+            })
+          })
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "content-area",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+        className: "content-title",
+        children: "WordPress Plugin Developer Hiring Guide"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+        className: "content-subtitle",
+        children: "Click the custom items mapped at your Left TOC module to observe functional smooth scroll animation targets."
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "section-wrapper",
+        children: tocItems.map(section => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          id: section.id,
+          className: "section-block",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+            className: section.level === 2 ? "section-heading-2" : "section-heading-3",
+            children: section.title
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+            className: "section-paragraph",
+            children: "This area contains the contextual contents mapped perfectly from the reference URL. Custom logic structure applies standard WordPress ecosystem optimization procedures natively."
+          })]
+        }, section.id))
+      })]
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TableOfContents);
+
+/***/ },
+
+/***/ "./src/blocks/table-of-contents/index.js"
+/*!***********************************************!*\
+  !*** ./src/blocks/table-of-contents/index.js ***!
+  \***********************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/blocks/table-of-contents/style.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/table-of-contents/editor.scss");
+/* harmony import */ var _Components_Backend_Edit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Components/Backend/Edit */ "./src/blocks/table-of-contents/Components/Backend/Edit.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/blocks/table-of-contents/block.json");
+
+
+
+
+
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_4__.name, {
+  edit: _Components_Backend_Edit__WEBPACK_IMPORTED_MODULE_3__["default"],
+  save: () => null // Rendered dynamically on server side
+});
+
+/***/ },
+
+/***/ "./src/blocks/table-of-contents/utils/functions.js"
+/*!*********************************************************!*\
+  !*** ./src/blocks/table-of-contents/utils/functions.js ***!
+  \*********************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CustomColorPicker: () => (/* binding */ CustomColorPicker),
+/* harmony export */   getAddedItems: () => (/* binding */ getAddedItems),
+/* harmony export */   getDeletedItems: () => (/* binding */ getDeletedItems),
+/* harmony export */   getDuplicatedItems: () => (/* binding */ getDuplicatedItems),
+/* harmony export */   updateData: () => (/* binding */ updateData)
+/* harmony export */ });
+/* harmony import */ var immer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! immer */ "./node_modules/immer/dist/immer.mjs");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+const updateData = (attr, value, ...props) => {
+  if (props.length === 0) {
+    return value;
+  }
+  const [currentProp, ...remainingProps] = props;
+  if (remainingProps.length === 0) {
+    return (0,immer__WEBPACK_IMPORTED_MODULE_0__.produce)(attr, draft => {
+      draft[currentProp] = value;
+    });
+  }
+  return (0,immer__WEBPACK_IMPORTED_MODULE_0__.produce)(attr, draft => {
+    if (!Object.prototype.hasOwnProperty.call(draft, currentProp)) {
+      draft[currentProp] = {};
+    }
+    draft[currentProp] = updateData(draft[currentProp], value, ...remainingProps);
+  });
+};
+
+/** Reusable Array Manipulation Functions **/
+const getAddedItems = (items, defaultItem) => {
+  return [...items, defaultItem];
+};
+const getDeletedItems = (items, index) => {
+  return items.filter((_, i) => i !== index);
+};
+const getDuplicatedItems = (items, index) => {
+  const newItems = [...items];
+  // Copy the item exactly, but you could modify the title here if needed
+  const duplicatedItem = {
+    ...newItems[index]
+  };
+  newItems.splice(index + 1, 0, duplicatedItem);
+  return newItems;
+};
+
+/** Reusable UI Components **/
+const CustomColorPicker = ({
+  label,
+  value,
+  onChange,
+  defaultVal = '#ffffff',
+  marginTop = '10px'
+}) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+    style: {
+      fontWeight: 'bold',
+      margin: `${marginTop} 0 5px 0`
+    },
+    children: label
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
+    value: value,
+    onChange: val => onChange(val || defaultVal)
+  })]
+});
+
+/***/ },
+
+/***/ "./src/blocks/table-of-contents/utils/options.js"
+/*!*******************************************************!*\
+  !*** ./src/blocks/table-of-contents/utils/options.js ***!
+  \*******************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   generalStyleTabs: () => (/* binding */ generalStyleTabs)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+
+const generalStyleTabs = [{
+  name: 'general',
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('General', 'textdomain')
+}, {
+  name: 'style',
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style', 'textdomain')
+}];
+
+/***/ },
+
+/***/ "./src/blocks/table-of-contents/editor.scss"
+/*!**************************************************!*\
+  !*** ./src/blocks/table-of-contents/editor.scss ***!
+  \**************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "./src/blocks/table-of-contents/style.scss"
+/*!*************************************************!*\
+  !*** ./src/blocks/table-of-contents/style.scss ***!
+  \*************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "react/jsx-runtime"
+/*!**********************************!*\
+  !*** external "ReactJSXRuntime" ***!
+  \**********************************/
+(module) {
+
+module.exports = window["ReactJSXRuntime"];
+
+/***/ },
+
+/***/ "@wordpress/block-editor"
+/*!*************************************!*\
+  !*** external ["wp","blockEditor"] ***!
+  \*************************************/
+(module) {
+
+module.exports = window["wp"]["blockEditor"];
+
+/***/ },
+
+/***/ "@wordpress/blocks"
+/*!********************************!*\
+  !*** external ["wp","blocks"] ***!
+  \********************************/
+(module) {
+
+module.exports = window["wp"]["blocks"];
+
+/***/ },
+
+/***/ "@wordpress/components"
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+(module) {
+
+module.exports = window["wp"]["components"];
+
+/***/ },
+
+/***/ "@wordpress/element"
+/*!*********************************!*\
+  !*** external ["wp","element"] ***!
+  \*********************************/
+(module) {
+
+module.exports = window["wp"]["element"];
+
+/***/ },
+
+/***/ "@wordpress/i18n"
+/*!******************************!*\
+  !*** external ["wp","i18n"] ***!
+  \******************************/
+(module) {
+
+module.exports = window["wp"]["i18n"];
+
+/***/ },
+
+/***/ "./node_modules/immer/dist/immer.mjs"
+/*!*******************************************!*\
+  !*** ./node_modules/immer/dist/immer.mjs ***!
+  \*******************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Immer: () => (/* binding */ Immer2),
+/* harmony export */   applyPatches: () => (/* binding */ applyPatches),
+/* harmony export */   castDraft: () => (/* binding */ castDraft),
+/* harmony export */   castImmutable: () => (/* binding */ castImmutable),
+/* harmony export */   createDraft: () => (/* binding */ createDraft),
+/* harmony export */   current: () => (/* binding */ current),
+/* harmony export */   enableArrayMethods: () => (/* binding */ enableArrayMethods),
+/* harmony export */   enableMapSet: () => (/* binding */ enableMapSet),
+/* harmony export */   enablePatches: () => (/* binding */ enablePatches),
+/* harmony export */   finishDraft: () => (/* binding */ finishDraft),
+/* harmony export */   freeze: () => (/* binding */ freeze),
+/* harmony export */   immerable: () => (/* binding */ DRAFTABLE),
+/* harmony export */   isDraft: () => (/* binding */ isDraft),
+/* harmony export */   isDraftable: () => (/* binding */ isDraftable),
+/* harmony export */   nothing: () => (/* binding */ NOTHING),
+/* harmony export */   original: () => (/* binding */ original),
+/* harmony export */   produce: () => (/* binding */ produce),
+/* harmony export */   produceWithPatches: () => (/* binding */ produceWithPatches),
+/* harmony export */   setAutoFreeze: () => (/* binding */ setAutoFreeze),
+/* harmony export */   setUseStrictIteration: () => (/* binding */ setUseStrictIteration),
+/* harmony export */   setUseStrictShallowCopy: () => (/* binding */ setUseStrictShallowCopy)
+/* harmony export */ });
+// src/utils/env.ts
+var NOTHING = Symbol.for("immer-nothing");
+var DRAFTABLE = Symbol.for("immer-draftable");
+var DRAFT_STATE = Symbol.for("immer-state");
+
+// src/utils/errors.ts
+var errors =  true ? [
+  // All error codes, starting by 0:
+  function(plugin) {
+    return `The plugin for '${plugin}' has not been loaded into Immer. To enable the plugin, import and call \`enable${plugin}()\` when initializing your application.`;
+  },
+  function(thing) {
+    return `produce can only be called on things that are draftable: plain objects, arrays, Map, Set or classes that are marked with '[immerable]: true'. Got '${thing}'`;
+  },
+  "This object has been frozen and should not be mutated",
+  function(data) {
+    return "Cannot use a proxy that has been revoked. Did you pass an object from inside an immer function to an async process? " + data;
+  },
+  "An immer producer returned a new value *and* modified its draft. Either return a new value *or* modify the draft.",
+  "Immer forbids circular references",
+  "The first or second argument to `produce` must be a function",
+  "The third argument to `produce` must be a function or undefined",
+  "First argument to `createDraft` must be a plain object, an array, or an immerable object",
+  "First argument to `finishDraft` must be a draft returned by `createDraft`",
+  function(thing) {
+    return `'current' expects a draft, got: ${thing}`;
+  },
+  "Object.defineProperty() cannot be used on an Immer draft",
+  "Object.setPrototypeOf() cannot be used on an Immer draft",
+  "Immer only supports deleting array indices",
+  "Immer only supports setting array indices and the 'length' property",
+  function(thing) {
+    return `'original' expects a draft, got: ${thing}`;
+  }
+  // Note: if more errors are added, the errorOffset in Patches.ts should be increased
+  // See Patches.ts for additional errors
+] : 0;
+function die(error, ...args) {
+  if (true) {
+    const e = errors[error];
+    const msg = isFunction(e) ? e.apply(null, args) : e;
+    throw new Error(`[Immer] ${msg}`);
+  }
+  // removed by dead control flow
+
+}
+
+// src/utils/common.ts
+var O = Object;
+var getPrototypeOf = O.getPrototypeOf;
+var CONSTRUCTOR = "constructor";
+var PROTOTYPE = "prototype";
+var CONFIGURABLE = "configurable";
+var ENUMERABLE = "enumerable";
+var WRITABLE = "writable";
+var VALUE = "value";
+var isDraft = (value) => !!value && !!value[DRAFT_STATE];
+function isDraftable(value) {
+  if (!value)
+    return false;
+  return isPlainObject(value) || isArray(value) || !!value[DRAFTABLE] || !!value[CONSTRUCTOR]?.[DRAFTABLE] || isMap(value) || isSet(value);
+}
+var objectCtorString = O[PROTOTYPE][CONSTRUCTOR].toString();
+var cachedCtorStrings = /* @__PURE__ */ new WeakMap();
+function isPlainObject(value) {
+  if (!value || !isObjectish(value))
+    return false;
+  const proto = getPrototypeOf(value);
+  if (proto === null || proto === O[PROTOTYPE])
+    return true;
+  const Ctor = O.hasOwnProperty.call(proto, CONSTRUCTOR) && proto[CONSTRUCTOR];
+  if (Ctor === Object)
+    return true;
+  if (!isFunction(Ctor))
+    return false;
+  let ctorString = cachedCtorStrings.get(Ctor);
+  if (ctorString === void 0) {
+    ctorString = Function.toString.call(Ctor);
+    cachedCtorStrings.set(Ctor, ctorString);
+  }
+  return ctorString === objectCtorString;
+}
+function original(value) {
+  if (!isDraft(value))
+    die(15, value);
+  return value[DRAFT_STATE].base_;
+}
+function each(obj, iter, strict = true) {
+  if (getArchtype(obj) === 0 /* Object */) {
+    const keys = strict ? Reflect.ownKeys(obj) : O.keys(obj);
+    keys.forEach((key) => {
+      iter(key, obj[key], obj);
+    });
+  } else {
+    obj.forEach((entry, index) => iter(index, entry, obj));
+  }
+}
+function getArchtype(thing) {
+  const state = thing[DRAFT_STATE];
+  return state ? state.type_ : isArray(thing) ? 1 /* Array */ : isMap(thing) ? 2 /* Map */ : isSet(thing) ? 3 /* Set */ : 0 /* Object */;
+}
+var has = (thing, prop, type = getArchtype(thing)) => type === 2 /* Map */ ? thing.has(prop) : O[PROTOTYPE].hasOwnProperty.call(thing, prop);
+var get = (thing, prop, type = getArchtype(thing)) => (
+  // @ts-ignore
+  type === 2 /* Map */ ? thing.get(prop) : thing[prop]
+);
+var set = (thing, propOrOldValue, value, type = getArchtype(thing)) => {
+  if (type === 2 /* Map */)
+    thing.set(propOrOldValue, value);
+  else if (type === 3 /* Set */) {
+    thing.add(value);
+  } else
+    thing[propOrOldValue] = value;
+};
+function is(x, y) {
+  if (x === y) {
+    return x !== 0 || 1 / x === 1 / y;
+  } else {
+    return x !== x && y !== y;
+  }
+}
+var isArray = Array.isArray;
+var isMap = (target) => target instanceof Map;
+var isSet = (target) => target instanceof Set;
+var isObjectish = (target) => typeof target === "object";
+var isFunction = (target) => typeof target === "function";
+var isBoolean = (target) => typeof target === "boolean";
+function isArrayIndex(value) {
+  const n = +value;
+  return Number.isInteger(n) && String(n) === value;
+}
+var getProxyDraft = (value) => {
+  if (!isObjectish(value))
+    return null;
+  return value?.[DRAFT_STATE];
+};
+var latest = (state) => state.copy_ || state.base_;
+var getValue = (value) => {
+  const proxyDraft = getProxyDraft(value);
+  return proxyDraft ? proxyDraft.copy_ ?? proxyDraft.base_ : value;
+};
+var getFinalValue = (state) => state.modified_ ? state.copy_ : state.base_;
+function shallowCopy(base, strict) {
+  if (isMap(base)) {
+    return new Map(base);
+  }
+  if (isSet(base)) {
+    return new Set(base);
+  }
+  if (isArray(base))
+    return Array[PROTOTYPE].slice.call(base);
+  const isPlain = isPlainObject(base);
+  if (strict === true || strict === "class_only" && !isPlain) {
+    const descriptors = O.getOwnPropertyDescriptors(base);
+    delete descriptors[DRAFT_STATE];
+    let keys = Reflect.ownKeys(descriptors);
+    for (let i = 0; i < keys.length; i++) {
+      const key = keys[i];
+      const desc = descriptors[key];
+      if (desc[WRITABLE] === false) {
+        desc[WRITABLE] = true;
+        desc[CONFIGURABLE] = true;
+      }
+      if (desc.get || desc.set)
+        descriptors[key] = {
+          [CONFIGURABLE]: true,
+          [WRITABLE]: true,
+          // could live with !!desc.set as well here...
+          [ENUMERABLE]: desc[ENUMERABLE],
+          [VALUE]: base[key]
+        };
+    }
+    return O.create(getPrototypeOf(base), descriptors);
+  } else {
+    const proto = getPrototypeOf(base);
+    if (proto !== null && isPlain) {
+      return { ...base };
+    }
+    const obj = O.create(proto);
+    return O.assign(obj, base);
+  }
+}
+function freeze(obj, deep = false) {
+  if (isFrozen(obj) || isDraft(obj) || !isDraftable(obj))
+    return obj;
+  if (getArchtype(obj) > 1) {
+    O.defineProperties(obj, {
+      set: dontMutateMethodOverride,
+      add: dontMutateMethodOverride,
+      clear: dontMutateMethodOverride,
+      delete: dontMutateMethodOverride
+    });
+  }
+  O.freeze(obj);
+  if (deep)
+    each(
+      obj,
+      (_key, value) => {
+        freeze(value, true);
+      },
+      false
+    );
+  return obj;
+}
+function dontMutateFrozenCollections() {
+  die(2);
+}
+var dontMutateMethodOverride = {
+  [VALUE]: dontMutateFrozenCollections
+};
+function isFrozen(obj) {
+  if (obj === null || !isObjectish(obj))
+    return true;
+  return O.isFrozen(obj);
+}
+
+// src/utils/plugins.ts
+var PluginMapSet = "MapSet";
+var PluginPatches = "Patches";
+var PluginArrayMethods = "ArrayMethods";
+var plugins = {};
+function getPlugin(pluginKey) {
+  const plugin = plugins[pluginKey];
+  if (!plugin) {
+    die(0, pluginKey);
+  }
+  return plugin;
+}
+var isPluginLoaded = (pluginKey) => !!plugins[pluginKey];
+function loadPlugin(pluginKey, implementation) {
+  if (!plugins[pluginKey])
+    plugins[pluginKey] = implementation;
+}
+
+// src/core/scope.ts
+var currentScope;
+var getCurrentScope = () => currentScope;
+var createScope = (parent_, immer_) => ({
+  drafts_: [],
+  parent_,
+  immer_,
+  // Whenever the modified draft contains a draft from another scope, we
+  // need to prevent auto-freezing so the unowned draft can be finalized.
+  canAutoFreeze_: true,
+  unfinalizedDrafts_: 0,
+  handledSet_: /* @__PURE__ */ new Set(),
+  processedForPatches_: /* @__PURE__ */ new Set(),
+  mapSetPlugin_: isPluginLoaded(PluginMapSet) ? getPlugin(PluginMapSet) : void 0,
+  arrayMethodsPlugin_: isPluginLoaded(PluginArrayMethods) ? getPlugin(PluginArrayMethods) : void 0
+});
+function usePatchesInScope(scope, patchListener) {
+  if (patchListener) {
+    scope.patchPlugin_ = getPlugin(PluginPatches);
+    scope.patches_ = [];
+    scope.inversePatches_ = [];
+    scope.patchListener_ = patchListener;
+  }
+}
+function revokeScope(scope) {
+  leaveScope(scope);
+  scope.drafts_.forEach(revokeDraft);
+  scope.drafts_ = null;
+}
+function leaveScope(scope) {
+  if (scope === currentScope) {
+    currentScope = scope.parent_;
+  }
+}
+var enterScope = (immer2) => currentScope = createScope(currentScope, immer2);
+function revokeDraft(draft) {
+  const state = draft[DRAFT_STATE];
+  if (state.type_ === 0 /* Object */ || state.type_ === 1 /* Array */)
+    state.revoke_();
+  else
+    state.revoked_ = true;
+}
+
+// src/core/finalize.ts
+function processResult(result, scope) {
+  scope.unfinalizedDrafts_ = scope.drafts_.length;
+  const baseDraft = scope.drafts_[0];
+  const isReplaced = result !== void 0 && result !== baseDraft;
+  if (isReplaced) {
+    if (baseDraft[DRAFT_STATE].modified_) {
+      revokeScope(scope);
+      die(4);
+    }
+    if (isDraftable(result)) {
+      result = finalize(scope, result);
+    }
+    const { patchPlugin_ } = scope;
+    if (patchPlugin_) {
+      patchPlugin_.generateReplacementPatches_(
+        baseDraft[DRAFT_STATE].base_,
+        result,
+        scope
+      );
+    }
+  } else {
+    result = finalize(scope, baseDraft);
+  }
+  maybeFreeze(scope, result, true);
+  revokeScope(scope);
+  if (scope.patches_) {
+    scope.patchListener_(scope.patches_, scope.inversePatches_);
+  }
+  return result !== NOTHING ? result : void 0;
+}
+function finalize(rootScope, value) {
+  if (isFrozen(value))
+    return value;
+  const state = value[DRAFT_STATE];
+  if (!state) {
+    const finalValue = handleValue(value, rootScope.handledSet_, rootScope);
+    return finalValue;
+  }
+  if (!isSameScope(state, rootScope)) {
+    return value;
+  }
+  if (!state.modified_) {
+    return state.base_;
+  }
+  if (!state.finalized_) {
+    const { callbacks_ } = state;
+    if (callbacks_) {
+      while (callbacks_.length > 0) {
+        const callback = callbacks_.pop();
+        callback(rootScope);
+      }
+    }
+    generatePatchesAndFinalize(state, rootScope);
+  }
+  return state.copy_;
+}
+function maybeFreeze(scope, value, deep = false) {
+  if (!scope.parent_ && scope.immer_.autoFreeze_ && scope.canAutoFreeze_) {
+    freeze(value, deep);
+  }
+}
+function markStateFinalized(state) {
+  state.finalized_ = true;
+  state.scope_.unfinalizedDrafts_--;
+}
+var isSameScope = (state, rootScope) => state.scope_ === rootScope;
+var EMPTY_LOCATIONS_RESULT = [];
+function updateDraftInParent(parent, draftValue, finalizedValue, originalKey) {
+  const parentCopy = latest(parent);
+  const parentType = parent.type_;
+  if (originalKey !== void 0) {
+    const currentValue = get(parentCopy, originalKey, parentType);
+    if (currentValue === draftValue) {
+      set(parentCopy, originalKey, finalizedValue, parentType);
+      return;
+    }
+  }
+  if (!parent.draftLocations_) {
+    const draftLocations = parent.draftLocations_ = /* @__PURE__ */ new Map();
+    each(parentCopy, (key, value) => {
+      if (isDraft(value)) {
+        const keys = draftLocations.get(value) || [];
+        keys.push(key);
+        draftLocations.set(value, keys);
+      }
+    });
+  }
+  const locations = parent.draftLocations_.get(draftValue) ?? EMPTY_LOCATIONS_RESULT;
+  for (const location of locations) {
+    set(parentCopy, location, finalizedValue, parentType);
+  }
+}
+function registerChildFinalizationCallback(parent, child, key) {
+  parent.callbacks_.push(function childCleanup(rootScope) {
+    const state = child;
+    if (!state || !isSameScope(state, rootScope)) {
+      return;
+    }
+    rootScope.mapSetPlugin_?.fixSetContents(state);
+    const finalizedValue = getFinalValue(state);
+    updateDraftInParent(parent, state.draft_ ?? state, finalizedValue, key);
+    generatePatchesAndFinalize(state, rootScope);
+  });
+}
+function generatePatchesAndFinalize(state, rootScope) {
+  const shouldFinalize = state.modified_ && !state.finalized_ && (state.type_ === 3 /* Set */ || state.type_ === 1 /* Array */ && state.allIndicesReassigned_ || (state.assigned_?.size ?? 0) > 0);
+  if (shouldFinalize) {
+    const { patchPlugin_ } = rootScope;
+    if (patchPlugin_) {
+      const basePath = patchPlugin_.getPath(state);
+      if (basePath) {
+        patchPlugin_.generatePatches_(state, basePath, rootScope);
+      }
+    }
+    markStateFinalized(state);
+  }
+}
+function handleCrossReference(target, key, value) {
+  const { scope_ } = target;
+  if (isDraft(value)) {
+    const state = value[DRAFT_STATE];
+    if (isSameScope(state, scope_)) {
+      state.callbacks_.push(function crossReferenceCleanup() {
+        prepareCopy(target);
+        const finalizedValue = getFinalValue(state);
+        updateDraftInParent(target, value, finalizedValue, key);
+      });
+    }
+  } else if (isDraftable(value)) {
+    target.callbacks_.push(function nestedDraftCleanup() {
+      const targetCopy = latest(target);
+      if (target.type_ === 3 /* Set */) {
+        if (targetCopy.has(value)) {
+          handleValue(value, scope_.handledSet_, scope_);
+        }
+      } else {
+        if (get(targetCopy, key, target.type_) === value) {
+          if (scope_.drafts_.length > 1 && (target.assigned_.get(key) ?? false) === true && target.copy_) {
+            handleValue(
+              get(target.copy_, key, target.type_),
+              scope_.handledSet_,
+              scope_
+            );
+          }
+        }
+      }
+    });
+  }
+}
+function handleValue(target, handledSet, rootScope) {
+  if (!rootScope.immer_.autoFreeze_ && rootScope.unfinalizedDrafts_ < 1) {
+    return target;
+  }
+  if (isDraft(target) || handledSet.has(target) || !isDraftable(target) || isFrozen(target)) {
+    return target;
+  }
+  handledSet.add(target);
+  each(target, (key, value) => {
+    if (isDraft(value)) {
+      const state = value[DRAFT_STATE];
+      if (isSameScope(state, rootScope)) {
+        const updatedValue = getFinalValue(state);
+        set(target, key, updatedValue, target.type_);
+        markStateFinalized(state);
+      }
+    } else if (isDraftable(value)) {
+      handleValue(value, handledSet, rootScope);
+    }
+  });
+  return target;
+}
+
+// src/core/proxy.ts
+function createProxyProxy(base, parent) {
+  const baseIsArray = isArray(base);
+  const state = {
+    type_: baseIsArray ? 1 /* Array */ : 0 /* Object */,
+    // Track which produce call this is associated with.
+    scope_: parent ? parent.scope_ : getCurrentScope(),
+    // True for both shallow and deep changes.
+    modified_: false,
+    // Used during finalization.
+    finalized_: false,
+    // Track which properties have been assigned (true) or deleted (false).
+    // actually instantiated in `prepareCopy()`
+    assigned_: void 0,
+    // The parent draft state.
+    parent_: parent,
+    // The base state.
+    base_: base,
+    // The base proxy.
+    draft_: null,
+    // set below
+    // The base copy with any updated values.
+    copy_: null,
+    // Called by the `produce` function.
+    revoke_: null,
+    isManual_: false,
+    // `callbacks` actually gets assigned in `createProxy`
+    callbacks_: void 0
+  };
+  let target = state;
+  let traps = objectTraps;
+  if (baseIsArray) {
+    target = [state];
+    traps = arrayTraps;
+  }
+  const { revoke, proxy } = Proxy.revocable(target, traps);
+  state.draft_ = proxy;
+  state.revoke_ = revoke;
+  return [proxy, state];
+}
+var objectTraps = {
+  get(state, prop) {
+    if (prop === DRAFT_STATE)
+      return state;
+    let arrayPlugin = state.scope_.arrayMethodsPlugin_;
+    const isArrayWithStringProp = state.type_ === 1 /* Array */ && typeof prop === "string";
+    if (isArrayWithStringProp) {
+      if (arrayPlugin?.isArrayOperationMethod(prop)) {
+        return arrayPlugin.createMethodInterceptor(state, prop);
+      }
+    }
+    const source = latest(state);
+    if (!has(source, prop, state.type_)) {
+      return readPropFromProto(state, source, prop);
+    }
+    const value = source[prop];
+    if (state.finalized_ || !isDraftable(value)) {
+      return value;
+    }
+    if (isArrayWithStringProp && state.operationMethod && arrayPlugin?.isMutatingArrayMethod(
+      state.operationMethod
+    ) && isArrayIndex(prop)) {
+      return value;
+    }
+    if (value === peek(state.base_, prop)) {
+      prepareCopy(state);
+      const childKey = state.type_ === 1 /* Array */ ? +prop : prop;
+      const childDraft = createProxy(state.scope_, value, state, childKey);
+      return state.copy_[childKey] = childDraft;
+    }
+    return value;
+  },
+  has(state, prop) {
+    return prop in latest(state);
+  },
+  ownKeys(state) {
+    return Reflect.ownKeys(latest(state));
+  },
+  set(state, prop, value) {
+    const desc = getDescriptorFromProto(latest(state), prop);
+    if (desc?.set) {
+      desc.set.call(state.draft_, value);
+      return true;
+    }
+    if (!state.modified_) {
+      const current2 = peek(latest(state), prop);
+      const currentState = current2?.[DRAFT_STATE];
+      if (currentState && currentState.base_ === value) {
+        state.copy_[prop] = value;
+        state.assigned_.set(prop, false);
+        return true;
+      }
+      if (is(value, current2) && (value !== void 0 || has(state.base_, prop, state.type_)))
+        return true;
+      prepareCopy(state);
+      markChanged(state);
+    }
+    if (state.copy_[prop] === value && // special case: handle new props with value 'undefined'
+    (value !== void 0 || prop in state.copy_) || // special case: NaN
+    Number.isNaN(value) && Number.isNaN(state.copy_[prop]))
+      return true;
+    state.copy_[prop] = value;
+    state.assigned_.set(prop, true);
+    handleCrossReference(state, prop, value);
+    return true;
+  },
+  deleteProperty(state, prop) {
+    prepareCopy(state);
+    if (peek(state.base_, prop) !== void 0 || prop in state.base_) {
+      state.assigned_.set(prop, false);
+      markChanged(state);
+    } else {
+      state.assigned_.delete(prop);
+    }
+    if (state.copy_) {
+      delete state.copy_[prop];
+    }
+    return true;
+  },
+  // Note: We never coerce `desc.value` into an Immer draft, because we can't make
+  // the same guarantee in ES5 mode.
+  getOwnPropertyDescriptor(state, prop) {
+    const owner = latest(state);
+    const desc = Reflect.getOwnPropertyDescriptor(owner, prop);
+    if (!desc)
+      return desc;
+    return {
+      [WRITABLE]: true,
+      [CONFIGURABLE]: state.type_ !== 1 /* Array */ || prop !== "length",
+      [ENUMERABLE]: desc[ENUMERABLE],
+      [VALUE]: owner[prop]
+    };
+  },
+  defineProperty() {
+    die(11);
+  },
+  getPrototypeOf(state) {
+    return getPrototypeOf(state.base_);
+  },
+  setPrototypeOf() {
+    die(12);
+  }
+};
+var arrayTraps = {};
+for (let key in objectTraps) {
+  let fn = objectTraps[key];
+  arrayTraps[key] = function() {
+    const args = arguments;
+    args[0] = args[0][0];
+    return fn.apply(this, args);
+  };
+}
+arrayTraps.deleteProperty = function(state, prop) {
+  if ( true && isNaN(parseInt(prop)))
+    die(13);
+  return arrayTraps.set.call(this, state, prop, void 0);
+};
+arrayTraps.set = function(state, prop, value) {
+  if ( true && prop !== "length" && isNaN(parseInt(prop)))
+    die(14);
+  return objectTraps.set.call(this, state[0], prop, value, state[0]);
+};
+function peek(draft, prop) {
+  const state = draft[DRAFT_STATE];
+  const source = state ? latest(state) : draft;
+  return source[prop];
+}
+function readPropFromProto(state, source, prop) {
+  const desc = getDescriptorFromProto(source, prop);
+  return desc ? VALUE in desc ? desc[VALUE] : (
+    // This is a very special case, if the prop is a getter defined by the
+    // prototype, we should invoke it with the draft as context!
+    desc.get?.call(state.draft_)
+  ) : void 0;
+}
+function getDescriptorFromProto(source, prop) {
+  if (!(prop in source))
+    return void 0;
+  let proto = getPrototypeOf(source);
+  while (proto) {
+    const desc = Object.getOwnPropertyDescriptor(proto, prop);
+    if (desc)
+      return desc;
+    proto = getPrototypeOf(proto);
+  }
+  return void 0;
+}
+function markChanged(state) {
+  if (!state.modified_) {
+    state.modified_ = true;
+    if (state.parent_) {
+      markChanged(state.parent_);
+    }
+  }
+}
+function prepareCopy(state) {
+  if (!state.copy_) {
+    state.assigned_ = /* @__PURE__ */ new Map();
+    state.copy_ = shallowCopy(
+      state.base_,
+      state.scope_.immer_.useStrictShallowCopy_
+    );
+  }
+}
+
+// src/core/immerClass.ts
+var Immer2 = class {
+  constructor(config) {
+    this.autoFreeze_ = true;
+    this.useStrictShallowCopy_ = false;
+    this.useStrictIteration_ = false;
+    /**
+     * The `produce` function takes a value and a "recipe function" (whose
+     * return value often depends on the base state). The recipe function is
+     * free to mutate its first argument however it wants. All mutations are
+     * only ever applied to a __copy__ of the base state.
+     *
+     * Pass only a function to create a "curried producer" which relieves you
+     * from passing the recipe function every time.
+     *
+     * Only plain objects and arrays are made mutable. All other objects are
+     * considered uncopyable.
+     *
+     * Note: This function is __bound__ to its `Immer` instance.
+     *
+     * @param {any} base - the initial state
+     * @param {Function} recipe - function that receives a proxy of the base state as first argument and which can be freely modified
+     * @param {Function} patchListener - optional function that will be called with all the patches produced here
+     * @returns {any} a new state, or the initial state if nothing was modified
+     */
+    this.produce = (base, recipe, patchListener) => {
+      if (isFunction(base) && !isFunction(recipe)) {
+        const defaultBase = recipe;
+        recipe = base;
+        const self = this;
+        return function curriedProduce(base2 = defaultBase, ...args) {
+          return self.produce(base2, (draft) => recipe.call(this, draft, ...args));
+        };
+      }
+      if (!isFunction(recipe))
+        die(6);
+      if (patchListener !== void 0 && !isFunction(patchListener))
+        die(7);
+      let result;
+      if (isDraftable(base)) {
+        const scope = enterScope(this);
+        const proxy = createProxy(scope, base, void 0);
+        let hasError = true;
+        try {
+          result = recipe(proxy);
+          hasError = false;
+        } finally {
+          if (hasError)
+            revokeScope(scope);
+          else
+            leaveScope(scope);
+        }
+        usePatchesInScope(scope, patchListener);
+        return processResult(result, scope);
+      } else if (!base || !isObjectish(base)) {
+        result = recipe(base);
+        if (result === void 0)
+          result = base;
+        if (result === NOTHING)
+          result = void 0;
+        if (this.autoFreeze_)
+          freeze(result, true);
+        if (patchListener) {
+          const p = [];
+          const ip = [];
+          getPlugin(PluginPatches).generateReplacementPatches_(base, result, {
+            patches_: p,
+            inversePatches_: ip
+          });
+          patchListener(p, ip);
+        }
+        return result;
+      } else
+        die(1, base);
+    };
+    this.produceWithPatches = (base, recipe) => {
+      if (isFunction(base)) {
+        return (state, ...args) => this.produceWithPatches(state, (draft) => base(draft, ...args));
+      }
+      let patches, inversePatches;
+      const result = this.produce(base, recipe, (p, ip) => {
+        patches = p;
+        inversePatches = ip;
+      });
+      return [result, patches, inversePatches];
+    };
+    if (isBoolean(config?.autoFreeze))
+      this.setAutoFreeze(config.autoFreeze);
+    if (isBoolean(config?.useStrictShallowCopy))
+      this.setUseStrictShallowCopy(config.useStrictShallowCopy);
+    if (isBoolean(config?.useStrictIteration))
+      this.setUseStrictIteration(config.useStrictIteration);
+  }
+  createDraft(base) {
+    if (!isDraftable(base))
+      die(8);
+    if (isDraft(base))
+      base = current(base);
+    const scope = enterScope(this);
+    const proxy = createProxy(scope, base, void 0);
+    proxy[DRAFT_STATE].isManual_ = true;
+    leaveScope(scope);
+    return proxy;
+  }
+  finishDraft(draft, patchListener) {
+    const state = draft && draft[DRAFT_STATE];
+    if (!state || !state.isManual_)
+      die(9);
+    const { scope_: scope } = state;
+    usePatchesInScope(scope, patchListener);
+    return processResult(void 0, scope);
+  }
+  /**
+   * Pass true to automatically freeze all copies created by Immer.
+   *
+   * By default, auto-freezing is enabled.
+   */
+  setAutoFreeze(value) {
+    this.autoFreeze_ = value;
+  }
+  /**
+   * Pass true to enable strict shallow copy.
+   *
+   * By default, immer does not copy the object descriptors such as getter, setter and non-enumrable properties.
+   */
+  setUseStrictShallowCopy(value) {
+    this.useStrictShallowCopy_ = value;
+  }
+  /**
+   * Pass false to use faster iteration that skips non-enumerable properties
+   * but still handles symbols for compatibility.
+   *
+   * By default, strict iteration is enabled (includes all own properties).
+   */
+  setUseStrictIteration(value) {
+    this.useStrictIteration_ = value;
+  }
+  shouldUseStrictIteration() {
+    return this.useStrictIteration_;
+  }
+  applyPatches(base, patches) {
+    let i;
+    for (i = patches.length - 1; i >= 0; i--) {
+      const patch = patches[i];
+      if (patch.path.length === 0 && patch.op === "replace") {
+        base = patch.value;
+        break;
+      }
+    }
+    if (i > -1) {
+      patches = patches.slice(i + 1);
+    }
+    const applyPatchesImpl = getPlugin(PluginPatches).applyPatches_;
+    if (isDraft(base)) {
+      return applyPatchesImpl(base, patches);
+    }
+    return this.produce(
+      base,
+      (draft) => applyPatchesImpl(draft, patches)
+    );
+  }
+};
+function createProxy(rootScope, value, parent, key) {
+  const [draft, state] = isMap(value) ? getPlugin(PluginMapSet).proxyMap_(value, parent) : isSet(value) ? getPlugin(PluginMapSet).proxySet_(value, parent) : createProxyProxy(value, parent);
+  const scope = parent?.scope_ ?? getCurrentScope();
+  scope.drafts_.push(draft);
+  state.callbacks_ = parent?.callbacks_ ?? [];
+  state.key_ = key;
+  if (parent && key !== void 0) {
+    registerChildFinalizationCallback(parent, state, key);
+  } else {
+    state.callbacks_.push(function rootDraftCleanup(rootScope2) {
+      rootScope2.mapSetPlugin_?.fixSetContents(state);
+      const { patchPlugin_ } = rootScope2;
+      if (state.modified_ && patchPlugin_) {
+        patchPlugin_.generatePatches_(state, [], rootScope2);
+      }
+    });
+  }
+  return draft;
+}
+
+// src/core/current.ts
+function current(value) {
+  if (!isDraft(value))
+    die(10, value);
+  return currentImpl(value);
+}
+function currentImpl(value) {
+  if (!isDraftable(value) || isFrozen(value))
+    return value;
+  const state = value[DRAFT_STATE];
+  let copy;
+  let strict = true;
+  if (state) {
+    if (!state.modified_)
+      return state.base_;
+    state.finalized_ = true;
+    copy = shallowCopy(value, state.scope_.immer_.useStrictShallowCopy_);
+    strict = state.scope_.immer_.shouldUseStrictIteration();
+  } else {
+    copy = shallowCopy(value, true);
+  }
+  each(
+    copy,
+    (key, childValue) => {
+      set(copy, key, currentImpl(childValue));
+    },
+    strict
+  );
+  if (state) {
+    state.finalized_ = false;
+  }
+  return copy;
+}
+
+// src/plugins/patches.ts
+function enablePatches() {
+  const errorOffset = 16;
+  if (true) {
+    errors.push(
+      'Sets cannot have "replace" patches.',
+      function(op) {
+        return "Unsupported patch operation: " + op;
+      },
+      function(path) {
+        return "Cannot apply patch, path doesn't resolve: " + path;
+      },
+      "Patching reserved attributes like __proto__, prototype and constructor is not allowed"
+    );
+  }
+  function getPath(state, path = []) {
+    if (state.key_ !== void 0) {
+      const parentCopy = state.parent_.copy_ ?? state.parent_.base_;
+      const proxyDraft = getProxyDraft(get(parentCopy, state.key_));
+      const valueAtKey = get(parentCopy, state.key_);
+      if (valueAtKey === void 0) {
+        return null;
+      }
+      if (valueAtKey !== state.draft_ && valueAtKey !== state.base_ && valueAtKey !== state.copy_) {
+        return null;
+      }
+      if (proxyDraft != null && proxyDraft.base_ !== state.base_) {
+        return null;
+      }
+      const isSet2 = state.parent_.type_ === 3 /* Set */;
+      let key;
+      if (isSet2) {
+        const setParent = state.parent_;
+        key = Array.from(setParent.drafts_.keys()).indexOf(state.key_);
+      } else {
+        key = state.key_;
+      }
+      if (!(isSet2 && parentCopy.size > key || has(parentCopy, key))) {
+        return null;
+      }
+      path.push(key);
+    }
+    if (state.parent_) {
+      return getPath(state.parent_, path);
+    }
+    path.reverse();
+    try {
+      resolvePath(state.copy_, path);
+    } catch (e) {
+      return null;
+    }
+    return path;
+  }
+  function resolvePath(base, path) {
+    let current2 = base;
+    for (let i = 0; i < path.length - 1; i++) {
+      const key = path[i];
+      current2 = get(current2, key);
+      if (!isObjectish(current2) || current2 === null) {
+        throw new Error(`Cannot resolve path at '${path.join("/")}'`);
+      }
+    }
+    return current2;
+  }
+  const REPLACE = "replace";
+  const ADD = "add";
+  const REMOVE = "remove";
+  function generatePatches_(state, basePath, scope) {
+    if (state.scope_.processedForPatches_.has(state)) {
+      return;
+    }
+    state.scope_.processedForPatches_.add(state);
+    const { patches_, inversePatches_ } = scope;
+    switch (state.type_) {
+      case 0 /* Object */:
+      case 2 /* Map */:
+        return generatePatchesFromAssigned(
+          state,
+          basePath,
+          patches_,
+          inversePatches_
+        );
+      case 1 /* Array */:
+        return generateArrayPatches(
+          state,
+          basePath,
+          patches_,
+          inversePatches_
+        );
+      case 3 /* Set */:
+        return generateSetPatches(
+          state,
+          basePath,
+          patches_,
+          inversePatches_
+        );
+    }
+  }
+  function generateArrayPatches(state, basePath, patches, inversePatches) {
+    let { base_, assigned_ } = state;
+    let copy_ = state.copy_;
+    if (copy_.length < base_.length) {
+      ;
+      [base_, copy_] = [copy_, base_];
+      [patches, inversePatches] = [inversePatches, patches];
+    }
+    const allReassigned = state.allIndicesReassigned_ === true;
+    for (let i = 0; i < base_.length; i++) {
+      const copiedItem = copy_[i];
+      const baseItem = base_[i];
+      const isAssigned = allReassigned || assigned_?.get(i.toString());
+      if (isAssigned && copiedItem !== baseItem) {
+        const childState = copiedItem?.[DRAFT_STATE];
+        if (childState && childState.modified_) {
+          continue;
+        }
+        const path = basePath.concat([i]);
+        patches.push({
+          op: REPLACE,
+          path,
+          // Need to maybe clone it, as it can in fact be the original value
+          // due to the base/copy inversion at the start of this function
+          value: clonePatchValueIfNeeded(copiedItem)
+        });
+        inversePatches.push({
+          op: REPLACE,
+          path,
+          value: clonePatchValueIfNeeded(baseItem)
+        });
+      }
+    }
+    for (let i = base_.length; i < copy_.length; i++) {
+      const path = basePath.concat([i]);
+      patches.push({
+        op: ADD,
+        path,
+        // Need to maybe clone it, as it can in fact be the original value
+        // due to the base/copy inversion at the start of this function
+        value: clonePatchValueIfNeeded(copy_[i])
+      });
+    }
+    for (let i = copy_.length - 1; base_.length <= i; --i) {
+      const path = basePath.concat([i]);
+      inversePatches.push({
+        op: REMOVE,
+        path
+      });
+    }
+  }
+  function generatePatchesFromAssigned(state, basePath, patches, inversePatches) {
+    const { base_, copy_, type_ } = state;
+    each(state.assigned_, (key, assignedValue) => {
+      const origValue = get(base_, key, type_);
+      const value = get(copy_, key, type_);
+      const op = !assignedValue ? REMOVE : has(base_, key) ? REPLACE : ADD;
+      if (origValue === value && op === REPLACE)
+        return;
+      const path = basePath.concat(key);
+      patches.push(
+        op === REMOVE ? { op, path } : { op, path, value: clonePatchValueIfNeeded(value) }
+      );
+      inversePatches.push(
+        op === ADD ? { op: REMOVE, path } : op === REMOVE ? { op: ADD, path, value: clonePatchValueIfNeeded(origValue) } : { op: REPLACE, path, value: clonePatchValueIfNeeded(origValue) }
+      );
+    });
+  }
+  function generateSetPatches(state, basePath, patches, inversePatches) {
+    let { base_, copy_ } = state;
+    let i = 0;
+    base_.forEach((value) => {
+      if (!copy_.has(value)) {
+        const path = basePath.concat([i]);
+        patches.push({
+          op: REMOVE,
+          path,
+          value
+        });
+        inversePatches.unshift({
+          op: ADD,
+          path,
+          value
+        });
+      }
+      i++;
+    });
+    i = 0;
+    copy_.forEach((value) => {
+      if (!base_.has(value)) {
+        const path = basePath.concat([i]);
+        patches.push({
+          op: ADD,
+          path,
+          value
+        });
+        inversePatches.unshift({
+          op: REMOVE,
+          path,
+          value
+        });
+      }
+      i++;
+    });
+  }
+  function generateReplacementPatches_(baseValue, replacement, scope) {
+    const { patches_, inversePatches_ } = scope;
+    patches_.push({
+      op: REPLACE,
+      path: [],
+      value: replacement === NOTHING ? void 0 : replacement
+    });
+    inversePatches_.push({
+      op: REPLACE,
+      path: [],
+      value: baseValue
+    });
+  }
+  function applyPatches_(draft, patches) {
+    patches.forEach((patch) => {
+      const { path, op } = patch;
+      let base = draft;
+      for (let i = 0; i < path.length - 1; i++) {
+        const parentType = getArchtype(base);
+        let p = path[i];
+        if (typeof p !== "string" && typeof p !== "number") {
+          p = "" + p;
+        }
+        if ((parentType === 0 /* Object */ || parentType === 1 /* Array */) && (p === "__proto__" || p === CONSTRUCTOR))
+          die(errorOffset + 3);
+        if (isFunction(base) && p === PROTOTYPE)
+          die(errorOffset + 3);
+        base = get(base, p);
+        if (!isObjectish(base))
+          die(errorOffset + 2, path.join("/"));
+      }
+      const type = getArchtype(base);
+      const value = deepClonePatchValue(patch.value);
+      const key = path[path.length - 1];
+      switch (op) {
+        case REPLACE:
+          switch (type) {
+            case 2 /* Map */:
+              return base.set(key, value);
+            case 3 /* Set */:
+              die(errorOffset);
+            default:
+              return base[key] = value;
+          }
+        case ADD:
+          switch (type) {
+            case 1 /* Array */:
+              return key === "-" ? base.push(value) : base.splice(key, 0, value);
+            case 2 /* Map */:
+              return base.set(key, value);
+            case 3 /* Set */:
+              return base.add(value);
+            default:
+              return base[key] = value;
+          }
+        case REMOVE:
+          switch (type) {
+            case 1 /* Array */:
+              return base.splice(key, 1);
+            case 2 /* Map */:
+              return base.delete(key);
+            case 3 /* Set */:
+              return base.delete(patch.value);
+            default:
+              return delete base[key];
+          }
+        default:
+          die(errorOffset + 1, op);
+      }
+    });
+    return draft;
+  }
+  function deepClonePatchValue(obj) {
+    if (!isDraftable(obj))
+      return obj;
+    if (isArray(obj))
+      return obj.map(deepClonePatchValue);
+    if (isMap(obj))
+      return new Map(
+        Array.from(obj.entries()).map(([k, v]) => [k, deepClonePatchValue(v)])
+      );
+    if (isSet(obj))
+      return new Set(Array.from(obj).map(deepClonePatchValue));
+    const cloned = Object.create(getPrototypeOf(obj));
+    for (const key in obj)
+      cloned[key] = deepClonePatchValue(obj[key]);
+    if (has(obj, DRAFTABLE))
+      cloned[DRAFTABLE] = obj[DRAFTABLE];
+    return cloned;
+  }
+  function clonePatchValueIfNeeded(obj) {
+    if (isDraft(obj)) {
+      return deepClonePatchValue(obj);
+    } else
+      return obj;
+  }
+  loadPlugin(PluginPatches, {
+    applyPatches_,
+    generatePatches_,
+    generateReplacementPatches_,
+    getPath
+  });
+}
+
+// src/plugins/mapset.ts
+function enableMapSet() {
+  class DraftMap extends Map {
+    constructor(target, parent) {
+      super();
+      this[DRAFT_STATE] = {
+        type_: 2 /* Map */,
+        parent_: parent,
+        scope_: parent ? parent.scope_ : getCurrentScope(),
+        modified_: false,
+        finalized_: false,
+        copy_: void 0,
+        assigned_: void 0,
+        base_: target,
+        draft_: this,
+        isManual_: false,
+        revoked_: false,
+        callbacks_: []
+      };
+    }
+    get size() {
+      return latest(this[DRAFT_STATE]).size;
+    }
+    has(key) {
+      return latest(this[DRAFT_STATE]).has(key);
+    }
+    set(key, value) {
+      const state = this[DRAFT_STATE];
+      assertUnrevoked(state);
+      if (!latest(state).has(key) || latest(state).get(key) !== value) {
+        prepareMapCopy(state);
+        markChanged(state);
+        state.assigned_.set(key, true);
+        state.copy_.set(key, value);
+        state.assigned_.set(key, true);
+        handleCrossReference(state, key, value);
+      }
+      return this;
+    }
+    delete(key) {
+      if (!this.has(key)) {
+        return false;
+      }
+      const state = this[DRAFT_STATE];
+      assertUnrevoked(state);
+      prepareMapCopy(state);
+      markChanged(state);
+      if (state.base_.has(key)) {
+        state.assigned_.set(key, false);
+      } else {
+        state.assigned_.delete(key);
+      }
+      state.copy_.delete(key);
+      return true;
+    }
+    clear() {
+      const state = this[DRAFT_STATE];
+      assertUnrevoked(state);
+      if (latest(state).size) {
+        prepareMapCopy(state);
+        markChanged(state);
+        state.assigned_ = /* @__PURE__ */ new Map();
+        each(state.base_, (key) => {
+          state.assigned_.set(key, false);
+        });
+        state.copy_.clear();
+      }
+    }
+    forEach(cb, thisArg) {
+      const state = this[DRAFT_STATE];
+      latest(state).forEach((_value, key, _map) => {
+        cb.call(thisArg, this.get(key), key, this);
+      });
+    }
+    get(key) {
+      const state = this[DRAFT_STATE];
+      assertUnrevoked(state);
+      const value = latest(state).get(key);
+      if (state.finalized_ || !isDraftable(value)) {
+        return value;
+      }
+      if (value !== state.base_.get(key)) {
+        return value;
+      }
+      const draft = createProxy(state.scope_, value, state, key);
+      prepareMapCopy(state);
+      state.copy_.set(key, draft);
+      return draft;
+    }
+    keys() {
+      return latest(this[DRAFT_STATE]).keys();
+    }
+    values() {
+      const iterator = this.keys();
+      return {
+        [Symbol.iterator]: () => this.values(),
+        next: () => {
+          const r = iterator.next();
+          if (r.done)
+            return r;
+          const value = this.get(r.value);
+          return {
+            done: false,
+            value
+          };
+        }
+      };
+    }
+    entries() {
+      const iterator = this.keys();
+      return {
+        [Symbol.iterator]: () => this.entries(),
+        next: () => {
+          const r = iterator.next();
+          if (r.done)
+            return r;
+          const value = this.get(r.value);
+          return {
+            done: false,
+            value: [r.value, value]
+          };
+        }
+      };
+    }
+    [(DRAFT_STATE, Symbol.iterator)]() {
+      return this.entries();
+    }
+  }
+  function proxyMap_(target, parent) {
+    const map = new DraftMap(target, parent);
+    return [map, map[DRAFT_STATE]];
+  }
+  function prepareMapCopy(state) {
+    if (!state.copy_) {
+      state.assigned_ = /* @__PURE__ */ new Map();
+      state.copy_ = new Map(state.base_);
+    }
+  }
+  class DraftSet extends Set {
+    constructor(target, parent) {
+      super();
+      this[DRAFT_STATE] = {
+        type_: 3 /* Set */,
+        parent_: parent,
+        scope_: parent ? parent.scope_ : getCurrentScope(),
+        modified_: false,
+        finalized_: false,
+        copy_: void 0,
+        base_: target,
+        draft_: this,
+        drafts_: /* @__PURE__ */ new Map(),
+        revoked_: false,
+        isManual_: false,
+        assigned_: void 0,
+        callbacks_: []
+      };
+    }
+    get size() {
+      return latest(this[DRAFT_STATE]).size;
+    }
+    has(value) {
+      const state = this[DRAFT_STATE];
+      assertUnrevoked(state);
+      if (!state.copy_) {
+        return state.base_.has(value);
+      }
+      if (state.copy_.has(value))
+        return true;
+      if (state.drafts_.has(value) && state.copy_.has(state.drafts_.get(value)))
+        return true;
+      return false;
+    }
+    add(value) {
+      const state = this[DRAFT_STATE];
+      assertUnrevoked(state);
+      if (!this.has(value)) {
+        prepareSetCopy(state);
+        markChanged(state);
+        state.copy_.add(value);
+        handleCrossReference(state, value, value);
+      }
+      return this;
+    }
+    delete(value) {
+      if (!this.has(value)) {
+        return false;
+      }
+      const state = this[DRAFT_STATE];
+      assertUnrevoked(state);
+      prepareSetCopy(state);
+      markChanged(state);
+      return state.copy_.delete(value) || (state.drafts_.has(value) ? state.copy_.delete(state.drafts_.get(value)) : (
+        /* istanbul ignore next */
+        false
+      ));
+    }
+    clear() {
+      const state = this[DRAFT_STATE];
+      assertUnrevoked(state);
+      if (latest(state).size) {
+        prepareSetCopy(state);
+        markChanged(state);
+        state.copy_.clear();
+      }
+    }
+    values() {
+      const state = this[DRAFT_STATE];
+      assertUnrevoked(state);
+      prepareSetCopy(state);
+      return state.copy_.values();
+    }
+    entries() {
+      const state = this[DRAFT_STATE];
+      assertUnrevoked(state);
+      prepareSetCopy(state);
+      return state.copy_.entries();
+    }
+    keys() {
+      return this.values();
+    }
+    [(DRAFT_STATE, Symbol.iterator)]() {
+      return this.values();
+    }
+    forEach(cb, thisArg) {
+      const iterator = this.values();
+      let result = iterator.next();
+      while (!result.done) {
+        cb.call(thisArg, result.value, result.value, this);
+        result = iterator.next();
+      }
+    }
+  }
+  function proxySet_(target, parent) {
+    const set2 = new DraftSet(target, parent);
+    return [set2, set2[DRAFT_STATE]];
+  }
+  function prepareSetCopy(state) {
+    if (!state.copy_) {
+      state.copy_ = /* @__PURE__ */ new Set();
+      state.base_.forEach((value) => {
+        if (isDraftable(value)) {
+          const draft = createProxy(state.scope_, value, state, value);
+          state.drafts_.set(value, draft);
+          state.copy_.add(draft);
+        } else {
+          state.copy_.add(value);
+        }
+      });
+    }
+  }
+  function assertUnrevoked(state) {
+    if (state.revoked_)
+      die(3, JSON.stringify(latest(state)));
+  }
+  function fixSetContents(target) {
+    if (target.type_ === 3 /* Set */ && target.copy_) {
+      const copy = new Set(target.copy_);
+      target.copy_.clear();
+      copy.forEach((value) => {
+        target.copy_.add(getValue(value));
+      });
+    }
+  }
+  loadPlugin(PluginMapSet, { proxyMap_, proxySet_, fixSetContents });
+}
+
+// src/plugins/arrayMethods.ts
+function enableArrayMethods() {
+  const SHIFTING_METHODS = /* @__PURE__ */ new Set(["shift", "unshift"]);
+  const QUEUE_METHODS = /* @__PURE__ */ new Set(["push", "pop"]);
+  const RESULT_RETURNING_METHODS = /* @__PURE__ */ new Set([
+    ...QUEUE_METHODS,
+    ...SHIFTING_METHODS
+  ]);
+  const REORDERING_METHODS = /* @__PURE__ */ new Set(["reverse", "sort"]);
+  const MUTATING_METHODS = /* @__PURE__ */ new Set([
+    ...RESULT_RETURNING_METHODS,
+    ...REORDERING_METHODS,
+    "splice"
+  ]);
+  const FIND_METHODS = /* @__PURE__ */ new Set(["find", "findLast"]);
+  const NON_MUTATING_METHODS = /* @__PURE__ */ new Set([
+    "filter",
+    "slice",
+    "concat",
+    "flat",
+    ...FIND_METHODS,
+    "findIndex",
+    "findLastIndex",
+    "some",
+    "every",
+    "indexOf",
+    "lastIndexOf",
+    "includes",
+    "join",
+    "toString",
+    "toLocaleString"
+  ]);
+  function isMutatingArrayMethod(method) {
+    return MUTATING_METHODS.has(method);
+  }
+  function isNonMutatingArrayMethod(method) {
+    return NON_MUTATING_METHODS.has(method);
+  }
+  function isArrayOperationMethod(method) {
+    return isMutatingArrayMethod(method) || isNonMutatingArrayMethod(method);
+  }
+  function enterOperation(state, method) {
+    state.operationMethod = method;
+  }
+  function exitOperation(state) {
+    state.operationMethod = void 0;
+  }
+  function executeArrayMethod(state, operation, markLength = true) {
+    prepareCopy(state);
+    const result = operation();
+    markChanged(state);
+    if (markLength)
+      state.assigned_.set("length", true);
+    return result;
+  }
+  function markAllIndicesReassigned(state) {
+    state.allIndicesReassigned_ = true;
+  }
+  function normalizeSliceIndex(index, length) {
+    if (index < 0) {
+      return Math.max(length + index, 0);
+    }
+    return Math.min(index, length);
+  }
+  function handleInsertedValues(state, startIndex, values) {
+    for (let i = 0; i < values.length; i++) {
+      const index = startIndex + i;
+      state.assigned_.set(index, true);
+      handleCrossReference(state, index, values[i]);
+    }
+  }
+  function handleSimpleOperation(state, method, args) {
+    return executeArrayMethod(state, () => {
+      const lengthBefore = state.copy_.length;
+      const result = state.copy_[method](...args);
+      if (SHIFTING_METHODS.has(method)) {
+        markAllIndicesReassigned(state);
+      }
+      if (method === "push" && args.length > 0) {
+        handleInsertedValues(state, lengthBefore, args);
+      } else if (method === "unshift" && args.length > 0) {
+        handleInsertedValues(state, 0, args);
+      }
+      return RESULT_RETURNING_METHODS.has(method) ? result : state.draft_;
+    });
+  }
+  function handleReorderingOperation(state, method, args) {
+    return executeArrayMethod(
+      state,
+      () => {
+        ;
+        state.copy_[method](...args);
+        markAllIndicesReassigned(state);
+        return state.draft_;
+      },
+      false
+    );
+  }
+  function createMethodInterceptor(state, originalMethod) {
+    return function interceptedMethod(...args) {
+      const method = originalMethod;
+      enterOperation(state, method);
+      try {
+        if (isMutatingArrayMethod(method)) {
+          if (RESULT_RETURNING_METHODS.has(method)) {
+            return handleSimpleOperation(state, method, args);
+          }
+          if (REORDERING_METHODS.has(method)) {
+            return handleReorderingOperation(state, method, args);
+          }
+          if (method === "splice") {
+            const res = executeArrayMethod(
+              state,
+              () => state.copy_.splice(...args)
+            );
+            markAllIndicesReassigned(state);
+            if (args.length > 2) {
+              const startIndex = normalizeSliceIndex(
+                args[0] ?? 0,
+                state.copy_.length
+              );
+              handleInsertedValues(state, startIndex, args.slice(2));
+            }
+            return res;
+          }
+        } else {
+          return handleNonMutatingOperation(state, method, args);
+        }
+      } finally {
+        exitOperation(state);
+      }
+    };
+  }
+  function handleNonMutatingOperation(state, method, args) {
+    const source = latest(state);
+    if (method === "filter") {
+      const predicate = args[0];
+      const result = [];
+      for (let i = 0; i < source.length; i++) {
+        if (predicate(source[i], i, source)) {
+          result.push(state.draft_[i]);
+        }
+      }
+      return result;
+    }
+    if (FIND_METHODS.has(method)) {
+      const predicate = args[0];
+      const isForward = method === "find";
+      const step = isForward ? 1 : -1;
+      const start = isForward ? 0 : source.length - 1;
+      for (let i = start; i >= 0 && i < source.length; i += step) {
+        if (predicate(source[i], i, source)) {
+          return state.draft_[i];
+        }
+      }
+      return void 0;
+    }
+    if (method === "slice") {
+      const rawStart = args[0] ?? 0;
+      const rawEnd = args[1] ?? source.length;
+      const start = normalizeSliceIndex(rawStart, source.length);
+      const end = normalizeSliceIndex(rawEnd, source.length);
+      const result = [];
+      for (let i = start; i < end; i++) {
+        result.push(state.draft_[i]);
+      }
+      return result;
+    }
+    return source[method](...args);
+  }
+  loadPlugin(PluginArrayMethods, {
+    createMethodInterceptor,
+    isArrayOperationMethod,
+    isMutatingArrayMethod
+  });
+}
+
+// src/immer.ts
+var immer = new Immer2();
+var produce = immer.produce;
+var produceWithPatches = /* @__PURE__ */ immer.produceWithPatches.bind(immer);
+var setAutoFreeze = /* @__PURE__ */ immer.setAutoFreeze.bind(immer);
+var setUseStrictShallowCopy = /* @__PURE__ */ immer.setUseStrictShallowCopy.bind(immer);
+var setUseStrictIteration = /* @__PURE__ */ immer.setUseStrictIteration.bind(immer);
+var applyPatches = /* @__PURE__ */ immer.applyPatches.bind(immer);
+var createDraft = /* @__PURE__ */ immer.createDraft.bind(immer);
+var finishDraft = /* @__PURE__ */ immer.finishDraft.bind(immer);
+var castDraft = (value) => value;
+var castImmutable = (value) => value;
+
+//# sourceMappingURL=immer.mjs.map
+
+/***/ },
+
+/***/ "./src/blocks/table-of-contents/block.json"
+/*!*************************************************!*\
+  !*** ./src/blocks/table-of-contents/block.json ***!
+  \*************************************************/
+(module) {
+
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/table-of-contents","version":"1.0.0","title":"Table of Contents","description":"Dynamic Table of Contents block to automatically generate a list of headings.","category":"guten-builder","keywords":["toc","table of contents","index","outline"],"attributes":{"blockId":{"type":"string","default":""},"allowedHeaders":{"type":"array","default":["h2","h3","h4","h5","h6"]},"titleText":{"type":"string","default":"Table of Contents"},"headerBgColor":{"type":"string","default":"transparent"},"headerTextColor":{"type":"string","default":"#1e293b"},"activeHeaderBgColor":{"type":"string","default":"#f8fafc"},"activeHeaderTextColor":{"type":"string","default":"#0f172a"},"contentBgColor":{"type":"string","default":"transparent"},"contentTextColor":{"type":"string","default":"#475569"},"borderColor":{"type":"string","default":"#e2e8f0"},"activeBorderColor":{"type":"string","default":"#cbd5e1"},"iconColor":{"type":"string","default":"#64748b"},"activeIconColor":{"type":"string","default":"#0f172a"},"borderRadius":{"type":"number","default":8},"borderWidth":{"type":"number","default":0},"gap":{"type":"number","default":12},"titleFontSize":{"type":"number","default":16},"contentFontSize":{"type":"number","default":14}},"supports":{"html":false,"anchor":true,"align":["left","right","wide","full"]},"textdomain":"guten-builder-blocks","editorScript":"file:./index.js","viewScript":"file:./view.js","style":"file:./style-view.css","editorStyle":"file:./index.css","render":"file:./render.php"}');
+
+/***/ }
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	const __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		const cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		const module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		if (!(moduleId in __webpack_modules__)) {
+/******/ 			delete __webpack_module_cache__[moduleId];
+/******/ 			const e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		const deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			let notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				let [chunkIds, fn, priority] = deferred[i];
+/******/ 				let fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					const r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			const getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter/value functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			if(Array.isArray(definition)) {
+/******/ 				var i = 0;
+/******/ 				while(i < definition.length) {
+/******/ 					var key = definition[i++];
+/******/ 					var binding = definition[i++];
+/******/ 					if(!__webpack_require__.o(exports, key)) {
+/******/ 						if(binding === 0) {
+/******/ 							Object.defineProperty(exports, key, { enumerable: true, value: definition[i++] });
+/******/ 						} else {
+/******/ 							Object.defineProperty(exports, key, { enumerable: true, get: binding });
+/******/ 						}
+/******/ 					} else if(binding === 0) { i++; }
+/******/ 				}
+/******/ 			} else {
+/******/ 				for(var key in definition) {
+/******/ 					if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 						Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 					}
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.hasOwn(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		const installedChunks = {
+/******/ 			"blocks/table-of-contents/index": 0,
+/******/ 			"blocks/table-of-contents/style-view": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		const webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			let [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		const chunkLoadingGlobal = globalThis["webpackChunkguten_builder_blocks"] ||= [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["blocks/table-of-contents/style-view"], () => (__webpack_require__("./src/blocks/table-of-contents/index.js")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
+/******/ })()
+;
+//# sourceMappingURL=index.js.map

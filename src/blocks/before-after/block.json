@@ -5,13 +5,8 @@
   "title": "Guten Before/After",
   "description": "Interactive image comparison slider with CSS-based masking and hardware-accelerated transitions.",
   "category": "guten-builder",
-  "keywords": [
-    "before after",
-    "image comparison",
-    "slider",
-    "photo compare",
-    "comparison"
-  ],
+  "keywords": ["before after", "image comparison", "slider", "photo compare", "comparison"],
+  "textdomain": "guten-builder-blocks",
   "attributes": {
     "beforeImage": {
       "type": "object",
@@ -37,21 +32,9 @@
       },
       "default": null
     },
-    "initialOffset": {
-      "type": "number",
-      "default": 50
-    },
-    "aspectRatio": {
-      "type": "string",
-      "default": "auto"
-    },
-    "hoverZoom": {
+    "showLabels": {
       "type": "boolean",
-      "default": false
-    },
-    "dividerStyle": {
-      "type": "string",
-      "default": "solid"
+      "default": true
     },
     "beforeLabel": {
       "type": "string",
@@ -61,89 +44,72 @@
       "type": "string",
       "default": "After"
     },
-    "showLabels": {
-      "type": "boolean",
-      "default": true
+    "dividerIcon": {
+      "type": "string",
+      "default": "dots"
     },
-    "handleColor": {
+    "customDividerIcon": {
+      "type": "string",
+      "default": ""
+    },
+    "dividerIconSize": {
+      "type": "number",
+      "default": 16
+    },
+    "labelColor": {
       "type": "string",
       "default": "#ffffff"
     },
+    "labelBg": {
+      "type": "object",
+      "default": { "type": "solid", "color": "rgba(0, 0, 0, 0.6)" }
+    },
+    "labelTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": { "desktop": "14px", "tablet": "14px", "mobile": "14px" },
+        "fontFamily": "",
+        "fontWeight": "600",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "textTransform": "none",
+        "textDecoration": "none",
+        "fontStyle": "normal"
+      }
+    },
+    "labelBorderRadius": {
+      "type": "object",
+      "default": { "top": "5px", "right": "5px", "bottom": "5px", "left": "5px" }
+    },
+    "wrapperBorderRadius": {
+      "type": "object",
+      "default": { "top": "5px", "right": "5px", "bottom": "5px", "left": "5px" }
+    },
+    "dividerStyle": {
+      "type": "string",
+      "default": "solid"
+    },
+    "dividerColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "handleColor": {
+      "type": "string",
+      "default": "#111111"
+    },
     "handleIconColor": {
       "type": "string",
-      "default": "#333333"
-    },
-    "containerShadow": {
-      "type": "boolean",
-      "default": true
-    },
-    "shadowStyle": {
-      "type": "string",
-      "default": "soft"
-    },
-    "forceFullWidth": {
-      "type": "boolean",
-      "default": false
-    },
-    "afterFilter": {
-      "type": "string",
-      "default": "none"
-    },
-    "afterBlurIntensity": {
-      "type": "number",
-      "default": 4
-    },
-    "clickToMove": {
-      "type": "boolean",
-      "default": true
-    },
-    "autoPlayIntro": {
-      "type": "boolean",
-      "default": true
-    },
-    "hideLabelsOnMove": {
-      "type": "boolean",
-      "default": true
-    },
-    "afterOverlayColor": {
-      "type": "string",
-      "default": "#000000"
-    },
-    "afterOverlayOpacity": {
-      "type": "number",
-      "default": 0.4
-    },
-    "hideOnMobile": {
-      "type": "boolean",
-      "default": false
-    },
-    "hideOnDesktop": {
-      "type": "boolean",
-      "default": false
+      "default": "#ffffff"
     }
   },
   "supports": {
     "html": false,
     "anchor": true,
-    "align": [
-      "wide",
-      "full"
-    ],
-    "spacing": {
-      "margin": true,
-      "padding": true
-    },
-    "__experimentalBorder": {
-      "color": true,
-      "radius": true,
-      "width": true,
-      "style": true
-    }
+    "align": ["wide", "full"]
   },
-  "textdomain": "guten-builder-blocks",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
-  "style": "file:./style-index.css",
-  "render": "file:./render.php",
-  "viewScript": "file:./view.js"
+  "viewScript": "file:./view.js",
+  "style": "file:./style-view.css",
+  "render": "file:./render.php"
 }

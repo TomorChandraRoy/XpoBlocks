@@ -1,14 +1,17 @@
 import { useBlockProps } from '@wordpress/block-editor';
 import Settings from './Settings/Settings';
 import BeforeAfter from '../Common/BeforeAfter';
+import DynamicStyles from '../Common/DynamicStyles';
 
 const Edit = props => {
-  const { attributes, setAttributes } = props;
+  const { attributes, setAttributes, clientId } = props;
+   const id = `block-${clientId}`;
   return (
     <>
       <Settings {...{ attributes, setAttributes }} />
       <div {...useBlockProps()}>
-        <BeforeAfter attributes={attributes} setAttributes={setAttributes} />
+        <DynamicStyles attributes={attributes} id={id} />
+        <BeforeAfter attributes={attributes} setAttributes={setAttributes} id={id} />
       </div>
     </>
   );

@@ -140,8 +140,8 @@
     "align": ["wide", "full"]
   },
   "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
   "viewScript": "file:./view.js",
   "style": "file:./style-view.css",
-  "editorStyle": "file:./index.css",
   "render": "file:./render.php"
 }

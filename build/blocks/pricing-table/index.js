@@ -1,1 +1,1318 @@
-(()=>{"use strict";var t={248(){const t=window.wp.blocks,e=window.wp.blockEditor,n=window.wp.components,l=window.wp.i18n,r=[{name:"general",title:(0,l.__)("General","textdomain")},{name:"style",title:(0,l.__)("Style","textdomain")}],i=window.wp.element,o=window.ReactJSXRuntime,a=({attributes:t,setAttributes:e,clientId:r})=>{const{blockId:a,pricingTables:s=[],columns:c,columnGap:b}=t,d=(0,i.useRef)(r);(0,i.useEffect)((()=>{const t=d.current!==r;if(!a||t){const t=window.crypto&&crypto.randomUUID?crypto.randomUUID().split("-")[0]:Math.random().toString(36).substring(2,9);e({blockId:`gbb-price-${t}`}),d.current=r}}),[a,r,e]);const g=(t,n,l)=>{const r=[...s];r[t]={...r[t],[n]:l},e({pricingTables:r})},u=(t,n,l,r)=>{let i=[...s];if("label"===l)i=i.map((t=>{const e=[...t.features||[]];return e[n]&&(e[n]={...e[n],label:r}),{...t,features:e}}));else{const e=[...i[t].features];e[n]={...e[n],[l]:r},i[t]={...i[t],features:e}}e({pricingTables:i})};return(0,o.jsxs)(o.Fragment,{children:[(0,o.jsxs)(n.PanelBody,{title:(0,l.__)("⚙️ Grid Layout","guten-builder-blocks"),initialOpen:!0,children:[(0,o.jsx)(n.SelectControl,{label:(0,l.__)("Theme Style","guten-builder-blocks"),value:t.themeStyle||"style-1",options:[{label:(0,l.__)("Style 1 (Default)","guten-builder-blocks"),value:"style-1"},{label:(0,l.__)("Style 2 (Dark Hover)","guten-builder-blocks"),value:"style-2"}],onChange:t=>e({themeStyle:t})}),(0,o.jsx)(n.SelectControl,{label:(0,l.__)("Columns (Desktop)","guten-builder-blocks"),value:c,options:[{label:"1",value:1},{label:"2",value:2},{label:"3",value:3},{label:"4",value:4}],onChange:t=>e({columns:parseInt(t)})}),(0,o.jsx)(n.RangeControl,{label:(0,l.__)("Column Gap (px)","guten-builder-blocks"),value:b,onChange:t=>e({columnGap:t}),min:10,max:50})]}),(0,o.jsxs)(n.PanelBody,{title:(0,l.__)("💰 Plans & Pricing Cards","guten-builder-blocks"),initialOpen:!0,children:[s.map(((t,r)=>(0,o.jsxs)("div",{style:{background:"#f8fafc",border:"1px solid #e2e8f0",borderRadius:"8px",padding:"16px",marginBottom:"16px",position:"relative"},children:[(0,o.jsxs)("div",{style:{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"12px"},children:[(0,o.jsxs)("span",{style:{fontWeight:"bold",fontSize:"13px",color:"#334155"},children:[(0,l.__)("Plan #","guten-builder-blocks")," ",r+1," (",t.name,")"]}),(0,o.jsx)(n.Button,{isDestructive:!0,variant:"link",onClick:()=>(t=>{const n=s.filter(((e,n)=>n!==t));e({pricingTables:n})})(r),style:{padding:0,height:"auto",minWidth:"auto"},children:(0,l.__)("Remove Plan","guten-builder-blocks")})]}),(0,o.jsx)(n.TextControl,{label:(0,l.__)("Plan Name","guten-builder-blocks"),value:t.name,onChange:t=>g(r,"name",t)}),(0,o.jsxs)("div",{style:{display:"grid",gridTemplateColumns:"1fr 2fr 1fr",gap:"8px"},children:[(0,o.jsx)(n.TextControl,{label:(0,l.__)("Currency","guten-builder-blocks"),value:t.priceCurrency,onChange:t=>g(r,"priceCurrency",t)}),(0,o.jsx)(n.TextControl,{label:(0,l.__)("Price","guten-builder-blocks"),value:t.price,onChange:t=>g(r,"price",t)}),(0,o.jsx)(n.TextControl,{label:(0,l.__)("Period","guten-builder-blocks"),value:t.period,onChange:t=>g(r,"period",t)})]}),(0,o.jsx)(n.TextControl,{label:(0,l.__)("Button Link","guten-builder-blocks"),value:t.link,onChange:t=>g(r,"link",t)}),(0,o.jsx)(n.TextControl,{label:(0,l.__)("Button Label","guten-builder-blocks"),value:t.linkLabel,onChange:t=>g(r,"linkLabel",t)}),(0,o.jsx)(n.TextControl,{label:(0,l.__)("Brand Color (Hex)","guten-builder-blocks"),value:t.color,onChange:t=>g(r,"color",t)}),(0,o.jsx)(n.ToggleControl,{label:(0,l.__)("Featured / Popular","guten-builder-blocks"),checked:t.isFeatured,onChange:t=>g(r,"isFeatured",t)}),t.isFeatured&&(0,o.jsx)(n.TextControl,{label:(0,l.__)("Badge Ribbon Text","guten-builder-blocks"),value:t.badgeText,onChange:t=>g(r,"badgeText",t),placeholder:(0,l.__)("e.g. POPULAR","guten-builder-blocks")}),(0,o.jsxs)("div",{style:{marginTop:"12px",borderTop:"1px solid #cbd5e1",paddingTop:"12px"},children:[(0,o.jsx)("p",{style:{fontWeight:"bold",fontSize:"11px",margin:"0 0 8px 0",textTransform:"uppercase",color:"#64748b"},children:(0,l.__)("Features List","guten-builder-blocks")}),(t.features||[]).map(((t,l)=>(0,o.jsxs)("div",{style:{display:"flex",gap:"8px",alignItems:"center",marginBottom:"8px"},children:[(0,o.jsx)("input",{type:"checkbox",checked:t.isEnable,onChange:t=>u(r,l,"isEnable",t.target.checked),style:{width:"16px",height:"16px"}}),(0,o.jsx)("div",{style:{flex:1},children:(0,o.jsx)(n.TextControl,{value:t.label,onChange:t=>u(r,l,"label",t),style:{marginBottom:0}})}),(0,o.jsx)(n.Button,{isDestructive:!0,variant:"link",onClick:()=>((t,n)=>{const l=s.map((t=>({...t,features:(t.features||[]).filter(((t,e)=>e!==n))})));e({pricingTables:l})})(0,l),style:{minWidth:"auto",padding:0},children:"✕"})]},l))),(0,o.jsx)(n.Button,{variant:"secondary",isSmall:!0,onClick:()=>(t=>{const n=s.map((t=>({...t,features:[...t.features||[],{label:(0,l.__)("New Feature Item","guten-builder-blocks"),isEnable:!0}]})));e({pricingTables:n})})(),style:{width:"100%",justifyContent:"center",marginTop:"6px"},children:(0,l.__)("＋ Add Feature Row","guten-builder-blocks")})]})]},r))),(0,o.jsx)(n.Button,{variant:"secondary",onClick:()=>{const t=s.length>0&&s[0].features?s[0].features.map((t=>({label:t.label,isEnable:!0}))):[{label:(0,l.__)("Everything in Starter","guten-builder-blocks"),isEnable:!0},{label:(0,l.__)("Advanced Customization","guten-builder-blocks"),isEnable:!0}],n=[...s,{name:(0,l.__)("Premium Plan","guten-builder-blocks"),price:"49",priceCurrency:"$",period:"mo",link:"#",linkLabel:(0,l.__)("Buy Now","guten-builder-blocks"),color:"#ec4899",isFeatured:!1,badgeText:"",features:t}];e({pricingTables:n})},style:{width:"100%",justifyContent:"center"},children:(0,l.__)("＋ Add Pricing Card","guten-builder-blocks")})]})]})},s=({attributes:t,setAttributes:e})=>{const{borderRadius:r,cardBgColor:i,cardTextColor:a,buttonBgColor:s,buttonTextColor:c,featuredButtonBgColor:b,featuredButtonTextColor:d}=t;return(0,o.jsxs)(o.Fragment,{children:[(0,o.jsxs)(n.PanelBody,{title:(0,l.__)("🎨 Card Styling","guten-builder-blocks"),initialOpen:!0,children:[(0,o.jsx)("p",{style:{fontWeight:"bold",margin:"0 0 5px 0"},children:(0,l.__)("Card Background Color","guten-builder-blocks")}),(0,o.jsx)(n.ColorPalette,{value:i,onChange:t=>e({cardBgColor:t||"#ffffff"})}),(0,o.jsx)("p",{style:{fontWeight:"bold",margin:"10px 0 5px 0"},children:(0,l.__)("Card Text Color","guten-builder-blocks")}),(0,o.jsx)(n.ColorPalette,{value:a,onChange:t=>e({cardTextColor:t||"#1e293b"})}),(0,o.jsx)("hr",{}),(0,o.jsx)(n.RangeControl,{label:(0,l.__)("Card Border Radius (px)","guten-builder-blocks"),value:r,onChange:t=>e({borderRadius:t}),min:0,max:40})]}),(0,o.jsxs)(n.PanelBody,{title:(0,l.__)("🛍️ Button Styling","guten-builder-blocks"),initialOpen:!1,children:[(0,o.jsx)("p",{style:{fontWeight:"bold",margin:"0 0 5px 0"},children:(0,l.__)("Default Button Background","guten-builder-blocks")}),(0,o.jsx)(n.ColorPalette,{value:s,onChange:t=>e({buttonBgColor:t||"#3b82f6"})}),(0,o.jsx)("p",{style:{fontWeight:"bold",margin:"10px 0 5px 0"},children:(0,l.__)("Default Button Text Color","guten-builder-blocks")}),(0,o.jsx)(n.ColorPalette,{value:c,onChange:t=>e({buttonTextColor:t||"#ffffff"})}),(0,o.jsx)("hr",{}),(0,o.jsx)("p",{style:{fontWeight:"bold",margin:"10px 0 5px 0"},children:(0,l.__)("Featured Button Background","guten-builder-blocks")}),(0,o.jsx)(n.ColorPalette,{value:b,onChange:t=>e({featuredButtonBgColor:t||"#10b981"})}),(0,o.jsx)("p",{style:{fontWeight:"bold",margin:"10px 0 5px 0"},children:(0,l.__)("Featured Button Text Color","guten-builder-blocks")}),(0,o.jsx)(n.ColorPalette,{value:d,onChange:t=>e({featuredButtonTextColor:t||"#ffffff"})}),(0,o.jsx)("hr",{}),(0,o.jsx)("p",{style:{fontWeight:"bold",margin:"10px 0 5px 0"},children:(0,l.__)("Hover Highlight Color (Style 2)","guten-builder-blocks")}),(0,o.jsx)(n.ColorPalette,{value:t.hoverHighlightColor,onChange:t=>e({hoverHighlightColor:t||"#ffd700"})})]})]})},c=({attributes:t,setAttributes:l,clientId:i})=>(0,o.jsx)(e.InspectorControls,{children:(0,o.jsx)(n.TabPanel,{className:"guten-builder-blocks-tab-panel wp-block-guten-builder-blocks-pricing-table",activeClass:"guten-builder-blocks-active-tab",tabs:r,children:e=>(0,o.jsxs)(o.Fragment,{children:["general"===e.name&&(0,o.jsx)(a,{attributes:t,setAttributes:l,clientId:i}),"style"===e.name&&(0,o.jsx)(s,{attributes:t,setAttributes:l})]})})}),b=(0,o.jsx)("svg",{width:"18",height:"18",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"3",strokeLinecap:"round",strokeLinejoin:"round",style:{marginRight:"8px"},children:(0,o.jsx)("polyline",{points:"20 6 9 17 4 12"})}),d=(0,o.jsxs)("svg",{width:"18",height:"18",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2.5",strokeLinecap:"round",strokeLinejoin:"round",style:{marginRight:"8px",opacity:.5},children:[(0,o.jsx)("line",{x1:"18",y1:"6",x2:"6",y2:"18"}),(0,o.jsx)("line",{x1:"6",y1:"6",x2:"18",y2:"18"})]}),g=({attributes:t,setAttributes:e,RichTextEl:n,isBackend:r=!1})=>{const{blockId:i,pricingTables:a=[],themeStyle:s="style-1"}=t,c=(t,n,l)=>{const r=[...a];r[t]={...r[t],[n]:l},e({pricingTables:r})};return(0,o.jsx)("div",{className:`gbb-pricing-grid-container ${i} ${s}`,children:a.map(((t,i)=>{const s=t.isFeatured;return(0,o.jsxs)("div",{className:"gbb-pricing-card "+(s?"is-featured":""),children:[s&&t.badgeText&&(0,o.jsx)("div",{className:"gbb-pricing-badge",children:t.badgeText}),(0,o.jsxs)("div",{className:"gbb-pricing-header",children:[(0,o.jsx)(n,{tagName:"h3",className:"gbb-pricing-name",value:t.name,onChange:t=>c(i,"name",t),placeholder:(0,l.__)("Plan Name","guten-builder-blocks")}),(0,o.jsxs)("div",{className:"gbb-pricing-rate",children:[(0,o.jsx)(n,{tagName:"span",className:"gbb-pricing-currency",value:t.priceCurrency,onChange:t=>c(i,"priceCurrency",t),placeholder:"$"}),(0,o.jsx)(n,{tagName:"span",className:"gbb-pricing-price",value:t.price,onChange:t=>c(i,"price",t),placeholder:"0"}),(0,o.jsx)("span",{className:"gbb-pricing-period-separator",children:"/"}),(0,o.jsx)(n,{tagName:"span",className:"gbb-pricing-period",value:t.period,onChange:t=>c(i,"period",t),placeholder:"mo"})]})]}),(0,o.jsx)("ul",{className:"gbb-pricing-features",children:(t.features||[]).map(((t,r)=>(0,o.jsxs)("li",{className:"gbb-pricing-feature-item "+(t.isEnable?"is-enabled":"is-disabled"),children:[(0,o.jsx)("span",{className:"gbb-feature-icon",children:t.isEnable?b:d}),(0,o.jsx)(n,{tagName:"span",value:t.label,onChange:t=>((t,n,l)=>{const r=a.map((t=>{const e=[...t.features||[]];return e[n]&&(e[n]={...e[n],label:l}),{...t,features:e}}));e({pricingTables:r})})(0,r,t),placeholder:(0,l.__)("Feature description","guten-builder-blocks")})]},r)))}),(0,o.jsx)(n,{tagName:"a",href:"#",className:"gbb-pricing-button",value:t.linkLabel,onChange:t=>c(i,"linkLabel",t),placeholder:(0,l.__)("Buy Now","guten-builder-blocks"),onClick:r?t=>t.preventDefault():void 0})]},i)}))})},u=({attributes:t,clientId:e})=>{const{blockId:n,pricingTables:l=[],columns:r,columnGap:i,borderRadius:a,cardBgColor:s,cardTextColor:c,buttonBgColor:b,buttonTextColor:d,featuredButtonBgColor:g,featuredButtonTextColor:u,themeStyle:p="style-1",hoverHighlightColor:x="#ffd700"}=t,h=`.${n}`;let f="";return l.forEach(((t,e)=>{const n=t.isFeatured,l=t.color||"#3b82f6",r=`${h} .gbb-pricing-card:nth-child(${e+1})`,i=`${r} .gbb-pricing-button`;f+="style-2"===p?`\n\t\t\t\t${r} {\n\t\t\t\t\tborder: 2px solid transparent;\n\t\t\t\t\ttransition: all 0.3s ease;\n\t\t\t\t}\n\t\t\t\t${r} .gbb-pricing-name {\n\t\t\t\t\tcolor: #ffffff;\n\t\t\t\t}\n\t\t\t\t${r} .gbb-feature-icon {\n\t\t\t\t\tcolor: #ffffff;\n\t\t\t\t}\n\t\t\t\t${i} {\n\t\t\t\t\tbackground: #000000;\n\t\t\t\t\tcolor: #3b82f6;\n\t\t\t\t\tborder: 1px solid #000000;\n\t\t\t\t\ttransition: all 0.3s ease;\n\t\t\t\t}\n\t\t\t`:`\n\t\t\t\t${r} {\n\t\t\t\t\tborder: ${n?`2px solid ${l}`:"1px solid #e2e8f0"};\n\t\t\t\t\tbox-shadow: ${n?"0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)":"0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)"};\n\t\t\t\t}\n\t\t\t\t${r} .gbb-pricing-badge {\n\t\t\t\t\tbackground: ${l};\n\t\t\t\t}\n\t\t\t\t${r} .gbb-pricing-name {\n\t\t\t\t\tcolor: ${n?l:"inherit"};\n\t\t\t\t}\n\t\t\t\t${r} .gbb-feature-icon {\n\t\t\t\t\tcolor: ${n?l:"inherit"};\n\t\t\t\t}\n\t\t\t\t${i} {\n\t\t\t\t\tbackground: ${n?g||l:b};\n\t\t\t\t\tcolor: ${n?u:d};\n\t\t\t\t\tborder: 1px solid ${n?g||l:b};\n\t\t\t\t}\n\t\t\t`})),(0,o.jsx)("style",{dangerouslySetInnerHTML:{__html:`\n\t\t\t\t${h} {\n\t\t\t\t\tdisplay: grid;\n\t\t\t\t\tgrid-template-columns: repeat(${r}, 1fr);\n\t\t\t\t\tgap: ${i}px;\n\t\t\t\t\twidth: 100%;\n\t\t\t\t}\n\n\t\t\t\t${h} .gbb-pricing-card {\n\t\t\t\t\tbackground: ${s||"#ffffff"};\n\t\t\t\t\tcolor: ${c||"#1e293b"};\n\t\t\t\t\tborder-radius: ${a}px;\n\t\t\t\t\tposition: relative;\n\t\t\t\t\tpadding: 32px 24px;\n\t\t\t\t\tdisplay: flex;\n\t\t\t\t\tflex-direction: column;\n\t\t\t\t\tbox-sizing: border-box;\n\t\t\t\t}\n\n\t\t\t\t${h} .gbb-pricing-badge {\n\t\t\t\t\tposition: absolute;\n\t\t\t\t\ttop: 12px;\n\t\t\t\t\tright: 12px;\n\t\t\t\t\tcolor: #ffffff;\n\t\t\t\t\tpadding: 4px 10px;\n\t\t\t\t\tborder-radius: 20px;\n\t\t\t\t\tfont-size: 10px;\n\t\t\t\t\tfont-weight: bold;\n\t\t\t\t\tletter-spacing: 1px;\n\t\t\t\t}\n\n\t\t\t\t${h} .gbb-pricing-header {\n\t\t\t\t\tborder-bottom: 1px solid #e2e8f0;\n\t\t\t\t\tpadding-bottom: 20px;\n\t\t\t\t\tmargin-bottom: 20px;\n\t\t\t\t\ttext-align: center;\n\t\t\t\t}\n\n\t\t\t\t${h} .gbb-pricing-name {\n\t\t\t\t\tfont-size: 20px;\n\t\t\t\t\tfont-weight: 700;\n\t\t\t\t\tmargin: 0 0 10px 0;\n\t\t\t\t}\n\n\t\t\t\t${h} .gbb-pricing-rate {\n\t\t\t\t\tdisplay: flex;\n\t\t\t\t\tjustify-content: center;\n\t\t\t\t\talign-items: baseline;\n\t\t\t\t\tmargin: 15px 0;\n\t\t\t\t}\n\n\t\t\t\t${h} .gbb-pricing-currency {\n\t\t\t\t\tfont-size: 20px;\n\t\t\t\t\tfont-weight: 600;\n\t\t\t\t\tmargin-right: 2px;\n\t\t\t\t}\n\n\t\t\t\t${h} .gbb-pricing-price {\n\t\t\t\t\tfont-size: 42px;\n\t\t\t\t\tfont-weight: 800;\n\t\t\t\t\tline-height: 1;\n\t\t\t\t}\n\n\t\t\t\t${h} .gbb-pricing-period-separator {\n\t\t\t\t\tfont-size: 14px;\n\t\t\t\t\topacity: 0.7;\n\t\t\t\t\tmargin-left: 4px;\n\t\t\t\t}\n\n\t\t\t\t${h} .gbb-pricing-period {\n\t\t\t\t\tfont-size: 14px;\n\t\t\t\t\topacity: 0.7;\n\t\t\t\t}\n\n\t\t\t\t${h} .gbb-pricing-features {\n\t\t\t\t\tlist-style: none;\n\t\t\t\t\tpadding: 0;\n\t\t\t\t\tmargin: 0 0 30px 0;\n\t\t\t\t\tdisplay: flex;\n\t\t\t\t\tflex-direction: column;\n\t\t\t\t\tgap: 12px;\n\t\t\t\t}\n\n\t\t\t\t${h} .gbb-pricing-feature-item {\n\t\t\t\t\tdisplay: flex;\n\t\t\t\t\talign-items: center;\n\t\t\t\t\tfont-size: 14px;\n\t\t\t\t}\n\t\t\t\t${h} .gbb-pricing-feature-item.is-enabled {\n\t\t\t\t\tcolor: inherit;\n\t\t\t\t}\n\t\t\t\t${h} .gbb-pricing-feature-item.is-disabled {\n\t\t\t\t\tcolor: rgba(0,0,0,0.38);\n\t\t\t\t}\n\n\t\t\t\t${h} .gbb-feature-icon {\n\t\t\t\t\tdisplay: flex;\n\t\t\t\t\talign-items: center;\n\t\t\t\t}\n\n\t\t\t\t${h} .gbb-pricing-button {\n\t\t\t\t\tdisplay: inline-block;\n\t\t\t\t\ttext-align: center;\n\t\t\t\t\tpadding: 12px 24px;\n\t\t\t\t\tborder-radius: 6px;\n\t\t\t\t\tfont-weight: 600;\n\t\t\t\t\ttext-decoration: none;\n\t\t\t\t\tmargin-top: auto;\n\t\t\t\t\ttransition: all 0.2s;\n\t\t\t\t}\n\n\t\t\t\t${f}\n\n\t\t\t\t${h}.style-2 .gbb-pricing-card {\n\t\t\t\t\tbackground: #1a1a1a;\n\t\t\t\t\tcolor: #94a3b8;\n\t\t\t\t\tborder-color: #2a2a2a;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t${h}.style-2 .gbb-pricing-card .gbb-pricing-price {\n\t\t\t\t\tcolor: #ffffff;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t${h}.style-2 .gbb-pricing-card .gbb-pricing-header {\n\t\t\t\t\tborder-bottom-color: #2a2a2a;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t${h}.style-2 .gbb-pricing-feature-item.is-disabled {\n\t\t\t\t\tcolor: #4b5563;\n\t\t\t\t\ttext-decoration: line-through;\n\t\t\t\t}\n\n\t\t\t\t${h}.style-2 .gbb-pricing-card:hover {\n\t\t\t\t\tborder-color: ${x};\n\t\t\t\t\ttransform: translateY(-5px);\n\t\t\t\t}\n\n\t\t\t\t${h}.style-2 .gbb-pricing-card:hover .gbb-pricing-button {\n\t\t\t\t\tbackground: ${x};\n\t\t\t\t\tcolor: #000000;\n\t\t\t\t\tborder-color: ${x};\n\t\t\t\t}\n\t\t\t`.replace(/\s+/g," ")}})},p=JSON.parse('{"UU":"guten-builder-blocks/pricing-table"}');(0,t.registerBlockType)(p.UU,{edit:t=>{const{attributes:n,setAttributes:l,clientId:r}=t;return(0,o.jsxs)(o.Fragment,{children:[(0,o.jsx)(u,{attributes:n,clientId:r}),(0,o.jsx)(c,{attributes:n,setAttributes:l,clientId:r}),(0,o.jsx)("div",{...(0,e.useBlockProps)(),children:(0,o.jsx)(g,{attributes:n,setAttributes:l,RichTextEl:e.RichText,isBackend:!0})})]})},save:()=>null})}};const e={};function n(l){const r=e[l];if(void 0!==r)return r.exports;const i=e[l]={exports:{}};return t[l](i,i.exports,n),i.exports}n.m=t,(()=>{const t=[];n.O=(e,l,r,i)=>{if(l){i=i||0;for(var o=t.length;o>0&&t[o-1][2]>i;o--)t[o]=t[o-1];return void(t[o]=[l,r,i])}let a=1/0;for(o=0;o<t.length;o++){let[l,r,i]=t[o],c=!0;for(var s=0;s<l.length;s++)(!1&i||a>=i)&&Object.keys(n.O).every((t=>n.O[t](l[s])))?l.splice(s--,1):(c=!1,i<a&&(a=i));if(c){t.splice(o--,1);const n=r();void 0!==n&&(e=n)}}return e}})(),n.o=(t,e)=>Object.hasOwn(t,e),(()=>{const t={620:0,859:0};n.O.j=e=>0===t[e];const e=(e,l)=>{let[r,i,o]=l;var a,s,c=0;if(r.some((e=>0!==t[e]))){for(a in i)n.o(i,a)&&(n.m[a]=i[a]);if(o)var b=o(n)}for(e&&e(l);c<r.length;c++)s=r[c],n.o(t,s)&&t[s]&&t[s][0](),t[s]=0;return n.O(b)},l=globalThis.webpackChunkguten_builder_blocks||=[];l.forEach(e.bind(null,0)),l.push=e.bind(null,l.push.bind(l))})();let l=n.O(void 0,[859],(()=>n(248)));l=n.O(l)})();
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/blocks/pricing-table/Components/Common/dynamicStyle.js"
+/*!********************************************************************!*\
+  !*** ./src/blocks/pricing-table/Components/Common/dynamicStyle.js ***!
+  \********************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+
+const DynamicStyle = ({
+  attributes,
+  clientId
+}) => {
+  const {
+    blockId,
+    pricingTables = [],
+    columns,
+    columnGap,
+    borderRadius,
+    cardBgColor,
+    cardTextColor,
+    buttonBgColor,
+    buttonTextColor,
+    featuredButtonBgColor,
+    featuredButtonTextColor,
+    themeStyle = 'style-1',
+    hoverHighlightColor = '#ffd700'
+  } = attributes;
+
+  // The blockId is used as the class selector
+  const mainSl = `.${blockId}`;
+  let tableStyles = '';
+  pricingTables.forEach((table, index) => {
+    const isFeatured = table.isFeatured;
+    const planColor = table.color || '#3b82f6';
+    const itemClass = `${mainSl} .gbb-pricing-card:nth-child(${index + 1})`;
+    const btnClass = `${itemClass} .gbb-pricing-button`;
+    if (themeStyle === 'style-2') {
+      tableStyles += `
+				${itemClass} {
+					border: 2px solid transparent;
+					transition: all 0.3s ease;
+				}
+				${itemClass} .gbb-pricing-name {
+					color: #ffffff;
+				}
+				${itemClass} .gbb-feature-icon {
+					color: #ffffff;
+				}
+				${btnClass} {
+					background: #000000;
+					color: #3b82f6;
+					border: 1px solid #000000;
+					transition: all 0.3s ease;
+				}
+			`;
+    } else {
+      tableStyles += `
+				${itemClass} {
+					border: ${isFeatured ? `2px solid ${planColor}` : '1px solid #e2e8f0'};
+					box-shadow: ${isFeatured ? '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' : '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)'};
+				}
+				${itemClass} .gbb-pricing-badge {
+					background: ${planColor};
+				}
+				${itemClass} .gbb-pricing-name {
+					color: ${isFeatured ? planColor : 'inherit'};
+				}
+				${itemClass} .gbb-feature-icon {
+					color: ${isFeatured ? planColor : 'inherit'};
+				}
+				${btnClass} {
+					background: ${isFeatured ? featuredButtonBgColor || planColor : buttonBgColor};
+					color: ${isFeatured ? featuredButtonTextColor : buttonTextColor};
+					border: 1px solid ${isFeatured ? featuredButtonBgColor || planColor : buttonBgColor};
+				}
+			`;
+    }
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("style", {
+    dangerouslySetInnerHTML: {
+      __html: `
+				${mainSl} {
+					display: grid;
+					grid-template-columns: repeat(${columns}, 1fr);
+					gap: ${columnGap}px;
+					width: 100%;
+				}
+
+				${mainSl} .gbb-pricing-card {
+					background: ${cardBgColor || '#ffffff'};
+					color: ${cardTextColor || '#1e293b'};
+					border-radius: ${borderRadius}px;
+					position: relative;
+					padding: 32px 24px;
+					display: flex;
+					flex-direction: column;
+					box-sizing: border-box;
+				}
+
+				${mainSl} .gbb-pricing-badge {
+					position: absolute;
+					top: 12px;
+					right: 12px;
+					color: #ffffff;
+					padding: 4px 10px;
+					border-radius: 20px;
+					font-size: 10px;
+					font-weight: bold;
+					letter-spacing: 1px;
+				}
+
+				${mainSl} .gbb-pricing-header {
+					border-bottom: 1px solid #e2e8f0;
+					padding-bottom: 20px;
+					margin-bottom: 20px;
+					text-align: center;
+				}
+
+				${mainSl} .gbb-pricing-name {
+					font-size: 20px;
+					font-weight: 700;
+					margin: 0 0 10px 0;
+				}
+
+				${mainSl} .gbb-pricing-rate {
+					display: flex;
+					justify-content: center;
+					align-items: baseline;
+					margin: 15px 0;
+				}
+
+				${mainSl} .gbb-pricing-currency {
+					font-size: 20px;
+					font-weight: 600;
+					margin-right: 2px;
+				}
+
+				${mainSl} .gbb-pricing-price {
+					font-size: 42px;
+					font-weight: 800;
+					line-height: 1;
+				}
+
+				${mainSl} .gbb-pricing-period-separator {
+					font-size: 14px;
+					opacity: 0.7;
+					margin-left: 4px;
+				}
+
+				${mainSl} .gbb-pricing-period {
+					font-size: 14px;
+					opacity: 0.7;
+				}
+
+				${mainSl} .gbb-pricing-features {
+					list-style: none;
+					padding: 0;
+					margin: 0 0 30px 0;
+					display: flex;
+					flex-direction: column;
+					gap: 12px;
+				}
+
+				${mainSl} .gbb-pricing-feature-item {
+					display: flex;
+					align-items: center;
+					font-size: 14px;
+				}
+				${mainSl} .gbb-pricing-feature-item.is-enabled {
+					color: inherit;
+				}
+				${mainSl} .gbb-pricing-feature-item.is-disabled {
+					color: rgba(0,0,0,0.38);
+				}
+
+				${mainSl} .gbb-feature-icon {
+					display: flex;
+					align-items: center;
+				}
+
+				${mainSl} .gbb-pricing-button {
+					display: inline-block;
+					text-align: center;
+					padding: 12px 24px;
+					border-radius: 6px;
+					font-weight: 600;
+					text-decoration: none;
+					margin-top: auto;
+					transition: all 0.2s;
+				}
+
+				${tableStyles}
+
+				${mainSl}.style-2 .gbb-pricing-card {
+					background: #1a1a1a;
+					color: #94a3b8;
+					border-color: #2a2a2a;
+				}
+				
+				${mainSl}.style-2 .gbb-pricing-card .gbb-pricing-price {
+					color: #ffffff;
+				}
+				
+				${mainSl}.style-2 .gbb-pricing-card .gbb-pricing-header {
+					border-bottom-color: #2a2a2a;
+				}
+				
+				${mainSl}.style-2 .gbb-pricing-feature-item.is-disabled {
+					color: #4b5563;
+					text-decoration: line-through;
+				}
+
+				${mainSl}.style-2 .gbb-pricing-card:hover {
+					border-color: ${hoverHighlightColor};
+					transform: translateY(-5px);
+				}
+
+				${mainSl}.style-2 .gbb-pricing-card:hover .gbb-pricing-button {
+					background: ${hoverHighlightColor};
+					color: #000000;
+					border-color: ${hoverHighlightColor};
+				}
+			`.replace(/\s+/g, ' ')
+    }
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DynamicStyle);
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/Components/Edit.js"
+/*!*****************************************************!*\
+  !*** ./src/blocks/pricing-table/Components/Edit.js ***!
+  \*****************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Settings_Settings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Settings/Settings */ "./src/blocks/pricing-table/Components/Settings/Settings.js");
+/* harmony import */ var _PricingTable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PricingTable */ "./src/blocks/pricing-table/Components/PricingTable.jsx");
+/* harmony import */ var _Common_dynamicStyle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Common/dynamicStyle */ "./src/blocks/pricing-table/Components/Common/dynamicStyle.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+const Edit = props => {
+  const {
+    attributes,
+    setAttributes,
+    clientId
+  } = props;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Common_dynamicStyle__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      attributes: attributes,
+      clientId: clientId
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Settings_Settings__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      attributes,
+      setAttributes,
+      clientId
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)(),
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_PricingTable__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        attributes: attributes,
+        setAttributes: setAttributes,
+        RichTextEl: _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText,
+        isBackend: true
+      })
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Edit);
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/Components/PricingTable.jsx"
+/*!**************************************************************!*\
+  !*** ./src/blocks/pricing-table/Components/PricingTable.jsx ***!
+  \**************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const checkIcon = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+  width: "18",
+  height: "18",
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "3",
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  style: {
+    marginRight: '8px'
+  },
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polyline", {
+    points: "20 6 9 17 4 12"
+  })
+});
+const crossIcon = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+  width: "18",
+  height: "18",
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "2.5",
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  style: {
+    marginRight: '8px',
+    opacity: 0.5
+  },
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+    x1: "18",
+    y1: "6",
+    x2: "6",
+    y2: "18"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+    x1: "6",
+    y1: "6",
+    x2: "18",
+    y2: "18"
+  })]
+});
+const PricingTable = ({
+  attributes,
+  setAttributes,
+  RichTextEl,
+  isBackend = false
+}) => {
+  const {
+    blockId,
+    pricingTables = [],
+    themeStyle = 'style-1'
+  } = attributes;
+  const updateTableAttr = (index, key, value) => {
+    const newTables = [...pricingTables];
+    newTables[index] = {
+      ...newTables[index],
+      [key]: value
+    };
+    setAttributes({
+      pricingTables: newTables
+    });
+  };
+  const updateFeatureLabel = (tableIndex, featureIndex, value) => {
+    const newTables = pricingTables.map(t => {
+      const features = [...(t.features || [])];
+      if (features[featureIndex]) {
+        features[featureIndex] = {
+          ...features[featureIndex],
+          label: value
+        };
+      }
+      return {
+        ...t,
+        features
+      };
+    });
+    setAttributes({
+      pricingTables: newTables
+    });
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: `gbb-pricing-grid-container ${blockId} ${themeStyle}`,
+    children: pricingTables.map((table, tableIndex) => {
+      const isFeatured = table.isFeatured;
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: `gbb-pricing-card ${isFeatured ? 'is-featured' : ''}`,
+        children: [isFeatured && table.badgeText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "gbb-pricing-badge",
+          children: table.badgeText
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "gbb-pricing-header",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(RichTextEl, {
+            tagName: "h3",
+            className: "gbb-pricing-name",
+            value: table.name,
+            onChange: val => updateTableAttr(tableIndex, 'name', val),
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Plan Name', 'guten-builder-blocks')
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "gbb-pricing-rate",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(RichTextEl, {
+              tagName: "span",
+              className: "gbb-pricing-currency",
+              value: table.priceCurrency,
+              onChange: val => updateTableAttr(tableIndex, 'priceCurrency', val),
+              placeholder: "$"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(RichTextEl, {
+              tagName: "span",
+              className: "gbb-pricing-price",
+              value: table.price,
+              onChange: val => updateTableAttr(tableIndex, 'price', val),
+              placeholder: "0"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+              className: "gbb-pricing-period-separator",
+              children: "/"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(RichTextEl, {
+              tagName: "span",
+              className: "gbb-pricing-period",
+              value: table.period,
+              onChange: val => updateTableAttr(tableIndex, 'period', val),
+              placeholder: "mo"
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
+          className: "gbb-pricing-features",
+          children: (table.features || []).map((feature, featureIndex) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
+            className: `gbb-pricing-feature-item ${feature.isEnable ? 'is-enabled' : 'is-disabled'}`,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+              className: "gbb-feature-icon",
+              children: feature.isEnable ? checkIcon : crossIcon
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(RichTextEl, {
+              tagName: "span",
+              value: feature.label,
+              onChange: val => updateFeatureLabel(tableIndex, featureIndex, val),
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Feature description', 'guten-builder-blocks')
+            })]
+          }, featureIndex))
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(RichTextEl, {
+          tagName: "a",
+          href: "#",
+          className: "gbb-pricing-button",
+          value: table.linkLabel,
+          onChange: val => updateTableAttr(tableIndex, 'linkLabel', val),
+          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Buy Now', 'guten-builder-blocks'),
+          onClick: isBackend ? e => e.preventDefault() : undefined
+        })]
+      }, tableIndex);
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PricingTable);
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/Components/Settings/General.js"
+/*!*****************************************************************!*\
+  !*** ./src/blocks/pricing-table/Components/Settings/General.js ***!
+  \*****************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+const General = ({
+  attributes,
+  setAttributes,
+  clientId
+}) => {
+  const {
+    blockId,
+    pricingTables = [],
+    columns,
+    columnGap
+  } = attributes;
+  const prevClientId = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useRef)(clientId);
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useEffect)(() => {
+    const clientChanged = prevClientId.current !== clientId;
+    if (!blockId || clientChanged) {
+      const uuid = window.crypto && crypto.randomUUID ? crypto.randomUUID().split('-')[0] : Math.random().toString(36).substring(2, 9);
+      setAttributes({
+        blockId: `gbb-price-${uuid}`
+      });
+      prevClientId.current = clientId;
+    }
+  }, [blockId, clientId, setAttributes]);
+  const updateTable = (index, key, value) => {
+    const newTables = [...pricingTables];
+    newTables[index] = {
+      ...newTables[index],
+      [key]: value
+    };
+    setAttributes({
+      pricingTables: newTables
+    });
+  };
+  const addTable = () => {
+    const templateFeatures = pricingTables.length > 0 && pricingTables[0].features ? pricingTables[0].features.map(f => ({
+      label: f.label,
+      isEnable: true
+    })) : [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Everything in Starter', 'guten-builder-blocks'),
+      isEnable: true
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Advanced Customization', 'guten-builder-blocks'),
+      isEnable: true
+    }];
+    const newTables = [...pricingTables, {
+      name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Premium Plan', 'guten-builder-blocks'),
+      price: '49',
+      priceCurrency: '$',
+      period: 'mo',
+      link: '#',
+      linkLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Buy Now', 'guten-builder-blocks'),
+      color: '#ec4899',
+      isFeatured: false,
+      badgeText: '',
+      features: templateFeatures
+    }];
+    setAttributes({
+      pricingTables: newTables
+    });
+  };
+  const deleteTable = index => {
+    const newTables = pricingTables.filter((_, i) => i !== index);
+    setAttributes({
+      pricingTables: newTables
+    });
+  };
+  const updateFeature = (tableIndex, featureIndex, key, value) => {
+    let newTables = [...pricingTables];
+    if (key === 'label') {
+      newTables = newTables.map(t => {
+        const features = [...(t.features || [])];
+        if (features[featureIndex]) {
+          features[featureIndex] = {
+            ...features[featureIndex],
+            label: value
+          };
+        }
+        return {
+          ...t,
+          features
+        };
+      });
+    } else {
+      const features = [...newTables[tableIndex].features];
+      features[featureIndex] = {
+        ...features[featureIndex],
+        [key]: value
+      };
+      newTables[tableIndex] = {
+        ...newTables[tableIndex],
+        features
+      };
+    }
+    setAttributes({
+      pricingTables: newTables
+    });
+  };
+  const addFeature = tableIndex => {
+    const newTables = pricingTables.map(t => ({
+      ...t,
+      features: [...(t.features || []), {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('New Feature Item', 'guten-builder-blocks'),
+        isEnable: true
+      }]
+    }));
+    setAttributes({
+      pricingTables: newTables
+    });
+  };
+  const deleteFeature = (tableIndex, featureIndex) => {
+    const newTables = pricingTables.map(t => ({
+      ...t,
+      features: (t.features || []).filter((_, i) => i !== featureIndex)
+    }));
+    setAttributes({
+      pricingTables: newTables
+    });
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('⚙️ Grid Layout', 'guten-builder-blocks'),
+      initialOpen: true,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Theme Style', 'guten-builder-blocks'),
+        value: attributes.themeStyle || 'style-1',
+        options: [{
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style 1 (Default)', 'guten-builder-blocks'),
+          value: 'style-1'
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style 2 (Dark Hover)', 'guten-builder-blocks'),
+          value: 'style-2'
+        }],
+        onChange: val => setAttributes({
+          themeStyle: val
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Columns (Desktop)', 'guten-builder-blocks'),
+        value: columns,
+        options: [{
+          label: '1',
+          value: 1
+        }, {
+          label: '2',
+          value: 2
+        }, {
+          label: '3',
+          value: 3
+        }, {
+          label: '4',
+          value: 4
+        }],
+        onChange: val => setAttributes({
+          columns: parseInt(val)
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Column Gap (px)', 'guten-builder-blocks'),
+        value: columnGap,
+        onChange: val => setAttributes({
+          columnGap: val
+        }),
+        min: 10,
+        max: 50
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('💰 Plans & Pricing Cards', 'guten-builder-blocks'),
+      initialOpen: true,
+      children: [pricingTables.map((table, tableIndex) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        style: {
+          background: '#f8fafc',
+          border: '1px solid #e2e8f0',
+          borderRadius: '8px',
+          padding: '16px',
+          marginBottom: '16px',
+          position: 'relative'
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          style: {
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: '12px'
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
+            style: {
+              fontWeight: 'bold',
+              fontSize: '13px',
+              color: '#334155'
+            },
+            children: [(0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Plan #', 'guten-builder-blocks'), " ", tableIndex + 1, " (", table.name, ")"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+            isDestructive: true,
+            variant: "link",
+            onClick: () => deleteTable(tableIndex),
+            style: {
+              padding: 0,
+              height: 'auto',
+              minWidth: 'auto'
+            },
+            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove Plan', 'guten-builder-blocks')
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Plan Name', 'guten-builder-blocks'),
+          value: table.name,
+          onChange: val => updateTable(tableIndex, 'name', val)
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          style: {
+            display: 'grid',
+            gridTemplateColumns: '1fr 2fr 1fr',
+            gap: '8px'
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Currency', 'guten-builder-blocks'),
+            value: table.priceCurrency,
+            onChange: val => updateTable(tableIndex, 'priceCurrency', val)
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Price', 'guten-builder-blocks'),
+            value: table.price,
+            onChange: val => updateTable(tableIndex, 'price', val)
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Period', 'guten-builder-blocks'),
+            value: table.period,
+            onChange: val => updateTable(tableIndex, 'period', val)
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Link', 'guten-builder-blocks'),
+          value: table.link,
+          onChange: val => updateTable(tableIndex, 'link', val)
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Label', 'guten-builder-blocks'),
+          value: table.linkLabel,
+          onChange: val => updateTable(tableIndex, 'linkLabel', val)
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Brand Color (Hex)', 'guten-builder-blocks'),
+          value: table.color,
+          onChange: val => updateTable(tableIndex, 'color', val)
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Featured / Popular', 'guten-builder-blocks'),
+          checked: table.isFeatured,
+          onChange: val => updateTable(tableIndex, 'isFeatured', val)
+        }), table.isFeatured && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Badge Ribbon Text', 'guten-builder-blocks'),
+          value: table.badgeText,
+          onChange: val => updateTable(tableIndex, 'badgeText', val),
+          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('e.g. POPULAR', 'guten-builder-blocks')
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          style: {
+            marginTop: '12px',
+            borderTop: '1px solid #cbd5e1',
+            paddingTop: '12px'
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+            style: {
+              fontWeight: 'bold',
+              fontSize: '11px',
+              margin: '0 0 8px 0',
+              textTransform: 'uppercase',
+              color: '#64748b'
+            },
+            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Features List', 'guten-builder-blocks')
+          }), (table.features || []).map((feature, featureIndex) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            style: {
+              display: 'flex',
+              gap: '8px',
+              alignItems: 'center',
+              marginBottom: '8px'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+              type: "checkbox",
+              checked: feature.isEnable,
+              onChange: e => updateFeature(tableIndex, featureIndex, 'isEnable', e.target.checked),
+              style: {
+                width: '16px',
+                height: '16px'
+              }
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              style: {
+                flex: 1
+              },
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+                value: feature.label,
+                onChange: val => updateFeature(tableIndex, featureIndex, 'label', val),
+                style: {
+                  marginBottom: 0
+                }
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+              isDestructive: true,
+              variant: "link",
+              onClick: () => deleteFeature(tableIndex, featureIndex),
+              style: {
+                minWidth: 'auto',
+                padding: 0
+              },
+              children: "\u2715"
+            })]
+          }, featureIndex)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+            variant: "secondary",
+            isSmall: true,
+            onClick: () => addFeature(tableIndex),
+            style: {
+              width: '100%',
+              justifyContent: 'center',
+              marginTop: '6px'
+            },
+            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('＋ Add Feature Row', 'guten-builder-blocks')
+          })]
+        })]
+      }, tableIndex)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+        variant: "secondary",
+        onClick: addTable,
+        style: {
+          width: '100%',
+          justifyContent: 'center'
+        },
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('＋ Add Pricing Card', 'guten-builder-blocks')
+      })]
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (General);
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/Components/Settings/Settings.js"
+/*!******************************************************************!*\
+  !*** ./src/blocks/pricing-table/Components/Settings/Settings.js ***!
+  \******************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_options__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/options */ "./src/blocks/pricing-table/utils/options.js");
+/* harmony import */ var _General__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./General */ "./src/blocks/pricing-table/Components/Settings/General.js");
+/* harmony import */ var _Style__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Style */ "./src/blocks/pricing-table/Components/Settings/Style.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+const Settings = ({
+  attributes,
+  setAttributes,
+  clientId
+}) => {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TabPanel, {
+      className: "guten-builder-blocks-tab-panel wp-block-guten-builder-blocks-pricing-table",
+      activeClass: "guten-builder-blocks-active-tab",
+      tabs: _utils_options__WEBPACK_IMPORTED_MODULE_2__.generalStyleTabs,
+      children: tab => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+        children: ['general' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_General__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          attributes: attributes,
+          setAttributes: setAttributes,
+          clientId: clientId
+        }), 'style' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Style__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          attributes: attributes,
+          setAttributes: setAttributes
+        })]
+      })
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Settings);
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/Components/Settings/Style.js"
+/*!***************************************************************!*\
+  !*** ./src/blocks/pricing-table/Components/Settings/Style.js ***!
+  \***************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+const Style = ({
+  attributes,
+  setAttributes
+}) => {
+  const {
+    borderRadius,
+    cardBgColor,
+    cardTextColor,
+    buttonBgColor,
+    buttonTextColor,
+    featuredButtonBgColor,
+    featuredButtonTextColor
+  } = attributes;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('🎨 Card Styling', 'guten-builder-blocks'),
+      initialOpen: true,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+        style: {
+          fontWeight: 'bold',
+          margin: '0 0 5px 0'
+        },
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Card Background Color', 'guten-builder-blocks')
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
+        value: cardBgColor,
+        onChange: val => setAttributes({
+          cardBgColor: val || '#ffffff'
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+        style: {
+          fontWeight: 'bold',
+          margin: '10px 0 5px 0'
+        },
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Card Text Color', 'guten-builder-blocks')
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
+        value: cardTextColor,
+        onChange: val => setAttributes({
+          cardTextColor: val || '#1e293b'
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Card Border Radius (px)', 'guten-builder-blocks'),
+        value: borderRadius,
+        onChange: val => setAttributes({
+          borderRadius: val
+        }),
+        min: 0,
+        max: 40
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('🛍️ Button Styling', 'guten-builder-blocks'),
+      initialOpen: false,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+        style: {
+          fontWeight: 'bold',
+          margin: '0 0 5px 0'
+        },
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Default Button Background', 'guten-builder-blocks')
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
+        value: buttonBgColor,
+        onChange: val => setAttributes({
+          buttonBgColor: val || '#3b82f6'
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+        style: {
+          fontWeight: 'bold',
+          margin: '10px 0 5px 0'
+        },
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Default Button Text Color', 'guten-builder-blocks')
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
+        value: buttonTextColor,
+        onChange: val => setAttributes({
+          buttonTextColor: val || '#ffffff'
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+        style: {
+          fontWeight: 'bold',
+          margin: '10px 0 5px 0'
+        },
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Featured Button Background', 'guten-builder-blocks')
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
+        value: featuredButtonBgColor,
+        onChange: val => setAttributes({
+          featuredButtonBgColor: val || '#10b981'
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+        style: {
+          fontWeight: 'bold',
+          margin: '10px 0 5px 0'
+        },
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Featured Button Text Color', 'guten-builder-blocks')
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
+        value: featuredButtonTextColor,
+        onChange: val => setAttributes({
+          featuredButtonTextColor: val || '#ffffff'
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+        style: {
+          fontWeight: 'bold',
+          margin: '10px 0 5px 0'
+        },
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Hover Highlight Color (Style 2)', 'guten-builder-blocks')
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
+        value: attributes.hoverHighlightColor,
+        onChange: val => setAttributes({
+          hoverHighlightColor: val || '#ffd700'
+        })
+      })]
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Style);
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/index.js"
+/*!*******************************************!*\
+  !*** ./src/blocks/pricing-table/index.js ***!
+  \*******************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/blocks/pricing-table/style.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/pricing-table/editor.scss");
+/* harmony import */ var _Components_Edit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Components/Edit */ "./src/blocks/pricing-table/Components/Edit.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/blocks/pricing-table/block.json");
+
+
+
+
+
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_4__.name, {
+  edit: _Components_Edit__WEBPACK_IMPORTED_MODULE_3__["default"],
+  save: () => null // Rendered dynamically on server side
+});
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/utils/options.js"
+/*!***************************************************!*\
+  !*** ./src/blocks/pricing-table/utils/options.js ***!
+  \***************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   generalStyleTabs: () => (/* binding */ generalStyleTabs)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+
+const generalStyleTabs = [{
+  name: 'general',
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('General', 'textdomain')
+}, {
+  name: 'style',
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style', 'textdomain')
+}];
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/editor.scss"
+/*!**********************************************!*\
+  !*** ./src/blocks/pricing-table/editor.scss ***!
+  \**********************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/style.scss"
+/*!*********************************************!*\
+  !*** ./src/blocks/pricing-table/style.scss ***!
+  \*********************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "react/jsx-runtime"
+/*!**********************************!*\
+  !*** external "ReactJSXRuntime" ***!
+  \**********************************/
+(module) {
+
+module.exports = window["ReactJSXRuntime"];
+
+/***/ },
+
+/***/ "@wordpress/block-editor"
+/*!*************************************!*\
+  !*** external ["wp","blockEditor"] ***!
+  \*************************************/
+(module) {
+
+module.exports = window["wp"]["blockEditor"];
+
+/***/ },
+
+/***/ "@wordpress/blocks"
+/*!********************************!*\
+  !*** external ["wp","blocks"] ***!
+  \********************************/
+(module) {
+
+module.exports = window["wp"]["blocks"];
+
+/***/ },
+
+/***/ "@wordpress/components"
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+(module) {
+
+module.exports = window["wp"]["components"];
+
+/***/ },
+
+/***/ "@wordpress/element"
+/*!*********************************!*\
+  !*** external ["wp","element"] ***!
+  \*********************************/
+(module) {
+
+module.exports = window["wp"]["element"];
+
+/***/ },
+
+/***/ "@wordpress/i18n"
+/*!******************************!*\
+  !*** external ["wp","i18n"] ***!
+  \******************************/
+(module) {
+
+module.exports = window["wp"]["i18n"];
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/block.json"
+/*!*********************************************!*\
+  !*** ./src/blocks/pricing-table/block.json ***!
+  \*********************************************/
+(module) {
+
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/pricing-table","version":"1.0.0","title":"Guten Pricing Table","description":"Showcase your subscription plans or products with a stunning pricing grid.","category":"guten-builder","keywords":["pricing","price list","table","grid"],"attributes":{"blockId":{"type":"string","default":""},"pricingTables":{"type":"array","default":[{"name":"Starter","price":"9","yearlyPrice":"79","priceCurrency":"$","period":"mo","yearlyPeriod":"yr","link":"#","linkLabel":"Get Started","color":"#3b82f6","isFeatured":false,"badgeText":"","features":[{"label":"Up to 5 Projects","isEnable":true},{"label":"Basic Support","isEnable":true},{"label":"Custom Domains","isEnable":false}]},{"name":"Growth","price":"29","yearlyPrice":"249","priceCurrency":"$","period":"mo","yearlyPeriod":"yr","link":"#","linkLabel":"Upgrade Now","color":"#10b981","isFeatured":true,"badgeText":"POPULAR","features":[{"label":"Unlimited Projects","isEnable":true},{"label":"24/7 Priority Support","isEnable":true},{"label":"Custom Domains","isEnable":true}]}]},"showToggle":{"type":"boolean","default":false},"toggleLabelLeft":{"type":"string","default":"Monthly"},"toggleLabelRight":{"type":"string","default":"Yearly"},"discountText":{"type":"string","default":"Save 20%"},"columns":{"type":"number","default":2},"columnGap":{"type":"number","default":24},"borderRadius":{"type":"number","default":12},"cardBgColor":{"type":"string","default":"#ffffff"},"cardTextColor":{"type":"string","default":"#1e293b"},"buttonBgColor":{"type":"string","default":"#3b82f6"},"buttonTextColor":{"type":"string","default":"#ffffff"},"featuredButtonBgColor":{"type":"string","default":"#10b981"},"featuredButtonTextColor":{"type":"string","default":"#ffffff"},"themeStyle":{"type":"string","default":"style-1"},"hoverHighlightColor":{"type":"string","default":"#ffd700"}},"supports":{"html":false,"anchor":true,"spacing":{"margin":true,"padding":true}},"textdomain":"guten-builder-blocks","editorScript":"file:./index.js","style":"file:./style-index.css","editorStyle":"file:./index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
+
+/***/ }
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	const __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		const cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		const module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		if (!(moduleId in __webpack_modules__)) {
+/******/ 			delete __webpack_module_cache__[moduleId];
+/******/ 			const e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		const deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			let notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				let [chunkIds, fn, priority] = deferred[i];
+/******/ 				let fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					const r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			const getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter/value functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			if(Array.isArray(definition)) {
+/******/ 				var i = 0;
+/******/ 				while(i < definition.length) {
+/******/ 					var key = definition[i++];
+/******/ 					var binding = definition[i++];
+/******/ 					if(!__webpack_require__.o(exports, key)) {
+/******/ 						if(binding === 0) {
+/******/ 							Object.defineProperty(exports, key, { enumerable: true, value: definition[i++] });
+/******/ 						} else {
+/******/ 							Object.defineProperty(exports, key, { enumerable: true, get: binding });
+/******/ 						}
+/******/ 					} else if(binding === 0) { i++; }
+/******/ 				}
+/******/ 			} else {
+/******/ 				for(var key in definition) {
+/******/ 					if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 						Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 					}
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.hasOwn(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		const installedChunks = {
+/******/ 			"blocks/pricing-table/index": 0,
+/******/ 			"blocks/pricing-table/style-view": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		const webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			let [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		const chunkLoadingGlobal = globalThis["webpackChunkguten_builder_blocks"] ||= [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["blocks/pricing-table/style-view"], () => (__webpack_require__("./src/blocks/pricing-table/index.js")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
+/******/ })()
+;
+//# sourceMappingURL=index.js.map
