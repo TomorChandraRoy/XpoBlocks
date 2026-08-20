@@ -8,70 +8,7 @@
   "icon": "button",
   "description": "A simple button block.",
   "textdomain": "guten-builder-blocks",
-  "attributes": {
-    "buttonAlign": {
-      "type": "string",
-      "default": "center"
-    },
-    "text": {
-      "type": "string",
-      "default": "Button"
-    },
-    "actionType": {
-      "type": "string",
-      "default": "link"
-    },
-    "url": {
-      "type": "string",
-      "default": ""
-    },
-    "target": {
-      "type": "string",
-      "default": "_self"
-    },
-    "padding": {
-      "type": "object",
-      "default": {
-        "top": "10px",
-        "right": "20px",
-        "bottom": "10px",
-        "left": "20px"
-      }
-    },
-    "margin": {
-      "type": "object",
-      "default": {
-        "top": "0px",
-        "right": "0px",
-        "bottom": "0px",
-        "left": "0px"
-      }
-    },
-    "bgColor": {
-      "type": "string",
-      "default": "#007cba"
-    },
-    "textColor": {
-      "type": "string",
-      "default": "#ffffff"
-    },
-    "iconSource": {
-      "type": "string",
-      "default": "preset"
-    },
-    "customIcon1": {
-      "type": "string",
-      "default": ""
-    },
-    "customIcon2": {
-      "type": "string",
-      "default": ""
-    },
-    "customIcon3": {
-      "type": "string",
-      "default": ""
-    }
-  },
+  "attributes": {},
   "supports": {
     "html": false,
     "align": [
@@ -81,7 +18,7 @@
   },
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
-  "style": "file:./style-index.css",
-  "render": "file:./render.php",
-  "viewScript": "file:./view.js"
+  "style": "file:./style-view.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
 }

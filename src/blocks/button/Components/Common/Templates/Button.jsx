@@ -1,10 +1,10 @@
-import TemplateOne from './Templates/TemplateOne';
+import TemplateOne from './TemplateOne';
 
 const TEMPLATES = {
   'template-1': TemplateOne,
 };
 
-const BeforeAfter = ({ attributes, setAttributes }) => {
+const Button = ({ attributes, setAttributes }) => {
   const { selectedTemplate = 'template-1' } = attributes || {};
 
   const TemplateComponent = TEMPLATES[selectedTemplate] || TEMPLATES['template-1'];
@@ -12,4 +12,4 @@ const BeforeAfter = ({ attributes, setAttributes }) => {
   return <TemplateComponent attributes={attributes} setAttributes={setAttributes} />;
 };
 
-export default BeforeAfter;
+export default Button;

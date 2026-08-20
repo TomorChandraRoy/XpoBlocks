@@ -2,10 +2,7 @@ import { createRoot } from 'react-dom/client';
 import './style.scss';
 
 import DynamicStyle from './Components/Common/DynamicStyles';
-import BeforeAfter from './Components/Common/BeforeAfter';
-
-
-
+import BeforeAfter from './Components/Common/Templates/BeforeAfter.jsx';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,13 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   containers.forEach(container => {
 
-
     if (container.dataset.initialized) return;
     container.dataset.initialized = 'true';
 
-
     const attributes = JSON.parse(container.dataset.attributes);
-
 
     createRoot(container).render(
       <>

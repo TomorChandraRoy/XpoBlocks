@@ -1,6 +1,6 @@
 import { useBlockProps } from '@wordpress/block-editor';
 import Settings from './Settings/Settings';
-import BeforeAfter from '../Common/BeforeAfter';
+import BeforeAfter from '../Common/Templates/BeforeAfter.jsx';
 import DynamicStyles from '../Common/DynamicStyles';
 import { TemplateSelector } from 'tr-tools';
 import { templateData } from '../../utils/data';

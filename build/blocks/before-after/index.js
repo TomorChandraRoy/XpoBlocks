@@ -3470,7 +3470,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Settings_Settings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Settings/Settings */ "./src/blocks/before-after/Components/Backend/Settings/Settings.js");
-/* harmony import */ var _Common_BeforeAfter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Common/BeforeAfter */ "./src/blocks/before-after/Components/Common/BeforeAfter.jsx");
+/* harmony import */ var _Common_Templates_BeforeAfter_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Common/Templates/BeforeAfter.jsx */ "./src/blocks/before-after/Components/Common/Templates/BeforeAfter.jsx");
 /* harmony import */ var _Common_DynamicStyles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Common/DynamicStyles */ "./src/blocks/before-after/Components/Common/DynamicStyles.js");
 /* harmony import */ var tr_tools__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tr-tools */ "../tr-tools/index.js");
 /* harmony import */ var _utils_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/data */ "./src/blocks/before-after/utils/data.js");
@@ -3518,7 +3518,7 @@ const Edit = props => {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Common_DynamicStyles__WEBPACK_IMPORTED_MODULE_3__["default"], {
         attributes: attributes,
         id: id
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Common_BeforeAfter__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Common_Templates_BeforeAfter_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
         attributes: attributes,
         setAttributes: setAttributes,
         id: id
@@ -3965,41 +3965,6 @@ const Style = ({
 
 /***/ },
 
-/***/ "./src/blocks/before-after/Components/Common/BeforeAfter.jsx"
-/*!*******************************************************************!*\
-  !*** ./src/blocks/before-after/Components/Common/BeforeAfter.jsx ***!
-  \*******************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _Templates_TemplateOne__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Templates/TemplateOne */ "./src/blocks/before-after/Components/Common/Templates/TemplateOne.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
-
-
-const TEMPLATES = {
-  'template-1': _Templates_TemplateOne__WEBPACK_IMPORTED_MODULE_0__["default"]
-};
-const BeforeAfter = ({
-  attributes,
-  setAttributes
-}) => {
-  const {
-    selectedTemplate = 'template-1'
-  } = attributes || {};
-  const TemplateComponent = TEMPLATES[selectedTemplate] || TEMPLATES['template-1'];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(TemplateComponent, {
-    attributes: attributes,
-    setAttributes: setAttributes
-  });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BeforeAfter);
-
-/***/ },
-
 /***/ "./src/blocks/before-after/Components/Common/DynamicStyles.js"
 /*!********************************************************************!*\
   !*** ./src/blocks/before-after/Components/Common/DynamicStyles.js ***!
@@ -4070,6 +4035,41 @@ const DynamicStyles = ({
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DynamicStyles);
+
+/***/ },
+
+/***/ "./src/blocks/before-after/Components/Common/Templates/BeforeAfter.jsx"
+/*!*****************************************************************************!*\
+  !*** ./src/blocks/before-after/Components/Common/Templates/BeforeAfter.jsx ***!
+  \*****************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _TemplateOne__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TemplateOne */ "./src/blocks/before-after/Components/Common/Templates/TemplateOne.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const TEMPLATES = {
+  'template-1': _TemplateOne__WEBPACK_IMPORTED_MODULE_0__["default"]
+};
+const BeforeAfter = ({
+  attributes,
+  setAttributes
+}) => {
+  const {
+    selectedTemplate = 'template-1'
+  } = attributes || {};
+  const TemplateComponent = TEMPLATES[selectedTemplate] || TEMPLATES['template-1'];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(TemplateComponent, {
+    attributes: attributes,
+    setAttributes: setAttributes
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BeforeAfter);
 
 /***/ },
 
