@@ -3476,7 +3476,14 @@ const DynamicStyle = ({
   attributes,
   id
 }) => {
-  const {} = attributes || {};
+  const {
+    buttonAlign,
+    textColor,
+    buttonBg,
+    hoverTextColor,
+    hoverButtonBg,
+    buttonBorderRadius
+  } = attributes || {};
   const mainSl = `#${id}`;
   const button = `${mainSl} .guten-builder-blocks-button`;
   const front = `${button} .guten-builder-blocks-button-front`;
@@ -3485,7 +3492,20 @@ const DynamicStyle = ({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("style", {
     dangerouslySetInnerHTML: {
       __html: `
-    
+        ${mainSl} {
+          text-align: ${buttonAlign || 'center'};
+        }
+        ${front} {
+          ${textColor ? `color: ${textColor};` : ''}
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(buttonBg) ? `background: ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(buttonBg)};` : ''}
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderRadiusCss)(buttonBorderRadius)}
+        }
+        ${shadow}, ${edge} {
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderRadiusCss)(buttonBorderRadius)}
+        }
+        ${button}:hover ${front} {
+          ${hoverTextColor ? `color: ${hoverTextColor};` : ''}
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(hoverButtonBg) ? `background: ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(hoverButtonBg)};` : ''}
         }
         `
     }
@@ -3544,19 +3564,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 
 const TemplateOne = ({
-  attributes,
-  setAttributes
+  attributes
 }) => {
-  const {} = attributes;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("button", {
+  const {
+    buttonText,
+    buttonUrl,
+    openInNewTab
+  } = attributes || {};
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
     className: "guten-builder-blocks-button",
+    href: buttonUrl || '#',
+    target: openInNewTab && buttonUrl ? '_blank' : undefined,
+    rel: openInNewTab && buttonUrl ? 'noopener noreferrer' : undefined,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
       className: "guten-builder-blocks-button-shadow"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
       className: "guten-builder-blocks-button-edge"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
       className: "guten-builder-blocks-button-front text",
-      children: " Click me"
+      children: [" ", buttonText || 'Click me']
     })]
   });
 };

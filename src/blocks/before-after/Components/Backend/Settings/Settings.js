@@ -1,4 +1,4 @@
-import { __ } from '@wordpress/i18n';
+
 import { InspectorControls } from '@wordpress/block-editor';
 import { TabPanel } from '@wordpress/components';
 import { generalStyleTabs } from '../../../utils/options';
@@ -6,6 +6,12 @@ import General from './General/General';
 import Style from './Style/Style';
 
 const Settings = ({ attributes, setAttributes }) => {
+  const { selectedTemplate = '' } = attributes;
+  const isTemplateSelected = Boolean(selectedTemplate);
+
+  if (!isTemplateSelected) {
+    return null;
+  }
   return (
     <InspectorControls>
       <TabPanel className="guten-builder-blocks-tab-panel wp-block-guten-builder-blocks-before-after" activeClass="guten-builder-blocks-active-tab" tabs={generalStyleTabs}>

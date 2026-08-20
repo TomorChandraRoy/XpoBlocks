@@ -1,7 +1,7 @@
 import { getBorderRadiusCss, getBackgroundCss, getTypographyCss } from 'tr-tools';
 
 const DynamicStyle = ({ attributes, id }) => {
-  const {  } = attributes || {};
+  const { buttonAlign, textColor, buttonBg, hoverTextColor, hoverButtonBg, buttonBorderRadius } = attributes || {};
 
   const mainSl = `#${id}`;
   const button = `${mainSl} .guten-builder-blocks-button`;
@@ -13,7 +13,20 @@ const DynamicStyle = ({ attributes, id }) => {
     <style
       dangerouslySetInnerHTML={{
         __html: `
-    
+        ${mainSl} {
+          text-align: ${buttonAlign || 'center'};
+        }
+        ${front} {
+          ${textColor ? `color: ${textColor};` : ''}
+          ${getBackgroundCss(buttonBg) ? `background: ${getBackgroundCss(buttonBg)};` : ''}
+          ${getBorderRadiusCss(buttonBorderRadius)}
+        }
+        ${shadow}, ${edge} {
+          ${getBorderRadiusCss(buttonBorderRadius)}
+        }
+        ${button}:hover ${front} {
+          ${hoverTextColor ? `color: ${hoverTextColor};` : ''}
+          ${getBackgroundCss(hoverButtonBg) ? `background: ${getBackgroundCss(hoverButtonBg)};` : ''}
         }
         `,
       }}

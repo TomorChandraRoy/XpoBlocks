@@ -1,12 +1,17 @@
-const TemplateOne = ({ attributes, setAttributes }) => {
-  const {  } = attributes;
+const TemplateOne = ({ attributes }) => {
+  const { buttonText, buttonUrl, openInNewTab } = attributes || {};
 
   return (
-    <button className="guten-builder-blocks-button">
+    <a
+      className="guten-builder-blocks-button"
+      href={buttonUrl || '#'}
+      target={openInNewTab && buttonUrl ? '_blank' : undefined}
+      rel={openInNewTab && buttonUrl ? 'noopener noreferrer' : undefined}
+    >
       <span className="guten-builder-blocks-button-shadow"></span>
       <span className="guten-builder-blocks-button-edge"></span>
-      <span className="guten-builder-blocks-button-front text"> Click me</span>
-    </button>
+      <span className="guten-builder-blocks-button-front text"> {buttonText || 'Click me'}</span>
+    </a>
   );
 };
 

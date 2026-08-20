@@ -7,7 +7,12 @@ import Style from './Style/Style';
 
 const Settings = ({ attributes, setAttributes }) => {
   const { buttonAlign } = attributes;
+  const { selectedTemplate = '' } = attributes;
+  const isTemplateSelected = Boolean(selectedTemplate);
 
+  if (!isTemplateSelected) {
+    return null;
+  }
   return (
     <>
       <InspectorControls>
@@ -26,11 +31,11 @@ const Settings = ({ attributes, setAttributes }) => {
         <AlignmentToolbar
           value={buttonAlign}
           onChange={val => setAttributes({ buttonAlign: val })}
-          describedBy={__('Block Name Alignment')}
+          describedBy={__('Button Alignment')}
           alignmentControls={[
-            { title: __('Block Name in left', 'textdomain'), align: 'left', icon: 'align-left' },
-            { title: __('Block Name in center', 'textdomain'), align: 'center', icon: 'align-center' },
-            { title: __('Block Name in right', 'textdomain'), align: 'right', icon: 'align-right' },
+            { title: __('Button in left', 'guten-builder-blocks'), align: 'left', icon: 'align-left' },
+            { title: __('Button in center', 'guten-builder-blocks'), align: 'center', icon: 'align-center' },
+            { title: __('Button in right', 'guten-builder-blocks'), align: 'right', icon: 'align-right' },
           ]}
         />
       </BlockControls>

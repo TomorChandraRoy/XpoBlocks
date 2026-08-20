@@ -6,6 +6,7 @@
 }
 .wp-block-guten-builder-blocks-button .guten-builder-blocks-button {
   position: relative;
+  display: inline-block;
   border: none;
   background: transparent;
   padding: 0;
@@ -15,6 +16,7 @@
   -webkit-user-select: none;
           user-select: none;
   touch-action: manipulation;
+  text-decoration: none;
 }
 .wp-block-guten-builder-blocks-button .guten-builder-blocks-button .guten-builder-blocks-button-shadow {
   position: absolute;

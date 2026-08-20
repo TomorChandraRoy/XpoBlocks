@@ -3,12 +3,48 @@
   "apiVersion": 3,
   "name": "guten-builder-blocks/button",
   "version": "1.0.0",
-  "title": "Guten Button",
+  "title": "Button",
   "category": "guten-builder",
   "icon": "button",
   "description": "A simple button block.",
   "textdomain": "guten-builder-blocks",
-  "attributes": {},
+  "attributes": {
+    "selectedTemplate": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonText": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "buttonUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "openInNewTab": {
+      "type": "boolean",
+      "default": false
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "buttonBg": {
+      "type": "object"
+    },
+    "hoverTextColor": {
+      "type": "string"
+    },
+    "hoverButtonBg": {
+      "type": "object"
+    },
+    "buttonBorderRadius": {
+      "type": "object"
+    }
+  },
   "supports": {
     "html": false,
     "align": [

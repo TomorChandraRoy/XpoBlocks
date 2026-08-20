@@ -2,6 +2,7 @@
   /* From Uiverse.io by cssbuttons-io */
   .guten-builder-blocks-button {
     position: relative;
+    display: inline-block;
     border: none;
     background: transparent;
     padding: 0;
@@ -10,6 +11,7 @@
     transition: filter 250ms;
     user-select: none;
     touch-action: manipulation;
+    text-decoration: none;
 
     .guten-builder-blocks-button-shadow {
       position: absolute;

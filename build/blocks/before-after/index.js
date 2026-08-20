@@ -3818,18 +3818,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _utils_options__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../utils/options */ "./src/blocks/before-after/utils/options.js");
-/* harmony import */ var _General_General__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./General/General */ "./src/blocks/before-after/Components/Backend/Settings/General/General.js");
-/* harmony import */ var _Style_Style__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Style/Style */ "./src/blocks/before-after/Components/Backend/Settings/Style/Style.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
-
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_options__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../utils/options */ "./src/blocks/before-after/utils/options.js");
+/* harmony import */ var _General_General__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./General/General */ "./src/blocks/before-after/Components/Backend/Settings/General/General.js");
+/* harmony import */ var _Style_Style__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Style/Style */ "./src/blocks/before-after/Components/Backend/Settings/Style/Style.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
 
 
 
@@ -3840,16 +3837,23 @@ const Settings = ({
   attributes,
   setAttributes
 }) => {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TabPanel, {
+  const {
+    selectedTemplate = ''
+  } = attributes;
+  const isTemplateSelected = Boolean(selectedTemplate);
+  if (!isTemplateSelected) {
+    return null;
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TabPanel, {
       className: "guten-builder-blocks-tab-panel wp-block-guten-builder-blocks-before-after",
       activeClass: "guten-builder-blocks-active-tab",
-      tabs: _utils_options__WEBPACK_IMPORTED_MODULE_3__.generalStyleTabs,
-      children: tab => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
-        children: ['general' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_General_General__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      tabs: _utils_options__WEBPACK_IMPORTED_MODULE_2__.generalStyleTabs,
+      children: tab => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+        children: ['general' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_General_General__WEBPACK_IMPORTED_MODULE_3__["default"], {
           attributes: attributes,
           setAttributes: setAttributes
-        }), 'style' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Style_Style__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        }), 'style' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Style_Style__WEBPACK_IMPORTED_MODULE_4__["default"], {
           attributes: attributes,
           setAttributes: setAttributes
         })]
@@ -6584,7 +6588,7 @@ var castImmutable = (value) => value;
   \********************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/before-after","version":"1.0.0","title":"Guten Before/After","description":"Interactive image comparison slider with CSS-based masking and hardware-accelerated transitions.","category":"guten-builder","keywords":["before after","image comparison","slider","photo compare","comparison"],"textdomain":"guten-builder-blocks","attributes":{"beforeImage":{"type":"object","properties":{"url":{"type":"string"},"alt":{"type":"string"}},"default":null},"afterImage":{"type":"object","properties":{"url":{"type":"string"},"alt":{"type":"string"}},"default":null},"showLabels":{"type":"boolean","default":true},"beforeLabel":{"type":"string","default":"Before"},"afterLabel":{"type":"string","default":"After"},"dividerIcon":{"type":"string","default":"dots"},"customDividerIcon":{"type":"string","default":""},"dividerIconSize":{"type":"number","default":16},"labelColor":{"type":"string","default":"#ffffff"},"labelBg":{"type":"object","default":{"type":"solid","color":"rgba(0, 0, 0, 0.6)"}},"labelTypography":{"type":"object","default":{"fontSize":{"desktop":"14px","tablet":"14px","mobile":"14px"},"fontFamily":"","fontWeight":"600","lineHeight":"","letterSpacing":"","textTransform":"none","textDecoration":"none","fontStyle":"normal"}},"labelBorderRadius":{"type":"object","default":{"top":"5px","right":"5px","bottom":"5px","left":"5px"}},"wrapperBorderRadius":{"type":"object","default":{"top":"5px","right":"5px","bottom":"5px","left":"5px"}},"dividerStyle":{"type":"string","default":"solid"},"dividerColor":{"type":"string","default":"#ffffff"},"handleColor":{"type":"string","default":"#111111"},"handleIconColor":{"type":"string","default":"#ffffff"},"selectedTemplate":{"type":"string","default":""}},"supports":{"html":false,"anchor":true,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","viewScript":"file:./view.js","style":"file:./style-view.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/before-after","version":"1.0.0","title":"Before/After","description":"Interactive image comparison slider with CSS-based masking and hardware-accelerated transitions.","category":"guten-builder","keywords":["before after","image comparison","slider","photo compare","comparison"],"textdomain":"guten-builder-blocks","attributes":{"beforeImage":{"type":"object","properties":{"url":{"type":"string"},"alt":{"type":"string"}},"default":null},"afterImage":{"type":"object","properties":{"url":{"type":"string"},"alt":{"type":"string"}},"default":null},"showLabels":{"type":"boolean","default":true},"beforeLabel":{"type":"string","default":"Before"},"afterLabel":{"type":"string","default":"After"},"dividerIcon":{"type":"string","default":"dots"},"customDividerIcon":{"type":"string","default":""},"dividerIconSize":{"type":"number","default":16},"labelColor":{"type":"string","default":"#ffffff"},"labelBg":{"type":"object","default":{"type":"solid","color":"rgba(0, 0, 0, 0.6)"}},"labelTypography":{"type":"object","default":{"fontSize":{"desktop":"14px","tablet":"14px","mobile":"14px"},"fontFamily":"","fontWeight":"600","lineHeight":"","letterSpacing":"","textTransform":"none","textDecoration":"none","fontStyle":"normal"}},"labelBorderRadius":{"type":"object","default":{"top":"5px","right":"5px","bottom":"5px","left":"5px"}},"wrapperBorderRadius":{"type":"object","default":{"top":"5px","right":"5px","bottom":"5px","left":"5px"}},"dividerStyle":{"type":"string","default":"solid"},"dividerColor":{"type":"string","default":"#ffffff"},"handleColor":{"type":"string","default":"#111111"},"handleIconColor":{"type":"string","default":"#ffffff"},"selectedTemplate":{"type":"string","default":""}},"supports":{"html":false,"anchor":true,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","viewScript":"file:./view.js","style":"file:./style-view.css","render":"file:./render.php"}');
 
 /***/ }
 
