@@ -1,23 +1,30 @@
 import { __ } from '@wordpress/i18n';
-import { PanelBody, SelectControl, TextControl, __experimentalSpacer as Spacer } from '@wordpress/components';
+import { PanelBody, SelectControl, TextControl, Button, __experimentalSpacer as Spacer } from '@wordpress/components';
 import { UnitControl } from 'tr-tools';
 import { pxUnit, remUnit, emUnit, vwUnit, perUnit } from 'tr-tools/utils/options';
 
 const General = ({ attributes, setAttributes }) => {
-  const { 
+  const {
     selectedTemplate = 'template-1',
-    dividerType = 'text', 
-    text = 'Text', 
-    dividerWidth = { desktop: '100%', tablet: '', mobile: '' }, 
-    dividerHeight = { desktop: '1px', tablet: '', mobile: '' } 
+    dividerType = 'text',
+    text = 'Text',
+    dividerWidth = { desktop: '100%', tablet: '', mobile: '' },
+    dividerHeight = { desktop: '1px', tablet: '', mobile: '' }
   } = attributes || {};
 
   return (
+    <>
+      <PanelBody className="bPlPanelBody" title={__('Template Presets', 'guten-builder-blocks')} initialOpen={true}>
+        <p style={{ fontSize: '12px', color: '#64748b', marginBottom: '12px' }}>{__('Switch or apply a predefined divider template style.', 'guten-builder-blocks')}</p>
+        <Button isSecondary onClick={() => setAttributes({ selectedTemplate: '' })} style={{ width: '100%', justifyContent: 'center' }}>
+          {__('Change Template', 'guten-builder-blocks')}
+        </Button>
+      </PanelBody>
     <PanelBody className="bPlPanelBody" title={__('Divider Settings', 'guten-builder-blocks')} initialOpen={true}>
       <UnitControl label={__('Width :', 'guten-builder-blocks')} value={dividerWidth} onChange={val => setAttributes({ dividerWidth: val })} units={[pxUnit(), remUnit(), emUnit(), vwUnit(), perUnit()]} responsive={true} defaultVal={{ desktop: '100%', tablet: '', mobile: '' }} />
       <Spacer />
       <UnitControl label={__('Thickness :', 'guten-builder-blocks')} value={dividerHeight} onChange={val => setAttributes({ dividerHeight: val })} units={[pxUnit(), remUnit(), emUnit()]} responsive={true} defaultVal={{ desktop: '1px', tablet: '', mobile: '' }} />
-      
+
       {selectedTemplate === 'template-1' && (
         <>
           <Spacer />
@@ -53,6 +60,7 @@ const General = ({ attributes, setAttributes }) => {
         </>
       )}
     </PanelBody>
+    </>
   );
 };
 
