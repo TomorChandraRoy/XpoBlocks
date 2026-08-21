@@ -1727,10 +1727,15 @@
 
 .tr-custom-unit-control .components-input-control__container,
 .tr-custom-unit-control .components-input-control__backdrop,
-.tr-custom-unit-control .components-input-control__input,
 .tr-custom-unit-control .components-input-control__suffix {
   min-height: 32px !important;
   height: 32px !important;
+}
+
+.tr-custom-unit-control .components-input-control__input {
+  min-height: 32px !important;
+  height: 32px !important;
+  padding-right: 4px !important;
 }
 /*!******************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!../tr-tools/Components/BorderControl/BorderControl.scss ***!
@@ -1815,10 +1820,15 @@
 
 .tr-custom-unit-control .components-input-control__container,
 .tr-custom-unit-control .components-input-control__backdrop,
-.tr-custom-unit-control .components-input-control__input,
 .tr-custom-unit-control .components-input-control__suffix {
   min-height: 32px !important;
   height: 32px !important;
+}
+
+.tr-custom-unit-control .components-input-control__input {
+  min-height: 32px !important;
+  height: 32px !important;
+  padding-right: 4px !important;
 }
 
 .tr-border-control-wrapper {
@@ -1967,8 +1977,9 @@
 .bPlBoxControl .bplUnitControlWrapper .components-input-control__input {
   min-width: 0;
   width: 100%;
-  padding: 0 6px 0 2px;
-  text-align: center;
+  padding: 0 4px 0 2px !important;
+  text-align: right !important;
+  font-size: 12px !important;
   -moz-appearance: textfield;
 }
 
@@ -1981,6 +1992,19 @@
 .bPlBoxControl .bplUnitControlWrapper:first-child .components-input-control__container {
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
+}
+
+/* Reduce suffix size to give input more space */
+
+.bPlBoxControl .bplUnitControlWrapper select,
+.bPlBoxControl .bplUnitControlWrapper button,
+.bPlBoxControl .bplUnitControlWrapper .components-button,
+.bPlBoxControl .bplUnitControlWrapper .components-custom-select-control__button,
+.bPlBoxControl .bplUnitControlWrapper .components-unit-control__select,
+.bPlBoxControl .bplUnitControlWrapper .components-unit-control__unit-label {
+  padding-right: 2px !important;
+  padding-left: 2px !important;
+  min-width: 18px !important;
 }
 
 .bPlBoxControl .bplUnitControlWrapper:not(:first-child) .components-input-control__container {
@@ -2060,4 +2084,68 @@
 .gbb-media-control .gbb-media-control__actions .components-button {
   height: 30px;
   line-height: 1;
+}
+/*!******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!../tr-tools/Components/ShadowControl/ShadowControl.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************/
+.tr-shadow-control-wrapper {
+  margin-bottom: 15px;
+}
+.tr-shadow-control-wrapper .tr-shadow-control-toggle {
+  min-width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0f0f0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.tr-shadow-control-wrapper .tr-shadow-control-toggle:hover {
+  background: #e0e0e0;
+}
+.tr-shadow-control-wrapper .bPlResetVal {
+  min-width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0f0f0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  color: #666;
+}
+.tr-shadow-control-wrapper .bPlResetVal:hover {
+  background: #e0e0e0;
+  color: #333;
+}
+.tr-shadow-control-popover .components-popover__content {
+  min-width: 280px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.tr-shadow-control-popover .tr-shadow-control-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.tr-shadow-control-popover .tr-shadow-control-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.tr-shadow-control-popover .tr-shadow-control-field .tr-shadow-control-label {
+  font-size: 13px;
+  color: #1e1e1e;
+  flex-shrink: 0;
+  min-width: 100px;
+}
+.tr-shadow-control-popover .tr-shadow-control-field .tr-shadow-input {
+  flex-grow: 1;
+  width: 100%;
 }

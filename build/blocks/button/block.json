@@ -43,6 +43,30 @@
     },
     "buttonBorderRadius": {
       "type": "object"
+    },
+    "buttonOffsetY": {
+      "type": "number",
+      "default": -4
+    },
+    "buttonHoverOffsetY": {
+      "type": "number",
+      "default": -6
+    },
+    "buttonEdgeBg": {
+      "type": "object"
+    },
+    "buttonBoxShadow": {
+      "type": "object"
+    },
+    "enable3DEffect": {
+      "type": "boolean",
+      "default": true
+    },
+    "buttonWidth": {
+      "type": "object"
+    },
+    "buttonPadding": {
+      "type": "object"
     }
   },
   "supports": {

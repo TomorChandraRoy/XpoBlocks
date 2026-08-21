@@ -1,14 +1,30 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const forms = document.querySelectorAll('.guten-contact-form-inner');
-    
-    forms.forEach(form => {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const responseDiv = form.querySelector('.form-response');
-            
-            // For now, simply mock a successful submission
-            responseDiv.innerHTML = '<p style="color: green; margin-top: 10px;">Message sent successfully!</p>';
-            form.reset();
-        });
-    });
+import { createRoot } from 'react-dom/client';
+import './style.scss';
+import DynamicStyle from './Components/Common/DynamicStyles';
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  const containers = document.querySelectorAll('.wp-block-guten-builder-blocks-contact-form');
+
+  containers.forEach(container => {
+
+
+
+    if (container.dataset.initialized) return;
+    container.dataset.initialized = 'true';
+    const attributes = JSON.parse(container.dataset.attributes);
+
+
+    createRoot(container).render(
+      <>
+
+        <DynamicStyle attributes={attributes} id={container.id} />
+        <Accordion {...{ attributes }} id={container.id} />
+      </>
+    );
+
+    container?.removeAttribute('data-attributes');
+  });
 });
+

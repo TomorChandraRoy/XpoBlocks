@@ -8,9 +8,20 @@ export const templateData = {
     {
       id: 'template-1',
       label: __('Template 1', 'guten-builder-blocks'),
-      tag: __('Classic Button', 'guten-builder-blocks'),
+      tag: __('3D Button', 'guten-builder-blocks'),
       icon: TemplateOneSvg,
-      attributes: {}
+      attributes: {
+        buttonWidth: {
+          desktop: '',
+          tablet: '20%',
+          mobile: '40%'
+        },
+        buttonPadding: {
+          desktop: '12px 27px 12px 27px',
+          tablet: '12px 27px 12px 27px',
+          mobile: '12px 27px 12px 27px'
+        }
+      }
     }
   ]
 };

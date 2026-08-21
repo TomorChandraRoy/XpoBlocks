@@ -8,24 +8,7 @@
   "icon": "email",
   "description": "A contact form block.",
   "textdomain": "guten-builder-blocks",
-  "attributes": {
-    "formTitle": {
-      "type": "string",
-      "default": "Contact Us"
-    },
-    "showTitle": {
-      "type": "boolean",
-      "default": true
-    },
-    "submitButtonText": {
-      "type": "string",
-      "default": "Send Message"
-    },
-    "formId": {
-      "type": "string",
-      "default": ""
-    }
-  },
+  "attributes": {},
   "supports": {
     "html": false,
     "align": [
@@ -35,7 +18,7 @@
   },
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
-  "style": "file:./style-index.css",
-  "render": "file:./render.php",
-  "viewScript": "file:./view.js"
+  "style": "file:./style-view.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
 }

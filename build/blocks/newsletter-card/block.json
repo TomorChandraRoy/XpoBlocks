@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "guten-builder-blocks/newsletter-card",
+  "version": "1.0.0",
+  "title": "Newsletter Card",
+  "category": "guten-builder",
+  "icon": "email",
+  "description": "Add a visually appealing newsletter subscription card to grow your email list and engage with your audience.",
+  "textdomain": "guten-builder-blocks",
+  "attributes": {},
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-view.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}

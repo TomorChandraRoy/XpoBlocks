@@ -1,0 +1,43 @@
+.wp-block-guten-builder-blocks-divider {
+  width: 100%;
+  .gbb-divider {
+	display: flex;
+	align-items: center;
+	width: 100%;
+  margin: 0 auto;
+	color: #6b7280;
+	font-size: 14px;
+	line-height: 1;
+
+	&::before,
+	&::after {
+		content: '';
+		flex: 1;
+		height: 1px;
+		background-color: #d1d5db;
+	}
+
+	&::before {
+		margin-right: 12px;
+	}
+
+	&::after {
+		margin-left: 12px;
+	}
+
+	.gbb-divider-icon-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+	}
+
+	.gbb-divider-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+}
+

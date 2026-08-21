@@ -1,38 +1,36 @@
-import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, TextControl, ToggleControl } from '@wordpress/components';
-import { __ } from '@wordpress/i18n';
-import ContactForm from '../Common/ContactForm';
+import { useBlockProps } from '@wordpress/block-editor';
+import Settings from './Settings/Settings';
+import ContactForm from '../Common/Templates/ContactForm';
+import DynamicStyles from '../Common/DynamicStyles';
+import { TemplateSelector } from 'tr-tools';
+import { templateData } from '../../utils/data';
 
-const Edit = ({ attributes, setAttributes }) => {
-    const blockProps = useBlockProps();
-    const { formTitle, showTitle, submitButtonText } = attributes;
+const Edit = props => {
+  const { attributes, setAttributes, clientId } = props;
+  const { selectedTemplate = '' } = attributes;
+  const isTemplateSelected = Boolean(selectedTemplate);
+
+  const id = `block-${clientId}`;
 
     return (
-        <div {...blockProps}>
-            <InspectorControls>
-                <PanelBody title={__('Form Settings', 'guten-builder-blocks')} initialOpen={true}>
-                    <ToggleControl
-                        label={__('Show Title', 'guten-builder-blocks')}
-                        checked={showTitle}
-                        onChange={(value) => setAttributes({ showTitle: value })}
-                    />
-                    {showTitle && (
-                        <TextControl
-                            label={__('Form Title', 'guten-builder-blocks')}
-                            value={formTitle}
-                            onChange={(value) => setAttributes({ formTitle: value })}
-                        />
-                    )}
-                    <TextControl
-                        label={__('Submit Button Text', 'guten-builder-blocks')}
-                        value={submitButtonText}
-                        onChange={(value) => setAttributes({ submitButtonText: value })}
-                    />
-                </PanelBody>
-            </InspectorControls>
-
-            <ContactForm attributes={attributes} />
-        </div>
+      <>
+        <Settings {...{ attributes, setAttributes }} />
+        {!isTemplateSelected ? (
+          <div {...useBlockProps()}>
+            <TemplateSelector
+            {...{ attributes, setAttributes }}
+            title={templateData.title}
+            subtitle={templateData.subtitle}
+            templates={templateData.templates}
+            isPro={true} proTemplates={['template-1']} />
+          </div>
+        ) : (
+          <div {...useBlockProps({ style: { padding: '3px' } })}>
+            <DynamicStyles attributes={attributes} id={id} />
+            <ContactForm attributes={attributes} setAttributes={setAttributes} id={id} />
+          </div>
+        )}
+      </>
     );
 };
 

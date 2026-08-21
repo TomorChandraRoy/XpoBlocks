@@ -1,5 +1,6 @@
-const TemplateOne = ({ attributes }) => {
+const TemplateOne = ({ attributes, setAttributes }) => {
   const { buttonText, buttonUrl, openInNewTab } = attributes || {};
+  const isEditor = !!setAttributes;
 
   return (
     <a
@@ -7,6 +8,7 @@ const TemplateOne = ({ attributes }) => {
       href={buttonUrl || '#'}
       target={openInNewTab && buttonUrl ? '_blank' : undefined}
       rel={openInNewTab && buttonUrl ? 'noopener noreferrer' : undefined}
+      onClick={(e) => isEditor && e.preventDefault()}
     >
       <span className="guten-builder-blocks-button-shadow"></span>
       <span className="guten-builder-blocks-button-edge"></span>

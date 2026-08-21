@@ -1,0 +1,53 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "guten-builder-blocks/divider",
+  "version": "1.0.0",
+  "title": "Divider",
+  "category": "guten-builder",
+  "icon": "minus",
+  "description": "Add a customizable dividing line to separate your content and improve page layout.",
+  "textdomain": "guten-builder-blocks",
+  "attributes": {
+    "dividerType": {
+      "type": "string",
+      "default": "text"
+    },
+    "text": {
+      "type": "string",
+      "default": "Text"
+    },
+    "iconName": {
+      "type": "string",
+      "default": "tabler--crown"
+    },
+    "dividerWidth": {
+      "type": "object"
+    },
+    "dividerHeight": {
+      "type": "object"
+    },
+    "dividerColor": {
+      "type": "string",
+      "default": "#d1d5db"
+    },
+    "textTypography": {
+      "type": "object"
+    },
+    "iconSize": {
+      "type": "object"
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-view.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}
