@@ -3835,8 +3835,30 @@ const General = ({
     buttonUrl,
     openInNewTab
   } = attributes;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      className: "bPlPanelBody",
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template Presets', 'guten-builder-blocks'),
+      initialOpen: true,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+        style: {
+          fontSize: '12px',
+          color: '#64748b',
+          marginBottom: '12px'
+        },
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Switch or apply a predefined button template style.', 'guten-builder-blocks')
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+        isSecondary: true,
+        onClick: () => setAttributes({
+          selectedTemplate: ''
+        }),
+        style: {
+          width: '100%',
+          justifyContent: 'center'
+        },
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Change Template', 'guten-builder-blocks')
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Content', 'guten-builder-blocks'),
       initialOpen: true,
@@ -3859,7 +3881,7 @@ const General = ({
           openInNewTab: v
         })
       })]
-    })
+    })]
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (General);

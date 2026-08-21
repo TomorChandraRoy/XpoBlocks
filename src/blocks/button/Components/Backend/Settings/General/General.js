@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { PanelBody, SelectControl, TextControl, ToggleControl } from '@wordpress/components';
+import { PanelBody, TextControl, ToggleControl, Button } from '@wordpress/components';
 
 
 const General = ({ attributes, setAttributes }) => {
@@ -7,6 +7,13 @@ const General = ({ attributes, setAttributes }) => {
 
   return (
     <>
+      <PanelBody className="bPlPanelBody" title={__('Template Presets', 'guten-builder-blocks')} initialOpen={true}>
+        <p style={{ fontSize: '12px', color: '#64748b', marginBottom: '12px' }}>{__('Switch or apply a predefined button template style.', 'guten-builder-blocks')}</p>
+        <Button isSecondary onClick={() => setAttributes({ selectedTemplate: '' })} style={{ width: '100%', justifyContent: 'center' }}>
+          {__('Change Template', 'guten-builder-blocks')}
+        </Button>
+      </PanelBody>
+
       <PanelBody className="bPlPanelBody" title={__('Button Content', 'guten-builder-blocks')} initialOpen={true}>
         <TextControl
           label={__('Button Text', 'guten-builder-blocks')}
