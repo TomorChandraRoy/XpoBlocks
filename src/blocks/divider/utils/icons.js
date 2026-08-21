@@ -47,6 +47,13 @@ export const TemplateOneSvg = () => (
   </svg>
 );
 
+export const TemplateTwoSvg = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="100%" height="100%" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+    <rect x="0" y="0" width="800" height="200" fill="#f8fafc" rx="10" />
+    <rect x="50" y="98" width="700" height="4" fill="#3b82f6" rx="2" />
+  </svg>
+);
+
 export const CrownIcon = () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 6l4 6 5-4-2 10H5L3 8l5 4z" /></svg>;
 export const StarIcon = () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>;
 export const HeartIcon = () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg>;

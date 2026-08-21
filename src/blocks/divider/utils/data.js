@@ -1,5 +1,5 @@
 import { __ } from "@wordpress/i18n";
-import { TemplateOneSvg } from "./icons";
+import { TemplateOneSvg, TemplateTwoSvg } from "./icons";
 
 
 
@@ -27,6 +27,17 @@ export const templateData = {
           fontStyle: 'normal'
         },
         iconSize: { desktop: '20px', tablet: '', mobile: '' }
+      }
+    },
+    {
+      id: 'template-2',
+      label: __('Template 2', 'guten-builder-blocks'),
+      tag: __('Simple Divider', 'guten-builder-blocks'),
+      icon: TemplateTwoSvg,
+      attributes: {
+        dividerWidth: { desktop: '100%', tablet: '', mobile: '' },
+        dividerHeight: { desktop: '1px', tablet: '', mobile: '' },
+        dividerColor: '#d1d5db'
       }
     }
   ]

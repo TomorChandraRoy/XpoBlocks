@@ -3835,6 +3835,7 @@ const General = ({
   setAttributes
 }) => {
   const {
+    selectedTemplate = 'template-1',
     dividerType = 'text',
     text = 'Text',
     dividerWidth = {
@@ -3878,61 +3879,63 @@ const General = ({
         tablet: '',
         mobile: ''
       }
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Divider Type', 'guten-builder-blocks'),
-      value: dividerType,
-      options: [{
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text', 'guten-builder-blocks'),
-        value: 'text'
-      }, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Icon', 'guten-builder-blocks'),
-        value: 'icon'
-      }],
-      onChange: value => setAttributes({
-        dividerType: value
-      })
-    }), dividerType === 'text' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text', 'guten-builder-blocks'),
-      value: text,
-      onChange: value => setAttributes({
-        text: value
-      })
-    }), dividerType === 'icon' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select Icon', 'guten-builder-blocks'),
-        value: attributes.iconName || 'tabler--crown',
+    }), selectedTemplate === 'template-1' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Divider Type', 'guten-builder-blocks'),
+        value: dividerType,
         options: [{
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Crown', 'guten-builder-blocks'),
-          value: 'tabler--crown'
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text', 'guten-builder-blocks'),
+          value: 'text'
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Star', 'guten-builder-blocks'),
-          value: 'tabler--star'
-        }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Heart', 'guten-builder-blocks'),
-          value: 'tabler--heart'
-        }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Circle', 'guten-builder-blocks'),
-          value: 'tabler--circle'
-        }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Square', 'guten-builder-blocks'),
-          value: 'tabler--square'
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Icon', 'guten-builder-blocks'),
+          value: 'icon'
         }],
         onChange: value => setAttributes({
-          iconName: value
+          dividerType: value
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.UnitControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Icon Size :', 'guten-builder-blocks'),
-        value: attributes.iconSize,
-        onChange: val => setAttributes({
-          iconSize: val
-        }),
-        units: [(0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.pxUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.remUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.emUnit)()],
-        responsive: true,
-        defaultVal: {
-          desktop: '20px',
-          tablet: '',
-          mobile: ''
-        }
+      }), dividerType === 'text' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text', 'guten-builder-blocks'),
+        value: text,
+        onChange: value => setAttributes({
+          text: value
+        })
+      }), dividerType === 'icon' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select Icon', 'guten-builder-blocks'),
+          value: attributes.iconName || 'tabler--crown',
+          options: [{
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Crown', 'guten-builder-blocks'),
+            value: 'tabler--crown'
+          }, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Star', 'guten-builder-blocks'),
+            value: 'tabler--star'
+          }, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Heart', 'guten-builder-blocks'),
+            value: 'tabler--heart'
+          }, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Circle', 'guten-builder-blocks'),
+            value: 'tabler--circle'
+          }, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Square', 'guten-builder-blocks'),
+            value: 'tabler--square'
+          }],
+          onChange: value => setAttributes({
+            iconName: value
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.UnitControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Icon Size :', 'guten-builder-blocks'),
+          value: attributes.iconSize,
+          onChange: val => setAttributes({
+            iconSize: val
+          }),
+          units: [(0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.pxUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.remUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.emUnit)()],
+          responsive: true,
+          defaultVal: {
+            desktop: '20px',
+            tablet: '',
+            mobile: ''
+          }
+        })]
       })]
     })]
   });
@@ -4026,6 +4029,7 @@ const Style = ({
   setAttributes
 }) => {
   const {
+    selectedTemplate = 'template-1',
     dividerColor = '#d1d5db',
     textTypography,
     dividerType = 'text'
@@ -4041,7 +4045,7 @@ const Style = ({
         dividerColor: color
       }),
       defaultColor: "#d1d5db"
-    }), dividerType === 'text' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
+    }), selectedTemplate === 'template-1' && dividerType === 'text' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Typography :', 'guten-builder-blocks'),
       value: textTypography,
       onChange: val => setAttributes({
@@ -4126,12 +4130,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _TemplateOne__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TemplateOne */ "./src/blocks/divider/Components/Common/Templates/TemplateOne.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _TemplateTwo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TemplateTwo */ "./src/blocks/divider/Components/Common/Templates/TemplateTwo.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 const TEMPLATES = {
-  'template-1': _TemplateOne__WEBPACK_IMPORTED_MODULE_0__["default"]
+  'template-1': _TemplateOne__WEBPACK_IMPORTED_MODULE_0__["default"],
+  'template-2': _TemplateTwo__WEBPACK_IMPORTED_MODULE_1__["default"]
 };
 const Divider = ({
   attributes,
@@ -4141,7 +4148,7 @@ const Divider = ({
     selectedTemplate = 'template-1'
   } = attributes || {};
   const TemplateComponent = TEMPLATES[selectedTemplate] || TEMPLATES['template-1'];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(TemplateComponent, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(TemplateComponent, {
     attributes: attributes,
     setAttributes: setAttributes
   });
@@ -4195,6 +4202,31 @@ const TemplateOne = ({
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TemplateOne);
+
+/***/ },
+
+/***/ "./src/blocks/divider/Components/Common/Templates/TemplateTwo.jsx"
+/*!************************************************************************!*\
+  !*** ./src/blocks/divider/Components/Common/Templates/TemplateTwo.jsx ***!
+  \************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+
+const TemplateTwo = () => {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+    className: "guten-builder-divider-template-2",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      className: "gbb-divider"
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TemplateTwo);
 
 /***/ },
 
@@ -4281,6 +4313,24 @@ const templateData = {
         mobile: ''
       }
     }
+  }, {
+    id: 'template-2',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template 2', 'guten-builder-blocks'),
+    tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Simple Divider', 'guten-builder-blocks'),
+    icon: _icons__WEBPACK_IMPORTED_MODULE_1__.TemplateTwoSvg,
+    attributes: {
+      dividerWidth: {
+        desktop: '100%',
+        tablet: '',
+        mobile: ''
+      },
+      dividerHeight: {
+        desktop: '1px',
+        tablet: '',
+        mobile: ''
+      },
+      dividerColor: '#d1d5db'
+    }
   }]
 };
 
@@ -4302,7 +4352,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   SquareIcon: () => (/* binding */ SquareIcon),
 /* harmony export */   StarIcon: () => (/* binding */ StarIcon),
 /* harmony export */   StyleIcon: () => (/* binding */ StyleIcon),
-/* harmony export */   TemplateOneSvg: () => (/* binding */ TemplateOneSvg)
+/* harmony export */   TemplateOneSvg: () => (/* binding */ TemplateOneSvg),
+/* harmony export */   TemplateTwoSvg: () => (/* binding */ TemplateTwoSvg)
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
@@ -4419,6 +4470,30 @@ const TemplateOneSvg = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED
     x: "450",
     y: "98",
     width: "300",
+    height: "4",
+    fill: "#3b82f6",
+    rx: "2"
+  })]
+});
+const TemplateTwoSvg = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 800 200",
+  width: "100%",
+  height: "100%",
+  style: {
+    fontFamily: 'system-ui, -apple-system, sans-serif'
+  },
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+    x: "0",
+    y: "0",
+    width: "800",
+    height: "200",
+    fill: "#f8fafc",
+    rx: "10"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+    x: "50",
+    y: "98",
+    width: "700",
     height: "4",
     fill: "#3b82f6",
     rx: "2"

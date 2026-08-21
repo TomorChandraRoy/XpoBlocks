@@ -4,7 +4,7 @@ import { ColorControl, Typography } from 'tr-tools';
 import { templateData } from '../../../../utils/data';
 
 const Style = ({attributes, setAttributes}) => {
-  const { dividerColor = '#d1d5db', textTypography, dividerType = 'text' } = attributes || {};
+  const { selectedTemplate = 'template-1', dividerColor = '#d1d5db', textTypography, dividerType = 'text' } = attributes || {};
 
   return (
         <PanelBody className="bPlPanelBody" title={__('Colors', 'guten-builder-blocks')} initialOpen={true}>
@@ -15,7 +15,7 @@ const Style = ({attributes, setAttributes}) => {
                 defaultColor="#d1d5db" 
             />
 
-            {dividerType === 'text' && (
+            {selectedTemplate === 'template-1' && dividerType === 'text' && (
                 <Typography 
                     label={__('Typography :', 'guten-builder-blocks')} 
                     value={textTypography} 

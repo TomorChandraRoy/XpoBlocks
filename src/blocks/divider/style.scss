@@ -38,6 +38,11 @@
 		justify-content: center;
 	}
 }
-
 }
+
+.guten-builder-divider-template-2 .gbb-divider::before,
+.guten-builder-divider-template-2 .gbb-divider::after {
+	margin: 0 !important;
+}
+
 
