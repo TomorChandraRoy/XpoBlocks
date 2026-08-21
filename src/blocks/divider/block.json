@@ -5,7 +5,6 @@
   "version": "1.0.0",
   "title": "Divider",
   "category": "guten-builder",
-  "icon": "minus",
   "description": "Add a customizable dividing line to separate your content and improve page layout.",
   "textdomain": "guten-builder-blocks",
   "attributes": {

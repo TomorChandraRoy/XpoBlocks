@@ -5,7 +5,7 @@ import { TemplateOneSvg } from "./icons";
 
 export const templateData = {
   title: __('Select Divider Template', 'guten-builder-blocks'),
-  subtitle: __('Choose a design template for your contact form.', 'guten-builder-blocks'),
+  subtitle: __('Choose a design template for your divider.', 'guten-builder-blocks'),
   templates: [
     {
       id: 'template-1',

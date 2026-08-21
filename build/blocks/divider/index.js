@@ -4211,12 +4211,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/divider/editor.scss");
 /* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./block.json */ "./src/blocks/divider/block.json");
 /* harmony import */ var _Components_Backend_Edit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Components/Backend/Edit */ "./src/blocks/divider/Components/Backend/Edit.js");
+/* harmony import */ var _utils_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils/icons */ "./src/blocks/divider/utils/icons.js");
+
 
 
 
 
 
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_3__.name, {
+  icon: _utils_icons__WEBPACK_IMPORTED_MODULE_5__.DividerIcon,
   edit: _Components_Backend_Edit__WEBPACK_IMPORTED_MODULE_4__["default"],
   save: () => null // Dynamic block
 });
@@ -4240,7 +4243,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const templateData = {
   title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select Divider Template', 'guten-builder-blocks'),
-  subtitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Choose a design template for your contact form.', 'guten-builder-blocks'),
+  subtitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Choose a design template for your divider.', 'guten-builder-blocks'),
   templates: [{
     id: 'template-1',
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template 1', 'guten-builder-blocks'),
@@ -4293,6 +4296,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   CircleIcon: () => (/* binding */ CircleIcon),
 /* harmony export */   CrownIcon: () => (/* binding */ CrownIcon),
+/* harmony export */   DividerIcon: () => (/* binding */ DividerIcon),
 /* harmony export */   GeneralIcon: () => (/* binding */ GeneralIcon),
 /* harmony export */   HeartIcon: () => (/* binding */ HeartIcon),
 /* harmony export */   SquareIcon: () => (/* binding */ SquareIcon),
@@ -4303,6 +4307,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 
+const DividerIcon = {
+  background: '#FCE7F3',
+  foreground: '#4F46E5',
+  src: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 24 24",
+    width: "24",
+    height: "24",
+    style: {
+      fill: '#4F46E5'
+    },
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+      d: "M3 11h18v2H3z",
+      fill: "#4F46E5"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("circle", {
+      cx: "12",
+      cy: "12",
+      r: "3",
+      fill: "#4F46E5"
+    })]
+  })
+};
 const GeneralIcon = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
   width: "16",
   height: "16",
@@ -4361,7 +4387,7 @@ const StyleIcon = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODU
 });
 const TemplateOneSvg = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
-  viewBox: "0 0 800 500",
+  viewBox: "0 0 800 200",
   width: "100%",
   height: "100%",
   style: {
@@ -4371,57 +4397,31 @@ const TemplateOneSvg = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED
     x: "0",
     y: "0",
     width: "800",
-    height: "500",
-    fill: "#e2e8f0",
+    height: "200",
+    fill: "#f8fafc",
     rx: "10"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
-    x: "200",
-    y: "260",
-    fontSize: "32",
-    fontWeight: "bold",
-    fill: "#94a3b8",
-    children: "Before"
   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+    x: "50",
+    y: "98",
+    width: "300",
+    height: "4",
+    fill: "#3b82f6",
+    rx: "2"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
     x: "400",
-    y: "0",
-    width: "400",
-    height: "500",
-    fill: "#cbd5e1",
-    rx: "10"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
-    x: "600",
-    y: "260",
-    fontSize: "32",
-    fontWeight: "bold",
-    fill: "#64748b",
-    children: "After"
+    y: "110",
+    fontSize: "36",
+    fill: "#3b82f6",
+    textAnchor: "middle",
+    fontWeight: "500",
+    children: "Text"
   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-    x: "398",
-    y: "0",
-    width: "4",
-    height: "500",
-    fill: "#ffffff"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("circle", {
-    cx: "400",
-    cy: "250",
-    r: "24",
-    fill: "#111111",
-    stroke: "#ffffff",
-    strokeWidth: "3"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    d: "M 390 240 L 380 250 L 390 260",
-    stroke: "#ffffff",
-    strokeWidth: "3",
-    fill: "none",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    d: "M 410 240 L 420 250 L 410 260",
-    stroke: "#ffffff",
-    strokeWidth: "3",
-    fill: "none",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
+    x: "450",
+    y: "98",
+    width: "300",
+    height: "4",
+    fill: "#3b82f6",
+    rx: "2"
   })]
 });
 const CrownIcon = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
@@ -4795,7 +4795,7 @@ module.exports = window["wp"]["i18n"];
   \***************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"guten-builder-blocks/divider","version":"1.0.0","title":"Divider","category":"guten-builder","icon":"minus","description":"Add a customizable dividing line to separate your content and improve page layout.","textdomain":"guten-builder-blocks","attributes":{"dividerType":{"type":"string","default":"text"},"text":{"type":"string","default":"Text"},"iconName":{"type":"string","default":"tabler--crown"},"dividerWidth":{"type":"object"},"dividerHeight":{"type":"object"},"dividerColor":{"type":"string","default":"#d1d5db"},"textTypography":{"type":"object"},"iconSize":{"type":"object"}},"supports":{"html":false,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"guten-builder-blocks/divider","version":"1.0.0","title":"Divider","category":"guten-builder","description":"Add a customizable dividing line to separate your content and improve page layout.","textdomain":"guten-builder-blocks","attributes":{"dividerType":{"type":"string","default":"text"},"text":{"type":"string","default":"Text"},"iconName":{"type":"string","default":"tabler--crown"},"dividerWidth":{"type":"object"},"dividerHeight":{"type":"object"},"dividerColor":{"type":"string","default":"#d1d5db"},"textTypography":{"type":"object"},"iconSize":{"type":"object"}},"supports":{"html":false,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
 
 /***/ }
 
