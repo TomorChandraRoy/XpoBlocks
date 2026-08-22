@@ -8,6 +8,10 @@
   "description": "Add a customizable dividing line to separate your content and improve page layout.",
   "textdomain": "guten-builder-blocks",
   "attributes": {
+    "selectedTemplate": {
+      "type": "string",
+      "default": ""
+    },
     "dividerType": {
       "type": "string",
       "default": "text"
