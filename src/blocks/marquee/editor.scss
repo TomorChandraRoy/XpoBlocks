@@ -6,4 +6,10 @@
         background: #f8fafc;
         border: 1px dashed #cbd5e1;
     }
+
+    /* Disable links inside the editor so they don't navigate away when clicked */
+    .gbb-mq-item a {
+        pointer-events: none;
+        cursor: default;
+    }
 }

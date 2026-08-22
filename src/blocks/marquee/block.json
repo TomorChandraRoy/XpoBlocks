@@ -8,6 +8,10 @@
   "keywords": ["marquee", "scrolling text", "ticker", "moving text", "loop text"],
   "textdomain": "guten-builder-blocks",
   "attributes": {
+    "selectedTemplate": {
+      "type": "string",
+      "default": ""
+    },
     "images": {
       "type": "array",
       "default": []

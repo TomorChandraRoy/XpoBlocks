@@ -8,6 +8,13 @@
   background: #f8fafc;
   border: 1px dashed #cbd5e1;
 }
+.wp-block-guten-builder-blocks-marquee {
+  /* Disable links inside the editor so they don't navigate away when clicked */
+}
+.wp-block-guten-builder-blocks-marquee .gbb-mq-item a {
+  pointer-events: none;
+  cursor: default;
+}
 /*!************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!../tr-tools/Components/TemplateSelector/TemplateSelector.scss ***!
   \************************************************************************************************************************************************************************************************************************************************************************************/

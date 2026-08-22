@@ -5,16 +5,7 @@ import { addIcon, arrowDownIcon, arrowUpIcon, trashIcon } from '../../../../util
 
 
 const General = ({ attributes, setAttributes }) => {
-	const {
-		images,
-		speed,
-		reverseDirection,
-		pauseOnHover,
-		hoverSlowDown,
-		openInNewTab,
-		hideOnMobile,
-		hideOnDesktop
-	} = attributes;
+	const {images,speed,reverseDirection,pauseOnHover,hoverSlowDown,openInNewTab,hideOnMobile,hideOnDesktop} = attributes;
 
 	const moveImage = ( index, direction ) => {
 		if ( ( direction === -1 && index === 0 ) || ( direction === 1 && index === images.length - 1 ) ) {
@@ -66,12 +57,13 @@ const General = ({ attributes, setAttributes }) => {
 					label={ __( 'Open links in New Tab', 'guten-builder-blocks' ) }
 					checked={ openInNewTab }
 					onChange={ ( val ) => setAttributes( { openInNewTab: val } ) }
+					help={ __( 'N.B: Links will only be clickable on the live frontend.', 'guten-builder-blocks' ) }
 				/>
 
 				<hr />
 
 				{ images.length > 0 && (
-					<div style={ { display: 'flex', flexDirection: 'column', gap: '12px' } }>
+					<div style={ { display: 'flex', flexDirection: 'column', gap: '12px', maxHeight: '350px', overflowY: 'auto', paddingRight: '6px' } }>
 						{ images.map( ( img, i ) => (
 							<div key={ i } style={ { background: '#ffffff', padding: '12px', borderRadius: '8px', border: '1px solid #e2e8f0', boxShadow: '0 1px 3px rgba(15, 23, 42, 0.06)', transition: 'border-color 0.2s' } }>
 								<div style={ { display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '12px', marginBottom: '12px' } }>

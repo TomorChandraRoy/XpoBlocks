@@ -14,6 +14,10 @@
   ],
   "textdomain": "guten-builder-blocks",
   "attributes": {
+    "selectedTemplate": {
+      "type": "string",
+      "default": ""
+    },
     "images": {
       "type": "array",
       "default": []

@@ -147,5 +147,11 @@
   transition: transform 0.3s ease;
   flex-shrink: 0;
 }
+.wp-block-guten-builder-blocks-marquee .gbb-logo-cloud-section .gbb-logo-cloud-wrapper .gbb-logo-content .gbb-mq-container .gbb-mq-track .gbb-mq-item a:focus, .wp-block-guten-builder-blocks-marquee .gbb-logo-cloud-section .gbb-logo-cloud-wrapper .gbb-logo-content .gbb-mq-container .gbb-mq-track .gbb-mq-item img:focus,
+.guten-builder-marquee-wrapper .gbb-logo-cloud-section .gbb-logo-cloud-wrapper .gbb-logo-content .gbb-mq-container .gbb-mq-track .gbb-mq-item a:focus,
+.guten-builder-marquee-wrapper .gbb-logo-cloud-section .gbb-logo-cloud-wrapper .gbb-logo-content .gbb-mq-container .gbb-mq-track .gbb-mq-item img:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
 
 /*# sourceMappingURL=style-view.css.map*/
