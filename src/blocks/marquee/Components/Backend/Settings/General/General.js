@@ -1,24 +1,8 @@
 import { __ } from '@wordpress/i18n';
-import { PanelBody, ToggleControl, RangeControl, TextControl, Button } from '@wordpress/components';
+import { PanelBody, ToggleControl, RangeControl, TextControl, Button, Tooltip } from '@wordpress/components';
 import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
+import { addIcon, arrowDownIcon, arrowUpIcon, trashIcon } from '../../../../utils/icons';
 
-// Icons for reordering and deleting
-const arrowUpIcon = (
-	<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-		<polyline points="18 15 12 9 6 15" />
-	</svg>
-);
-const arrowDownIcon = (
-	<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-		<polyline points="6 9 12 15 18 9" />
-	</svg>
-);
-const trashIcon = (
-	<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-		<polyline points="3 6 5 6 21 6" />
-		<path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
-	</svg>
-);
 
 const General = ({ attributes, setAttributes }) => {
 	const {
@@ -64,15 +48,15 @@ const General = ({ attributes, setAttributes }) => {
 
 	return (
 		<>
-			<PanelBody title={ __( '🖼️ Gallery & Links', 'guten-builder-blocks' ) } initialOpen={ true }>
+			<PanelBody className='bPlPanelBody' title={ __( 'Images & Links', 'guten-builder-blocks' ) } initialOpen={ true }>
 				<MediaUploadCheck fallback={ <p style={ { color: '#ef4444', fontSize: '12px' } }>{ __( 'You do not have permission to upload media.', 'guten-builder-blocks' ) }</p> }>
 					<MediaUpload
 						multiple={ true }
 						onSelect={ onSelectImages }
 						allowedTypes={ [ 'image' ] }
 						render={ ( { open } ) => (
-							<Button variant="primary" onClick={ open } style={ { width: '100%', justifyContent: 'center', marginBottom: '15px' } }>
-								{ __( '+ Add Images', 'guten-builder-blocks' ) }
+							<Button variant="primary" icon={ addIcon } onClick={ open } style={ { width: '100%', justifyContent: 'center', marginBottom: '15px', backgroundColor: '#F62477', borderColor: '#F62477', color: '#fff' } }>
+								{ __( 'Add Images', 'guten-builder-blocks' ) }
 							</Button>
 						) }
 					/>
@@ -87,26 +71,40 @@ const General = ({ attributes, setAttributes }) => {
 				<hr />
 
 				{ images.length > 0 && (
-					<div style={ { display: 'flex', flexDirection: 'column', gap: '10px' } }>
+					<div style={ { display: 'flex', flexDirection: 'column', gap: '12px' } }>
 						{ images.map( ( img, i ) => (
-							<div key={ i } style={ { background: '#f8fafc', padding: '10px', borderRadius: '6px', border: '1px solid #e2e8f0' } }>
-								<div style={ { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' } }>
-									<div style={ { width: '40px', height: '40px', background: '#fff', borderRadius: '4px', border: '1px solid #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' } }>
+							<div key={ i } style={ { background: '#ffffff', padding: '12px', borderRadius: '8px', border: '1px solid #e2e8f0', boxShadow: '0 1px 3px rgba(15, 23, 42, 0.06)', transition: 'border-color 0.2s' } }>
+								<div style={ { display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '12px', marginBottom: '12px' } }>
+									{/* Image Preview */}
+									<div style={ { width: '48px', height: '48px', flexShrink: 0, background: '#f8fafc', borderRadius: '6px', border: '1px solid #e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', padding: '4px' } }>
 										<img src={ img.url } style={ { maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' } } alt={ img.alt } />
 									</div>
-									<div style={ { display: 'flex', gap: '4px' } }>
-										<Button isSmall style={ { padding: '0 4px' } } icon={ arrowUpIcon } onClick={ () => moveImage( i, -1 ) } disabled={ i === 0 } />
-										<Button isSmall style={ { padding: '0 4px' } } icon={ arrowDownIcon } onClick={ () => moveImage( i, 1 ) } disabled={ i === images.length - 1 } />
-										<Button isSmall isDestructive style={ { padding: '0 4px' } } icon={ trashIcon } onClick={ () => deleteImage( i ) } />
+
+									{/* Action Buttons */}
+									<div style={ { display: 'flex', gap: '4px', background: '#f8fafc', padding: '4px', borderRadius: '6px', border: '1px solid #e2e8f0' } }>
+										<Tooltip text={ __( 'Move Up', 'guten-builder-blocks' ) }>
+											<Button isSmall variant="tertiary" style={ { minWidth: '32px', padding: '0', color: '#64748b' } } icon={ arrowUpIcon } onClick={ () => moveImage( i, -1 ) } disabled={ i === 0 } />
+										</Tooltip>
+										<Tooltip text={ __( 'Move Down', 'guten-builder-blocks' ) }>
+											<Button isSmall variant="tertiary" style={ { minWidth: '32px', padding: '0', color: '#64748b' } } icon={ arrowDownIcon } onClick={ () => moveImage( i, 1 ) } disabled={ i === images.length - 1 } />
+										</Tooltip>
+										<Tooltip text={ __( 'Remove', 'guten-builder-blocks' ) }>
+											<Button isSmall variant="tertiary" isDestructive style={ { minWidth: '32px', padding: '0' } } icon={ trashIcon } onClick={ () => deleteImage( i ) } />
+										</Tooltip>
 									</div>
 								</div>
-								<TextControl
-									label={ __( 'Destination Link', 'guten-builder-blocks' ) }
-									placeholder="https://..."
-									value={ img.link }
-									onChange={ ( val ) => updateLink( i, val ) }
-									__nextHasNoMarginBottom={ true }
-								/>
+
+								{/* Link Input */}
+								<div style={{ background: '#f8fafc', padding: '10px', borderRadius: '6px', border: '1px solid #e2e8f0' }}>
+									<TextControl
+										label={ <span style={{ fontSize: '12px', fontWeight: 500, color: '#64748b' }}>{__( 'Destination Link', 'guten-builder-blocks' )}</span> }
+										placeholder="https://..."
+										value={ img.link }
+										onChange={ ( val ) => updateLink( i, val ) }
+										__nextHasNoMarginBottom={ true }
+										style={{ background: '#ffffff' }}
+									/>
+								</div>
 							</div>
 						) ) }
 					</div>

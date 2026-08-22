@@ -3734,10 +3734,10 @@ const mobileBreakpoint = '@media (max-width: 767px)';
 
 /***/ },
 
-/***/ "./src/blocks/marquee/Components/Backend/Edit.js"
-/*!*******************************************************!*\
-  !*** ./src/blocks/marquee/Components/Backend/Edit.js ***!
-  \*******************************************************/
+/***/ "./src/blocks/newsletter-card/Components/Backend/Edit.js"
+/*!***************************************************************!*\
+  !*** ./src/blocks/newsletter-card/Components/Backend/Edit.js ***!
+  \***************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -3746,11 +3746,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Settings_Settings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Settings/Settings */ "./src/blocks/marquee/Components/Backend/Settings/Settings.js");
-/* harmony import */ var tr_tools__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tr-tools */ "../tr-tools/index.js");
-/* harmony import */ var _Common_DynamicStyle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Common/DynamicStyle */ "./src/blocks/marquee/Components/Common/DynamicStyle.js");
-/* harmony import */ var _Common_Templates_Marquee__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Common/Templates/Marquee */ "./src/blocks/marquee/Components/Common/Templates/Marquee.jsx");
-/* harmony import */ var _utils_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/data */ "./src/blocks/marquee/utils/data.js");
+/* harmony import */ var _Settings_Settings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Settings/Settings */ "./src/blocks/newsletter-card/Components/Backend/Settings/Settings.js");
+/* harmony import */ var _Common_Templates_NewsletterCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Common/Templates/NewsletterCard */ "./src/blocks/newsletter-card/Components/Common/Templates/NewsletterCard.jsx");
+/* harmony import */ var _Common_DynamicStyles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Common/DynamicStyles */ "./src/blocks/newsletter-card/Components/Common/DynamicStyles.js");
+/* harmony import */ var tr_tools__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tr-tools */ "../tr-tools/index.js");
+/* harmony import */ var _utils_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/data */ "./src/blocks/newsletter-card/utils/data.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
 
@@ -3777,7 +3777,7 @@ const Edit = props => {
       setAttributes
     }), !isTemplateSelected ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)(),
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.TemplateSelector, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_4__.TemplateSelector, {
         attributes,
         setAttributes,
         title: _utils_data__WEBPACK_IMPORTED_MODULE_5__.templateData.title,
@@ -3787,11 +3787,15 @@ const Edit = props => {
         proTemplates: ['template-1']
       })
     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-      ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)(),
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Common_DynamicStyle__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
+        style: {
+          padding: '3px'
+        }
+      }),
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Common_DynamicStyles__WEBPACK_IMPORTED_MODULE_3__["default"], {
         attributes: attributes,
         id: id
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Common_Templates_Marquee__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Common_Templates_NewsletterCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
         attributes: attributes,
         setAttributes: setAttributes,
         id: id
@@ -3803,10 +3807,10 @@ const Edit = props => {
 
 /***/ },
 
-/***/ "./src/blocks/marquee/Components/Backend/Settings/General/General.js"
-/*!***************************************************************************!*\
-  !*** ./src/blocks/marquee/Components/Backend/Settings/General/General.js ***!
-  \***************************************************************************/
+/***/ "./src/blocks/newsletter-card/Components/Backend/Settings/General/General.js"
+/*!***********************************************************************************!*\
+  !*** ./src/blocks/newsletter-card/Components/Backend/Settings/General/General.js ***!
+  \***********************************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -3817,13 +3821,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _utils_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../utils/icons */ "./src/blocks/marquee/utils/icons.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
-
-
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
@@ -3831,289 +3830,20 @@ const General = ({
   attributes,
   setAttributes
 }) => {
-  const {
-    images,
-    speed,
-    reverseDirection,
-    pauseOnHover,
-    hoverSlowDown,
-    openInNewTab,
-    hideOnMobile,
-    hideOnDesktop
-  } = attributes;
-  const moveImage = (index, direction) => {
-    if (direction === -1 && index === 0 || direction === 1 && index === images.length - 1) {
-      return;
-    }
-    const newImages = [...images];
-    const temp = newImages[index];
-    newImages[index] = newImages[index + direction];
-    newImages[index + direction] = temp;
-    setAttributes({
-      images: newImages
-    });
-  };
-  const onSelectImages = selectedMedia => {
-    const newImages = selectedMedia.map(media => ({
-      url: media.url,
-      alt: media.alt,
-      link: ''
-    }));
-    setAttributes({
-      images: [...images, ...newImages]
-    }); // Unlimited images! No limit!
-  };
-  const updateLink = (index, val) => {
-    const newImages = [...images];
-    newImages[index].link = val;
-    setAttributes({
-      images: newImages
-    });
-  };
-  const deleteImage = index => {
-    setAttributes({
-      images: images.filter((_, i) => i !== index)
-    });
-  };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-      className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Images & Links', 'guten-builder-blocks'),
-      initialOpen: true,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, {
-        fallback: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-          style: {
-            color: '#ef4444',
-            fontSize: '12px'
-          },
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('You do not have permission to upload media.', 'guten-builder-blocks')
-        }),
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
-          multiple: true,
-          onSelect: onSelectImages,
-          allowedTypes: ['image'],
-          render: ({
-            open
-          }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-            variant: "primary",
-            icon: _utils_icons__WEBPACK_IMPORTED_MODULE_3__.addIcon,
-            onClick: open,
-            style: {
-              width: '100%',
-              justifyContent: 'center',
-              marginBottom: '15px',
-              backgroundColor: '#F62477',
-              borderColor: '#F62477',
-              color: '#fff'
-            },
-            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Add Images', 'guten-builder-blocks')
-          })
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Open links in New Tab', 'guten-builder-blocks'),
-        checked: openInNewTab,
-        onChange: val => setAttributes({
-          openInNewTab: val
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("hr", {}), images.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        style: {
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '12px'
-        },
-        children: images.map((img, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          style: {
-            background: '#ffffff',
-            padding: '12px',
-            borderRadius: '8px',
-            border: '1px solid #e2e8f0',
-            boxShadow: '0 1px 3px rgba(15, 23, 42, 0.06)',
-            transition: 'border-color 0.2s'
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-            style: {
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              gap: '12px',
-              marginBottom: '12px'
-            },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-              style: {
-                width: '48px',
-                height: '48px',
-                flexShrink: 0,
-                background: '#f8fafc',
-                borderRadius: '6px',
-                border: '1px solid #e2e8f0',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                overflow: 'hidden',
-                padding: '4px'
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-                src: img.url,
-                style: {
-                  maxWidth: '100%',
-                  maxHeight: '100%',
-                  objectFit: 'contain'
-                },
-                alt: img.alt
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-              style: {
-                display: 'flex',
-                gap: '4px',
-                background: '#f8fafc',
-                padding: '4px',
-                borderRadius: '6px',
-                border: '1px solid #e2e8f0'
-              },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
-                text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Move Up', 'guten-builder-blocks'),
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-                  isSmall: true,
-                  variant: "tertiary",
-                  style: {
-                    minWidth: '32px',
-                    padding: '0',
-                    color: '#64748b'
-                  },
-                  icon: _utils_icons__WEBPACK_IMPORTED_MODULE_3__.arrowUpIcon,
-                  onClick: () => moveImage(i, -1),
-                  disabled: i === 0
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
-                text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Move Down', 'guten-builder-blocks'),
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-                  isSmall: true,
-                  variant: "tertiary",
-                  style: {
-                    minWidth: '32px',
-                    padding: '0',
-                    color: '#64748b'
-                  },
-                  icon: _utils_icons__WEBPACK_IMPORTED_MODULE_3__.arrowDownIcon,
-                  onClick: () => moveImage(i, 1),
-                  disabled: i === images.length - 1
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
-                text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove', 'guten-builder-blocks'),
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-                  isSmall: true,
-                  variant: "tertiary",
-                  isDestructive: true,
-                  style: {
-                    minWidth: '32px',
-                    padding: '0'
-                  },
-                  icon: _utils_icons__WEBPACK_IMPORTED_MODULE_3__.trashIcon,
-                  onClick: () => deleteImage(i)
-                })
-              })]
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            style: {
-              background: '#f8fafc',
-              padding: '10px',
-              borderRadius: '6px',
-              border: '1px solid #e2e8f0'
-            },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-              label: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-                style: {
-                  fontSize: '12px',
-                  fontWeight: 500,
-                  color: '#64748b'
-                },
-                children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Destination Link', 'guten-builder-blocks')
-              }),
-              placeholder: "https://...",
-              value: img.link,
-              onChange: val => updateLink(i, val),
-              __nextHasNoMarginBottom: true,
-              style: {
-                background: '#ffffff'
-              }
-            })
-          })]
-        }, i))
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('⚙️ Movement & Engine', 'guten-builder-blocks'),
-      initialOpen: false,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Base Speed (s)', 'guten-builder-blocks'),
-        value: speed,
-        onChange: val => setAttributes({
-          speed: val
-        }),
-        min: 1,
-        max: 200,
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Lower number means faster loop duration.', 'guten-builder-blocks')
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Reverse Direction', 'guten-builder-blocks'),
-        checked: reverseDirection,
-        onChange: val => setAttributes({
-          reverseDirection: val
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Pause on Hover / Tap', 'guten-builder-blocks'),
-        checked: pauseOnHover,
-        onChange: val => {
-          setAttributes({
-            pauseOnHover: val
-          });
-          if (val) {
-            setAttributes({
-              hoverSlowDown: false
-            });
-          }
-        },
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Completely stops the track when cursor is over it.', 'guten-builder-blocks')
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Slow Down on Hover', 'guten-builder-blocks'),
-        checked: hoverSlowDown,
-        onChange: val => {
-          setAttributes({
-            hoverSlowDown: val
-          });
-          if (val) {
-            setAttributes({
-              pauseOnHover: false
-            });
-          }
-        },
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Reduces velocity to 30% for a cinematic inspection feel.', 'guten-builder-blocks')
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('📱 Visibility Settings', 'guten-builder-blocks'),
-      initialOpen: false,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Hide on Mobile', 'guten-builder-blocks'),
-        checked: hideOnMobile,
-        onChange: val => setAttributes({
-          hideOnMobile: val
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Hide on Desktop', 'guten-builder-blocks'),
-        checked: hideOnDesktop,
-        onChange: val => setAttributes({
-          hideOnDesktop: val
-        })
-      })]
-    })]
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+    className: "bPlPanelBody",
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template Presets', 'guten-builder-blocks'),
+    initialOpen: true
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (General);
 
 /***/ },
 
-/***/ "./src/blocks/marquee/Components/Backend/Settings/Settings.js"
-/*!********************************************************************!*\
-  !*** ./src/blocks/marquee/Components/Backend/Settings/Settings.js ***!
-  \********************************************************************/
+/***/ "./src/blocks/newsletter-card/Components/Backend/Settings/Settings.js"
+/*!****************************************************************************!*\
+  !*** ./src/blocks/newsletter-card/Components/Backend/Settings/Settings.js ***!
+  \****************************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -4124,9 +3854,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _utils_options__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../utils/options */ "./src/blocks/marquee/utils/options.js");
-/* harmony import */ var _General_General__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./General/General */ "./src/blocks/marquee/Components/Backend/Settings/General/General.js");
-/* harmony import */ var _Style_Style__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Style/Style */ "./src/blocks/marquee/Components/Backend/Settings/Style/Style.js");
+/* harmony import */ var _utils_option__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../utils/option */ "./src/blocks/newsletter-card/utils/option.js");
+/* harmony import */ var _General_General__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./General/General */ "./src/blocks/newsletter-card/Components/Backend/Settings/General/General.js");
+/* harmony import */ var _Style_Style__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Style/Style */ "./src/blocks/newsletter-card/Components/Backend/Settings/Style/Style.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
 
@@ -4139,11 +3869,18 @@ const Settings = ({
   attributes,
   setAttributes
 }) => {
+  const {
+    selectedTemplate = ''
+  } = attributes;
+  const isTemplateSelected = Boolean(selectedTemplate);
+  if (!isTemplateSelected) {
+    return null;
+  }
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TabPanel, {
-      className: "guten-builder-blocks-tab-panel wp-block-guten-builder-blocks-marquee",
+      className: "guten-builder-blocks-tab-panel wp-block-guten-builder-blocks-newsletter-card",
       activeClass: "guten-builder-blocks-active-tab",
-      tabs: _utils_options__WEBPACK_IMPORTED_MODULE_2__.generalStyleTabs,
+      tabs: _utils_option__WEBPACK_IMPORTED_MODULE_2__.generalStyleTabs,
       children: tab => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
         children: ['general' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_General_General__WEBPACK_IMPORTED_MODULE_3__["default"], {
           attributes: attributes,
@@ -4160,10 +3897,10 @@ const Settings = ({
 
 /***/ },
 
-/***/ "./src/blocks/marquee/Components/Backend/Settings/Style/Style.js"
-/*!***********************************************************************!*\
-  !*** ./src/blocks/marquee/Components/Backend/Settings/Style/Style.js ***!
-  \***********************************************************************/
+/***/ "./src/blocks/newsletter-card/Components/Backend/Settings/Style/Style.js"
+/*!*******************************************************************************!*\
+  !*** ./src/blocks/newsletter-card/Components/Backend/Settings/Style/Style.js ***!
+  \*******************************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -4183,149 +3920,20 @@ const Style = ({
   attributes,
   setAttributes
 }) => {
-  const {
-    itemHeight,
-    edgeFade,
-    liftEffect,
-    siblingBlur,
-    siblingBlurIntensity,
-    showProgressRail,
-    progressRailPosition,
-    showInteractionIndicator,
-    highlightActiveCenter,
-    showFrame,
-    frameBg,
-    frameRadius
-  } = attributes;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('🎨 Visual Styling', 'guten-builder-blocks'),
-      initialOpen: true,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Logo Height (Desktop)', 'guten-builder-blocks'),
-        value: itemHeight,
-        onChange: val => setAttributes({
-          itemHeight: val
-        }),
-        min: 30,
-        max: 300
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Edge Fade Effect', 'guten-builder-blocks'),
-        checked: edgeFade,
-        onChange: val => setAttributes({
-          edgeFade: val
-        })
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('✨ Smart Addons', 'guten-builder-blocks'),
-      initialOpen: false,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Hover Lift Effect', 'guten-builder-blocks'),
-        checked: liftEffect,
-        onChange: val => setAttributes({
-          liftEffect: val
-        }),
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Elevates the hovered logo organically.', 'guten-builder-blocks')
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Sibling Focus Blur', 'guten-builder-blocks'),
-        checked: siblingBlur,
-        onChange: val => setAttributes({
-          siblingBlur: val
-        }),
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Blurs all other logos when one is hovered.', 'guten-builder-blocks')
-      }), siblingBlur && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Blur Intensity (px)', 'guten-builder-blocks'),
-        value: siblingBlurIntensity,
-        onChange: val => setAttributes({
-          siblingBlurIntensity: val
-        }),
-        min: 1,
-        max: 10
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Segmented Progress Rail', 'guten-builder-blocks'),
-        checked: showProgressRail,
-        onChange: val => setAttributes({
-          showProgressRail: val
-        }),
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Displays a tracker based on original items.', 'guten-builder-blocks')
-      }), showProgressRail && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Rail Position', 'guten-builder-blocks'),
-        value: progressRailPosition,
-        options: [{
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Right', 'guten-builder-blocks'),
-          value: 'right'
-        }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Bottom', 'guten-builder-blocks'),
-          value: 'bottom'
-        }],
-        onChange: val => setAttributes({
-          progressRailPosition: val
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Pause / Slow State Indicator', 'guten-builder-blocks'),
-        checked: showInteractionIndicator,
-        onChange: val => setAttributes({
-          showInteractionIndicator: val
-        }),
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Shows a state badge when marquee is paused or slowed.', 'guten-builder-blocks')
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Active Center Highlight', 'guten-builder-blocks'),
-        checked: highlightActiveCenter,
-        onChange: val => setAttributes({
-          highlightActiveCenter: val
-        }),
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Scales and highlights the item closest to the center focus area.', 'guten-builder-blocks')
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('🖼️ Card Frames', 'guten-builder-blocks'),
-      initialOpen: false,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enable Card Frame', 'guten-builder-blocks'),
-        checked: showFrame,
-        onChange: val => setAttributes({
-          showFrame: val
-        })
-      }), showFrame && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        style: {
-          padding: '10px',
-          background: '#f8f9fa',
-          borderRadius: '8px',
-          border: '1px solid #e2e8f0',
-          marginBottom: '15px'
-        },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-          style: {
-            fontWeight: 'bold',
-            marginTop: '0',
-            marginBottom: '5px'
-          },
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Frame Background', 'guten-builder-blocks')
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
-          value: frameBg,
-          onChange: val => setAttributes({
-            frameBg: val
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Corner Radius', 'guten-builder-blocks'),
-          value: frameRadius,
-          onChange: val => setAttributes({
-            frameRadius: val
-          }),
-          min: 0,
-          max: 50
-        })]
-      })]
-    })]
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+    className: "bPlPanelBody",
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template Presets', 'guten-builder-blocks'),
+    initialOpen: true
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Style);
 
 /***/ },
 
-/***/ "./src/blocks/marquee/Components/Common/DynamicStyle.js"
-/*!**************************************************************!*\
-  !*** ./src/blocks/marquee/Components/Common/DynamicStyle.js ***!
-  \**************************************************************/
+/***/ "./src/blocks/newsletter-card/Components/Common/DynamicStyles.js"
+/*!***********************************************************************!*\
+  !*** ./src/blocks/newsletter-card/Components/Common/DynamicStyles.js ***!
+  \***********************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -4335,10 +3943,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 
-// import { getBorderRadiusCss, getBackgroundCss, getShadowCss } from 'tr-tools';
-// import { tabBreakpoint, mobileBreakpoint } from 'tr-tools/utils/options';
-
-const DynamicStyle = ({
+const DynamicStyles = ({
   attributes,
   id
 }) => {
@@ -4351,21 +3956,21 @@ const DynamicStyle = ({
     }
   });
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DynamicStyle);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DynamicStyles);
 
 /***/ },
 
-/***/ "./src/blocks/marquee/Components/Common/Templates/Marquee.jsx"
-/*!********************************************************************!*\
-  !*** ./src/blocks/marquee/Components/Common/Templates/Marquee.jsx ***!
-  \********************************************************************/
+/***/ "./src/blocks/newsletter-card/Components/Common/Templates/NewsletterCard.jsx"
+/*!***********************************************************************************!*\
+  !*** ./src/blocks/newsletter-card/Components/Common/Templates/NewsletterCard.jsx ***!
+  \***********************************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _TemplateOne__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TemplateOne */ "./src/blocks/marquee/Components/Common/Templates/TemplateOne.jsx");
+/* harmony import */ var _TemplateOne__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TemplateOne */ "./src/blocks/newsletter-card/Components/Common/Templates/TemplateOne.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
 
@@ -4373,7 +3978,7 @@ __webpack_require__.r(__webpack_exports__);
 const TEMPLATES = {
   'template-1': _TemplateOne__WEBPACK_IMPORTED_MODULE_0__["default"]
 };
-const Marquee = ({
+const NewsletterCard = ({
   attributes,
   setAttributes
 }) => {
@@ -4386,14 +3991,14 @@ const Marquee = ({
     setAttributes: setAttributes
   });
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Marquee);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NewsletterCard);
 
 /***/ },
 
-/***/ "./src/blocks/marquee/Components/Common/Templates/TemplateOne.jsx"
-/*!************************************************************************!*\
-  !*** ./src/blocks/marquee/Components/Common/Templates/TemplateOne.jsx ***!
-  \************************************************************************/
+/***/ "./src/blocks/newsletter-card/Components/Common/Templates/TemplateOne.jsx"
+/*!********************************************************************************!*\
+  !*** ./src/blocks/newsletter-card/Components/Common/Templates/TemplateOne.jsx ***!
+  \********************************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -4404,81 +4009,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 
 const TemplateOne = ({
-  attributes
+  attributes,
+  setAttributes
 }) => {
-  const {
-    images = [],
-    speed,
-    pauseOnHover,
-    reverseDirection,
-    edgeFade,
-    itemHeight
-  } = attributes;
-  if (!images || images.length === 0) {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-      className: "gbb-mq-empty-state",
-      children: "Add images to Marquee Settings"
-    });
-  }
-  const trackStyle = {
-    animationDuration: `${speed}s`,
-    animationDirection: reverseDirection ? 'reverse' : 'normal',
-    '--mq-speed': `${speed}s`
-  };
-  let containerClass = 'gbb-mq-container';
-  if (pauseOnHover) containerClass += ' pause-on-hover';
-  if (edgeFade) containerClass += ' has-edge-fade';
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-    className: "gbb-logo-cloud-section",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-      className: "gbb-logo-cloud-wrapper",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-        className: "gbb-border-beam-inner"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-        className: "gbb-logo-text-container",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-          className: "gbb-logo-text",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
-            className: "gbb-logo-text-wave",
-            children: ["Trusted by 1000+ companies ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-              className: "gbb-hide-mobile",
-              children: "around the world"
-            })]
-          })
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-        className: "gbb-logo-content",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-          className: containerClass,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-            className: "gbb-mq-track",
-            style: trackStyle,
-            children: [...images, ...images].map((img, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-              className: "gbb-mq-item",
-              children: img.link ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
-                href: img.link,
-                target: attributes.openInNewTab ? '_blank' : '_self',
-                rel: "noopener noreferrer",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
-                  src: img.url,
-                  alt: img.alt,
-                  style: {
-                    height: `${itemHeight}px`,
-                    objectFit: 'contain'
-                  }
-                })
-              }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
-                src: img.url,
-                alt: img.alt,
-                style: {
-                  height: `${itemHeight}px`,
-                  objectFit: 'contain'
-                }
-              })
-            }, i))
-          })
-        })
-      })]
+    className: "guten-builder-newsletter-card-template-1",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+      children: "Newsletter Card Template 1"
     })
   });
 };
@@ -4486,38 +4023,35 @@ const TemplateOne = ({
 
 /***/ },
 
-/***/ "./src/blocks/marquee/index.js"
-/*!*************************************!*\
-  !*** ./src/blocks/marquee/index.js ***!
-  \*************************************/
+/***/ "./src/blocks/newsletter-card/index.js"
+/*!*********************************************!*\
+  !*** ./src/blocks/newsletter-card/index.js ***!
+  \*********************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/blocks/marquee/style.scss");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/marquee/editor.scss");
-/* harmony import */ var _Components_Backend_Edit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Components/Backend/Edit */ "./src/blocks/marquee/Components/Backend/Edit.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/blocks/marquee/block.json");
-/* harmony import */ var _utils_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils/icons */ "./src/blocks/marquee/utils/icons.js");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/blocks/newsletter-card/style.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/newsletter-card/editor.scss");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./block.json */ "./src/blocks/newsletter-card/block.json");
+/* harmony import */ var _Components_Backend_Edit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Components/Backend/Edit */ "./src/blocks/newsletter-card/Components/Backend/Edit.js");
 
 
 
 
 
-
-(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_4__.name, {
-  icon: _utils_icons__WEBPACK_IMPORTED_MODULE_5__.MarqueeIcon,
-  edit: _Components_Backend_Edit__WEBPACK_IMPORTED_MODULE_3__["default"],
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_3__.name, {
+  edit: _Components_Backend_Edit__WEBPACK_IMPORTED_MODULE_4__["default"],
   save: () => null // Dynamic block
 });
 
 /***/ },
 
-/***/ "./src/blocks/marquee/utils/data.js"
-/*!******************************************!*\
-  !*** ./src/blocks/marquee/utils/data.js ***!
-  \******************************************/
+/***/ "./src/blocks/newsletter-card/utils/data.js"
+/*!**************************************************!*\
+  !*** ./src/blocks/newsletter-card/utils/data.js ***!
+  \**************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -4526,16 +4060,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./icons */ "./src/blocks/marquee/utils/icons.js");
+/* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./icons */ "./src/blocks/newsletter-card/utils/icons.js");
 
 
 const templateData = {
-  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select Marquee Template', 'guten-builder-blocks'),
-  subtitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Choose a design template for your marquee.', 'guten-builder-blocks'),
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select Newsletter Card Template', 'guten-builder-blocks'),
+  subtitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Choose a design template for your contact form.', 'guten-builder-blocks'),
   templates: [{
     id: 'template-1',
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template 1', 'guten-builder-blocks'),
-    tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Logo Marquee', 'guten-builder-blocks'),
+    tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Classic Newsletter Card', 'guten-builder-blocks'),
     icon: _icons__WEBPACK_IMPORTED_MODULE_1__.TemplateOneSvg,
     attributes: {}
   }]
@@ -4543,48 +4077,21 @@ const templateData = {
 
 /***/ },
 
-/***/ "./src/blocks/marquee/utils/icons.js"
-/*!*******************************************!*\
-  !*** ./src/blocks/marquee/utils/icons.js ***!
-  \*******************************************/
+/***/ "./src/blocks/newsletter-card/utils/icons.js"
+/*!***************************************************!*\
+  !*** ./src/blocks/newsletter-card/utils/icons.js ***!
+  \***************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   GeneralIcon: () => (/* binding */ GeneralIcon),
-/* harmony export */   MarqueeIcon: () => (/* binding */ MarqueeIcon),
 /* harmony export */   StyleIcon: () => (/* binding */ StyleIcon),
-/* harmony export */   TemplateOneSvg: () => (/* binding */ TemplateOneSvg),
-/* harmony export */   addIcon: () => (/* binding */ addIcon),
-/* harmony export */   arrowDownIcon: () => (/* binding */ arrowDownIcon),
-/* harmony export */   arrowUpIcon: () => (/* binding */ arrowUpIcon),
-/* harmony export */   trashIcon: () => (/* binding */ trashIcon)
+/* harmony export */   TemplateOneSvg: () => (/* binding */ TemplateOneSvg)
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 
-const MarqueeIcon = {
-  background: '#E0E7FF',
-  foreground: '#F62477',
-  src: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    viewBox: "0 0 24 24",
-    width: "24",
-    height: "24",
-    style: {
-      fill: '#F62477'
-    },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      d: "M3 5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H3zm18 1.5a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V7a.5.5 0 0 1 .5-.5h18z",
-      fill: "#F62477"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      d: "M6 13h7v-2H6V9l-3 3 3 3v-2zm12-2h-7v2h7v2l3-3-3-3v2z",
-      fill: "#F62477"
-    })]
-  })
-};
 const GeneralIcon = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
   width: "16",
   height: "16",
@@ -4643,90 +4150,76 @@ const StyleIcon = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODU
 });
 const TemplateOneSvg = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
-  viewBox: "0 0 800 100",
+  viewBox: "0 0 800 500",
   width: "100%",
-  height: "100",
-  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("style", {
-    children: `
-    .marquee-text {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      font-size: 28px;
-      font-weight: 700;
-      fill: #2563eb;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    `
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-    width: "100%",
-    height: "100%",
-    rx: "12",
-    fill: "#f1f5f9"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
-    className: "marquee-text",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("text", {
-      y: "58",
-      children: ["\uD83D\uDD25 Breaking News: Continuous Smooth Scrolling Text Marquee \uD83D\uDD25", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("animate", {
-        attributeName: "x",
-        from: "800",
-        to: "-900",
-        dur: "12s",
-        repeatCount: "indefinite"
-      })]
-    })
-  })]
-});
-
-// Modern sleek icons
-const arrowUpIcon = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
-  width: "20",
-  height: "20",
-  viewBox: "0 0 1024 1024",
-  xmlns: "http://www.w3.org/2000/svg",
+  height: "100%",
   style: {
-    transform: 'rotate(180deg)'
+    fontFamily: 'system-ui, -apple-system, sans-serif'
   },
-  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    d: "M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7"
-  })
-});
-const arrowDownIcon = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
-  width: "20",
-  height: "20",
-  viewBox: "0 0 1024 1024",
-  xmlns: "http://www.w3.org/2000/svg",
-  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    d: "M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7"
-  })
-});
-const trashIcon = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
-  width: "20",
-  height: "20",
-  viewBox: "0 0 512 512",
-  xmlns: "http://www.w3.org/2000/svg",
-  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    d: "M320 85.334H192V42.667h128zm-85.333 128H192V384h42.667zm85.333 0h-42.667V384H320zM448 128v42.667h-42.667v298.667H106.667V170.667H64V128zm-85.333 42.667H149.333v256h213.334z",
-    fillRule: "evenodd"
-  })
-});
-const addIcon = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
-  width: "14",
-  height: "14",
-  viewBox: "0 0 24 24",
-  fill: "none",
-  xmlns: "http://www.w3.org/2000/svg",
-  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    d: "M11 4h2v7h7v2h-7v7h-2v-7H4v-2h7z",
-    fill: "currentColor"
-  })
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+    x: "0",
+    y: "0",
+    width: "800",
+    height: "500",
+    fill: "#e2e8f0",
+    rx: "10"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "200",
+    y: "260",
+    fontSize: "32",
+    fontWeight: "bold",
+    fill: "#94a3b8",
+    children: "Before"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+    x: "400",
+    y: "0",
+    width: "400",
+    height: "500",
+    fill: "#cbd5e1",
+    rx: "10"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "600",
+    y: "260",
+    fontSize: "32",
+    fontWeight: "bold",
+    fill: "#64748b",
+    children: "After"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+    x: "398",
+    y: "0",
+    width: "4",
+    height: "500",
+    fill: "#ffffff"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("circle", {
+    cx: "400",
+    cy: "250",
+    r: "24",
+    fill: "#111111",
+    stroke: "#ffffff",
+    strokeWidth: "3"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+    d: "M 390 240 L 380 250 L 390 260",
+    stroke: "#ffffff",
+    strokeWidth: "3",
+    fill: "none",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+    d: "M 410 240 L 420 250 L 410 260",
+    stroke: "#ffffff",
+    strokeWidth: "3",
+    fill: "none",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  })]
 });
 
 /***/ },
 
-/***/ "./src/blocks/marquee/utils/options.js"
-/*!*********************************************!*\
-  !*** ./src/blocks/marquee/utils/options.js ***!
-  \*********************************************/
+/***/ "./src/blocks/newsletter-card/utils/option.js"
+/*!****************************************************!*\
+  !*** ./src/blocks/newsletter-card/utils/option.js ***!
+  \****************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -4735,7 +4228,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./icons */ "./src/blocks/marquee/utils/icons.js");
+/* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./icons */ "./src/blocks/newsletter-card/utils/icons.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
 
@@ -4919,10 +4412,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ },
 
-/***/ "./src/blocks/marquee/editor.scss"
-/*!****************************************!*\
-  !*** ./src/blocks/marquee/editor.scss ***!
-  \****************************************/
+/***/ "./src/blocks/newsletter-card/editor.scss"
+/*!************************************************!*\
+  !*** ./src/blocks/newsletter-card/editor.scss ***!
+  \************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -4931,10 +4424,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ },
 
-/***/ "./src/blocks/marquee/style.scss"
-/*!***************************************!*\
-  !*** ./src/blocks/marquee/style.scss ***!
-  \***************************************/
+/***/ "./src/blocks/newsletter-card/style.scss"
+/*!***********************************************!*\
+  !*** ./src/blocks/newsletter-card/style.scss ***!
+  \***********************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -5013,13 +4506,13 @@ module.exports = window["wp"]["i18n"];
 
 /***/ },
 
-/***/ "./src/blocks/marquee/block.json"
-/*!***************************************!*\
-  !*** ./src/blocks/marquee/block.json ***!
-  \***************************************/
+/***/ "./src/blocks/newsletter-card/block.json"
+/*!***********************************************!*\
+  !*** ./src/blocks/newsletter-card/block.json ***!
+  \***********************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/marquee","version":"1.0.2","title":"Guten Marquee","category":"guten-builder","description":"Infinite scrolling marquee optimized for logos and images with hardware-accelerated physics.","keywords":["marquee","scrolling text","ticker","moving text","loop text"],"textdomain":"guten-builder-blocks","attributes":{"images":{"type":"array","default":[]},"speed":{"type":"number","default":30},"itemHeight":{"type":"number","default":120},"pauseOnHover":{"type":"boolean","default":true},"hoverSlowDown":{"type":"boolean","default":false},"edgeFade":{"type":"boolean","default":true},"openInNewTab":{"type":"boolean","default":false},"liftEffect":{"type":"boolean","default":true},"reverseDirection":{"type":"boolean","default":false},"showProgressRail":{"type":"boolean","default":false},"progressRailPosition":{"type":"string","default":"right"},"showInteractionIndicator":{"type":"boolean","default":false},"highlightActiveCenter":{"type":"boolean","default":false},"siblingBlur":{"type":"boolean","default":false},"siblingBlurIntensity":{"type":"number","default":3},"showFrame":{"type":"boolean","default":true},"frameBg":{"type":"string","default":"#ffffff"},"frameRadius":{"type":"number","default":12},"align":{"type":"string","default":"wide"}},"supports":{"align":["full","wide"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"guten-builder-blocks/newsletter-card","version":"1.0.0","title":"Newsletter Card","category":"guten-builder","icon":"email","description":"Add a visually appealing newsletter subscription card to grow your email list and engage with your audience.","textdomain":"guten-builder-blocks","attributes":{},"supports":{"html":false,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
 
 /***/ }
 
@@ -5154,8 +4647,8 @@ module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		const installedChunks = {
-/******/ 			"blocks/marquee/index": 0,
-/******/ 			"blocks/marquee/style-view": 0
+/******/ 			"blocks/newsletter-card/index": 0,
+/******/ 			"blocks/newsletter-card/style-view": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -5205,7 +4698,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["blocks/marquee/style-view"], () => (__webpack_require__("./src/blocks/marquee/index.js")))
+/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["blocks/newsletter-card/style-view"], () => (__webpack_require__("./src/blocks/newsletter-card/index.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

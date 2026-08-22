@@ -1,13 +1,7 @@
-/*!*******************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/marquee/editor.scss ***!
-  \*******************************************************************************************************************************************************************************************************************************************************/
-/* Editor specific styles for Marquee block */
-.wp-block-guten-builder-blocks-marquee .gbb-mq-empty-state {
-  padding: 20px;
-  text-align: center;
-  background: #f8fafc;
-  border: 1px dashed #cbd5e1;
-}
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/newsletter-card/editor.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
+
 /*!************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!../tr-tools/Components/TemplateSelector/TemplateSelector.scss ***!
   \************************************************************************************************************************************************************************************************************************************************************************************/
@@ -305,7 +299,7 @@
   gap: 12px;
 }
 .gbb-patterns-modal-header .gbb-header-left .gbb-block-logo {
-  background: linear-gradient(-135deg, #F62477, #F62477);
+  background: linear-gradient(135deg, #F62477, #F62477);
   color: #ffffff;
   width: 32px;
   height: 32px;
@@ -364,7 +358,7 @@
 .gbb-patterns-modal-header .gbb-header-right .gbb-header-btn.gbb-heart-count-btn .gbb-heart-badge {
   position: absolute;
   top: -6px;
-  left: -6px;
+  right: -6px;
   background-color: #f43f5e;
   color: #ffffff;
   font-size: 10px;
@@ -391,7 +385,7 @@
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s ease;
-  margin-right: 8px;
+  margin-left: 8px;
   padding: 0;
 }
 .gbb-patterns-modal-header .gbb-header-right .gbb-patterns-modal-close svg {
@@ -677,7 +671,7 @@
 .tr-items-panel-container .tr-items-panel-card {
   background: #ffffff;
   border: 1px solid #cbd5e1;
-  border-right: 4px solid #94a3b8;
+  border-left: 4px solid #94a3b8;
   border-radius: 6px;
   margin-bottom: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
@@ -686,7 +680,7 @@
 }
 .tr-items-panel-container .tr-items-panel-card.is-open {
   border: 1px solid #4f46e5;
-  border-right: 4px solid #4f46e5;
+  border-left: 4px solid #4f46e5;
   box-shadow: 0 4px 12px rgba(79, 70, 229, 0.08);
 }
 .tr-items-panel-container .tr-items-panel-card.is-open .tr-items-panel-header {
@@ -886,7 +880,7 @@
 .tr-color-control__reset-btn:hover {
   color: #475569;
   background-color: #f1f5f9;
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
 }
 .tr-color-control__btn {
   width: 28px;
@@ -1009,7 +1003,7 @@
 .tr-typography-control__reset-btn:hover {
   color: #475569;
   background-color: #f1f5f9;
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
 }
 .tr-typography-control__popover {
   padding: 16px;
@@ -1146,7 +1140,7 @@
   width: 18px;
   height: 18px;
   border-radius: 2px;
-  background-image: conic-gradient(#cccccc -90deg, #ffffff 90deg 180deg, #cccccc 180deg 270deg, #ffffff 270deg);
+  background-image: conic-gradient(#cccccc 90deg, #ffffff 90deg 180deg, #cccccc 180deg 270deg, #ffffff 270deg);
   background-size: 8px 8px;
   border: 1px solid rgba(0, 0, 0, 0.08);
 }
@@ -1160,7 +1154,7 @@
   width: 18px;
   height: 18px;
   border-radius: 2px;
-  background: linear-gradient(-135deg, #ffffff 50%, #888888 50%);
+  background: linear-gradient(135deg, #ffffff 50%, #888888 50%);
   border: 1px solid rgba(0, 0, 0, 0.08);
 }
 .tr-bg-control__solid-wrapper {
@@ -1209,11 +1203,11 @@
   padding: 0;
   position: absolute;
   top: 50%;
-  transform: translate(50%, -50%);
+  transform: translate(-50%, -50%);
   transition: transform 0.1s ease;
 }
 .tr-bg-control__stop-btn:hover {
-  transform: translate(50%, -50%) scale(1.15);
+  transform: translate(-50%, -50%) scale(1.15);
   z-index: 2;
 }
 .tr-bg-control__remove-stop-btn {
@@ -1251,14 +1245,14 @@
   visibility: hidden;
   position: absolute;
   top: 50%;
-  transform: translate(50%, -50%);
+  transform: translate(-50%, -50%);
   transition: opacity 0.15s ease, visibility 0.15s ease, transform 0.1s ease;
   will-change: left, opacity;
   z-index: 4;
 }
 .tr-bg-control__stop-plus[aria-expanded=true] {
   background: #f8fafc;
-  transform: translate(50%, -50%) scale(1.15);
+  transform: translate(-50%, -50%) scale(1.15);
   opacity: 1;
   visibility: visible;
   z-index: 5;
@@ -1290,13 +1284,13 @@
   height: 36px;
   border: 1px solid #8c8f94;
   border-radius: 4px;
-  padding: 0 8px 0 24px;
+  padding: 0 24px 0 8px;
   font-size: 13px;
   color: #1e1e1e;
   background-color: #ffffff;
   background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
-  background-position: left 8px center;
+  background-position: right 8px center;
   background-size: 9px;
   appearance: none;
   cursor: pointer;
@@ -1330,7 +1324,7 @@
   height: 36px;
   border: 1px solid #8c8f94;
   border-radius: 4px;
-  padding: 0 8px 0 22px;
+  padding: 0 22px 0 8px;
   font-size: 13px;
   /* Hide arrow spinners for cleaner UI */
   appearance: textfield;
@@ -1348,7 +1342,7 @@
 }
 .tr-bg-control__degree-symbol {
   position: absolute;
-  left: 8px;
+  right: 8px;
   font-size: 13px;
   color: #666;
   pointer-events: none;
@@ -1373,7 +1367,7 @@
 .tr-bg-control__dial-pointer {
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   transform-origin: center center;
@@ -1381,12 +1375,12 @@
 .tr-bg-control__dial-dot {
   position: absolute;
   top: 4px;
-  right: 50%;
+  left: 50%;
   width: 6px;
   height: 6px;
   background: #007cba;
   border-radius: 50%;
-  transform: translateX(50%);
+  transform: translateX(-50%);
 }
 .tr-bg-control__popover {
   padding: 12px;
@@ -1451,7 +1445,7 @@
 .tr-gradient-control__reset-btn:hover {
   color: #475569;
   background-color: #f1f5f9;
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
 }
 .tr-gradient-control__popover {
   padding: 16px;
@@ -1478,7 +1472,7 @@
 .tr-gradient-control__stop-btn {
   position: absolute;
   top: 50%;
-  transform: translate(50%, -50%);
+  transform: translate(-50%, -50%);
   width: 18px;
   height: 18px;
   border-radius: 50%;
@@ -1491,14 +1485,14 @@
   z-index: 2;
 }
 .tr-gradient-control__stop-btn:hover, .tr-gradient-control__stop-btn[aria-expanded=true] {
-  transform: translate(50%, -50%) scale(1.2);
+  transform: translate(-50%, -50%) scale(1.2);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
   z-index: 3;
 }
 .tr-gradient-control__stop-plus {
   position: absolute;
   top: 50%;
-  transform: translate(50%, -50%);
+  transform: translate(-50%, -50%);
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -1519,7 +1513,7 @@
 }
 .tr-gradient-control__stop-plus:hover {
   background: #f8f9fa;
-  transform: translate(50%, -50%) scale(1.15);
+  transform: translate(-50%, -50%) scale(1.15);
   z-index: 3;
 }
 .tr-gradient-control__controls-row {
@@ -1572,7 +1566,7 @@
   height: 36px;
   border: 1px solid #8c8f94;
   border-radius: 4px;
-  padding: 0 8px 0 22px;
+  padding: 0 22px 0 8px;
   font-size: 13px;
   /* Hide arrow spinners for cleaner UI */
   appearance: textfield;
@@ -1590,7 +1584,7 @@
 }
 .tr-gradient-control__degree-symbol {
   position: absolute;
-  left: 8px;
+  right: 8px;
   font-size: 13px;
   color: #666;
   pointer-events: none;
@@ -1614,8 +1608,8 @@
 .tr-gradient-control__dial-pointer {
   position: absolute;
   top: 0;
-  right: 0;
   left: 0;
+  right: 0;
   bottom: 0;
   display: flex;
   justify-content: center;
@@ -1661,8 +1655,8 @@
   background-color: #F62477 !important;
   padding: 0 !important;
   margin: 0 !important;
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
   display: flex !important;
   align-items: stretch !important;
 }
@@ -1686,8 +1680,8 @@
   margin: 0 !important;
   align-items: center !important;
   justify-content: center !important;
-  padding-right: 6px !important;
   padding-left: 6px !important;
+  padding-right: 6px !important;
   outline: none !important;
   box-shadow: none !important;
   min-width: 22px !important;
@@ -1745,7 +1739,7 @@
 .tr-custom-unit-control .components-input-control__input {
   min-height: 32px !important;
   height: 32px !important;
-  padding-right: 4px !important;
+  padding-left: 4px !important;
 }
 /*!******************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!../tr-tools/Components/BorderControl/BorderControl.scss ***!
@@ -1754,8 +1748,8 @@
   background-color: #F62477 !important;
   padding: 0 !important;
   margin: 0 !important;
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
   display: flex !important;
   align-items: stretch !important;
 }
@@ -1779,8 +1773,8 @@
   margin: 0 !important;
   align-items: center !important;
   justify-content: center !important;
-  padding-right: 6px !important;
   padding-left: 6px !important;
+  padding-right: 6px !important;
   outline: none !important;
   box-shadow: none !important;
   min-width: 22px !important;
@@ -1838,7 +1832,7 @@
 .tr-custom-unit-control .components-input-control__input {
   min-height: 32px !important;
   height: 32px !important;
-  padding-right: 4px !important;
+  padding-left: 4px !important;
 }
 
 .tr-border-control-wrapper {
@@ -1987,8 +1981,8 @@
 .bPlBoxControl .bplUnitControlWrapper .components-input-control__input {
   min-width: 0;
   width: 100%;
-  padding: 0 4px 0 2px !important;
-  text-align: right !important;
+  padding: 0 2px 0 4px !important;
+  text-align: left !important;
   font-size: 12px !important;
   -moz-appearance: textfield;
 }
@@ -2000,8 +1994,8 @@
 }
 
 .bPlBoxControl .bplUnitControlWrapper:first-child .components-input-control__container {
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
 }
 
 /* Reduce suffix size to give input more space */
@@ -2012,13 +2006,13 @@
 .bPlBoxControl .bplUnitControlWrapper .components-custom-select-control__button,
 .bPlBoxControl .bplUnitControlWrapper .components-unit-control__select,
 .bPlBoxControl .bplUnitControlWrapper .components-unit-control__unit-label {
-  padding-right: 2px !important;
   padding-left: 2px !important;
+  padding-right: 2px !important;
   min-width: 18px !important;
 }
 
 .bPlBoxControl .bplUnitControlWrapper:not(:first-child) .components-input-control__container {
-  border-right: none;
+  border-left: none;
 }
 
 .bPlBoxControl .sideLabel {
@@ -2035,15 +2029,15 @@
   align-items: center;
   justify-content: center;
   border: 1px solid #757575;
-  border-right: none;
+  border-left: none;
   background: transparent;
   cursor: pointer;
   color: #1e293b;
 }
 
 .bPlBoxControl .bplBoxControlLinkButton:last-child {
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
 
 .bPlBoxControl .bplBoxControlLinkButton:hover {
@@ -2075,7 +2069,7 @@
   box-shadow: none;
 }
 .gbb-inspector-docs-wrapper a svg {
-  margin-right: 4px;
+  margin-left: 4px;
 }
 /*!****************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!../tr-tools/Components/MediaControl/MediaControl.scss ***!
@@ -2159,3 +2153,5 @@
   flex-grow: 1;
   width: 100%;
 }
+
+/*# sourceMappingURL=index.css.map*/

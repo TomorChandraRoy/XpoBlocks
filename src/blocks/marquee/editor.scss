@@ -1,4 +1,9 @@
 /* Editor specific styles for Marquee block */
-.kh-mq-editor-preview {
-	border: 1px dashed rgba(0, 0, 0, 0.08);
+.wp-block-guten-builder-blocks-marquee {
+    .gbb-mq-empty-state {
+        padding: 20px;
+        text-align: center;
+        background: #f8fafc;
+        border: 1px dashed #cbd5e1;
+    }
 }

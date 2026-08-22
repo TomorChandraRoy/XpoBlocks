@@ -4384,23 +4384,23 @@ __webpack_require__.r(__webpack_exports__);
 
 const DividerIcon = {
   background: '#FCE7F3',
-  foreground: '#4F46E5',
+  foreground: '#F62477',
   src: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     viewBox: "0 0 24 24",
     width: "24",
     height: "24",
     style: {
-      fill: '#4F46E5'
+      fill: '#F62477'
     },
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
       d: "M3 11h18v2H3z",
-      fill: "#4F46E5"
+      fill: "#F62477"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("circle", {
       cx: "12",
       cy: "12",
       r: "3",
-      fill: "#4F46E5"
+      fill: "#F62477"
     })]
   })
 };

@@ -1,10 +1,10 @@
 export const DividerIcon = {
   background: '#FCE7F3',
-  foreground: '#4F46E5',
+  foreground: '#F62477',
   src: (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style={{ fill: '#4F46E5' }}>
-      <path d="M3 11h18v2H3z" fill="#4F46E5" />
-      <circle cx="12" cy="12" r="3" fill="#4F46E5" />
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style={{ fill: '#F62477' }}>
+      <path d="M3 11h18v2H3z" fill="#F62477" />
+      <circle cx="12" cy="12" r="3" fill="#F62477" />
     </svg>
   ),
 };
@@ -33,15 +33,15 @@ export const TemplateOneSvg = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="100%" height="100%" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
     {/* Background */}
     <rect x="0" y="0" width="800" height="200" fill="#f8fafc" rx="10" />
-    
+
     {/* Left Line */}
     <rect x="50" y="98" width="300" height="4" fill="#3b82f6" rx="2" />
-    
+
     {/* Text */}
     <text x="400" y="110" fontSize="36" fill="#3b82f6" textAnchor="middle" fontWeight="500">
       Text
     </text>
-    
+
     {/* Right Line */}
     <rect x="450" y="98" width="300" height="4" fill="#3b82f6" rx="2" />
   </svg>

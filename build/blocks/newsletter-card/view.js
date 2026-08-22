@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/blocks/marquee/Components/Common/DynamicStyle.js"
-/*!**************************************************************!*\
-  !*** ./src/blocks/marquee/Components/Common/DynamicStyle.js ***!
-  \**************************************************************/
+/***/ "./src/blocks/newsletter-card/Components/Common/DynamicStyles.js"
+/*!***********************************************************************!*\
+  !*** ./src/blocks/newsletter-card/Components/Common/DynamicStyles.js ***!
+  \***********************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -15,10 +15,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 
-// import { getBorderRadiusCss, getBackgroundCss, getShadowCss } from 'tr-tools';
-// import { tabBreakpoint, mobileBreakpoint } from 'tr-tools/utils/options';
-
-const DynamicStyle = ({
+const DynamicStyles = ({
   attributes,
   id
 }) => {
@@ -31,171 +28,38 @@ const DynamicStyle = ({
     }
   });
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DynamicStyle);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DynamicStyles);
 
 /***/ },
 
-/***/ "./src/blocks/marquee/Components/Common/Templates/Marquee.jsx"
-/*!********************************************************************!*\
-  !*** ./src/blocks/marquee/Components/Common/Templates/Marquee.jsx ***!
-  \********************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _TemplateOne__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TemplateOne */ "./src/blocks/marquee/Components/Common/Templates/TemplateOne.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
-
-
-const TEMPLATES = {
-  'template-1': _TemplateOne__WEBPACK_IMPORTED_MODULE_0__["default"]
-};
-const Marquee = ({
-  attributes,
-  setAttributes
-}) => {
-  const {
-    selectedTemplate = 'template-1'
-  } = attributes || {};
-  const TemplateComponent = TEMPLATES[selectedTemplate] || TEMPLATES['template-1'];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(TemplateComponent, {
-    attributes: attributes,
-    setAttributes: setAttributes
-  });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Marquee);
-
-/***/ },
-
-/***/ "./src/blocks/marquee/Components/Common/Templates/TemplateOne.jsx"
-/*!************************************************************************!*\
-  !*** ./src/blocks/marquee/Components/Common/Templates/TemplateOne.jsx ***!
-  \************************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-
-const TemplateOne = ({
-  attributes
-}) => {
-  const {
-    images = [],
-    speed,
-    pauseOnHover,
-    reverseDirection,
-    edgeFade,
-    itemHeight
-  } = attributes;
-  if (!images || images.length === 0) {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-      className: "gbb-mq-empty-state",
-      children: "Add images to Marquee Settings"
-    });
-  }
-  const trackStyle = {
-    animationDuration: `${speed}s`,
-    animationDirection: reverseDirection ? 'reverse' : 'normal',
-    '--mq-speed': `${speed}s`
-  };
-  let containerClass = 'gbb-mq-container';
-  if (pauseOnHover) containerClass += ' pause-on-hover';
-  if (edgeFade) containerClass += ' has-edge-fade';
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-    className: "gbb-logo-cloud-section",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-      className: "gbb-logo-cloud-wrapper",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-        className: "gbb-border-beam-inner"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-        className: "gbb-logo-text-container",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-          className: "gbb-logo-text",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
-            className: "gbb-logo-text-wave",
-            children: ["Trusted by 1000+ companies ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-              className: "gbb-hide-mobile",
-              children: "around the world"
-            })]
-          })
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-        className: "gbb-logo-content",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-          className: containerClass,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-            className: "gbb-mq-track",
-            style: trackStyle,
-            children: [...images, ...images].map((img, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-              className: "gbb-mq-item",
-              children: img.link ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
-                href: img.link,
-                target: attributes.openInNewTab ? '_blank' : '_self',
-                rel: "noopener noreferrer",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
-                  src: img.url,
-                  alt: img.alt,
-                  style: {
-                    height: `${itemHeight}px`,
-                    objectFit: 'contain'
-                  }
-                })
-              }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
-                src: img.url,
-                alt: img.alt,
-                style: {
-                  height: `${itemHeight}px`,
-                  objectFit: 'contain'
-                }
-              })
-            }, i))
-          })
-        })
-      })]
-    })
-  });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TemplateOne);
-
-/***/ },
-
-/***/ "./src/blocks/marquee/view.js"
-/*!************************************!*\
-  !*** ./src/blocks/marquee/view.js ***!
-  \************************************/
+/***/ "./src/blocks/newsletter-card/view.js"
+/*!********************************************!*\
+  !*** ./src/blocks/newsletter-card/view.js ***!
+  \********************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-dom/client */ "react-dom/client");
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_dom_client__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/blocks/marquee/style.scss");
-/* harmony import */ var _Components_Common_DynamicStyle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Components/Common/DynamicStyle */ "./src/blocks/marquee/Components/Common/DynamicStyle.js");
-/* harmony import */ var _Components_Common_Templates_Marquee__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Components/Common/Templates/Marquee */ "./src/blocks/marquee/Components/Common/Templates/Marquee.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
-
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/blocks/newsletter-card/style.scss");
+/* harmony import */ var _Components_Common_DynamicStyles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Components/Common/DynamicStyles */ "./src/blocks/newsletter-card/Components/Common/DynamicStyles.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const containers = document.querySelectorAll('.wp-block-guten-builder-blocks-marquee');
+  const containers = document.querySelectorAll('.wp-block-guten-builder-blocks-newsletter-card');
   containers.forEach(container => {
     if (container.dataset.initialized) return;
     container.dataset.initialized = 'true';
     const attributes = JSON.parse(container.dataset.attributes);
-    (0,react_dom_client__WEBPACK_IMPORTED_MODULE_0__.createRoot)(container).render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Common_DynamicStyle__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    (0,react_dom_client__WEBPACK_IMPORTED_MODULE_0__.createRoot)(container).render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Components_Common_DynamicStyles__WEBPACK_IMPORTED_MODULE_2__["default"], {
         attributes: attributes,
         id: container.id
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Common_Templates_Marquee__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Accordion, {
         attributes,
         id: container.id
       })]
@@ -206,10 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /***/ },
 
-/***/ "./src/blocks/marquee/style.scss"
-/*!***************************************!*\
-  !*** ./src/blocks/marquee/style.scss ***!
-  \***************************************/
+/***/ "./src/blocks/newsletter-card/style.scss"
+/*!***********************************************!*\
+  !*** ./src/blocks/newsletter-card/style.scss ***!
+  \***********************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -369,8 +233,8 @@ module.exports = window["ReactJSXRuntime"];
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		const installedChunks = {
-/******/ 			"blocks/marquee/view": 0,
-/******/ 			"blocks/marquee/style-view": 0
+/******/ 			"blocks/newsletter-card/view": 0,
+/******/ 			"blocks/newsletter-card/style-view": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -420,7 +284,7 @@ module.exports = window["ReactJSXRuntime"];
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["blocks/marquee/style-view"], () => (__webpack_require__("./src/blocks/marquee/view.js")))
+/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["blocks/newsletter-card/style-view"], () => (__webpack_require__("./src/blocks/newsletter-card/view.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

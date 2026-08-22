@@ -12,6 +12,7 @@
     "moving text",
     "loop text"
   ],
+  "textdomain": "guten-builder-blocks",
   "attributes": {
     "images": {
       "type": "array",
@@ -87,35 +88,18 @@
     },
     "align": {
       "type": "string",
-      "default": "full"
+      "default": "wide"
     }
   },
   "supports": {
     "align": [
       "full",
       "wide"
-    ],
-    "spacing": {
-      "margin": true,
-      "padding": false,
-      "blockGap": false
-    },
-    "color": {
-      "background": true,
-      "text": true,
-      "gradients": true
-    },
-    "__experimentalBorder": {
-      "color": true,
-      "radius": true,
-      "width": true,
-      "style": true
-    }
+    ]
   },
-  "textdomain": "guten-builder-blocks",
   "editorScript": "file:./index.js",
-  "viewScript": "file:./view.js",
-  "style": "file:./style-index.css",
   "editorStyle": "file:./index.css",
+  "style": "file:./style-view.css",
+  "viewScript": "file:./view.js",
   "render": "file:./render.php"
 }
