@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { PanelBody, ToggleControl, RangeControl, TextControl, Button, Tooltip, __experimentalSpacer as Spacer } from '@wordpress/components';
+import { PanelBody, ToggleControl, RangeControl, SelectControl, TextControl, Button, Tooltip, __experimentalSpacer as Spacer } from '@wordpress/components';
 import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 import { addIcon, arrowDownIcon, arrowUpIcon, trashIcon } from '../../../../utils/icons';
 
@@ -10,7 +10,26 @@ import { pxUnit, remUnit, emUnit, vwUnit, perUnit } from 'tr-tools/utils/options
 
 const General = ({ attributes, setAttributes }) => {
 	const [imageUrl, setImageUrl] = useState('');
-	const {images,speed,reverseDirection,pauseOnHover,hoverSlowDown,openInNewTab,hideOnMobile,hideOnDesktop, itemHeight, containerMaxWidth, showBorder, showTopText} = attributes;
+	const {
+		images,
+		speed,
+		reverseDirection,
+		pauseOnHover,
+		hoverSlowDown,
+		openInNewTab,
+		itemHeight,
+		containerMaxWidth,
+		showBorder,
+		showTopText,
+		edgeFade,
+		liftEffect,
+		siblingBlur,
+		siblingBlurIntensity,
+		showProgressRail,
+		progressRailPosition,
+		showInteractionIndicator,
+		highlightActiveCenter,
+	} = attributes;
 
 	const moveImage = ( index, direction ) => {
 		if ( ( direction === -1 && index === 0 ) || ( direction === 1 && index === images.length - 1 ) ) {
@@ -130,6 +149,8 @@ const General = ({ attributes, setAttributes }) => {
         <ToggleControl label={__('Show Container Border', 'guten-builder-blocks')} checked={showBorder} onChange={val => setAttributes({ showBorder: val })} />
         <Spacer />
         <ToggleControl label={__('Show Top Text', 'guten-builder-blocks')} checked={showTopText} onChange={val => setAttributes({ showTopText: val })} />
+        <Spacer />
+        <ToggleControl label={__('Edge Fade Effect', 'guten-builder-blocks')} checked={edgeFade} onChange={val => setAttributes({ edgeFade: val })} />
       </PanelBody>
 
       <PanelBody className="bPlPanelBody"  title={__('Movement & Engine', 'guten-builder-blocks')} initialOpen={false}>
@@ -160,9 +181,60 @@ const General = ({ attributes, setAttributes }) => {
         />
       </PanelBody>
 
-      <PanelBody title={__('📱 Visibility Settings', 'guten-builder-blocks')} initialOpen={false}>
-        <ToggleControl label={__('Hide on Mobile', 'guten-builder-blocks')} checked={hideOnMobile} onChange={val => setAttributes({ hideOnMobile: val })} />
-        <ToggleControl label={__('Hide on Desktop', 'guten-builder-blocks')} checked={hideOnDesktop} onChange={val => setAttributes({ hideOnDesktop: val })} />
+      <PanelBody className="bPlPanelBody" title={ __( 'Smart Addons', 'guten-builder-blocks' ) } initialOpen={ false }>
+        <ToggleControl
+          label={ __( 'Hover Lift Effect', 'guten-builder-blocks' ) }
+          checked={ liftEffect }
+          onChange={ ( val ) => setAttributes( { liftEffect: val } ) }
+          help={ __( 'Elevates the hovered logo organically.', 'guten-builder-blocks' ) }
+        />
+        <hr />
+        <ToggleControl
+          label={ __( 'Sibling Focus Blur', 'guten-builder-blocks' ) }
+          checked={ siblingBlur }
+          onChange={ ( val ) => setAttributes( { siblingBlur: val } ) }
+          help={ __( 'Blurs all other logos when one is hovered.', 'guten-builder-blocks' ) }
+        />
+        { siblingBlur && (
+          <RangeControl
+            label={ __( 'Blur Intensity (px)', 'guten-builder-blocks' ) }
+            value={ siblingBlurIntensity }
+            onChange={ ( val ) => setAttributes( { siblingBlurIntensity: val } ) }
+            min={ 1 }
+            max={ 10 }
+          />
+        ) }
+        <hr />
+        <ToggleControl
+          label={ __( 'Segmented Progress Rail', 'guten-builder-blocks' ) }
+          checked={ showProgressRail }
+          onChange={ ( val ) => setAttributes( { showProgressRail: val } ) }
+          help={ __( 'Displays a tracker based on original items.', 'guten-builder-blocks' ) }
+        />
+        { showProgressRail && (
+          <SelectControl
+            label={ __( 'Rail Position', 'guten-builder-blocks' ) }
+            value={ progressRailPosition }
+            options={ [
+              { label: __( 'Right', 'guten-builder-blocks' ), value: 'right' },
+              { label: __( 'Bottom', 'guten-builder-blocks' ), value: 'bottom' }
+            ] }
+            onChange={ ( val ) => setAttributes( { progressRailPosition: val } ) }
+          />
+        ) }
+        <hr />
+        <ToggleControl
+          label={ __( 'Pause / Slow State Indicator', 'guten-builder-blocks' ) }
+          checked={ showInteractionIndicator }
+          onChange={ ( val ) => setAttributes( { showInteractionIndicator: val } ) }
+          help={ __( 'Shows a state badge when marquee is paused or slowed.', 'guten-builder-blocks' ) }
+        />
+        <ToggleControl
+          label={ __( 'Active Center Highlight', 'guten-builder-blocks' ) }
+          checked={ highlightActiveCenter }
+          onChange={ ( val ) => setAttributes( { highlightActiveCenter: val } ) }
+          help={ __( 'Scales and highlights the item closest to the center focus area.', 'guten-builder-blocks' ) }
+        />
       </PanelBody>
     </>
   );

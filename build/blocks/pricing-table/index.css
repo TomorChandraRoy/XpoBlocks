@@ -1,13 +1,1 @@
-/*!*************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/pricing-table/editor.scss ***!
-  \*************************************************************************************************************************************************************************************************************************************************************/
-/* Editor styles for Pricing Table block */
-.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-name,
-.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-currency,
-.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-price,
-.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-period,
-.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-button {
-  display: inline-block;
-}
-
-/*# sourceMappingURL=index.css.map*/
+.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-button,.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-currency,.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-name,.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-period,.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-price{display:inline-block}
