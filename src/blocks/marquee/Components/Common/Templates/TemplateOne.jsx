@@ -1,5 +1,5 @@
 const TemplateOne = ({ attributes }) => {
-  const { images = [], speed, pauseOnHover, reverseDirection, edgeFade, itemHeight, itemWidth, hoverSlowDown } = attributes;
+  const { images = [], speed, pauseOnHover, reverseDirection, edgeFade, hoverSlowDown, showBorder = true, showTopText = true } = attributes;
 
   if (!images || images.length === 0) {
     return <div className="gbb-mq-empty-state">Add images to Marquee Settings</div>;
@@ -28,16 +28,18 @@ const TemplateOne = ({ attributes }) => {
     <div className="gbb-logo-cloud-section">
       <div className="gbb-logo-cloud-wrapper">
         {/* Static Border */}
-        <div className="gbb-border-beam-inner"></div>
+        {showBorder && <div className="gbb-border-beam-inner"></div>}
 
         {/* Top Text */}
-        <div className="gbb-logo-text-container">
-          <p className="gbb-logo-text">
-            <span className="gbb-logo-text-wave">
-              Trusted by 1000+ companies <span className="gbb-hide-mobile">around the world</span>
-            </span>
-          </p>
-        </div>
+        {showTopText && (
+          <div className="gbb-logo-text-container">
+            <p className="gbb-logo-text">
+              <span className="gbb-logo-text-wave">
+                Trusted by 1000+ companies <span className="gbb-hide-mobile">around the world</span>
+              </span>
+            </p>
+          </div>
+        )}
 
         {/* Marquee Content */}
         <div className="gbb-logo-content">

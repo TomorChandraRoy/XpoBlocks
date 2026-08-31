@@ -23,14 +23,12 @@ const DynamicStyle = ({
   id
 }) => {
   const {
-    itemWidth,
     itemHeight,
     containerMaxWidth
   } = attributes;
 
   // Handle older blocks where itemHeight was a number
   const getVal = (val, def) => (typeof val === 'number' ? `${val}px` : val) || def;
-  const finalWidth = getVal(itemWidth, 'auto');
   const finalHeight = getVal(itemHeight, '120px');
   const finalMaxWidth = getVal(containerMaxWidth, '1024px');
   const mainSl = `#${id}`;
@@ -51,9 +49,7 @@ const DynamicStyle = ({
 
           ${backendImgClass},
           ${frontendImgClass} {
-            width: ${finalWidth};
             height: ${finalHeight};
-            object-fit: contain;
           }
         `
     }
@@ -120,9 +116,9 @@ const TemplateOne = ({
     pauseOnHover,
     reverseDirection,
     edgeFade,
-    itemHeight,
-    itemWidth,
-    hoverSlowDown
+    hoverSlowDown,
+    showBorder = true,
+    showTopText = true
   } = attributes;
   if (!images || images.length === 0) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
@@ -151,9 +147,9 @@ const TemplateOne = ({
     className: "gbb-logo-cloud-section",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
       className: "gbb-logo-cloud-wrapper",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      children: [showBorder && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
         className: "gbb-border-beam-inner"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      }), showTopText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
         className: "gbb-logo-text-container",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
           className: "gbb-logo-text",

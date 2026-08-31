@@ -24,8 +24,8 @@
 }
 .wp-block-guten-builder-blocks-marquee .gbb-logo-cloud-section,
 .guten-builder-marquee-wrapper .gbb-logo-cloud-section {
-  padding: 40px 20px;
-  min-height: 300px;
+  min-height: 170px;
+  padding: 15px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -152,6 +152,11 @@
   justify-content: center;
   transition: transform 0.3s ease;
   flex-shrink: 0;
+}
+.wp-block-guten-builder-blocks-marquee .gbb-logo-cloud-section .gbb-logo-cloud-wrapper .gbb-logo-content .gbb-mq-container .gbb-mq-track .gbb-mq-group .gbb-mq-item img,
+.guten-builder-marquee-wrapper .gbb-logo-cloud-section .gbb-logo-cloud-wrapper .gbb-logo-content .gbb-mq-container .gbb-mq-track .gbb-mq-group .gbb-mq-item img {
+  width: auto;
+  object-fit: contain;
 }
 .wp-block-guten-builder-blocks-marquee .gbb-logo-cloud-section .gbb-logo-cloud-wrapper .gbb-logo-content .gbb-mq-container .gbb-mq-track .gbb-mq-group .gbb-mq-item a:focus, .wp-block-guten-builder-blocks-marquee .gbb-logo-cloud-section .gbb-logo-cloud-wrapper .gbb-logo-content .gbb-mq-container .gbb-mq-track .gbb-mq-group .gbb-mq-item img:focus,
 .guten-builder-marquee-wrapper .gbb-logo-cloud-section .gbb-logo-cloud-wrapper .gbb-logo-content .gbb-mq-container .gbb-mq-track .gbb-mq-group .gbb-mq-item a:focus,

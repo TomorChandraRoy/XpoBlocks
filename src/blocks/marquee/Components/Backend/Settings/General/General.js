@@ -1,15 +1,16 @@
 import { __ } from '@wordpress/i18n';
-import { PanelBody, ToggleControl, RangeControl, TextControl, Button, Tooltip } from '@wordpress/components';
+import { PanelBody, ToggleControl, RangeControl, TextControl, Button, Tooltip, __experimentalSpacer as Spacer } from '@wordpress/components';
 import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 import { addIcon, arrowDownIcon, arrowUpIcon, trashIcon } from '../../../../utils/icons';
 
 
 import { useState } from '@wordpress/element';
 import { UnitControl } from 'tr-tools';
+import { pxUnit, remUnit, emUnit, vwUnit, perUnit } from 'tr-tools/utils/options';
 
 const General = ({ attributes, setAttributes }) => {
 	const [imageUrl, setImageUrl] = useState('');
-	const {images,speed,reverseDirection,pauseOnHover,hoverSlowDown,openInNewTab,hideOnMobile,hideOnDesktop, itemWidth, itemHeight, containerMaxWidth} = attributes;
+	const {images,speed,reverseDirection,pauseOnHover,hoverSlowDown,openInNewTab,hideOnMobile,hideOnDesktop, itemHeight, containerMaxWidth, showBorder, showTopText} = attributes;
 
 	const moveImage = ( index, direction ) => {
 		if ( ( direction === -1 && index === 0 ) || ( direction === 1 && index === images.length - 1 ) ) {
@@ -121,17 +122,17 @@ const General = ({ attributes, setAttributes }) => {
         </MediaUploadCheck>
       </PanelBody>
 
-      <PanelBody title={__('📏 Dimensions & Layout', 'guten-builder-blocks')} initialOpen={false}>
-        <UnitControl label={__('Container Max Width', 'guten-builder-blocks')} value={containerMaxWidth} onChange={val => setAttributes({ containerMaxWidth: val })} />
-        <div style={{ height: '12px' }} />
-        <hr />
-        <div style={{ height: '12px' }} />
-        <UnitControl label={__('Image Width', 'guten-builder-blocks')} value={itemWidth} onChange={val => setAttributes({ itemWidth: val })} />
-        <div style={{ height: '12px' }} />
-        <UnitControl label={__('Image Height', 'guten-builder-blocks')} value={itemHeight} onChange={val => setAttributes({ itemHeight: val })} />
+      <PanelBody className="bPlPanelBody" title={__('Dimensions & Layout', 'guten-builder-blocks')} initialOpen={false}>
+        <UnitControl label={__('Container Max Width', 'guten-builder-blocks')} value={containerMaxWidth} onChange={val => setAttributes({ containerMaxWidth: val })} units={[pxUnit(), remUnit(), emUnit(), vwUnit(), perUnit()]} defaultVal="1024px" />
+        <Spacer />
+        <UnitControl label={__('Image Size', 'guten-builder-blocks')} value={itemHeight} onChange={val => setAttributes({ itemHeight: val })} units={[pxUnit(), remUnit(), emUnit()]} defaultVal="100px" />
+        <Spacer />
+        <ToggleControl label={__('Show Container Border', 'guten-builder-blocks')} checked={showBorder} onChange={val => setAttributes({ showBorder: val })} />
+        <Spacer />
+        <ToggleControl label={__('Show Top Text', 'guten-builder-blocks')} checked={showTopText} onChange={val => setAttributes({ showTopText: val })} />
       </PanelBody>
 
-      <PanelBody title={__('⚙️ Movement & Engine', 'guten-builder-blocks')} initialOpen={false}>
+      <PanelBody className="bPlPanelBody"  title={__('⚙️ Movement & Engine', 'guten-builder-blocks')} initialOpen={false}>
         <RangeControl label={__('Base Speed (s)', 'guten-builder-blocks')} value={speed} onChange={val => setAttributes({ speed: val })} min={1} max={200} help={__('Lower number means faster loop duration.', 'guten-builder-blocks')} />
         <ToggleControl label={__('Reverse Direction', 'guten-builder-blocks')} checked={reverseDirection} onChange={val => setAttributes({ reverseDirection: val })} />
         <hr />

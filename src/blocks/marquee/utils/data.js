@@ -10,7 +10,9 @@ export const templateData = {
       label: __('Template 1', 'guten-builder-blocks'),
       tag: __('Logo Marquee', 'guten-builder-blocks'),
       icon: TemplateOneSvg,
-      attributes: {}
+      attributes: {
+        
+      }
     }
   ]
 };

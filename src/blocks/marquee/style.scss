@@ -14,8 +14,8 @@
   width: 100%;
 
   .gbb-logo-cloud-section {
-    padding: 40px 20px;
-    min-height: 300px;
+    min-height: 170px;
+    padding: 15px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -138,6 +138,11 @@
                 justify-content: center;
                 transition: transform 0.3s ease;
                 flex-shrink: 0;
+
+                img {
+                  width: auto;
+                  object-fit: contain;
+                }
 
                 a:focus, img:focus {
                   outline: none !important;

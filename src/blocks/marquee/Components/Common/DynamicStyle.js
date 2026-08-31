@@ -2,11 +2,10 @@
 // import { tabBreakpoint, mobileBreakpoint } from 'tr-tools/utils/options';
 
 const DynamicStyle = ({ attributes, id }) => {
-  const { itemWidth, itemHeight, containerMaxWidth } = attributes;
+  const { itemHeight, containerMaxWidth } = attributes;
 
   // Handle older blocks where itemHeight was a number
   const getVal = (val, def) => (typeof val === 'number' ? `${val}px` : val) || def;
-  const finalWidth = getVal(itemWidth, 'auto');
   const finalHeight = getVal(itemHeight, '120px');
   const finalMaxWidth = getVal(containerMaxWidth, '1024px');
 
@@ -31,9 +30,7 @@ const DynamicStyle = ({ attributes, id }) => {
 
           ${backendImgClass},
           ${frontendImgClass} {
-            width: ${finalWidth};
             height: ${finalHeight};
-            object-fit: contain;
           }
         `,
       }}

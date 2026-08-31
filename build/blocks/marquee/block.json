@@ -22,21 +22,25 @@
       "type": "array",
       "default": []
     },
-    "speed": {
-      "type": "number",
-      "default": 30
-    },
     "itemHeight": {
       "type": "string",
-      "default": "120px"
+      "default": "100px"
     },
-    "itemWidth": {
-      "type": "string",
-      "default": "auto"
+    "showBorder": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTopText": {
+      "type": "boolean",
+      "default": true
     },
     "containerMaxWidth": {
       "type": "string",
       "default": "1024px"
+    },
+    "speed": {
+      "type": "number",
+      "default": 30
     },
     "pauseOnHover": {
       "type": "boolean",
