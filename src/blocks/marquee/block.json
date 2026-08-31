@@ -20,6 +20,10 @@
       "type": "string",
       "default": "100px"
     },
+    "containerMaxWidth": {
+      "type": "string",
+      "default": "1024px"
+    },
     "showBorder": {
       "type": "boolean",
       "default": true
@@ -28,13 +32,13 @@
       "type": "boolean",
       "default": true
     },
-    "containerMaxWidth": {
-      "type": "string",
-      "default": "1024px"
-    },
     "speed": {
       "type": "number",
       "default": 30
+    },
+    "reverseDirection": {
+      "type": "boolean",
+      "default": false
     },
     "pauseOnHover": {
       "type": "boolean",
@@ -56,10 +60,7 @@
       "type": "boolean",
       "default": true
     },
-    "reverseDirection": {
-      "type": "boolean",
-      "default": false
-    },
+
     "showProgressRail": {
       "type": "boolean",
       "default": false

@@ -132,7 +132,7 @@ const General = ({ attributes, setAttributes }) => {
         <ToggleControl label={__('Show Top Text', 'guten-builder-blocks')} checked={showTopText} onChange={val => setAttributes({ showTopText: val })} />
       </PanelBody>
 
-      <PanelBody className="bPlPanelBody"  title={__('⚙️ Movement & Engine', 'guten-builder-blocks')} initialOpen={false}>
+      <PanelBody className="bPlPanelBody"  title={__('Movement & Engine', 'guten-builder-blocks')} initialOpen={false}>
         <RangeControl label={__('Base Speed (s)', 'guten-builder-blocks')} value={speed} onChange={val => setAttributes({ speed: val })} min={1} max={200} help={__('Lower number means faster loop duration.', 'guten-builder-blocks')} />
         <ToggleControl label={__('Reverse Direction', 'guten-builder-blocks')} checked={reverseDirection} onChange={val => setAttributes({ reverseDirection: val })} />
         <hr />

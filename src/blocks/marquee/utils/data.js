@@ -11,7 +11,14 @@ export const templateData = {
       tag: __('Logo Marquee', 'guten-builder-blocks'),
       icon: TemplateOneSvg,
       attributes: {
-        
+        itemHeight: '100px',
+        containerMaxWidth: '1024px',
+        showBorder: true,
+        showTopText: true,
+        speed: 30,
+        reverseDirection: false,
+        pauseOnHover: true,
+        hoverSlowDown: false
       }
     }
   ]

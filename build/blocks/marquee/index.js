@@ -4058,7 +4058,7 @@ const General = ({
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('⚙️ Movement & Engine', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Movement & Engine', 'guten-builder-blocks'),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Base Speed (s)', 'guten-builder-blocks'),
@@ -4592,7 +4592,16 @@ const templateData = {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template 1', 'guten-builder-blocks'),
     tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Logo Marquee', 'guten-builder-blocks'),
     icon: _icons__WEBPACK_IMPORTED_MODULE_1__.TemplateOneSvg,
-    attributes: {}
+    attributes: {
+      itemHeight: '100px',
+      containerMaxWidth: '1024px',
+      showBorder: true,
+      showTopText: true,
+      speed: 30,
+      reverseDirection: false,
+      pauseOnHover: true,
+      hoverSlowDown: false
+    }
   }]
 };
 
@@ -5074,7 +5083,7 @@ module.exports = window["wp"]["i18n"];
   \***************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/marquee","version":"1.0.2","title":"Guten Marquee","category":"guten-builder","description":"Infinite scrolling marquee optimized for logos and images with hardware-accelerated physics.","keywords":["marquee","scrolling text","ticker","moving text","loop text"],"textdomain":"guten-builder-blocks","attributes":{"selectedTemplate":{"type":"string","default":""},"images":{"type":"array","default":[]},"itemHeight":{"type":"string","default":"100px"},"showBorder":{"type":"boolean","default":true},"showTopText":{"type":"boolean","default":true},"containerMaxWidth":{"type":"string","default":"1024px"},"speed":{"type":"number","default":30},"pauseOnHover":{"type":"boolean","default":true},"hoverSlowDown":{"type":"boolean","default":false},"edgeFade":{"type":"boolean","default":true},"openInNewTab":{"type":"boolean","default":false},"liftEffect":{"type":"boolean","default":true},"reverseDirection":{"type":"boolean","default":false},"showProgressRail":{"type":"boolean","default":false},"progressRailPosition":{"type":"string","default":"right"},"showInteractionIndicator":{"type":"boolean","default":false},"highlightActiveCenter":{"type":"boolean","default":false},"siblingBlur":{"type":"boolean","default":false},"siblingBlurIntensity":{"type":"number","default":3},"showFrame":{"type":"boolean","default":true},"frameBg":{"type":"string","default":"#ffffff"},"frameRadius":{"type":"number","default":12},"align":{"type":"string","default":"wide"}},"supports":{"align":["full","wide"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/marquee","version":"1.0.2","title":"Guten Marquee","category":"guten-builder","description":"Infinite scrolling marquee optimized for logos and images with hardware-accelerated physics.","keywords":["marquee","scrolling text","ticker","moving text","loop text"],"textdomain":"guten-builder-blocks","attributes":{"selectedTemplate":{"type":"string","default":""},"images":{"type":"array","default":[]},"itemHeight":{"type":"string","default":"100px"},"containerMaxWidth":{"type":"string","default":"1024px"},"showBorder":{"type":"boolean","default":true},"showTopText":{"type":"boolean","default":true},"speed":{"type":"number","default":30},"reverseDirection":{"type":"boolean","default":false},"pauseOnHover":{"type":"boolean","default":true},"hoverSlowDown":{"type":"boolean","default":false},"edgeFade":{"type":"boolean","default":true},"openInNewTab":{"type":"boolean","default":false},"liftEffect":{"type":"boolean","default":true},"showProgressRail":{"type":"boolean","default":false},"progressRailPosition":{"type":"string","default":"right"},"showInteractionIndicator":{"type":"boolean","default":false},"highlightActiveCenter":{"type":"boolean","default":false},"siblingBlur":{"type":"boolean","default":false},"siblingBlurIntensity":{"type":"number","default":3},"showFrame":{"type":"boolean","default":true},"frameBg":{"type":"string","default":"#ffffff"},"frameRadius":{"type":"number","default":12},"align":{"type":"string","default":"wide"}},"supports":{"align":["full","wide"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
 
 /***/ }
 
