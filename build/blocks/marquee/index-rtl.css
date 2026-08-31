@@ -15,6 +15,134 @@
   pointer-events: none;
   cursor: default;
 }
+.wp-block-guten-builder-blocks-marquee {
+  /* Settings sidebar / Inspector controls styles */
+}
+.wp-block-guten-builder-blocks-marquee .gbb-mq-permission-error {
+  color: #ef4444;
+  font-size: 12px;
+}
+.wp-block-guten-builder-blocks-marquee .gbb-mq-add-btn {
+  width: 100%;
+  justify-content: center !important;
+  margin-bottom: 15px;
+  background-color: #F62477 !important;
+  border-color: #F62477 !important;
+  color: #fff !important;
+}
+.wp-block-guten-builder-blocks-marquee .gbb-mq-url-input-container {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+  align-items: flex-end;
+  background: #f8fafc;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+.wp-block-guten-builder-blocks-marquee .gbb-mq-url-input-container .gbb-mq-url-input-wrapper {
+  flex-grow: 1;
+}
+.wp-block-guten-builder-blocks-marquee .gbb-mq-url-input-container .gbb-mq-url-input-wrapper span {
+  font-size: 12px;
+  font-weight: 500;
+  color: #64748b;
+}
+.wp-block-guten-builder-blocks-marquee .gbb-mq-url-input-container .gbb-mq-url-input-wrapper .components-text-control__input {
+  background: #ffffff;
+}
+.wp-block-guten-builder-blocks-marquee .gbb-mq-url-input-container .components-button {
+  height: 36px;
+}
+.wp-block-guten-builder-blocks-marquee .gbb-mq-images-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 350px;
+  overflow-y: auto;
+  padding-left: 6px;
+}
+.wp-block-guten-builder-blocks-marquee .gbb-mq-image-item {
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+  transition: border-color 0.2s;
+}
+.wp-block-guten-builder-blocks-marquee .gbb-mq-image-item:hover {
+  border-color: #cbd5e1;
+}
+.wp-block-guten-builder-blocks-marquee .gbb-mq-image-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.wp-block-guten-builder-blocks-marquee .gbb-mq-image-preview {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  background: #f8fafc;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 4px;
+}
+.wp-block-guten-builder-blocks-marquee .gbb-mq-image-preview img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.wp-block-guten-builder-blocks-marquee .gbb-mq-image-actions {
+  display: flex;
+  gap: 4px;
+  background: #f8fafc;
+  padding: 4px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+.wp-block-guten-builder-blocks-marquee .gbb-mq-image-actions .components-button {
+  min-width: 32px;
+  padding: 0 !important;
+  color: #64748b;
+}
+.wp-block-guten-builder-blocks-marquee .gbb-mq-image-actions .components-button.is-destructive {
+  color: #ef4444;
+}
+.wp-block-guten-builder-blocks-marquee .gbb-mq-image-inputs {
+  background: #f8fafc;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.wp-block-guten-builder-blocks-marquee .gbb-mq-image-inputs span {
+  font-size: 12px;
+  font-weight: 500;
+  color: #64748b;
+}
+.wp-block-guten-builder-blocks-marquee .gbb-mq-image-inputs .components-text-control__input {
+  background: #ffffff;
+}
+.wp-block-guten-builder-blocks-marquee .gbb-mq-frame-settings-container {
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 15px;
+}
+.wp-block-guten-builder-blocks-marquee .gbb-mq-frame-settings-container p {
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
 /*!************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!../tr-tools/Components/TemplateSelector/TemplateSelector.scss ***!
   \************************************************************************************************************************************************************************************************************************************************************************************/

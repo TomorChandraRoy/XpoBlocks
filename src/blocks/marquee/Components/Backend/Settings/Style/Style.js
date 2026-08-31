@@ -97,8 +97,8 @@ const Style = ({ attributes, setAttributes }) => {
 					onChange={ ( val ) => setAttributes( { showFrame: val } ) }
 				/>
 				{ showFrame && (
-					<div style={ { padding: '10px', background: '#f8f9fa', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '15px' } }>
-						<p style={ { fontWeight: 'bold', marginTop: '0', marginBottom: '5px' } }>{ __( 'Frame Background', 'guten-builder-blocks' ) }</p>
+					<div className="gbb-mq-frame-settings-container">
+						<p>{ __( 'Frame Background', 'guten-builder-blocks' ) }</p>
 						<ColorPalette
 							value={ frameBg }
 							onChange={ ( val ) => setAttributes( { frameBg: val } ) }

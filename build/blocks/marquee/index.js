@@ -3820,8 +3820,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _utils_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../utils/icons */ "./src/blocks/marquee/utils/icons.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var tr_tools__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tr-tools */ "../tr-tools/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
+
+
 
 
 
@@ -3831,6 +3836,7 @@ const General = ({
   attributes,
   setAttributes
 }) => {
+  const [imageUrl, setImageUrl] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)('');
   const {
     images,
     speed,
@@ -3839,7 +3845,10 @@ const General = ({
     hoverSlowDown,
     openInNewTab,
     hideOnMobile,
-    hideOnDesktop
+    hideOnDesktop,
+    itemWidth,
+    itemHeight,
+    containerMaxWidth
   } = attributes;
   const moveImage = (index, direction) => {
     if (direction === -1 && index === 0 || direction === 1 && index === images.length - 1) {
@@ -3863,6 +3872,25 @@ const General = ({
       images: [...images, ...newImages]
     }); // Unlimited images! No limit!
   };
+  const addFromUrl = () => {
+    if (!imageUrl) return;
+    const newImage = {
+      url: imageUrl,
+      alt: 'External Image',
+      link: ''
+    };
+    setAttributes({
+      images: [...images, newImage]
+    });
+    setImageUrl('');
+  };
+  const updateImageUrl = (index, val) => {
+    const newImages = [...images];
+    newImages[index].url = val;
+    setAttributes({
+      images: newImages
+    });
+  };
   const updateLink = (index, val) => {
     const newImages = [...images];
     newImages[index].link = val;
@@ -3875,179 +3903,161 @@ const General = ({
       images: images.filter((_, i) => i !== index)
     });
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Images & Links', 'guten-builder-blocks'),
       initialOpen: true,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, {
-        fallback: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-          style: {
-            color: '#ef4444',
-            fontSize: '12px'
-          },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, {
+        fallback: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
+          className: "gbb-mq-permission-error",
           children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('You do not have permission to upload media.', 'guten-builder-blocks')
         }),
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
           multiple: true,
           onSelect: onSelectImages,
           allowedTypes: ['image'],
           render: ({
             open
-          }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+          }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
             variant: "primary",
             icon: _utils_icons__WEBPACK_IMPORTED_MODULE_3__.addIcon,
             onClick: open,
-            style: {
-              width: '100%',
-              justifyContent: 'center',
-              marginBottom: '15px',
-              backgroundColor: '#F62477',
-              borderColor: '#F62477',
-              color: '#fff'
-            },
+            className: "gbb-mq-add-btn",
             children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Add Images', 'guten-builder-blocks')
           })
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Open links in New Tab', 'guten-builder-blocks'),
-        checked: openInNewTab,
-        onChange: val => setAttributes({
-          openInNewTab: val
-        }),
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('N.B: Links will only be clickable on the live frontend.', 'guten-builder-blocks')
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("hr", {}), images.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        style: {
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '12px',
-          maxHeight: '350px',
-          overflowY: 'auto',
-          paddingRight: '6px'
-        },
-        children: images.map((img, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          style: {
-            background: '#ffffff',
-            padding: '12px',
-            borderRadius: '8px',
-            border: '1px solid #e2e8f0',
-            boxShadow: '0 1px 3px rgba(15, 23, 42, 0.06)',
-            transition: 'border-color 0.2s'
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-            style: {
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              gap: '12px',
-              marginBottom: '12px'
-            },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-              style: {
-                width: '48px',
-                height: '48px',
-                flexShrink: 0,
-                background: '#f8fafc',
-                borderRadius: '6px',
-                border: '1px solid #e2e8f0',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                overflow: 'hidden',
-                padding: '4px'
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-                src: img.url,
-                style: {
-                  maxWidth: '100%',
-                  maxHeight: '100%',
-                  objectFit: 'contain'
-                },
-                alt: img.alt
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-              style: {
-                display: 'flex',
-                gap: '4px',
-                background: '#f8fafc',
-                padding: '4px',
-                borderRadius: '6px',
-                border: '1px solid #e2e8f0'
-              },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
-                text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Move Up', 'guten-builder-blocks'),
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-                  isSmall: true,
-                  variant: "tertiary",
-                  style: {
-                    minWidth: '32px',
-                    padding: '0',
-                    color: '#64748b'
-                  },
-                  icon: _utils_icons__WEBPACK_IMPORTED_MODULE_3__.arrowUpIcon,
-                  onClick: () => moveImage(i, -1),
-                  disabled: i === 0
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "gbb-mq-url-input-container",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          className: "gbb-mq-url-input-wrapper",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+            label: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Add Image by URL (SVG/PNG/JPG)', 'guten-builder-blocks')
+            }),
+            placeholder: "https://example.com/logo.svg",
+            value: imageUrl,
+            onChange: setImageUrl,
+            __nextHasNoMarginBottom: true
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+          variant: "secondary",
+          onClick: addFromUrl,
+          disabled: !imageUrl,
+          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Add', 'guten-builder-blocks')
+        })]
+      }), images.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Open links in New Tab', 'guten-builder-blocks'),
+          checked: openInNewTab,
+          onChange: val => setAttributes({
+            openInNewTab: val
+          }),
+          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('N.B: Links will only be clickable on the live frontend.', 'guten-builder-blocks')
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          className: "gbb-mq-images-list",
+          children: images.map((img, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+            className: "gbb-mq-image-item",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+              className: "gbb-mq-image-item-header",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                className: "gbb-mq-image-preview",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
+                  src: img.url,
+                  alt: img.alt
                 })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
-                text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Move Down', 'guten-builder-blocks'),
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-                  isSmall: true,
-                  variant: "tertiary",
-                  style: {
-                    minWidth: '32px',
-                    padding: '0',
-                    color: '#64748b'
-                  },
-                  icon: _utils_icons__WEBPACK_IMPORTED_MODULE_3__.arrowDownIcon,
-                  onClick: () => moveImage(i, 1),
-                  disabled: i === images.length - 1
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
-                text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove', 'guten-builder-blocks'),
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-                  isSmall: true,
-                  variant: "tertiary",
-                  isDestructive: true,
-                  style: {
-                    minWidth: '32px',
-                    padding: '0'
-                  },
-                  icon: _utils_icons__WEBPACK_IMPORTED_MODULE_3__.trashIcon,
-                  onClick: () => deleteImage(i)
-                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+                className: "gbb-mq-image-actions",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+                  text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Move Up', 'guten-builder-blocks'),
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+                    isSmall: true,
+                    variant: "tertiary",
+                    icon: _utils_icons__WEBPACK_IMPORTED_MODULE_3__.arrowUpIcon,
+                    onClick: () => moveImage(i, -1),
+                    disabled: i === 0
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+                  text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Move Down', 'guten-builder-blocks'),
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+                    isSmall: true,
+                    variant: "tertiary",
+                    icon: _utils_icons__WEBPACK_IMPORTED_MODULE_3__.arrowDownIcon,
+                    onClick: () => moveImage(i, 1),
+                    disabled: i === images.length - 1
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+                  text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove', 'guten-builder-blocks'),
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+                    isSmall: true,
+                    variant: "tertiary",
+                    isDestructive: true,
+                    icon: _utils_icons__WEBPACK_IMPORTED_MODULE_3__.trashIcon,
+                    onClick: () => deleteImage(i)
+                  })
+                })]
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+              className: "gbb-mq-image-inputs",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+                label: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+                  children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Image Source URL', 'guten-builder-blocks')
+                }),
+                placeholder: "https://...",
+                value: img.url,
+                onChange: val => updateImageUrl(i, val),
+                __nextHasNoMarginBottom: true
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+                label: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+                  children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Destination Link', 'guten-builder-blocks')
+                }),
+                placeholder: "https://...",
+                value: img.link,
+                onChange: val => updateLink(i, val),
+                __nextHasNoMarginBottom: true
               })]
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            style: {
-              background: '#f8fafc',
-              padding: '10px',
-              borderRadius: '6px',
-              border: '1px solid #e2e8f0'
-            },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-              label: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-                style: {
-                  fontSize: '12px',
-                  fontWeight: 500,
-                  color: '#64748b'
-                },
-                children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Destination Link', 'guten-builder-blocks')
-              }),
-              placeholder: "https://...",
-              value: img.link,
-              onChange: val => updateLink(i, val),
-              __nextHasNoMarginBottom: true,
-              style: {
-                background: '#ffffff'
-              }
-            })
-          })]
-        }, i))
+          }, i))
+        })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('📏 Dimensions & Layout', 'guten-builder-blocks'),
+      initialOpen: false,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_5__.UnitControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container Max Width', 'guten-builder-blocks'),
+        value: containerMaxWidth,
+        onChange: val => setAttributes({
+          containerMaxWidth: val
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        style: {
+          height: '12px'
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        style: {
+          height: '12px'
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_5__.UnitControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Image Width', 'guten-builder-blocks'),
+        value: itemWidth,
+        onChange: val => setAttributes({
+          itemWidth: val
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        style: {
+          height: '12px'
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_5__.UnitControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Image Height', 'guten-builder-blocks'),
+        value: itemHeight,
+        onChange: val => setAttributes({
+          itemHeight: val
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('⚙️ Movement & Engine', 'guten-builder-blocks'),
       initialOpen: false,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Base Speed (s)', 'guten-builder-blocks'),
         value: speed,
         onChange: val => setAttributes({
@@ -4056,13 +4066,13 @@ const General = ({
         min: 1,
         max: 200,
         help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Lower number means faster loop duration.', 'guten-builder-blocks')
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Reverse Direction', 'guten-builder-blocks'),
         checked: reverseDirection,
         onChange: val => setAttributes({
           reverseDirection: val
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Pause on Hover / Tap', 'guten-builder-blocks'),
         checked: pauseOnHover,
         onChange: val => {
@@ -4076,7 +4086,7 @@ const General = ({
           }
         },
         help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Completely stops the track when cursor is over it.', 'guten-builder-blocks')
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Slow Down on Hover', 'guten-builder-blocks'),
         checked: hoverSlowDown,
         onChange: val => {
@@ -4091,16 +4101,16 @@ const General = ({
         },
         help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Reduces velocity to 30% for a cinematic inspection feel.', 'guten-builder-blocks')
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('📱 Visibility Settings', 'guten-builder-blocks'),
       initialOpen: false,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Hide on Mobile', 'guten-builder-blocks'),
         checked: hideOnMobile,
         onChange: val => setAttributes({
           hideOnMobile: val
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Hide on Desktop', 'guten-builder-blocks'),
         checked: hideOnDesktop,
         onChange: val => setAttributes({
@@ -4290,19 +4300,8 @@ const Style = ({
           showFrame: val
         })
       }), showFrame && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        style: {
-          padding: '10px',
-          background: '#f8f9fa',
-          borderRadius: '8px',
-          border: '1px solid #e2e8f0',
-          marginBottom: '15px'
-        },
+        className: "gbb-mq-frame-settings-container",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-          style: {
-            fontWeight: 'bold',
-            marginTop: '0',
-            marginBottom: '5px'
-          },
           children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Frame Background', 'guten-builder-blocks')
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
           value: frameBg,
@@ -4346,11 +4345,39 @@ const DynamicStyle = ({
   attributes,
   id
 }) => {
+  const {
+    itemWidth,
+    itemHeight,
+    containerMaxWidth
+  } = attributes;
+
+  // Handle older blocks where itemHeight was a number
+  const getVal = (val, def) => (typeof val === 'number' ? `${val}px` : val) || def;
+  const finalWidth = getVal(itemWidth, 'auto');
+  const finalHeight = getVal(itemHeight, '120px');
+  const finalMaxWidth = getVal(containerMaxWidth, '1024px');
   const mainSl = `#${id}`;
+  const blockClass = `${mainSl} .wp-block-guten-builder-blocks-marquee`;
+  const sectionClass = `${blockClass} .gbb-logo-cloud-section`;
+  const wrapperClass = `${sectionClass} .gbb-logo-cloud-wrapper`;
+  const backendImgClass = `${wrapperClass} .gbb-mq-item img`;
+  const frontendSectionClass = `${mainSl} .gbb-logo-cloud-section`;
+  const frontendWrapperClass = `${frontendSectionClass} .gbb-logo-cloud-wrapper`;
+  const frontendImgClass = `${frontendWrapperClass} .gbb-mq-item img`;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("style", {
     dangerouslySetInnerHTML: {
       __html: `
+          ${wrapperClass},
+          ${frontendWrapperClass} {
+            max-width: ${finalMaxWidth};
+          }
 
+          ${backendImgClass},
+          ${frontendImgClass} {
+            width: ${finalWidth};
+            height: ${finalHeight};
+            object-fit: contain;
+          }
         `
     }
   });
@@ -4416,13 +4443,23 @@ const TemplateOne = ({
     pauseOnHover,
     reverseDirection,
     edgeFade,
-    itemHeight
+    itemHeight,
+    itemWidth,
+    hoverSlowDown
   } = attributes;
   if (!images || images.length === 0) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
       className: "gbb-mq-empty-state",
       children: "Add images to Marquee Settings"
     });
+  }
+
+  // Ensure we have enough images to fill wide screens, even if only 1 image is added
+  let displayImages = [...images];
+  if (displayImages.length > 0) {
+    while (displayImages.length < 12) {
+      displayImages = [...displayImages, ...images];
+    }
   }
   const trackStyle = {
     animationDuration: `${speed}s`,
@@ -4432,6 +4469,7 @@ const TemplateOne = ({
   let containerClass = 'gbb-mq-container';
   if (pauseOnHover) containerClass += ' pause-on-hover';
   if (edgeFade) containerClass += ' has-edge-fade';
+  if (hoverSlowDown) containerClass += ' slow-on-hover';
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
     className: "gbb-logo-cloud-section",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -4454,32 +4492,46 @@ const TemplateOne = ({
         className: "gbb-logo-content",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
           className: containerClass,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
             className: "gbb-mq-track",
             style: trackStyle,
-            children: [...images, ...images].map((img, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-              className: "gbb-mq-item",
-              children: img.link ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
-                href: img.link,
-                target: attributes.openInNewTab ? '_blank' : '_self',
-                rel: "noopener noreferrer",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+              className: "gbb-mq-group",
+              children: displayImages.map((img, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+                className: "gbb-mq-item",
+                children: img.link ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+                  href: img.link,
+                  target: attributes.openInNewTab ? '_blank' : '_self',
+                  rel: "noopener noreferrer",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+                    src: img.url,
+                    alt: img.alt
+                  })
+                }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
                   src: img.url,
-                  alt: img.alt,
-                  style: {
-                    height: `${itemHeight}px`,
-                    objectFit: 'contain'
-                  }
+                  alt: img.alt
                 })
-              }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
-                src: img.url,
-                alt: img.alt,
-                style: {
-                  height: `${itemHeight}px`,
-                  objectFit: 'contain'
-                }
-              })
-            }, i))
+              }, i))
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+              className: "gbb-mq-group",
+              "aria-hidden": "true",
+              children: displayImages.map((img, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+                className: "gbb-mq-item",
+                children: img.link ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+                  href: img.link,
+                  target: attributes.openInNewTab ? '_blank' : '_self',
+                  rel: "noopener noreferrer",
+                  tabIndex: "-1",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+                    src: img.url,
+                    alt: img.alt
+                  })
+                }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+                  src: img.url,
+                  alt: img.alt
+                })
+              }, `dup-${i}`))
+            })]
           })
         })
       })]
@@ -5023,7 +5075,7 @@ module.exports = window["wp"]["i18n"];
   \***************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/marquee","version":"1.0.2","title":"Guten Marquee","category":"guten-builder","description":"Infinite scrolling marquee optimized for logos and images with hardware-accelerated physics.","keywords":["marquee","scrolling text","ticker","moving text","loop text"],"textdomain":"guten-builder-blocks","attributes":{"selectedTemplate":{"type":"string","default":""},"images":{"type":"array","default":[]},"speed":{"type":"number","default":30},"itemHeight":{"type":"number","default":120},"pauseOnHover":{"type":"boolean","default":true},"hoverSlowDown":{"type":"boolean","default":false},"edgeFade":{"type":"boolean","default":true},"openInNewTab":{"type":"boolean","default":false},"liftEffect":{"type":"boolean","default":true},"reverseDirection":{"type":"boolean","default":false},"showProgressRail":{"type":"boolean","default":false},"progressRailPosition":{"type":"string","default":"right"},"showInteractionIndicator":{"type":"boolean","default":false},"highlightActiveCenter":{"type":"boolean","default":false},"siblingBlur":{"type":"boolean","default":false},"siblingBlurIntensity":{"type":"number","default":3},"showFrame":{"type":"boolean","default":true},"frameBg":{"type":"string","default":"#ffffff"},"frameRadius":{"type":"number","default":12},"align":{"type":"string","default":"wide"}},"supports":{"align":["full","wide"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/marquee","version":"1.0.2","title":"Guten Marquee","category":"guten-builder","description":"Infinite scrolling marquee optimized for logos and images with hardware-accelerated physics.","keywords":["marquee","scrolling text","ticker","moving text","loop text"],"textdomain":"guten-builder-blocks","attributes":{"selectedTemplate":{"type":"string","default":""},"images":{"type":"array","default":[]},"speed":{"type":"number","default":30},"itemHeight":{"type":"string","default":"120px"},"itemWidth":{"type":"string","default":"auto"},"containerMaxWidth":{"type":"string","default":"1024px"},"pauseOnHover":{"type":"boolean","default":true},"hoverSlowDown":{"type":"boolean","default":false},"edgeFade":{"type":"boolean","default":true},"openInNewTab":{"type":"boolean","default":false},"liftEffect":{"type":"boolean","default":true},"reverseDirection":{"type":"boolean","default":false},"showProgressRail":{"type":"boolean","default":false},"progressRailPosition":{"type":"string","default":"right"},"showInteractionIndicator":{"type":"boolean","default":false},"highlightActiveCenter":{"type":"boolean","default":false},"siblingBlur":{"type":"boolean","default":false},"siblingBlurIntensity":{"type":"number","default":3},"showFrame":{"type":"boolean","default":true},"frameBg":{"type":"string","default":"#ffffff"},"frameRadius":{"type":"number","default":12},"align":{"type":"string","default":"wide"}},"supports":{"align":["full","wide"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
 
 /***/ }
 

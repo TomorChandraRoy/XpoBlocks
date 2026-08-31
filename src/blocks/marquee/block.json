@@ -21,8 +21,16 @@
       "default": 30
     },
     "itemHeight": {
-      "type": "number",
-      "default": 120
+      "type": "string",
+      "default": "120px"
+    },
+    "itemWidth": {
+      "type": "string",
+      "default": "auto"
+    },
+    "containerMaxWidth": {
+      "type": "string",
+      "default": "1024px"
     },
     "pauseOnHover": {
       "type": "boolean",

@@ -22,11 +22,39 @@ const DynamicStyle = ({
   attributes,
   id
 }) => {
+  const {
+    itemWidth,
+    itemHeight,
+    containerMaxWidth
+  } = attributes;
+
+  // Handle older blocks where itemHeight was a number
+  const getVal = (val, def) => (typeof val === 'number' ? `${val}px` : val) || def;
+  const finalWidth = getVal(itemWidth, 'auto');
+  const finalHeight = getVal(itemHeight, '120px');
+  const finalMaxWidth = getVal(containerMaxWidth, '1024px');
   const mainSl = `#${id}`;
+  const blockClass = `${mainSl} .wp-block-guten-builder-blocks-marquee`;
+  const sectionClass = `${blockClass} .gbb-logo-cloud-section`;
+  const wrapperClass = `${sectionClass} .gbb-logo-cloud-wrapper`;
+  const backendImgClass = `${wrapperClass} .gbb-mq-item img`;
+  const frontendSectionClass = `${mainSl} .gbb-logo-cloud-section`;
+  const frontendWrapperClass = `${frontendSectionClass} .gbb-logo-cloud-wrapper`;
+  const frontendImgClass = `${frontendWrapperClass} .gbb-mq-item img`;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("style", {
     dangerouslySetInnerHTML: {
       __html: `
+          ${wrapperClass},
+          ${frontendWrapperClass} {
+            max-width: ${finalMaxWidth};
+          }
 
+          ${backendImgClass},
+          ${frontendImgClass} {
+            width: ${finalWidth};
+            height: ${finalHeight};
+            object-fit: contain;
+          }
         `
     }
   });
@@ -92,13 +120,23 @@ const TemplateOne = ({
     pauseOnHover,
     reverseDirection,
     edgeFade,
-    itemHeight
+    itemHeight,
+    itemWidth,
+    hoverSlowDown
   } = attributes;
   if (!images || images.length === 0) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
       className: "gbb-mq-empty-state",
       children: "Add images to Marquee Settings"
     });
+  }
+
+  // Ensure we have enough images to fill wide screens, even if only 1 image is added
+  let displayImages = [...images];
+  if (displayImages.length > 0) {
+    while (displayImages.length < 12) {
+      displayImages = [...displayImages, ...images];
+    }
   }
   const trackStyle = {
     animationDuration: `${speed}s`,
@@ -108,6 +146,7 @@ const TemplateOne = ({
   let containerClass = 'gbb-mq-container';
   if (pauseOnHover) containerClass += ' pause-on-hover';
   if (edgeFade) containerClass += ' has-edge-fade';
+  if (hoverSlowDown) containerClass += ' slow-on-hover';
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
     className: "gbb-logo-cloud-section",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -130,32 +169,46 @@ const TemplateOne = ({
         className: "gbb-logo-content",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
           className: containerClass,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
             className: "gbb-mq-track",
             style: trackStyle,
-            children: [...images, ...images].map((img, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-              className: "gbb-mq-item",
-              children: img.link ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
-                href: img.link,
-                target: attributes.openInNewTab ? '_blank' : '_self',
-                rel: "noopener noreferrer",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+              className: "gbb-mq-group",
+              children: displayImages.map((img, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+                className: "gbb-mq-item",
+                children: img.link ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+                  href: img.link,
+                  target: attributes.openInNewTab ? '_blank' : '_self',
+                  rel: "noopener noreferrer",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+                    src: img.url,
+                    alt: img.alt
+                  })
+                }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
                   src: img.url,
-                  alt: img.alt,
-                  style: {
-                    height: `${itemHeight}px`,
-                    objectFit: 'contain'
-                  }
+                  alt: img.alt
                 })
-              }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
-                src: img.url,
-                alt: img.alt,
-                style: {
-                  height: `${itemHeight}px`,
-                  objectFit: 'contain'
-                }
-              })
-            }, i))
+              }, i))
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+              className: "gbb-mq-group",
+              "aria-hidden": "true",
+              children: displayImages.map((img, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+                className: "gbb-mq-item",
+                children: img.link ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+                  href: img.link,
+                  target: attributes.openInNewTab ? '_blank' : '_self',
+                  rel: "noopener noreferrer",
+                  tabIndex: "-1",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+                    src: img.url,
+                    alt: img.alt
+                  })
+                }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+                  src: img.url,
+                  alt: img.alt
+                })
+              }, `dup-${i}`))
+            })]
           })
         })
       })]

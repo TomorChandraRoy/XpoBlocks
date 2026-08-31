@@ -4,8 +4,12 @@ import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 import { addIcon, arrowDownIcon, arrowUpIcon, trashIcon } from '../../../../utils/icons';
 
 
+import { useState } from '@wordpress/element';
+import { UnitControl } from 'tr-tools';
+
 const General = ({ attributes, setAttributes }) => {
-	const {images,speed,reverseDirection,pauseOnHover,hoverSlowDown,openInNewTab,hideOnMobile,hideOnDesktop} = attributes;
+	const [imageUrl, setImageUrl] = useState('');
+	const {images,speed,reverseDirection,pauseOnHover,hoverSlowDown,openInNewTab,hideOnMobile,hideOnDesktop, itemWidth, itemHeight, containerMaxWidth} = attributes;
 
 	const moveImage = ( index, direction ) => {
 		if ( ( direction === -1 && index === 0 ) || ( direction === 1 && index === images.length - 1 ) ) {
@@ -27,6 +31,19 @@ const General = ({ attributes, setAttributes }) => {
 		setAttributes( { images: [ ...images, ...newImages ] } ); // Unlimited images! No limit!
 	};
 
+	const addFromUrl = () => {
+		if ( ! imageUrl ) return;
+		const newImage = { url: imageUrl, alt: 'External Image', link: '' };
+		setAttributes( { images: [ ...images, newImage ] } );
+		setImageUrl( '' );
+	};
+
+	const updateImageUrl = ( index, val ) => {
+		const newImages = [ ...images ];
+		newImages[ index ].url = val;
+		setAttributes( { images: newImages } );
+	};
+
 	const updateLink = ( index, val ) => {
 		const newImages = [ ...images ];
 		newImages[ index ].link = val;
@@ -40,67 +57,112 @@ const General = ({ attributes, setAttributes }) => {
 	return (
 		<>
 			<PanelBody className='bPlPanelBody' title={ __( 'Images & Links', 'guten-builder-blocks' ) } initialOpen={ true }>
-				<MediaUploadCheck fallback={ <p style={ { color: '#ef4444', fontSize: '12px' } }>{ __( 'You do not have permission to upload media.', 'guten-builder-blocks' ) }</p> }>
+				<MediaUploadCheck fallback={ <p className="gbb-mq-permission-error">{ __( 'You do not have permission to upload media.', 'guten-builder-blocks' ) }</p> }>
 					<MediaUpload
 						multiple={ true }
 						onSelect={ onSelectImages }
 						allowedTypes={ [ 'image' ] }
 						render={ ( { open } ) => (
-							<Button variant="primary" icon={ addIcon } onClick={ open } style={ { width: '100%', justifyContent: 'center', marginBottom: '15px', backgroundColor: '#F62477', borderColor: '#F62477', color: '#fff' } }>
+							<Button variant="primary" icon={ addIcon } onClick={ open } className="gbb-mq-add-btn">
 								{ __( 'Add Images', 'guten-builder-blocks' ) }
 							</Button>
 						) }
 					/>
 				</MediaUploadCheck>
 
-				<ToggleControl
-					label={ __( 'Open links in New Tab', 'guten-builder-blocks' ) }
-					checked={ openInNewTab }
-					onChange={ ( val ) => setAttributes( { openInNewTab: val } ) }
-					help={ __( 'N.B: Links will only be clickable on the live frontend.', 'guten-builder-blocks' ) }
-				/>
-
-				<hr />
+				<div className="gbb-mq-url-input-container">
+					<div className="gbb-mq-url-input-wrapper">
+						<TextControl
+							label={ <span>{__( 'Add Image by URL (SVG/PNG/JPG)', 'guten-builder-blocks' )}</span> }
+							placeholder="https://example.com/logo.svg"
+							value={ imageUrl }
+							onChange={ setImageUrl }
+							__nextHasNoMarginBottom={ true }
+						/>
+					</div>
+					<Button variant="secondary" onClick={ addFromUrl } disabled={ !imageUrl }>
+						{ __( 'Add', 'guten-builder-blocks' ) }
+					</Button>
+				</div>
 
 				{ images.length > 0 && (
-					<div style={ { display: 'flex', flexDirection: 'column', gap: '12px', maxHeight: '350px', overflowY: 'auto', paddingRight: '6px' } }>
+					<>
+						<ToggleControl
+							label={ __( 'Open links in New Tab', 'guten-builder-blocks' ) }
+							checked={ openInNewTab }
+							onChange={ ( val ) => setAttributes( { openInNewTab: val } ) }
+							help={ __( 'N.B: Links will only be clickable on the live frontend.', 'guten-builder-blocks' ) }
+						/>
+
+						<hr />
+
+						<div className="gbb-mq-images-list">
 						{ images.map( ( img, i ) => (
-							<div key={ i } style={ { background: '#ffffff', padding: '12px', borderRadius: '8px', border: '1px solid #e2e8f0', boxShadow: '0 1px 3px rgba(15, 23, 42, 0.06)', transition: 'border-color 0.2s' } }>
-								<div style={ { display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '12px', marginBottom: '12px' } }>
+							<div key={ i } className="gbb-mq-image-item">
+								<div className="gbb-mq-image-item-header">
 									{/* Image Preview */}
-									<div style={ { width: '48px', height: '48px', flexShrink: 0, background: '#f8fafc', borderRadius: '6px', border: '1px solid #e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', padding: '4px' } }>
-										<img src={ img.url } style={ { maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' } } alt={ img.alt } />
+									<div className="gbb-mq-image-preview">
+										<img src={ img.url } alt={ img.alt } />
 									</div>
 
 									{/* Action Buttons */}
-									<div style={ { display: 'flex', gap: '4px', background: '#f8fafc', padding: '4px', borderRadius: '6px', border: '1px solid #e2e8f0' } }>
+									<div className="gbb-mq-image-actions">
 										<Tooltip text={ __( 'Move Up', 'guten-builder-blocks' ) }>
-											<Button isSmall variant="tertiary" style={ { minWidth: '32px', padding: '0', color: '#64748b' } } icon={ arrowUpIcon } onClick={ () => moveImage( i, -1 ) } disabled={ i === 0 } />
+											<Button isSmall variant="tertiary" icon={ arrowUpIcon } onClick={ () => moveImage( i, -1 ) } disabled={ i === 0 } />
 										</Tooltip>
 										<Tooltip text={ __( 'Move Down', 'guten-builder-blocks' ) }>
-											<Button isSmall variant="tertiary" style={ { minWidth: '32px', padding: '0', color: '#64748b' } } icon={ arrowDownIcon } onClick={ () => moveImage( i, 1 ) } disabled={ i === images.length - 1 } />
+											<Button isSmall variant="tertiary" icon={ arrowDownIcon } onClick={ () => moveImage( i, 1 ) } disabled={ i === images.length - 1 } />
 										</Tooltip>
 										<Tooltip text={ __( 'Remove', 'guten-builder-blocks' ) }>
-											<Button isSmall variant="tertiary" isDestructive style={ { minWidth: '32px', padding: '0' } } icon={ trashIcon } onClick={ () => deleteImage( i ) } />
+											<Button isSmall variant="tertiary" isDestructive icon={ trashIcon } onClick={ () => deleteImage( i ) } />
 										</Tooltip>
 									</div>
 								</div>
 
-								{/* Link Input */}
-								<div style={{ background: '#f8fafc', padding: '10px', borderRadius: '6px', border: '1px solid #e2e8f0' }}>
+								{/* URL and Link Inputs */}
+								<div className="gbb-mq-image-inputs">
 									<TextControl
-										label={ <span style={{ fontSize: '12px', fontWeight: 500, color: '#64748b' }}>{__( 'Destination Link', 'guten-builder-blocks' )}</span> }
+										label={ <span>{__( 'Image Source URL', 'guten-builder-blocks' )}</span> }
+										placeholder="https://..."
+										value={ img.url }
+										onChange={ ( val ) => updateImageUrl( i, val ) }
+										__nextHasNoMarginBottom={ true }
+									/>
+									<TextControl
+										label={ <span>{__( 'Destination Link', 'guten-builder-blocks' )}</span> }
 										placeholder="https://..."
 										value={ img.link }
 										onChange={ ( val ) => updateLink( i, val ) }
 										__nextHasNoMarginBottom={ true }
-										style={{ background: '#ffffff' }}
 									/>
 								</div>
 							</div>
 						) ) }
 					</div>
+					</>
 				) }
+			</PanelBody>
+
+			<PanelBody title={ __( '📏 Dimensions & Layout', 'guten-builder-blocks' ) } initialOpen={ false }>
+				<UnitControl
+					label={ __( 'Container Max Width', 'guten-builder-blocks' ) }
+					value={ containerMaxWidth }
+					onChange={ ( val ) => setAttributes( { containerMaxWidth: val } ) }
+				/>
+				<div style={{ height: '12px' }} />
+				<hr />
+				<div style={{ height: '12px' }} />
+				<UnitControl
+					label={ __( 'Image Width', 'guten-builder-blocks' ) }
+					value={ itemWidth }
+					onChange={ ( val ) => setAttributes( { itemWidth: val } ) }
+				/>
+				<div style={{ height: '12px' }} />
+				<UnitControl
+					label={ __( 'Image Height', 'guten-builder-blocks' ) }
+					value={ itemHeight }
+					onChange={ ( val ) => setAttributes( { itemHeight: val } ) }
+				/>
 			</PanelBody>
 
 			<PanelBody title={ __( '⚙️ Movement & Engine', 'guten-builder-blocks' ) } initialOpen={ false }>

@@ -1,6 +1,6 @@
 @keyframes gbb-mq-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
 }
 
 @keyframes wave-sweep {
@@ -122,21 +122,27 @@
 
           .gbb-mq-track {
             display: flex;
-            align-items: center;
-            gap: 30px;
             animation: gbb-mq-scroll linear infinite;
-            min-width: 200%;
+            width: max-content;
+            will-change: transform;
 
-            .gbb-mq-item {
+            .gbb-mq-group {
               display: flex;
               align-items: center;
-              justify-content: center;
-              transition: transform 0.3s ease;
-              flex-shrink: 0;
+              gap: 30px;
+              padding-right: 30px; /* Crucial for seamless loop: adds the final gap before the next group */
 
-              a:focus, img:focus {
-                outline: none !important;
-                box-shadow: none !important;
+              .gbb-mq-item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: transform 0.3s ease;
+                flex-shrink: 0;
+
+                a:focus, img:focus {
+                  outline: none !important;
+                  box-shadow: none !important;
+                }
               }
             }
           }
