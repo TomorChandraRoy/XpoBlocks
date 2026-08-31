@@ -25,6 +25,7 @@
 .wp-block-guten-builder-blocks-marquee .gbb-mq-add-btn {
   width: 100%;
   justify-content: center !important;
+  margin-top: 15px;
   margin-bottom: 15px;
   background-color: #F62477 !important;
   border-color: #F62477 !important;
@@ -32,27 +33,32 @@
 }
 .wp-block-guten-builder-blocks-marquee .gbb-mq-url-input-container {
   display: flex;
+  flex-direction: column;
   gap: 8px;
-  margin-bottom: 15px;
-  align-items: flex-end;
-  background: #f8fafc;
   padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #e2e8f0;
 }
-.wp-block-guten-builder-blocks-marquee .gbb-mq-url-input-container .gbb-mq-url-input-wrapper {
-  flex-grow: 1;
-}
-.wp-block-guten-builder-blocks-marquee .gbb-mq-url-input-container .gbb-mq-url-input-wrapper span {
+.wp-block-guten-builder-blocks-marquee .gbb-mq-url-input-container .gbb-mq-url-input-label {
   font-size: 12px;
   font-weight: 500;
   color: #64748b;
 }
-.wp-block-guten-builder-blocks-marquee .gbb-mq-url-input-container .gbb-mq-url-input-wrapper .components-text-control__input {
-  background: #ffffff;
+.wp-block-guten-builder-blocks-marquee .gbb-mq-url-input-container .gbb-mq-url-input-row {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  align-items: center;
 }
-.wp-block-guten-builder-blocks-marquee .gbb-mq-url-input-container .components-button {
+.wp-block-guten-builder-blocks-marquee .gbb-mq-url-input-container .gbb-mq-url-input-row .components-base-control {
+  flex-grow: 1;
+  margin-bottom: 0 !important;
+}
+.wp-block-guten-builder-blocks-marquee .gbb-mq-url-input-container .gbb-mq-url-input-row .components-base-control .components-text-control__input {
+  background: #ffffff;
   height: 36px;
+}
+.wp-block-guten-builder-blocks-marquee .gbb-mq-url-input-container .gbb-mq-url-input-row .components-button {
+  height: 36px;
+  flex-shrink: 0;
 }
 .wp-block-guten-builder-blocks-marquee .gbb-mq-images-list {
   display: flex;

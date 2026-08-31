@@ -22,6 +22,7 @@
     .gbb-mq-add-btn {
         width: 100%;
         justify-content: center !important;
+        margin-top: 15px;
         margin-bottom: 15px;
         background-color: #F62477 !important;
         border-color: #F62477 !important;
@@ -30,30 +31,37 @@
 
     .gbb-mq-url-input-container {
         display: flex;
+        flex-direction: column;
         gap: 8px;
-        margin-bottom: 15px;
-        align-items: flex-end;
-        background: #f8fafc;
         padding: 10px;
-        border-radius: 6px;
-        border: 1px solid #e2e8f0;
 
-        .gbb-mq-url-input-wrapper {
-            flex-grow: 1;
 
-            span {
-                font-size: 12px;
-                font-weight: 500;
-                color: #64748b;
-            }
-
-            .components-text-control__input {
-                background: #ffffff;
-            }
+        .gbb-mq-url-input-label {
+            font-size: 12px;
+            font-weight: 500;
+            color: #64748b;
         }
 
-        .components-button {
-            height: 36px;
+        .gbb-mq-url-input-row {
+            display: flex;
+            gap: 8px;
+            width: 100%;
+            align-items: center;
+
+            .components-base-control {
+                flex-grow: 1;
+                margin-bottom: 0 !important;
+
+                .components-text-control__input {
+                    background: #ffffff;
+                    height: 36px;
+                }
+            }
+
+            .components-button {
+                height: 36px;
+                flex-shrink: 0;
+            }
         }
     }
 
