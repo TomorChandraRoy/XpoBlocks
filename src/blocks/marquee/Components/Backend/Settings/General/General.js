@@ -11,25 +11,25 @@ import { pxUnit, remUnit, emUnit, vwUnit, perUnit } from 'tr-tools/utils/options
 const General = ({ attributes, setAttributes }) => {
 	const [imageUrl, setImageUrl] = useState('');
 	const {
-		images,
-		speed,
-		reverseDirection,
-		pauseOnHover,
-		hoverSlowDown,
-		openInNewTab,
-		itemHeight,
-		containerMaxWidth,
-		showBorder,
-		showTopText,
-		edgeFade,
-		liftEffect,
-		siblingBlur,
-		siblingBlurIntensity,
-		showProgressRail,
-		progressRailPosition,
-		showInteractionIndicator,
-		highlightActiveCenter,
-	} = attributes;
+    images,
+    speed,
+    reverseDirection,
+    pauseOnHover,
+    hoverSlowDown,
+    openInNewTab,
+    itemHeight,
+    containerMaxWidth,
+    showBorder,
+    showTopText,
+    edgeFade,
+    liftEffect,
+    siblingBlur,
+    siblingBlurIntensity,
+    showProgressRail,
+    progressRailPosition,
+    showInteractionIndicator,
+    highlightActiveCenter,
+  } = attributes;
 
 	const moveImage = ( index, direction ) => {
 		if ( ( direction === -1 && index === 0 ) || ( direction === 1 && index === images.length - 1 ) ) {
@@ -76,6 +76,13 @@ const General = ({ attributes, setAttributes }) => {
 
 	return (
     <>
+      <PanelBody className="bPlPanelBody" title={__('Template Presets', 'guten-builder-blocks')} initialOpen={true}>
+        <p style={{ fontSize: '12px', color: '#64748b', marginBottom: '12px' }}>{__('Switch or apply a predefined divider template style.', 'guten-builder-blocks')}</p>
+        <Button isSecondary onClick={() => setAttributes({ selectedTemplate: '' })} style={{ width: '100%', justifyContent: 'center' }}>
+          {__('Change Template', 'guten-builder-blocks')}
+        </Button>
+      </PanelBody>
+
       <PanelBody className="bPlPanelBody" title={__('Images & Links', 'guten-builder-blocks')} initialOpen={true}>
         <div className="gbb-mq-url-input-container">
           <span className="gbb-mq-url-input-label">{__('Add Image by URL (SVG/PNG/JPG)', 'guten-builder-blocks')}</span>

@@ -1,6 +1,18 @@
-
-
-
+export const AnnouncementIcon = {
+  background: '#FCE7F3',
+  foreground: '#2563EB',
+  src: (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style={{ fill: '#2563EB' }}>
+      {/* Card behind */}
+      <path d="M6 3h12a1 1 0 0 1 1 1v7H5V4a1 1 0 0 1 1-1z" opacity="0.35" fill="#2563EB" />
+      {/* Megaphone */}
+      <path d="M9 6.8H8a.8.8 0 0 0-.8.8v1.4c0 .44.36.8.8.8H9l2.8 1.7V5.1L9 6.8z" fill="#2563EB" />
+      <path d="M13.5 5.8l1.4-.7a.4.4 0 1 1 .4.7l-1.4.7a.4.4 0 0 1-.4-.7zm.4 2.5h1.6a.4.4 0 0 1 0 .8h-1.6a.4.4 0 0 1 0-.8zm-.4 2.5a.4.4 0 0 1 .5-.1l1.4.7a.4.4 0 0 1-.4.7l-1.4-.7a.4.4 0 0 1-.1-.6z" fill="#2563EB" />
+      {/* Envelope Body */}
+      <path fillRule="evenodd" clipRule="evenodd" d="M3 11a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-9zm1.5.5l7.5 5 7.5-5V20H4.5v-8.5z" fill="#2563EB" />
+    </svg>
+  ),
+};
 
 export const GeneralIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}>
@@ -19,28 +31,33 @@ export const StyleIcon = () => (
   </svg>
 );
 
-
-
 export const TemplateOneSvg = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-    {/* Background / Before Image Placeholder */}
-    <rect x="0" y="0" width="800" height="500" fill="#e2e8f0" rx="10" />
-    <text x="200" y="260" fontSize="32" fontWeight="bold" fill="#94a3b8">
-      Before
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 250" width="100%" height="100%" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+    <rect x="0" y="0" width="1000" height="250" fill="#ffffff" />
+    
+    {/* Title */}
+    <text x="50" y="80" fontSize="42" fontWeight="bold" fill="#0f172a">
+      Subscribe Our Newsletter
+    </text>
+    
+    {/* Description */}
+    <text x="50" y="140" fontSize="18" fill="#64748b">
+      Subscribe to our newsletter and get the latest updates, offers and
+    </text>
+    <text x="50" y="170" fontSize="18" fill="#64748b">
+      exclusive content.
     </text>
 
-    {/* After Image Placeholder (right half) */}
-    <rect x="400" y="0" width="400" height="500" fill="#cbd5e1" rx="10" />
-    <text x="600" y="260" fontSize="32" fontWeight="bold" fill="#64748b">
-      After
+    {/* Input Field */}
+    <rect x="550" y="100" width="300" height="50" rx="4" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1" />
+    <text x="565" y="130" fontSize="16" fill="#94a3b8">
+      john@readymadeui.com
     </text>
 
-    {/* Divider Line */}
-    <rect x="398" y="0" width="4" height="500" fill="#ffffff" />
-
-    {/* Handle */}
-    <circle cx="400" cy="250" r="24" fill="#111111" stroke="#ffffff" strokeWidth="3" />
-    <path d="M 390 240 L 380 250 L 390 260" stroke="#ffffff" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M 410 240 L 420 250 L 410 260" stroke="#ffffff" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+    {/* Button */}
+    <rect x="860" y="100" width="100" height="50" rx="4" fill="#2563eb" />
+    <text x="910" y="130" fontSize="16" fontWeight="bold" fill="#ffffff" textAnchor="middle" alignmentBaseline="middle">
+      Subscribe
+    </text>
   </svg>
 );

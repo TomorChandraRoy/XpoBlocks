@@ -3917,6 +3917,28 @@ const General = ({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template Presets', 'guten-builder-blocks'),
+      initialOpen: true,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+        style: {
+          fontSize: '12px',
+          color: '#64748b',
+          marginBottom: '12px'
+        },
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Switch or apply a predefined divider template style.', 'guten-builder-blocks')
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+        isSecondary: true,
+        onClick: () => setAttributes({
+          selectedTemplate: ''
+        }),
+        style: {
+          width: '100%',
+          justifyContent: 'center'
+        },
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Change Template', 'guten-builder-blocks')
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      className: "bPlPanelBody",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Images & Links', 'guten-builder-blocks'),
       initialOpen: true,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
@@ -4844,7 +4866,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 
 const MarqueeIcon = {
-  background: '#E0E7FF',
+  background: '#FCE7F3',
   foreground: '#F62477',
   src: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
@@ -6967,7 +6989,7 @@ var castImmutable = (value) => value;
   \***************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/marquee","version":"1.0.2","title":"Guten Marquee","category":"guten-builder","description":"Infinite scrolling marquee optimized for logos and images with hardware-accelerated physics.","keywords":["marquee","scrolling text","ticker","moving text","loop text"],"textdomain":"guten-builder-blocks","attributes":{"selectedTemplate":{"type":"string","default":""},"images":{"type":"array","default":[]},"openInNewTab":{"type":"boolean","default":false},"itemHeight":{"type":"string","default":"100px"},"containerMaxWidth":{"type":"string","default":"1024px"},"showBorder":{"type":"boolean","default":true},"showTopText":{"type":"boolean","default":true},"edgeFade":{"type":"boolean","default":true},"speed":{"type":"number","default":30},"reverseDirection":{"type":"boolean","default":false},"pauseOnHover":{"type":"boolean","default":true},"hoverSlowDown":{"type":"boolean","default":false},"liftEffect":{"type":"boolean","default":false},"siblingBlur":{"type":"boolean","default":false},"siblingBlurIntensity":{"type":"number","default":3},"showProgressRail":{"type":"boolean","default":false},"progressRailPosition":{"type":"string","default":"right"},"showInteractionIndicator":{"type":"boolean","default":false},"highlightActiveCenter":{"type":"boolean","default":false},"showFrame":{"type":"boolean","default":false},"frameBg":{"type":"string","default":"#ffffff"},"frameRadius":{"type":"number","default":12},"enableSweepAnimation":{"type":"boolean","default":true},"textGradient":{"type":"object","default":{"gradientType":"linear","angle":90,"stops":[{"color":"#ffaa40","location":0},{"color":"#9c40ff","location":50},{"color":"#ffaa40","location":100}]}},"containerBg":{"type":"string","default":"#ffffff"},"containerBorderColor":{"type":"string","default":"#e2e8f0"},"containerRadius":{"type":"number","default":8},"align":{"type":"string","default":"wide"}},"supports":{"align":["full","wide"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/marquee","version":"1.0.2","title":"Marquee","category":"guten-builder","description":"Infinite scrolling marquee optimized for logos and images with hardware-accelerated physics.","keywords":["marquee","scrolling text","ticker","moving text","loop text"],"textdomain":"guten-builder-blocks","attributes":{"selectedTemplate":{"type":"string","default":""},"images":{"type":"array","default":[]},"openInNewTab":{"type":"boolean","default":false},"itemHeight":{"type":"string","default":"100px"},"containerMaxWidth":{"type":"string","default":"1024px"},"showBorder":{"type":"boolean","default":true},"showTopText":{"type":"boolean","default":true},"edgeFade":{"type":"boolean","default":true},"speed":{"type":"number","default":30},"reverseDirection":{"type":"boolean","default":false},"pauseOnHover":{"type":"boolean","default":true},"hoverSlowDown":{"type":"boolean","default":false},"liftEffect":{"type":"boolean","default":false},"siblingBlur":{"type":"boolean","default":false},"siblingBlurIntensity":{"type":"number","default":3},"showProgressRail":{"type":"boolean","default":false},"progressRailPosition":{"type":"string","default":"right"},"showInteractionIndicator":{"type":"boolean","default":false},"highlightActiveCenter":{"type":"boolean","default":false},"showFrame":{"type":"boolean","default":false},"frameBg":{"type":"string","default":"#ffffff"},"frameRadius":{"type":"number","default":12},"enableSweepAnimation":{"type":"boolean","default":true},"textGradient":{"type":"object","default":{"gradientType":"linear","angle":90,"stops":[{"color":"#ffaa40","location":0},{"color":"#9c40ff","location":50},{"color":"#ffaa40","location":100}]}},"containerBg":{"type":"string","default":"#ffffff"},"containerBorderColor":{"type":"string","default":"#e2e8f0"},"containerRadius":{"type":"number","default":8},"align":{"type":"string","default":"wide"}},"supports":{"align":["full","wide"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
 
 /***/ }
 

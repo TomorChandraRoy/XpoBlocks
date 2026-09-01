@@ -5,10 +5,30 @@
   "version": "1.0.0",
   "title": "Newsletter Card",
   "category": "guten-builder",
-  "icon": "email",
   "description": "Add a visually appealing newsletter subscription card to grow your email list and engage with your audience.",
   "textdomain": "guten-builder-blocks",
-  "attributes": {},
+  "attributes": {
+    "selectedTemplate": {
+      "type": "string",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "description": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonText": {
+      "type": "string",
+      "default": ""
+    },
+    "containerMaxWidth": {
+      "type": "string",
+      "default": "1000px"
+    }
+  },
   "supports": {
     "html": false,
     "align": [
