@@ -17,3 +17,14 @@ export const updateData = (attr, value, ...props) => {
     draft[currentProp] = updateData(draft[currentProp], value, ...remainingProps);
   });
 };
+
+
+export const DEFAULT_TEXT_GRADIENT = {
+  gradientType: 'linear',
+  angle: 90,
+  stops: [
+    { color: '#ffaa40', location: 0 },
+    { color: '#9c40ff', location: 50 },
+    { color: '#ffaa40', location: 100 }
+  ]
+};

@@ -1,1 +1,105 @@
-.wp-block-guten-builder-blocks-before-after .gbb-before-after-one{margin:0 auto;max-width:900px;width:100%}.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__wrapper{border-radius:10px;height:500px;overflow:hidden;position:relative;-webkit-user-select:none;user-select:none;width:100%}.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__image{height:100%;inset:0;object-fit:cover;pointer-events:none;position:absolute;width:100%}.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__before-image-wrapper{clip-path:inset(0 calc(100% - var(--position, 50)*1%) 0 0);height:100%;left:0;pointer-events:none;position:absolute;top:0;width:100%;z-index:2}.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__before-image{display:block;height:100%;object-fit:cover;pointer-events:none;width:100%}.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__divider{background:#fff;bottom:0;pointer-events:none;position:absolute;top:0;transform:translateX(-50%);width:4px;z-index:4}.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__handle{align-items:center;background:#111;border:3px solid #fff;border-radius:50%;box-shadow:0 4px 12px rgba(0,0,0,.35);display:flex;height:48px;justify-content:center;left:50%;position:absolute;top:50%;transform:translate(-50%,-50%);width:48px}.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__label{background:rgba(0,0,0,.6);border-radius:5px;color:#fff;font-size:14px;font-weight:600;padding:7px 12px;pointer-events:none;position:absolute;top:16px;z-index:5}.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__label--before{left:16px}.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__label--after{right:16px}.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__slider{cursor:ew-resize;height:100%;inset:0;margin:0;opacity:0;position:absolute;width:100%;z-index:10}@media(max-width:767px){.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__wrapper{height:350px}.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__before-image{width:100vw}}
+/*!***********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/before-after/style.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************/
+.wp-block-guten-builder-blocks-before-after .gbb-before-after-one {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__wrapper {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 10px;
+  -webkit-user-select: none;
+          user-select: none;
+}
+.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__before-image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  clip-path: inset(0 calc(100% - var(--position, 50) * 1%) 0 0);
+  pointer-events: none;
+}
+.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__before-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #ffffff;
+  transform: translateX(-50%);
+  z-index: 4;
+  pointer-events: none;
+}
+.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: #111111;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__label {
+  position: absolute;
+  top: 16px;
+  padding: 7px 12px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 5;
+  pointer-events: none;
+}
+.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__label--before {
+  left: 16px;
+}
+.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__label--after {
+  right: 16px;
+}
+.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__slider {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: ew-resize;
+  opacity: 0;
+}
+@media (max-width: 767px) {
+  .wp-block-guten-builder-blocks-before-after .gbb-before-after-one__wrapper {
+    height: 350px;
+  }
+  .wp-block-guten-builder-blocks-before-after .gbb-before-after-one__before-image {
+    width: 100vw;
+  }
+}
+
+/*# sourceMappingURL=style-view.css.map*/

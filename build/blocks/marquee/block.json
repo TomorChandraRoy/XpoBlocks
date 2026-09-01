@@ -22,6 +22,10 @@
       "type": "array",
       "default": []
     },
+    "openInNewTab": {
+      "type": "boolean",
+      "default": false
+    },
     "itemHeight": {
       "type": "string",
       "default": "100px"
@@ -35,6 +39,10 @@
       "default": true
     },
     "showTopText": {
+      "type": "boolean",
+      "default": true
+    },
+    "edgeFade": {
       "type": "boolean",
       "default": true
     },
@@ -54,17 +62,17 @@
       "type": "boolean",
       "default": false
     },
-    "edgeFade": {
-      "type": "boolean",
-      "default": true
-    },
-    "openInNewTab": {
+    "liftEffect": {
       "type": "boolean",
       "default": false
     },
-    "liftEffect": {
+    "siblingBlur": {
       "type": "boolean",
-      "default": true
+      "default": false
+    },
+    "siblingBlurIntensity": {
+      "type": "number",
+      "default": 3
     },
     "showProgressRail": {
       "type": "boolean",
@@ -82,17 +90,9 @@
       "type": "boolean",
       "default": false
     },
-    "siblingBlur": {
-      "type": "boolean",
-      "default": false
-    },
-    "siblingBlurIntensity": {
-      "type": "number",
-      "default": 3
-    },
     "showFrame": {
       "type": "boolean",
-      "default": true
+      "default": false
     },
     "frameBg": {
       "type": "string",
@@ -101,6 +101,43 @@
     "frameRadius": {
       "type": "number",
       "default": 12
+    },
+    "enableSweepAnimation": {
+      "type": "boolean",
+      "default": true
+    },
+    "textGradient": {
+      "type": "object",
+      "default": {
+        "gradientType": "linear",
+        "angle": 90,
+        "stops": [
+          {
+            "color": "#ffaa40",
+            "location": 0
+          },
+          {
+            "color": "#9c40ff",
+            "location": 50
+          },
+          {
+            "color": "#ffaa40",
+            "location": 100
+          }
+        ]
+      }
+    },
+    "containerBg": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "containerBorderColor": {
+      "type": "string",
+      "default": "#e2e8f0"
+    },
+    "containerRadius": {
+      "type": "number",
+      "default": 8
     },
     "align": {
       "type": "string",

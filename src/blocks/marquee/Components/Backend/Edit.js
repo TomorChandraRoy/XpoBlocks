@@ -20,7 +20,7 @@ const Edit = props => {
           <TemplateSelector {...{ attributes, setAttributes }} title={templateData.title} subtitle={templateData.subtitle} templates={templateData.templates} isPro={true} proTemplates={['template-1']} />
         </div>
       ) : (
-        <div {...useBlockProps()}>
+        <div {...useBlockProps({ id })}>
           <DynamicStyle attributes={attributes} id={id} />
           <Marquee attributes={attributes} setAttributes={setAttributes} id={id} />
         </div>

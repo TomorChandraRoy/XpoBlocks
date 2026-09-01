@@ -16,7 +16,9 @@ const TemplateOne = ({ attributes }) => {
     showProgressRail = false,
     progressRailPosition = 'right',
     showInteractionIndicator = false,
-    highlightActiveCenter = false
+    highlightActiveCenter = false,
+    showFrame = true,
+    enableSweepAnimation = true
   } = attributes;
 
   const containerRef = useRef(null);
@@ -95,6 +97,7 @@ const TemplateOne = ({ attributes }) => {
   if (liftEffect) containerClass += ' has-lift-effect';
   if (siblingBlur) containerClass += ' has-sibling-blur';
   if (highlightActiveCenter) containerClass += ' has-active-center-highlight';
+  if (showFrame) containerClass += ' has-frame';
 
   return (
     <div className="gbb-logo-cloud-section">
@@ -106,7 +109,7 @@ const TemplateOne = ({ attributes }) => {
         {showTopText && (
           <div className="gbb-logo-text-container">
             <p className="gbb-logo-text">
-              <span className="gbb-logo-text-wave">
+              <span className={enableSweepAnimation ? 'gbb-logo-text-wave has-sweep' : 'gbb-logo-text-solid'}>
                 Trusted by 1000+ companies <span className="gbb-hide-mobile">around the world</span>
               </span>
             </p>

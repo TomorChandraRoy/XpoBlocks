@@ -26,7 +26,7 @@
       max-width: 1024px;
       margin: 0 auto;
       border-radius: 8px;
-      padding: 40px 0;
+      padding: 16px 0;
       background: white;
       z-index: 1;
 
@@ -62,13 +62,15 @@
           margin: 0;
 
           .gbb-logo-text-wave {
-            background-image: linear-gradient(90deg, currentColor 0%, currentColor 45%, #ffaa40 47%, #9c40ff 50%, #ffaa40 53%, currentColor 55%, currentColor 100%);
-            background-size: 250% 100%;
             background-repeat: no-repeat;
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: wave-sweep 8s linear infinite;
+
+            &.has-sweep {
+              background-size: 250% 100%;
+              animation: wave-sweep 8s linear infinite;
+            }
 
             @media (max-width: 640px) {
               .gbb-hide-mobile {
@@ -119,6 +121,12 @@
 
           &.has-lift-effect .gbb-mq-item:hover {
             transform: translateY(-5px);
+          }
+
+          &.has-frame .gbb-mq-item {
+            padding: 15px 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.04);
           }
 
           &.has-sibling-blur:hover .gbb-mq-item {
