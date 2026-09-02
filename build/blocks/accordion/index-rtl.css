@@ -914,7 +914,7 @@
 }
 .tr-color-control__label {
   font-size: 13px;
-  color: #1e293b;
+  color: #1e1e1e;
 }
 .tr-color-control__actions {
   display: flex;
@@ -1145,7 +1145,6 @@
 }
 .tr-bg-control__label {
   font-size: 13px;
-  color: #555555;
 }
 .tr-bg-control__actions {
   display: flex;
@@ -1220,11 +1219,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-.tr-bg-control__sublabel {
-  font-size: 11px;
-  font-weight: 600;
-  color: #666;
 }
 .tr-bg-control__color-swatch-btn {
   width: 32px;

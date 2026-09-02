@@ -14,7 +14,15 @@ export const templateData = {
       attributes: {
         title: __('Subscribe Our Newsletter', 'guten-builder-blocks'),
         description: __('Subscribe to our newsletter and get the latest updates, offers and exclusive content.', 'guten-builder-blocks'),
-        buttonText: __('Subscribe', 'guten-builder-blocks')
+        buttonText: __('Subscribe', 'guten-builder-blocks'),
+        containerMaxWidth: '1000px',
+        containerBg: { type: 'solid', color: '#ffffff' },
+        containerBorder: { width: '1px', style: 'solid', color: '#e2e8f0', side: 'all' },
+        titleColor: '#1e293b',
+        descriptionColor: '#64748b',
+        buttonColor: '#ffffff',
+        buttonBg: { type: 'solid', color: '#000000' },
+        buttonBorder: { width: '', style: 'solid', color: 'transparent', side: 'all' },
       }
     }
   ]

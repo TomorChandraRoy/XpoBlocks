@@ -274,7 +274,7 @@ const BackgroundControl = ({
         className: "tr-bg-control__row",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
           className: "tr-bg-control__sublabel",
-          children: "COLOR"
+          children: "Selected Color Bg :"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Dropdown, {
           renderToggle: ({
             isOpen,
@@ -681,7 +681,7 @@ __webpack_require__.r(__webpack_exports__);
  * @props defaultColor: default color for reset color (String)
  * @props onChange: (Function)
  * @return color (String)
-*/
+ */
 
 const DEFAULT_CUSTOM_COLORS = [{
   name: "Orange",
@@ -4118,7 +4118,7 @@ const DynamicStyles = ({
           ${dividerWidth?.desktop ? `${mainSl} .gbb-divider { width: ${dividerWidth.desktop}; }` : ''}
           ${dividerWidth?.tablet ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.tabBreakpoint} { ${mainSl} .gbb-divider { width: ${dividerWidth.tablet}; } }` : ''}
           ${dividerWidth?.mobile ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.mobileBreakpoint} { ${mainSl} .gbb-divider { width: ${dividerWidth.mobile}; } }` : ''}
-          
+
           ${dividerHeight?.desktop ? `${mainSl} .gbb-divider::before, ${mainSl} .gbb-divider::after { height: ${dividerHeight.desktop}; }` : ''}
           ${dividerHeight?.tablet ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.tabBreakpoint} { ${mainSl} .gbb-divider::before, ${mainSl} .gbb-divider::after { height: ${dividerHeight.tablet}; } }` : ''}
           ${dividerHeight?.mobile ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.mobileBreakpoint} { ${mainSl} .gbb-divider::before, ${mainSl} .gbb-divider::after { height: ${dividerHeight.mobile}; } }` : ''}

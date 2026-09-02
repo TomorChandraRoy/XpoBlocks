@@ -274,7 +274,7 @@ const BackgroundControl = ({
         className: "tr-bg-control__row",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
           className: "tr-bg-control__sublabel",
-          children: "COLOR"
+          children: "Selected Color Bg :"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Dropdown, {
           renderToggle: ({
             isOpen,
@@ -681,7 +681,7 @@ __webpack_require__.r(__webpack_exports__);
  * @props defaultColor: default color for reset color (String)
  * @props onChange: (Function)
  * @return color (String)
-*/
+ */
 
 const DEFAULT_CUSTOM_COLORS = [{
   name: "Orange",
@@ -3949,8 +3949,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var tr_tools__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tr-tools */ "../tr-tools/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
@@ -3958,10 +3960,153 @@ const Style = ({
   attributes,
   setAttributes
 }) => {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-    className: "bPlPanelBody",
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template Presets', 'guten-builder-blocks'),
-    initialOpen: true
+  const {
+    containerBg,
+    containerBorder,
+    titleColor,
+    titleTypography,
+    descriptionColor,
+    descriptionTypography,
+    buttonColor,
+    buttonBg,
+    buttonBorder,
+    buttonTypography
+  } = attributes;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      className: "bPlPanelBody",
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container', 'guten-builder-blocks'),
+      initialOpen: false,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BackgroundControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background :', 'guten-builder-blocks'),
+        value: containerBg,
+        onChange: val => setAttributes({
+          containerBg: val
+        }),
+        defaultBackground: {
+          type: 'solid',
+          color: '#ffffff'
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BorderControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border :', 'guten-builder-blocks'),
+        value: containerBorder,
+        onChange: val => setAttributes({
+          containerBorder: val
+        }),
+        defaultBorder: {
+          color: '#e2e8f0',
+          width: '1px',
+          style: 'solid',
+          side: 'all'
+        }
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      className: "bPlPanelBody",
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title', 'guten-builder-blocks'),
+      initialOpen: false,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Color :', 'guten-builder-blocks'),
+        value: titleColor,
+        onChange: val => setAttributes({
+          titleColor: val
+        }),
+        defaultColor: "#1e293b"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Typography :', 'guten-builder-blocks'),
+        value: titleTypography,
+        onChange: val => setAttributes({
+          titleTypography: val
+        }),
+        defaultTypography: {
+          fontFamily: 'Arial, sans-serif',
+          fontWeight: '700',
+          fontSize: '24px',
+          lineHeight: '1.5',
+          textTransform: 'none',
+          letterSpacing: '0px',
+          textAlign: 'left',
+          color: '#1e293b'
+        }
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      className: "bPlPanelBody",
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description', 'guten-builder-blocks'),
+      initialOpen: false,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Color :', 'guten-builder-blocks'),
+        value: descriptionColor,
+        onChange: val => setAttributes({
+          descriptionColor: val
+        }),
+        defaultColor: "#64748b"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Typography :', 'guten-builder-blocks'),
+        value: descriptionTypography,
+        onChange: val => setAttributes({
+          descriptionTypography: val
+        }),
+        defaultTypography: {
+          fontFamily: 'Arial, sans-serif',
+          fontWeight: '400',
+          fontSize: '16px',
+          lineHeight: '1.5',
+          textTransform: 'none',
+          letterSpacing: '0px',
+          textAlign: 'left',
+          color: '#64748b'
+        }
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      className: "bPlPanelBody",
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button', 'guten-builder-blocks'),
+      initialOpen: false,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text Color :', 'guten-builder-blocks'),
+        value: buttonColor,
+        onChange: val => setAttributes({
+          buttonColor: val
+        }),
+        defaultColor: "#ffffff"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BackgroundControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background :', 'guten-builder-blocks'),
+        value: buttonBg,
+        onChange: val => setAttributes({
+          buttonBg: val
+        }),
+        defaultBackground: {
+          type: 'solid',
+          color: '#000000'
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BorderControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border :', 'guten-builder-blocks'),
+        value: buttonBorder,
+        onChange: val => setAttributes({
+          buttonBorder: val
+        }),
+        defaultBorder: {
+          color: 'transparent',
+          width: '',
+          style: 'solid',
+          side: 'all'
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Typography :', 'guten-builder-blocks'),
+        value: buttonTypography,
+        onChange: val => setAttributes({
+          buttonTypography: val
+        }),
+        defaultTypography: {
+          fontFamily: 'Arial, sans-serif',
+          fontWeight: '700',
+          fontSize: '16px',
+          lineHeight: '1.5',
+          textTransform: 'none',
+          letterSpacing: '0px',
+          textAlign: 'center',
+          color: '#ffffff'
+        }
+      })]
+    })]
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Style);
@@ -3978,23 +4123,58 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var tr_tools__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tr-tools */ "../tr-tools/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
 
 const DynamicStyles = ({
   attributes,
   id
 }) => {
   const {
-    containerMaxWidth
-  } = attributes;
+    containerMaxWidth,
+    containerBg,
+    containerBorder,
+    titleColor,
+    titleTypography,
+    descriptionColor,
+    descriptionTypography,
+    buttonColor,
+    buttonBg,
+    buttonBorder,
+    buttonTypography
+  } = attributes || {};
   const mainSl = `#${id}`;
   const container = `${mainSl} .gbb-newsletter-container`;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("style", {
+  const title = `${mainSl} .gbb-newsletter-title`;
+  const description = `${mainSl} .gbb-newsletter-description`;
+  const button = `${mainSl} .gbb-newsletter-button`;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("style", {
     dangerouslySetInnerHTML: {
       __html: `
-          ${containerMaxWidth ? ` ${container} {max-width:${containerMaxWidth};}` : ''}
-          
+          ${container} {
+            ${containerMaxWidth ? `max-width:${containerMaxWidth};` : ''}
+            ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(containerBg) ? `background:${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(containerBg)};` : ''}
+            ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderCss)(containerBorder)}
+          }
+
+          ${title} {
+            ${titleColor ? `color:${titleColor};` : ''}
+            ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(titleTypography)}
+          }
+
+          ${description} {
+            ${descriptionColor ? `color:${descriptionColor};` : ''}
+            ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(descriptionTypography)}
+          }
+
+          ${button} {
+            ${buttonColor ? `color:${buttonColor};` : ''}
+            ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(buttonBg) ? `background:${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(buttonBg)};` : ''}
+            ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderCss)(buttonBorder)}
+            ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(buttonTypography)}
+          }
         `
     }
   });
@@ -4196,7 +4376,31 @@ const templateData = {
     attributes: {
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Subscribe Our Newsletter', 'guten-builder-blocks'),
       description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Subscribe to our newsletter and get the latest updates, offers and exclusive content.', 'guten-builder-blocks'),
-      buttonText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Subscribe', 'guten-builder-blocks')
+      buttonText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Subscribe', 'guten-builder-blocks'),
+      containerMaxWidth: '1000px',
+      containerBg: {
+        type: 'solid',
+        color: '#ffffff'
+      },
+      containerBorder: {
+        width: '1px',
+        style: 'solid',
+        color: '#e2e8f0',
+        side: 'all'
+      },
+      titleColor: '#1e293b',
+      descriptionColor: '#64748b',
+      buttonColor: '#ffffff',
+      buttonBg: {
+        type: 'solid',
+        color: '#000000'
+      },
+      buttonBorder: {
+        width: '',
+        style: 'solid',
+        color: 'transparent',
+        side: 'all'
+      }
     }
   }]
 };
@@ -4669,7 +4873,7 @@ module.exports = window["wp"]["i18n"];
   \***********************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"guten-builder-blocks/newsletter-card","version":"1.0.0","title":"Newsletter Card","category":"guten-builder","description":"Add a visually appealing newsletter subscription card to grow your email list and engage with your audience.","textdomain":"guten-builder-blocks","attributes":{"selectedTemplate":{"type":"string","default":""},"title":{"type":"string","default":""},"description":{"type":"string","default":""},"buttonText":{"type":"string","default":""},"containerMaxWidth":{"type":"string","default":"1000px"}},"supports":{"html":false,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"guten-builder-blocks/newsletter-card","version":"1.0.0","title":"Newsletter Card","category":"guten-builder","description":"Add a visually appealing newsletter subscription card to grow your email list and engage with your audience.","textdomain":"guten-builder-blocks","attributes":{"selectedTemplate":{"type":"string","default":""},"title":{"type":"string","default":""},"description":{"type":"string","default":""},"buttonText":{"type":"string","default":""},"containerMaxWidth":{"type":"string","default":"1000px"},"containerBg":{"type":"object","default":{}},"containerBorder":{"type":"object","default":{}},"titleColor":{"type":"string","default":"#1e293b"},"titleTypography":{"type":"object","default":{}},"descriptionColor":{"type":"string","default":"#64748b"},"descriptionTypography":{"type":"object","default":{}},"buttonColor":{"type":"string","default":"#ffffff"},"buttonBg":{"type":"object","default":{}},"buttonBorder":{"type":"object","default":{}},"buttonTypography":{"type":"object","default":{}}},"supports":{"html":false,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
 
 /***/ }
 

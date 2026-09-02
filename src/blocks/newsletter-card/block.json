@@ -27,6 +27,46 @@
     "containerMaxWidth": {
       "type": "string",
       "default": "1000px"
+    },
+    "containerBg": {
+      "type": "object",
+      "default": {}
+    },
+    "containerBorder": {
+      "type": "object",
+      "default": {}
+    },
+    "titleColor": {
+      "type": "string",
+      "default": "#1e293b"
+    },
+    "titleTypography": {
+      "type": "object",
+      "default": {}
+    },
+    "descriptionColor": {
+      "type": "string",
+      "default": "#64748b"
+    },
+    "descriptionTypography": {
+      "type": "object",
+      "default": {}
+    },
+    "buttonColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "buttonBg": {
+      "type": "object",
+      "default": {}
+    },
+    "buttonBorder": {
+      "type": "object",
+      "default": {}
+    },
+    "buttonTypography": {
+      "type": "object",
+      "default": {}
     }
   },
   "supports": {
