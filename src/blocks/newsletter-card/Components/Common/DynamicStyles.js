@@ -9,6 +9,10 @@ const DynamicStyles = ({ attributes, id }) => {
     titleTypography,
     descriptionColor,
     descriptionTypography,
+    inputColor,
+    inputBg,
+    inputBorder,
+    inputTypography,
     buttonColor,
     buttonBg,
     buttonBorder,
@@ -20,6 +24,7 @@ const DynamicStyles = ({ attributes, id }) => {
   const container = `${mainSl} .gbb-newsletter-container`;
   const title = `${mainSl} .gbb-newsletter-title`;
   const description = `${mainSl} .gbb-newsletter-description`;
+  const input = `${mainSl} .gbb-newsletter-input`;
   const button = `${mainSl} .gbb-newsletter-button`;
 
   return (
@@ -40,6 +45,21 @@ const DynamicStyles = ({ attributes, id }) => {
           ${description} {
             ${descriptionColor ? `color:${descriptionColor};` : ''}
             ${getTypographyCss(descriptionTypography)}
+          }
+
+          ${input} {
+            ${inputColor ? `color:${inputColor};` : ''}
+            ${getBackgroundCss(inputBg) ? `background:${getBackgroundCss(inputBg)};` : ''}
+            ${getBorderCss(inputBorder)}
+            ${getTypographyCss(inputTypography)}
+          }
+
+          ${input}:-webkit-autofill,
+          ${input}:-webkit-autofill:hover,
+          ${input}:-webkit-autofill:focus,
+          ${input}:-webkit-autofill:active {
+            transition: background-color 50000s ease-in-out 0s;
+            ${inputColor ? `-webkit-text-fill-color: ${inputColor} !important;` : ''}
           }
 
           ${button} {

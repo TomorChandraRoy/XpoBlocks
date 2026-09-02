@@ -10,6 +10,10 @@ const Style = ({ attributes, setAttributes }) => {
     titleTypography,
     descriptionColor,
     descriptionTypography,
+    inputColor,
+    inputBg,
+    inputBorder,
+    inputTypography,
     buttonColor,
     buttonBg,
     buttonBorder,
@@ -86,6 +90,50 @@ const Style = ({ attributes, setAttributes }) => {
             letterSpacing: '0px',
             textAlign: 'left',
             color: '#64748b',
+          }}
+        />
+      </PanelBody>
+
+      <PanelBody className="bPlPanelBody" title={__('Input Field', 'guten-builder-blocks')} initialOpen={false}>
+        <ColorControl
+          label={__('Text Color :', 'guten-builder-blocks')}
+          value={inputColor}
+          onChange={val => setAttributes({ inputColor: val })}
+          defaultColor="#0f172a"
+        />
+        <BackgroundControl
+          label={__('Background :', 'guten-builder-blocks')}
+          value={inputBg}
+          onChange={val => setAttributes({ inputBg: val })}
+          defaultBackground={{
+            type: 'solid',
+            color: '#ffffff',
+          }}
+        />
+        <BorderControl
+          label={__('Border :', 'guten-builder-blocks')}
+          value={inputBorder}
+          onChange={val => setAttributes({ inputBorder: val })}
+          defaultBorder={{
+            color: '#cbd5e1',
+            width: '1px',
+            style: 'solid',
+            side: 'all',
+          }}
+        />
+        <Typography
+          label={__('Typography :', 'guten-builder-blocks')}
+          value={inputTypography}
+          onChange={val => setAttributes({ inputTypography: val })}
+          defaultTypography={{
+            fontFamily: 'Arial, sans-serif',
+            fontWeight: '400',
+            fontSize: '14px',
+            lineHeight: '1.5',
+            textTransform: 'none',
+            letterSpacing: '0px',
+            textAlign: 'left',
+            color: '#0f172a',
           }}
         />
       </PanelBody>

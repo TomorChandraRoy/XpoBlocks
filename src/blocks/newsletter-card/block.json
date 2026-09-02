@@ -52,6 +52,22 @@
       "type": "object",
       "default": {}
     },
+    "inputColor": {
+      "type": "string",
+      "default": "#0f172a"
+    },
+    "inputBg": {
+      "type": "object",
+      "default": {}
+    },
+    "inputBorder": {
+      "type": "object",
+      "default": {}
+    },
+    "inputTypography": {
+      "type": "object",
+      "default": {}
+    },
     "buttonColor": {
       "type": "string",
       "default": "#ffffff"
