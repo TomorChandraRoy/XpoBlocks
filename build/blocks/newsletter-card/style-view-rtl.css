@@ -71,8 +71,13 @@
   margin-top: 0;
   margin-bottom: 0;
 }
-.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-form,
-.gbb-newsletter-card-container .gbb-newsletter-form {
+.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-form-wrapper,
+.gbb-newsletter-card-container .gbb-newsletter-form-wrapper {
+  max-width: 32rem;
+  width: 100%;
+}
+.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-form-wrapper .gbb-newsletter-form,
+.gbb-newsletter-card-container .gbb-newsletter-form-wrapper .gbb-newsletter-form {
   max-width: 32rem;
   width: 100%;
   min-width: 0;
@@ -82,20 +87,20 @@
   row-gap: 1.5rem;
 }
 @media (min-width: 640px) {
-  .wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-form,
-  .gbb-newsletter-card-container .gbb-newsletter-form {
+  .wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-form-wrapper .gbb-newsletter-form,
+  .gbb-newsletter-card-container .gbb-newsletter-form-wrapper .gbb-newsletter-form {
     flex-direction: row;
     align-items: center;
   }
 }
 @media (min-width: 1024px) {
-  .wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-form,
-  .gbb-newsletter-card-container .gbb-newsletter-form {
+  .wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-form-wrapper .gbb-newsletter-form,
+  .gbb-newsletter-card-container .gbb-newsletter-form-wrapper .gbb-newsletter-form {
     margin-right: auto;
   }
 }
-.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-input,
-.gbb-newsletter-card-container .gbb-newsletter-input {
+.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-input,
+.gbb-newsletter-card-container .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-input {
   padding: 0.75rem 0.875rem;
   font-size: 0.875rem;
   color: #0f172a;
@@ -106,15 +111,16 @@
   flex: 1 1 auto;
   border: 1px solid #cbd5e1;
   outline: none;
+  box-sizing: border-box;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-input:focus,
-.gbb-newsletter-card-container .gbb-newsletter-input:focus {
+.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-input:focus,
+.gbb-newsletter-card-container .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-input:focus {
   border-color: #2563eb;
   box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
 }
-.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-button,
-.gbb-newsletter-card-container .gbb-newsletter-button {
+.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-button,
+.gbb-newsletter-card-container .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-button {
   padding: 0.75rem 1rem;
   font-size: 0.875rem;
   width: max-content;
@@ -128,16 +134,16 @@
   transition: all 0.2s ease;
   white-space: nowrap;
 }
-.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-button:hover,
-.gbb-newsletter-card-container .gbb-newsletter-button:hover {
+.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-button:hover,
+.gbb-newsletter-card-container .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-button:hover {
   background-color: #1d4ed8;
   border-color: #1d4ed8;
 }
-.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-button:focus,
-.gbb-newsletter-card-container .gbb-newsletter-button:focus {
+.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-button:focus,
+.gbb-newsletter-card-container .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-button:focus {
   outline: none;
 }
-.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-button:focus-visible,
-.gbb-newsletter-card-container .gbb-newsletter-button:focus-visible {
+.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-button:focus-visible,
+.gbb-newsletter-card-container .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-button:focus-visible {
   box-shadow: 0 0 0 2px #3b82f6;
 }

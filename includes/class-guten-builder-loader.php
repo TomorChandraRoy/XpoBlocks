@@ -15,11 +15,16 @@ if ( !class_exists( 'Guten_Builder_Loader' ) ) {
 		public static function init() {
 			require_once GUTEN_BUILDER_DIR_PATH . 'includes/class-guten-builder-core.php';
 			require_once GUTEN_BUILDER_DIR_PATH . 'includes/class-guten-builder-admin.php';
+			require_once GUTEN_BUILDER_DIR_PATH . 'includes/class-guten-builder-api.php';
 
 			if ( class_exists( 'Guten_Builder_Core' ) ) {
 				// static লেখার কারণে সরাসরি ক্লাসের নাম দিয়ে সংক্ষেপে কল করা যায়: Core::init()
 				// static না থাকলে হতো: $core = new Core();
 				Guten_Builder_Core::init();
+			}
+
+			if ( class_exists( 'Guten_Builder_API' ) ) {
+				Guten_Builder_API::init();
 			}
 
 			// শুধুমাত্র Admin Panel-এ থাকলে Admin ফিচার চালু করা (Performance Friendly)

@@ -23,6 +23,8 @@ export const templateData = {
         buttonColor: '#ffffff',
         buttonBg: { type: 'solid', color: '#000000' },
         buttonBorder: { width: '', style: 'solid', color: 'transparent', side: 'all' },
+        successMessage: __('Thank you for subscribing!', 'guten-builder-blocks'),
+        errorMessage: __('Something went wrong. Please try again.', 'guten-builder-blocks'),
       }
     }
   ]

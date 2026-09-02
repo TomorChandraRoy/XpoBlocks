@@ -67,6 +67,14 @@
     "buttonTypography": {
       "type": "object",
       "default": {}
+    },
+    "successMessage": {
+      "type": "string",
+      "default": ""
+    },
+    "errorMessage": {
+      "type": "string",
+      "default": ""
     }
   },
   "supports": {

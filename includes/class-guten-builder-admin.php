@@ -34,6 +34,21 @@ if ( !class_exists( 'Guten_Builder_Admin' ) ) {
 				'data:image/svg+xml;base64,' . base64_encode( $svg ), // ওয়ার্ডপ্রেস স্ট্যান্ডার্ড Dashicon আইকন
 				30                                           // মেনুর পজিশন (Menu Position)
 			);
+			
+			$settings = Guten_Builder_Core::get_settings();
+			$active_blocks = isset( $settings['activeBlocks'] ) ? $settings['activeBlocks'] : [];
+			$is_newsletter_active = ! isset( $active_blocks['newsletter-card'] ) || ! empty( $active_blocks['newsletter-card'] );
+
+			if ( $is_newsletter_active ) {
+				add_submenu_page(
+					'guten-builder',
+					__( 'Subscribers', 'guten-builder-blocks' ),
+					__( 'Subscribers', 'guten-builder-blocks' ),
+					'manage_options',
+					'guten-builder-subscribers',
+					[ __CLASS__, 'render_subscribers_page' ]
+				);
+			}
 		}
 
 		/**
@@ -46,11 +61,110 @@ if ( !class_exists( 'Guten_Builder_Admin' ) ) {
 			<?php
 		}
 
+		public static function render_subscribers_page() {
+			if ( ! current_user_can( 'manage_options' ) ) {
+				wp_die( __( 'You do not have sufficient permissions to access this page.', 'guten-builder-blocks' ) );
+			}
+
+			$deleted_notice = false;
+
+			// Handle subscriber delete action
+			if ( isset( $_GET['action'] ) && 'delete' === $_GET['action'] && isset( $_GET['email'] ) ) {
+				$email_to_delete = sanitize_email( wp_unslash( $_GET['email'] ) );
+				$nonce           = isset( $_GET['_wpnonce'] ) ? $_GET['_wpnonce'] : '';
+
+				if ( wp_verify_nonce( $nonce, 'gbb_delete_subscriber_' . $email_to_delete ) ) {
+					$subscribers = get_option( 'gbb_newsletter_subscribers', [] );
+					if ( is_array( $subscribers ) ) {
+						$updated_subscribers = [];
+						foreach ( $subscribers as $sub ) {
+							$sub_email = is_array( $sub ) && isset( $sub['email'] ) ? $sub['email'] : $sub;
+							if ( strtolower( $sub_email ) !== strtolower( $email_to_delete ) ) {
+								$updated_subscribers[] = $sub;
+							}
+						}
+						update_option( 'gbb_newsletter_subscribers', $updated_subscribers );
+						$deleted_notice = true;
+					}
+				}
+			}
+
+			$subscribers = get_option( 'gbb_newsletter_subscribers', [] );
+			if ( ! is_array( $subscribers ) ) {
+				$subscribers = [];
+			}
+			?>
+			<div class="wrap">
+				<h1 class="wp-heading-inline"><?php esc_html_e( 'Newsletter Subscribers', 'guten-builder-blocks' ); ?></h1>
+				<hr class="wp-header-end">
+
+				<?php if ( $deleted_notice ) : ?>
+					<div class="notice notice-success is-dismissible" style="margin-top: 15px;">
+						<p><?php esc_html_e( 'Subscriber deleted successfully.', 'guten-builder-blocks' ); ?></p>
+					</div>
+				<?php endif; ?>
+
+				<div style="margin-top: 20px; max-width: 950px;">
+					<div style="background: #fff; border: 1px solid #c3c4c7; border-radius: 4px; padding: 15px 20px; margin-bottom: 15px;">
+						<strong style="font-size: 16px; color: #1d2327;">
+							<?php printf( esc_html__( 'Total Subscribers: %d', 'guten-builder-blocks' ), count( $subscribers ) ); ?>
+						</strong>
+					</div>
+
+					<table class="wp-list-table widefat fixed striped table-view-list">
+						<thead>
+							<tr>
+								<th style="width: 60px;">#</th>
+								<th><?php esc_html_e( 'Email Address', 'guten-builder-blocks' ); ?></th>
+								<th style="width: 220px;"><?php esc_html_e( 'Subscribed Date', 'guten-builder-blocks' ); ?></th>
+								<th style="width: 100px; text-align: right; padding-right: 15px;"><?php esc_html_e( 'Actions', 'guten-builder-blocks' ); ?></th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php if ( ! empty( $subscribers ) ) : ?>
+								<?php foreach ( array_reverse( $subscribers ) as $index => $sub ) :
+									$email = is_array( $sub ) ? $sub['email'] : $sub;
+									$date  = is_array( $sub ) && isset( $sub['date'] ) ? $sub['date'] : '-';
+									$delete_url = wp_nonce_url(
+										add_query_arg([
+											'page'   => 'guten-builder-subscribers',
+											'action' => 'delete',
+											'email'  => urlencode( $email ),
+										], admin_url( 'admin.php' )),
+										'gbb_delete_subscriber_' . $email
+									);
+									?>
+									<tr>
+										<td><?php echo esc_html( count( $subscribers ) - $index ); ?></td>
+										<td><strong><?php echo esc_html( $email ); ?></strong></td>
+										<td><?php echo esc_html( $date ); ?></td>
+										<td style="text-align: right; padding-right: 15px;">
+											<a href="<?php echo esc_url( $delete_url ); ?>"
+											   class="button button-small button-link-delete"
+											   style="color: #b32d2e; text-decoration: none;"
+											   onclick="return confirm('<?php esc_attr_e( 'Are you sure you want to delete this subscriber?', 'guten-builder-blocks' ); ?>');">
+												<?php esc_html_e( 'Delete', 'guten-builder-blocks' ); ?>
+											</a>
+										</td>
+									</tr>
+								<?php endforeach; ?>
+							<?php else : ?>
+								<tr>
+									<td colspan="4"><?php esc_html_e( 'No subscribers found yet.', 'guten-builder-blocks' ); ?></td>
+								</tr>
+							<?php endif; ?>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<?php
+		}
+
 	//  ১. যেকোনো মূল টপ-লেভেল মেনুর জন্য ওয়ার্ডপ্রেস প্রিফিক্স হিসেবে দেয়: toplevel_page_ ২. তার সাথে যুক্ত করে আপনার দেওয়া admin_menu-page array-এর menu_slug (guten-builder): guten-builder
 
 		public static function enqueue_admin_assets( $hook ) {
-			// শুধুমাত্র Guten Builder পেজে ফাইল লোড করা (Guard Clause)
-			if ( 'toplevel_page_guten-builder' !== $hook ) {
+			// শুধুমাত্র Guten Builder এবং Subscribers পেজে ফাইল লোড করা (Guard Clause)
+			if ( 'toplevel_page_guten-builder' !== $hook && 'guten-builder_page_guten-builder-subscribers' !== $hook ) {
 				return;
 			}
 

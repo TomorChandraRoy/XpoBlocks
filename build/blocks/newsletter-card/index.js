@@ -3833,6 +3833,11 @@ const General = ({
   setAttributes
 }) => {
   const {
+    title,
+    description,
+    buttonText,
+    successMessage,
+    errorMessage,
     containerMaxWidth
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
@@ -3846,7 +3851,7 @@ const General = ({
           color: '#64748b',
           marginBottom: '12px'
         },
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Switch or apply a predefined divider template style.', 'guten-builder-blocks')
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Switch or apply a predefined newsletter template style.', 'guten-builder-blocks')
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
         isSecondary: true,
         onClick: () => setAttributes({
@@ -3857,6 +3862,41 @@ const General = ({
           justifyContent: 'center'
         },
         children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Change Template', 'guten-builder-blocks')
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      className: "bPlPanelBody",
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Settings', 'guten-builder-blocks'),
+      initialOpen: false,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title :', 'guten-builder-blocks'),
+        value: title,
+        onChange: val => setAttributes({
+          title: val
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextareaControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description :', 'guten-builder-blocks'),
+        value: description,
+        onChange: val => setAttributes({
+          description: val
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Text :', 'guten-builder-blocks'),
+        value: buttonText,
+        onChange: val => setAttributes({
+          buttonText: val
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Success Message :', 'guten-builder-blocks'),
+        value: successMessage,
+        onChange: val => setAttributes({
+          successMessage: val
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Error Message :', 'guten-builder-blocks'),
+        value: errorMessage,
+        onChange: val => setAttributes({
+          errorMessage: val
+        })
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
@@ -4228,12 +4268,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
@@ -4244,75 +4287,158 @@ const TemplateOne = ({
   const {
     title,
     description,
-    buttonText
-  } = attributes;
-
-  // Check if the component is being rendered in the editor
+    buttonText,
+    successMessage,
+    errorMessage
+  } = attributes || {};
+  const [email, setEmail] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)('');
+  const [isSubmitting, setIsSubmitting] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const [status, setStatus] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    type: '',
+    message: ''
+  });
   const isEditor = typeof setAttributes === 'function';
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    if (status.message) {
+      const timer = setTimeout(() => {
+        setStatus({
+          type: '',
+          message: ''
+        });
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [status.message]);
+  const handleSubmit = async e => {
+    e.preventDefault();
+    if (isEditor) return;
+    if (!email || !email.includes('@')) {
+      setStatus({
+        type: 'error',
+        message: errorMessage || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Please enter a valid email address.', 'guten-builder-blocks')
+      });
+      return;
+    }
+    setIsSubmitting(true);
+    setStatus({
+      type: '',
+      message: ''
+    });
+    try {
+      const response = await fetch('/wp-json/guten-builder/v1/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email
+        })
+      });
+      const data = await response.json();
+      if (response.ok && data.success) {
+        setStatus({
+          type: 'success',
+          message: successMessage || data.message || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Thank you for subscribing!', 'guten-builder-blocks')
+        });
+        setEmail('');
+      } else {
+        setStatus({
+          type: 'error',
+          message: data.message || errorMessage || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Something went wrong. Please try again.', 'guten-builder-blocks')
+        });
+      }
+    } catch {
+      setStatus({
+        type: 'error',
+        message: errorMessage || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Connection error. Please try again later.', 'guten-builder-blocks')
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("section", {
     className: "gbb-newsletter-section",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "gbb-newsletter-container",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "gbb-newsletter-content",
-        children: isEditor ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+        children: isEditor ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
             tagName: "h2",
             className: "gbb-newsletter-title",
             value: title,
             onChange: val => setAttributes({
               title: val
             }),
-            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enter title...', 'guten-builder-blocks')
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter title...', 'guten-builder-blocks')
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
             tagName: "p",
             className: "gbb-newsletter-description",
             value: description,
             onChange: val => setAttributes({
               description: val
             }),
-            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enter description...', 'guten-builder-blocks')
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter description...', 'guten-builder-blocks')
           })]
-        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
             tagName: "h2",
             className: "gbb-newsletter-title",
             value: title
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
             tagName: "p",
             className: "gbb-newsletter-description",
             value: description
           })]
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
-        className: "gbb-newsletter-form",
-        onSubmit: e => {
-          if (isEditor) e.preventDefault();
-        },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "email",
-          id: "email",
-          name: "email",
-          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enter your email', 'guten-builder-blocks'),
-          required: true,
-          className: "gbb-newsletter-input"
-        }), isEditor ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
-          tagName: "span",
-          className: "gbb-newsletter-button",
-          value: buttonText,
-          onChange: val => setAttributes({
-            buttonText: val
-          }),
-          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button text...', 'guten-builder-blocks'),
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "gbb-newsletter-form-wrapper",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
+          className: "gbb-newsletter-form",
+          onSubmit: handleSubmit,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+            type: "email",
+            id: "email",
+            name: "email",
+            value: email,
+            onChange: e => setEmail(e.target.value),
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter your email', 'guten-builder-blocks'),
+            required: true,
+            disabled: isSubmitting,
+            className: "gbb-newsletter-input"
+          }), isEditor ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+            tagName: "span",
+            className: "gbb-newsletter-button",
+            value: buttonText,
+            onChange: val => setAttributes({
+              buttonText: val
+            }),
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Button text...', 'guten-builder-blocks'),
+            style: {
+              display: 'inline-block',
+              textAlign: 'center'
+            }
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+            type: "submit",
+            disabled: isSubmitting,
+            className: "gbb-newsletter-button",
+            style: {
+              opacity: isSubmitting ? 0.7 : 1
+            },
+            children: isSubmitting ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Subscribing...', 'guten-builder-blocks') : buttonText || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Subscribe', 'guten-builder-blocks')
+          })]
+        }), !isEditor && status.message && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: `gbb-newsletter-status gbb-newsletter-status--${status.type}`,
           style: {
-            display: 'inline-block',
-            textAlign: 'center'
-          }
-        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
-          tagName: "button",
-          type: "submit",
-          className: "gbb-newsletter-button",
-          value: buttonText
+            marginTop: '10px',
+            padding: '8px 12px',
+            borderRadius: '4px',
+            fontSize: '13px',
+            backgroundColor: status.type === 'success' ? '#dcfce7' : '#fee2e2',
+            color: status.type === 'success' ? '#166534' : '#991b1b',
+            border: `1px solid ${status.type === 'success' ? '#bbf7d0' : '#fca5a5'}`
+          },
+          children: status.message
         })]
       })]
     })
@@ -4400,7 +4526,9 @@ const templateData = {
         style: 'solid',
         color: 'transparent',
         side: 'all'
-      }
+      },
+      successMessage: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Thank you for subscribing!', 'guten-builder-blocks'),
+      errorMessage: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Something went wrong. Please try again.', 'guten-builder-blocks')
     }
   }]
 };
@@ -4873,7 +5001,7 @@ module.exports = window["wp"]["i18n"];
   \***********************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"guten-builder-blocks/newsletter-card","version":"1.0.0","title":"Newsletter Card","category":"guten-builder","description":"Add a visually appealing newsletter subscription card to grow your email list and engage with your audience.","textdomain":"guten-builder-blocks","attributes":{"selectedTemplate":{"type":"string","default":""},"title":{"type":"string","default":""},"description":{"type":"string","default":""},"buttonText":{"type":"string","default":""},"containerMaxWidth":{"type":"string","default":"1000px"},"containerBg":{"type":"object","default":{}},"containerBorder":{"type":"object","default":{}},"titleColor":{"type":"string","default":"#1e293b"},"titleTypography":{"type":"object","default":{}},"descriptionColor":{"type":"string","default":"#64748b"},"descriptionTypography":{"type":"object","default":{}},"buttonColor":{"type":"string","default":"#ffffff"},"buttonBg":{"type":"object","default":{}},"buttonBorder":{"type":"object","default":{}},"buttonTypography":{"type":"object","default":{}}},"supports":{"html":false,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"guten-builder-blocks/newsletter-card","version":"1.0.0","title":"Newsletter Card","category":"guten-builder","description":"Add a visually appealing newsletter subscription card to grow your email list and engage with your audience.","textdomain":"guten-builder-blocks","attributes":{"selectedTemplate":{"type":"string","default":""},"title":{"type":"string","default":""},"description":{"type":"string","default":""},"buttonText":{"type":"string","default":""},"containerMaxWidth":{"type":"string","default":"1000px"},"containerBg":{"type":"object","default":{}},"containerBorder":{"type":"object","default":{}},"titleColor":{"type":"string","default":"#1e293b"},"titleTypography":{"type":"object","default":{}},"descriptionColor":{"type":"string","default":"#64748b"},"descriptionTypography":{"type":"object","default":{}},"buttonColor":{"type":"string","default":"#ffffff"},"buttonBg":{"type":"object","default":{}},"buttonBorder":{"type":"object","default":{}},"buttonTypography":{"type":"object","default":{}},"successMessage":{"type":"string","default":""},"errorMessage":{"type":"string","default":""}},"supports":{"html":false,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
 
 /***/ }
 
