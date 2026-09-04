@@ -1452,24 +1452,65 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Advanced Modern ItemsPanel Component
  * Provides a state-of-the-art UI for managing list items across Gutenberg blocks.
+ *
+ * @param {Object} props
+ * @param {string} [props.title] - The title shown at the top of the panel. (প্যানেলের উপরে দেখানো মেইন টাইটেল)
+ * @param {boolean} [props.initialOpen] - Whether the panel is open by default. (প্যানেলটি শুরুতে খোলা থাকবে কি না)
+ * @param {Array} [props.items] - The array of items to manage. (যে আইটেমগুলো ম্যানেজ করতে চান তার অ্যারে)
+ * @param {Function} props.onChange - Callback function triggered when items are added, removed, or updated. (আইটেম অ্যাড, রিমুভ বা এডিট হলে এই ফাংশন কল হয়)
+ * @param {Object} [props.defaultItem] - The default structure of a new item when clicking the add button. (নতুন আইটেম অ্যাড করলে তার ডিফল্ট স্ট্রাকচার বা ভ্যালু কেমন হবে)
+ * @param {string} [props.addButtonLabel] - The label text for the add button. (নতুন আইটেম অ্যাড করার বাটনের টেক্সট)
+ * @param {string} [props.itemTitleKey] - The object key used to display the item's title in the list header. (লিস্টের হেডিংয়ে আইটেমের কোন প্রোপার্টিটি দেখাবে, যেমন: 'name' বা 'title')
+ * @param {Function} [props.ItemSettings] - React Component to render the fields. Receives `{item, index, updateField}` as props. (কাস্টম কম্পোনেন্ট হিসেবে ফিল্ড রেন্ডার করার জন্য)
  */
 
-const ItemsPanel = ({
-  title = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("📋 Items Manager", "guten-builder-blocks"),
-  initialOpen = true,
-  items = [],
-  onChange,
-  defaultItem = {},
-  addButtonLabel = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("＋ Add New Item", "guten-builder-blocks"),
-  itemTitleKey = "title",
-  fields = [],
-  renderItemFields
-}) => {
+const ItemsPanel = data => {
+  const {
+    title = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Items Manager", "guten-builder-blocks"),
+    initialOpen = true,
+    items = [],
+    onChange,
+    defaultItem = {},
+    addButtonLabel = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("＋ Add New Item", "guten-builder-blocks"),
+    itemTitleKey = "title",
+    ItemSettings
+  } = data;
   const [openItemIndex, setOpenItemIndex] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+
+  // Drag and Drop refs
+  const dragItem = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const dragOverItem = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const [isDragging, setIsDragging] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   const triggerChange = newItems => {
     if (typeof onChange === "function") {
       onChange(newItems);
     }
+  };
+
+  // Drag Handlers
+  const handleDragStart = (e, index) => {
+    dragItem.current = index;
+    setIsDragging(true);
+    e.dataTransfer.effectAllowed = "move";
+    setTimeout(() => {
+      if (e.target) e.target.classList.add("tr-is-dragging");
+    }, 0);
+  };
+  const handleDragEnter = (e, index) => {
+    dragOverItem.current = index;
+  };
+  const handleDragEnd = e => {
+    setIsDragging(false);
+    if (e.target) e.target.classList.remove("tr-is-dragging");
+    if (dragItem.current !== null && dragOverItem.current !== null && dragItem.current !== dragOverItem.current) {
+      const newItems = [...items];
+      const draggedItemContent = newItems.splice(dragItem.current, 1)[0];
+      newItems.splice(dragOverItem.current, 0, draggedItemContent);
+      triggerChange(newItems);
+      setOpenItemIndex(null); // Close item to avoid layout glitches after moving
+    }
+    dragItem.current = null;
+    dragOverItem.current = null;
   };
 
   // Add Item
@@ -1487,6 +1528,8 @@ const ItemsPanel = ({
     triggerChange(newItems);
     if (openItemIndex === index) {
       setOpenItemIndex(null);
+    } else if (openItemIndex > index) {
+      setOpenItemIndex(openItemIndex - 1);
     }
   };
 
@@ -1508,18 +1551,6 @@ const ItemsPanel = ({
     };
     triggerChange(newItems);
   };
-
-  // Move Item (Reorder)
-  const handleMoveItem = (index, direction) => {
-    const targetIndex = direction === "up" ? index - 1 : index + 1;
-    if (targetIndex < 0 || targetIndex >= items.length) return;
-    const newItems = [...items];
-    const temp = newItems[index];
-    newItems[index] = newItems[targetIndex];
-    newItems[targetIndex] = temp;
-    triggerChange(newItems);
-    setOpenItemIndex(targetIndex);
-  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     title: title,
     initialOpen: initialOpen,
@@ -1539,6 +1570,11 @@ const ItemsPanel = ({
       const displayTitle = rawTitle.trim() !== "" ? rawTitle : `${(0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Item", "guten-builder-blocks")} #${index + 1}`;
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: `tr-items-panel-card ${isOpen ? "is-open" : ""}`,
+        draggable: true,
+        onDragStart: e => handleDragStart(e, index),
+        onDragEnter: e => handleDragEnter(e, index),
+        onDragEnd: handleDragEnd,
+        onDragOver: e => e.preventDefault(),
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
           className: "tr-items-panel-header",
           onClick: () => setOpenItemIndex(isOpen ? null : index),
@@ -1552,20 +1588,45 @@ const ItemsPanel = ({
             className: "tr-items-panel-toolbar",
             onClick: e => e.stopPropagation(),
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Tooltip, {
-              text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Move Up", "guten-builder-blocks"),
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
-                className: "tr-items-panel-btn",
-                icon: "arrow-up-alt2",
-                disabled: index === 0,
-                onClick: () => handleMoveItem(index, "up")
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Tooltip, {
-              text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Move Down", "guten-builder-blocks"),
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
-                className: "tr-items-panel-btn",
-                icon: "arrow-down-alt2",
-                disabled: index === items.length - 1,
-                onClick: () => handleMoveItem(index, "down")
+              text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Drag to reorder", "guten-builder-blocks"),
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                className: "tr-items-panel-drag-handle",
+                style: {
+                  cursor: "grab",
+                  padding: "4px",
+                  color: "#64748b",
+                  display: "flex",
+                  alignItems: "center"
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("svg", {
+                  width: "16",
+                  height: "16",
+                  viewBox: "0 0 24 24",
+                  fill: "none",
+                  stroke: "currentColor",
+                  strokeWidth: "2",
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("polyline", {
+                    points: "5 9 2 12 5 15"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("polyline", {
+                    points: "9 5 12 2 15 5"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("polyline", {
+                    points: "19 9 22 12 19 15"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("polyline", {
+                    points: "9 19 12 22 15 19"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("line", {
+                    x1: "2",
+                    y1: "12",
+                    x2: "22",
+                    y2: "12"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("line", {
+                    x1: "12",
+                    y1: "2",
+                    x2: "12",
+                    y2: "22"
+                  })]
+                })
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Tooltip, {
               text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Duplicate", "guten-builder-blocks"),
@@ -1586,51 +1647,11 @@ const ItemsPanel = ({
           })]
         }), isOpen && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           className: "tr-items-panel-body",
-          children: typeof renderItemFields === "function" ? renderItemFields(item, index, (key, val) => handleUpdateField(index, key, val)) : fields.map(fieldConfig => {
-            const {
-              key,
-              label,
-              type = "text",
-              options,
-              rows = 3,
-              help
-            } = fieldConfig;
-            const fieldValue = item[key] !== undefined ? item[key] : "";
-            if (type === "textarea") {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextareaControl, {
-                label: label,
-                value: fieldValue,
-                onChange: val => handleUpdateField(index, key, val),
-                rows: rows,
-                help: help
-              }, key);
-            }
-            if (type === "toggle") {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
-                label: label,
-                checked: Boolean(fieldValue),
-                onChange: val => handleUpdateField(index, key, val),
-                help: help
-              }, key);
-            }
-            if (type === "select") {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
-                label: label,
-                value: fieldValue,
-                options: options || [],
-                onChange: val => handleUpdateField(index, key, val),
-                help: help
-              }, key);
-            }
-
-            // Default text input
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
-              label: label,
-              value: fieldValue,
-              onChange: val => handleUpdateField(index, key, val),
-              help: help
-            }, key);
-          })
+          children: ItemSettings ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(ItemSettings, {
+            item: item,
+            index: index,
+            updateField: (key, val) => handleUpdateField(index, key, val)
+          }) : null
         })]
       }, index);
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {

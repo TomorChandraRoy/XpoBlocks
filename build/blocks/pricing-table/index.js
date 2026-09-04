@@ -1452,24 +1452,65 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Advanced Modern ItemsPanel Component
  * Provides a state-of-the-art UI for managing list items across Gutenberg blocks.
+ *
+ * @param {Object} props
+ * @param {string} [props.title] - The title shown at the top of the panel. (প্যানেলের উপরে দেখানো মেইন টাইটেল)
+ * @param {boolean} [props.initialOpen] - Whether the panel is open by default. (প্যানেলটি শুরুতে খোলা থাকবে কি না)
+ * @param {Array} [props.items] - The array of items to manage. (যে আইটেমগুলো ম্যানেজ করতে চান তার অ্যারে)
+ * @param {Function} props.onChange - Callback function triggered when items are added, removed, or updated. (আইটেম অ্যাড, রিমুভ বা এডিট হলে এই ফাংশন কল হয়)
+ * @param {Object} [props.defaultItem] - The default structure of a new item when clicking the add button. (নতুন আইটেম অ্যাড করলে তার ডিফল্ট স্ট্রাকচার বা ভ্যালু কেমন হবে)
+ * @param {string} [props.addButtonLabel] - The label text for the add button. (নতুন আইটেম অ্যাড করার বাটনের টেক্সট)
+ * @param {string} [props.itemTitleKey] - The object key used to display the item's title in the list header. (লিস্টের হেডিংয়ে আইটেমের কোন প্রোপার্টিটি দেখাবে, যেমন: 'name' বা 'title')
+ * @param {Function} [props.ItemSettings] - React Component to render the fields. Receives `{item, index, updateField}` as props. (কাস্টম কম্পোনেন্ট হিসেবে ফিল্ড রেন্ডার করার জন্য)
  */
 
-const ItemsPanel = ({
-  title = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("📋 Items Manager", "guten-builder-blocks"),
-  initialOpen = true,
-  items = [],
-  onChange,
-  defaultItem = {},
-  addButtonLabel = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("＋ Add New Item", "guten-builder-blocks"),
-  itemTitleKey = "title",
-  fields = [],
-  renderItemFields
-}) => {
+const ItemsPanel = data => {
+  const {
+    title = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Items Manager", "guten-builder-blocks"),
+    initialOpen = true,
+    items = [],
+    onChange,
+    defaultItem = {},
+    addButtonLabel = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("＋ Add New Item", "guten-builder-blocks"),
+    itemTitleKey = "title",
+    ItemSettings
+  } = data;
   const [openItemIndex, setOpenItemIndex] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+
+  // Drag and Drop refs
+  const dragItem = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const dragOverItem = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const [isDragging, setIsDragging] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   const triggerChange = newItems => {
     if (typeof onChange === "function") {
       onChange(newItems);
     }
+  };
+
+  // Drag Handlers
+  const handleDragStart = (e, index) => {
+    dragItem.current = index;
+    setIsDragging(true);
+    e.dataTransfer.effectAllowed = "move";
+    setTimeout(() => {
+      if (e.target) e.target.classList.add("tr-is-dragging");
+    }, 0);
+  };
+  const handleDragEnter = (e, index) => {
+    dragOverItem.current = index;
+  };
+  const handleDragEnd = e => {
+    setIsDragging(false);
+    if (e.target) e.target.classList.remove("tr-is-dragging");
+    if (dragItem.current !== null && dragOverItem.current !== null && dragItem.current !== dragOverItem.current) {
+      const newItems = [...items];
+      const draggedItemContent = newItems.splice(dragItem.current, 1)[0];
+      newItems.splice(dragOverItem.current, 0, draggedItemContent);
+      triggerChange(newItems);
+      setOpenItemIndex(null); // Close item to avoid layout glitches after moving
+    }
+    dragItem.current = null;
+    dragOverItem.current = null;
   };
 
   // Add Item
@@ -1487,6 +1528,8 @@ const ItemsPanel = ({
     triggerChange(newItems);
     if (openItemIndex === index) {
       setOpenItemIndex(null);
+    } else if (openItemIndex > index) {
+      setOpenItemIndex(openItemIndex - 1);
     }
   };
 
@@ -1508,18 +1551,6 @@ const ItemsPanel = ({
     };
     triggerChange(newItems);
   };
-
-  // Move Item (Reorder)
-  const handleMoveItem = (index, direction) => {
-    const targetIndex = direction === "up" ? index - 1 : index + 1;
-    if (targetIndex < 0 || targetIndex >= items.length) return;
-    const newItems = [...items];
-    const temp = newItems[index];
-    newItems[index] = newItems[targetIndex];
-    newItems[targetIndex] = temp;
-    triggerChange(newItems);
-    setOpenItemIndex(targetIndex);
-  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     title: title,
     initialOpen: initialOpen,
@@ -1539,6 +1570,11 @@ const ItemsPanel = ({
       const displayTitle = rawTitle.trim() !== "" ? rawTitle : `${(0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Item", "guten-builder-blocks")} #${index + 1}`;
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: `tr-items-panel-card ${isOpen ? "is-open" : ""}`,
+        draggable: true,
+        onDragStart: e => handleDragStart(e, index),
+        onDragEnter: e => handleDragEnter(e, index),
+        onDragEnd: handleDragEnd,
+        onDragOver: e => e.preventDefault(),
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
           className: "tr-items-panel-header",
           onClick: () => setOpenItemIndex(isOpen ? null : index),
@@ -1552,20 +1588,45 @@ const ItemsPanel = ({
             className: "tr-items-panel-toolbar",
             onClick: e => e.stopPropagation(),
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Tooltip, {
-              text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Move Up", "guten-builder-blocks"),
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
-                className: "tr-items-panel-btn",
-                icon: "arrow-up-alt2",
-                disabled: index === 0,
-                onClick: () => handleMoveItem(index, "up")
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Tooltip, {
-              text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Move Down", "guten-builder-blocks"),
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
-                className: "tr-items-panel-btn",
-                icon: "arrow-down-alt2",
-                disabled: index === items.length - 1,
-                onClick: () => handleMoveItem(index, "down")
+              text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Drag to reorder", "guten-builder-blocks"),
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                className: "tr-items-panel-drag-handle",
+                style: {
+                  cursor: "grab",
+                  padding: "4px",
+                  color: "#64748b",
+                  display: "flex",
+                  alignItems: "center"
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("svg", {
+                  width: "16",
+                  height: "16",
+                  viewBox: "0 0 24 24",
+                  fill: "none",
+                  stroke: "currentColor",
+                  strokeWidth: "2",
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("polyline", {
+                    points: "5 9 2 12 5 15"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("polyline", {
+                    points: "9 5 12 2 15 5"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("polyline", {
+                    points: "19 9 22 12 19 15"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("polyline", {
+                    points: "9 19 12 22 15 19"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("line", {
+                    x1: "2",
+                    y1: "12",
+                    x2: "22",
+                    y2: "12"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("line", {
+                    x1: "12",
+                    y1: "2",
+                    x2: "12",
+                    y2: "22"
+                  })]
+                })
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Tooltip, {
               text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Duplicate", "guten-builder-blocks"),
@@ -1586,51 +1647,11 @@ const ItemsPanel = ({
           })]
         }), isOpen && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           className: "tr-items-panel-body",
-          children: typeof renderItemFields === "function" ? renderItemFields(item, index, (key, val) => handleUpdateField(index, key, val)) : fields.map(fieldConfig => {
-            const {
-              key,
-              label,
-              type = "text",
-              options,
-              rows = 3,
-              help
-            } = fieldConfig;
-            const fieldValue = item[key] !== undefined ? item[key] : "";
-            if (type === "textarea") {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextareaControl, {
-                label: label,
-                value: fieldValue,
-                onChange: val => handleUpdateField(index, key, val),
-                rows: rows,
-                help: help
-              }, key);
-            }
-            if (type === "toggle") {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
-                label: label,
-                checked: Boolean(fieldValue),
-                onChange: val => handleUpdateField(index, key, val),
-                help: help
-              }, key);
-            }
-            if (type === "select") {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
-                label: label,
-                value: fieldValue,
-                options: options || [],
-                onChange: val => handleUpdateField(index, key, val),
-                help: help
-              }, key);
-            }
-
-            // Default text input
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
-              label: label,
-              value: fieldValue,
-              onChange: val => handleUpdateField(index, key, val),
-              help: help
-            }, key);
-          })
+          children: ItemSettings ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(ItemSettings, {
+            item: item,
+            index: index,
+            updateField: (key, val) => handleUpdateField(index, key, val)
+          }) : null
         })]
       }, index);
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
@@ -3818,126 +3839,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var tr_tools__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tr-tools */ "../tr-tools/index.js");
+/* harmony import */ var _PanelItems__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./PanelItems */ "./src/blocks/pricing-table/Components/Backend/Settings/General/PanelItems.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+
 
 
 
 
 const General = ({
   attributes,
-  setAttributes,
-  clientId
+  setAttributes
 }) => {
   const {
-    blockId
-    // pricingTables = [],
-    // columns,
-    // columnGap
+    pricingTables = []
   } = attributes;
-  const prevClientId = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useRef)(clientId);
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useEffect)(() => {
-    const clientChanged = prevClientId.current !== clientId;
-    if (!blockId || clientChanged) {
-      const uuid = window.crypto && crypto.randomUUID ? crypto.randomUUID().split('-')[0] : Math.random().toString(36).substring(2, 9);
-      setAttributes({
-        blockId: `gbb-price-${uuid}`
-      });
-      prevClientId.current = clientId;
-    }
-  }, [blockId, clientId, setAttributes]);
-
-  // const updateTable = ( index, key, value ) => {
-  // 	const newTables = [ ...pricingTables ];
-  // 	newTables[ index ] = { ...newTables[ index ], [ key ]: value };
-  // 	setAttributes( { pricingTables: newTables } );
-  // };
-
-  // const addTable = () => {
-  // 	const templateFeatures = pricingTables.length > 0 && pricingTables[0].features
-  // 		? pricingTables[0].features.map(f => ({ label: f.label, isEnable: true }))
-  // 		: [
-  // 			{ label: __( 'Everything in Starter', 'guten-builder-blocks' ), isEnable: true },
-  // 			{ label: __( 'Advanced Customization', 'guten-builder-blocks' ), isEnable: true }
-  // 		];
-
-  // 	const newTables = [
-  // 		...pricingTables,
-  // 		{
-  // 			name: __( 'Premium Plan', 'guten-builder-blocks' ),
-  // 			price: '49',
-  // 			priceCurrency: '$',
-  // 			period: 'mo',
-  // 			link: '#',
-  // 			linkLabel: __( 'Buy Now', 'guten-builder-blocks' ),
-  // 			color: '#ec4899',
-  // 			isFeatured: false,
-  // 			badgeText: '',
-  // 			features: templateFeatures
-  // 		}
-  // 	];
-  // 	setAttributes( { pricingTables: newTables } );
-  // };
-
-  // const deleteTable = ( index ) => {
-  // 	const newTables = pricingTables.filter( ( _, i ) => i !== index );
-  // 	setAttributes( { pricingTables: newTables } );
-  // };
-
-  // const updateFeature = ( tableIndex, featureIndex, key, value ) => {
-  // 	let newTables = [ ...pricingTables ];
-
-  // 	if ( key === 'label' ) {
-  // 		newTables = newTables.map( t => {
-  // 			const features = [ ...(t.features || []) ];
-  // 			if ( features[ featureIndex ] ) {
-  // 				features[ featureIndex ] = { ...features[ featureIndex ], label: value };
-  // 			}
-  // 			return { ...t, features };
-  // 		});
-  // 	} else {
-  // 		const features = [ ...newTables[ tableIndex ].features ];
-  // 		features[ featureIndex ] = { ...features[ featureIndex ], [ key ]: value };
-  // 		newTables[ tableIndex ] = { ...newTables[ tableIndex ], features };
-  // 	}
-
-  // 	setAttributes( { pricingTables: newTables } );
-  // };
-
-  // const addFeature = ( tableIndex ) => {
-  // 	const newTables = pricingTables.map( t => ({
-  // 		...t,
-  // 		features: [
-  // 			...(t.features || []),
-  // 			{ label: __( 'New Feature Item', 'guten-builder-blocks' ), isEnable: true }
-  // 		]
-  // 	}) );
-  // 	setAttributes( { pricingTables: newTables } );
-  // };
-
-  // const deleteFeature = ( tableIndex, featureIndex ) => {
-  // 	const newTables = pricingTables.map( t => ({
-  // 		...t,
-  // 		features: (t.features || []).filter( ( _, i ) => i !== featureIndex )
-  // 	}) );
-  // 	setAttributes( { pricingTables: newTables } );
-  // };
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template Presets', 'guten-builder-blocks'),
       initialOpen: true,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
         style: {
           fontSize: '12px',
           color: '#64748b',
           marginBottom: '12px'
         },
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Switch or apply a predefined newsletter template style.', 'guten-builder-blocks')
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Switch or apply a predefined pricing template style.', 'guten-builder-blocks')
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
         isSecondary: true,
         onClick: () => setAttributes({
           selectedTemplate: ''
@@ -3948,10 +3878,148 @@ const General = ({
         },
         children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Change Template', 'guten-builder-blocks')
       })]
-    })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ItemsPanel, {
+      items: pricingTables,
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Pricing Tables', 'guten-builder-blocks') //Panelbody aer name
+      ,
+      addButtonLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('＋ Add Pricing Card', 'guten-builder-blocks'),
+      itemTitleKey: "name" //kon property ke items title hishebe dekhabe
+      ,
+      defaultItem: {
+        name: 'New Plan',
+        desc: 'Brief description here',
+        price: '49',
+        priceCurrency: '$',
+        period: 'mo',
+        link: '#',
+        linkLabel: 'Buy Now',
+        isFeatured: false,
+        badgeText: 'POPULAR',
+        features: [{
+          label: 'Feature 1',
+          isEnable: true
+        }, {
+          label: 'Feature 2',
+          isEnable: false
+        }]
+      },
+      onChange: newTables => setAttributes({
+        pricingTables: newTables
+      }),
+      ItemSettings: _PanelItems__WEBPACK_IMPORTED_MODULE_3__["default"]
+    })]
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (General);
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/Components/Backend/Settings/General/PanelItems.js"
+/*!************************************************************************************!*\
+  !*** ./src/blocks/pricing-table/Components/Backend/Settings/General/PanelItems.js ***!
+  \************************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var tr_tools__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tr-tools */ "../tr-tools/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+const PanelItems = ({
+  item,
+  index,
+  updateField
+}) => {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '12px',
+      paddingBottom: '8px'
+    },
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Plan Name', 'guten-builder-blocks'),
+      value: item.name,
+      onChange: val => updateField('name', val)
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextareaControl, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description', 'guten-builder-blocks'),
+      value: item.desc,
+      onChange: val => updateField('desc', val),
+      rows: 2
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      style: {
+        display: 'grid',
+        gridTemplateColumns: '1fr 2fr 1fr',
+        gap: '8px'
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Currency', 'guten-builder-blocks'),
+        value: item.priceCurrency,
+        onChange: val => updateField('priceCurrency', val)
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Price', 'guten-builder-blocks'),
+        value: item.price,
+        onChange: val => updateField('price', val)
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Period', 'guten-builder-blocks'),
+        value: item.period,
+        onChange: val => updateField('period', val)
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Link', 'guten-builder-blocks'),
+      value: item.link,
+      onChange: val => updateField('link', val)
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Label', 'guten-builder-blocks'),
+      value: item.linkLabel,
+      onChange: val => updateField('linkLabel', val)
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Featured / Popular (Highlight)', 'guten-builder-blocks'),
+      checked: item.isFeatured,
+      onChange: val => updateField('isFeatured', val)
+    }), item.isFeatured && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Badge Text', 'guten-builder-blocks'),
+      value: item.badgeText,
+      onChange: val => updateField('badgeText', val),
+      placeholder: "e.g. POPULAR"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      style: {
+        marginTop: '8px'
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ItemsPanel, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Features List', 'guten-builder-blocks'),
+        items: item.features || [],
+        addButtonLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('＋ Add Feature', 'guten-builder-blocks'),
+        itemTitleKey: "label",
+        defaultItem: {
+          label: 'New Feature',
+          isEnable: true
+        },
+        fields: [{
+          key: 'label',
+          label: 'Feature Label',
+          type: 'text'
+        }, {
+          key: 'isEnable',
+          label: 'Show Checkmark? (Toggle off for Cross)',
+          type: 'toggle'
+        }],
+        onChange: newFeatures => updateField('features', newFeatures)
+      })
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PanelItems);
 
 /***/ },
 
@@ -4102,47 +4170,90 @@ const ThemeOne = ({
   RichTextEl,
   isBackend = false
 }) => {
+  const {
+    pricingTables = []
+  } = attributes;
+  const updatePricingTable = (index, key, value) => {
+    if (!setAttributes) return;
+    const newPricingTables = [...pricingTables];
+    newPricingTables[index][key] = value;
+    setAttributes({
+      pricingTables: newPricingTables
+    });
+  };
+  const updateFeature = (tableIndex, featureIndex, value) => {
+    if (!setAttributes) return;
+    const newPricingTables = [...pricingTables];
+    newPricingTables[tableIndex].features[featureIndex].label = value;
+    setAttributes({
+      pricingTables: newPricingTables
+    });
+  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
     className: "gbb-pricing-container",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
       className: "gbb-pricing-grid",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+      children: pricingTables.map((plan, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
         className: "gbb-pricing-card",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
           className: "gbb-pricing-card-top",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h2", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(RichTextEl, {
+            tagName: "h2",
             className: "gbb-pricing-name",
-            children: ["Starter", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-              className: "sr-only",
-              children: "Plan"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+            value: plan.name,
+            onChange: val => updatePricingTable(index, 'name', val),
+            placeholder: "Plan Name"
+          }), (isBackend || plan.desc) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(RichTextEl, {
+            tagName: "p",
             className: "gbb-pricing-desc",
-            children: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+            value: plan.desc,
+            onChange: val => updatePricingTable(index, 'desc', val),
+            placeholder: "Description"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
             className: "gbb-pricing-price-wrap",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("strong", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("strong", {
               className: "gbb-pricing-price",
-              children: "$20"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                children: plan.priceCurrency
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(RichTextEl, {
+                tagName: "span",
+                value: plan.price,
+                onChange: val => updatePricingTable(index, 'price', val),
+                placeholder: "20"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
               className: "gbb-pricing-period",
-              children: "/month"
+              children: ["/", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(RichTextEl, {
+                tagName: "span",
+                value: plan.period,
+                onChange: val => updatePricingTable(index, 'period', val),
+                placeholder: "month"
+              })]
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+          }), isBackend ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(RichTextEl, {
+            tagName: "div",
             className: "gbb-pricing-button",
-            href: "#",
-            children: "Get Started"
+            value: plan.linkLabel,
+            onChange: val => updatePricingTable(index, 'linkLabel', val),
+            placeholder: "Get Started"
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+            className: "gbb-pricing-button",
+            href: plan.link || '#',
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(RichTextEl, {
+              tagName: "span",
+              value: plan.linkLabel
+            })
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
           className: "gbb-pricing-card-bottom",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
             className: "gbb-features-title",
             children: "What's included:"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("ul", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("ul", {
             className: "gbb-features-list",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+            children: plan.features && plan.features.map((feature, fIndex) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
               className: "gbb-feature-item",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+              children: [feature.isEnable ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
                 "aria-hidden": "true",
                 xmlns: "http://www.w3.org/2000/svg",
                 fill: "none",
@@ -4155,51 +4266,7 @@ const ThemeOne = ({
                   strokeLinejoin: "round",
                   d: "M4.5 12.75l6 6 9-13.5"
                 })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-                className: "gbb-feature-text",
-                children: "10 users"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
-              className: "gbb-feature-item",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
-                "aria-hidden": "true",
-                xmlns: "http://www.w3.org/2000/svg",
-                fill: "none",
-                viewBox: "0 0 24 24",
-                strokeWidth: "1.5",
-                stroke: "currentColor",
-                className: "gbb-icon-success",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  d: "M4.5 12.75l6 6 9-13.5"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-                className: "gbb-feature-text",
-                children: "2GB of storage"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
-              className: "gbb-feature-item",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
-                "aria-hidden": "true",
-                xmlns: "http://www.w3.org/2000/svg",
-                fill: "none",
-                viewBox: "0 0 24 24",
-                strokeWidth: "1.5",
-                stroke: "currentColor",
-                className: "gbb-icon-success",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  d: "M4.5 12.75l6 6 9-13.5"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-                className: "gbb-feature-text",
-                children: "Email support"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
-              className: "gbb-feature-item",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+              }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
                 "aria-hidden": "true",
                 xmlns: "http://www.w3.org/2000/svg",
                 fill: "none",
@@ -4212,354 +4279,17 @@ const ThemeOne = ({
                   strokeLinejoin: "round",
                   d: "M6 18L18 6M6 6l12 12"
                 })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(RichTextEl, {
+                tagName: "span",
                 className: "gbb-feature-text",
-                children: "Help center access"
+                value: feature.label,
+                onChange: val => updateFeature(index, fIndex, val),
+                placeholder: "Feature item"
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
-              className: "gbb-feature-item",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
-                "aria-hidden": "true",
-                xmlns: "http://www.w3.org/2000/svg",
-                fill: "none",
-                viewBox: "0 0 24 24",
-                strokeWidth: "1.5",
-                stroke: "currentColor",
-                className: "gbb-icon-error",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  d: "M6 18L18 6M6 6l12 12"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-                className: "gbb-feature-text",
-                children: "Phone support"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
-              className: "gbb-feature-item",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
-                "aria-hidden": "true",
-                xmlns: "http://www.w3.org/2000/svg",
-                fill: "none",
-                viewBox: "0 0 24 24",
-                strokeWidth: "1.5",
-                stroke: "currentColor",
-                className: "gbb-icon-error",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  d: "M6 18L18 6M6 6l12 12"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-                className: "gbb-feature-text",
-                children: "Community access"
-              })]
-            })]
+            }, fIndex))
           })]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-        className: "gbb-pricing-card",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-          className: "gbb-pricing-card-top",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h2", {
-            className: "gbb-pricing-name",
-            children: ["Pro", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-              className: "sr-only",
-              children: "Plan"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-            className: "gbb-pricing-desc",
-            children: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
-            className: "gbb-pricing-price-wrap",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("strong", {
-              className: "gbb-pricing-price",
-              children: "$30"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-              className: "gbb-pricing-period",
-              children: "/month"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
-            className: "gbb-pricing-button",
-            href: "#",
-            children: "Get Started"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-          className: "gbb-pricing-card-bottom",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-            className: "gbb-features-title",
-            children: "What's included:"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("ul", {
-            className: "gbb-features-list",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
-              className: "gbb-feature-item",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
-                "aria-hidden": "true",
-                xmlns: "http://www.w3.org/2000/svg",
-                fill: "none",
-                viewBox: "0 0 24 24",
-                strokeWidth: "1.5",
-                stroke: "currentColor",
-                className: "gbb-icon-success",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  d: "M4.5 12.75l6 6 9-13.5"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-                className: "gbb-feature-text",
-                children: "20 users"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
-              className: "gbb-feature-item",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
-                "aria-hidden": "true",
-                xmlns: "http://www.w3.org/2000/svg",
-                fill: "none",
-                viewBox: "0 0 24 24",
-                strokeWidth: "1.5",
-                stroke: "currentColor",
-                className: "gbb-icon-success",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  d: "M4.5 12.75l6 6 9-13.5"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-                className: "gbb-feature-text",
-                children: "5GB of storage"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
-              className: "gbb-feature-item",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
-                "aria-hidden": "true",
-                xmlns: "http://www.w3.org/2000/svg",
-                fill: "none",
-                viewBox: "0 0 24 24",
-                strokeWidth: "1.5",
-                stroke: "currentColor",
-                className: "gbb-icon-success",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  d: "M4.5 12.75l6 6 9-13.5"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-                className: "gbb-feature-text",
-                children: "Email support"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
-              className: "gbb-feature-item",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
-                "aria-hidden": "true",
-                xmlns: "http://www.w3.org/2000/svg",
-                fill: "none",
-                viewBox: "0 0 24 24",
-                strokeWidth: "1.5",
-                stroke: "currentColor",
-                className: "gbb-icon-success",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  d: "M4.5 12.75l6 6 9-13.5"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-                className: "gbb-feature-text",
-                children: "Help center access"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
-              className: "gbb-feature-item",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
-                "aria-hidden": "true",
-                xmlns: "http://www.w3.org/2000/svg",
-                fill: "none",
-                viewBox: "0 0 24 24",
-                strokeWidth: "1.5",
-                stroke: "currentColor",
-                className: "gbb-icon-error",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  d: "M6 18L18 6M6 6l12 12"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-                className: "gbb-feature-text",
-                children: "Phone support"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
-              className: "gbb-feature-item",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
-                "aria-hidden": "true",
-                xmlns: "http://www.w3.org/2000/svg",
-                fill: "none",
-                viewBox: "0 0 24 24",
-                strokeWidth: "1.5",
-                stroke: "currentColor",
-                className: "gbb-icon-error",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  d: "M6 18L18 6M6 6l12 12"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-                className: "gbb-feature-text",
-                children: "Community access"
-              })]
-            })]
-          })]
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-        className: "gbb-pricing-card",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-          className: "gbb-pricing-card-top",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h2", {
-            className: "gbb-pricing-name",
-            children: ["Enterprise", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-              className: "sr-only",
-              children: "Plan"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-            className: "gbb-pricing-desc",
-            children: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
-            className: "gbb-pricing-price-wrap",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("strong", {
-              className: "gbb-pricing-price",
-              children: "$100"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-              className: "gbb-pricing-period",
-              children: "/month"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
-            className: "gbb-pricing-button",
-            href: "#",
-            children: "Get Started"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-          className: "gbb-pricing-card-bottom",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-            className: "gbb-features-title",
-            children: "What's included:"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("ul", {
-            className: "gbb-features-list",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
-              className: "gbb-feature-item",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
-                "aria-hidden": "true",
-                xmlns: "http://www.w3.org/2000/svg",
-                fill: "none",
-                viewBox: "0 0 24 24",
-                strokeWidth: "1.5",
-                stroke: "currentColor",
-                className: "gbb-icon-success",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  d: "M4.5 12.75l6 6 9-13.5"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-                className: "gbb-feature-text",
-                children: "50 users"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
-              className: "gbb-feature-item",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
-                "aria-hidden": "true",
-                xmlns: "http://www.w3.org/2000/svg",
-                fill: "none",
-                viewBox: "0 0 24 24",
-                strokeWidth: "1.5",
-                stroke: "currentColor",
-                className: "gbb-icon-success",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  d: "M4.5 12.75l6 6 9-13.5"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-                className: "gbb-feature-text",
-                children: "20GB of storage"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
-              className: "gbb-feature-item",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
-                "aria-hidden": "true",
-                xmlns: "http://www.w3.org/2000/svg",
-                fill: "none",
-                viewBox: "0 0 24 24",
-                strokeWidth: "1.5",
-                stroke: "currentColor",
-                className: "gbb-icon-success",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  d: "M4.5 12.75l6 6 9-13.5"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-                className: "gbb-feature-text",
-                children: "Email support"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
-              className: "gbb-feature-item",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
-                "aria-hidden": "true",
-                xmlns: "http://www.w3.org/2000/svg",
-                fill: "none",
-                viewBox: "0 0 24 24",
-                strokeWidth: "1.5",
-                stroke: "currentColor",
-                className: "gbb-icon-success",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  d: "M4.5 12.75l6 6 9-13.5"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-                className: "gbb-feature-text",
-                children: "Help center access"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
-              className: "gbb-feature-item",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
-                "aria-hidden": "true",
-                xmlns: "http://www.w3.org/2000/svg",
-                fill: "none",
-                viewBox: "0 0 24 24",
-                strokeWidth: "1.5",
-                stroke: "currentColor",
-                className: "gbb-icon-success",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  d: "M4.5 12.75l6 6 9-13.5"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-                className: "gbb-feature-text",
-                children: "Phone support"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
-              className: "gbb-feature-item",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
-                "aria-hidden": "true",
-                xmlns: "http://www.w3.org/2000/svg",
-                fill: "none",
-                viewBox: "0 0 24 24",
-                strokeWidth: "1.5",
-                stroke: "currentColor",
-                className: "gbb-icon-success",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  d: "M4.5 12.75l6 6 9-13.5"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-                className: "gbb-feature-text",
-                children: "Community access"
-              })]
-            })]
-          })]
-        })]
-      })]
+      }, index))
     })
   });
 };
@@ -4651,83 +4381,91 @@ const templateData = {
     tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Standard Pricing Table', 'guten-builder-blocks'),
     icon: _icons__WEBPACK_IMPORTED_MODULE_1__.TemplateOneSvg,
     attributes: {
-      themeStyle: 'style-1',
       pricingTables: [{
         name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Starter', 'guten-builder-blocks'),
-        price: '19',
+        desc: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Lorem ipsum dolor sit amet consectetur adipisicing elit.', 'guten-builder-blocks'),
+        price: '20',
         priceCurrency: '$',
-        period: 'mo',
+        period: 'month',
         link: '#',
         linkLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Get Started', 'guten-builder-blocks'),
-        color: '#64748b',
         isFeatured: false,
         badgeText: '',
         features: [{
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('1 User Account', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('10 users', 'guten-builder-blocks'),
           isEnable: true
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('10 GB Cloud Storage', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('2GB of storage', 'guten-builder-blocks'),
           isEnable: true
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Basic Analytics', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Email support', 'guten-builder-blocks'),
           isEnable: true
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('24/7 Priority Support', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Help center access', 'guten-builder-blocks'),
           isEnable: false
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Custom Domain Integration', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Phone support', 'guten-builder-blocks'),
+          isEnable: false
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Community access', 'guten-builder-blocks'),
           isEnable: false
         }]
       }, {
-        name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Professional', 'guten-builder-blocks'),
-        price: '49',
+        name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Pro', 'guten-builder-blocks'),
+        desc: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Lorem ipsum dolor sit amet consectetur adipisicing elit.', 'guten-builder-blocks'),
+        price: '30',
         priceCurrency: '$',
-        period: 'mo',
+        period: 'month',
         link: '#',
-        linkLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Try Pro Free', 'guten-builder-blocks'),
-        color: '#2563eb',
+        linkLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Get Started', 'guten-builder-blocks'),
         isFeatured: true,
-        badgeText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('MOST POPULAR', 'guten-builder-blocks'),
+        badgeText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Popular', 'guten-builder-blocks'),
         features: [{
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('5 User Accounts', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('20 users', 'guten-builder-blocks'),
           isEnable: true
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('100 GB Cloud Storage', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('5GB of storage', 'guten-builder-blocks'),
           isEnable: true
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Advanced Analytics', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Email support', 'guten-builder-blocks'),
           isEnable: true
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('24/7 Priority Support', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Help center access', 'guten-builder-blocks'),
           isEnable: true
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Custom Domain Integration', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Phone support', 'guten-builder-blocks'),
+          isEnable: false
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Community access', 'guten-builder-blocks'),
           isEnable: false
         }]
       }, {
         name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enterprise', 'guten-builder-blocks'),
-        price: '99',
+        desc: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Lorem ipsum dolor sit amet consectetur adipisicing elit.', 'guten-builder-blocks'),
+        price: '100',
         priceCurrency: '$',
-        period: 'mo',
+        period: 'month',
         link: '#',
-        linkLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Contact Sales', 'guten-builder-blocks'),
-        color: '#0f172a',
+        linkLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Get Started', 'guten-builder-blocks'),
         isFeatured: false,
         badgeText: '',
         features: [{
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Unlimited Users', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('50 users', 'guten-builder-blocks'),
           isEnable: true
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Unlimited Storage', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('20GB of storage', 'guten-builder-blocks'),
           isEnable: true
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Custom Analytics & Reports', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Email support', 'guten-builder-blocks'),
           isEnable: true
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Dedicated Account Manager', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Help center access', 'guten-builder-blocks'),
           isEnable: true
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Custom Domain Integration', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Phone support', 'guten-builder-blocks'),
+          isEnable: true
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Community access', 'guten-builder-blocks'),
           isEnable: true
         }]
       }]
@@ -5595,7 +5333,7 @@ module.exports = window["wp"]["i18n"];
   \*********************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/pricing-table","version":"1.0.0","title":"Pricing Table","description":"Showcase your subscription plans or products with a stunning pricing grid.","category":"guten-builder","keywords":["pricing","price list","table","grid"],"attributes":{"selectedTemplate":{"type":"string","default":""},"blockId":{"type":"string","default":""},"pricingTables":{"type":"array","default":[]},"showToggle":{"type":"boolean","default":false},"toggleLabelLeft":{"type":"string","default":"Monthly"},"toggleLabelRight":{"type":"string","default":"Yearly"},"discountText":{"type":"string","default":"Save 20%"},"columns":{"type":"number","default":2},"columnGap":{"type":"number","default":24},"borderRadius":{"type":"number","default":12},"cardBgColor":{"type":"string","default":"#ffffff"},"cardTextColor":{"type":"string","default":"#1e293b"},"buttonBgColor":{"type":"string","default":"#3b82f6"},"buttonTextColor":{"type":"string","default":"#ffffff"},"featuredButtonBgColor":{"type":"string","default":"#10b981"},"featuredButtonTextColor":{"type":"string","default":"#ffffff"},"themeStyle":{"type":"string","default":"style-1"},"hoverHighlightColor":{"type":"string","default":"#ffd700"}},"supports":{"html":false,"align":["wide","full"]},"textdomain":"guten-builder-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/pricing-table","version":"1.0.0","title":"Pricing Table","description":"Showcase your subscription plans or products with a stunning pricing grid.","category":"guten-builder","keywords":["pricing","price list","table","grid"],"attributes":{"selectedTemplate":{"type":"string","default":""},"pricingTables":{"type":"array","default":[]},"align":{"type":"string","default":"wide"}},"supports":{"html":false,"align":["wide","full"]},"textdomain":"guten-builder-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
 
 /***/ }
 

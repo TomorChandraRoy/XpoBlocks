@@ -11,60 +11,62 @@ export const templateData = {
       tag: __('Standard Pricing Table', 'guten-builder-blocks'),
       icon: TemplateOneSvg,
       attributes: {
-        themeStyle: 'style-1',
         pricingTables: [
           {
             name: __('Starter', 'guten-builder-blocks'),
-            price: '19',
+            desc: __('Lorem ipsum dolor sit amet consectetur adipisicing elit.', 'guten-builder-blocks'),
+            price: '20',
             priceCurrency: '$',
-            period: 'mo',
+            period: 'month',
             link: '#',
             linkLabel: __('Get Started', 'guten-builder-blocks'),
-            color: '#64748b',
             isFeatured: false,
             badgeText: '',
             features: [
-              { label: __('1 User Account', 'guten-builder-blocks'), isEnable: true },
-              { label: __('10 GB Cloud Storage', 'guten-builder-blocks'), isEnable: true },
-              { label: __('Basic Analytics', 'guten-builder-blocks'), isEnable: true },
-              { label: __('24/7 Priority Support', 'guten-builder-blocks'), isEnable: false },
-              { label: __('Custom Domain Integration', 'guten-builder-blocks'), isEnable: false }
+              { label: __('10 users', 'guten-builder-blocks'), isEnable: true },
+              { label: __('2GB of storage', 'guten-builder-blocks'), isEnable: true },
+              { label: __('Email support', 'guten-builder-blocks'), isEnable: true },
+              { label: __('Help center access', 'guten-builder-blocks'), isEnable: false },
+              { label: __('Phone support', 'guten-builder-blocks'), isEnable: false },
+              { label: __('Community access', 'guten-builder-blocks'), isEnable: false }
             ]
           },
           {
-            name: __('Professional', 'guten-builder-blocks'),
-            price: '49',
+            name: __('Pro', 'guten-builder-blocks'),
+            desc: __('Lorem ipsum dolor sit amet consectetur adipisicing elit.', 'guten-builder-blocks'),
+            price: '30',
             priceCurrency: '$',
-            period: 'mo',
+            period: 'month',
             link: '#',
-            linkLabel: __('Try Pro Free', 'guten-builder-blocks'),
-            color: '#2563eb',
+            linkLabel: __('Get Started', 'guten-builder-blocks'),
             isFeatured: true,
-            badgeText: __('MOST POPULAR', 'guten-builder-blocks'),
+            badgeText: __('Popular', 'guten-builder-blocks'),
             features: [
-              { label: __('5 User Accounts', 'guten-builder-blocks'), isEnable: true },
-              { label: __('100 GB Cloud Storage', 'guten-builder-blocks'), isEnable: true },
-              { label: __('Advanced Analytics', 'guten-builder-blocks'), isEnable: true },
-              { label: __('24/7 Priority Support', 'guten-builder-blocks'), isEnable: true },
-              { label: __('Custom Domain Integration', 'guten-builder-blocks'), isEnable: false }
+              { label: __('20 users', 'guten-builder-blocks'), isEnable: true },
+              { label: __('5GB of storage', 'guten-builder-blocks'), isEnable: true },
+              { label: __('Email support', 'guten-builder-blocks'), isEnable: true },
+              { label: __('Help center access', 'guten-builder-blocks'), isEnable: true },
+              { label: __('Phone support', 'guten-builder-blocks'), isEnable: false },
+              { label: __('Community access', 'guten-builder-blocks'), isEnable: false }
             ]
           },
           {
             name: __('Enterprise', 'guten-builder-blocks'),
-            price: '99',
+            desc: __('Lorem ipsum dolor sit amet consectetur adipisicing elit.', 'guten-builder-blocks'),
+            price: '100',
             priceCurrency: '$',
-            period: 'mo',
+            period: 'month',
             link: '#',
-            linkLabel: __('Contact Sales', 'guten-builder-blocks'),
-            color: '#0f172a',
+            linkLabel: __('Get Started', 'guten-builder-blocks'),
             isFeatured: false,
             badgeText: '',
             features: [
-              { label: __('Unlimited Users', 'guten-builder-blocks'), isEnable: true },
-              { label: __('Unlimited Storage', 'guten-builder-blocks'), isEnable: true },
-              { label: __('Custom Analytics & Reports', 'guten-builder-blocks'), isEnable: true },
-              { label: __('Dedicated Account Manager', 'guten-builder-blocks'), isEnable: true },
-              { label: __('Custom Domain Integration', 'guten-builder-blocks'), isEnable: true }
+              { label: __('50 users', 'guten-builder-blocks'), isEnable: true },
+              { label: __('20GB of storage', 'guten-builder-blocks'), isEnable: true },
+              { label: __('Email support', 'guten-builder-blocks'), isEnable: true },
+              { label: __('Help center access', 'guten-builder-blocks'), isEnable: true },
+              { label: __('Phone support', 'guten-builder-blocks'), isEnable: true },
+              { label: __('Community access', 'guten-builder-blocks'), isEnable: true }
             ]
           }
         ]

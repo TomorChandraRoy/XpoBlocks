@@ -16,73 +16,13 @@
       "type": "string",
       "default": ""
     },
-    "blockId": {
-      "type": "string",
-      "default": ""
-    },
     "pricingTables": {
       "type": "array",
       "default": []
     },
-    "showToggle": {
-      "type": "boolean",
-      "default": false
-    },
-    "toggleLabelLeft": {
+    "align": {
       "type": "string",
-      "default": "Monthly"
-    },
-    "toggleLabelRight": {
-      "type": "string",
-      "default": "Yearly"
-    },
-    "discountText": {
-      "type": "string",
-      "default": "Save 20%"
-    },
-    "columns": {
-      "type": "number",
-      "default": 2
-    },
-    "columnGap": {
-      "type": "number",
-      "default": 24
-    },
-    "borderRadius": {
-      "type": "number",
-      "default": 12
-    },
-    "cardBgColor": {
-      "type": "string",
-      "default": "#ffffff"
-    },
-    "cardTextColor": {
-      "type": "string",
-      "default": "#1e293b"
-    },
-    "buttonBgColor": {
-      "type": "string",
-      "default": "#3b82f6"
-    },
-    "buttonTextColor": {
-      "type": "string",
-      "default": "#ffffff"
-    },
-    "featuredButtonBgColor": {
-      "type": "string",
-      "default": "#10b981"
-    },
-    "featuredButtonTextColor": {
-      "type": "string",
-      "default": "#ffffff"
-    },
-    "themeStyle": {
-      "type": "string",
-      "default": "style-1"
-    },
-    "hoverHighlightColor": {
-      "type": "string",
-      "default": "#ffd700"
+      "default": "wide"
     }
   },
   "supports": {
