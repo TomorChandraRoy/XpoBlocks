@@ -30,17 +30,17 @@ const General = ({ attributes, setAttributes }) => {
       )}
 
       <ItemsPanel
-        title={__('FAQ Items Manager', 'guten-builder-blocks')}
-        initialOpen={true}
-        items={faqsData}
-        onChange={newFaqs => setAttributes({ faqsData: newFaqs })}
+        title={__('FAQ Items Manager', 'guten-builder-blocks')} //panel name
+        initialOpen={true} //panel open by default on na off
+        items={faqsData} //your data array
+        onChange={newFaqs => setAttributes({ faqsData: newFaqs })} //your data array
         defaultItem={{
-          question: __('', 'guten-builder-blocks'),
-          answer: __('', 'guten-builder-blocks'),
+          question: '',
+          answer: '',
         }}
-        addButtonLabel={__('Add FAQ Item', 'guten-builder-blocks')}
-        itemTitleKey="question"
-        ItemSettings={PanelItems}
+        addButtonLabel={__('Add FAQ Item', 'guten-builder-blocks')} //add item button text
+        itemTitleKey="question" //which item title will show in the list header
+        ItemSettings={PanelItems} //item settings component which render your item fields
       />
 
       <PanelBody className="bPlPanelBody" title={__('Icon Settings', 'guten-builder-blocks')} initialOpen={false}>

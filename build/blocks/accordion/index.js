@@ -1567,7 +1567,7 @@ const ItemsPanel = data => {
     }) : items.map((item, index) => {
       const isOpen = openItemIndex === index;
       const rawTitle = item[itemTitleKey] || item.title || item.question || "";
-      const displayTitle = rawTitle.trim() !== "" ? rawTitle : `${(0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Item", "guten-builder-blocks")} #${index + 1}`;
+      const displayTitle = rawTitle.trim() !== "" ? rawTitle : `${(0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Item", "guten-builder-blocks")} ${index + 1}`;
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: `tr-items-panel-card ${isOpen ? "is-open" : ""}`,
         draggable: true,
@@ -3936,19 +3936,25 @@ const General = ({
         rows: 3
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ItemsPanel, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('FAQ Items Manager', 'guten-builder-blocks'),
-      initialOpen: true,
-      items: faqsData,
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('FAQ Items Manager', 'guten-builder-blocks') //panel name
+      ,
+      initialOpen: true //panel open by default on na off
+      ,
+      items: faqsData //your data array
+      ,
       onChange: newFaqs => setAttributes({
         faqsData: newFaqs
-      }),
+      }) //your data array
+      ,
       defaultItem: {
-        question: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('', 'guten-builder-blocks'),
-        answer: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('', 'guten-builder-blocks')
+        question: '',
+        answer: ''
       },
-      addButtonLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Add FAQ Item', 'guten-builder-blocks'),
-      itemTitleKey: "question",
-      ItemSettings: _PanelItems__WEBPACK_IMPORTED_MODULE_3__["default"]
+      addButtonLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Add FAQ Item', 'guten-builder-blocks') //add item button text
+      ,
+      itemTitleKey: "question" //which item title will show in the list header
+      ,
+      ItemSettings: _PanelItems__WEBPACK_IMPORTED_MODULE_3__["default"] //item settings component which render your item fields
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Icon Settings', 'guten-builder-blocks'),
@@ -4916,417 +4922,13 @@ const TemplateTwo = ({
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   TemplateOneSvg: () => (/* binding */ TemplateOneSvg),
-/* harmony export */   TemplateThreeSvg: () => (/* binding */ TemplateThreeSvg),
-/* harmony export */   TemplateTwoSvg: () => (/* binding */ TemplateTwoSvg),
 /* harmony export */   templateData: () => (/* binding */ templateData)
 /* harmony export */ });
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./icons */ "./src/blocks/accordion/utils/icons.js");
 
 
-// SVG Wireframe Previews for 3 Templates with high-fidelity visual design
-
-const TemplateOneSvg = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  viewBox: "0 0 800 580",
-  width: "100%",
-  height: "100%",
-  style: {
-    fontFamily: "system-ui, -apple-system, sans-serif"
-  },
-  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
-    width: "800",
-    height: "580",
-    fill: "#ffffff",
-    rx: "8"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("text", {
-    x: "400",
-    y: "45",
-    fontSize: "15",
-    fill: "#6b7280",
-    textAnchor: "middle",
-    children: "FAQ"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("text", {
-    x: "400",
-    y: "90",
-    fontSize: "32",
-    fontWeight: "700",
-    fill: "#0f172a",
-    textAnchor: "middle",
-    children: "Frequently Asked Questions"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("text", {
-    x: "400",
-    y: "130",
-    fontSize: "17",
-    fill: "#64748b",
-    textAnchor: "middle",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tspan", {
-      x: "400",
-      dy: "0",
-      children: "Proactively answering FAQs boosts user confidence and"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tspan", {
-      x: "400",
-      dy: "26",
-      children: "cuts down on support tickets."
-    })]
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
-    x1: "315",
-    y1: "162",
-    x2: "418",
-    y2: "162",
-    stroke: "#fcd34d",
-    strokeWidth: "3",
-    strokeLinecap: "round"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
-    x: "50",
-    y: "190",
-    width: "700",
-    height: "64",
-    rx: "8",
-    fill: "#ffffff",
-    stroke: "#e2e8f0",
-    strokeWidth: "1.5"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("text", {
-    x: "75",
-    y: "228",
-    fontSize: "18",
-    fontWeight: "500",
-    fill: "#0f172a",
-    children: "What is FAQ Accordion?"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-    d: "M 710 218 L 717 225 L 724 218",
-    fill: "none",
-    stroke: "#0f172a",
-    strokeWidth: "2.5",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
-    x: "50",
-    y: "274",
-    width: "700",
-    height: "64",
-    rx: "8",
-    fill: "#ffffff",
-    stroke: "#e2e8f0",
-    strokeWidth: "1.5"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("text", {
-    x: "75",
-    y: "312",
-    fontSize: "18",
-    fontWeight: "500",
-    fill: "#0f172a",
-    children: "Is this block fully responsive?"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-    d: "M 710 316 L 717 309 L 724 316",
-    fill: "none",
-    stroke: "#0f172a",
-    strokeWidth: "2.5",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("text", {
-    x: "75",
-    y: "365",
-    fontSize: "16",
-    fill: "#475569",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tspan", {
-      x: "75",
-      dy: "0",
-      children: "Yes! All options are fully responsive and optimized for mobile, tablet, and desktop viewport"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tspan", {
-      x: "75",
-      dy: "24",
-      children: "sizes."
-    })]
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
-    x: "50",
-    y: "420",
-    width: "700",
-    height: "64",
-    rx: "8",
-    fill: "#ffffff",
-    stroke: "#e2e8f0",
-    strokeWidth: "1.5"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("text", {
-    x: "75",
-    y: "458",
-    fontSize: "18",
-    fontWeight: "500",
-    fill: "#0f172a",
-    children: "Can I customize colors and typography?"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-    d: "M 710 448 L 717 455 L 724 448",
-    fill: "none",
-    stroke: "#0f172a",
-    strokeWidth: "2.5",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
-    x: "50",
-    y: "504",
-    width: "700",
-    height: "64",
-    rx: "8",
-    fill: "#ffffff",
-    stroke: "#e2e8f0",
-    strokeWidth: "1.5"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("text", {
-    x: "75",
-    y: "542",
-    fontSize: "18",
-    fontWeight: "500",
-    fill: "#0f172a",
-    children: "Does it impact site performance?"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-    d: "M 710 532 L 717 539 L 724 532",
-    fill: "none",
-    stroke: "#0f172a",
-    strokeWidth: "2.5",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  })]
-});
-const TemplateTwoSvg = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
-  width: "100%",
-  height: "100%",
-  viewBox: "0 0 646 434",
-  fill: "none",
-  xmlns: "http://www.w3.org/2000/svg",
-  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
-    width: "646",
-    height: "434",
-    fill: "#F9FAFB"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("text", {
-    x: "323",
-    y: "25",
-    "text-anchor": "middle",
-    fill: "#64748B",
-    "font-family": "Arial, sans-serif",
-    "font-size": "14",
-    children: "FAQ"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("text", {
-    x: "323",
-    y: "62",
-    "text-anchor": "middle",
-    fill: "#1E293B",
-    "font-family": "Arial, sans-serif",
-    "font-size": "24",
-    "font-weight": "700",
-    children: "Frequently asked questions"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("text", {
-    x: "323",
-    y: "97",
-    "text-anchor": "middle",
-    fill: "#64748B",
-    "font-family": "Arial, sans-serif",
-    "font-size": "14",
-    children: "Everything you need to know about the product and billing."
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("text", {
-    x: "24",
-    y: "166",
-    fill: "#1E293B",
-    "font-family": "Arial, sans-serif",
-    "font-size": "16",
-    "font-weight": "500",
-    children: "Is there a free trial available?"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-    d: "M616 153V167M609 160H623",
-    stroke: "#334155",
-    "stroke-width": "2",
-    "stroke-linecap": "round"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
-    x1: "24",
-    y1: "186.5",
-    x2: "628",
-    y2: "186.5",
-    stroke: "#D1D5DB"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("text", {
-    x: "24",
-    y: "221",
-    fill: "#1E293B",
-    "font-family": "Arial, sans-serif",
-    "font-size": "16",
-    "font-weight": "500",
-    children: "Can I change my plan later?"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-    d: "M610 214H622",
-    stroke: "#334155",
-    "stroke-width": "2",
-    "stroke-linecap": "round"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("text", {
-    x: "24",
-    y: "257",
-    fill: "#64748B",
-    "font-family": "Arial, sans-serif",
-    "font-size": "14",
-    children: "Of course. Our pricing scales with your company. Chat to our friendly"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("text", {
-    x: "24",
-    y: "279",
-    fill: "#64748B",
-    "font-family": "Arial, sans-serif",
-    "font-size": "14",
-    children: "team to find a solution that works for you."
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
-    x1: "24",
-    y1: "297.5",
-    x2: "628",
-    y2: "297.5",
-    stroke: "#D1D5DB"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("text", {
-    x: "24",
-    y: "331",
-    fill: "#1E293B",
-    "font-family": "Arial, sans-serif",
-    "font-size": "16",
-    "font-weight": "500",
-    children: "What is your cancellation policy?"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-    d: "M616 318V332M609 325H623",
-    stroke: "#334155",
-    "stroke-width": "2",
-    "stroke-linecap": "round"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
-    x1: "24",
-    y1: "353.5",
-    x2: "628",
-    y2: "353.5",
-    stroke: "#D1D5DB"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("text", {
-    x: "24",
-    y: "386",
-    fill: "#1E293B",
-    "font-family": "Arial, sans-serif",
-    "font-size": "16",
-    "font-weight": "500",
-    children: "Can other info be added to an invoice?"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-    d: "M616 373V387M609 380H623",
-    stroke: "#334155",
-    "stroke-width": "2",
-    "stroke-linecap": "round"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
-    x1: "24",
-    y1: "407.5",
-    x2: "628",
-    y2: "407.5",
-    stroke: "#D1D5DB"
-  })]
-});
-const TemplateThreeSvg = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
-  width: "100%",
-  height: "100%",
-  viewBox: "0 0 597 451",
-  xmlns: "http://www.w3.org/2000/svg",
-  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
-    width: "597",
-    height: "451",
-    fill: "#ffffff"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("text", {
-    x: "298.5",
-    y: "32",
-    "text-anchor": "middle",
-    "font-family": "Arial, Helvetica, sans-serif",
-    "font-size": "24",
-    "font-weight": "700",
-    fill: "#07152f",
-    children: "Frequently asked questions"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("text", {
-    x: "298.5",
-    y: "64",
-    "text-anchor": "middle",
-    "font-family": "Arial, Helvetica, sans-serif",
-    "font-size": "14",
-    "font-weight": "400",
-    fill: "#6b7c9a",
-    children: "Everything you need to know about the product and billing."
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("text", {
-    x: "23",
-    y: "165",
-    "font-family": "Arial, Helvetica, sans-serif",
-    "font-size": "16",
-    "font-weight": "700",
-    fill: "#07152f",
-    children: "Is there a free trial available?"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-    d: "M556 157 L561 162 L566 157",
-    fill: "none",
-    stroke: "#07152f",
-    "stroke-width": "2",
-    "stroke-linecap": "round",
-    "stroke-linejoin": "round"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
-    x: "7",
-    y: "195",
-    width: "581",
-    height: "129",
-    rx: "8",
-    fill: "#b9bec8"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("text", {
-    x: "23",
-    y: "227",
-    "font-family": "Arial, Helvetica, sans-serif",
-    "font-size": "16",
-    "font-weight": "700",
-    fill: "#07152f",
-    children: "Can I change my plan later?"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-    d: "M556 224 L561 219 L566 224",
-    fill: "none",
-    stroke: "#07152f",
-    "stroke-width": "2",
-    "stroke-linecap": "round",
-    "stroke-linejoin": "round"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("text", {
-    x: "23",
-    y: "256",
-    "font-family": "Arial, Helvetica, sans-serif",
-    "font-size": "14",
-    "font-weight": "400",
-    fill: "#07152f",
-    children: "Of course. Our pricing scales with your company. Chat to our friendly team to find a"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("text", {
-    x: "23",
-    y: "287",
-    "font-family": "Arial, Helvetica, sans-serif",
-    "font-size": "14",
-    "font-weight": "400",
-    fill: "#07152f",
-    children: "solution that works for you."
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("text", {
-    x: "23",
-    y: "365",
-    "font-family": "Arial, Helvetica, sans-serif",
-    "font-size": "16",
-    "font-weight": "700",
-    fill: "#07152f",
-    children: "What is your cancellation policy?"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-    d: "M556 353 L561 358 L566 353",
-    fill: "none",
-    stroke: "#07152f",
-    "stroke-width": "2",
-    "stroke-linecap": "round",
-    "stroke-linejoin": "round"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("text", {
-    x: "23",
-    y: "427",
-    "font-family": "Arial, Helvetica, sans-serif",
-    "font-size": "16",
-    "font-weight": "700",
-    fill: "#07152f",
-    children: "Can other info be added to an invoice?"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-    d: "M556 415 L561 420 L566 415",
-    fill: "none",
-    stroke: "#07152f",
-    "stroke-width": "2",
-    "stroke-linecap": "round",
-    "stroke-linejoin": "round"
-  })]
-});
 
 //Edit.js file jasche
 const templateData = {
@@ -5334,7 +4936,7 @@ const templateData = {
     id: 'template-1',
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template 1', 'guten-builder-blocks'),
     tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Classic Minimal', 'guten-builder-blocks'),
-    icon: TemplateOneSvg,
+    icon: _icons__WEBPACK_IMPORTED_MODULE_1__.TemplateOneSvg,
     attributes: {
       iconType: 'chevron',
       iconPosition: 'right',
@@ -5355,7 +4957,7 @@ const templateData = {
     id: 'template-2',
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template 2', 'guten-builder-blocks'),
     tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Center Aligned', 'guten-builder-blocks'),
-    icon: TemplateTwoSvg,
+    icon: _icons__WEBPACK_IMPORTED_MODULE_1__.TemplateTwoSvg,
     attributes: {
       iconType: 'plus-minus',
       iconPosition: 'right',
@@ -5377,7 +4979,7 @@ const templateData = {
     id: 'template-3',
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template 3', 'guten-builder-blocks'),
     tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('FAQ Gradient', 'guten-builder-blocks'),
-    icon: TemplateThreeSvg,
+    icon: _icons__WEBPACK_IMPORTED_MODULE_1__.TemplateThreeSvg,
     attributes: {
       iconType: 'chevron',
       iconPosition: 'right',
@@ -5495,6 +5097,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   GeneralIcon: () => (/* binding */ GeneralIcon),
 /* harmony export */   StyleIcon: () => (/* binding */ StyleIcon),
+/* harmony export */   TemplateOneSvg: () => (/* binding */ TemplateOneSvg),
+/* harmony export */   TemplateThreeSvg: () => (/* binding */ TemplateThreeSvg),
+/* harmony export */   TemplateTwoSvg: () => (/* binding */ TemplateTwoSvg),
 /* harmony export */   faqIcon: () => (/* binding */ faqIcon)
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
@@ -5596,6 +5201,406 @@ const StyleIcon = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODU
   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
     d: "M5 0 4 1H1v10.516l1-1V2h2v1h7V2h2v2.463l1-1V1h-3l-1-1zm.414 1h4.172l.414.414V2H5v-.586zm13.139 0-.205.006-.202.035-.195.063-.183.087-.172.112-.155.135-3.89 3.888-.223.207-.244.186-.256.164-.271.14-.282.118-.29.091-.301.067-.301.04-.305.013-.307-.012-.3-.041-.3-.067-.29-.091-.283-.118-.272-.14-.256-.164-.242-.186-.224-.207-7.073 7.072 7.073 7.07 7.07-7.07-.207-.226-.186-.242-.164-.256-.14-.272-.118-.283-.091-.29-.067-.298-.039-.302-.014-.307.014-.305.04-.3.066-.301.091-.291.118-.282.14-.27.164-.257.186-.244.207-.223 3.889-3.89.134-.155.112-.17.087-.185.063-.195.035-.202.006-.205-.021-.203-.047-.2-.077-.189-.1-.18-.124-.163-.143-.143-.164-.125-.18-.1-.189-.076-.197-.047zm-.108 1.002h.114l.107.025.102.047.087.07.07.088.048.102.025.107v.114l-.025.11-.047.1-.07.089-3.89 3.886-.241.262-.221.281-.197.297-.172.31-.149.325-.123.336-.095.342-.069.351-.039.354-.012.355.016.356.045.355.074.348.1.343.127.332.152.323.176.308-.432.432L8.25 7.094l.432-.432.308.176.324.154.332.125.342.1.35.074.353.045.356.016.355-.012.354-.04.351-.068.342-.095.336-.121.324-.149.31-.174.298-.197.281-.22.262-.243 3.888-3.888.086-.07.102-.048zM3 6v1h2.516l1-1zm4.543 1.8 5.656 5.657-1.554 1.557-.02-.256-.037-.254-.03-.125-.037-.123-.05-.117-.065-.112-.078-.103-.09-.088-.105-.076-.113-.059-.122-.043-.125-.025-.128-.012h-.127l-.13.012-.126.02-.25.056-.244.074-.243.084-.476.19-.442.17-.007.02-.03-.007.037-.013.497-1.291.11-.332.095-.34.037-.172.025-.172.012-.174-.01-.176-.014-.088-.021-.084-.027-.084-.04-.08-.044-.074-.057-.068-.063-.063-.068-.054-.076-.045-.08-.035-.084-.028-.086-.015-.088-.01-.088-.002-.174.015-.174.036-.168.045-.335.105-.33.115-.168.055-.147.037v.014l-.025-.008.025-.006.018-.299.021-.31.002-.157-.004-.156-.017-.154-.03-.154-.045-.149-.06-.144-.072-.137-.086-.131-.1-.121-.11-.111-.119-.102-.123-.094zM3 8v1h.516l1-1zm2.592 1.75.127.08.119.092.105.105.043.06.035.067.03.069.015.072.016.148-.01.3-.021.296-.012.299.008.148.021.149.043.142.065.135.04.06.05.06.052.052.059.047.064.039.067.035.142.045.147.021h.148l.15-.015.145-.027.29-.079.282-.095.282-.098.271-.078.004-.024.012.02-.016.004-.035.176-.055.197-.129.387-.296.763-.149.381-.068.194-.06.195-.048.2-.015.099-.008.103v.102l.014.101.027.1.039.094.053.088.066.078.078.068.088.05.094.042.101.025.1.012.104.002.101-.01.102-.017.197-.05.195-.062.192-.068.76-.3.386-.136.2-.048.101-.018.086-.006-.004-.016.02.014-.016.002.02.066.013.083.018.168.017.335.02.336.039.334-2.11 2.112-5.656-5.657zM1 13.281V17h3.72l-1-1H2v-1.719z"
   })
+});
+
+// SVG Wireframe Previews for 3 Templates with high-fidelity visual design
+const TemplateOneSvg = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 800 580",
+  width: "100%",
+  height: "100%",
+  style: {
+    fontFamily: "system-ui, -apple-system, sans-serif"
+  },
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+    width: "800",
+    height: "580",
+    fill: "#ffffff",
+    rx: "8"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "400",
+    y: "45",
+    fontSize: "15",
+    fill: "#6b7280",
+    textAnchor: "middle",
+    children: "FAQ"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "400",
+    y: "90",
+    fontSize: "32",
+    fontWeight: "700",
+    fill: "#0f172a",
+    textAnchor: "middle",
+    children: "Frequently Asked Questions"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("text", {
+    x: "400",
+    y: "130",
+    fontSize: "17",
+    fill: "#64748b",
+    textAnchor: "middle",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("tspan", {
+      x: "400",
+      dy: "0",
+      children: "Proactively answering FAQs boosts user confidence and"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("tspan", {
+      x: "400",
+      dy: "26",
+      children: "cuts down on support tickets."
+    })]
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("line", {
+    x1: "315",
+    y1: "162",
+    x2: "418",
+    y2: "162",
+    stroke: "#fcd34d",
+    strokeWidth: "3",
+    strokeLinecap: "round"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+    x: "50",
+    y: "190",
+    width: "700",
+    height: "64",
+    rx: "8",
+    fill: "#ffffff",
+    stroke: "#e2e8f0",
+    strokeWidth: "1.5"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "75",
+    y: "228",
+    fontSize: "18",
+    fontWeight: "500",
+    fill: "#0f172a",
+    children: "What is FAQ Accordion?"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+    d: "M 710 218 L 717 225 L 724 218",
+    fill: "none",
+    stroke: "#0f172a",
+    strokeWidth: "2.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+    x: "50",
+    y: "274",
+    width: "700",
+    height: "64",
+    rx: "8",
+    fill: "#ffffff",
+    stroke: "#e2e8f0",
+    strokeWidth: "1.5"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "75",
+    y: "312",
+    fontSize: "18",
+    fontWeight: "500",
+    fill: "#0f172a",
+    children: "Is this block fully responsive?"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+    d: "M 710 316 L 717 309 L 724 316",
+    fill: "none",
+    stroke: "#0f172a",
+    strokeWidth: "2.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("text", {
+    x: "75",
+    y: "365",
+    fontSize: "16",
+    fill: "#475569",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("tspan", {
+      x: "75",
+      dy: "0",
+      children: "Yes! All options are fully responsive and optimized for mobile, tablet, and desktop viewport"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("tspan", {
+      x: "75",
+      dy: "24",
+      children: "sizes."
+    })]
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+    x: "50",
+    y: "420",
+    width: "700",
+    height: "64",
+    rx: "8",
+    fill: "#ffffff",
+    stroke: "#e2e8f0",
+    strokeWidth: "1.5"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "75",
+    y: "458",
+    fontSize: "18",
+    fontWeight: "500",
+    fill: "#0f172a",
+    children: "Can I customize colors and typography?"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+    d: "M 710 448 L 717 455 L 724 448",
+    fill: "none",
+    stroke: "#0f172a",
+    strokeWidth: "2.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+    x: "50",
+    y: "504",
+    width: "700",
+    height: "64",
+    rx: "8",
+    fill: "#ffffff",
+    stroke: "#e2e8f0",
+    strokeWidth: "1.5"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "75",
+    y: "542",
+    fontSize: "18",
+    fontWeight: "500",
+    fill: "#0f172a",
+    children: "Does it impact site performance?"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+    d: "M 710 532 L 717 539 L 724 532",
+    fill: "none",
+    stroke: "#0f172a",
+    strokeWidth: "2.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  })]
+});
+const TemplateTwoSvg = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
+  width: "100%",
+  height: "100%",
+  viewBox: "0 0 646 434",
+  fill: "none",
+  xmlns: "http://www.w3.org/2000/svg",
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+    width: "646",
+    height: "434",
+    fill: "#F9FAFB"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "323",
+    y: "25",
+    "text-anchor": "middle",
+    fill: "#64748B",
+    "font-family": "Arial, sans-serif",
+    "font-size": "14",
+    children: "FAQ"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "323",
+    y: "62",
+    "text-anchor": "middle",
+    fill: "#1E293B",
+    "font-family": "Arial, sans-serif",
+    "font-size": "24",
+    "font-weight": "700",
+    children: "Frequently asked questions"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "323",
+    y: "97",
+    "text-anchor": "middle",
+    fill: "#64748B",
+    "font-family": "Arial, sans-serif",
+    "font-size": "14",
+    children: "Everything you need to know about the product and billing."
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "24",
+    y: "166",
+    fill: "#1E293B",
+    "font-family": "Arial, sans-serif",
+    "font-size": "16",
+    "font-weight": "500",
+    children: "Is there a free trial available?"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+    d: "M616 153V167M609 160H623",
+    stroke: "#334155",
+    "stroke-width": "2",
+    "stroke-linecap": "round"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("line", {
+    x1: "24",
+    y1: "186.5",
+    x2: "628",
+    y2: "186.5",
+    stroke: "#D1D5DB"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "24",
+    y: "221",
+    fill: "#1E293B",
+    "font-family": "Arial, sans-serif",
+    "font-size": "16",
+    "font-weight": "500",
+    children: "Can I change my plan later?"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+    d: "M610 214H622",
+    stroke: "#334155",
+    "stroke-width": "2",
+    "stroke-linecap": "round"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "24",
+    y: "257",
+    fill: "#64748B",
+    "font-family": "Arial, sans-serif",
+    "font-size": "14",
+    children: "Of course. Our pricing scales with your company. Chat to our friendly"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "24",
+    y: "279",
+    fill: "#64748B",
+    "font-family": "Arial, sans-serif",
+    "font-size": "14",
+    children: "team to find a solution that works for you."
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("line", {
+    x1: "24",
+    y1: "297.5",
+    x2: "628",
+    y2: "297.5",
+    stroke: "#D1D5DB"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "24",
+    y: "331",
+    fill: "#1E293B",
+    "font-family": "Arial, sans-serif",
+    "font-size": "16",
+    "font-weight": "500",
+    children: "What is your cancellation policy?"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+    d: "M616 318V332M609 325H623",
+    stroke: "#334155",
+    "stroke-width": "2",
+    "stroke-linecap": "round"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("line", {
+    x1: "24",
+    y1: "353.5",
+    x2: "628",
+    y2: "353.5",
+    stroke: "#D1D5DB"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "24",
+    y: "386",
+    fill: "#1E293B",
+    "font-family": "Arial, sans-serif",
+    "font-size": "16",
+    "font-weight": "500",
+    children: "Can other info be added to an invoice?"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+    d: "M616 373V387M609 380H623",
+    stroke: "#334155",
+    "stroke-width": "2",
+    "stroke-linecap": "round"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("line", {
+    x1: "24",
+    y1: "407.5",
+    x2: "628",
+    y2: "407.5",
+    stroke: "#D1D5DB"
+  })]
+});
+const TemplateThreeSvg = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
+  width: "100%",
+  height: "100%",
+  viewBox: "0 0 597 451",
+  xmlns: "http://www.w3.org/2000/svg",
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+    width: "597",
+    height: "451",
+    fill: "#ffffff"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "298.5",
+    y: "32",
+    "text-anchor": "middle",
+    "font-family": "Arial, Helvetica, sans-serif",
+    "font-size": "24",
+    "font-weight": "700",
+    fill: "#07152f",
+    children: "Frequently asked questions"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "298.5",
+    y: "64",
+    "text-anchor": "middle",
+    "font-family": "Arial, Helvetica, sans-serif",
+    "font-size": "14",
+    "font-weight": "400",
+    fill: "#6b7c9a",
+    children: "Everything you need to know about the product and billing."
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "23",
+    y: "165",
+    "font-family": "Arial, Helvetica, sans-serif",
+    "font-size": "16",
+    "font-weight": "700",
+    fill: "#07152f",
+    children: "Is there a free trial available?"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+    d: "M556 157 L561 162 L566 157",
+    fill: "none",
+    stroke: "#07152f",
+    "stroke-width": "2",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+    x: "7",
+    y: "195",
+    width: "581",
+    height: "129",
+    rx: "8",
+    fill: "#b9bec8"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "23",
+    y: "227",
+    "font-family": "Arial, Helvetica, sans-serif",
+    "font-size": "16",
+    "font-weight": "700",
+    fill: "#07152f",
+    children: "Can I change my plan later?"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+    d: "M556 224 L561 219 L566 224",
+    fill: "none",
+    stroke: "#07152f",
+    "stroke-width": "2",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "23",
+    y: "256",
+    "font-family": "Arial, Helvetica, sans-serif",
+    "font-size": "14",
+    "font-weight": "400",
+    fill: "#07152f",
+    children: "Of course. Our pricing scales with your company. Chat to our friendly team to find a"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "23",
+    y: "287",
+    "font-family": "Arial, Helvetica, sans-serif",
+    "font-size": "14",
+    "font-weight": "400",
+    fill: "#07152f",
+    children: "solution that works for you."
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "23",
+    y: "365",
+    "font-family": "Arial, Helvetica, sans-serif",
+    "font-size": "16",
+    "font-weight": "700",
+    fill: "#07152f",
+    children: "What is your cancellation policy?"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+    d: "M556 353 L561 358 L566 353",
+    fill: "none",
+    stroke: "#07152f",
+    "stroke-width": "2",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "23",
+    y: "427",
+    "font-family": "Arial, Helvetica, sans-serif",
+    "font-size": "16",
+    "font-weight": "700",
+    fill: "#07152f",
+    children: "Can other info be added to an invoice?"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+    d: "M556 415 L561 420 L566 415",
+    fill: "none",
+    stroke: "#07152f",
+    "stroke-width": "2",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+  })]
 });
 
 /***/ },

@@ -1567,7 +1567,7 @@ const ItemsPanel = data => {
     }) : items.map((item, index) => {
       const isOpen = openItemIndex === index;
       const rawTitle = item[itemTitleKey] || item.title || item.question || "";
-      const displayTitle = rawTitle.trim() !== "" ? rawTitle : `${(0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Item", "guten-builder-blocks")} #${index + 1}`;
+      const displayTitle = rawTitle.trim() !== "" ? rawTitle : `${(0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Item", "guten-builder-blocks")} ${index + 1}`;
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: `tr-items-panel-card ${isOpen ? "is-open" : ""}`,
         draggable: true,
