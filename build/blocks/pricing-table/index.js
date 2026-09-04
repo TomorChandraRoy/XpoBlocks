@@ -1,1 +1,5789 @@
-(()=>{"use strict";var t={248(){const t=window.wp.blocks,e=window.wp.blockEditor,n=window.wp.components,l=window.wp.i18n,r=[{name:"general",title:(0,l.__)("General","textdomain")},{name:"style",title:(0,l.__)("Style","textdomain")}],i=window.wp.element,o=window.ReactJSXRuntime,a=({attributes:t,setAttributes:e,clientId:r})=>{const{blockId:a,pricingTables:s=[],columns:c,columnGap:b}=t,d=(0,i.useRef)(r);(0,i.useEffect)((()=>{const t=d.current!==r;if(!a||t){const t=window.crypto&&crypto.randomUUID?crypto.randomUUID().split("-")[0]:Math.random().toString(36).substring(2,9);e({blockId:`gbb-price-${t}`}),d.current=r}}),[a,r,e]);const g=(t,n,l)=>{const r=[...s];r[t]={...r[t],[n]:l},e({pricingTables:r})},u=(t,n,l,r)=>{let i=[...s];if("label"===l)i=i.map((t=>{const e=[...t.features||[]];return e[n]&&(e[n]={...e[n],label:r}),{...t,features:e}}));else{const e=[...i[t].features];e[n]={...e[n],[l]:r},i[t]={...i[t],features:e}}e({pricingTables:i})};return(0,o.jsxs)(o.Fragment,{children:[(0,o.jsxs)(n.PanelBody,{title:(0,l.__)("⚙️ Grid Layout","guten-builder-blocks"),initialOpen:!0,children:[(0,o.jsx)(n.SelectControl,{label:(0,l.__)("Theme Style","guten-builder-blocks"),value:t.themeStyle||"style-1",options:[{label:(0,l.__)("Style 1 (Default)","guten-builder-blocks"),value:"style-1"},{label:(0,l.__)("Style 2 (Dark Hover)","guten-builder-blocks"),value:"style-2"}],onChange:t=>e({themeStyle:t})}),(0,o.jsx)(n.SelectControl,{label:(0,l.__)("Columns (Desktop)","guten-builder-blocks"),value:c,options:[{label:"1",value:1},{label:"2",value:2},{label:"3",value:3},{label:"4",value:4}],onChange:t=>e({columns:parseInt(t)})}),(0,o.jsx)(n.RangeControl,{label:(0,l.__)("Column Gap (px)","guten-builder-blocks"),value:b,onChange:t=>e({columnGap:t}),min:10,max:50})]}),(0,o.jsxs)(n.PanelBody,{title:(0,l.__)("💰 Plans & Pricing Cards","guten-builder-blocks"),initialOpen:!0,children:[s.map(((t,r)=>(0,o.jsxs)("div",{style:{background:"#f8fafc",border:"1px solid #e2e8f0",borderRadius:"8px",padding:"16px",marginBottom:"16px",position:"relative"},children:[(0,o.jsxs)("div",{style:{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"12px"},children:[(0,o.jsxs)("span",{style:{fontWeight:"bold",fontSize:"13px",color:"#334155"},children:[(0,l.__)("Plan #","guten-builder-blocks")," ",r+1," (",t.name,")"]}),(0,o.jsx)(n.Button,{isDestructive:!0,variant:"link",onClick:()=>(t=>{const n=s.filter(((e,n)=>n!==t));e({pricingTables:n})})(r),style:{padding:0,height:"auto",minWidth:"auto"},children:(0,l.__)("Remove Plan","guten-builder-blocks")})]}),(0,o.jsx)(n.TextControl,{label:(0,l.__)("Plan Name","guten-builder-blocks"),value:t.name,onChange:t=>g(r,"name",t)}),(0,o.jsxs)("div",{style:{display:"grid",gridTemplateColumns:"1fr 2fr 1fr",gap:"8px"},children:[(0,o.jsx)(n.TextControl,{label:(0,l.__)("Currency","guten-builder-blocks"),value:t.priceCurrency,onChange:t=>g(r,"priceCurrency",t)}),(0,o.jsx)(n.TextControl,{label:(0,l.__)("Price","guten-builder-blocks"),value:t.price,onChange:t=>g(r,"price",t)}),(0,o.jsx)(n.TextControl,{label:(0,l.__)("Period","guten-builder-blocks"),value:t.period,onChange:t=>g(r,"period",t)})]}),(0,o.jsx)(n.TextControl,{label:(0,l.__)("Button Link","guten-builder-blocks"),value:t.link,onChange:t=>g(r,"link",t)}),(0,o.jsx)(n.TextControl,{label:(0,l.__)("Button Label","guten-builder-blocks"),value:t.linkLabel,onChange:t=>g(r,"linkLabel",t)}),(0,o.jsx)(n.TextControl,{label:(0,l.__)("Brand Color (Hex)","guten-builder-blocks"),value:t.color,onChange:t=>g(r,"color",t)}),(0,o.jsx)(n.ToggleControl,{label:(0,l.__)("Featured / Popular","guten-builder-blocks"),checked:t.isFeatured,onChange:t=>g(r,"isFeatured",t)}),t.isFeatured&&(0,o.jsx)(n.TextControl,{label:(0,l.__)("Badge Ribbon Text","guten-builder-blocks"),value:t.badgeText,onChange:t=>g(r,"badgeText",t),placeholder:(0,l.__)("e.g. POPULAR","guten-builder-blocks")}),(0,o.jsxs)("div",{style:{marginTop:"12px",borderTop:"1px solid #cbd5e1",paddingTop:"12px"},children:[(0,o.jsx)("p",{style:{fontWeight:"bold",fontSize:"11px",margin:"0 0 8px 0",textTransform:"uppercase",color:"#64748b"},children:(0,l.__)("Features List","guten-builder-blocks")}),(t.features||[]).map(((t,l)=>(0,o.jsxs)("div",{style:{display:"flex",gap:"8px",alignItems:"center",marginBottom:"8px"},children:[(0,o.jsx)("input",{type:"checkbox",checked:t.isEnable,onChange:t=>u(r,l,"isEnable",t.target.checked),style:{width:"16px",height:"16px"}}),(0,o.jsx)("div",{style:{flex:1},children:(0,o.jsx)(n.TextControl,{value:t.label,onChange:t=>u(r,l,"label",t),style:{marginBottom:0}})}),(0,o.jsx)(n.Button,{isDestructive:!0,variant:"link",onClick:()=>((t,n)=>{const l=s.map((t=>({...t,features:(t.features||[]).filter(((t,e)=>e!==n))})));e({pricingTables:l})})(0,l),style:{minWidth:"auto",padding:0},children:"✕"})]},l))),(0,o.jsx)(n.Button,{variant:"secondary",isSmall:!0,onClick:()=>(t=>{const n=s.map((t=>({...t,features:[...t.features||[],{label:(0,l.__)("New Feature Item","guten-builder-blocks"),isEnable:!0}]})));e({pricingTables:n})})(),style:{width:"100%",justifyContent:"center",marginTop:"6px"},children:(0,l.__)("＋ Add Feature Row","guten-builder-blocks")})]})]},r))),(0,o.jsx)(n.Button,{variant:"secondary",onClick:()=>{const t=s.length>0&&s[0].features?s[0].features.map((t=>({label:t.label,isEnable:!0}))):[{label:(0,l.__)("Everything in Starter","guten-builder-blocks"),isEnable:!0},{label:(0,l.__)("Advanced Customization","guten-builder-blocks"),isEnable:!0}],n=[...s,{name:(0,l.__)("Premium Plan","guten-builder-blocks"),price:"49",priceCurrency:"$",period:"mo",link:"#",linkLabel:(0,l.__)("Buy Now","guten-builder-blocks"),color:"#ec4899",isFeatured:!1,badgeText:"",features:t}];e({pricingTables:n})},style:{width:"100%",justifyContent:"center"},children:(0,l.__)("＋ Add Pricing Card","guten-builder-blocks")})]})]})},s=({attributes:t,setAttributes:e})=>{const{borderRadius:r,cardBgColor:i,cardTextColor:a,buttonBgColor:s,buttonTextColor:c,featuredButtonBgColor:b,featuredButtonTextColor:d}=t;return(0,o.jsxs)(o.Fragment,{children:[(0,o.jsxs)(n.PanelBody,{title:(0,l.__)("🎨 Card Styling","guten-builder-blocks"),initialOpen:!0,children:[(0,o.jsx)("p",{style:{fontWeight:"bold",margin:"0 0 5px 0"},children:(0,l.__)("Card Background Color","guten-builder-blocks")}),(0,o.jsx)(n.ColorPalette,{value:i,onChange:t=>e({cardBgColor:t||"#ffffff"})}),(0,o.jsx)("p",{style:{fontWeight:"bold",margin:"10px 0 5px 0"},children:(0,l.__)("Card Text Color","guten-builder-blocks")}),(0,o.jsx)(n.ColorPalette,{value:a,onChange:t=>e({cardTextColor:t||"#1e293b"})}),(0,o.jsx)("hr",{}),(0,o.jsx)(n.RangeControl,{label:(0,l.__)("Card Border Radius (px)","guten-builder-blocks"),value:r,onChange:t=>e({borderRadius:t}),min:0,max:40})]}),(0,o.jsxs)(n.PanelBody,{title:(0,l.__)("🛍️ Button Styling","guten-builder-blocks"),initialOpen:!1,children:[(0,o.jsx)("p",{style:{fontWeight:"bold",margin:"0 0 5px 0"},children:(0,l.__)("Default Button Background","guten-builder-blocks")}),(0,o.jsx)(n.ColorPalette,{value:s,onChange:t=>e({buttonBgColor:t||"#3b82f6"})}),(0,o.jsx)("p",{style:{fontWeight:"bold",margin:"10px 0 5px 0"},children:(0,l.__)("Default Button Text Color","guten-builder-blocks")}),(0,o.jsx)(n.ColorPalette,{value:c,onChange:t=>e({buttonTextColor:t||"#ffffff"})}),(0,o.jsx)("hr",{}),(0,o.jsx)("p",{style:{fontWeight:"bold",margin:"10px 0 5px 0"},children:(0,l.__)("Featured Button Background","guten-builder-blocks")}),(0,o.jsx)(n.ColorPalette,{value:b,onChange:t=>e({featuredButtonBgColor:t||"#10b981"})}),(0,o.jsx)("p",{style:{fontWeight:"bold",margin:"10px 0 5px 0"},children:(0,l.__)("Featured Button Text Color","guten-builder-blocks")}),(0,o.jsx)(n.ColorPalette,{value:d,onChange:t=>e({featuredButtonTextColor:t||"#ffffff"})}),(0,o.jsx)("hr",{}),(0,o.jsx)("p",{style:{fontWeight:"bold",margin:"10px 0 5px 0"},children:(0,l.__)("Hover Highlight Color (Style 2)","guten-builder-blocks")}),(0,o.jsx)(n.ColorPalette,{value:t.hoverHighlightColor,onChange:t=>e({hoverHighlightColor:t||"#ffd700"})})]})]})},c=({attributes:t,setAttributes:l,clientId:i})=>(0,o.jsx)(e.InspectorControls,{children:(0,o.jsx)(n.TabPanel,{className:"guten-builder-blocks-tab-panel wp-block-guten-builder-blocks-pricing-table",activeClass:"guten-builder-blocks-active-tab",tabs:r,children:e=>(0,o.jsxs)(o.Fragment,{children:["general"===e.name&&(0,o.jsx)(a,{attributes:t,setAttributes:l,clientId:i}),"style"===e.name&&(0,o.jsx)(s,{attributes:t,setAttributes:l})]})})}),b=(0,o.jsx)("svg",{width:"18",height:"18",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"3",strokeLinecap:"round",strokeLinejoin:"round",style:{marginRight:"8px"},children:(0,o.jsx)("polyline",{points:"20 6 9 17 4 12"})}),d=(0,o.jsxs)("svg",{width:"18",height:"18",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2.5",strokeLinecap:"round",strokeLinejoin:"round",style:{marginRight:"8px",opacity:.5},children:[(0,o.jsx)("line",{x1:"18",y1:"6",x2:"6",y2:"18"}),(0,o.jsx)("line",{x1:"6",y1:"6",x2:"18",y2:"18"})]}),g=({attributes:t,setAttributes:e,RichTextEl:n,isBackend:r=!1})=>{const{blockId:i,pricingTables:a=[],themeStyle:s="style-1"}=t,c=(t,n,l)=>{const r=[...a];r[t]={...r[t],[n]:l},e({pricingTables:r})};return(0,o.jsx)("div",{className:`gbb-pricing-grid-container ${i} ${s}`,children:a.map(((t,i)=>{const s=t.isFeatured;return(0,o.jsxs)("div",{className:"gbb-pricing-card "+(s?"is-featured":""),children:[s&&t.badgeText&&(0,o.jsx)("div",{className:"gbb-pricing-badge",children:t.badgeText}),(0,o.jsxs)("div",{className:"gbb-pricing-header",children:[(0,o.jsx)(n,{tagName:"h3",className:"gbb-pricing-name",value:t.name,onChange:t=>c(i,"name",t),placeholder:(0,l.__)("Plan Name","guten-builder-blocks")}),(0,o.jsxs)("div",{className:"gbb-pricing-rate",children:[(0,o.jsx)(n,{tagName:"span",className:"gbb-pricing-currency",value:t.priceCurrency,onChange:t=>c(i,"priceCurrency",t),placeholder:"$"}),(0,o.jsx)(n,{tagName:"span",className:"gbb-pricing-price",value:t.price,onChange:t=>c(i,"price",t),placeholder:"0"}),(0,o.jsx)("span",{className:"gbb-pricing-period-separator",children:"/"}),(0,o.jsx)(n,{tagName:"span",className:"gbb-pricing-period",value:t.period,onChange:t=>c(i,"period",t),placeholder:"mo"})]})]}),(0,o.jsx)("ul",{className:"gbb-pricing-features",children:(t.features||[]).map(((t,r)=>(0,o.jsxs)("li",{className:"gbb-pricing-feature-item "+(t.isEnable?"is-enabled":"is-disabled"),children:[(0,o.jsx)("span",{className:"gbb-feature-icon",children:t.isEnable?b:d}),(0,o.jsx)(n,{tagName:"span",value:t.label,onChange:t=>((t,n,l)=>{const r=a.map((t=>{const e=[...t.features||[]];return e[n]&&(e[n]={...e[n],label:l}),{...t,features:e}}));e({pricingTables:r})})(0,r,t),placeholder:(0,l.__)("Feature description","guten-builder-blocks")})]},r)))}),(0,o.jsx)(n,{tagName:"a",href:"#",className:"gbb-pricing-button",value:t.linkLabel,onChange:t=>c(i,"linkLabel",t),placeholder:(0,l.__)("Buy Now","guten-builder-blocks"),onClick:r?t=>t.preventDefault():void 0})]},i)}))})},u=({attributes:t,clientId:e})=>{const{blockId:n,pricingTables:l=[],columns:r,columnGap:i,borderRadius:a,cardBgColor:s,cardTextColor:c,buttonBgColor:b,buttonTextColor:d,featuredButtonBgColor:g,featuredButtonTextColor:u,themeStyle:p="style-1",hoverHighlightColor:x="#ffd700"}=t,h=`.${n}`;let f="";return l.forEach(((t,e)=>{const n=t.isFeatured,l=t.color||"#3b82f6",r=`${h} .gbb-pricing-card:nth-child(${e+1})`,i=`${r} .gbb-pricing-button`;f+="style-2"===p?`\n\t\t\t\t${r} {\n\t\t\t\t\tborder: 2px solid transparent;\n\t\t\t\t\ttransition: all 0.3s ease;\n\t\t\t\t}\n\t\t\t\t${r} .gbb-pricing-name {\n\t\t\t\t\tcolor: #ffffff;\n\t\t\t\t}\n\t\t\t\t${r} .gbb-feature-icon {\n\t\t\t\t\tcolor: #ffffff;\n\t\t\t\t}\n\t\t\t\t${i} {\n\t\t\t\t\tbackground: #000000;\n\t\t\t\t\tcolor: #3b82f6;\n\t\t\t\t\tborder: 1px solid #000000;\n\t\t\t\t\ttransition: all 0.3s ease;\n\t\t\t\t}\n\t\t\t`:`\n\t\t\t\t${r} {\n\t\t\t\t\tborder: ${n?`2px solid ${l}`:"1px solid #e2e8f0"};\n\t\t\t\t\tbox-shadow: ${n?"0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)":"0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)"};\n\t\t\t\t}\n\t\t\t\t${r} .gbb-pricing-badge {\n\t\t\t\t\tbackground: ${l};\n\t\t\t\t}\n\t\t\t\t${r} .gbb-pricing-name {\n\t\t\t\t\tcolor: ${n?l:"inherit"};\n\t\t\t\t}\n\t\t\t\t${r} .gbb-feature-icon {\n\t\t\t\t\tcolor: ${n?l:"inherit"};\n\t\t\t\t}\n\t\t\t\t${i} {\n\t\t\t\t\tbackground: ${n?g||l:b};\n\t\t\t\t\tcolor: ${n?u:d};\n\t\t\t\t\tborder: 1px solid ${n?g||l:b};\n\t\t\t\t}\n\t\t\t`})),(0,o.jsx)("style",{dangerouslySetInnerHTML:{__html:`\n\t\t\t\t${h} {\n\t\t\t\t\tdisplay: grid;\n\t\t\t\t\tgrid-template-columns: repeat(${r}, 1fr);\n\t\t\t\t\tgap: ${i}px;\n\t\t\t\t\twidth: 100%;\n\t\t\t\t}\n\n\t\t\t\t${h} .gbb-pricing-card {\n\t\t\t\t\tbackground: ${s||"#ffffff"};\n\t\t\t\t\tcolor: ${c||"#1e293b"};\n\t\t\t\t\tborder-radius: ${a}px;\n\t\t\t\t\tposition: relative;\n\t\t\t\t\tpadding: 32px 24px;\n\t\t\t\t\tdisplay: flex;\n\t\t\t\t\tflex-direction: column;\n\t\t\t\t\tbox-sizing: border-box;\n\t\t\t\t}\n\n\t\t\t\t${h} .gbb-pricing-badge {\n\t\t\t\t\tposition: absolute;\n\t\t\t\t\ttop: 12px;\n\t\t\t\t\tright: 12px;\n\t\t\t\t\tcolor: #ffffff;\n\t\t\t\t\tpadding: 4px 10px;\n\t\t\t\t\tborder-radius: 20px;\n\t\t\t\t\tfont-size: 10px;\n\t\t\t\t\tfont-weight: bold;\n\t\t\t\t\tletter-spacing: 1px;\n\t\t\t\t}\n\n\t\t\t\t${h} .gbb-pricing-header {\n\t\t\t\t\tborder-bottom: 1px solid #e2e8f0;\n\t\t\t\t\tpadding-bottom: 20px;\n\t\t\t\t\tmargin-bottom: 20px;\n\t\t\t\t\ttext-align: center;\n\t\t\t\t}\n\n\t\t\t\t${h} .gbb-pricing-name {\n\t\t\t\t\tfont-size: 20px;\n\t\t\t\t\tfont-weight: 700;\n\t\t\t\t\tmargin: 0 0 10px 0;\n\t\t\t\t}\n\n\t\t\t\t${h} .gbb-pricing-rate {\n\t\t\t\t\tdisplay: flex;\n\t\t\t\t\tjustify-content: center;\n\t\t\t\t\talign-items: baseline;\n\t\t\t\t\tmargin: 15px 0;\n\t\t\t\t}\n\n\t\t\t\t${h} .gbb-pricing-currency {\n\t\t\t\t\tfont-size: 20px;\n\t\t\t\t\tfont-weight: 600;\n\t\t\t\t\tmargin-right: 2px;\n\t\t\t\t}\n\n\t\t\t\t${h} .gbb-pricing-price {\n\t\t\t\t\tfont-size: 42px;\n\t\t\t\t\tfont-weight: 800;\n\t\t\t\t\tline-height: 1;\n\t\t\t\t}\n\n\t\t\t\t${h} .gbb-pricing-period-separator {\n\t\t\t\t\tfont-size: 14px;\n\t\t\t\t\topacity: 0.7;\n\t\t\t\t\tmargin-left: 4px;\n\t\t\t\t}\n\n\t\t\t\t${h} .gbb-pricing-period {\n\t\t\t\t\tfont-size: 14px;\n\t\t\t\t\topacity: 0.7;\n\t\t\t\t}\n\n\t\t\t\t${h} .gbb-pricing-features {\n\t\t\t\t\tlist-style: none;\n\t\t\t\t\tpadding: 0;\n\t\t\t\t\tmargin: 0 0 30px 0;\n\t\t\t\t\tdisplay: flex;\n\t\t\t\t\tflex-direction: column;\n\t\t\t\t\tgap: 12px;\n\t\t\t\t}\n\n\t\t\t\t${h} .gbb-pricing-feature-item {\n\t\t\t\t\tdisplay: flex;\n\t\t\t\t\talign-items: center;\n\t\t\t\t\tfont-size: 14px;\n\t\t\t\t}\n\t\t\t\t${h} .gbb-pricing-feature-item.is-enabled {\n\t\t\t\t\tcolor: inherit;\n\t\t\t\t}\n\t\t\t\t${h} .gbb-pricing-feature-item.is-disabled {\n\t\t\t\t\tcolor: rgba(0,0,0,0.38);\n\t\t\t\t}\n\n\t\t\t\t${h} .gbb-feature-icon {\n\t\t\t\t\tdisplay: flex;\n\t\t\t\t\talign-items: center;\n\t\t\t\t}\n\n\t\t\t\t${h} .gbb-pricing-button {\n\t\t\t\t\tdisplay: inline-block;\n\t\t\t\t\ttext-align: center;\n\t\t\t\t\tpadding: 12px 24px;\n\t\t\t\t\tborder-radius: 6px;\n\t\t\t\t\tfont-weight: 600;\n\t\t\t\t\ttext-decoration: none;\n\t\t\t\t\tmargin-top: auto;\n\t\t\t\t\ttransition: all 0.2s;\n\t\t\t\t}\n\n\t\t\t\t${f}\n\n\t\t\t\t${h}.style-2 .gbb-pricing-card {\n\t\t\t\t\tbackground: #1a1a1a;\n\t\t\t\t\tcolor: #94a3b8;\n\t\t\t\t\tborder-color: #2a2a2a;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t${h}.style-2 .gbb-pricing-card .gbb-pricing-price {\n\t\t\t\t\tcolor: #ffffff;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t${h}.style-2 .gbb-pricing-card .gbb-pricing-header {\n\t\t\t\t\tborder-bottom-color: #2a2a2a;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t${h}.style-2 .gbb-pricing-feature-item.is-disabled {\n\t\t\t\t\tcolor: #4b5563;\n\t\t\t\t\ttext-decoration: line-through;\n\t\t\t\t}\n\n\t\t\t\t${h}.style-2 .gbb-pricing-card:hover {\n\t\t\t\t\tborder-color: ${x};\n\t\t\t\t\ttransform: translateY(-5px);\n\t\t\t\t}\n\n\t\t\t\t${h}.style-2 .gbb-pricing-card:hover .gbb-pricing-button {\n\t\t\t\t\tbackground: ${x};\n\t\t\t\t\tcolor: #000000;\n\t\t\t\t\tborder-color: ${x};\n\t\t\t\t}\n\t\t\t`.replace(/\s+/g," ")}})},p=JSON.parse('{"UU":"guten-builder-blocks/pricing-table"}');(0,t.registerBlockType)(p.UU,{edit:t=>{const{attributes:n,setAttributes:l,clientId:r}=t;return(0,o.jsxs)(o.Fragment,{children:[(0,o.jsx)(u,{attributes:n,clientId:r}),(0,o.jsx)(c,{attributes:n,setAttributes:l,clientId:r}),(0,o.jsx)("div",{...(0,e.useBlockProps)(),children:(0,o.jsx)(g,{attributes:n,setAttributes:l,RichTextEl:e.RichText,isBackend:!0})})]})},save:()=>null})}};const e={};function n(l){const r=e[l];if(void 0!==r)return r.exports;const i=e[l]={exports:{}};return t[l](i,i.exports,n),i.exports}n.m=t,(()=>{const t=[];n.O=(e,l,r,i)=>{if(l){i=i||0;for(var o=t.length;o>0&&t[o-1][2]>i;o--)t[o]=t[o-1];return void(t[o]=[l,r,i])}let a=1/0;for(o=0;o<t.length;o++){let[l,r,i]=t[o],c=!0;for(var s=0;s<l.length;s++)(!1&i||a>=i)&&Object.keys(n.O).every((t=>n.O[t](l[s])))?l.splice(s--,1):(c=!1,i<a&&(a=i));if(c){t.splice(o--,1);const n=r();void 0!==n&&(e=n)}}return e}})(),n.o=(t,e)=>Object.hasOwn(t,e),(()=>{const t={620:0,859:0};n.O.j=e=>0===t[e];const e=(e,l)=>{let[r,i,o]=l;var a,s,c=0;if(r.some((e=>0!==t[e]))){for(a in i)n.o(i,a)&&(n.m[a]=i[a]);if(o)var b=o(n)}for(e&&e(l);c<r.length;c++)s=r[c],n.o(t,s)&&t[s]&&t[s][0](),t[s]=0;return n.O(b)},l=globalThis.webpackChunkguten_builder_blocks||=[];l.forEach(e.bind(null,0)),l.push=e.bind(null,l.push.bind(l))})();let l=n.O(void 0,[859],(()=>n(248)));l=n.O(l)})();
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "../tr-tools/Components/BackgroundControl/BackgroundControl.js"
+/*!*********************************************************************!*\
+  !*** ../tr-tools/Components/BackgroundControl/BackgroundControl.js ***!
+  \*********************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   DEFAULT_BACKGROUND: () => (/* binding */ DEFAULT_BACKGROUND),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   getBackgroundCss: () => (/* binding */ getBackgroundCss)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _BackgroundControl_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BackgroundControl.scss */ "../tr-tools/Components/BackgroundControl/BackgroundControl.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+const DEFAULT_BACKGROUND = {
+  type: "none",
+  color: "#ffffff",
+  gradientType: "linear",
+  color1: "#1e69ff",
+  color2: "#9c27b0",
+  angle: 135
+};
+
+/**
+ * Helper function to generate CSS background value from background attribute object
+ */
+const getBackgroundCss = bg => {
+  if (!bg || typeof bg !== "object") return "";
+  const type = bg.type || "none";
+  if (type === "none") return "transparent";
+  if (type === "solid") return bg.color || "#ffffff";
+  if (type === "gradient") {
+    const gType = bg.gradientType || "linear";
+    let stops = Array.isArray(bg.stops) && bg.stops.length > 0 ? bg.stops : null;
+    if (!stops) {
+      stops = [{
+        color: bg.color1 || "#1e69ff",
+        location: 0
+      }];
+      if (bg.color3) {
+        stops.push({
+          color: bg.color3,
+          location: 50
+        });
+      }
+      stops.push({
+        color: bg.color2 || "#9c27b0",
+        location: 100
+      });
+    }
+    const stopsStr = stops.map(s => `${s.color} ${s.location !== undefined ? s.location : 0}%`).join(", ");
+    if (gType === "radial") {
+      return `radial-gradient(circle, ${stopsStr})`;
+    }
+    const angle = bg.angle !== undefined ? bg.angle : 135;
+    return `linear-gradient(${angle}deg, ${stopsStr})`;
+  }
+  return "";
+};
+const BackgroundControl = ({
+  className = "",
+  label = "BACKGROUND",
+  value,
+  onChange,
+  defaultBackground,
+  defaultValue
+}) => {
+  const fallback = defaultBackground || defaultValue || DEFAULT_BACKGROUND;
+  const currentBg = {
+    ...DEFAULT_BACKGROUND,
+    ...fallback,
+    ...(typeof value === "object" && value !== null ? value : {})
+  };
+
+  // Get normalized stops array
+  const stops = Array.isArray(currentBg.stops) && currentBg.stops.length > 0 ? currentBg.stops : [{
+    color: currentBg.color1 || "#1e69ff",
+    location: 0
+  }, ...(currentBg.color3 ? [{
+    color: currentBg.color3,
+    location: 50
+  }] : []), {
+    color: currentBg.color2 || "#9c27b0",
+    location: 100
+  }];
+  const dialRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const animFrameRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const [plusPos, setPlusPos] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(50);
+  const [isPlusOpen, setIsPlusOpen] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const handleBarMouseMove = e => {
+    if (isPlusOpen) return; // Freeze + button position while picking color
+    const rect = e.currentTarget.getBoundingClientRect();
+    if (rect.width > 0) {
+      const clientX = e.clientX;
+      if (animFrameRef.current) {
+        cancelAnimationFrame(animFrameRef.current);
+      }
+      animFrameRef.current = requestAnimationFrame(() => {
+        const mouseX = clientX - rect.left;
+        let percent = mouseX / rect.width * 100;
+        percent = Math.max(5, Math.min(95, percent));
+        setPlusPos(percent);
+      });
+    }
+  };
+  const updateBg = newFields => {
+    if (typeof onChange === "function") {
+      onChange({
+        ...currentBg,
+        ...newFields
+      });
+    }
+  };
+  const updateStops = newStops => {
+    const updatedFields = {
+      stops: newStops,
+      color1: newStops[0]?.color || "#1e69ff",
+      color2: newStops[newStops.length - 1]?.color || "#9c27b0"
+    };
+    updateBg(updatedFields);
+  };
+  const handleStopColorChange = (index, newColor) => {
+    const newStops = stops.map((s, idx) => idx === index ? {
+      ...s,
+      color: newColor
+    } : s);
+    updateStops(newStops);
+  };
+  const handleAddStop = () => {
+    // Pick preset colors for new stops
+    const presetColors = ["#00d2ff", "#f59e0b", "#10b981", "#ec4899", "#8b5cf6", "#ef4444"];
+    const newColor = presetColors[(stops.length - 2) % presetColors.length];
+    const newStop = {
+      color: newColor,
+      location: plusPos
+    };
+    const newStops = [...stops, newStop].sort((a, b) => a.location - b.location);
+    updateStops(newStops);
+  };
+  const handleRemoveStop = index => {
+    if (stops.length <= 2) return;
+    const newStops = stops.filter((_, idx) => idx !== index);
+    const step = 100 / (newStops.length - 1);
+    const evenlySpaced = newStops.map((s, i) => ({
+      ...s,
+      location: Math.round(i * step)
+    }));
+    updateStops(evenlySpaced);
+  };
+  const isChanged = Boolean(fallback && Object.keys(fallback).some(key => currentBg[key] !== undefined && String(currentBg[key]).toLowerCase() !== String(fallback[key]).toLowerCase()));
+  const handleReset = () => {
+    if (typeof onChange === "function") {
+      onChange(fallback);
+    }
+  };
+
+  // Handle Angle Dial pointer drag
+  const handleDialPointerDown = e => {
+    e.preventDefault();
+    const updateAngleFromEvent = event => {
+      if (!dialRef.current) return;
+      const rect = dialRef.current.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const clientX = event.clientX ?? (event.touches && event.touches[0] ? event.touches[0].clientX : 0);
+      const clientY = event.clientY ?? (event.touches && event.touches[0] ? event.touches[0].clientY : 0);
+      const rad = Math.atan2(clientY - centerY, clientX - centerX);
+      let deg = Math.round(rad * (180 / Math.PI)) + 90;
+      if (deg < 0) deg += 360;
+      updateBg({
+        angle: deg
+      });
+    };
+    updateAngleFromEvent(e);
+    const onMove = moveEvent => updateAngleFromEvent(moveEvent);
+    const onUp = () => {
+      window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointerup", onUp);
+    };
+    window.addEventListener("pointermove", onMove);
+    window.addEventListener("pointerup", onUp);
+  };
+  const gradientPreviewCss = getBackgroundCss({
+    ...currentBg,
+    type: "gradient",
+    stops
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    className: `tr-bg-control ${className}`.trim(),
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "tr-bg-control__header",
+      children: [label && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+        className: "tr-bg-control__label",
+        children: label
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "tr-bg-control__actions",
+        children: [isChanged && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+          type: "button",
+          className: "tr-bg-control__reset-btn",
+          title: "Reset background",
+          onClick: handleReset,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("svg", {
+            width: "16",
+            height: "16",
+            viewBox: "0 0 24 24",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: "2",
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+              d: "M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+              d: "M3 3v5h5"
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "tr-bg-control__types",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+            type: "button",
+            className: `tr-bg-control__type-btn ${currentBg.type === "none" ? "active" : ""}`,
+            title: "None",
+            onClick: () => updateBg({
+              type: "none"
+            }),
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+              className: "tr-bg-control__icon-check"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+            type: "button",
+            className: `tr-bg-control__type-btn ${currentBg.type === "solid" ? "active" : ""}`,
+            title: "Solid",
+            onClick: () => updateBg({
+              type: "solid"
+            }),
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+              className: "tr-bg-control__icon-solid",
+              style: {
+                backgroundColor: currentBg.color || "#888888"
+              }
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+            type: "button",
+            className: `tr-bg-control__type-btn ${currentBg.type === "gradient" ? "active" : ""}`,
+            title: "Gradient",
+            onClick: () => updateBg({
+              type: "gradient"
+            }),
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+              className: "tr-bg-control__icon-gradient",
+              style: {
+                background: gradientPreviewCss
+              }
+            })
+          })]
+        })]
+      })]
+    }), currentBg.type === "solid" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "tr-bg-control__solid-wrapper",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "tr-bg-control__row",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+          className: "tr-bg-control__sublabel",
+          children: "Selected Color Bg :"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Dropdown, {
+          renderToggle: ({
+            isOpen,
+            onToggle
+          }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+            type: "button",
+            onClick: onToggle,
+            "aria-expanded": isOpen,
+            className: "tr-bg-control__color-swatch-btn",
+            style: {
+              backgroundColor: currentBg.color || "#ffffff"
+            }
+          }),
+          renderContent: () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            className: "tr-bg-control__popover",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPicker, {
+              color: currentBg.color,
+              onChange: c => updateBg({
+                color: c
+              }),
+              enableAlpha: true
+            })
+          })
+        })]
+      })
+    }), currentBg.type === "gradient" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "tr-bg-control__gradient-wrapper",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "tr-bg-control__bar",
+        style: {
+          background: gradientPreviewCss
+        },
+        onMouseMove: handleBarMouseMove,
+        children: [stops.map((stop, idx) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Dropdown, {
+          renderToggle: ({
+            isOpen,
+            onToggle
+          }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+            type: "button",
+            onClick: onToggle,
+            "aria-expanded": isOpen,
+            className: "tr-bg-control__stop-btn",
+            title: `Color Stop ${idx + 1}`,
+            style: {
+              backgroundColor: stop.color,
+              left: `${stop.location}%`
+            }
+          }),
+          renderContent: () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "tr-bg-control__popover",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPicker, {
+              color: stop.color,
+              onChange: c => handleStopColorChange(idx, c),
+              enableAlpha: true
+            }), stops.length > 2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+              type: "button",
+              className: "tr-bg-control__remove-stop-btn",
+              onClick: () => handleRemoveStop(idx),
+              children: "Remove Stop"
+            })]
+          })
+        }, idx)), (() => {
+          const isNearExistingStop = stops.some(s => Math.abs(plusPos - s.location) < 8);
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Dropdown, {
+            onToggle: nextState => setIsPlusOpen(nextState),
+            renderToggle: ({
+              isOpen,
+              onToggle
+            }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+              type: "button",
+              onClick: e => {
+                if (!isOpen) {
+                  handleAddStop();
+                }
+                onToggle(e);
+              },
+              "aria-expanded": isOpen,
+              className: "tr-bg-control__stop-plus",
+              title: "Add Color Stop",
+              style: {
+                left: `${plusPos}%`,
+                opacity: isNearExistingStop && !isOpen ? 0 : undefined,
+                pointerEvents: isNearExistingStop && !isOpen ? 'none' : undefined
+              },
+              children: "+"
+            }),
+            renderContent: () => {
+              const targetIndex = stops.length > 2 ? stops.length - 2 : 1;
+              const activeStop = stops[targetIndex] || stops[stops.length - 1];
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "tr-bg-control__popover",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPicker, {
+                  color: activeStop.color,
+                  onChange: c => handleStopColorChange(targetIndex, c),
+                  enableAlpha: true
+                }), stops.length > 2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+                  type: "button",
+                  className: "tr-bg-control__remove-stop-btn",
+                  onClick: () => handleRemoveStop(targetIndex),
+                  children: "Remove Stop"
+                })]
+              });
+            }
+          });
+        })()]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "tr-bg-control__controls-row",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "tr-bg-control__col",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "tr-bg-control__field-label",
+            children: "TYPE"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("select", {
+            className: "tr-bg-control__select",
+            value: currentBg.gradientType || "linear",
+            onChange: e => updateBg({
+              gradientType: e.target.value
+            }),
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+              value: "linear",
+              children: "Linear"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+              value: "radial",
+              children: "Radial"
+            })]
+          })]
+        }), currentBg.gradientType !== "radial" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "tr-bg-control__col",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "tr-bg-control__field-label",
+            children: "ANGLE"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "tr-bg-control__angle-wrapper",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              className: "tr-bg-control__angle-input-box",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                type: "number",
+                className: "tr-bg-control__angle-input",
+                value: currentBg.angle ?? 135,
+                min: 0,
+                max: 360,
+                onChange: e => {
+                  const val = parseInt(e.target.value, 10);
+                  updateBg({
+                    angle: isNaN(val) ? 0 : val
+                  });
+                }
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                className: "tr-bg-control__degree-symbol",
+                children: "\xB0"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              ref: dialRef,
+              className: "tr-bg-control__angle-dial",
+              onPointerDown: handleDialPointerDown,
+              title: "Drag to change angle",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                className: "tr-bg-control__dial-pointer",
+                style: {
+                  transform: `rotate(${currentBg.angle ?? 135}deg)`
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                  className: "tr-bg-control__dial-dot"
+                })
+              })
+            })]
+          })]
+        })]
+      })]
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BackgroundControl);
+
+/***/ },
+
+/***/ "../tr-tools/Components/BorderControl/BorderControl.js"
+/*!*************************************************************!*\
+  !*** ../tr-tools/Components/BorderControl/BorderControl.js ***!
+  \*************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   DEFAULT_BORDER: () => (/* binding */ DEFAULT_BORDER),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ColorControl_ColorControl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../ColorControl/ColorControl */ "../tr-tools/Components/ColorControl/ColorControl.js");
+/* harmony import */ var _BorderControl_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./BorderControl.scss */ "../tr-tools/Components/BorderControl/BorderControl.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+const DEFAULT_BORDER = {
+  width: '',
+  style: 'solid',
+  color: '',
+  side: 'all'
+};
+const BorderControl = ({
+  label = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border', 'guten-builder-blocks'),
+  value,
+  onChange,
+  defaultBorder
+}) => {
+  const currentVal = {
+    ...DEFAULT_BORDER,
+    ...defaultBorder,
+    ...value
+  };
+  const updateField = (field, val) => {
+    onChange({
+      ...currentVal,
+      [field]: val
+    });
+  };
+  const resetVal = {
+    ...DEFAULT_BORDER,
+    ...defaultBorder
+  };
+  const isChanged = value && typeof value === 'object' && Object.keys(value).some(key => value[key] !== resetVal[key]);
+  const handleReset = () => {
+    if (onChange) {
+      onChange(undefined);
+    }
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelRow, {
+    className: "tr-border-control-wrapper",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+      children: label
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: '8px'
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Dropdown, {
+        className: "tr-border-control-dropdown",
+        contentClassName: "tr-border-control-popover",
+        popoverProps: {
+          placement: 'bottom-end'
+        },
+        renderToggle: ({
+          isOpen,
+          onToggle
+        }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+          icon: "edit",
+          variant: "secondary",
+          onClick: onToggle,
+          "aria-expanded": isOpen,
+          className: "tr-border-control-toggle"
+        }),
+        renderContent: () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "tr-border-control-content",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "tr-border-control-field",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              className: "tr-border-control-label",
+              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Width:', 'guten-builder-blocks')
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalUnitControl, {
+              className: "tr-border-width-input tr-custom-unit-control",
+              value: currentVal.width,
+              onChange: val => updateField('width', val),
+              units: [{
+                value: 'px',
+                label: 'PX'
+              }]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "tr-border-control-field",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              className: "tr-border-control-label",
+              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style:', 'guten-builder-blocks')
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+              className: "tr-border-style-select",
+              value: currentVal.style,
+              options: [{
+                label: 'Solid',
+                value: 'solid'
+              }, {
+                label: 'Dashed',
+                value: 'dashed'
+              }, {
+                label: 'Dotted',
+                value: 'dotted'
+              }, {
+                label: 'Double',
+                value: 'double'
+              }, {
+                label: 'None',
+                value: 'none'
+              }],
+              onChange: val => updateField('style', val)
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ColorControl_ColorControl__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Color:', 'guten-builder-blocks'),
+            value: currentVal.color,
+            onChange: val => updateField('color', val),
+            defaultColor: ""
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "tr-border-control-field",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              className: "tr-border-control-label",
+              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Sides:', 'guten-builder-blocks')
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+              className: "tr-border-side-select",
+              value: currentVal.side,
+              options: [{
+                label: 'All Sides',
+                value: 'all'
+              }, {
+                label: 'Top',
+                value: 'top'
+              }, {
+                label: 'Right',
+                value: 'right'
+              }, {
+                label: 'Bottom',
+                value: 'bottom'
+              }, {
+                label: 'Left',
+                value: 'left'
+              }, {
+                label: 'Top Right',
+                value: 'top-right'
+              }, {
+                label: 'Top Bottom',
+                value: 'top-bottom'
+              }, {
+                label: 'Top Left',
+                value: 'top-left'
+              }, {
+                label: 'Top Right Bottom',
+                value: 'top-right-bottom'
+              }, {
+                label: 'Top Right Left',
+                value: 'top-right-left'
+              }, {
+                label: 'Top Bottom Left',
+                value: 'top-bottom-left'
+              }, {
+                label: 'Right Bottom',
+                value: 'right-bottom'
+              }, {
+                label: 'Right Left',
+                value: 'right-left'
+              }, {
+                label: 'Right Bottom Left',
+                value: 'right-bottom-left'
+              }, {
+                label: 'Bottom Left',
+                value: 'bottom-left'
+              }],
+              onChange: val => updateField('side', val)
+            })]
+          })]
+        })
+      }), isChanged && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+        icon: "image-rotate",
+        className: "bPlResetVal",
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Reset', 'guten-builder-blocks'),
+        onClick: handleReset
+      })]
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BorderControl);
+
+/***/ },
+
+/***/ "../tr-tools/Components/ColorControl/ColorControl.js"
+/*!***********************************************************!*\
+  !*** ../tr-tools/Components/ColorControl/ColorControl.js ***!
+  \***********************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ColorControl_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ColorControl.scss */ "../tr-tools/Components/ColorControl/ColorControl.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+/*
+ * @props label: 'Color' (String)
+ * @props value: value of color (String)
+ * @props enableAlpha: alpha channel enabled (Boolean)
+ * @props customColors: array of custom colors (Array)
+ * @props defaultColor: default color for reset color (String)
+ * @props onChange: (Function)
+ * @return color (String)
+ */
+
+const DEFAULT_CUSTOM_COLORS = [{
+  name: "Orange",
+  color: "#f97316"
+}, {
+  name: "White",
+  color: "#ffffff"
+}, {
+  name: "Lime",
+  color: "#a3e635"
+}, {
+  name: "Dark Charcoal",
+  color: "#262626"
+}, {
+  name: "Gray",
+  color: "#737373"
+}];
+const ColorControl = ({
+  label,
+  value = "",
+  onChange,
+  enableAlpha = true,
+  customColors = DEFAULT_CUSTOM_COLORS,
+  defaultColor = "#475569"
+}) => {
+  const isChanged = Boolean(value && defaultColor && value.trim().toLowerCase() !== defaultColor.trim().toLowerCase());
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    className: "tr-color-control",
+    children: [label && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+      className: "tr-color-control__label",
+      children: label
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "tr-color-control__actions",
+      children: [isChanged && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+        type: "button",
+        className: "tr-color-control__reset-btn",
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Reset to default color", "guten-builder-blocks"),
+        onClick: () => onChange(defaultColor),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("svg", {
+          width: "20",
+          height: "20",
+          viewBox: "0 0 24 24",
+          fill: "none",
+          stroke: "currentColor",
+          strokeWidth: "2",
+          strokeLinecap: "round",
+          strokeLinejoin: "round",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+            d: "M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+            d: "M3 3v5h5"
+          })]
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Dropdown, {
+        renderToggle: ({
+          isOpen,
+          onToggle
+        }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+          type: "button",
+          onClick: onToggle,
+          "aria-expanded": isOpen,
+          className: "tr-color-control__btn",
+          style: {
+            backgroundColor: value || defaultColor
+          }
+        }),
+        renderContent: () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "tr-color-control__popover",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            className: "tr-color-control__picker-canvas",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPicker, {
+              color: value,
+              onChange: onChange,
+              enableAlpha: enableAlpha,
+              defaultValue: defaultColor
+            })
+          }), customColors && customColors.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "tr-color-control__section",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              className: "tr-color-control__section-title",
+              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Custom colors", "guten-builder-blocks")
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              className: "tr-color-control__swatches",
+              children: customColors.map((item, idx) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+                type: "button",
+                className: `tr-color-control__swatch ${value === item.color ? "active" : ""}`,
+                style: {
+                  backgroundColor: item.color
+                },
+                title: item.name || item.color,
+                onClick: () => onChange(item.color)
+              }, idx))
+            })]
+          })]
+        })
+      })]
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ColorControl);
+
+/***/ },
+
+/***/ "../tr-tools/Components/Devices/Devices.js"
+/*!*************************************************!*\
+  !*** ../tr-tools/Components/Devices/Devices.js ***!
+  \*************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const DesktopIcon = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+  width: "18",
+  height: "18",
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "2",
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "2",
+    y: "3",
+    width: "20",
+    height: "14",
+    rx: "2",
+    ry: "2"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+    x1: "8",
+    y1: "21",
+    x2: "16",
+    y2: "21"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+    x1: "12",
+    y1: "17",
+    x2: "12",
+    y2: "21"
+  })]
+});
+const TabletIcon = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+  width: "18",
+  height: "18",
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "2",
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "4",
+    y: "2",
+    width: "16",
+    height: "20",
+    rx: "2",
+    ry: "2"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+    x1: "12",
+    y1: "18",
+    x2: "12.01",
+    y2: "18"
+  })]
+});
+const MobileIcon = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+  width: "18",
+  height: "18",
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "2",
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "5",
+    y: "2",
+    width: "14",
+    height: "20",
+    rx: "2",
+    ry: "2"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+    x1: "12",
+    y1: "18",
+    x2: "12.01",
+    y2: "18"
+  })]
+});
+const Devices = ({
+  device,
+  onChange
+}) => {
+  const [isOpen, setIsOpen] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const containerRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    const handleClickOutside = event => {
+      if (containerRef.current && !containerRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+  const ActiveIcon = device === 'mobile' ? MobileIcon : device === 'tablet' ? TabletIcon : DesktopIcon;
+  const handleSelect = newDevice => {
+    onChange(newDevice);
+    setIsOpen(false);
+  };
+  const btnStyle = {
+    padding: '4px',
+    background: 'transparent',
+    border: '1px solid #F62477',
+    cursor: 'pointer',
+    color: '#F62477',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '28px',
+    height: '28px',
+    borderRadius: '2px'
+  };
+  const optionStyle = {
+    ...btnStyle,
+    border: 'none',
+    borderBottom: '1px solid #F62477',
+    borderRadius: '0',
+    width: '100%'
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "tr-devices-dropdown",
+    ref: containerRef,
+    style: {
+      position: 'relative'
+    },
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+      type: "button",
+      onClick: () => setIsOpen(!isOpen),
+      style: btnStyle,
+      title: "Responsive Device",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(ActiveIcon, {})
+    }), isOpen && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      style: {
+        position: 'absolute',
+        top: '100%',
+        left: '0',
+        marginTop: '4px',
+        background: '#fff',
+        border: '1px solid #F62477',
+        borderRadius: '2px',
+        display: 'flex',
+        flexDirection: 'column',
+        zIndex: 9999,
+        boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+        minWidth: '28px'
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+        type: "button",
+        onClick: () => handleSelect('desktop'),
+        style: optionStyle,
+        title: "Desktop",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(DesktopIcon, {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+        type: "button",
+        onClick: () => handleSelect('tablet'),
+        style: optionStyle,
+        title: "Tablet",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(TabletIcon, {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+        type: "button",
+        onClick: () => handleSelect('mobile'),
+        style: {
+          ...optionStyle,
+          borderBottom: 'none'
+        },
+        title: "Mobile",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(MobileIcon, {})
+      })]
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Devices);
+
+/***/ },
+
+/***/ "../tr-tools/Components/DocsLink/DocsLink.js"
+/*!***************************************************!*\
+  !*** ../tr-tools/Components/DocsLink/DocsLink.js ***!
+  \***************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _DocsLink_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DocsLink.scss */ "../tr-tools/Components/DocsLink/DocsLink.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+const ExternalLinkIcon = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
+  width: "12",
+  height: "12",
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "2.5",
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+    d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("polyline", {
+    points: "15 3 21 3 21 9"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
+    x1: "10",
+    y1: "14",
+    x2: "21",
+    y2: "3"
+  })]
+});
+const DocsLink = ({
+  link,
+  text
+}) => {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "gbb-inspector-docs-wrapper",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
+      href: link,
+      target: "_blank",
+      rel: "noopener noreferrer",
+      children: [text || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Documentation', 'tr-tools'), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(ExternalLinkIcon, {})]
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DocsLink);
+
+/***/ },
+
+/***/ "../tr-tools/Components/GradientControl/GradientControl.js"
+/*!*****************************************************************!*\
+  !*** ../tr-tools/Components/GradientControl/GradientControl.js ***!
+  \*****************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   DEFAULT_GRADIENT: () => (/* binding */ DEFAULT_GRADIENT),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   getGradientCss: () => (/* binding */ getGradientCss)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _GradientControl_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./GradientControl.scss */ "../tr-tools/Components/GradientControl/GradientControl.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+const DEFAULT_GRADIENT = {
+  gradientType: "linear",
+  color1: "#1e69ff",
+  color2: "#9c27b0",
+  angle: 135
+};
+
+/**
+ * Helper function to generate CSS gradient string from gradient attribute object
+ */
+const getGradientCss = gradient => {
+  if (!gradient || typeof gradient !== "object") return "";
+  const gType = gradient.gradientType || "linear";
+  let stops = Array.isArray(gradient.stops) && gradient.stops.length > 0 ? gradient.stops : null;
+  if (!stops) {
+    stops = [{
+      color: gradient.color1 || "#1e69ff",
+      location: 0
+    }];
+    if (gradient.color3) {
+      stops.push({
+        color: gradient.color3,
+        location: 50
+      });
+    }
+    stops.push({
+      color: gradient.color2 || "#9c27b0",
+      location: 100
+    });
+  }
+  const stopsStr = stops.map(s => `${s.color} ${s.location !== undefined ? s.location : 0}%`).join(", ");
+  if (gType === "radial") {
+    return `radial-gradient(circle, ${stopsStr})`;
+  }
+  const angle = gradient.angle !== undefined ? gradient.angle : 135;
+  return `linear-gradient(${angle}deg, ${stopsStr})`;
+};
+const GradientControl = ({
+  className = "",
+  label = "Background",
+  value,
+  onChange,
+  defaultGradient,
+  defaultValue
+}) => {
+  const fallback = defaultGradient || defaultValue || DEFAULT_GRADIENT;
+  const currentGradient = {
+    ...DEFAULT_GRADIENT,
+    ...fallback,
+    ...(typeof value === "object" && value !== null ? value : {})
+  };
+
+  // Get normalized stops array
+  const stops = Array.isArray(currentGradient.stops) && currentGradient.stops.length > 0 ? currentGradient.stops : [{
+    color: currentGradient.color1 || "#1e69ff",
+    location: 0
+  }, ...(currentGradient.color3 ? [{
+    color: currentGradient.color3,
+    location: 50
+  }] : []), {
+    color: currentGradient.color2 || "#9c27b0",
+    location: 100
+  }];
+  const dialRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const animFrameRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const [plusPos, setPlusPos] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(50);
+  const [isPlusOpen, setIsPlusOpen] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const handleBarMouseMove = e => {
+    if (isPlusOpen) return; // Freeze + button position while picking color
+    const rect = e.currentTarget.getBoundingClientRect();
+    if (rect.width > 0) {
+      const clientX = e.clientX;
+      if (animFrameRef.current) {
+        cancelAnimationFrame(animFrameRef.current);
+      }
+      animFrameRef.current = requestAnimationFrame(() => {
+        const mouseX = clientX - rect.left;
+        let percent = mouseX / rect.width * 100;
+        percent = Math.max(5, Math.min(95, percent));
+        setPlusPos(percent);
+      });
+    }
+  };
+  const updateGradient = newFields => {
+    if (typeof onChange === "function") {
+      onChange({
+        ...currentGradient,
+        ...newFields
+      });
+    }
+  };
+  const updateStops = newStops => {
+    const updatedFields = {
+      stops: newStops,
+      color1: newStops[0]?.color || "#1e69ff",
+      color2: newStops[newStops.length - 1]?.color || "#9c27b0"
+    };
+    updateGradient(updatedFields);
+  };
+  const handleStopColorChange = (index, newColor) => {
+    const newStops = stops.map((s, idx) => idx === index ? {
+      ...s,
+      color: newColor
+    } : s);
+    updateStops(newStops);
+  };
+  const handleAddStop = () => {
+    const presetColors = ["#00d2ff", "#f59e0b", "#10b981", "#ec4899", "#8b5cf6", "#ef4444"];
+    const newColor = presetColors[(stops.length - 2) % presetColors.length];
+    const newStop = {
+      color: newColor,
+      location: plusPos
+    };
+    const newStops = [...stops, newStop].sort((a, b) => a.location - b.location);
+    updateStops(newStops);
+  };
+  const handleRemoveStop = index => {
+    if (stops.length <= 2) return;
+    const newStops = stops.filter((_, idx) => idx !== index);
+    const step = 100 / (newStops.length - 1);
+    const evenlySpaced = newStops.map((s, i) => ({
+      ...s,
+      location: Math.round(i * step)
+    }));
+    updateStops(evenlySpaced);
+  };
+  const isChanged = Boolean(fallback && Object.keys(fallback).some(key => currentGradient[key] !== undefined && String(currentGradient[key]).toLowerCase() !== String(fallback[key]).toLowerCase()));
+  const handleReset = () => {
+    if (typeof onChange === "function") {
+      onChange(fallback);
+    }
+  };
+
+  // Handle Angle Dial pointer drag
+  const handleDialPointerDown = e => {
+    e.preventDefault();
+    const updateAngleFromEvent = event => {
+      if (!dialRef.current) return;
+      const rect = dialRef.current.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const clientX = event.clientX ?? (event.touches && event.touches[0] ? event.touches[0].clientX : 0);
+      const clientY = event.clientY ?? (event.touches && event.touches[0] ? event.touches[0].clientY : 0);
+      const rad = Math.atan2(clientY - centerY, clientX - centerX);
+      let deg = Math.round(rad * (180 / Math.PI)) + 90;
+      if (deg < 0) deg += 360;
+      updateGradient({
+        angle: deg
+      });
+    };
+    updateAngleFromEvent(e);
+    const onMove = moveEvent => updateAngleFromEvent(moveEvent);
+    const onUp = () => {
+      window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointerup", onUp);
+    };
+    window.addEventListener("pointermove", onMove);
+    window.addEventListener("pointerup", onUp);
+  };
+  const gradientPreviewCss = getGradientCss({
+    ...currentGradient,
+    stops
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    className: `tr-gradient-control ${className}`.trim(),
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "tr-gradient-control__header",
+      children: [label && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+        className: "tr-gradient-control__label",
+        children: label
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "tr-gradient-control__actions",
+        children: [isChanged && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+          type: "button",
+          className: "tr-gradient-control__reset-btn",
+          title: "Reset gradient",
+          onClick: handleReset,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("svg", {
+            width: "16",
+            height: "16",
+            viewBox: "0 0 24 24",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: "2",
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+              d: "M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+              d: "M3 3v5h5"
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Dropdown, {
+          renderToggle: ({
+            isOpen,
+            onToggle
+          }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+            type: "button",
+            onClick: onToggle,
+            "aria-expanded": isOpen,
+            className: `tr-gradient-control__trigger-btn ${isOpen ? "active" : ""}`,
+            title: "Edit Gradient Background",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("svg", {
+              width: "15",
+              height: "15",
+              viewBox: "0 0 24 24",
+              fill: "none",
+              stroke: "currentColor",
+              strokeWidth: "2",
+              strokeLinecap: "round",
+              strokeLinejoin: "round",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+                d: "M12 20h9"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+                d: "M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
+              })]
+            })
+          }),
+          renderContent: () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            className: "tr-gradient-control__popover",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              className: "tr-gradient-control__gradient-wrapper",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "tr-gradient-control__bar",
+                style: {
+                  background: gradientPreviewCss
+                },
+                onMouseMove: handleBarMouseMove,
+                children: [stops.map((stop, idx) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Dropdown, {
+                  renderToggle: ({
+                    isOpen,
+                    onToggle
+                  }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+                    type: "button",
+                    onClick: onToggle,
+                    "aria-expanded": isOpen,
+                    className: "tr-gradient-control__stop-btn",
+                    title: `Color Stop ${idx + 1}`,
+                    style: {
+                      backgroundColor: stop.color,
+                      left: `${stop.location}%`
+                    }
+                  }),
+                  renderContent: () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                    className: "tr-gradient-control__stop-popover",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPicker, {
+                      color: stop.color,
+                      onChange: c => handleStopColorChange(idx, c),
+                      enableAlpha: true
+                    }), stops.length > 2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+                      type: "button",
+                      className: "tr-gradient-control__remove-stop-btn",
+                      onClick: () => handleRemoveStop(idx),
+                      children: "Remove Stop"
+                    })]
+                  })
+                }, idx)), (() => {
+                  const isNearExistingStop = stops.some(s => Math.abs(plusPos - s.location) < 8);
+                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Dropdown, {
+                    onToggle: nextState => setIsPlusOpen(nextState),
+                    renderToggle: ({
+                      isOpen,
+                      onToggle
+                    }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+                      type: "button",
+                      onClick: e => {
+                        if (!isOpen) {
+                          handleAddStop();
+                        }
+                        onToggle(e);
+                      },
+                      "aria-expanded": isOpen,
+                      className: "tr-gradient-control__stop-plus",
+                      title: "Add Color Stop",
+                      style: {
+                        left: `${plusPos}%`,
+                        opacity: isNearExistingStop && !isOpen ? 0 : undefined,
+                        pointerEvents: isNearExistingStop && !isOpen ? "none" : undefined
+                      },
+                      children: "+"
+                    }),
+                    renderContent: () => {
+                      const targetIndex = stops.length > 2 ? stops.length - 2 : 1;
+                      const activeStop = stops[targetIndex] || stops[stops.length - 1];
+                      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                        className: "tr-gradient-control__stop-popover",
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPicker, {
+                          color: activeStop.color,
+                          onChange: c => handleStopColorChange(targetIndex, c),
+                          enableAlpha: true
+                        }), stops.length > 2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+                          type: "button",
+                          className: "tr-gradient-control__remove-stop-btn",
+                          onClick: () => handleRemoveStop(targetIndex),
+                          children: "Remove Stop"
+                        })]
+                      });
+                    }
+                  });
+                })()]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "tr-gradient-control__controls-row",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                  className: "tr-gradient-control__col",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                    className: "tr-gradient-control__field-label",
+                    children: "TYPE"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("select", {
+                    className: "tr-gradient-control__select",
+                    value: currentGradient.gradientType || "linear",
+                    onChange: e => updateGradient({
+                      gradientType: e.target.value
+                    }),
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+                      value: "linear",
+                      children: "Linear"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+                      value: "radial",
+                      children: "Radial"
+                    })]
+                  })]
+                }), currentGradient.gradientType !== "radial" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                  className: "tr-gradient-control__col",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                    className: "tr-gradient-control__field-label",
+                    children: "ANGLE"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                    className: "tr-gradient-control__angle-wrapper",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "tr-gradient-control__angle-input-box",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "number",
+                        className: "tr-gradient-control__angle-input",
+                        value: currentGradient.angle ?? 135,
+                        min: 0,
+                        max: 360,
+                        onChange: e => {
+                          const val = parseInt(e.target.value, 10);
+                          updateGradient({
+                            angle: isNaN(val) ? 0 : val
+                          });
+                        }
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                        className: "tr-gradient-control__degree-symbol",
+                        children: "\xB0"
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                      ref: dialRef,
+                      className: "tr-gradient-control__angle-dial",
+                      onPointerDown: handleDialPointerDown,
+                      title: "Drag to change angle",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                        className: "tr-gradient-control__dial-pointer",
+                        style: {
+                          transform: `rotate(${currentGradient.angle ?? 135}deg)`
+                        },
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                          className: "tr-gradient-control__dial-dot"
+                        })
+                      })
+                    })]
+                  })]
+                })]
+              })]
+            })
+          })
+        })]
+      })]
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GradientControl);
+
+/***/ },
+
+/***/ "../tr-tools/Components/ItemsPanel/ItemsPanel.jsx"
+/*!********************************************************!*\
+  !*** ../tr-tools/Components/ItemsPanel/ItemsPanel.jsx ***!
+  \********************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _ItemsPanel_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ItemsPanel.scss */ "../tr-tools/Components/ItemsPanel/ItemsPanel.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+/**
+ * Advanced Modern ItemsPanel Component
+ * Provides a state-of-the-art UI for managing list items across Gutenberg blocks.
+ */
+
+const ItemsPanel = ({
+  title = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("📋 Items Manager", "guten-builder-blocks"),
+  initialOpen = true,
+  items = [],
+  onChange,
+  defaultItem = {},
+  addButtonLabel = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("＋ Add New Item", "guten-builder-blocks"),
+  itemTitleKey = "title",
+  fields = [],
+  renderItemFields
+}) => {
+  const [openItemIndex, setOpenItemIndex] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  const triggerChange = newItems => {
+    if (typeof onChange === "function") {
+      onChange(newItems);
+    }
+  };
+
+  // Add Item
+  const handleAddItem = () => {
+    const newItems = [...items, {
+      ...defaultItem
+    }];
+    triggerChange(newItems);
+    setOpenItemIndex(newItems.length - 1);
+  };
+
+  // Delete Item
+  const handleDeleteItem = index => {
+    const newItems = items.filter((_, i) => i !== index);
+    triggerChange(newItems);
+    if (openItemIndex === index) {
+      setOpenItemIndex(null);
+    }
+  };
+
+  // Duplicate Item
+  const handleDuplicateItem = index => {
+    const newItems = [...items];
+    const duplicatedItem = JSON.parse(JSON.stringify(newItems[index]));
+    newItems.splice(index + 1, 0, duplicatedItem);
+    triggerChange(newItems);
+    setOpenItemIndex(index + 1);
+  };
+
+  // Update Item Field
+  const handleUpdateField = (index, key, value) => {
+    const newItems = [...items];
+    newItems[index] = {
+      ...newItems[index],
+      [key]: value
+    };
+    triggerChange(newItems);
+  };
+
+  // Move Item (Reorder)
+  const handleMoveItem = (index, direction) => {
+    const targetIndex = direction === "up" ? index - 1 : index + 1;
+    if (targetIndex < 0 || targetIndex >= items.length) return;
+    const newItems = [...items];
+    const temp = newItems[index];
+    newItems[index] = newItems[targetIndex];
+    newItems[targetIndex] = temp;
+    triggerChange(newItems);
+    setOpenItemIndex(targetIndex);
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+    title: title,
+    initialOpen: initialOpen,
+    className: "tr-items-panel-container bPlPanelBody",
+    children: [items.length === 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      className: "tr-items-panel-empty",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        className: "tr-items-panel-empty-icon",
+        children: "\uD83D\uDCE6"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+        className: "tr-items-panel-empty-text",
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("No items created yet.", "guten-builder-blocks")
+      })]
+    }) : items.map((item, index) => {
+      const isOpen = openItemIndex === index;
+      const rawTitle = item[itemTitleKey] || item.title || item.question || "";
+      const displayTitle = rawTitle.trim() !== "" ? rawTitle : `${(0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Item", "guten-builder-blocks")} #${index + 1}`;
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: `tr-items-panel-card ${isOpen ? "is-open" : ""}`,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "tr-items-panel-header",
+          onClick: () => setOpenItemIndex(isOpen ? null : index),
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            className: "tr-items-panel-title-wrapper",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              className: "tr-items-panel-title",
+              children: displayTitle
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "tr-items-panel-toolbar",
+            onClick: e => e.stopPropagation(),
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Tooltip, {
+              text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Move Up", "guten-builder-blocks"),
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+                className: "tr-items-panel-btn",
+                icon: "arrow-up-alt2",
+                disabled: index === 0,
+                onClick: () => handleMoveItem(index, "up")
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Tooltip, {
+              text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Move Down", "guten-builder-blocks"),
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+                className: "tr-items-panel-btn",
+                icon: "arrow-down-alt2",
+                disabled: index === items.length - 1,
+                onClick: () => handleMoveItem(index, "down")
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Tooltip, {
+              text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Duplicate", "guten-builder-blocks"),
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+                className: "tr-items-panel-btn",
+                icon: "admin-page",
+                onClick: () => handleDuplicateItem(index)
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Tooltip, {
+              text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Delete", "guten-builder-blocks"),
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+                className: "tr-items-panel-btn tr-items-panel-btn-delete",
+                icon: "no-alt",
+                isDestructive: true,
+                onClick: () => handleDeleteItem(index)
+              })
+            })]
+          })]
+        }), isOpen && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: "tr-items-panel-body",
+          children: typeof renderItemFields === "function" ? renderItemFields(item, index, (key, val) => handleUpdateField(index, key, val)) : fields.map(fieldConfig => {
+            const {
+              key,
+              label,
+              type = "text",
+              options,
+              rows = 3,
+              help
+            } = fieldConfig;
+            const fieldValue = item[key] !== undefined ? item[key] : "";
+            if (type === "textarea") {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextareaControl, {
+                label: label,
+                value: fieldValue,
+                onChange: val => handleUpdateField(index, key, val),
+                rows: rows,
+                help: help
+              }, key);
+            }
+            if (type === "toggle") {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+                label: label,
+                checked: Boolean(fieldValue),
+                onChange: val => handleUpdateField(index, key, val),
+                help: help
+              }, key);
+            }
+            if (type === "select") {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+                label: label,
+                value: fieldValue,
+                options: options || [],
+                onChange: val => handleUpdateField(index, key, val),
+                help: help
+              }, key);
+            }
+
+            // Default text input
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+              label: label,
+              value: fieldValue,
+              onChange: val => handleUpdateField(index, key, val),
+              help: help
+            }, key);
+          })
+        })]
+      }, index);
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+      className: "tr-items-panel-add-btn",
+      variant: "primary",
+      icon: "plus",
+      onClick: handleAddItem,
+      children: typeof addButtonLabel === "string" ? addButtonLabel.replace(/^[＋+]\s*/, "") : addButtonLabel
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ItemsPanel);
+
+/***/ },
+
+/***/ "../tr-tools/Components/MediaControl/MediaControl.jsx"
+/*!************************************************************!*\
+  !*** ../tr-tools/Components/MediaControl/MediaControl.jsx ***!
+  \************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _MediaControl_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MediaControl.scss */ "../tr-tools/Components/MediaControl/MediaControl.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+const MediaControl = ({
+  label,
+  value,
+  onChange,
+  allowedTypes = ['audio'],
+  buttonLabel = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Upload / Select', 'tr-tools'),
+  help
+}) => {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    className: "gbb-media-control",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+      label: label,
+      value: value || '',
+      onChange: onChange,
+      placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Paste URL or select file...', 'tr-tools'),
+      help: help
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      className: "gbb-media-control__actions",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
+          onSelect: media => {
+            if (media && media.url) {
+              onChange(media.url);
+            }
+          },
+          allowedTypes: allowedTypes,
+          value: value,
+          render: ({
+            open
+          }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+            variant: "secondary",
+            isSmall: true,
+            onClick: open,
+            className: "gbb-media-control__upload-btn",
+            children: buttonLabel
+          })
+        })
+      }), value && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+        variant: "secondary",
+        isDestructive: true,
+        isSmall: true,
+        onClick: () => onChange(''),
+        className: "gbb-media-control__remove-btn",
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove', 'tr-tools')
+      })]
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MediaControl);
+
+/***/ },
+
+/***/ "../tr-tools/Components/ShadowControl/ShadowControl.js"
+/*!*************************************************************!*\
+  !*** ../tr-tools/Components/ShadowControl/ShadowControl.js ***!
+  \*************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   DEFAULT_SHADOW: () => (/* binding */ DEFAULT_SHADOW),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ColorControl_ColorControl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../ColorControl/ColorControl */ "../tr-tools/Components/ColorControl/ColorControl.js");
+/* harmony import */ var _ShadowControl_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ShadowControl.scss */ "../tr-tools/Components/ShadowControl/ShadowControl.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+const DEFAULT_SHADOW = {
+  hOffset: '0px',
+  vOffset: '0px',
+  blur: '0px',
+  spread: '0px',
+  color: ''
+};
+const ShadowControl = ({
+  label = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Box Shadow', 'guten-builder-blocks'),
+  value,
+  onChange,
+  defaultShadow
+}) => {
+  const currentVal = {
+    ...DEFAULT_SHADOW,
+    ...defaultShadow,
+    ...value
+  };
+  const updateField = (field, val) => {
+    onChange({
+      ...currentVal,
+      [field]: val
+    });
+  };
+  const resetVal = {
+    ...DEFAULT_SHADOW,
+    ...defaultShadow
+  };
+  const isChanged = value && typeof value === 'object' && Object.keys(value).some(key => value[key] !== resetVal[key]);
+  const handleReset = () => {
+    if (onChange) {
+      onChange(undefined);
+    }
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelRow, {
+    className: "tr-shadow-control-wrapper",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+      children: label
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: '8px'
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Dropdown, {
+        className: "tr-shadow-control-dropdown",
+        contentClassName: "tr-shadow-control-popover",
+        popoverProps: {
+          placement: 'bottom-end'
+        },
+        renderToggle: ({
+          isOpen,
+          onToggle
+        }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+          icon: "edit",
+          variant: "secondary",
+          onClick: onToggle,
+          "aria-expanded": isOpen,
+          className: "tr-shadow-control-toggle"
+        }),
+        renderContent: () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "tr-shadow-control-content",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "tr-shadow-control-field",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              className: "tr-shadow-control-label",
+              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Horizontal Offset:', 'guten-builder-blocks')
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalUnitControl, {
+              className: "tr-shadow-input tr-custom-unit-control",
+              value: currentVal.hOffset,
+              onChange: val => updateField('hOffset', val),
+              units: [{
+                value: 'px',
+                label: 'PX'
+              }]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "tr-shadow-control-field",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              className: "tr-shadow-control-label",
+              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Vertical Offset:', 'guten-builder-blocks')
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalUnitControl, {
+              className: "tr-shadow-input tr-custom-unit-control",
+              value: currentVal.vOffset,
+              onChange: val => updateField('vOffset', val),
+              units: [{
+                value: 'px',
+                label: 'PX'
+              }]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "tr-shadow-control-field",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              className: "tr-shadow-control-label",
+              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Blur:', 'guten-builder-blocks')
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalUnitControl, {
+              className: "tr-shadow-input tr-custom-unit-control",
+              value: currentVal.blur,
+              onChange: val => updateField('blur', val),
+              units: [{
+                value: 'px',
+                label: 'PX'
+              }]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "tr-shadow-control-field",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              className: "tr-shadow-control-label",
+              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Spread:', 'guten-builder-blocks')
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalUnitControl, {
+              className: "tr-shadow-input tr-custom-unit-control",
+              value: currentVal.spread,
+              onChange: val => updateField('spread', val),
+              units: [{
+                value: 'px',
+                label: 'PX'
+              }]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ColorControl_ColorControl__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Color:', 'guten-builder-blocks'),
+            value: currentVal.color,
+            onChange: val => updateField('color', val),
+            defaultColor: ""
+          })]
+        })
+      }), isChanged && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+        icon: "image-rotate",
+        className: "bPlResetVal",
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Reset', 'guten-builder-blocks'),
+        onClick: handleReset
+      })]
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ShadowControl);
+
+/***/ },
+
+/***/ "../tr-tools/Components/SpacingControl/SpacingControl.js"
+/*!***************************************************************!*\
+  !*** ../tr-tools/Components/SpacingControl/SpacingControl.js ***!
+  \***************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Devices_Devices__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Devices/Devices */ "../tr-tools/Components/Devices/Devices.js");
+/* harmony import */ var _SpacingControl_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SpacingControl.scss */ "../tr-tools/Components/SpacingControl/SpacingControl.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+const SpacingControl = props => {
+  const {
+    label,
+    value,
+    onChange = () => {},
+    defaultVal,
+    units,
+    sides,
+    style,
+    className = '',
+    disableUnits = false,
+    responsive = false
+  } = props;
+  const [link, setLink] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(true);
+  const [device, setDevice] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)("desktop");
+  const unitSides = sides || ['top', 'right', 'bottom', 'left'];
+  const getParsedValue = val => {
+    if (!val) return {
+      top: '',
+      right: '',
+      bottom: '',
+      left: ''
+    };
+    if (typeof val === 'object' && !val.desktop && !val.tablet && !val.mobile) return {
+      top: val.top || '',
+      right: val.right || '',
+      bottom: val.bottom || '',
+      left: val.left || ''
+    };
+    if (typeof val === 'string') {
+      const parts = val.split(' ').map(p => p.trim()).filter(Boolean);
+      if (parts.length === 1) return {
+        top: parts[0],
+        right: parts[0],
+        bottom: parts[0],
+        left: parts[0]
+      };
+      if (parts.length === 2) return {
+        top: parts[0],
+        right: parts[1],
+        bottom: parts[0],
+        left: parts[1]
+      };
+      if (parts.length === 3) return {
+        top: parts[0],
+        right: parts[1],
+        bottom: parts[2],
+        left: parts[1]
+      };
+      if (parts.length === 4) return {
+        top: parts[0],
+        right: parts[1],
+        bottom: parts[2],
+        left: parts[3]
+      };
+    }
+    return {
+      top: '',
+      right: '',
+      bottom: '',
+      left: ''
+    };
+  };
+  const parsedDefault = getParsedValue(defaultVal);
+  const currentValueToParse = responsive ? value?.[device] : value;
+  const currentVal = currentValueToParse ? getParsedValue(currentValueToParse) : parsedDefault;
+  const isReset = currentValueToParse !== undefined && currentValueToParse !== '' && (currentVal.top !== parsedDefault.top || currentVal.right !== parsedDefault.right || currentVal.bottom !== parsedDefault.bottom || currentVal.left !== parsedDefault.left);
+  const defaultUnits = [{
+    label: 'px',
+    value: 'px'
+  }, {
+    label: '%',
+    value: '%'
+  }, {
+    label: 'em',
+    value: 'em'
+  }, {
+    label: 'rem',
+    value: 'rem'
+  }, {
+    label: 'vw',
+    value: 'vw'
+  }, {
+    label: 'vh',
+    value: 'vh'
+  }];
+  const handleChange = (val, dimension) => {
+    let newVal;
+    if (link) {
+      newVal = {
+        top: val,
+        right: val,
+        bottom: val,
+        left: val
+      };
+    } else {
+      if (sides) {
+        newVal = dimension === 'horizontal' ? {
+          ...currentVal,
+          right: val,
+          left: val
+        } : dimension === 'vertical' ? {
+          ...currentVal,
+          top: val,
+          bottom: val
+        } : {
+          ...currentVal,
+          [dimension]: val
+        };
+      } else {
+        newVal = {
+          ...currentVal,
+          [dimension]: val
+        };
+      }
+    }
+    const t = newVal.top || '';
+    const r = newVal.right || '';
+    const b = newVal.bottom || '';
+    const l = newVal.left || '';
+    let finalStr;
+    if (!t && !r && !b && !l) {
+      finalStr = undefined;
+    } else {
+      finalStr = `${t || '0px'} ${r || '0px'} ${b || '0px'} ${l || '0px'}`;
+    }
+    if (responsive) {
+      onChange({
+        ...(typeof value === "object" ? value : {}),
+        [device]: finalStr
+      });
+    } else {
+      onChange(finalStr);
+    }
+  };
+  const handleReset = () => {
+    if (responsive) {
+      onChange({
+        ...(typeof value === "object" ? value : {}),
+        [device]: undefined
+      });
+    } else {
+      onChange(undefined);
+    }
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    style: {
+      ...style
+    },
+    className: `bPlBoxControl ${className}`,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      className: "tr-spacing-control-header",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        style: {
+          display: "flex",
+          alignItems: "center",
+          gap: "6px"
+        },
+        children: [label && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+          className: "tr-spacing-control-label",
+          children: label
+        }), responsive && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Devices_Devices__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          device: device,
+          onChange: setDevice
+        })]
+      }), isReset && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+        className: "tr-spacing-reset-btn",
+        onClick: handleReset,
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Reset', 'guten-builder-blocks'),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+          className: "dashicons dashicons-image-rotate"
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      className: `sides ${sides && sides.includes('horizontal', 'vertical') ? 'gap' : ''}`,
+      children: [unitSides.map((val, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: "bplUnitControlWrapper",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalUnitControl, {
+          className: "tr-custom-unit-control",
+          onChange: v => handleChange(v, val),
+          value: sides ? val === 'horizontal' ? currentVal?.right : val === 'vertical' ? currentVal?.top : currentVal?.[val] : currentVal?.[val],
+          units: units || defaultUnits,
+          disableUnits: disableUnits
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          className: "sideLabel",
+          children: val
+        })]
+      }, i)), !sides && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+        className: `bplBoxControlLinkButton ${link ? 'activeLink' : ''}`,
+        onClick: () => setLink(!link),
+        children: link ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+          className: "dashicons dashicons-admin-links"
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+          className: "dashicons dashicons-editor-unlink"
+        })
+      })]
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SpacingControl);
+
+/***/ },
+
+/***/ "../tr-tools/Components/TabButton/TabButton.jsx"
+/*!******************************************************!*\
+  !*** ../tr-tools/Components/TabButton/TabButton.jsx ***!
+  \******************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _TabButton_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TabButton.scss */ "../tr-tools/Components/TabButton/TabButton.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+const DefaultGeneralIcon = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("svg", {
+  width: "16",
+  height: "16",
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "2",
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+    d: "M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("circle", {
+    cx: "12",
+    cy: "12",
+    r: "3"
+  })]
+});
+const DefaultStyleIcon = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("svg", {
+  width: "16",
+  height: "16",
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "2",
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("circle", {
+    cx: "13.5",
+    cy: "6.5",
+    r: ".5",
+    fill: "currentColor"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("circle", {
+    cx: "17.5",
+    cy: "10.5",
+    r: ".5",
+    fill: "currentColor"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("circle", {
+    cx: "8.5",
+    cy: "7.5",
+    r: ".5",
+    fill: "currentColor"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("circle", {
+    cx: "6.5",
+    cy: "12.5",
+    r: ".5",
+    fill: "currentColor"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+    d: "M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.92 0 1.7-.71 1.7-1.63 0-.44-.17-.86-.48-1.18-.32-.32-.48-.74-.48-1.19 0-.92.78-1.63 1.7-1.63h2.56c2.76 0 5-2.24 5-5 0-5.5-4.5-10-10-10Z"
+  })]
+});
+
+/**
+ * Reusable TabButton Component
+ * Supports custom icons, labels, and active tab state management.
+ */
+const TabButton = ({
+  tabs = [{
+    name: 'general',
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('General', 'guten-builder-blocks'),
+    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(DefaultGeneralIcon, {})
+  }, {
+    name: 'style',
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Style', 'guten-builder-blocks'),
+    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(DefaultStyleIcon, {})
+  }],
+  activeTab,
+  onChange,
+  className = ''
+}) => {
+  const [internalActiveTab, setInternalActiveTab] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(tabs[0]?.name || 'general');
+  const currentActiveTab = activeTab !== undefined ? activeTab : internalActiveTab;
+  const handleTabChange = tabName => {
+    if (activeTab === undefined) {
+      setInternalActiveTab(tabName);
+    }
+    if (typeof onChange === 'function') {
+      onChange(tabName);
+    }
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    className: `tr-tab-buttons ${className}`,
+    children: tabs.map((tab, index) => {
+      const isActive = currentActiveTab === tab.name;
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
+        style: {
+          display: 'contents'
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("button", {
+          type: "button",
+          className: `tr-subtab-btn ${isActive ? 'active' : ''}`,
+          onClick: () => handleTabChange(tab.name),
+          children: [tab.icon && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "tr-tab-icon",
+            children: tab.icon
+          }), tab.title || tab.label || tab.name]
+        }), index < tabs.length - 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "tr-tab-divider"
+        })]
+      }, tab.name || index);
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TabButton);
+
+/***/ },
+
+/***/ "../tr-tools/Components/TemplateSelector/ReadyPatternsModal.jsx"
+/*!**********************************************************************!*\
+  !*** ../tr-tools/Components/TemplateSelector/ReadyPatternsModal.jsx ***!
+  \**********************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+const ReadyPatternsModal = ({
+  isOpen,
+  onClose,
+  onImportPattern,
+  isPro,
+  proTemplates = [],
+  templates = [],
+  title
+}) => {
+  const [viewMode, setViewMode] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)('grid');
+  if (!isOpen) return null;
+  const isProActive = Boolean(isPro) || Boolean(window?.gbbData?.isPro);
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createPortal)(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "gbb-patterns-modal-overlay",
+    onClick: onClose,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "gbb-patterns-modal-container",
+      onClick: e => e.stopPropagation(),
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "gbb-patterns-modal-header",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "gbb-header-left",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            className: "gbb-block-logo",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
+              width: "18",
+              height: "18",
+              viewBox: "0 0 24 24",
+              fill: "none",
+              stroke: "currentColor",
+              strokeWidth: "2.5",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
+                x1: "4",
+                y1: "6",
+                x2: "20",
+                y2: "6"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
+                x1: "4",
+                y1: "12",
+                x2: "20",
+                y2: "12"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
+                x1: "4",
+                y1: "18",
+                x2: "20",
+                y2: "18"
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+            className: "gbb-header-title",
+            children: title || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('FAQ / Vertical Accordion', 'tr-tools')
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "gbb-header-right",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            type: "button",
+            className: `gbb-header-btn ${viewMode === 'list' ? 'active' : ''}`,
+            onClick: () => setViewMode('list'),
+            title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('List View', 'tr-tools'),
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
+              width: "18",
+              height: "18",
+              viewBox: "0 0 24 24",
+              fill: "none",
+              stroke: "currentColor",
+              strokeWidth: "2",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
+                x1: "8",
+                y1: "6",
+                x2: "21",
+                y2: "6"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
+                x1: "8",
+                y1: "12",
+                x2: "21",
+                y2: "12"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
+                x1: "8",
+                y1: "18",
+                x2: "21",
+                y2: "18"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("circle", {
+                cx: "3",
+                cy: "6",
+                r: "1.5",
+                fill: "currentColor"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("circle", {
+                cx: "3",
+                cy: "12",
+                r: "1.5",
+                fill: "currentColor"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("circle", {
+                cx: "3",
+                cy: "18",
+                r: "1.5",
+                fill: "currentColor"
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            type: "button",
+            className: `gbb-header-btn ${viewMode === 'grid' ? 'active' : ''}`,
+            onClick: () => setViewMode('grid'),
+            title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Grid View', 'tr-tools'),
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
+              width: "18",
+              height: "18",
+              viewBox: "0 0 24 24",
+              fill: "none",
+              stroke: "currentColor",
+              strokeWidth: "2",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("rect", {
+                x: "3",
+                y: "3",
+                width: "7",
+                height: "7",
+                rx: "1"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("rect", {
+                x: "14",
+                y: "3",
+                width: "7",
+                height: "7",
+                rx: "1"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("rect", {
+                x: "14",
+                y: "14",
+                width: "7",
+                height: "7",
+                rx: "1"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("rect", {
+                x: "3",
+                y: "14",
+                width: "7",
+                height: "7",
+                rx: "1"
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            type: "button",
+            className: "gbb-header-btn",
+            onClick: () => {},
+            title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Refresh Templates', 'tr-tools'),
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+              width: "18",
+              height: "18",
+              viewBox: "0 0 24 24",
+              fill: "none",
+              stroke: "currentColor",
+              strokeWidth: "2",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                d: "M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"
+              })
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            type: "button",
+            className: "gbb-patterns-modal-close",
+            onClick: onClose,
+            "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Close Templates Library', 'tr-tools'),
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
+              width: "16",
+              height: "16",
+              viewBox: "0 0 24 24",
+              fill: "none",
+              stroke: "currentColor",
+              strokeWidth: "2.5",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
+                x1: "18",
+                y1: "6",
+                x2: "6",
+                y2: "18"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
+                x1: "6",
+                y1: "6",
+                x2: "18",
+                y2: "18"
+              })]
+            })
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: `gbb-patterns-modal-body view-mode-${viewMode}`,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "gbb-patterns-grid",
+          children: templates.map(item => {
+            const SvgPreview = item.icon || item.SvgComponent;
+            const isItemPro = item.isPro || proTemplates.includes(item.id);
+            const isLocked = isItemPro && !isProActive;
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "gbb-pattern-card",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                className: "gbb-pattern-preview-container",
+                style: {
+                  padding: '24px',
+                  boxSizing: 'border-box'
+                },
+                children: [SvgPreview ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(SvgPreview, {}) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                  style: {
+                    height: '140px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#94a3b8'
+                  },
+                  children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('No Preview', 'tr-tools')
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                  className: "gbb-pattern-overlay",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
+                    type: "button",
+                    className: "gbb-btn-live-preview",
+                    onClick: () => onImportPattern(item),
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
+                      width: "16",
+                      height: "16",
+                      viewBox: "0 0 24 24",
+                      fill: "none",
+                      stroke: "currentColor",
+                      strokeWidth: "2",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                        d: "M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("circle", {
+                        cx: "12",
+                        cy: "12",
+                        r: "3"
+                      })]
+                    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Live Preview', 'tr-tools')]
+                  })
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                className: "gbb-pattern-details",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                  className: "gbb-pattern-name",
+                  children: item.label || item.name
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                  className: "gbb-pattern-actions",
+                  children: isLocked ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
+                    href: "https://yourwebsite.com/pro",
+                    target: "_blank",
+                    rel: "noreferrer",
+                    className: "gbb-btn-pattern-pro",
+                    onClick: e => e.stopPropagation(),
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
+                      width: "14",
+                      height: "14",
+                      viewBox: "0 0 24 24",
+                      fill: "none",
+                      stroke: "currentColor",
+                      strokeWidth: "2",
+                      style: {
+                        marginRight: '6px'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                        d: "M2 17l4-10 6 4 6-4 4 10H2z"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                        d: "M2 21h20"
+                      })]
+                    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('PRO', 'tr-tools')]
+                  }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
+                    type: "button",
+                    className: "gbb-btn-pattern-import",
+                    onClick: () => onImportPattern(item),
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
+                      width: "17",
+                      height: "17",
+                      viewBox: "0 0 24 24",
+                      fill: "none",
+                      stroke: "currentColor",
+                      strokeWidth: "2.5",
+                      style: {
+                        marginRight: '6px'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                        d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("polyline", {
+                        points: "7 10 12 15 17 10"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
+                        x1: "12",
+                        y1: "15",
+                        x2: "12",
+                        y2: "3"
+                      })]
+                    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Import', 'tr-tools')]
+                  })
+                })]
+              })]
+            }, item.id);
+          })
+        })
+      })]
+    })
+  }), document.body);
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ReadyPatternsModal);
+
+/***/ },
+
+/***/ "../tr-tools/Components/TemplateSelector/TemplateSelector.jsx"
+/*!********************************************************************!*\
+  !*** ../tr-tools/Components/TemplateSelector/TemplateSelector.jsx ***!
+  \********************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ReadyPatternsModal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ReadyPatternsModal */ "../tr-tools/Components/TemplateSelector/ReadyPatternsModal.jsx");
+/* harmony import */ var _TemplateSelector_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TemplateSelector.scss */ "../tr-tools/Components/TemplateSelector/TemplateSelector.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+const TemplateSelector = ({
+  setAttributes,
+  title,
+  subtitle,
+  templates = [],
+  isPro,
+  proTemplates
+}) => {
+  const [isModalOpen, setIsModalOpen] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
+  const handleSelectTemplate = template => {
+    setAttributes({
+      ...(template.attributes || {}),
+      selectedTemplate: template.id,
+      isTemplateSelected: true
+    });
+  };
+  const handleSkip = () => {
+    if (templates.length > 0) {
+      const firstTemplate = templates[0];
+      setAttributes({
+        ...(firstTemplate.attributes || {}),
+        selectedTemplate: firstTemplate.id,
+        isTemplateSelected: true
+      });
+    } else {
+      setAttributes({
+        isTemplateSelected: true
+      });
+    }
+  };
+  const handleChooseReadyPatterns = () => {
+    setIsModalOpen(true);
+  };
+  const handleImportPattern = pattern => {
+    setAttributes({
+      ...(pattern.attributes || {}),
+      selectedTemplate: pattern.id,
+      isTemplateSelected: true
+    });
+    setIsModalOpen(false);
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    className: "gbb-template-selector-container",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      className: "gbb-template-selector-header",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
+        className: "gbb-template-title",
+        children: title
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+        className: "gbb-template-subtitle",
+        children: subtitle
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      className: "gbb-template-grid",
+      children: templates.map(item => {
+        const SvgIcon = item.SvgComponent || item.icon;
+
+        // Freemius active state check (via prop or global window.gbbData localized object)
+        const isProActive = Boolean(isPro) || Boolean(window?.gbbData?.isPro);
+
+        // Check if this specific template requires PRO (either by item property or by proTemplates list)
+        const isTemplatePro = Boolean(item.isPro) || Array.isArray(proTemplates) && proTemplates.includes(item.id);
+        const isLockedPro = isTemplatePro && !isProActive;
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "gbb-template-card",
+          onClick: () => {
+            // যদি লক করা প্রো টেমপ্লেট হয়, তাহলে সিলেক্ট হতে দেবে না
+            if (isLockedPro) {
+              return; // এখানে চাইলে প্রো কেনার লিংকে রিডাইরেক্ট করতে পারেন
+            }
+            handleSelectTemplate(item);
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "gbb-template-preview",
+            children: [item.image ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+              src: item.image,
+              alt: item.name || item.label,
+              className: "gbb-template-image"
+            }) : SvgIcon && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(SvgIcon, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+              className: `gbb-template-hover-overlay ${isLockedPro ? "is-pro-overlay" : ""}`,
+              children: isLockedPro ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                className: "gbb-pro-buttons",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
+                  href: "#",
+                  className: "gbb-btn-demo",
+                  onClick: e => e.stopPropagation(),
+                  children: "Demo"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("a", {
+                  href: "https://yourwebsite.com/pro",
+                  target: "_blank",
+                  rel: "noreferrer",
+                  className: "gbb-btn-pro",
+                  onClick: e => e.stopPropagation(),
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("svg", {
+                    width: "18",
+                    height: "18",
+                    viewBox: "0 0 24 24",
+                    fill: "none",
+                    stroke: "currentColor",
+                    strokeWidth: "2",
+                    strokeLinecap: "round",
+                    strokeLinejoin: "round",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
+                      d: "M2 17l4-10 6 4 6-4 4 10H2z"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
+                      d: "M2 21h20"
+                    })]
+                  }), "PRO"]
+                })]
+              }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                className: "gbb-btn-select-preset",
+                children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Select", "guten-builder-blocks")
+              })
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "gbb-template-info",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              className: "gbb-template-name",
+              children: item.name || item.label
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              className: "gbb-template-tag",
+              children: item.tag
+            })]
+          })]
+        }, item.id);
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      className: "gbb-template-actions",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+        type: "button",
+        className: "gbb-btn-ready-patterns",
+        onClick: handleChooseReadyPatterns,
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Choose from Ready Templates", "guten-builder-blocks")
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+        type: "button",
+        className: "gbb-btn-skip",
+        onClick: handleSkip,
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Skip", "guten-builder-blocks")
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ReadyPatternsModal__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      isOpen: isModalOpen,
+      onClose: () => setIsModalOpen(false),
+      onImportPattern: handleImportPattern,
+      isPro: isPro,
+      proTemplates: proTemplates,
+      templates: templates,
+      title: title
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TemplateSelector);
+
+/***/ },
+
+/***/ "../tr-tools/Components/Typography/Typography.js"
+/*!*******************************************************!*\
+  !*** ../tr-tools/Components/Typography/Typography.js ***!
+  \*******************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _fontList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./fontList */ "../tr-tools/Components/Typography/fontList.js");
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../index */ "../tr-tools/Components/index.js");
+/* harmony import */ var _options__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./options */ "../tr-tools/Components/Typography/options.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../utils */ "../tr-tools/utils/index.js");
+/* harmony import */ var _Typography_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Typography.scss */ "../tr-tools/Components/Typography/Typography.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__);
+
+
+
+
+
+
+
+
+
+/**
+ * Typography Component
+ *
+ * @param {Object} props
+ * @param {string} [props.className] - Optional CSS class name (e.g. 'mt20')
+ * @param {string} [props.label='Typography'] - Label for the typography control
+ * @param {Object|number|string} [props.value] - Typography value object or font size
+ * @param {number} [props.value.fontSize] - Font size in px
+ * @param {string} [props.value.fontFamily] - Font family name
+ * @param {string|number} [props.value.fontWeight] - Font weight (e.g. '400', '600', '700')
+ * @param {number} [props.value.lineHeight] - Line height value
+ * @param {number} [props.value.letterSpacing] - Letter spacing in px
+ * @param {string} [props.value.textTransform] - Text transform ('none', 'capitalize', 'uppercase', 'lowercase')
+ * @param {string} [props.value.textDecoration] - Text decoration ('none', 'underline', 'line-through', 'overline')
+ * @param {string} [props.value.fontStyle] - Font style ('normal', 'italic', 'oblique')
+ * @param {Object} [props.defaultValue] - Default typography object for reset
+ * @param {Object} [props.defaultTypography] - Default typography object for reset
+ * @param {Function} props.onChange - Change handler callback function
+ * @returns {JSX.Element} Typography control component
+ */
+
+const Typography = ({
+  className = "",
+  label = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Typography:'),
+  value = {},
+  onChange,
+  defaultValue,
+  defaultTypography
+}) => {
+  const resetVal = defaultTypography || defaultValue || {};
+  const currentVal = typeof value === "object" && value !== null ? value : {
+    fontSize: value
+  };
+  const [device, setDevice] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)('desktop');
+  const getFontSizeForDevice = () => {
+    let size = '';
+    if (currentVal.fontSize && typeof currentVal.fontSize === 'object') {
+      size = currentVal.fontSize[device];
+    } else if (device === 'desktop') {
+      size = currentVal.fontSize;
+    }
+
+    // Convert legacy raw numbers to strings with 'px'
+    if (typeof size === 'number' || typeof size === 'string' && size !== '' && !isNaN(size)) {
+      return `${size}px`;
+    }
+    return size || '';
+  };
+  const handleFontSizeChange = newSize => {
+    let newFontSizeObj = typeof currentVal.fontSize === 'object' ? {
+      ...currentVal.fontSize
+    } : {
+      desktop: currentVal.fontSize || ''
+    };
+    newFontSizeObj[device] = newSize;
+    updateField('fontSize', newFontSizeObj);
+  };
+  const fontOptions = _fontList__WEBPACK_IMPORTED_MODULE_3__["default"].map(item => ({
+    label: item.family,
+    value: item.family === "Default" ? "" : item.family
+  }));
+  const selectedFontObj = _fontList__WEBPACK_IMPORTED_MODULE_3__["default"].find(item => item.family.toLowerCase() === (currentVal.fontFamily || "default").toLowerCase()) || _fontList__WEBPACK_IMPORTED_MODULE_3__["default"][0];
+  const weightOptions = [{
+    label: "Default",
+    value: ""
+  }, ...(selectedFontObj.variants || []).map(v => ({
+    label: _options__WEBPACK_IMPORTED_MODULE_5__.WEIGHT_LABELS[v] || `${v}`,
+    value: String(v)
+  }))];
+  const isChanged = Boolean(resetVal && Object.keys(resetVal).some(key => currentVal[key] !== undefined && JSON.stringify(currentVal[key]).toLowerCase() !== JSON.stringify(resetVal[key]).toLowerCase()));
+  const updateField = (fieldKey, fieldVal) => {
+    if (typeof onChange === "function") {
+      onChange({
+        ...currentVal,
+        [fieldKey]: fieldVal
+      });
+    }
+  };
+  const handleReset = () => {
+    if (typeof onChange === "function") {
+      onChange(resetVal);
+    }
+  };
+  const getDefault = property => resetVal?.[property];
+  const setDefault = property => updateField(property, undefined);
+  const resetValue = property => currentVal?.[property] !== undefined && currentVal?.[property] !== "" && currentVal?.[property] !== getDefault(property) ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+    icon: "image-rotate",
+    className: "bPlResetVal",
+    onClick: () => setDefault(property)
+  }) : null;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+    className: `tr-typography-control ${className}`.trim(),
+    children: [label && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+      className: "tr-typography-control__label",
+      children: label
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+      className: "tr-typography-control__actions",
+      children: [isChanged && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+        type: "button",
+        className: "tr-typography-control__reset-btn",
+        title: "Reset to default typography",
+        onClick: handleReset,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("svg", {
+          width: "20",
+          height: "20",
+          viewBox: "0 0 24 24",
+          fill: "none",
+          stroke: "currentColor",
+          strokeWidth: "2",
+          strokeLinecap: "round",
+          strokeLinejoin: "round",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("path", {
+            d: "M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("path", {
+            d: "M3 3v5h5"
+          })]
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Dropdown, {
+        renderToggle: ({
+          isOpen,
+          onToggle
+        }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+          type: "button",
+          onClick: onToggle,
+          "aria-expanded": isOpen,
+          className: `tr-typography-control__trigger-btn ${isOpen ? "active" : ""}`,
+          title: "Edit Typography",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("svg", {
+            width: "16",
+            height: "16",
+            viewBox: "0 0 24 24",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: "2",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("polyline", {
+              points: "4 7 4 4 20 4 20 7"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("line", {
+              x1: "9",
+              y1: "20",
+              x2: "15",
+              y2: "20"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("line", {
+              x1: "12",
+              y1: "4",
+              x2: "12",
+              y2: "20"
+            })]
+          })
+        }),
+        renderContent: () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          className: "tr-typography-control__popover",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Font Family :", "guten-builder-blocks"),
+            value: currentVal.fontFamily || "",
+            options: fontOptions,
+            onChange: val => updateField("fontFamily", val)
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Font Weight :", "guten-builder-blocks"),
+            value: currentVal.fontWeight || "",
+            options: weightOptions,
+            onChange: val => updateField("fontWeight", val)
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Flex, {
+            className: "mt20",
+            align: "center",
+            justify: "space-between",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+              className: "tr-typography-control__field-label",
+              style: {
+                marginBottom: 0,
+                whiteSpace: 'nowrap',
+                marginRight: '8px'
+              },
+              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Font Size :", "guten-builder-blocks")
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Flex, {
+              align: "center",
+              gap: 2,
+              style: {
+                flex: 1,
+                justifyContent: 'flex-end'
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_index__WEBPACK_IMPORTED_MODULE_4__.Devices, {
+                device: device,
+                onChange: setDevice
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                className: "tr-custom-unit-control",
+                style: {
+                  width: '100px'
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalUnitControl, {
+                  value: getFontSizeForDevice(),
+                  onChange: handleFontSizeChange,
+                  units: [(0,_utils__WEBPACK_IMPORTED_MODULE_6__.pxUnit)(), (0,_utils__WEBPACK_IMPORTED_MODULE_6__.remUnit)(), (0,_utils__WEBPACK_IMPORTED_MODULE_6__.emUnit)(), (0,_utils__WEBPACK_IMPORTED_MODULE_6__.vwUnit)()]
+                }, device)
+              })]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, {
+            className: "mt20",
+            style: {
+              alignItems: 'center'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalUnitControl, {
+              className: "tr-custom-unit-control",
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Letter Spacing:'),
+              labelPosition: "left",
+              value: currentVal.letterSpacing,
+              onChange: val => updateField("letterSpacing", val),
+              units: [(0,_utils__WEBPACK_IMPORTED_MODULE_6__.pxUnit)(), (0,_utils__WEBPACK_IMPORTED_MODULE_6__.emUnit)(), (0,_utils__WEBPACK_IMPORTED_MODULE_6__.remUnit)()]
+            }), resetValue('letterSpacing')]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, {
+            className: "mt20",
+            style: {
+              alignItems: 'center'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalUnitControl, {
+              className: "tr-custom-unit-control",
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Line Height:'),
+              labelPosition: "left",
+              value: currentVal.lineHeight,
+              onChange: val => updateField("lineHeight", val),
+              units: [(0,_utils__WEBPACK_IMPORTED_MODULE_6__.pxUnit)(), (0,_utils__WEBPACK_IMPORTED_MODULE_6__.perUnit)(), (0,_utils__WEBPACK_IMPORTED_MODULE_6__.emUnit)(), (0,_utils__WEBPACK_IMPORTED_MODULE_6__.remUnit)()],
+              isResetValueOnUnitChange: true
+            }), resetValue('lineHeight')]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            className: "tr-typography-control__field",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+              className: "tr-typography-control__field-label",
+              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Font Style :", "guten-builder-blocks")
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+              className: "tr-typography-control__btn-group",
+              children: _options__WEBPACK_IMPORTED_MODULE_5__.FONT_STYLES.map(item => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                type: "button",
+                title: item.label,
+                className: `tr-typography-control__option-btn ${(currentVal.fontStyle || "normal") === item.value ? "active" : ""}`,
+                onClick: () => updateField("fontStyle", item.value),
+                children: item.icon
+              }, item.value))
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            className: "tr-typography-control__field",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+              className: "tr-typography-control__field-label",
+              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Text Transform :", "guten-builder-blocks")
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+              className: "tr-typography-control__btn-group",
+              children: _options__WEBPACK_IMPORTED_MODULE_5__.TEXT_TRANSFORMS.map(item => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                type: "button",
+                title: item.label,
+                className: `tr-typography-control__option-btn ${(currentVal.textTransform || "none") === item.value ? "active" : ""}`,
+                onClick: () => updateField("textTransform", item.value),
+                children: item.icon
+              }, item.value))
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            className: "tr-typography-control__field",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+              className: "tr-typography-control__field-label",
+              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Text Decoration :", "guten-builder-blocks")
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+              className: "tr-typography-control__btn-group",
+              children: _options__WEBPACK_IMPORTED_MODULE_5__.TEXT_DECORATIONS.map(item => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                type: "button",
+                title: item.label,
+                className: `tr-typography-control__option-btn ${(currentVal.textDecoration || "none") === item.value ? "active" : ""}`,
+                onClick: () => updateField("textDecoration", item.value),
+                children: item.icon
+              }, item.value))
+            })]
+          })]
+        })
+      })]
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Typography);
+
+/***/ },
+
+/***/ "../tr-tools/Components/Typography/fontList.js"
+/*!*****************************************************!*\
+  !*** ../tr-tools/Components/Typography/fontList.js ***!
+  \*****************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([{
+  family: "Default",
+  variants: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+  category: "sans-serif"
+}, {
+  family: "Inter",
+  variants: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+  category: "sans-serif"
+}, {
+  family: "Roboto",
+  variants: [100, 300, 400, 500, 700, 900],
+  category: "sans-serif"
+}, {
+  family: "Outfit",
+  variants: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+  category: "sans-serif"
+}, {
+  family: "Open Sans",
+  variants: [300, 400, 500, 600, 700, 800],
+  category: "sans-serif"
+}, {
+  family: "Poppins",
+  variants: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+  category: "sans-serif"
+}, {
+  family: "Montserrat",
+  variants: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+  category: "sans-serif"
+}, {
+  family: "Playfair Display",
+  variants: [400, 500, 600, 700, 800, 900],
+  category: "serif"
+}, {
+  family: "Lato",
+  variants: [100, 300, 400, 700, 900],
+  category: "sans-serif"
+}, {
+  family: "Oswald",
+  variants: [200, 300, 400, 500, 600, 700],
+  category: "sans-serif"
+}, {
+  family: "Merriweather",
+  variants: [300, 400, 700, 900],
+  category: "serif"
+}]);
+
+/***/ },
+
+/***/ "../tr-tools/Components/Typography/options.js"
+/*!****************************************************!*\
+  !*** ../tr-tools/Components/Typography/options.js ***!
+  \****************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   FONT_STYLES: () => (/* binding */ FONT_STYLES),
+/* harmony export */   TEXT_DECORATIONS: () => (/* binding */ TEXT_DECORATIONS),
+/* harmony export */   TEXT_TRANSFORMS: () => (/* binding */ TEXT_TRANSFORMS),
+/* harmony export */   WEIGHT_LABELS: () => (/* binding */ WEIGHT_LABELS)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+
+const FONT_STYLES = [{
+  label: "Normal",
+  value: "normal",
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+    style: {
+      fontStyle: "normal",
+      fontWeight: "600",
+      fontSize: "13px"
+    },
+    children: "N"
+  })
+}, {
+  label: "Italic",
+  value: "italic",
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+    style: {
+      fontStyle: "italic",
+      fontWeight: "600",
+      fontSize: "13px",
+      fontFamily: "serif"
+    },
+    children: "I"
+  })
+}, {
+  label: "Oblique",
+  value: "oblique",
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+    style: {
+      fontStyle: "oblique",
+      fontWeight: "600",
+      fontSize: "13px",
+      fontFamily: "serif"
+    },
+    children: "O"
+  })
+}];
+const TEXT_TRANSFORMS = [{
+  label: "None",
+  value: "none",
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+    style: {
+      fontSize: "14px",
+      fontWeight: "600",
+      lineHeight: "1"
+    },
+    children: "N"
+  })
+}, {
+  label: "Capitalize",
+  value: "capitalize",
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+    style: {
+      fontSize: "12px",
+      fontWeight: "600",
+      letterSpacing: "-0.5px"
+    },
+    children: "Aa"
+  })
+}, {
+  label: "UPPERCASE",
+  value: "uppercase",
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+    style: {
+      fontSize: "11px",
+      fontWeight: "700",
+      letterSpacing: "-0.5px"
+    },
+    children: "AA"
+  })
+}, {
+  label: "lowercase",
+  value: "lowercase",
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+    style: {
+      fontSize: "12px",
+      fontWeight: "600",
+      letterSpacing: "-0.5px"
+    },
+    children: "aa"
+  })
+}];
+const TEXT_DECORATIONS = [{
+  label: "None",
+  value: "none",
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+    style: {
+      fontSize: "14px",
+      fontWeight: "600",
+      lineHeight: "1"
+    },
+    children: "N"
+  })
+}, {
+  label: "Underline",
+  value: "underline",
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+    style: {
+      textDecoration: "underline",
+      fontSize: "13px",
+      fontWeight: "600"
+    },
+    children: "U"
+  })
+}, {
+  label: "Line-through",
+  value: "line-through",
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+    style: {
+      textDecoration: "line-through",
+      fontSize: "13px",
+      fontWeight: "600"
+    },
+    children: "S"
+  })
+}, {
+  label: "Overline",
+  value: "overline",
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+    style: {
+      textDecoration: "overline",
+      fontSize: "13px",
+      fontWeight: "600"
+    },
+    children: "O"
+  })
+}];
+const WEIGHT_LABELS = {
+  100: "Thin (100)",
+  200: "Extra Light (200)",
+  300: "Light (300)",
+  400: "Regular (400)",
+  500: "Medium (500)",
+  600: "Semi Bold (600)",
+  700: "Bold (700)",
+  800: "Extra Bold (800)",
+  900: "Black (900)"
+};
+
+/***/ },
+
+/***/ "../tr-tools/Components/UnitControl/UnitControl.js"
+/*!*********************************************************!*\
+  !*** ../tr-tools/Components/UnitControl/UnitControl.js ***!
+  \*********************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Devices_Devices__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Devices/Devices */ "../tr-tools/Components/Devices/Devices.js");
+/* harmony import */ var _UnitControl_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./UnitControl.scss */ "../tr-tools/Components/UnitControl/UnitControl.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+const UnitControl = ({
+  label,
+  value,
+  onChange,
+  units,
+  defaultVal,
+  responsive = false,
+  isResetValueOnUnitChange = true,
+  className = "mt20",
+  ...props
+}) => {
+  const [device, setDevice] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)("desktop");
+  const currentValue = responsive ? value?.[device] || "" : value;
+  const currentDefault = responsive && typeof defaultVal === 'object' ? defaultVal?.[device] || "" : defaultVal;
+  const showReset = currentValue !== undefined && currentValue !== "" && currentValue !== currentDefault;
+  const handleReset = () => {
+    if (onChange) {
+      const resetValue = currentDefault !== "" ? currentDefault : undefined;
+      if (responsive) {
+        onChange({
+          ...(typeof value === "object" ? value : {}),
+          [device]: resetValue
+        });
+      } else {
+        onChange(resetValue);
+      }
+    }
+  };
+  const handleChange = val => {
+    if (responsive) {
+      onChange({
+        ...(typeof value === "object" ? value : {}),
+        [device]: val
+      });
+    } else {
+      onChange(val);
+    }
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    className: className,
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      gap: "8px"
+    },
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      style: {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center"
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        style: {
+          display: "flex",
+          alignItems: "center",
+          gap: "6px"
+        },
+        children: [label && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+          style: {
+            fontSize: "13px",
+            fontWeight: 500,
+            color: "#1e293b",
+            whiteSpace: "nowrap"
+          },
+          children: label
+        }), responsive && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Devices_Devices__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          device: device,
+          onChange: setDevice
+        })]
+      }), showReset && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+        type: "button",
+        className: "tr-spacing-reset-btn bPlResetVal",
+        onClick: handleReset,
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Reset", "guten-builder-blocks"),
+        style: {
+          background: "transparent",
+          border: "none",
+          cursor: "pointer",
+          padding: 0
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+          className: "dashicons dashicons-image-rotate"
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalUnitControl, {
+      className: "tr-custom-unit-control",
+      value: currentValue,
+      onChange: handleChange,
+      units: units,
+      isResetValueOnUnitChange: isResetValueOnUnitChange,
+      style: {
+        width: "100%",
+        marginBottom: 0
+      },
+      ...props
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (UnitControl);
+
+/***/ },
+
+/***/ "../tr-tools/Components/index.js"
+/*!***************************************!*\
+  !*** ../tr-tools/Components/index.js ***!
+  \***************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   BackgroundControl: () => (/* reexport safe */ _BackgroundControl_BackgroundControl__WEBPACK_IMPORTED_MODULE_5__["default"]),
+/* harmony export */   BorderControl: () => (/* reexport safe */ _BorderControl_BorderControl__WEBPACK_IMPORTED_MODULE_9__["default"]),
+/* harmony export */   ColorControl: () => (/* reexport safe */ _ColorControl_ColorControl__WEBPACK_IMPORTED_MODULE_3__["default"]),
+/* harmony export */   DEFAULT_BORDER: () => (/* reexport safe */ _BorderControl_BorderControl__WEBPACK_IMPORTED_MODULE_9__.DEFAULT_BORDER),
+/* harmony export */   DEFAULT_GRADIENT: () => (/* reexport safe */ _GradientControl_GradientControl__WEBPACK_IMPORTED_MODULE_6__.DEFAULT_GRADIENT),
+/* harmony export */   DEFAULT_SHADOW: () => (/* reexport safe */ _ShadowControl_ShadowControl__WEBPACK_IMPORTED_MODULE_13__.DEFAULT_SHADOW),
+/* harmony export */   Devices: () => (/* reexport safe */ _Devices_Devices__WEBPACK_IMPORTED_MODULE_7__["default"]),
+/* harmony export */   DocsLink: () => (/* reexport safe */ _DocsLink_DocsLink__WEBPACK_IMPORTED_MODULE_11__["default"]),
+/* harmony export */   GradientControl: () => (/* reexport safe */ _GradientControl_GradientControl__WEBPACK_IMPORTED_MODULE_6__["default"]),
+/* harmony export */   ItemsPanel: () => (/* reexport safe */ _ItemsPanel_ItemsPanel__WEBPACK_IMPORTED_MODULE_1__["default"]),
+/* harmony export */   MediaControl: () => (/* reexport safe */ _MediaControl_MediaControl__WEBPACK_IMPORTED_MODULE_12__["default"]),
+/* harmony export */   ShadowControl: () => (/* reexport safe */ _ShadowControl_ShadowControl__WEBPACK_IMPORTED_MODULE_13__["default"]),
+/* harmony export */   SpacingControl: () => (/* reexport safe */ _SpacingControl_SpacingControl__WEBPACK_IMPORTED_MODULE_10__["default"]),
+/* harmony export */   TabButton: () => (/* reexport safe */ _TabButton_TabButton__WEBPACK_IMPORTED_MODULE_2__["default"]),
+/* harmony export */   TemplateSelector: () => (/* reexport safe */ _TemplateSelector_TemplateSelector__WEBPACK_IMPORTED_MODULE_0__["default"]),
+/* harmony export */   Typography: () => (/* reexport safe */ _Typography_Typography__WEBPACK_IMPORTED_MODULE_4__["default"]),
+/* harmony export */   UnitControl: () => (/* reexport safe */ _UnitControl_UnitControl__WEBPACK_IMPORTED_MODULE_8__["default"]),
+/* harmony export */   getBackgroundCss: () => (/* reexport safe */ _BackgroundControl_BackgroundControl__WEBPACK_IMPORTED_MODULE_5__.getBackgroundCss),
+/* harmony export */   getGradientCss: () => (/* reexport safe */ _GradientControl_GradientControl__WEBPACK_IMPORTED_MODULE_6__.getGradientCss)
+/* harmony export */ });
+/* harmony import */ var _TemplateSelector_TemplateSelector__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TemplateSelector/TemplateSelector */ "../tr-tools/Components/TemplateSelector/TemplateSelector.jsx");
+/* harmony import */ var _ItemsPanel_ItemsPanel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ItemsPanel/ItemsPanel */ "../tr-tools/Components/ItemsPanel/ItemsPanel.jsx");
+/* harmony import */ var _TabButton_TabButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TabButton/TabButton */ "../tr-tools/Components/TabButton/TabButton.jsx");
+/* harmony import */ var _ColorControl_ColorControl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ColorControl/ColorControl */ "../tr-tools/Components/ColorControl/ColorControl.js");
+/* harmony import */ var _Typography_Typography__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Typography/Typography */ "../tr-tools/Components/Typography/Typography.js");
+/* harmony import */ var _BackgroundControl_BackgroundControl__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./BackgroundControl/BackgroundControl */ "../tr-tools/Components/BackgroundControl/BackgroundControl.js");
+/* harmony import */ var _GradientControl_GradientControl__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./GradientControl/GradientControl */ "../tr-tools/Components/GradientControl/GradientControl.js");
+/* harmony import */ var _Devices_Devices__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Devices/Devices */ "../tr-tools/Components/Devices/Devices.js");
+/* harmony import */ var _UnitControl_UnitControl__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./UnitControl/UnitControl */ "../tr-tools/Components/UnitControl/UnitControl.js");
+/* harmony import */ var _BorderControl_BorderControl__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./BorderControl/BorderControl */ "../tr-tools/Components/BorderControl/BorderControl.js");
+/* harmony import */ var _SpacingControl_SpacingControl__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./SpacingControl/SpacingControl */ "../tr-tools/Components/SpacingControl/SpacingControl.js");
+/* harmony import */ var _DocsLink_DocsLink__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./DocsLink/DocsLink */ "../tr-tools/Components/DocsLink/DocsLink.js");
+/* harmony import */ var _MediaControl_MediaControl__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./MediaControl/MediaControl */ "../tr-tools/Components/MediaControl/MediaControl.jsx");
+/* harmony import */ var _ShadowControl_ShadowControl__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./ShadowControl/ShadowControl */ "../tr-tools/Components/ShadowControl/ShadowControl.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***/ },
+
+/***/ "../tr-tools/index.js"
+/*!****************************!*\
+  !*** ../tr-tools/index.js ***!
+  \****************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   BackgroundControl: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.BackgroundControl),
+/* harmony export */   BorderControl: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.BorderControl),
+/* harmony export */   ColorControl: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.ColorControl),
+/* harmony export */   DEFAULT_BORDER: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.DEFAULT_BORDER),
+/* harmony export */   DEFAULT_GRADIENT: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.DEFAULT_GRADIENT),
+/* harmony export */   DEFAULT_SHADOW: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.DEFAULT_SHADOW),
+/* harmony export */   Devices: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.Devices),
+/* harmony export */   DocsLink: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.DocsLink),
+/* harmony export */   GradientControl: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.GradientControl),
+/* harmony export */   ItemsPanel: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.ItemsPanel),
+/* harmony export */   MediaControl: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.MediaControl),
+/* harmony export */   ShadowControl: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.ShadowControl),
+/* harmony export */   SpacingControl: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.SpacingControl),
+/* harmony export */   TabButton: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.TabButton),
+/* harmony export */   TemplateSelector: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.TemplateSelector),
+/* harmony export */   Typography: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.Typography),
+/* harmony export */   UnitControl: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.UnitControl),
+/* harmony export */   emUnit: () => (/* reexport safe */ _utils__WEBPACK_IMPORTED_MODULE_1__.emUnit),
+/* harmony export */   getBackgroundCss: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss),
+/* harmony export */   getBorderCss: () => (/* reexport safe */ _utils__WEBPACK_IMPORTED_MODULE_1__.getBorderCss),
+/* harmony export */   getBorderRadiusCss: () => (/* reexport safe */ _utils__WEBPACK_IMPORTED_MODULE_1__.getBorderRadiusCss),
+/* harmony export */   getGradientCss: () => (/* reexport safe */ _Components__WEBPACK_IMPORTED_MODULE_0__.getGradientCss),
+/* harmony export */   getShadowCss: () => (/* reexport safe */ _utils__WEBPACK_IMPORTED_MODULE_1__.getShadowCss),
+/* harmony export */   getTypographyCss: () => (/* reexport safe */ _utils__WEBPACK_IMPORTED_MODULE_1__.getTypographyCss),
+/* harmony export */   loadGoogleFont: () => (/* reexport safe */ _utils__WEBPACK_IMPORTED_MODULE_1__.loadGoogleFont),
+/* harmony export */   mobileBreakpoint: () => (/* reexport safe */ _utils__WEBPACK_IMPORTED_MODULE_1__.mobileBreakpoint),
+/* harmony export */   perUnit: () => (/* reexport safe */ _utils__WEBPACK_IMPORTED_MODULE_1__.perUnit),
+/* harmony export */   pxUnit: () => (/* reexport safe */ _utils__WEBPACK_IMPORTED_MODULE_1__.pxUnit),
+/* harmony export */   remUnit: () => (/* reexport safe */ _utils__WEBPACK_IMPORTED_MODULE_1__.remUnit),
+/* harmony export */   tabBreakpoint: () => (/* reexport safe */ _utils__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint),
+/* harmony export */   vhUnit: () => (/* reexport safe */ _utils__WEBPACK_IMPORTED_MODULE_1__.vhUnit),
+/* harmony export */   vwUnit: () => (/* reexport safe */ _utils__WEBPACK_IMPORTED_MODULE_1__.vwUnit)
+/* harmony export */ });
+/* harmony import */ var _Components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Components */ "../tr-tools/Components/index.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils */ "../tr-tools/utils/index.js");
+
+
+
+/***/ },
+
+/***/ "../tr-tools/utils/getCSS.js"
+/*!***********************************!*\
+  !*** ../tr-tools/utils/getCSS.js ***!
+  \***********************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getBorderCss: () => (/* binding */ getBorderCss),
+/* harmony export */   getBorderRadiusCss: () => (/* binding */ getBorderRadiusCss),
+/* harmony export */   getShadowCss: () => (/* binding */ getShadowCss),
+/* harmony export */   getTypographyCss: () => (/* binding */ getTypographyCss),
+/* harmony export */   loadGoogleFont: () => (/* binding */ loadGoogleFont)
+/* harmony export */ });
+const FONT_VARIANTS_MAP = {
+  inter: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+  roboto: [100, 300, 400, 500, 700, 900],
+  outfit: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+  "open sans": [300, 400, 500, 600, 700, 800],
+  poppins: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+  montserrat: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+  "playfair display": [400, 500, 600, 700, 800, 900],
+  lato: [100, 300, 400, 700, 900],
+  oswald: [200, 300, 400, 500, 600, 700],
+  merriweather: [300, 400, 700, 900]
+};
+
+/**
+ * Dynamic Google Font Loader
+ */
+const loadGoogleFont = fontFamily => {
+  if (!fontFamily || fontFamily.toLowerCase() === "default" || typeof document === "undefined") {
+    return;
+  }
+  const slug = fontFamily.toLowerCase().replace(/\s+/g, "-");
+  const fontId = `gbb-google-font-${slug}`;
+  const variants = FONT_VARIANTS_MAP[fontFamily.toLowerCase()] || [400, 500, 600, 700];
+  const wghtParam = `:wght@${variants.join(";")}`;
+  const fontUrl = `https://fonts.googleapis.com/css2?family=${encodeURIComponent(fontFamily)}${wghtParam}&display=swap`;
+  const injectLink = targetDoc => {
+    if (!targetDoc || !targetDoc.head || targetDoc.getElementById(fontId)) return;
+    const link = targetDoc.createElement("link");
+    link.id = fontId;
+    link.rel = "stylesheet";
+    link.href = fontUrl;
+    targetDoc.head.appendChild(link);
+  };
+  injectLink(document);
+  const editorIframe = document.querySelector('iframe[name="editor-canvas"]');
+  if (editorIframe && editorIframe.contentDocument) {
+    injectLink(editorIframe.contentDocument);
+  }
+};
+
+/**
+ * Helper function to generate CSS string from typography attribute object
+ * @param {Object} typo - Typography value object
+ * @param {boolean} [important=false] - Whether to append !important to styles
+ * @returns {string} CSS styles string
+ */
+const getTypographyCss = (typo = {}, important = false) => {
+  if (!typo || typeof typo !== "object") return "";
+  const imp = important ? " !important" : "";
+  const fontSize = typo.fontSize;
+  const desktopFontSize = fontSize?.desktop || (typeof fontSize === 'string' || typeof fontSize === 'number' ? fontSize : '');
+  const tabletFontSize = fontSize?.tablet || desktopFontSize;
+  const mobileFontSize = fontSize?.mobile || tabletFontSize;
+  const checkUnit = size => {
+    const value = String(size);
+    const units = ["px", "em", "rem", "%", "vh", "vw"];
+    if (units.some(unit => value.endsWith(unit))) {
+      return value;
+    } else if (typeof size === "number" || !isNaN(size) && size !== "") {
+      return `${value}px`;
+    }
+    return "";
+  };
+  const styles = [];
+  if (typo.fontSize) {
+    styles.push(`font-size: ${checkUnit(desktopFontSize)}${imp};`);
+    if (tabletFontSize && tabletFontSize !== desktopFontSize) {
+      styles.push(`@media (max-width: 1024px) { font-size: ${checkUnit(tabletFontSize)}${imp}; }`);
+    }
+    if (mobileFontSize && mobileFontSize !== tabletFontSize) {
+      styles.push(`@media (max-width: 767px) { font-size: ${checkUnit(mobileFontSize)}${imp}; }`);
+    }
+  }
+  if (typo.fontFamily && typo.fontFamily.toLowerCase() !== "default") {
+    loadGoogleFont(typo.fontFamily);
+    styles.push(`font-family: '${typo.fontFamily}', sans-serif${imp};`);
+  }
+  if (typo.fontWeight) {
+    styles.push(`font-weight: ${typo.fontWeight}${imp};`);
+  }
+  if (typo.lineHeight) {
+    styles.push(`line-height: ${typo.lineHeight}${imp};`);
+  }
+  if (typo.letterSpacing !== undefined && typo.letterSpacing !== "" && typo.letterSpacing !== 0) {
+    styles.push(`letter-spacing: ${checkUnit(typo.letterSpacing)}${imp};`);
+  }
+  if (typo.textTransform && typo.textTransform !== "none") {
+    styles.push(`text-transform: ${typo.textTransform}${imp};`);
+  }
+  if (typo.textDecoration && typo.textDecoration !== "none") {
+    styles.push(`text-decoration: ${typo.textDecoration}${imp};`);
+  }
+  if (typo.fontStyle && typo.fontStyle !== "normal") {
+    styles.push(`font-style: ${typo.fontStyle}${imp};`);
+  }
+  return styles.join("\n");
+};
+
+/**
+ * Helper function to generate CSS string for border radius
+ * @param {Object|string} radius - Border radius value object or string
+ * @returns {string} CSS border-radius string
+ */
+const getBorderRadiusCss = radius => {
+  if (!radius) return "";
+  if (typeof radius === "string") return `border-radius: ${radius};`;
+  return `border-radius: ${radius?.top || "0px"} ${radius?.right || "0px"} ${radius?.bottom || "0px"} ${radius?.left || "0px"};`;
+};
+
+/**
+ * Helper function to generate CSS string for border
+ * @param {Object} border - Border value object
+ * @returns {string} CSS border string
+ */
+const getBorderCss = border => {
+  if (!border || typeof border !== 'object') return '';
+  const {
+    width,
+    style,
+    color,
+    side
+  } = border;
+  if (!width) return '';
+  const borderValue = `${width} ${style || 'solid'} ${color || 'transparent'}`;
+  if (side === 'all' || !side) {
+    return `border: ${borderValue};`;
+  } else {
+    const sides = side.split('-');
+    return sides.map(s => `border-${s}: ${borderValue};`).join(' ');
+  }
+};
+
+/**
+ * Helper function to generate CSS string for shadow
+ * @param {Object} shadowObj - Shadow value object
+ * @returns {string} CSS shadow string
+ */
+const getShadowCss = shadowObj => {
+  if (!shadowObj) return '';
+  // Since DEFAULT_SHADOW is in ShadowControl.js, we define defaults inline here
+  const hOffset = shadowObj.hOffset || '0px';
+  const vOffset = shadowObj.vOffset || '0px';
+  const blur = shadowObj.blur || '0px';
+  const spread = shadowObj.spread || '0px';
+  const color = shadowObj.color;
+  if (!color) return '';
+  return `${hOffset} ${vOffset} ${blur} ${spread} ${color}`;
+};
+
+/***/ },
+
+/***/ "../tr-tools/utils/index.js"
+/*!**********************************!*\
+  !*** ../tr-tools/utils/index.js ***!
+  \**********************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   emUnit: () => (/* reexport safe */ _options__WEBPACK_IMPORTED_MODULE_1__.emUnit),
+/* harmony export */   getBorderCss: () => (/* reexport safe */ _getCSS__WEBPACK_IMPORTED_MODULE_0__.getBorderCss),
+/* harmony export */   getBorderRadiusCss: () => (/* reexport safe */ _getCSS__WEBPACK_IMPORTED_MODULE_0__.getBorderRadiusCss),
+/* harmony export */   getShadowCss: () => (/* reexport safe */ _getCSS__WEBPACK_IMPORTED_MODULE_0__.getShadowCss),
+/* harmony export */   getTypographyCss: () => (/* reexport safe */ _getCSS__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss),
+/* harmony export */   loadGoogleFont: () => (/* reexport safe */ _getCSS__WEBPACK_IMPORTED_MODULE_0__.loadGoogleFont),
+/* harmony export */   mobileBreakpoint: () => (/* reexport safe */ _options__WEBPACK_IMPORTED_MODULE_1__.mobileBreakpoint),
+/* harmony export */   perUnit: () => (/* reexport safe */ _options__WEBPACK_IMPORTED_MODULE_1__.perUnit),
+/* harmony export */   pxUnit: () => (/* reexport safe */ _options__WEBPACK_IMPORTED_MODULE_1__.pxUnit),
+/* harmony export */   remUnit: () => (/* reexport safe */ _options__WEBPACK_IMPORTED_MODULE_1__.remUnit),
+/* harmony export */   tabBreakpoint: () => (/* reexport safe */ _options__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint),
+/* harmony export */   vhUnit: () => (/* reexport safe */ _options__WEBPACK_IMPORTED_MODULE_1__.vhUnit),
+/* harmony export */   vwUnit: () => (/* reexport safe */ _options__WEBPACK_IMPORTED_MODULE_1__.vwUnit)
+/* harmony export */ });
+/* harmony import */ var _getCSS__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getCSS */ "../tr-tools/utils/getCSS.js");
+/* harmony import */ var _options__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./options */ "../tr-tools/utils/options.js");
+
+
+
+/***/ },
+
+/***/ "../tr-tools/utils/options.js"
+/*!************************************!*\
+  !*** ../tr-tools/utils/options.js ***!
+  \************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   emUnit: () => (/* binding */ emUnit),
+/* harmony export */   mobileBreakpoint: () => (/* binding */ mobileBreakpoint),
+/* harmony export */   perUnit: () => (/* binding */ perUnit),
+/* harmony export */   pxUnit: () => (/* binding */ pxUnit),
+/* harmony export */   remUnit: () => (/* binding */ remUnit),
+/* harmony export */   tabBreakpoint: () => (/* binding */ tabBreakpoint),
+/* harmony export */   vhUnit: () => (/* binding */ vhUnit),
+/* harmony export */   vwUnit: () => (/* binding */ vwUnit)
+/* harmony export */ });
+const pxUnit = (def = 0) => ({
+  value: 'px',
+  label: 'px',
+  default: def
+});
+const perUnit = (def = 0) => ({
+  value: '%',
+  label: '%',
+  default: def
+});
+const emUnit = (def = 0) => ({
+  value: 'em',
+  label: 'em',
+  default: def
+});
+const remUnit = (def = 0) => ({
+  value: 'rem',
+  label: 'rem',
+  default: def
+});
+const vwUnit = (def = 0) => ({
+  value: 'vw',
+  label: 'vw',
+  default: def
+});
+const vhUnit = (def = 0) => ({
+  value: 'vh',
+  label: 'vh',
+  default: def
+});
+const tabBreakpoint = '@media (max-width: 991px)';
+const mobileBreakpoint = '@media (max-width: 767px)';
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/Components/Backend/Edit.js"
+/*!*************************************************************!*\
+  !*** ./src/blocks/pricing-table/Components/Backend/Edit.js ***!
+  \*************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Settings_Settings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Settings/Settings */ "./src/blocks/pricing-table/Components/Backend/Settings/Settings.js");
+/* harmony import */ var _Common_Templates_PricingTable_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Common/Templates/PricingTable.jsx */ "./src/blocks/pricing-table/Components/Common/Templates/PricingTable.jsx");
+/* harmony import */ var _Common_dynamicStyle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Common/dynamicStyle */ "./src/blocks/pricing-table/Components/Common/dynamicStyle.js");
+/* harmony import */ var tr_tools__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tr-tools */ "../tr-tools/index.js");
+/* harmony import */ var _utils_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/data */ "./src/blocks/pricing-table/utils/data.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
+
+
+
+
+
+
+
+const Edit = props => {
+  const {
+    attributes,
+    setAttributes,
+    clientId
+  } = props;
+  const {
+    selectedTemplate = ''
+  } = attributes;
+  const isTemplateSelected = Boolean(selectedTemplate);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Settings_Settings__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      attributes,
+      setAttributes,
+      clientId
+    }), !isTemplateSelected ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)(),
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_4__.TemplateSelector, {
+        attributes,
+        setAttributes,
+        title: _utils_data__WEBPACK_IMPORTED_MODULE_5__.templateData.title,
+        subtitle: _utils_data__WEBPACK_IMPORTED_MODULE_5__.templateData.subtitle,
+        templates: _utils_data__WEBPACK_IMPORTED_MODULE_5__.templateData.templates,
+        isPro: true,
+        proTemplates: []
+      })
+    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+      ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)(),
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Common_dynamicStyle__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        attributes: attributes,
+        clientId: clientId
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Common_Templates_PricingTable_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        attributes: attributes,
+        setAttributes: setAttributes,
+        RichTextEl: _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText,
+        isBackend: true
+      })]
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Edit);
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/Components/Backend/Settings/General/General.js"
+/*!*********************************************************************************!*\
+  !*** ./src/blocks/pricing-table/Components/Backend/Settings/General/General.js ***!
+  \*********************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+const General = ({
+  attributes,
+  setAttributes,
+  clientId
+}) => {
+  const {
+    blockId
+    // pricingTables = [],
+    // columns,
+    // columnGap
+  } = attributes;
+  const prevClientId = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useRef)(clientId);
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useEffect)(() => {
+    const clientChanged = prevClientId.current !== clientId;
+    if (!blockId || clientChanged) {
+      const uuid = window.crypto && crypto.randomUUID ? crypto.randomUUID().split('-')[0] : Math.random().toString(36).substring(2, 9);
+      setAttributes({
+        blockId: `gbb-price-${uuid}`
+      });
+      prevClientId.current = clientId;
+    }
+  }, [blockId, clientId, setAttributes]);
+
+  // const updateTable = ( index, key, value ) => {
+  // 	const newTables = [ ...pricingTables ];
+  // 	newTables[ index ] = { ...newTables[ index ], [ key ]: value };
+  // 	setAttributes( { pricingTables: newTables } );
+  // };
+
+  // const addTable = () => {
+  // 	const templateFeatures = pricingTables.length > 0 && pricingTables[0].features
+  // 		? pricingTables[0].features.map(f => ({ label: f.label, isEnable: true }))
+  // 		: [
+  // 			{ label: __( 'Everything in Starter', 'guten-builder-blocks' ), isEnable: true },
+  // 			{ label: __( 'Advanced Customization', 'guten-builder-blocks' ), isEnable: true }
+  // 		];
+
+  // 	const newTables = [
+  // 		...pricingTables,
+  // 		{
+  // 			name: __( 'Premium Plan', 'guten-builder-blocks' ),
+  // 			price: '49',
+  // 			priceCurrency: '$',
+  // 			period: 'mo',
+  // 			link: '#',
+  // 			linkLabel: __( 'Buy Now', 'guten-builder-blocks' ),
+  // 			color: '#ec4899',
+  // 			isFeatured: false,
+  // 			badgeText: '',
+  // 			features: templateFeatures
+  // 		}
+  // 	];
+  // 	setAttributes( { pricingTables: newTables } );
+  // };
+
+  // const deleteTable = ( index ) => {
+  // 	const newTables = pricingTables.filter( ( _, i ) => i !== index );
+  // 	setAttributes( { pricingTables: newTables } );
+  // };
+
+  // const updateFeature = ( tableIndex, featureIndex, key, value ) => {
+  // 	let newTables = [ ...pricingTables ];
+
+  // 	if ( key === 'label' ) {
+  // 		newTables = newTables.map( t => {
+  // 			const features = [ ...(t.features || []) ];
+  // 			if ( features[ featureIndex ] ) {
+  // 				features[ featureIndex ] = { ...features[ featureIndex ], label: value };
+  // 			}
+  // 			return { ...t, features };
+  // 		});
+  // 	} else {
+  // 		const features = [ ...newTables[ tableIndex ].features ];
+  // 		features[ featureIndex ] = { ...features[ featureIndex ], [ key ]: value };
+  // 		newTables[ tableIndex ] = { ...newTables[ tableIndex ], features };
+  // 	}
+
+  // 	setAttributes( { pricingTables: newTables } );
+  // };
+
+  // const addFeature = ( tableIndex ) => {
+  // 	const newTables = pricingTables.map( t => ({
+  // 		...t,
+  // 		features: [
+  // 			...(t.features || []),
+  // 			{ label: __( 'New Feature Item', 'guten-builder-blocks' ), isEnable: true }
+  // 		]
+  // 	}) );
+  // 	setAttributes( { pricingTables: newTables } );
+  // };
+
+  // const deleteFeature = ( tableIndex, featureIndex ) => {
+  // 	const newTables = pricingTables.map( t => ({
+  // 		...t,
+  // 		features: (t.features || []).filter( ( _, i ) => i !== featureIndex )
+  // 	}) );
+  // 	setAttributes( { pricingTables: newTables } );
+  // };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      className: "bPlPanelBody",
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template Presets', 'guten-builder-blocks'),
+      initialOpen: true,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+        style: {
+          fontSize: '12px',
+          color: '#64748b',
+          marginBottom: '12px'
+        },
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Switch or apply a predefined newsletter template style.', 'guten-builder-blocks')
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+        isSecondary: true,
+        onClick: () => setAttributes({
+          selectedTemplate: ''
+        }),
+        style: {
+          width: '100%',
+          justifyContent: 'center'
+        },
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Change Template', 'guten-builder-blocks')
+      })]
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (General);
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/Components/Backend/Settings/Settings.js"
+/*!**************************************************************************!*\
+  !*** ./src/blocks/pricing-table/Components/Backend/Settings/Settings.js ***!
+  \**************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_options__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../utils/options */ "./src/blocks/pricing-table/utils/options.js");
+/* harmony import */ var _General_General__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./General/General */ "./src/blocks/pricing-table/Components/Backend/Settings/General/General.js");
+/* harmony import */ var _Style_Style__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Style/Style */ "./src/blocks/pricing-table/Components/Backend/Settings/Style/Style.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+const Settings = ({
+  attributes,
+  setAttributes,
+  clientId
+}) => {
+  const {
+    selectedTemplate = ''
+  } = attributes || {};
+  const isTemplateSelected = Boolean(selectedTemplate);
+  if (!isTemplateSelected) {
+    return null;
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TabPanel, {
+      className: "guten-builder-blocks-tab-panel wp-block-guten-builder-blocks-pricing-table",
+      activeClass: "guten-builder-blocks-active-tab",
+      tabs: _utils_options__WEBPACK_IMPORTED_MODULE_2__.generalStyleTabs,
+      children: tab => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+        children: ['general' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_General_General__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          attributes: attributes,
+          setAttributes: setAttributes,
+          clientId: clientId
+        }), 'style' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Style_Style__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          attributes: attributes,
+          setAttributes: setAttributes
+        })]
+      })
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Settings);
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/Components/Backend/Settings/Style/Style.js"
+/*!*****************************************************************************!*\
+  !*** ./src/blocks/pricing-table/Components/Backend/Settings/Style/Style.js ***!
+  \*****************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+
+// import { __ } from '@wordpress/i18n';
+// import { PanelBody, RangeControl, ColorPalette } from '@wordpress/components';
+
+const Style = ({
+  attributes,
+  setAttributes
+}) => {
+  const {
+    // borderRadius,
+    // cardBgColor,
+    // cardTextColor,
+    // buttonBgColor,
+    // buttonTextColor,
+    // featuredButtonBgColor,
+    // featuredButtonTextColor
+  } = attributes;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {});
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Style);
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/Components/Common/Templates/PricingTable.jsx"
+/*!*******************************************************************************!*\
+  !*** ./src/blocks/pricing-table/Components/Common/Templates/PricingTable.jsx ***!
+  \*******************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ThemeOne__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ThemeOne */ "./src/blocks/pricing-table/Components/Common/Templates/ThemeOne.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const TEMPLATES = {
+  'template-1': _ThemeOne__WEBPACK_IMPORTED_MODULE_0__["default"]
+};
+const PricingTable = props => {
+  const {
+    attributes = {}
+  } = props;
+  const {
+    selectedTemplate = 'template-1'
+  } = attributes;
+  const TemplateComponent = TEMPLATES[selectedTemplate] || _ThemeOne__WEBPACK_IMPORTED_MODULE_0__["default"];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(TemplateComponent, {
+    ...props
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PricingTable);
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/Components/Common/Templates/ThemeOne.jsx"
+/*!***************************************************************************!*\
+  !*** ./src/blocks/pricing-table/Components/Common/Templates/ThemeOne.jsx ***!
+  \***************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+
+const ThemeOne = ({
+  attributes = {},
+  setAttributes,
+  RichTextEl,
+  isBackend = false
+}) => {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+    className: "gbb-pricing-container",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+      className: "gbb-pricing-grid",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+        className: "gbb-pricing-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+          className: "gbb-pricing-card-top",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h2", {
+            className: "gbb-pricing-name",
+            children: ["Starter", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+              className: "sr-only",
+              children: "Plan"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+            className: "gbb-pricing-desc",
+            children: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
+            className: "gbb-pricing-price-wrap",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("strong", {
+              className: "gbb-pricing-price",
+              children: "$20"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+              className: "gbb-pricing-period",
+              children: "/month"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+            className: "gbb-pricing-button",
+            href: "#",
+            children: "Get Started"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+          className: "gbb-pricing-card-bottom",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+            className: "gbb-features-title",
+            children: "What's included:"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("ul", {
+            className: "gbb-features-list",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-success",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M4.5 12.75l6 6 9-13.5"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "10 users"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-success",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M4.5 12.75l6 6 9-13.5"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "2GB of storage"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-success",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M4.5 12.75l6 6 9-13.5"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "Email support"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-error",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M6 18L18 6M6 6l12 12"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "Help center access"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-error",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M6 18L18 6M6 6l12 12"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "Phone support"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-error",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M6 18L18 6M6 6l12 12"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "Community access"
+              })]
+            })]
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+        className: "gbb-pricing-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+          className: "gbb-pricing-card-top",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h2", {
+            className: "gbb-pricing-name",
+            children: ["Pro", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+              className: "sr-only",
+              children: "Plan"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+            className: "gbb-pricing-desc",
+            children: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
+            className: "gbb-pricing-price-wrap",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("strong", {
+              className: "gbb-pricing-price",
+              children: "$30"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+              className: "gbb-pricing-period",
+              children: "/month"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+            className: "gbb-pricing-button",
+            href: "#",
+            children: "Get Started"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+          className: "gbb-pricing-card-bottom",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+            className: "gbb-features-title",
+            children: "What's included:"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("ul", {
+            className: "gbb-features-list",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-success",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M4.5 12.75l6 6 9-13.5"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "20 users"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-success",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M4.5 12.75l6 6 9-13.5"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "5GB of storage"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-success",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M4.5 12.75l6 6 9-13.5"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "Email support"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-success",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M4.5 12.75l6 6 9-13.5"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "Help center access"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-error",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M6 18L18 6M6 6l12 12"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "Phone support"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-error",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M6 18L18 6M6 6l12 12"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "Community access"
+              })]
+            })]
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+        className: "gbb-pricing-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+          className: "gbb-pricing-card-top",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h2", {
+            className: "gbb-pricing-name",
+            children: ["Enterprise", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+              className: "sr-only",
+              children: "Plan"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+            className: "gbb-pricing-desc",
+            children: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
+            className: "gbb-pricing-price-wrap",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("strong", {
+              className: "gbb-pricing-price",
+              children: "$100"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+              className: "gbb-pricing-period",
+              children: "/month"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+            className: "gbb-pricing-button",
+            href: "#",
+            children: "Get Started"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+          className: "gbb-pricing-card-bottom",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+            className: "gbb-features-title",
+            children: "What's included:"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("ul", {
+            className: "gbb-features-list",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-success",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M4.5 12.75l6 6 9-13.5"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "50 users"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-success",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M4.5 12.75l6 6 9-13.5"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "20GB of storage"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-success",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M4.5 12.75l6 6 9-13.5"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "Email support"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-success",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M4.5 12.75l6 6 9-13.5"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "Help center access"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-success",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M4.5 12.75l6 6 9-13.5"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "Phone support"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-success",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M4.5 12.75l6 6 9-13.5"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "Community access"
+              })]
+            })]
+          })]
+        })]
+      })]
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ThemeOne);
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/Components/Common/dynamicStyle.js"
+/*!********************************************************************!*\
+  !*** ./src/blocks/pricing-table/Components/Common/dynamicStyle.js ***!
+  \********************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+
+const DynamicStyle = ({
+  attributes,
+  id
+}) => {
+  // The blockId is used as the class selector
+  // const mainSl = `#${id}`;
+  console.log(id);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("style", {
+    dangerouslySetInnerHTML: {
+      __html: `
+
+			`.replace(/\s+/g, ' ')
+    }
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DynamicStyle);
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/index.js"
+/*!*******************************************!*\
+  !*** ./src/blocks/pricing-table/index.js ***!
+  \*******************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/blocks/pricing-table/style.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/pricing-table/editor.scss");
+/* harmony import */ var _Components_Backend_Edit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Components/Backend/Edit */ "./src/blocks/pricing-table/Components/Backend/Edit.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/blocks/pricing-table/block.json");
+/* harmony import */ var _utils_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils/icons */ "./src/blocks/pricing-table/utils/icons.js");
+
+
+
+
+
+
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_4__.name, {
+  icon: _utils_icons__WEBPACK_IMPORTED_MODULE_5__.pricingIcon,
+  edit: _Components_Backend_Edit__WEBPACK_IMPORTED_MODULE_3__["default"],
+  save: () => null // Rendered dynamically on server side
+});
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/utils/data.js"
+/*!************************************************!*\
+  !*** ./src/blocks/pricing-table/utils/data.js ***!
+  \************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   templateData: () => (/* binding */ templateData)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./icons */ "./src/blocks/pricing-table/utils/icons.js");
+
+
+const templateData = {
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select Pricing Table Template', 'guten-builder-blocks'),
+  subtitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Choose a design template for your pricing grid.', 'guten-builder-blocks'),
+  templates: [{
+    id: 'template-1',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template 1', 'guten-builder-blocks'),
+    tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Standard Pricing Table', 'guten-builder-blocks'),
+    icon: _icons__WEBPACK_IMPORTED_MODULE_1__.TemplateOneSvg,
+    attributes: {
+      themeStyle: 'style-1',
+      pricingTables: [{
+        name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Starter', 'guten-builder-blocks'),
+        price: '19',
+        priceCurrency: '$',
+        period: 'mo',
+        link: '#',
+        linkLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Get Started', 'guten-builder-blocks'),
+        color: '#64748b',
+        isFeatured: false,
+        badgeText: '',
+        features: [{
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('1 User Account', 'guten-builder-blocks'),
+          isEnable: true
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('10 GB Cloud Storage', 'guten-builder-blocks'),
+          isEnable: true
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Basic Analytics', 'guten-builder-blocks'),
+          isEnable: true
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('24/7 Priority Support', 'guten-builder-blocks'),
+          isEnable: false
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Custom Domain Integration', 'guten-builder-blocks'),
+          isEnable: false
+        }]
+      }, {
+        name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Professional', 'guten-builder-blocks'),
+        price: '49',
+        priceCurrency: '$',
+        period: 'mo',
+        link: '#',
+        linkLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Try Pro Free', 'guten-builder-blocks'),
+        color: '#2563eb',
+        isFeatured: true,
+        badgeText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('MOST POPULAR', 'guten-builder-blocks'),
+        features: [{
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('5 User Accounts', 'guten-builder-blocks'),
+          isEnable: true
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('100 GB Cloud Storage', 'guten-builder-blocks'),
+          isEnable: true
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Advanced Analytics', 'guten-builder-blocks'),
+          isEnable: true
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('24/7 Priority Support', 'guten-builder-blocks'),
+          isEnable: true
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Custom Domain Integration', 'guten-builder-blocks'),
+          isEnable: false
+        }]
+      }, {
+        name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enterprise', 'guten-builder-blocks'),
+        price: '99',
+        priceCurrency: '$',
+        period: 'mo',
+        link: '#',
+        linkLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Contact Sales', 'guten-builder-blocks'),
+        color: '#0f172a',
+        isFeatured: false,
+        badgeText: '',
+        features: [{
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Unlimited Users', 'guten-builder-blocks'),
+          isEnable: true
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Unlimited Storage', 'guten-builder-blocks'),
+          isEnable: true
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Custom Analytics & Reports', 'guten-builder-blocks'),
+          isEnable: true
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Dedicated Account Manager', 'guten-builder-blocks'),
+          isEnable: true
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Custom Domain Integration', 'guten-builder-blocks'),
+          isEnable: true
+        }]
+      }]
+    }
+  }]
+};
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/utils/icons.js"
+/*!*************************************************!*\
+  !*** ./src/blocks/pricing-table/utils/icons.js ***!
+  \*************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   TemplateOneSvg: () => (/* binding */ TemplateOneSvg),
+/* harmony export */   pricingIcon: () => (/* binding */ pricingIcon)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const pricingIcon = {
+  background: '#FCE7F3',
+  foreground: '#000000',
+  src: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 24 24",
+    width: "24",
+    height: "24",
+    fill: "none",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+      x: "1.5",
+      y: "5",
+      width: "6",
+      height: "15",
+      rx: "0.5",
+      stroke: "#F62477",
+      strokeWidth: "1.4",
+      fill: "#FFFFFF"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+      x1: "3.2",
+      y1: "9",
+      x2: "5.8",
+      y2: "9",
+      stroke: "#F62477",
+      strokeWidth: "1.4",
+      strokeLinecap: "round"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+      x1: "3.2",
+      y1: "12",
+      x2: "5.8",
+      y2: "12",
+      stroke: "#F62477",
+      strokeWidth: "1.4",
+      strokeLinecap: "round"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+      x1: "1.5",
+      y1: "15.5",
+      x2: "7.5",
+      y2: "15.5",
+      stroke: "#F62477",
+      strokeWidth: "1.4"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+      x: "16.5",
+      y: "5",
+      width: "6",
+      height: "15",
+      rx: "0.5",
+      stroke: "#F62477",
+      strokeWidth: "1.4",
+      fill: "#FFFFFF"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+      x1: "18.2",
+      y1: "9",
+      x2: "20.8",
+      y2: "9",
+      stroke: "#F62477",
+      strokeWidth: "1.4",
+      strokeLinecap: "round"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+      x1: "18.2",
+      y1: "12",
+      x2: "20.8",
+      y2: "12",
+      stroke: "#F62477",
+      strokeWidth: "1.4",
+      strokeLinecap: "round"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+      x1: "16.5",
+      y1: "15.5",
+      x2: "22.5",
+      y2: "15.5",
+      stroke: "#F62477",
+      strokeWidth: "1.4"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+      x: "7",
+      y: "3",
+      width: "10",
+      height: "19",
+      rx: "0.5",
+      stroke: "#F62477",
+      strokeWidth: "1.4",
+      fill: "#FFFFFF"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+      x1: "9",
+      y1: "7.2",
+      x2: "15",
+      y2: "7.2",
+      stroke: "#F62477",
+      strokeWidth: "1.4",
+      strokeLinecap: "round"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+      x1: "9",
+      y1: "10.8",
+      x2: "13.8",
+      y2: "10.8",
+      stroke: "#F62477",
+      strokeWidth: "1.4",
+      strokeLinecap: "round"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+      x1: "9",
+      y1: "14.4",
+      x2: "15",
+      y2: "14.4",
+      stroke: "#F62477",
+      strokeWidth: "1.4",
+      strokeLinecap: "round"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+      x1: "7",
+      y1: "17.5",
+      x2: "17",
+      y2: "17.5",
+      stroke: "#F62477",
+      strokeWidth: "1.4"
+    })]
+  })
+};
+const TemplateOneSvg = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 600 400",
+  width: "100%",
+  height: "100%",
+  style: {
+    fontFamily: 'system-ui, -apple-system, sans-serif'
+  },
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    width: "600",
+    height: "400",
+    fill: "#f9fafb",
+    rx: "8"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "30",
+    y: "30",
+    width: "165",
+    height: "340",
+    rx: "8",
+    fill: "#ffffff",
+    stroke: "#e5e7eb",
+    strokeWidth: "1.5"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "45",
+    y: "55",
+    width: "80",
+    height: "10",
+    rx: "3",
+    fill: "#111827"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "45",
+    y: "75",
+    width: "135",
+    height: "6",
+    rx: "2",
+    fill: "#6b7280"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "45",
+    y: "87",
+    width: "120",
+    height: "6",
+    rx: "2",
+    fill: "#6b7280"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "45",
+    y: "115",
+    width: "50",
+    height: "22",
+    rx: "4",
+    fill: "#111827"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "100",
+    y: "125",
+    width: "40",
+    height: "8",
+    rx: "2",
+    fill: "#6b7280"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "45",
+    y: "155",
+    width: "135",
+    height: "28",
+    rx: "3",
+    fill: "#4f46e5"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "45",
+    y: "205",
+    width: "100",
+    height: "8",
+    rx: "2",
+    fill: "#111827"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    d: "M46 232 L49 235 L54 228",
+    stroke: "#4338ca",
+    strokeWidth: "2",
+    fill: "none"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "62",
+    y: "229",
+    width: "60",
+    height: "6",
+    rx: "2",
+    fill: "#4b5563"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    d: "M46 248 L49 251 L54 244",
+    stroke: "#4338ca",
+    strokeWidth: "2",
+    fill: "none"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "62",
+    y: "245",
+    width: "80",
+    height: "6",
+    rx: "2",
+    fill: "#4b5563"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    d: "M46 264 L49 267 L54 260",
+    stroke: "#4338ca",
+    strokeWidth: "2",
+    fill: "none"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "62",
+    y: "261",
+    width: "70",
+    height: "6",
+    rx: "2",
+    fill: "#4b5563"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    d: "M47 277 L53 283 M53 277 L47 283",
+    stroke: "#b91c1c",
+    strokeWidth: "2",
+    fill: "none"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "62",
+    y: "277",
+    width: "90",
+    height: "6",
+    rx: "2",
+    fill: "#4b5563"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    d: "M47 293 L53 299 M53 293 L47 299",
+    stroke: "#b91c1c",
+    strokeWidth: "2",
+    fill: "none"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "62",
+    y: "293",
+    width: "80",
+    height: "6",
+    rx: "2",
+    fill: "#4b5563"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    d: "M47 309 L53 315 M53 309 L47 315",
+    stroke: "#b91c1c",
+    strokeWidth: "2",
+    fill: "none"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "62",
+    y: "309",
+    width: "85",
+    height: "6",
+    rx: "2",
+    fill: "#4b5563"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "215",
+    y: "30",
+    width: "165",
+    height: "340",
+    rx: "8",
+    fill: "#ffffff",
+    stroke: "#e5e7eb",
+    strokeWidth: "1.5"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "230",
+    y: "55",
+    width: "70",
+    height: "10",
+    rx: "3",
+    fill: "#111827"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "230",
+    y: "75",
+    width: "135",
+    height: "6",
+    rx: "2",
+    fill: "#6b7280"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "230",
+    y: "87",
+    width: "120",
+    height: "6",
+    rx: "2",
+    fill: "#6b7280"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "230",
+    y: "115",
+    width: "55",
+    height: "22",
+    rx: "4",
+    fill: "#111827"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "290",
+    y: "125",
+    width: "40",
+    height: "8",
+    rx: "2",
+    fill: "#6b7280"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "230",
+    y: "155",
+    width: "135",
+    height: "28",
+    rx: "3",
+    fill: "#4f46e5"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "230",
+    y: "205",
+    width: "100",
+    height: "8",
+    rx: "2",
+    fill: "#111827"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    d: "M231 232 L234 235 L239 228",
+    stroke: "#4338ca",
+    strokeWidth: "2",
+    fill: "none"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "247",
+    y: "229",
+    width: "65",
+    height: "6",
+    rx: "2",
+    fill: "#4b5563"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    d: "M231 248 L234 251 L239 244",
+    stroke: "#4338ca",
+    strokeWidth: "2",
+    fill: "none"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "247",
+    y: "245",
+    width: "85",
+    height: "6",
+    rx: "2",
+    fill: "#4b5563"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    d: "M231 264 L234 267 L239 260",
+    stroke: "#4338ca",
+    strokeWidth: "2",
+    fill: "none"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "247",
+    y: "261",
+    width: "70",
+    height: "6",
+    rx: "2",
+    fill: "#4b5563"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    d: "M231 280 L234 283 L239 276",
+    stroke: "#4338ca",
+    strokeWidth: "2",
+    fill: "none"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "247",
+    y: "277",
+    width: "90",
+    height: "6",
+    rx: "2",
+    fill: "#4b5563"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    d: "M232 293 L238 299 M238 293 L232 299",
+    stroke: "#b91c1c",
+    strokeWidth: "2",
+    fill: "none"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "247",
+    y: "293",
+    width: "80",
+    height: "6",
+    rx: "2",
+    fill: "#4b5563"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    d: "M232 309 L238 315 M238 309 L232 315",
+    stroke: "#b91c1c",
+    strokeWidth: "2",
+    fill: "none"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "247",
+    y: "309",
+    width: "85",
+    height: "6",
+    rx: "2",
+    fill: "#4b5563"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "400",
+    y: "30",
+    width: "165",
+    height: "340",
+    rx: "8",
+    fill: "#ffffff",
+    stroke: "#e5e7eb",
+    strokeWidth: "1.5"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "415",
+    y: "55",
+    width: "90",
+    height: "10",
+    rx: "3",
+    fill: "#111827"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "415",
+    y: "75",
+    width: "135",
+    height: "6",
+    rx: "2",
+    fill: "#6b7280"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "415",
+    y: "87",
+    width: "120",
+    height: "6",
+    rx: "2",
+    fill: "#6b7280"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "415",
+    y: "115",
+    width: "70",
+    height: "22",
+    rx: "4",
+    fill: "#111827"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "490",
+    y: "125",
+    width: "40",
+    height: "8",
+    rx: "2",
+    fill: "#6b7280"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "415",
+    y: "155",
+    width: "135",
+    height: "28",
+    rx: "3",
+    fill: "#4f46e5"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "415",
+    y: "205",
+    width: "100",
+    height: "8",
+    rx: "2",
+    fill: "#111827"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    d: "M416 232 L419 235 L424 228",
+    stroke: "#4338ca",
+    strokeWidth: "2",
+    fill: "none"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "432",
+    y: "229",
+    width: "70",
+    height: "6",
+    rx: "2",
+    fill: "#4b5563"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    d: "M416 248 L419 251 L424 244",
+    stroke: "#4338ca",
+    strokeWidth: "2",
+    fill: "none"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "432",
+    y: "245",
+    width: "90",
+    height: "6",
+    rx: "2",
+    fill: "#4b5563"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    d: "M416 264 L419 267 L424 260",
+    stroke: "#4338ca",
+    strokeWidth: "2",
+    fill: "none"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "432",
+    y: "261",
+    width: "70",
+    height: "6",
+    rx: "2",
+    fill: "#4b5563"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    d: "M416 280 L419 283 L424 276",
+    stroke: "#4338ca",
+    strokeWidth: "2",
+    fill: "none"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "432",
+    y: "277",
+    width: "95",
+    height: "6",
+    rx: "2",
+    fill: "#4b5563"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    d: "M416 296 L419 299 L424 292",
+    stroke: "#4338ca",
+    strokeWidth: "2",
+    fill: "none"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "432",
+    y: "293",
+    width: "85",
+    height: "6",
+    rx: "2",
+    fill: "#4b5563"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    d: "M416 312 L419 315 L424 308",
+    stroke: "#4338ca",
+    strokeWidth: "2",
+    fill: "none"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+    x: "432",
+    y: "309",
+    width: "90",
+    height: "6",
+    rx: "2",
+    fill: "#4b5563"
+  })]
+});
+
+// export const TemplateTwoSvg = () => (
+//   <svg
+//     xmlns="http://www.w3.org/2000/svg"
+//     viewBox="0 0 600 400"
+//     width="100%"
+//     height="100%"
+//     style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
+//   >
+//     <rect width="600" height="400" fill="#09090b" rx="8" />
+
+//     {/* Card 1 - Left */}
+//     <rect x="60" y="55" width="220" height="290" rx="12" fill="#18181b" stroke="#27272a" strokeWidth="1.5" />
+//     <rect x="90" y="85" width="80" height="14" rx="3" fill="#a1a1aa" />
+//     <rect x="90" y="115" width="100" height="26" rx="4" fill="#ffffff" />
+//     <line x1="80" y1="155" x2="260" y2="155" stroke="#27272a" strokeWidth="1.5" />
+//     <circle cx="95" cy="180" r="5" fill="#e4e4e7" />
+//     <rect x="110" y="176" width="110" height="8" rx="2" fill="#71717a" />
+//     <circle cx="95" cy="205" r="5" fill="#e4e4e7" />
+//     <rect x="110" y="201" width="95" height="8" rx="2" fill="#71717a" />
+//     <circle cx="95" cy="230" r="5" fill="#52525b" />
+//     <rect x="110" y="226" width="80" height="8" rx="2" fill="#52525b" />
+//     <rect x="90" y="280" width="160" height="36" rx="8" fill="#27272a" />
+
+//     {/* Card 2 - Right (Highlighted Gold) */}
+//     <rect x="320" y="55" width="220" height="290" rx="12" fill="#18181b" stroke="#facc15" strokeWidth="2" />
+//     <rect x="350" y="85" width="90" height="14" rx="3" fill="#facc15" />
+//     <rect x="350" y="115" width="110" height="26" rx="4" fill="#ffffff" />
+//     <line x1="340" y1="155" x2="520" y2="155" stroke="#27272a" strokeWidth="1.5" />
+//     <circle cx="355" cy="180" r="5" fill="#facc15" />
+//     <rect x="370" y="176" width="120" height="8" rx="2" fill="#d4d4d8" />
+//     <circle cx="355" cy="205" r="5" fill="#facc15" />
+//     <rect x="370" y="201" width="105" height="8" rx="2" fill="#d4d4d8" />
+//     <circle cx="355" cy="230" r="5" fill="#facc15" />
+//     <rect x="370" y="226" width="115" height="8" rx="2" fill="#d4d4d8" />
+//     <rect x="350" y="280" width="160" height="36" rx="8" fill="#facc15" />
+//   </svg>
+// );
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/utils/options.js"
+/*!***************************************************!*\
+  !*** ./src/blocks/pricing-table/utils/options.js ***!
+  \***************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   generalStyleTabs: () => (/* binding */ generalStyleTabs)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+
+const generalStyleTabs = [{
+  name: 'general',
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('General', 'textdomain')
+}, {
+  name: 'style',
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style', 'textdomain')
+}];
+
+/***/ },
+
+/***/ "../tr-tools/Components/BackgroundControl/BackgroundControl.scss"
+/*!***********************************************************************!*\
+  !*** ../tr-tools/Components/BackgroundControl/BackgroundControl.scss ***!
+  \***********************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "../tr-tools/Components/BorderControl/BorderControl.scss"
+/*!***************************************************************!*\
+  !*** ../tr-tools/Components/BorderControl/BorderControl.scss ***!
+  \***************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "../tr-tools/Components/ColorControl/ColorControl.scss"
+/*!*************************************************************!*\
+  !*** ../tr-tools/Components/ColorControl/ColorControl.scss ***!
+  \*************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "../tr-tools/Components/DocsLink/DocsLink.scss"
+/*!*****************************************************!*\
+  !*** ../tr-tools/Components/DocsLink/DocsLink.scss ***!
+  \*****************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "../tr-tools/Components/GradientControl/GradientControl.scss"
+/*!*******************************************************************!*\
+  !*** ../tr-tools/Components/GradientControl/GradientControl.scss ***!
+  \*******************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "../tr-tools/Components/ItemsPanel/ItemsPanel.scss"
+/*!*********************************************************!*\
+  !*** ../tr-tools/Components/ItemsPanel/ItemsPanel.scss ***!
+  \*********************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "../tr-tools/Components/MediaControl/MediaControl.scss"
+/*!*************************************************************!*\
+  !*** ../tr-tools/Components/MediaControl/MediaControl.scss ***!
+  \*************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "../tr-tools/Components/ShadowControl/ShadowControl.scss"
+/*!***************************************************************!*\
+  !*** ../tr-tools/Components/ShadowControl/ShadowControl.scss ***!
+  \***************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "../tr-tools/Components/SpacingControl/SpacingControl.scss"
+/*!*****************************************************************!*\
+  !*** ../tr-tools/Components/SpacingControl/SpacingControl.scss ***!
+  \*****************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "../tr-tools/Components/TabButton/TabButton.scss"
+/*!*******************************************************!*\
+  !*** ../tr-tools/Components/TabButton/TabButton.scss ***!
+  \*******************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "../tr-tools/Components/TemplateSelector/TemplateSelector.scss"
+/*!*********************************************************************!*\
+  !*** ../tr-tools/Components/TemplateSelector/TemplateSelector.scss ***!
+  \*********************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "../tr-tools/Components/Typography/Typography.scss"
+/*!*********************************************************!*\
+  !*** ../tr-tools/Components/Typography/Typography.scss ***!
+  \*********************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "../tr-tools/Components/UnitControl/UnitControl.scss"
+/*!***********************************************************!*\
+  !*** ../tr-tools/Components/UnitControl/UnitControl.scss ***!
+  \***********************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/editor.scss"
+/*!**********************************************!*\
+  !*** ./src/blocks/pricing-table/editor.scss ***!
+  \**********************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/style.scss"
+/*!*********************************************!*\
+  !*** ./src/blocks/pricing-table/style.scss ***!
+  \*********************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "react"
+/*!************************!*\
+  !*** external "React" ***!
+  \************************/
+(module) {
+
+module.exports = window["React"];
+
+/***/ },
+
+/***/ "react/jsx-runtime"
+/*!**********************************!*\
+  !*** external "ReactJSXRuntime" ***!
+  \**********************************/
+(module) {
+
+module.exports = window["ReactJSXRuntime"];
+
+/***/ },
+
+/***/ "@wordpress/block-editor"
+/*!*************************************!*\
+  !*** external ["wp","blockEditor"] ***!
+  \*************************************/
+(module) {
+
+module.exports = window["wp"]["blockEditor"];
+
+/***/ },
+
+/***/ "@wordpress/blocks"
+/*!********************************!*\
+  !*** external ["wp","blocks"] ***!
+  \********************************/
+(module) {
+
+module.exports = window["wp"]["blocks"];
+
+/***/ },
+
+/***/ "@wordpress/components"
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+(module) {
+
+module.exports = window["wp"]["components"];
+
+/***/ },
+
+/***/ "@wordpress/element"
+/*!*********************************!*\
+  !*** external ["wp","element"] ***!
+  \*********************************/
+(module) {
+
+module.exports = window["wp"]["element"];
+
+/***/ },
+
+/***/ "@wordpress/i18n"
+/*!******************************!*\
+  !*** external ["wp","i18n"] ***!
+  \******************************/
+(module) {
+
+module.exports = window["wp"]["i18n"];
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/block.json"
+/*!*********************************************!*\
+  !*** ./src/blocks/pricing-table/block.json ***!
+  \*********************************************/
+(module) {
+
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/pricing-table","version":"1.0.0","title":"Pricing Table","description":"Showcase your subscription plans or products with a stunning pricing grid.","category":"guten-builder","keywords":["pricing","price list","table","grid"],"attributes":{"selectedTemplate":{"type":"string","default":""},"blockId":{"type":"string","default":""},"pricingTables":{"type":"array","default":[]},"showToggle":{"type":"boolean","default":false},"toggleLabelLeft":{"type":"string","default":"Monthly"},"toggleLabelRight":{"type":"string","default":"Yearly"},"discountText":{"type":"string","default":"Save 20%"},"columns":{"type":"number","default":2},"columnGap":{"type":"number","default":24},"borderRadius":{"type":"number","default":12},"cardBgColor":{"type":"string","default":"#ffffff"},"cardTextColor":{"type":"string","default":"#1e293b"},"buttonBgColor":{"type":"string","default":"#3b82f6"},"buttonTextColor":{"type":"string","default":"#ffffff"},"featuredButtonBgColor":{"type":"string","default":"#10b981"},"featuredButtonTextColor":{"type":"string","default":"#ffffff"},"themeStyle":{"type":"string","default":"style-1"},"hoverHighlightColor":{"type":"string","default":"#ffd700"}},"supports":{"html":false,"align":["wide","full"]},"textdomain":"guten-builder-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
+
+/***/ }
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	const __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		const cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		const module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		if (!(moduleId in __webpack_modules__)) {
+/******/ 			delete __webpack_module_cache__[moduleId];
+/******/ 			const e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		const deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			let notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				let [chunkIds, fn, priority] = deferred[i];
+/******/ 				let fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					const r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			const getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter/value functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			if(Array.isArray(definition)) {
+/******/ 				var i = 0;
+/******/ 				while(i < definition.length) {
+/******/ 					var key = definition[i++];
+/******/ 					var binding = definition[i++];
+/******/ 					if(!__webpack_require__.o(exports, key)) {
+/******/ 						if(binding === 0) {
+/******/ 							Object.defineProperty(exports, key, { enumerable: true, value: definition[i++] });
+/******/ 						} else {
+/******/ 							Object.defineProperty(exports, key, { enumerable: true, get: binding });
+/******/ 						}
+/******/ 					} else if(binding === 0) { i++; }
+/******/ 				}
+/******/ 			} else {
+/******/ 				for(var key in definition) {
+/******/ 					if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 						Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 					}
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.hasOwn(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		const installedChunks = {
+/******/ 			"blocks/pricing-table/index": 0,
+/******/ 			"blocks/pricing-table/style-view": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		const webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			let [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		const chunkLoadingGlobal = globalThis["webpackChunkguten_builder_blocks"] ||= [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["blocks/pricing-table/style-view"], () => (__webpack_require__("./src/blocks/pricing-table/index.js")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
+/******/ })()
+;
+//# sourceMappingURL=index.js.map

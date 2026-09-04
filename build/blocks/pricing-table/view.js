@@ -1,1 +1,828 @@
-(()=>{"use strict";var t={913(){const t=window.ReactDOM,n=window.ReactJSXRuntime,e=({attributes:t,clientId:e})=>{const{blockId:r,pricingTables:i=[],columns:a,columnGap:o,borderRadius:s,cardBgColor:l,cardTextColor:c,buttonBgColor:b,buttonTextColor:g,featuredButtonBgColor:p,featuredButtonTextColor:d,themeStyle:u="style-1",hoverHighlightColor:x="#ffd700"}=t,f=`.${r}`;let h="";return i.forEach(((t,n)=>{const e=t.isFeatured,r=t.color||"#3b82f6",i=`${f} .gbb-pricing-card:nth-child(${n+1})`,a=`${i} .gbb-pricing-button`;h+="style-2"===u?`\n\t\t\t\t${i} {\n\t\t\t\t\tborder: 2px solid transparent;\n\t\t\t\t\ttransition: all 0.3s ease;\n\t\t\t\t}\n\t\t\t\t${i} .gbb-pricing-name {\n\t\t\t\t\tcolor: #ffffff;\n\t\t\t\t}\n\t\t\t\t${i} .gbb-feature-icon {\n\t\t\t\t\tcolor: #ffffff;\n\t\t\t\t}\n\t\t\t\t${a} {\n\t\t\t\t\tbackground: #000000;\n\t\t\t\t\tcolor: #3b82f6;\n\t\t\t\t\tborder: 1px solid #000000;\n\t\t\t\t\ttransition: all 0.3s ease;\n\t\t\t\t}\n\t\t\t`:`\n\t\t\t\t${i} {\n\t\t\t\t\tborder: ${e?`2px solid ${r}`:"1px solid #e2e8f0"};\n\t\t\t\t\tbox-shadow: ${e?"0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)":"0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)"};\n\t\t\t\t}\n\t\t\t\t${i} .gbb-pricing-badge {\n\t\t\t\t\tbackground: ${r};\n\t\t\t\t}\n\t\t\t\t${i} .gbb-pricing-name {\n\t\t\t\t\tcolor: ${e?r:"inherit"};\n\t\t\t\t}\n\t\t\t\t${i} .gbb-feature-icon {\n\t\t\t\t\tcolor: ${e?r:"inherit"};\n\t\t\t\t}\n\t\t\t\t${a} {\n\t\t\t\t\tbackground: ${e?p||r:b};\n\t\t\t\t\tcolor: ${e?d:g};\n\t\t\t\t\tborder: 1px solid ${e?p||r:b};\n\t\t\t\t}\n\t\t\t`})),(0,n.jsx)("style",{dangerouslySetInnerHTML:{__html:`\n\t\t\t\t${f} {\n\t\t\t\t\tdisplay: grid;\n\t\t\t\t\tgrid-template-columns: repeat(${a}, 1fr);\n\t\t\t\t\tgap: ${o}px;\n\t\t\t\t\twidth: 100%;\n\t\t\t\t}\n\n\t\t\t\t${f} .gbb-pricing-card {\n\t\t\t\t\tbackground: ${l||"#ffffff"};\n\t\t\t\t\tcolor: ${c||"#1e293b"};\n\t\t\t\t\tborder-radius: ${s}px;\n\t\t\t\t\tposition: relative;\n\t\t\t\t\tpadding: 32px 24px;\n\t\t\t\t\tdisplay: flex;\n\t\t\t\t\tflex-direction: column;\n\t\t\t\t\tbox-sizing: border-box;\n\t\t\t\t}\n\n\t\t\t\t${f} .gbb-pricing-badge {\n\t\t\t\t\tposition: absolute;\n\t\t\t\t\ttop: 12px;\n\t\t\t\t\tright: 12px;\n\t\t\t\t\tcolor: #ffffff;\n\t\t\t\t\tpadding: 4px 10px;\n\t\t\t\t\tborder-radius: 20px;\n\t\t\t\t\tfont-size: 10px;\n\t\t\t\t\tfont-weight: bold;\n\t\t\t\t\tletter-spacing: 1px;\n\t\t\t\t}\n\n\t\t\t\t${f} .gbb-pricing-header {\n\t\t\t\t\tborder-bottom: 1px solid #e2e8f0;\n\t\t\t\t\tpadding-bottom: 20px;\n\t\t\t\t\tmargin-bottom: 20px;\n\t\t\t\t\ttext-align: center;\n\t\t\t\t}\n\n\t\t\t\t${f} .gbb-pricing-name {\n\t\t\t\t\tfont-size: 20px;\n\t\t\t\t\tfont-weight: 700;\n\t\t\t\t\tmargin: 0 0 10px 0;\n\t\t\t\t}\n\n\t\t\t\t${f} .gbb-pricing-rate {\n\t\t\t\t\tdisplay: flex;\n\t\t\t\t\tjustify-content: center;\n\t\t\t\t\talign-items: baseline;\n\t\t\t\t\tmargin: 15px 0;\n\t\t\t\t}\n\n\t\t\t\t${f} .gbb-pricing-currency {\n\t\t\t\t\tfont-size: 20px;\n\t\t\t\t\tfont-weight: 600;\n\t\t\t\t\tmargin-right: 2px;\n\t\t\t\t}\n\n\t\t\t\t${f} .gbb-pricing-price {\n\t\t\t\t\tfont-size: 42px;\n\t\t\t\t\tfont-weight: 800;\n\t\t\t\t\tline-height: 1;\n\t\t\t\t}\n\n\t\t\t\t${f} .gbb-pricing-period-separator {\n\t\t\t\t\tfont-size: 14px;\n\t\t\t\t\topacity: 0.7;\n\t\t\t\t\tmargin-left: 4px;\n\t\t\t\t}\n\n\t\t\t\t${f} .gbb-pricing-period {\n\t\t\t\t\tfont-size: 14px;\n\t\t\t\t\topacity: 0.7;\n\t\t\t\t}\n\n\t\t\t\t${f} .gbb-pricing-features {\n\t\t\t\t\tlist-style: none;\n\t\t\t\t\tpadding: 0;\n\t\t\t\t\tmargin: 0 0 30px 0;\n\t\t\t\t\tdisplay: flex;\n\t\t\t\t\tflex-direction: column;\n\t\t\t\t\tgap: 12px;\n\t\t\t\t}\n\n\t\t\t\t${f} .gbb-pricing-feature-item {\n\t\t\t\t\tdisplay: flex;\n\t\t\t\t\talign-items: center;\n\t\t\t\t\tfont-size: 14px;\n\t\t\t\t}\n\t\t\t\t${f} .gbb-pricing-feature-item.is-enabled {\n\t\t\t\t\tcolor: inherit;\n\t\t\t\t}\n\t\t\t\t${f} .gbb-pricing-feature-item.is-disabled {\n\t\t\t\t\tcolor: rgba(0,0,0,0.38);\n\t\t\t\t}\n\n\t\t\t\t${f} .gbb-feature-icon {\n\t\t\t\t\tdisplay: flex;\n\t\t\t\t\talign-items: center;\n\t\t\t\t}\n\n\t\t\t\t${f} .gbb-pricing-button {\n\t\t\t\t\tdisplay: inline-block;\n\t\t\t\t\ttext-align: center;\n\t\t\t\t\tpadding: 12px 24px;\n\t\t\t\t\tborder-radius: 6px;\n\t\t\t\t\tfont-weight: 600;\n\t\t\t\t\ttext-decoration: none;\n\t\t\t\t\tmargin-top: auto;\n\t\t\t\t\ttransition: all 0.2s;\n\t\t\t\t}\n\n\t\t\t\t${h}\n\n\t\t\t\t${f}.style-2 .gbb-pricing-card {\n\t\t\t\t\tbackground: #1a1a1a;\n\t\t\t\t\tcolor: #94a3b8;\n\t\t\t\t\tborder-color: #2a2a2a;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t${f}.style-2 .gbb-pricing-card .gbb-pricing-price {\n\t\t\t\t\tcolor: #ffffff;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t${f}.style-2 .gbb-pricing-card .gbb-pricing-header {\n\t\t\t\t\tborder-bottom-color: #2a2a2a;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t${f}.style-2 .gbb-pricing-feature-item.is-disabled {\n\t\t\t\t\tcolor: #4b5563;\n\t\t\t\t\ttext-decoration: line-through;\n\t\t\t\t}\n\n\t\t\t\t${f}.style-2 .gbb-pricing-card:hover {\n\t\t\t\t\tborder-color: ${x};\n\t\t\t\t\ttransform: translateY(-5px);\n\t\t\t\t}\n\n\t\t\t\t${f}.style-2 .gbb-pricing-card:hover .gbb-pricing-button {\n\t\t\t\t\tbackground: ${x};\n\t\t\t\t\tcolor: #000000;\n\t\t\t\t\tborder-color: ${x};\n\t\t\t\t}\n\t\t\t`.replace(/\s+/g," ")}})},r=window.wp.i18n,i=(0,n.jsx)("svg",{width:"18",height:"18",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"3",strokeLinecap:"round",strokeLinejoin:"round",style:{marginRight:"8px"},children:(0,n.jsx)("polyline",{points:"20 6 9 17 4 12"})}),a=(0,n.jsxs)("svg",{width:"18",height:"18",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2.5",strokeLinecap:"round",strokeLinejoin:"round",style:{marginRight:"8px",opacity:.5},children:[(0,n.jsx)("line",{x1:"18",y1:"6",x2:"6",y2:"18"}),(0,n.jsx)("line",{x1:"6",y1:"6",x2:"18",y2:"18"})]}),o=({attributes:t,setAttributes:e,RichTextEl:o,isBackend:s=!1})=>{const{blockId:l,pricingTables:c=[],themeStyle:b="style-1"}=t,g=(t,n,r)=>{const i=[...c];i[t]={...i[t],[n]:r},e({pricingTables:i})};return(0,n.jsx)("div",{className:`gbb-pricing-grid-container ${l} ${b}`,children:c.map(((t,l)=>{const b=t.isFeatured;return(0,n.jsxs)("div",{className:"gbb-pricing-card "+(b?"is-featured":""),children:[b&&t.badgeText&&(0,n.jsx)("div",{className:"gbb-pricing-badge",children:t.badgeText}),(0,n.jsxs)("div",{className:"gbb-pricing-header",children:[(0,n.jsx)(o,{tagName:"h3",className:"gbb-pricing-name",value:t.name,onChange:t=>g(l,"name",t),placeholder:(0,r.__)("Plan Name","guten-builder-blocks")}),(0,n.jsxs)("div",{className:"gbb-pricing-rate",children:[(0,n.jsx)(o,{tagName:"span",className:"gbb-pricing-currency",value:t.priceCurrency,onChange:t=>g(l,"priceCurrency",t),placeholder:"$"}),(0,n.jsx)(o,{tagName:"span",className:"gbb-pricing-price",value:t.price,onChange:t=>g(l,"price",t),placeholder:"0"}),(0,n.jsx)("span",{className:"gbb-pricing-period-separator",children:"/"}),(0,n.jsx)(o,{tagName:"span",className:"gbb-pricing-period",value:t.period,onChange:t=>g(l,"period",t),placeholder:"mo"})]})]}),(0,n.jsx)("ul",{className:"gbb-pricing-features",children:(t.features||[]).map(((t,s)=>(0,n.jsxs)("li",{className:"gbb-pricing-feature-item "+(t.isEnable?"is-enabled":"is-disabled"),children:[(0,n.jsx)("span",{className:"gbb-feature-icon",children:t.isEnable?i:a}),(0,n.jsx)(o,{tagName:"span",value:t.label,onChange:t=>((t,n,r)=>{const i=c.map((t=>{const e=[...t.features||[]];return e[n]&&(e[n]={...e[n],label:r}),{...t,features:e}}));e({pricingTables:i})})(0,s,t),placeholder:(0,r.__)("Feature description","guten-builder-blocks")})]},s)))}),(0,n.jsx)(o,{tagName:"a",href:"#",className:"gbb-pricing-button",value:t.linkLabel,onChange:t=>g(l,"linkLabel",t),placeholder:(0,r.__)("Buy Now","guten-builder-blocks"),onClick:s?t=>t.preventDefault():void 0})]},l)}))})};document.addEventListener("DOMContentLoaded",(()=>{document.querySelectorAll(".wp-block-guten-builder-blocks-pricing-table").forEach((r=>{if(!r.dataset.attributes)return;const i=JSON.parse(r.dataset.attributes);(0,t.createRoot)(r).render((0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)(e,{attributes:i}),(0,n.jsx)(o,{attributes:i,RichTextEl:s,isBackend:!1})]})),r.removeAttribute("data-attributes")}))}));const s=({tagName:t,className:e,value:r})=>{const i=t,a="function"==typeof sanitizeHTML?sanitizeHTML(r):r;return(0,n.jsx)(i,{className:e,dangerouslySetInnerHTML:{__html:a}})}}};const n={};function e(r){const i=n[r];if(void 0!==i)return i.exports;const a=n[r]={exports:{}};return t[r](a,a.exports,e),a.exports}e.m=t,(()=>{const t=[];e.O=(n,r,i,a)=>{if(r){a=a||0;for(var o=t.length;o>0&&t[o-1][2]>a;o--)t[o]=t[o-1];return void(t[o]=[r,i,a])}let s=1/0;for(o=0;o<t.length;o++){let[r,i,a]=t[o],c=!0;for(var l=0;l<r.length;l++)(!1&a||s>=a)&&Object.keys(e.O).every((t=>e.O[t](r[l])))?r.splice(l--,1):(c=!1,a<s&&(s=a));if(c){t.splice(o--,1);const e=i();void 0!==e&&(n=e)}}return n}})(),e.o=(t,n)=>Object.hasOwn(t,n),(()=>{const t={955:0,859:0};e.O.j=n=>0===t[n];const n=(n,r)=>{let[i,a,o]=r;var s,l,c=0;if(i.some((n=>0!==t[n]))){for(s in a)e.o(a,s)&&(e.m[s]=a[s]);if(o)var b=o(e)}for(n&&n(r);c<i.length;c++)l=i[c],e.o(t,l)&&t[l]&&t[l][0](),t[l]=0;return e.O(b)},r=globalThis.webpackChunkguten_builder_blocks||=[];r.forEach(n.bind(null,0)),r.push=n.bind(null,r.push.bind(r))})();let r=e.O(void 0,[859],(()=>e(913)));r=e.O(r)})();
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/blocks/pricing-table/Components/Common/Templates/PricingTable.jsx"
+/*!*******************************************************************************!*\
+  !*** ./src/blocks/pricing-table/Components/Common/Templates/PricingTable.jsx ***!
+  \*******************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ThemeOne__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ThemeOne */ "./src/blocks/pricing-table/Components/Common/Templates/ThemeOne.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const TEMPLATES = {
+  'template-1': _ThemeOne__WEBPACK_IMPORTED_MODULE_0__["default"]
+};
+const PricingTable = props => {
+  const {
+    attributes = {}
+  } = props;
+  const {
+    selectedTemplate = 'template-1'
+  } = attributes;
+  const TemplateComponent = TEMPLATES[selectedTemplate] || _ThemeOne__WEBPACK_IMPORTED_MODULE_0__["default"];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(TemplateComponent, {
+    ...props
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PricingTable);
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/Components/Common/Templates/ThemeOne.jsx"
+/*!***************************************************************************!*\
+  !*** ./src/blocks/pricing-table/Components/Common/Templates/ThemeOne.jsx ***!
+  \***************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+
+const ThemeOne = ({
+  attributes = {},
+  setAttributes,
+  RichTextEl,
+  isBackend = false
+}) => {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+    className: "gbb-pricing-container",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+      className: "gbb-pricing-grid",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+        className: "gbb-pricing-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+          className: "gbb-pricing-card-top",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h2", {
+            className: "gbb-pricing-name",
+            children: ["Starter", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+              className: "sr-only",
+              children: "Plan"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+            className: "gbb-pricing-desc",
+            children: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
+            className: "gbb-pricing-price-wrap",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("strong", {
+              className: "gbb-pricing-price",
+              children: "$20"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+              className: "gbb-pricing-period",
+              children: "/month"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+            className: "gbb-pricing-button",
+            href: "#",
+            children: "Get Started"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+          className: "gbb-pricing-card-bottom",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+            className: "gbb-features-title",
+            children: "What's included:"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("ul", {
+            className: "gbb-features-list",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-success",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M4.5 12.75l6 6 9-13.5"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "10 users"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-success",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M4.5 12.75l6 6 9-13.5"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "2GB of storage"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-success",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M4.5 12.75l6 6 9-13.5"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "Email support"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-error",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M6 18L18 6M6 6l12 12"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "Help center access"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-error",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M6 18L18 6M6 6l12 12"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "Phone support"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-error",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M6 18L18 6M6 6l12 12"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "Community access"
+              })]
+            })]
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+        className: "gbb-pricing-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+          className: "gbb-pricing-card-top",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h2", {
+            className: "gbb-pricing-name",
+            children: ["Pro", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+              className: "sr-only",
+              children: "Plan"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+            className: "gbb-pricing-desc",
+            children: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
+            className: "gbb-pricing-price-wrap",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("strong", {
+              className: "gbb-pricing-price",
+              children: "$30"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+              className: "gbb-pricing-period",
+              children: "/month"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+            className: "gbb-pricing-button",
+            href: "#",
+            children: "Get Started"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+          className: "gbb-pricing-card-bottom",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+            className: "gbb-features-title",
+            children: "What's included:"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("ul", {
+            className: "gbb-features-list",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-success",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M4.5 12.75l6 6 9-13.5"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "20 users"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-success",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M4.5 12.75l6 6 9-13.5"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "5GB of storage"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-success",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M4.5 12.75l6 6 9-13.5"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "Email support"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-success",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M4.5 12.75l6 6 9-13.5"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "Help center access"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-error",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M6 18L18 6M6 6l12 12"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "Phone support"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-error",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M6 18L18 6M6 6l12 12"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "Community access"
+              })]
+            })]
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+        className: "gbb-pricing-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+          className: "gbb-pricing-card-top",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h2", {
+            className: "gbb-pricing-name",
+            children: ["Enterprise", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+              className: "sr-only",
+              children: "Plan"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+            className: "gbb-pricing-desc",
+            children: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
+            className: "gbb-pricing-price-wrap",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("strong", {
+              className: "gbb-pricing-price",
+              children: "$100"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+              className: "gbb-pricing-period",
+              children: "/month"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+            className: "gbb-pricing-button",
+            href: "#",
+            children: "Get Started"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+          className: "gbb-pricing-card-bottom",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+            className: "gbb-features-title",
+            children: "What's included:"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("ul", {
+            className: "gbb-features-list",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-success",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M4.5 12.75l6 6 9-13.5"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "50 users"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-success",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M4.5 12.75l6 6 9-13.5"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "20GB of storage"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-success",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M4.5 12.75l6 6 9-13.5"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "Email support"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-success",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M4.5 12.75l6 6 9-13.5"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "Help center access"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-success",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M4.5 12.75l6 6 9-13.5"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "Phone support"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+              className: "gbb-feature-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+                "aria-hidden": "true",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "gbb-icon-success",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M4.5 12.75l6 6 9-13.5"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                className: "gbb-feature-text",
+                children: "Community access"
+              })]
+            })]
+          })]
+        })]
+      })]
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ThemeOne);
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/Components/Common/dynamicStyle.js"
+/*!********************************************************************!*\
+  !*** ./src/blocks/pricing-table/Components/Common/dynamicStyle.js ***!
+  \********************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+
+const DynamicStyle = ({
+  attributes,
+  id
+}) => {
+  // The blockId is used as the class selector
+  // const mainSl = `#${id}`;
+  console.log(id);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("style", {
+    dangerouslySetInnerHTML: {
+      __html: `
+
+			`.replace(/\s+/g, ' ')
+    }
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DynamicStyle);
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/view.js"
+/*!******************************************!*\
+  !*** ./src/blocks/pricing-table/view.js ***!
+  \******************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-dom/client */ "react-dom/client");
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_dom_client__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/blocks/pricing-table/style.scss");
+/* harmony import */ var _Components_Common_dynamicStyle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Components/Common/dynamicStyle */ "./src/blocks/pricing-table/Components/Common/dynamicStyle.js");
+/* harmony import */ var _Components_Common_Templates_PricingTable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Components/Common/Templates/PricingTable */ "./src/blocks/pricing-table/Components/Common/Templates/PricingTable.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const tableEls = document.querySelectorAll('.wp-block-guten-builder-blocks-pricing-table');
+  tableEls.forEach(tableEl => {
+    if (!tableEl.dataset.attributes) return;
+    const attributes = JSON.parse(tableEl.dataset.attributes);
+    (0,react_dom_client__WEBPACK_IMPORTED_MODULE_0__.createRoot)(tableEl).render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Common_dynamicStyle__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        attributes: attributes
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Common_Templates_PricingTable__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        attributes: attributes,
+        RichTextEl: RichTextEl,
+        isBackend: false
+      })]
+    }));
+    tableEl.removeAttribute('data-attributes');
+  });
+});
+const RichTextEl = ({
+  tagName,
+  className,
+  value
+}) => {
+  const Tag = tagName;
+  // Very simple fallback for sanitizeHTML if it doesn't exist
+  const cleanValue = typeof sanitizeHTML === 'function' ? sanitizeHTML(value) : value;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Tag, {
+    className: className,
+    dangerouslySetInnerHTML: {
+      __html: cleanValue
+    }
+  });
+};
+
+/***/ },
+
+/***/ "./src/blocks/pricing-table/style.scss"
+/*!*********************************************!*\
+  !*** ./src/blocks/pricing-table/style.scss ***!
+  \*********************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "react-dom/client"
+/*!***************************!*\
+  !*** external "ReactDOM" ***!
+  \***************************/
+(module) {
+
+module.exports = window["ReactDOM"];
+
+/***/ },
+
+/***/ "react/jsx-runtime"
+/*!**********************************!*\
+  !*** external "ReactJSXRuntime" ***!
+  \**********************************/
+(module) {
+
+module.exports = window["ReactJSXRuntime"];
+
+/***/ }
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	const __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		const cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		const module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		if (!(moduleId in __webpack_modules__)) {
+/******/ 			delete __webpack_module_cache__[moduleId];
+/******/ 			const e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		const deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			let notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				let [chunkIds, fn, priority] = deferred[i];
+/******/ 				let fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					const r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			const getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter/value functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			if(Array.isArray(definition)) {
+/******/ 				var i = 0;
+/******/ 				while(i < definition.length) {
+/******/ 					var key = definition[i++];
+/******/ 					var binding = definition[i++];
+/******/ 					if(!__webpack_require__.o(exports, key)) {
+/******/ 						if(binding === 0) {
+/******/ 							Object.defineProperty(exports, key, { enumerable: true, value: definition[i++] });
+/******/ 						} else {
+/******/ 							Object.defineProperty(exports, key, { enumerable: true, get: binding });
+/******/ 						}
+/******/ 					} else if(binding === 0) { i++; }
+/******/ 				}
+/******/ 			} else {
+/******/ 				for(var key in definition) {
+/******/ 					if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 						Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 					}
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.hasOwn(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		const installedChunks = {
+/******/ 			"blocks/pricing-table/view": 0,
+/******/ 			"blocks/pricing-table/style-view": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		const webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			let [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		const chunkLoadingGlobal = globalThis["webpackChunkguten_builder_blocks"] ||= [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["blocks/pricing-table/style-view"], () => (__webpack_require__("./src/blocks/pricing-table/view.js")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
+/******/ })()
+;
+//# sourceMappingURL=view.js.map

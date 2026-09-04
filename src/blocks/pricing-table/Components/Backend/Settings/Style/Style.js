@@ -1,20 +1,20 @@
-import { __ } from '@wordpress/i18n';
-import { PanelBody, RangeControl, ColorPalette } from '@wordpress/components';
+// import { __ } from '@wordpress/i18n';
+// import { PanelBody, RangeControl, ColorPalette } from '@wordpress/components';
 
 const Style = ( { attributes, setAttributes } ) => {
 	const {
-		borderRadius,
-		cardBgColor,
-		cardTextColor,
-		buttonBgColor,
-		buttonTextColor,
-		featuredButtonBgColor,
-		featuredButtonTextColor
+		// borderRadius,
+		// cardBgColor,
+		// cardTextColor,
+		// buttonBgColor,
+		// buttonTextColor,
+		// featuredButtonBgColor,
+		// featuredButtonTextColor
 	} = attributes;
 
 	return (
 		<>
-			<PanelBody title={ __( '🎨 Card Styling', 'guten-builder-blocks' ) } initialOpen={ true }>
+			{/* <PanelBody title={ __( '🎨 Card Styling', 'guten-builder-blocks' ) } initialOpen={ true }>
 				<p style={ { fontWeight: 'bold', margin: '0 0 5px 0' } }>{ __( 'Card Background Color', 'guten-builder-blocks' ) }</p>
 				<ColorPalette
 					value={ cardBgColor }
@@ -71,7 +71,7 @@ const Style = ( { attributes, setAttributes } ) => {
 					value={ attributes.hoverHighlightColor }
 					onChange={ ( val ) => setAttributes( { hoverHighlightColor: val || '#ffd700' } ) }
 				/>
-			</PanelBody>
+			</PanelBody> */}
 		</>
 	);
 };

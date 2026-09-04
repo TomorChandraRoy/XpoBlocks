@@ -2,60 +2,22 @@
   "apiVersion": 3,
   "name": "guten-builder-blocks/pricing-table",
   "version": "1.0.0",
-  "title": "Guten Pricing Table",
+  "title": "Pricing Table",
   "description": "Showcase your subscription plans or products with a stunning pricing grid.",
   "category": "guten-builder",
-  "keywords": [
-    "pricing",
-    "price list",
-    "table",
-    "grid"
-  ],
+  "keywords": ["pricing", "price list", "table", "grid"],
   "attributes": {
+    "selectedTemplate": {
+      "type": "string",
+      "default": ""
+    },
     "blockId": {
       "type": "string",
       "default": ""
     },
     "pricingTables": {
       "type": "array",
-      "default": [
-        {
-          "name": "Starter",
-          "price": "9",
-          "yearlyPrice": "79",
-          "priceCurrency": "$",
-          "period": "mo",
-          "yearlyPeriod": "yr",
-          "link": "#",
-          "linkLabel": "Get Started",
-          "color": "#3b82f6",
-          "isFeatured": false,
-          "badgeText": "",
-          "features": [
-            { "label": "Up to 5 Projects", "isEnable": true },
-            { "label": "Basic Support", "isEnable": true },
-            { "label": "Custom Domains", "isEnable": false }
-          ]
-        },
-        {
-          "name": "Growth",
-          "price": "29",
-          "yearlyPrice": "249",
-          "priceCurrency": "$",
-          "period": "mo",
-          "yearlyPeriod": "yr",
-          "link": "#",
-          "linkLabel": "Upgrade Now",
-          "color": "#10b981",
-          "isFeatured": true,
-          "badgeText": "POPULAR",
-          "features": [
-            { "label": "Unlimited Projects", "isEnable": true },
-            { "label": "24/7 Priority Support", "isEnable": true },
-            { "label": "Custom Domains", "isEnable": true }
-          ]
-        }
-      ]
+      "default": []
     },
     "showToggle": {
       "type": "boolean",
@@ -120,16 +82,12 @@
   },
   "supports": {
     "html": false,
-    "anchor": true,
-    "spacing": {
-      "margin": true,
-      "padding": true
-    }
+    "align": ["wide", "full"]
   },
   "textdomain": "guten-builder-blocks",
   "editorScript": "file:./index.js",
-  "style": "file:./style-index.css",
   "editorStyle": "file:./index.css",
-  "render": "file:./render.php",
-  "viewScript": "file:./view.js"
+  "style": "file:./style-view.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
 }

@@ -1,10 +1,17 @@
 import { InspectorControls } from '@wordpress/block-editor';
 import { TabPanel } from '@wordpress/components';
-import { generalStyleTabs } from '../../utils/options';
-import General from './General';
-import Style from './Style';
+import { generalStyleTabs } from '../../../utils/options';
+import General from './General/General';
+import Style from './Style/Style';
 
 const Settings = ({ attributes, setAttributes, clientId }) => {
+  const { selectedTemplate = '' } = attributes || {};
+  const isTemplateSelected = Boolean(selectedTemplate);
+
+  if (!isTemplateSelected) {
+    return null;
+  }
+
   return (
     <InspectorControls>
       <TabPanel className="guten-builder-blocks-tab-panel wp-block-guten-builder-blocks-pricing-table" activeClass="guten-builder-blocks-active-tab" tabs={generalStyleTabs}>
@@ -18,4 +25,5 @@ const Settings = ({ attributes, setAttributes, clientId }) => {
     </InspectorControls>
   );
 };
+
 export default Settings;

@@ -1,1 +1,186 @@
-.gbb-pricing-grid-container{box-sizing:border-box;display:grid;gap:var(--gbb-price-gap,24px);grid-template-columns:repeat(var(--gbb-price-columns,3),1fr);width:100%}.gbb-pricing-grid-container .gbb-pricing-card{box-sizing:border-box;display:flex;flex-direction:column;padding:32px 24px;position:relative;transition:transform .3s ease,box-shadow .3s ease}.gbb-pricing-grid-container .gbb-pricing-card:hover{box-shadow:0 25px 50px -12px rgba(0,0,0,.1)!important;transform:translateY(-5px)}.gbb-pricing-grid-container .gbb-pricing-card.is-featured{z-index:2}.gbb-pricing-grid-container .gbb-pricing-badge{border-radius:20px;font-size:10px;font-weight:700;letter-spacing:1px;padding:4px 10px;position:absolute;right:12px;text-transform:uppercase;top:12px}.gbb-pricing-grid-container .gbb-pricing-header{border-bottom:1px solid #e2e8f0;margin-bottom:20px;padding-bottom:20px;text-align:center}.gbb-pricing-grid-container .gbb-pricing-name{font-size:20px;font-weight:700;margin:0 0 10px}.gbb-pricing-grid-container .gbb-pricing-rate{align-items:baseline;display:flex;justify-content:center;margin:15px 0}.gbb-pricing-grid-container .gbb-pricing-currency{font-size:20px;font-weight:600;margin-right:2px}.gbb-pricing-grid-container .gbb-pricing-price{font-size:42px;font-weight:800;line-height:1}.gbb-pricing-grid-container .gbb-pricing-period-separator{font-size:14px;margin-left:4px;opacity:.7}.gbb-pricing-grid-container .gbb-pricing-period{font-size:14px;opacity:.7}.gbb-pricing-grid-container .gbb-pricing-features{display:flex;flex-direction:column;gap:12px;list-style:none;margin:0 0 30px;padding:0}.gbb-pricing-grid-container .gbb-pricing-feature-item{align-items:center;display:flex;font-size:14px;line-height:1.4}.gbb-pricing-grid-container .gbb-pricing-feature-item.is-disabled{text-decoration:line-through}.gbb-pricing-grid-container .gbb-feature-icon{align-items:center;display:flex;flex-shrink:0;margin-right:8px}.gbb-pricing-grid-container .gbb-pricing-button{border-radius:6px;cursor:pointer;display:inline-block;font-weight:600;margin-top:auto;padding:12px 24px;text-align:center;text-decoration:none;transition:all .2s}.gbb-pricing-grid-container .gbb-pricing-button:hover{opacity:.95;transform:scale(1.02)}@media(max-width:900px){.gbb-pricing-grid-container{grid-template-columns:repeat(min(2,var(--gbb-price-columns,3)),1fr)!important}}@media(max-width:600px){.gbb-pricing-grid-container{grid-template-columns:1fr!important}}
+/*!************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/pricing-table/style.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1280px;
+  padding: 32px 16px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: inherit;
+}
+@media (min-width: 640px) {
+  .wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container {
+    padding: 48px 24px;
+  }
+}
+@media (min-width: 1024px) {
+  .wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container {
+    padding: 64px 32px;
+  }
+}
+.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container *, .wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container *::before, .wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container *::after {
+  box-sizing: border-box;
+}
+.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 640px) {
+  .wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: stretch;
+  }
+}
+@media (min-width: 768px) {
+  .wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-grid {
+    gap: 24px;
+  }
+}
+@media (min-width: 1024px) {
+  .wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+}
+.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-card .gbb-pricing-card-top {
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+@media (min-width: 640px) {
+  .wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-card .gbb-pricing-card-top {
+    padding: 24px 32px;
+  }
+}
+.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-card .gbb-pricing-name {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #111827;
+  margin: 0;
+}
+.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-card .gbb-pricing-desc {
+  margin-top: 8px;
+  color: #374151;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-card .gbb-pricing-price-wrap {
+  margin-top: 8px;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+@media (min-width: 640px) {
+  .wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-card .gbb-pricing-price-wrap {
+    margin-top: 16px;
+  }
+}
+.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-card .gbb-pricing-price {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #111827;
+}
+@media (min-width: 640px) {
+  .wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-card .gbb-pricing-price {
+    font-size: 2.25rem;
+  }
+}
+.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-card .gbb-pricing-period {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-left: 4px;
+}
+.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-card .gbb-pricing-button {
+  display: block;
+  margin-top: 16px;
+  padding: 10px 16px;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #4f46e5;
+  border: 1px solid #4f46e5;
+  border-radius: 0.125rem;
+  text-decoration: none;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  transition: all 0.2s ease;
+}
+@media (min-width: 640px) {
+  .wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-card .gbb-pricing-button {
+    margin-top: 24px;
+    padding: 12px 24px;
+  }
+}
+.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-card .gbb-pricing-button:hover {
+  background-color: transparent;
+  color: #4f46e5;
+}
+.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-card .gbb-pricing-card-bottom {
+  padding: 16px;
+  flex-grow: 1;
+}
+@media (min-width: 640px) {
+  .wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-card .gbb-pricing-card-bottom {
+    padding: 24px 32px;
+  }
+}
+.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-card .gbb-features-title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #111827;
+  margin: 0;
+}
+@media (min-width: 640px) {
+  .wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-card .gbb-features-title {
+    font-size: 1.25rem;
+  }
+}
+.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-card .gbb-features-list {
+  margin-top: 8px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+@media (min-width: 640px) {
+  .wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-card .gbb-features-list {
+    margin-top: 16px;
+  }
+}
+.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-card .gbb-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-card .gbb-icon-success {
+  width: 20px;
+  height: 20px;
+  color: #4338ca;
+  flex-shrink: 0;
+}
+.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-card .gbb-icon-error {
+  width: 20px;
+  height: 20px;
+  color: #b91c1c;
+  flex-shrink: 0;
+}
+.wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-card .gbb-feature-text {
+  color: #374151;
+  font-size: 1rem;
+}
+
+/*# sourceMappingURL=style-view.css.map*/
