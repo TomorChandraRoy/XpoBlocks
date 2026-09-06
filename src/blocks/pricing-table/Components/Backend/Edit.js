@@ -16,19 +16,12 @@ const Edit = props => {
       <Settings {...{ attributes, setAttributes, clientId }} />
       {!isTemplateSelected ? (
         <div {...useBlockProps()}>
-          <TemplateSelector
-            {...{ attributes, setAttributes }}
-            title={templateData.title}
-            subtitle={templateData.subtitle}
-            templates={templateData.templates}
-            isPro={true}
-            proTemplates={[]}
-          />
+          <TemplateSelector {...{ attributes, setAttributes }} title={templateData.title} subtitle={templateData.subtitle} templates={templateData.templates} isPro={true} proTemplates={[]} />
         </div>
       ) : (
         <div {...useBlockProps()}>
-          <DynamicStyle attributes={attributes} clientId={clientId} />
-          <PricingTable attributes={attributes} setAttributes={setAttributes} RichTextEl={RichText} isBackend={true} />
+          <DynamicStyle attributes={attributes} clientId={`block-${clientId}`} />
+          <PricingTable attributes={attributes} setAttributes={setAttributes} RichTextEl={RichText} isBackend={true} clientId={clientId} />
         </div>
       )}
     </>

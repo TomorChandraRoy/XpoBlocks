@@ -5136,9 +5136,12 @@ const ThemeOne = ({
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           className: "gbb-pricing-card-bottom",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(RichTextEl, {
+            tagName: "p",
             className: "gbb-features-title",
-            children: "What's included:"
+            value: plan.featuresTitle || "What's included:",
+            onChange: val => updatePricingTable(index, 'featuresTitle', val),
+            placeholder: "Features Title"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
             className: "gbb-features-list",
             children: plan.features && plan.features.map((feature, fIndex) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
@@ -5147,8 +5150,7 @@ const ThemeOne = ({
                 value: feature.icon || 'fas-check',
                 className: "gbb-icon-success",
                 style: {
-                  color: feature.iconColor || undefined,
-                  display: 'inline-flex'
+                  color: feature.iconColor
                 }
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(RichTextEl, {
                 tagName: "span",
@@ -5178,21 +5180,51 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var tr_tools__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tr-tools */ "../tr-tools/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
 
 const DynamicStyle = ({
   attributes,
   clientId
 }) => {
-  // The blockId is used as the class selector
-  // const mainSl = `#${id}`;
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("style", {
+  const {
+    columns = 3,
+    gap = 24,
+    containerWidth = 1200
+  } = attributes;
+  const mainSl = `#${clientId}`;
+  const gbbPricingContainer = `${mainSl} .gbb-pricing-container`;
+  const gbbPricingGrid = `${gbbPricingContainer} .gbb-pricing-grid`;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("style", {
     dangerouslySetInnerHTML: {
       __html: `
+        ${gbbPricingContainer} {
+          max-width: ${containerWidth};
+        }
 
-			`.replace(/\s+/g, ' ')
+        ${gbbPricingGrid} {
+          grid-template-columns: repeat(${columns}, 1fr);
+          gap: ${gap}px;
+        }
+
+
+
+
+        ${tr_tools__WEBPACK_IMPORTED_MODULE_0__.tabBreakpoint} {
+          ${gbbPricingGrid} {
+            grid-template-columns: repeat(${columns > 2 ? 2 : columns}, 1fr);
+          }
+        }
+
+        ${tr_tools__WEBPACK_IMPORTED_MODULE_0__.mobileBreakpoint} {
+          ${gbbPricingGrid} {
+            grid-template-columns: 1fr;
+          }
+        }
+
+			  `.replace(/\s+/g, ' ')
     }
   });
 };

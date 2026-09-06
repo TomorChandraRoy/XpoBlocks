@@ -23,6 +23,18 @@
     "align": {
       "type": "string",
       "default": "wide"
+    },
+    "columns": {
+      "type": "number",
+      "default": 3
+    },
+    "gap": {
+      "type": "number",
+      "default": 24
+    },
+    "containerWidth": {
+      "type": "string",
+      "default": "1200px"
     }
   },
   "supports": {

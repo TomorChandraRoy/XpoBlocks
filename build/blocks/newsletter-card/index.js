@@ -5629,7 +5629,6 @@ const TemplateOne = ({
     message: ''
   });
   const isEditor = typeof setAttributes === 'function';
-  console.log(isEditor, "fdgdsfgdffffffffffffffffffffffffffffffffff");
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     if (status.message) {
       const timer = setTimeout(() => {

@@ -55,15 +55,15 @@ const ThemeOne = ({ attributes = {}, setAttributes, RichTextEl, isBackend = fals
             </div>
 
             <div className="gbb-pricing-card-bottom">
-              <p className="gbb-features-title">What's included:</p>
+              <RichTextEl tagName="p" className="gbb-features-title" value={plan.featuresTitle || "What's included:"} onChange={val => updatePricingTable(index, 'featuresTitle', val)} placeholder="Features Title" />
               <ul className="gbb-features-list">
                 {plan.features &&
                   plan.features.map((feature, fIndex) => (
                     <li className="gbb-feature-item" key={fIndex}>
-                      <RenderIcon 
-                        value={feature.icon || 'fas-check'} 
-                        className="gbb-icon-success" 
-                        style={{ color: feature.iconColor || undefined, display: 'inline-flex' }} 
+                      <RenderIcon
+                        value={feature.icon || 'fas-check'}
+                        className="gbb-icon-success"
+                        style={{ color: feature.iconColor }}
                       />
                       <RichTextEl tagName="span" className="gbb-feature-text" value={feature.label} onChange={val => updateFeature(index, fIndex, val)} placeholder="Feature item" />
                     </li>

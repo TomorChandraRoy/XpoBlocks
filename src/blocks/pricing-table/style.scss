@@ -7,6 +7,7 @@
   margin-right: auto;
   font-family: inherit;
 
+
   @media (min-width: 640px) {
     padding: 48px 24px;
   }
@@ -188,6 +189,7 @@
       height: 21px;
       color: #4338ca;
       flex-shrink: 0;
+      display: inline-flex;
     }
 
     .gbb-icon-error {

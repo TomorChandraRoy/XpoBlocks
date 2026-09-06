@@ -188,6 +188,7 @@
   height: 21px;
   color: #4338ca;
   flex-shrink: 0;
+  display: inline-flex;
 }
 .wp-block-guten-builder-blocks-pricing-table .gbb-pricing-container .gbb-pricing-card .gbb-icon-error {
   width: 21px;

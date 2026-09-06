@@ -40,6 +40,8 @@ const PanelItems = ({ item, updateField }) => {
       <ToggleControl label={__('Open link in new tab', 'guten-builder-blocks')} checked={item.isLinkNewTab} onChange={val => updateField('isLinkNewTab', val)} />
       <TextControl label={__('Button Label', 'guten-builder-blocks')} value={item.linkLabel} onChange={val => updateField('linkLabel', val)} placeholder="e.g. Get Started" />
 
+      <TextControl label={__('Features Title', 'guten-builder-blocks')} value={item.featuresTitle} onChange={val => updateField('featuresTitle', val)} placeholder="e.g. What's included:" />
+
       <ItemsPanel
         title={__('Features List', 'guten-builder-blocks')}
         items={item.features || []}
