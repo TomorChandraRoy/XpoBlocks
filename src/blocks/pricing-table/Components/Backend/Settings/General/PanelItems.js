@@ -1,40 +1,54 @@
 import { __ } from '@wordpress/i18n';
 import { TextControl, TextareaControl, ToggleControl } from '@wordpress/components';
-import { ItemsPanel } from 'tr-tools';
+import { ItemsPanel, IconControl } from 'tr-tools';
 
-const PanelItems = ({ item, index, updateField }) => {
+const FeatureItemSettings = ({ item: featureItem, updateField: updateFeatureField }) => (
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+    <TextControl label={__('Feature Label', 'guten-builder-blocks')} value={featureItem.label} onChange={val => updateFeatureField('label', val)} />
+    <IconControl
+      label={__('Feature Icon', 'guten-builder-blocks')}
+      value={featureItem.icon}
+      defaultValue="fas-check"
+      onChange={val => updateFeatureField('icon', val)}
+      enableColor={true}
+      colorValue={featureItem.iconColor}
+      defaultColorValue="#475569"
+      onColorChange={val => updateFeatureField('iconColor', val)}
+    />
+  </div>
+);
+
+const PanelItems = ({ item, updateField }) => {
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', paddingBottom: '8px' }}>
-      <TextControl label={__('Plan Name', 'guten-builder-blocks')} value={item.name} onChange={val => updateField('name', val)} />
-      <TextareaControl label={__('Description', 'guten-builder-blocks')} value={item.desc} onChange={val => updateField('desc', val)} rows={2} />
-
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr 1fr', gap: '8px' }}>
-        <TextControl label={__('Currency', 'guten-builder-blocks')} value={item.priceCurrency} onChange={val => updateField('priceCurrency', val)} />
-        <TextControl label={__('Price', 'guten-builder-blocks')} value={item.price} onChange={val => updateField('price', val)} />
-        <TextControl label={__('Period', 'guten-builder-blocks')} value={item.period} onChange={val => updateField('period', val)} />
-      </div>
-
-      <TextControl label={__('Button Link', 'guten-builder-blocks')} value={item.link} onChange={val => updateField('link', val)} />
-      <TextControl label={__('Button Label', 'guten-builder-blocks')} value={item.linkLabel} onChange={val => updateField('linkLabel', val)} />
-
-      <ToggleControl label={__('Featured / Popular (Highlight)', 'guten-builder-blocks')} checked={item.isFeatured} onChange={val => updateField('isFeatured', val)} />
+      <ToggleControl label={__('Make Popular (Highlight)', 'guten-builder-blocks')} checked={item.isFeatured} onChange={val => updateField('isFeatured', val)} />
 
       {item.isFeatured && <TextControl label={__('Badge Text', 'guten-builder-blocks')} value={item.badgeText} onChange={val => updateField('badgeText', val)} placeholder="e.g. POPULAR" />}
 
-      <div style={{ marginTop: '8px' }}>
-        <ItemsPanel
-          title={__('Features List', 'guten-builder-blocks')}
-          items={item.features || []}
-          addButtonLabel={__('＋ Add Feature', 'guten-builder-blocks')}
-          itemTitleKey="label"
-          defaultItem={{ label: 'New Feature', isEnable: true }}
-          fields={[
-            { key: 'label', label: 'Feature Label', type: 'text' },
-            { key: 'isEnable', label: 'Show Checkmark? (Toggle off for Cross)', type: 'toggle' },
-          ]}
-          onChange={newFeatures => updateField('features', newFeatures)}
-        />
+      <TextControl label={__('Plan Name', 'guten-builder-blocks')} value={item.name} onChange={val => updateField('name', val)} placeholder="e.g. Basic Plan" />
+      <TextareaControl label={__('Description', 'guten-builder-blocks')} value={item.desc} onChange={val => updateField('desc', val)} rows={2} placeholder="Brief description here" />
+
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+        <TextControl label={__('Currency', 'guten-builder-blocks')} value={item.priceCurrency} onChange={val => updateField('priceCurrency', val)} placeholder="e.g. $" />
+        <TextControl label={__('Price', 'guten-builder-blocks')} value={item.price} onChange={val => updateField('price', val)} placeholder="e.g. 29" />
       </div>
+
+      <TextControl label={__('Period', 'guten-builder-blocks')} value={item.period} onChange={val => updateField('period', val)} placeholder="e.g. /month" />
+
+      <TextControl label={__('Button Link', 'guten-builder-blocks')} value={item.link} onChange={val => updateField('link', val)} placeholder="https://" />
+      <ToggleControl label={__('Open link in new tab', 'guten-builder-blocks')} checked={item.isLinkNewTab} onChange={val => updateField('isLinkNewTab', val)} />
+      <TextControl label={__('Button Label', 'guten-builder-blocks')} value={item.linkLabel} onChange={val => updateField('linkLabel', val)} placeholder="e.g. Get Started" />
+
+      <ItemsPanel
+        title={__('Features List', 'guten-builder-blocks')}
+        items={item.features || []}
+        addButtonLabel={__(' Add Feature', 'guten-builder-blocks')}
+        itemTitleKey="label"
+        defaultItem={{ label: 'New Feature', icon: 'fas-check' }}
+        onChange={newFeatures => updateField('features', newFeatures)}
+        ItemSettings={FeatureItemSettings}
+      />
     </div>
   );
 };

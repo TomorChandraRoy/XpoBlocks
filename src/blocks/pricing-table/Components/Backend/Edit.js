@@ -10,6 +10,7 @@ const Edit = props => {
   const { selectedTemplate = '' } = attributes;
   const isTemplateSelected = Boolean(selectedTemplate);
 
+
   return (
     <>
       <Settings {...{ attributes, setAttributes, clientId }} />

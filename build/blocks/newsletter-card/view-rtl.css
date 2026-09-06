@@ -2137,3 +2137,177 @@
   flex-grow: 1;
   width: 100%;
 }
+/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!../tr-tools/Components/IconControl/IconControl.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************/
+.tr-icon-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.tr-icon-control__label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1e293b;
+}
+.tr-icon-control__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tr-icon-control__reset-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #64748b;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+.tr-icon-control__reset-btn:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+.tr-icon-control__reset-btn svg {
+  width: 16px;
+  height: 16px;
+}
+.tr-icon-control__btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+.tr-icon-control__btn:hover {
+  border-color: #94a3b8;
+}
+.tr-icon-control__btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #334155;
+}
+.tr-icon-control__btn-icon svg {
+  width: 18px;
+  height: 18px;
+}
+.tr-icon-control__popover .components-popover__content {
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+.tr-icon-control__content {
+  width: 280px;
+  background: #ffffff;
+  border-radius: 8px;
+}
+.tr-icon-control__tabs .components-tab-panel__tabs {
+  display: flex;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 12px;
+  padding: 0 12px;
+  margin-top: 8px;
+}
+.tr-icon-control__tabs .components-tab-panel__tabs .components-button {
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  box-shadow: none;
+}
+.tr-icon-control__tabs .components-tab-panel__tabs .components-button:focus {
+  box-shadow: none;
+  outline: none;
+}
+.tr-icon-control__tabs .components-tab-panel__tabs .components-button.is-active {
+  color: #f62477;
+  box-shadow: inset 0 -2px 0 0 #f62477 !important;
+  font-weight: 500;
+}
+.tr-icon-control__tab-content {
+  padding: 0 12px 12px;
+}
+.tr-icon-control__search {
+  margin-bottom: 12px;
+}
+.tr-icon-control__search-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+.tr-icon-control__search-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px #3b82f6;
+}
+.tr-icon-control__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  padding-left: 4px;
+  /* Custom Scrollbar for the grid */
+}
+.tr-icon-control__grid::-webkit-scrollbar {
+  width: 4px;
+}
+.tr-icon-control__grid::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+.tr-icon-control__grid::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+.tr-icon-control__grid::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+.tr-icon-control__grid-item {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #475569;
+  transition: all 0.2s ease;
+}
+.tr-icon-control__grid-item svg {
+  width: 24px;
+  height: 24px;
+}
+.tr-icon-control__grid-item:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+.tr-icon-control__grid-item.is-active {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #2563eb;
+}
+.tr-icon-control__empty {
+  grid-column: 1/-1;
+  text-align: center;
+  padding: 20px 0;
+  color: #64748b;
+  font-size: 13px;
+}

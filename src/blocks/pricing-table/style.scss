@@ -45,6 +45,27 @@
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     overflow: hidden;
 
+    position: relative;
+
+    &.is-featured {
+      border: 2px solid #4f46e5;
+      box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.1), 0 4px 6px -2px rgba(79, 70, 229, 0.05);
+    }
+
+    .gbb-pricing-badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #4f46e5;
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-bottom-left-radius: 1rem;
+      z-index: 10;
+    }
+
     .gbb-pricing-card-top {
       padding: 16px;
       border-bottom: 1px solid #e5e7eb;
@@ -159,19 +180,19 @@
     .gbb-feature-item {
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 7px;
     }
 
     .gbb-icon-success {
-      width: 20px;
-      height: 20px;
+      width: 21px;
+      height: 21px;
       color: #4338ca;
       flex-shrink: 0;
     }
 
     .gbb-icon-error {
-      width: 20px;
-      height: 20px;
+      width: 21px;
+      height: 21px;
       color: #b91c1c;
       flex-shrink: 0;
     }

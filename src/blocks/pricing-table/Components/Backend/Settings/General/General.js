@@ -27,12 +27,13 @@ const General = ({ attributes, setAttributes }) => {
           priceCurrency: '$',
           period: 'mo',
           link: '#',
+          isLinkNewTab: false,
           linkLabel: 'Buy Now',
           isFeatured: false,
           badgeText: 'POPULAR',
           features: [
-            { label: 'Feature 1', isEnable: true },
-            { label: 'Feature 2', isEnable: false },
+            { label: 'Feature 1', icon: 'fas-check', iconColor: '#4338ca' },
+            { label: 'Feature 2', icon: 'fas-check', iconColor: '#4338ca' },
           ],
         }}
         onChange={newTables => setAttributes({ pricingTables: newTables })}

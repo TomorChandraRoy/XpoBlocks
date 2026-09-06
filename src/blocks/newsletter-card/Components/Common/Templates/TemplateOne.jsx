@@ -9,6 +9,7 @@ const TemplateOne = ({ attributes, setAttributes }) => {
   const [status, setStatus] = useState({ type: '', message: '' });
 
   const isEditor = typeof setAttributes === 'function';
+console.log(isEditor,"fdgdsfgdffffffffffffffffffffffffffffffffff");
 
   useEffect(() => {
     if (status.message) {

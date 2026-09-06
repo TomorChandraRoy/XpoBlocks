@@ -4,6 +4,7 @@ const TEMPLATES = {
   'template-1': ThemeOne,
 };
 
+
 const PricingTable = (props) => {
   const { attributes = {} } = props;
   const { selectedTemplate = 'template-1' } = attributes;

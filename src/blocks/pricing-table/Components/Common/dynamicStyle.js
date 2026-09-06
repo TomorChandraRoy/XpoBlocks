@@ -1,7 +1,7 @@
-const DynamicStyle = ({ attributes, id }) => {
+const DynamicStyle = ({ attributes, clientId }) => {
   // The blockId is used as the class selector
   // const mainSl = `#${id}`;
-console.log(id);
+
 
   return (
     <style
