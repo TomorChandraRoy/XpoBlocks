@@ -30,6 +30,18 @@
     "containerWidth": {
       "type": "string",
       "default": "1200px"
+    },
+    "badgeTypo": {
+      "type": "object",
+      "default": {}
+    },
+    "badgeColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "badgeBgColor": {
+      "type": "string",
+      "default": "#4f46e5"
     }
   },
   "supports": {

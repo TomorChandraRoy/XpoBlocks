@@ -5192,7 +5192,10 @@ const DynamicStyle = ({
   const {
     columns = 3,
     gap = 24,
-    containerWidth = 1200
+    containerWidth = 1200,
+    badgeTypo,
+    badgeColor,
+    badgeBgColor
   } = attributes;
   const mainSl = `#${clientId}`;
   const gbbPricingContainer = `${mainSl} .gbb-pricing-container`;
@@ -5209,8 +5212,14 @@ const DynamicStyle = ({
           gap: ${gap}px;
         }
 
-
-
+        ${mainSl} .gbb-pricing-badge span {
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(badgeTypo)}
+          color: ${badgeColor};
+        }
+        
+        ${mainSl} .gbb-pricing-badge {
+          background-color: ${badgeBgColor};
+        }
 
         ${tr_tools__WEBPACK_IMPORTED_MODULE_0__.tabBreakpoint} {
           ${gbbPricingGrid} {

@@ -44,6 +44,7 @@ const PanelItems = ({ item, updateField }) => {
 
       <ItemsPanel
         title={__('Features List', 'guten-builder-blocks')}
+        initialOpen={false}
         items={item.features || []}
         addButtonLabel={__(' Add Feature', 'guten-builder-blocks')}
         itemTitleKey="label"

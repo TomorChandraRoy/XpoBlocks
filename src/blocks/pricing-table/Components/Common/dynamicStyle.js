@@ -1,7 +1,7 @@
-import { tabBreakpoint, mobileBreakpoint } from 'tr-tools';
+import { tabBreakpoint, mobileBreakpoint, getTypographyCss } from 'tr-tools';
 
 const DynamicStyle = ({ attributes, clientId }) => {
-  const { columns = 3, gap = 24, containerWidth = 1200 } = attributes;
+  const { columns = 3, gap = 24, containerWidth = 1200, badgeTypo, badgeColor, badgeBgColor } = attributes;
 
 
   const mainSl = `#${clientId}`;
@@ -22,8 +22,14 @@ const DynamicStyle = ({ attributes, clientId }) => {
           gap: ${gap}px;
         }
 
-
-
+        ${mainSl} .gbb-pricing-badge span {
+          ${getTypographyCss(badgeTypo)}
+          color: ${badgeColor};
+        }
+        
+        ${mainSl} .gbb-pricing-badge {
+          background-color: ${badgeBgColor};
+        }
 
         ${tabBreakpoint} {
           ${gbbPricingGrid} {

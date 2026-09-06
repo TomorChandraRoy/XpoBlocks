@@ -1,79 +1,26 @@
-// import { __ } from '@wordpress/i18n';
-// import { PanelBody, RangeControl, ColorPalette } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
+import { PanelBody } from '@wordpress/components';
+import { Typography, ColorControl } from 'tr-tools';
+import { defaultPopularTypo } from '../../../../utils/options';
 
 const Style = ( { attributes, setAttributes } ) => {
-	const {
-		// borderRadius,
-		// cardBgColor,
-		// cardTextColor,
-		// buttonBgColor,
-		// buttonTextColor,
-		// featuredButtonBgColor,
-		// featuredButtonTextColor
-	} = attributes;
+	const { badgeTypo, badgeColor, badgeBgColor, pricingTables = [] } = attributes;
+
+  const hasPopularCard = pricingTables.some(plan => plan.isFeatured);
 
 	return (
-		<>
-			{/* <PanelBody title={ __( '🎨 Card Styling', 'guten-builder-blocks' ) } initialOpen={ true }>
-				<p style={ { fontWeight: 'bold', margin: '0 0 5px 0' } }>{ __( 'Card Background Color', 'guten-builder-blocks' ) }</p>
-				<ColorPalette
-					value={ cardBgColor }
-					onChange={ ( val ) => setAttributes( { cardBgColor: val || '#ffffff' } ) }
-				/>
+    <>
+      {hasPopularCard && (
+        <PanelBody title={__('Badge Styling', 'guten-builder-blocks')} initialOpen={false}>
+          <Typography label={__('Typography', 'guten-builder-blocks')} value={badgeTypo} defaultTypography={defaultPopularTypo} onChange={val => setAttributes({ badgeTypo: val })} />
 
-				<p style={ { fontWeight: 'bold', margin: '10px 0 5px 0' } }>{ __( 'Card Text Color', 'guten-builder-blocks' ) }</p>
-				<ColorPalette
-					value={ cardTextColor }
-					onChange={ ( val ) => setAttributes( { cardTextColor: val || '#1e293b' } ) }
-				/>
+          <ColorControl label={__('Text Color', 'guten-builder-blocks')} value={badgeColor} defaultColor={"#ffffff"} onChange={val => setAttributes({ badgeColor: val || '#ffffff' })} />
 
-				<hr />
-
-				<RangeControl
-					label={ __( 'Card Border Radius (px)', 'guten-builder-blocks' ) }
-					value={ borderRadius }
-					onChange={ ( val ) => setAttributes( { borderRadius: val } ) }
-					min={ 0 }
-					max={ 40 }
-				/>
-			</PanelBody>
-
-			<PanelBody title={ __( '🛍️ Button Styling', 'guten-builder-blocks' ) } initialOpen={ false }>
-				<p style={ { fontWeight: 'bold', margin: '0 0 5px 0' } }>{ __( 'Default Button Background', 'guten-builder-blocks' ) }</p>
-				<ColorPalette
-					value={ buttonBgColor }
-					onChange={ ( val ) => setAttributes( { buttonBgColor: val || '#3b82f6' } ) }
-				/>
-
-				<p style={ { fontWeight: 'bold', margin: '10px 0 5px 0' } }>{ __( 'Default Button Text Color', 'guten-builder-blocks' ) }</p>
-				<ColorPalette
-					value={ buttonTextColor }
-					onChange={ ( val ) => setAttributes( { buttonTextColor: val || '#ffffff' } ) }
-				/>
-
-				<hr />
-
-				<p style={ { fontWeight: 'bold', margin: '10px 0 5px 0' } }>{ __( 'Featured Button Background', 'guten-builder-blocks' ) }</p>
-				<ColorPalette
-					value={ featuredButtonBgColor }
-					onChange={ ( val ) => setAttributes( { featuredButtonBgColor: val || '#10b981' } ) }
-				/>
-
-				<p style={ { fontWeight: 'bold', margin: '10px 0 5px 0' } }>{ __( 'Featured Button Text Color', 'guten-builder-blocks' ) }</p>
-				<ColorPalette
-					value={ featuredButtonTextColor }
-					onChange={ ( val ) => setAttributes( { featuredButtonTextColor: val || '#ffffff' } ) }
-				/>
-
-				<hr />
-				<p style={ { fontWeight: 'bold', margin: '10px 0 5px 0' } }>{ __( 'Hover Highlight Color (Style 2)', 'guten-builder-blocks' ) }</p>
-				<ColorPalette
-					value={ attributes.hoverHighlightColor }
-					onChange={ ( val ) => setAttributes( { hoverHighlightColor: val || '#ffd700' } ) }
-				/>
-			</PanelBody> */}
-		</>
-	);
+          <ColorControl label={__('Background Color', 'guten-builder-blocks')} value={badgeBgColor} defaultColor={"#4f46e5"} onChange={val => setAttributes({ badgeBgColor: val || '#4f46e5' })} />
+        </PanelBody>
+      )}
+    </>
+  );
 };
 
 export default Style;

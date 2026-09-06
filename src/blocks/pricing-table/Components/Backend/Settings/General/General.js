@@ -15,30 +15,6 @@ const General = ({ attributes, setAttributes }) => {
         </Button>
       </PanelBody>
 
-      <PanelBody className="bPlPanelBody" title={__('Layout Settings', 'guten-builder-blocks')} initialOpen={false}>
-        <RangeControl
-          label={__('Columns', 'guten-builder-blocks')}
-          value={columns}
-          onChange={(value) => setAttributes({ columns: value })}
-          min={1}
-          max={4}
-        />
-        <RangeControl
-          label={__('Gap (px)', 'guten-builder-blocks')}
-          value={gap}
-          onChange={(value) => setAttributes({ gap: value })}
-          min={0}
-          max={100}
-        />
-        <UnitControl
-          label={__('Max Width', 'guten-builder-blocks')}
-          value={containerWidth}
-          defaultVal="1200px"
-          onChange={(value) => setAttributes({ containerWidth: value })}
-          units={[pxUnit(1200), perUnit(100)]}
-        />
-      </PanelBody>
-
       <ItemsPanel
         items={pricingTables}
         title={__('Pricing Tables', 'guten-builder-blocks')} //Panelbody aer name
@@ -65,7 +41,12 @@ const General = ({ attributes, setAttributes }) => {
         ItemSettings={PanelItems}
       />
 
-
+      <PanelBody className="bPlPanelBody" title={__('Layout Settings', 'guten-builder-blocks')} initialOpen={false}>
+        <RangeControl label={__('Columns', 'guten-builder-blocks')} value={columns} onChange={value => setAttributes({ columns: value })} min={1} max={4} />
+        <RangeControl label={__('Gap (px)', 'guten-builder-blocks')} value={gap} onChange={value => setAttributes({ gap: value })} min={0} max={100} />
+        <UnitControl label={__('Max Width', 'guten-builder-blocks')} value={containerWidth} defaultVal="1200px" onChange={value => setAttributes({ containerWidth: value })} units={[pxUnit(1200), perUnit(100)]} />
+      </PanelBody>
+      
     </>
   );
 };

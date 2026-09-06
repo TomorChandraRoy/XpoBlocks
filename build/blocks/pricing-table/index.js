@@ -5118,35 +5118,6 @@ const General = ({
         },
         children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Change Template', 'guten-builder-blocks')
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-      className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Layout Settings', 'guten-builder-blocks'),
-      initialOpen: false,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Columns', 'guten-builder-blocks'),
-        value: columns,
-        onChange: value => setAttributes({
-          columns: value
-        }),
-        min: 1,
-        max: 4
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Gap (px)', 'guten-builder-blocks'),
-        value: gap,
-        onChange: value => setAttributes({
-          gap: value
-        }),
-        min: 0,
-        max: 100
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.UnitControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Max Width', 'guten-builder-blocks'),
-        value: containerWidth,
-        defaultVal: "1200px",
-        onChange: value => setAttributes({
-          containerWidth: value
-        }),
-        units: [(0,tr_tools__WEBPACK_IMPORTED_MODULE_2__.pxUnit)(1200), (0,tr_tools__WEBPACK_IMPORTED_MODULE_2__.perUnit)(100)]
-      })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ItemsPanel, {
       items: pricingTables,
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Pricing Tables', 'guten-builder-blocks') //Panelbody aer name
@@ -5180,6 +5151,35 @@ const General = ({
         pricingTables: newTables
       }),
       ItemSettings: _PanelItems__WEBPACK_IMPORTED_MODULE_3__["default"]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      className: "bPlPanelBody",
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Layout Settings', 'guten-builder-blocks'),
+      initialOpen: false,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Columns', 'guten-builder-blocks'),
+        value: columns,
+        onChange: value => setAttributes({
+          columns: value
+        }),
+        min: 1,
+        max: 4
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Gap (px)', 'guten-builder-blocks'),
+        value: gap,
+        onChange: value => setAttributes({
+          gap: value
+        }),
+        min: 0,
+        max: 100
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.UnitControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Max Width', 'guten-builder-blocks'),
+        value: containerWidth,
+        defaultVal: "1200px",
+        onChange: value => setAttributes({
+          containerWidth: value
+        }),
+        units: [(0,tr_tools__WEBPACK_IMPORTED_MODULE_2__.pxUnit)(1200), (0,tr_tools__WEBPACK_IMPORTED_MODULE_2__.perUnit)(100)]
+      })]
     })]
   });
 };
@@ -5306,6 +5306,7 @@ const PanelItems = ({
       placeholder: "e.g. What's included:"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ItemsPanel, {
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Features List', 'guten-builder-blocks'),
+      initialOpen: false,
       items: item.features || [],
       addButtonLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)(' Add Feature', 'guten-builder-blocks'),
       itemTitleKey: "label",
@@ -5391,26 +5392,58 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var tr_tools__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tr-tools */ "../tr-tools/index.js");
+/* harmony import */ var _utils_options__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../utils/options */ "./src/blocks/pricing-table/utils/options.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
 
-// import { __ } from '@wordpress/i18n';
-// import { PanelBody, RangeControl, ColorPalette } from '@wordpress/components';
+
+
+
 
 const Style = ({
   attributes,
   setAttributes
 }) => {
   const {
-    // borderRadius,
-    // cardBgColor,
-    // cardTextColor,
-    // buttonBgColor,
-    // buttonTextColor,
-    // featuredButtonBgColor,
-    // featuredButtonTextColor
+    badgeTypo,
+    badgeColor,
+    badgeBgColor,
+    pricingTables = []
   } = attributes;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {});
+  const hasPopularCard = pricingTables.some(plan => plan.isFeatured);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: hasPopularCard && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Badge Styling', 'guten-builder-blocks'),
+      initialOpen: false,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Typography', 'guten-builder-blocks'),
+        value: badgeTypo,
+        defaultTypography: _utils_options__WEBPACK_IMPORTED_MODULE_3__.defaultPopularTypo,
+        onChange: val => setAttributes({
+          badgeTypo: val
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text Color', 'guten-builder-blocks'),
+        value: badgeColor,
+        defaultColor: "#ffffff",
+        onChange: val => setAttributes({
+          badgeColor: val || '#ffffff'
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background Color', 'guten-builder-blocks'),
+        value: badgeBgColor,
+        defaultColor: "#4f46e5",
+        onChange: val => setAttributes({
+          badgeBgColor: val || '#4f46e5'
+        })
+      })]
+    })
+  });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Style);
 
@@ -5617,7 +5650,10 @@ const DynamicStyle = ({
   const {
     columns = 3,
     gap = 24,
-    containerWidth = 1200
+    containerWidth = 1200,
+    badgeTypo,
+    badgeColor,
+    badgeBgColor
   } = attributes;
   const mainSl = `#${clientId}`;
   const gbbPricingContainer = `${mainSl} .gbb-pricing-container`;
@@ -5634,8 +5670,14 @@ const DynamicStyle = ({
           gap: ${gap}px;
         }
 
-
-
+        ${mainSl} .gbb-pricing-badge span {
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(badgeTypo)}
+          color: ${badgeColor};
+        }
+        
+        ${mainSl} .gbb-pricing-badge {
+          background-color: ${badgeBgColor};
+        }
 
         ${tr_tools__WEBPACK_IMPORTED_MODULE_0__.tabBreakpoint} {
           ${gbbPricingGrid} {
@@ -6415,6 +6457,7 @@ const TemplateOneSvg = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   defaultPopularTypo: () => (/* binding */ defaultPopularTypo),
 /* harmony export */   generalStyleTabs: () => (/* binding */ generalStyleTabs)
 /* harmony export */ });
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
@@ -6427,6 +6470,20 @@ const generalStyleTabs = [{
   name: 'style',
   title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style', 'textdomain')
 }];
+const defaultPopularTypo = {
+  fontSize: {
+    desktop: '',
+    tablet: '',
+    mobile: ''
+  },
+  fontFamily: '',
+  fontWeight: '',
+  lineHeight: '',
+  letterSpacing: '',
+  textTransform: 'none',
+  textDecoration: 'none',
+  fontStyle: 'normal'
+};
 
 /***/ },
 
@@ -6698,7 +6755,7 @@ module.exports = window["wp"]["i18n"];
   \*********************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/pricing-table","version":"1.0.0","title":"Pricing Table","description":"Showcase your subscription plans or products with a stunning pricing grid.","category":"guten-builder","keywords":["pricing","price list","table","grid"],"attributes":{"selectedTemplate":{"type":"string","default":""},"pricingTables":{"type":"array","default":[]},"align":{"type":"string","default":"wide"},"columns":{"type":"number","default":3},"gap":{"type":"number","default":24},"containerWidth":{"type":"string","default":"1200px"}},"supports":{"html":false,"align":["wide","full"]},"textdomain":"guten-builder-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/pricing-table","version":"1.0.0","title":"Pricing Table","description":"Showcase your subscription plans or products with a stunning pricing grid.","category":"guten-builder","keywords":["pricing","price list","table","grid"],"attributes":{"selectedTemplate":{"type":"string","default":""},"pricingTables":{"type":"array","default":[]},"align":{"type":"string","default":"wide"},"columns":{"type":"number","default":3},"gap":{"type":"number","default":24},"containerWidth":{"type":"string","default":"1200px"},"badgeTypo":{"type":"object","default":{}},"badgeColor":{"type":"string","default":"#ffffff"},"badgeBgColor":{"type":"string","default":"#4f46e5"}},"supports":{"html":false,"align":["wide","full"]},"textdomain":"guten-builder-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
 
 /***/ }
 
