@@ -47,6 +47,42 @@
     "badgeBgColor": {
       "type": "string",
       "default": "#4f46e5"
+    },
+    "badgeRadius": {
+      "type": "object"
+    },
+    "featuredCardBorder": {
+      "type": "object"
+    },
+    "featuredCardBg": {
+      "type": "object"
+    },
+    "featuredCardBoxShadow": {
+      "type": "object"
+    },
+    "cardBg": {
+      "type": "object"
+    },
+    "cardBorder": {
+      "type": "object"
+    },
+    "cardBoxShadow": {
+      "type": "object"
+    },
+    "cardBorderRadius": {
+      "type": "object"
+    },
+    "cardTitleTypo": {
+      "type": "object"
+    },
+    "cardTitleColor": {
+      "type": "string"
+    },
+    "cardDescTypo": {
+      "type": "object"
+    },
+    "cardDescColor": {
+      "type": "string"
     }
   },
   "supports": {
