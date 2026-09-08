@@ -83,6 +83,55 @@
     },
     "cardDescColor": {
       "type": "string"
+    },
+    "priceColor": {
+      "type": "string"
+    },
+    "priceTypo": {
+      "type": "object"
+    },
+    "periodTypo": {
+      "type": "object"
+    },
+    "buttonBg": {
+      "type": "string"
+    },
+    "buttonHoverBg": {
+      "type": "string"
+    },
+    "buttonRadius": {
+      "type": "object"
+    },
+    "buttonTypo": {
+      "type": "object"
+    },
+    "buttonColor": {
+      "type": "string"
+    },
+    "buttonHoverColor": {
+      "type": "string"
+    },
+    "buttonBorder": {
+      "type": "object"
+    },
+    "dividerColor": {
+      "type": "string"
+    },
+    "featuresTitleColor": {
+      "type": "string"
+    },
+    "featuresTitleTypo": {
+      "type": "object"
+    },
+    "featureIconSize": {
+      "type": "number",
+      "default": 21
+    },
+    "featureTextColor": {
+      "type": "string"
+    },
+    "featureTextTypo": {
+      "type": "object"
     }
   },
   "supports": {
