@@ -2,7 +2,7 @@ import { tabBreakpoint, mobileBreakpoint, getTypographyCss, getBorderCss, getSha
 import { getBorderRadiusCss } from 'tr-tools/utils/getCSS';
 
 const DynamicStyle = ({ attributes, clientId }) => {
-  const { columns = 3, gap = 24, containerWidth = 1200, badgeTypo, badgeColor, badgeBgColor, badgeRadius, featuredCardBg, featuredCardBorder, featuredCardBoxShadow, cardBg, cardBorder, cardBorderRadius, cardBoxShadow, cardTitleTypo, cardTitleColor, cardDescTypo, cardDescColor, priceColor, priceTypo, periodTypo, buttonBg, buttonHoverBg, buttonRadius, buttonTypo, buttonColor, buttonHoverColor, buttonBorder, dividerColor, featuresTitleColor, featuresTitleTypo, featureIconSize = 21, featureTextColor, featureTextTypo } = attributes;
+  const { columns = 3, gap = 24, containerWidth = 1200, badgeTypo, badgeColor, badgeBgColor, badgeRadius, featuredCardBg, featuredCardBorder, featuredCardBoxShadow, featuredCardBorderRadius, featuredCardTitleTypo, featuredCardTitleColor, featuredCardDescTypo, featuredCardDescColor, featuredPriceColor, featuredPriceTypo, featuredPeriodTypo, featuredButtonBg, featuredButtonHoverBg, featuredButtonColor, featuredButtonHoverColor, featuredButtonBorder, featuredButtonRadius, featuredButtonTypo, featuredDividerColor, featuredFeaturesTitleColor, featuredFeaturesTitleTypo, featuredFeatureIconSize, featuredFeatureTextColor, featuredFeatureTextTypo, cardBg, cardBorder, cardBorderRadius, cardBoxShadow, cardTitleTypo, cardTitleColor, cardDescTypo, cardDescColor, priceColor, priceTypo, periodTypo, buttonBg, buttonHoverBg, buttonRadius, buttonTypo, buttonColor, buttonHoverColor, buttonBorder, dividerColor, featuresTitleColor, featuresTitleTypo, featureIconSize = 21, featureTextColor, featureTextTypo } = attributes;
 
 
   const mainSl = `#${clientId}`;
@@ -54,6 +54,7 @@ const DynamicStyle = ({ attributes, clientId }) => {
         ${gbbPricingCard}.is-featured {
           ${getBackgroundCss(featuredCardBg) ? `background: ${getBackgroundCss(featuredCardBg)};` : ''}
           ${getBorderCss(featuredCardBorder)}
+          ${getBorderRadiusCss(featuredCardBorderRadius)}
           ${getShadowCss(featuredCardBoxShadow) ? `box-shadow: ${getShadowCss(featuredCardBoxShadow)};` : ''}
         }
 
@@ -61,9 +62,18 @@ const DynamicStyle = ({ attributes, clientId }) => {
           border-bottom-color: ${dividerColor};
         }
 
+        ${gbbPricingCard}.is-featured .gbb-pricing-card-top {
+          ${featuredDividerColor ? `border-bottom-color: ${featuredDividerColor};` : ''}
+        }
+
         ${gbbPricingName} {
           ${getTypographyCss(cardTitleTypo)}
           color: ${cardTitleColor};
+        }
+
+        ${gbbPricingCard}.is-featured .gbb-pricing-name {
+          ${getTypographyCss(featuredCardTitleTypo)}
+          ${featuredCardTitleColor ? `color: ${featuredCardTitleColor};` : ''}
         }
 
         ${gbbPricingDesc} {
@@ -71,9 +81,19 @@ const DynamicStyle = ({ attributes, clientId }) => {
           color: ${cardDescColor};
         }
 
+        ${gbbPricingCard}.is-featured .gbb-pricing-desc {
+          ${getTypographyCss(featuredCardDescTypo)}
+          ${featuredCardDescColor ? `color: ${featuredCardDescColor};` : ''}
+        }
+
         ${gbbFeaturesTitle} {
           ${getTypographyCss(featuresTitleTypo)}
           color: ${featuresTitleColor};
+        }
+
+        ${gbbPricingCard}.is-featured .gbb-features-title {
+          ${getTypographyCss(featuredFeaturesTitleTypo)}
+          ${featuredFeaturesTitleColor ? `color: ${featuredFeaturesTitleColor};` : ''}
         }
 
         ${gbbFeatureIcon} {
@@ -81,9 +101,18 @@ const DynamicStyle = ({ attributes, clientId }) => {
           height: ${featureIconSize}px;
         }
 
+        ${gbbPricingCard}.is-featured .gbb-icon-success, ${gbbPricingCard}.is-featured .gbb-icon-error {
+          ${featuredFeatureIconSize ? `width: ${featuredFeatureIconSize}px; height: ${featuredFeatureIconSize}px;` : ''}
+        }
+
         ${gbbFeatureText} {
           ${getTypographyCss(featureTextTypo)}
           color: ${featureTextColor};
+        }
+
+        ${gbbPricingCard}.is-featured .gbb-feature-text {
+          ${getTypographyCss(featuredFeatureTextTypo)}
+          ${featuredFeatureTextColor ? `color: ${featuredFeatureTextColor};` : ''}
         }
 
         ${gbbPricingPriceWrap} {
@@ -95,9 +124,19 @@ const DynamicStyle = ({ attributes, clientId }) => {
           color: ${priceColor};
         }
 
+        ${gbbPricingCard}.is-featured .gbb-pricing-price {
+          ${getTypographyCss(featuredPriceTypo)}
+          ${featuredPriceColor ? `color: ${featuredPriceColor};` : ''}
+        }
+
         ${gbbPricingPeriod} {
           ${getTypographyCss(periodTypo)}
           color: ${priceColor};
+        }
+
+        ${gbbPricingCard}.is-featured .gbb-pricing-period {
+          ${getTypographyCss(featuredPeriodTypo)}
+          ${featuredPriceColor ? `color: ${featuredPriceColor};` : ''}
         }
 
         ${gbbPricingButton} {
@@ -108,9 +147,22 @@ const DynamicStyle = ({ attributes, clientId }) => {
           ${getBorderCss(buttonBorder)}
         }
 
+        ${gbbPricingCard}.is-featured .gbb-pricing-button {
+          ${featuredButtonBg ? `background-color: ${featuredButtonBg};` : ''}
+          ${featuredButtonColor ? `color: ${featuredButtonColor};` : ''}
+          ${getTypographyCss(featuredButtonTypo)}
+          ${getBorderRadiusCss(featuredButtonRadius)}
+          ${getBorderCss(featuredButtonBorder)}
+        }
+
         ${gbbPricingButton}:hover {
           background-color: ${buttonHoverBg};
           color: ${buttonHoverColor};
+        }
+
+        ${gbbPricingCard}.is-featured .gbb-pricing-button:hover {
+          ${featuredButtonHoverBg ? `background-color: ${featuredButtonHoverBg};` : ''}
+          ${featuredButtonHoverColor ? `color: ${featuredButtonHoverColor};` : ''}
         }
 
         ${tabBreakpoint} {

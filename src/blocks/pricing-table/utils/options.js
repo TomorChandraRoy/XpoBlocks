@@ -7,12 +7,12 @@ export const generalStyleTabs = [
 
 
 export const defaultPopularTypo = {
-  fontSize: { desktop: '', tablet: '', mobile: '' },
+  fontSize: { desktop: '12px', tablet: '', mobile: '' },
   fontFamily: '',
-  fontWeight: '',
+  fontWeight: '700',
   lineHeight: '',
   letterSpacing: '',
-  textTransform: 'none',
-  textDecoration: 'none',
-  fontStyle: 'normal',
+  textTransform: '',
+  textDecoration: '',
+  fontStyle: '',
 };

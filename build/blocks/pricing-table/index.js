@@ -5501,6 +5501,27 @@ const Style = ({
     featuredCardBg,
     featuredCardBorder,
     featuredCardBoxShadow,
+    featuredCardBorderRadius,
+    featuredCardTitleTypo,
+    featuredCardTitleColor,
+    featuredCardDescTypo,
+    featuredCardDescColor,
+    featuredPriceColor,
+    featuredPriceTypo,
+    featuredPeriodTypo,
+    featuredButtonBg,
+    featuredButtonHoverBg,
+    featuredButtonColor,
+    featuredButtonHoverColor,
+    featuredButtonBorder,
+    featuredButtonRadius,
+    featuredButtonTypo,
+    featuredDividerColor,
+    featuredFeaturesTitleColor,
+    featuredFeaturesTitleTypo,
+    featuredFeatureIconSize,
+    featuredFeatureTextColor,
+    featuredFeatureTextTypo,
     cardBg,
     cardBorder,
     cardBoxShadow,
@@ -5531,31 +5552,31 @@ const Style = ({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: [hasPopularCard && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Popular Layout', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Badge Layout', 'guten-builder-blocks'),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Typography', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Badge Typography', 'guten-builder-blocks'),
         value: badgeTypo,
         defaultTypography: _utils_options__WEBPACK_IMPORTED_MODULE_3__.defaultPopularTypo,
         onChange: val => setAttributes({
           badgeTypo: val
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Badge Text Color', 'guten-builder-blocks'),
         value: badgeColor,
         defaultColor: '#ffffff',
         onChange: val => setAttributes({
           badgeColor: val || '#ffffff'
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Badge Background Color', 'guten-builder-blocks'),
         value: badgeBgColor,
         defaultColor: '#4f46e5',
         onChange: val => setAttributes({
           badgeBgColor: val || '#4f46e5'
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.SpacingControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border Radius', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Badge Border Radius', 'guten-builder-blocks'),
         value: badgeRadius,
         onChange: val => setAttributes({
           badgeRadius: val
@@ -5566,7 +5587,12 @@ const Style = ({
           bottom: '1px',
           left: '16px'
         }
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BackgroundControl, {
+      })]
+    }), hasPopularCard && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      className: "bPlPanelBody",
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Popular Layout', 'guten-builder-blocks'),
+      initialOpen: false,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BackgroundControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Card Background', 'guten-builder-blocks'),
         value: featuredCardBg,
         onChange: val => setAttributes({
@@ -5588,6 +5614,18 @@ const Style = ({
           style: 'solid',
           side: 'all'
         }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.SpacingControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Card Border Radius', 'guten-builder-blocks'),
+        value: featuredCardBorderRadius,
+        onChange: val => setAttributes({
+          featuredCardBorderRadius: val
+        }),
+        defaultVal: {
+          top: '8px',
+          right: '8px',
+          bottom: '8px',
+          left: '8px'
+        }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ShadowControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Card Box Shadow', 'guten-builder-blocks'),
         value: featuredCardBoxShadow,
@@ -5601,6 +5639,150 @@ const Style = ({
           spread: '-3px',
           color: 'rgba(79, 70, 229, 0.1)'
         }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title Color', 'guten-builder-blocks'),
+        value: featuredCardTitleColor,
+        onChange: val => setAttributes({
+          featuredCardTitleColor: val
+        }),
+        defaultColor: "#111827"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title Typography', 'guten-builder-blocks'),
+        value: featuredCardTitleTypo,
+        onChange: val => setAttributes({
+          featuredCardTitleTypo: val
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description Color', 'guten-builder-blocks'),
+        value: featuredCardDescColor,
+        onChange: val => setAttributes({
+          featuredCardDescColor: val
+        }),
+        defaultColor: "#4b5563"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description Typography', 'guten-builder-blocks'),
+        value: featuredCardDescTypo,
+        onChange: val => setAttributes({
+          featuredCardDescTypo: val
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Price & Period Color', 'guten-builder-blocks'),
+        value: featuredPriceColor,
+        onChange: val => setAttributes({
+          featuredPriceColor: val
+        }),
+        defaultColor: "#111827"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Price Typography', 'guten-builder-blocks'),
+        value: featuredPriceTypo,
+        onChange: val => setAttributes({
+          featuredPriceTypo: val
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Period Typography', 'guten-builder-blocks'),
+        value: featuredPeriodTypo,
+        onChange: val => setAttributes({
+          featuredPeriodTypo: val
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Background', 'guten-builder-blocks'),
+        value: featuredButtonBg,
+        onChange: val => setAttributes({
+          featuredButtonBg: val
+        }),
+        defaultColor: "#4f46e5"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Hover Background', 'guten-builder-blocks'),
+        value: featuredButtonHoverBg,
+        onChange: val => setAttributes({
+          featuredButtonHoverBg: val
+        }),
+        defaultColor: "#fcfcfc"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Text Color', 'guten-builder-blocks'),
+        value: featuredButtonColor,
+        onChange: val => setAttributes({
+          featuredButtonColor: val
+        }),
+        defaultColor: "#ffffff"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Hover Text Color', 'guten-builder-blocks'),
+        value: featuredButtonHoverColor,
+        onChange: val => setAttributes({
+          featuredButtonHoverColor: val
+        }),
+        defaultColor: "#4f46e5"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Typography', 'guten-builder-blocks'),
+        value: featuredButtonTypo,
+        onChange: val => setAttributes({
+          featuredButtonTypo: val
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BorderControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Border', 'guten-builder-blocks'),
+        value: featuredButtonBorder,
+        onChange: val => setAttributes({
+          featuredButtonBorder: val
+        }),
+        defaultBorder: {
+          color: '#4f46e5',
+          width: '1px',
+          style: 'solid',
+          side: 'all'
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.SpacingControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Border Radius', 'guten-builder-blocks'),
+        value: featuredButtonRadius,
+        onChange: val => setAttributes({
+          featuredButtonRadius: val
+        }),
+        defaultVal: {
+          top: '2px',
+          right: '2px',
+          bottom: '2px',
+          left: '2px'
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Divider Color', 'guten-builder-blocks'),
+        value: featuredDividerColor,
+        onChange: val => setAttributes({
+          featuredDividerColor: val
+        }),
+        defaultColor: "#e5e7eb"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Features Title Color', 'guten-builder-blocks'),
+        value: featuredFeaturesTitleColor,
+        onChange: val => setAttributes({
+          featuredFeaturesTitleColor: val
+        }),
+        defaultColor: "#111827"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Features Title Typography', 'guten-builder-blocks'),
+        value: featuredFeaturesTitleTypo,
+        onChange: val => setAttributes({
+          featuredFeaturesTitleTypo: val
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Feature Icon Size', 'guten-builder-blocks'),
+        value: featuredFeatureIconSize,
+        onChange: val => setAttributes({
+          featuredFeatureIconSize: val
+        }),
+        min: 10,
+        max: 60
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Feature Text Color', 'guten-builder-blocks'),
+        value: featuredFeatureTextColor,
+        onChange: val => setAttributes({
+          featuredFeatureTextColor: val
+        }),
+        defaultColor: "#374151"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Feature Text Typography', 'guten-builder-blocks'),
+        value: featuredFeatureTextTypo,
+        onChange: val => setAttributes({
+          featuredFeatureTextTypo: val
+        })
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
@@ -5678,12 +5860,6 @@ const Style = ({
         value: cardDescTypo,
         onChange: val => setAttributes({
           cardDescTypo: val
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Period Typography', 'guten-builder-blocks'),
-        value: periodTypo,
-        onChange: val => setAttributes({
-          periodTypo: val
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Price & Period Color', 'guten-builder-blocks'),
@@ -6022,6 +6198,27 @@ const DynamicStyle = ({
     featuredCardBg,
     featuredCardBorder,
     featuredCardBoxShadow,
+    featuredCardBorderRadius,
+    featuredCardTitleTypo,
+    featuredCardTitleColor,
+    featuredCardDescTypo,
+    featuredCardDescColor,
+    featuredPriceColor,
+    featuredPriceTypo,
+    featuredPeriodTypo,
+    featuredButtonBg,
+    featuredButtonHoverBg,
+    featuredButtonColor,
+    featuredButtonHoverColor,
+    featuredButtonBorder,
+    featuredButtonRadius,
+    featuredButtonTypo,
+    featuredDividerColor,
+    featuredFeaturesTitleColor,
+    featuredFeaturesTitleTypo,
+    featuredFeatureIconSize,
+    featuredFeatureTextColor,
+    featuredFeatureTextTypo,
     cardBg,
     cardBorder,
     cardBorderRadius,
@@ -6094,6 +6291,7 @@ const DynamicStyle = ({
         ${gbbPricingCard}.is-featured {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(featuredCardBg) ? `background: ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(featuredCardBg)};` : ''}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderCss)(featuredCardBorder)}
+          ${(0,tr_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBorderRadiusCss)(featuredCardBorderRadius)}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getShadowCss)(featuredCardBoxShadow) ? `box-shadow: ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getShadowCss)(featuredCardBoxShadow)};` : ''}
         }
 
@@ -6101,9 +6299,18 @@ const DynamicStyle = ({
           border-bottom-color: ${dividerColor};
         }
 
+        ${gbbPricingCard}.is-featured .gbb-pricing-card-top {
+          ${featuredDividerColor ? `border-bottom-color: ${featuredDividerColor};` : ''}
+        }
+
         ${gbbPricingName} {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(cardTitleTypo)}
           color: ${cardTitleColor};
+        }
+
+        ${gbbPricingCard}.is-featured .gbb-pricing-name {
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredCardTitleTypo)}
+          ${featuredCardTitleColor ? `color: ${featuredCardTitleColor};` : ''}
         }
 
         ${gbbPricingDesc} {
@@ -6111,9 +6318,19 @@ const DynamicStyle = ({
           color: ${cardDescColor};
         }
 
+        ${gbbPricingCard}.is-featured .gbb-pricing-desc {
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredCardDescTypo)}
+          ${featuredCardDescColor ? `color: ${featuredCardDescColor};` : ''}
+        }
+
         ${gbbFeaturesTitle} {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuresTitleTypo)}
           color: ${featuresTitleColor};
+        }
+
+        ${gbbPricingCard}.is-featured .gbb-features-title {
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredFeaturesTitleTypo)}
+          ${featuredFeaturesTitleColor ? `color: ${featuredFeaturesTitleColor};` : ''}
         }
 
         ${gbbFeatureIcon} {
@@ -6121,9 +6338,18 @@ const DynamicStyle = ({
           height: ${featureIconSize}px;
         }
 
+        ${gbbPricingCard}.is-featured .gbb-icon-success, ${gbbPricingCard}.is-featured .gbb-icon-error {
+          ${featuredFeatureIconSize ? `width: ${featuredFeatureIconSize}px; height: ${featuredFeatureIconSize}px;` : ''}
+        }
+
         ${gbbFeatureText} {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featureTextTypo)}
           color: ${featureTextColor};
+        }
+
+        ${gbbPricingCard}.is-featured .gbb-feature-text {
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredFeatureTextTypo)}
+          ${featuredFeatureTextColor ? `color: ${featuredFeatureTextColor};` : ''}
         }
 
         ${gbbPricingPriceWrap} {
@@ -6135,9 +6361,19 @@ const DynamicStyle = ({
           color: ${priceColor};
         }
 
+        ${gbbPricingCard}.is-featured .gbb-pricing-price {
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredPriceTypo)}
+          ${featuredPriceColor ? `color: ${featuredPriceColor};` : ''}
+        }
+
         ${gbbPricingPeriod} {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(periodTypo)}
           color: ${priceColor};
+        }
+
+        ${gbbPricingCard}.is-featured .gbb-pricing-period {
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredPeriodTypo)}
+          ${featuredPriceColor ? `color: ${featuredPriceColor};` : ''}
         }
 
         ${gbbPricingButton} {
@@ -6148,9 +6384,22 @@ const DynamicStyle = ({
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderCss)(buttonBorder)}
         }
 
+        ${gbbPricingCard}.is-featured .gbb-pricing-button {
+          ${featuredButtonBg ? `background-color: ${featuredButtonBg};` : ''}
+          ${featuredButtonColor ? `color: ${featuredButtonColor};` : ''}
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredButtonTypo)}
+          ${(0,tr_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBorderRadiusCss)(featuredButtonRadius)}
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderCss)(featuredButtonBorder)}
+        }
+
         ${gbbPricingButton}:hover {
           background-color: ${buttonHoverBg};
           color: ${buttonHoverColor};
+        }
+
+        ${gbbPricingCard}.is-featured .gbb-pricing-button:hover {
+          ${featuredButtonHoverBg ? `background-color: ${featuredButtonHoverBg};` : ''}
+          ${featuredButtonHoverColor ? `color: ${featuredButtonHoverColor};` : ''}
         }
 
         ${tr_tools__WEBPACK_IMPORTED_MODULE_0__.tabBreakpoint} {
@@ -6338,12 +6587,35 @@ const templateData = {
           iconColor: '#4338ca'
         }]
       }],
+      badgeTypo: {
+        fontSize: {
+          desktop: '12px',
+          tablet: '',
+          mobile: ''
+        },
+        fontFamily: '',
+        fontWeight: '700',
+        lineHeight: '',
+        letterSpacing: '',
+        textTransform: '',
+        textDecoration: '',
+        fontStyle: ''
+      },
+      badgeColor: {
+        type: 'string',
+        default: '#ffffff'
+      },
+      badgeBgColor: {
+        type: 'string',
+        default: '#4f46e5'
+      },
       badgeRadius: {
         top: '1px',
         right: '1px',
         bottom: '1px',
         left: '16px'
       },
+      //Popular
       featuredCardBorder: {
         color: '#4f46e5',
         width: '2px',
@@ -6354,6 +6626,12 @@ const templateData = {
         type: 'solid',
         color: '#f8fafc'
       },
+      featuredCardBorderRadius: {
+        top: '8px',
+        right: '8px',
+        bottom: '8px',
+        left: '8px'
+      },
       featuredCardBoxShadow: {
         hOffset: '0px',
         vOffset: '10px',
@@ -6361,6 +6639,128 @@ const templateData = {
         spread: '-3px',
         color: 'rgba(79, 70, 229, 0.1)'
       },
+      featuredCardTitleTypo: {
+        fontSize: {
+          desktop: '18px',
+          tablet: '',
+          mobile: ''
+        },
+        fontFamily: 'Google Sans Flex',
+        fontWeight: '500',
+        lineHeight: '',
+        letterSpacing: '',
+        textTransform: '',
+        textDecoration: '',
+        fontStyle: ''
+      },
+      featuredCardTitleColor: '#111827',
+      featuredCardDescTypo: {
+        fontSize: {
+          desktop: '15px',
+          tablet: '',
+          mobile: ''
+        },
+        fontFamily: 'Google Sans Flex',
+        fontWeight: '300',
+        lineHeight: '',
+        letterSpacing: '',
+        textTransform: '',
+        textDecoration: '',
+        fontStyle: ''
+      },
+      featuredCardDescColor: '#4b5563',
+      featuredPriceColor: '#111827',
+      featuredPriceTypo: {
+        fontSize: {
+          desktop: '36px',
+          tablet: '',
+          mobile: ''
+        },
+        fontFamily: 'Google Sans Flex',
+        fontWeight: '700',
+        lineHeight: '',
+        letterSpacing: '',
+        textTransform: '',
+        textDecoration: '',
+        fontStyle: ''
+      },
+      featuredPeriodTypo: {
+        fontSize: {
+          desktop: '14px',
+          tablet: '',
+          mobile: ''
+        },
+        fontFamily: 'Google Sans Flex',
+        fontWeight: '500',
+        lineHeight: '',
+        letterSpacing: '',
+        textTransform: '',
+        textDecoration: '',
+        fontStyle: ''
+      },
+      featuredButtonBg: '#4f46e5',
+      featuredButtonHoverBg: '#fcfcfc',
+      featuredButtonColor: '#ffffff',
+      featuredButtonHoverColor: '#4f46e5',
+      featuredButtonBorder: {
+        color: '#4f46e5',
+        width: '1px',
+        style: 'solid',
+        side: 'all'
+      },
+      featuredButtonRadius: {
+        top: '2px',
+        right: '2px',
+        bottom: '2px',
+        left: '2px'
+      },
+      featuredButtonTypo: {
+        fontSize: {
+          desktop: '14px',
+          tablet: '',
+          mobile: ''
+        },
+        fontFamily: 'Google Sans Flex',
+        fontWeight: '500',
+        lineHeight: '',
+        letterSpacing: '',
+        textTransform: '',
+        textDecoration: '',
+        fontStyle: ''
+      },
+      featuredDividerColor: '#e5e7eb',
+      featuredFeaturesTitleColor: '#111827',
+      featuredFeaturesTitleTypo: {
+        fontSize: {
+          desktop: '18px',
+          tablet: '',
+          mobile: ''
+        },
+        fontFamily: 'Google Sans Flex',
+        fontWeight: '500',
+        lineHeight: '',
+        letterSpacing: '',
+        textTransform: '',
+        textDecoration: '',
+        fontStyle: ''
+      },
+      featuredFeatureIconSize: 21,
+      featuredFeatureTextColor: '#374151',
+      featuredFeatureTextTypo: {
+        fontSize: {
+          desktop: '16px',
+          tablet: '',
+          mobile: ''
+        },
+        fontFamily: 'Google Sans Flex',
+        fontWeight: '400',
+        lineHeight: '',
+        letterSpacing: '',
+        textTransform: '',
+        textDecoration: '',
+        fontStyle: ''
+      },
+      //Normal
       cardBg: {
         type: 'solid',
         color: '#ffffff'
@@ -7113,17 +7513,17 @@ const generalStyleTabs = [{
 }];
 const defaultPopularTypo = {
   fontSize: {
-    desktop: '',
+    desktop: '12px',
     tablet: '',
     mobile: ''
   },
   fontFamily: '',
-  fontWeight: '',
+  fontWeight: '700',
   lineHeight: '',
   letterSpacing: '',
-  textTransform: 'none',
-  textDecoration: 'none',
-  fontStyle: 'normal'
+  textTransform: '',
+  textDecoration: '',
+  fontStyle: ''
 };
 
 /***/ },
@@ -7396,7 +7796,7 @@ module.exports = window["wp"]["i18n"];
   \*********************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/pricing-table","version":"1.0.0","title":"Pricing Table","description":"Showcase your subscription plans or products with a stunning pricing grid.","category":"guten-builder","keywords":["pricing","price list","table","grid"],"attributes":{"selectedTemplate":{"type":"string","default":""},"pricingTables":{"type":"array","default":[]},"align":{"type":"string","default":"wide"},"columns":{"type":"number","default":3},"gap":{"type":"number","default":24},"containerWidth":{"type":"string","default":"1200px"},"badgeTypo":{"type":"object","default":{}},"badgeColor":{"type":"string","default":"#ffffff"},"badgeBgColor":{"type":"string","default":"#4f46e5"},"badgeRadius":{"type":"object"},"featuredCardBorder":{"type":"object"},"featuredCardBg":{"type":"object"},"featuredCardBoxShadow":{"type":"object"},"cardBg":{"type":"object"},"cardBorder":{"type":"object"},"cardBoxShadow":{"type":"object"},"cardBorderRadius":{"type":"object"},"cardTitleTypo":{"type":"object"},"cardTitleColor":{"type":"string"},"cardDescTypo":{"type":"object"},"cardDescColor":{"type":"string"},"priceColor":{"type":"string"},"priceTypo":{"type":"object"},"periodTypo":{"type":"object"},"buttonBg":{"type":"string"},"buttonHoverBg":{"type":"string"},"buttonRadius":{"type":"object"},"buttonTypo":{"type":"object"},"buttonColor":{"type":"string"},"buttonHoverColor":{"type":"string"},"buttonBorder":{"type":"object"},"dividerColor":{"type":"string"},"featuresTitleColor":{"type":"string"},"featuresTitleTypo":{"type":"object"},"featureIconSize":{"type":"number","default":21},"featureTextColor":{"type":"string"},"featureTextTypo":{"type":"object"}},"supports":{"html":false,"align":["wide","full"]},"textdomain":"guten-builder-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/pricing-table","version":"1.0.0","title":"Pricing Table","description":"Showcase your subscription plans or products with a stunning pricing grid.","category":"guten-builder","keywords":["pricing","price list","table","grid"],"attributes":{"selectedTemplate":{"type":"string","default":""},"pricingTables":{"type":"array","default":[]},"align":{"type":"string","default":"wide"},"columns":{"type":"number","default":3},"gap":{"type":"number","default":24},"containerWidth":{"type":"string","default":"1200px"},"badgeTypo":{"type":"object","default":{}},"badgeColor":{"type":"string","default":"#ffffff"},"badgeBgColor":{"type":"string","default":"#4f46e5"},"badgeRadius":{"type":"object"},"featuredCardBorder":{"type":"object"},"featuredCardBg":{"type":"object"},"featuredCardBoxShadow":{"type":"object"},"featuredCardBorderRadius":{"type":"object"},"featuredCardTitleTypo":{"type":"object"},"featuredCardTitleColor":{"type":"string"},"featuredCardDescTypo":{"type":"object"},"featuredCardDescColor":{"type":"string"},"featuredPriceColor":{"type":"string"},"featuredPriceTypo":{"type":"object"},"featuredPeriodTypo":{"type":"object"},"featuredButtonBg":{"type":"string"},"featuredButtonHoverBg":{"type":"string"},"featuredButtonColor":{"type":"string"},"featuredButtonHoverColor":{"type":"string"},"featuredButtonBorder":{"type":"object"},"featuredButtonRadius":{"type":"object"},"featuredButtonTypo":{"type":"object"},"featuredDividerColor":{"type":"string"},"featuredFeaturesTitleColor":{"type":"string"},"featuredFeaturesTitleTypo":{"type":"object"},"featuredFeatureIconSize":{"type":"number","default":21},"featuredFeatureTextColor":{"type":"string"},"featuredFeatureTextTypo":{"type":"object"},"cardBg":{"type":"object"},"cardBorder":{"type":"object"},"cardBoxShadow":{"type":"object"},"cardBorderRadius":{"type":"object"},"cardTitleTypo":{"type":"object"},"cardTitleColor":{"type":"string"},"cardDescTypo":{"type":"object"},"cardDescColor":{"type":"string"},"priceColor":{"type":"string"},"priceTypo":{"type":"object"},"periodTypo":{"type":"object"},"buttonBg":{"type":"string"},"buttonHoverBg":{"type":"string"},"buttonRadius":{"type":"object"},"buttonTypo":{"type":"object"},"buttonColor":{"type":"string"},"buttonHoverColor":{"type":"string"},"buttonBorder":{"type":"object"},"dividerColor":{"type":"string"},"featuresTitleColor":{"type":"string"},"featuresTitleTypo":{"type":"object"},"featureIconSize":{"type":"number","default":21},"featureTextColor":{"type":"string"},"featureTextTypo":{"type":"object"}},"supports":{"html":false,"align":["wide","full"]},"textdomain":"guten-builder-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
 
 /***/ }
 

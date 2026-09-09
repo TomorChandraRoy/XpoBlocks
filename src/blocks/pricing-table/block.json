@@ -46,13 +46,79 @@
     "badgeRadius": {
       "type": "object"
     },
+
     "featuredCardBorder": {
       "type": "object"
     },
+
     "featuredCardBg": {
       "type": "object"
     },
     "featuredCardBoxShadow": {
+      "type": "object"
+    },
+    "featuredCardBorderRadius": {
+      "type": "object"
+    },
+    "featuredCardTitleTypo": {
+      "type": "object"
+    },
+    "featuredCardTitleColor": {
+      "type": "string"
+    },
+    "featuredCardDescTypo": {
+      "type": "object"
+    },
+    "featuredCardDescColor": {
+      "type": "string"
+    },
+    "featuredPriceColor": {
+      "type": "string"
+    },
+    "featuredPriceTypo": {
+      "type": "object"
+    },
+    "featuredPeriodTypo": {
+      "type": "object"
+    },
+    "featuredButtonBg": {
+      "type": "string"
+    },
+    "featuredButtonHoverBg": {
+      "type": "string"
+    },
+    "featuredButtonColor": {
+      "type": "string"
+    },
+    "featuredButtonHoverColor": {
+      "type": "string"
+    },
+    "featuredButtonBorder": {
+      "type": "object"
+    },
+    "featuredButtonRadius": {
+      "type": "object"
+    },
+    "featuredButtonTypo": {
+      "type": "object"
+    },
+    "featuredDividerColor": {
+      "type": "string"
+    },
+    "featuredFeaturesTitleColor": {
+      "type": "string"
+    },
+    "featuredFeaturesTitleTypo": {
+      "type": "object"
+    },
+    "featuredFeatureIconSize": {
+      "type": "number",
+      "default": 21
+    },
+    "featuredFeatureTextColor": {
+      "type": "string"
+    },
+    "featuredFeatureTextTypo": {
       "type": "object"
     },
     "cardBg": {
@@ -131,7 +197,7 @@
   },
   "supports": {
     "html": false,
-    "align": ["wide","full"]
+    "align": ["wide", "full"]
   },
   "textdomain": "guten-builder-blocks",
   "editorScript": "file:./index.js",

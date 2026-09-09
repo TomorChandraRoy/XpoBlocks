@@ -77,12 +77,37 @@ export const templateData = {
             ],
           },
         ],
+        badgeTypo: {
+          fontSize: {
+            desktop: '12px',
+            tablet: '',
+            mobile: '',
+          },
+          fontFamily: '',
+          fontWeight: '700',
+          lineHeight: '',
+          letterSpacing: '',
+          textTransform: '',
+          textDecoration: '',
+          fontStyle: '',
+        },
+        badgeColor: {
+          type: 'string',
+          default: '#ffffff',
+        },
+        badgeBgColor: {
+          type: 'string',
+          default: '#4f46e5',
+        },
+
         badgeRadius: {
           top: '1px',
           right: '1px',
           bottom: '1px',
           left: '16px',
         },
+
+        //Popular
         featuredCardBorder: {
           color: '#4f46e5',
           width: '2px',
@@ -90,6 +115,12 @@ export const templateData = {
           side: 'all',
         },
         featuredCardBg: { type: 'solid', color: '#f8fafc' },
+        featuredCardBorderRadius: {
+          top: '8px',
+          right: '8px',
+          bottom: '8px',
+          left: '8px',
+        },
         featuredCardBoxShadow: {
           hOffset: '0px',
           vOffset: '10px',
@@ -97,6 +128,129 @@ export const templateData = {
           spread: '-3px',
           color: 'rgba(79, 70, 229, 0.1)',
         },
+        featuredCardTitleTypo: {
+          fontSize: {
+            desktop: '18px',
+            tablet: '',
+            mobile: '',
+          },
+          fontFamily: 'Google Sans Flex',
+          fontWeight: '500',
+          lineHeight: '',
+          letterSpacing: '',
+          textTransform: '',
+          textDecoration: '',
+          fontStyle: '',
+        },
+        featuredCardTitleColor: '#111827',
+        featuredCardDescTypo: {
+          fontSize: {
+            desktop: '15px',
+            tablet: '',
+            mobile: '',
+          },
+          fontFamily: 'Google Sans Flex',
+          fontWeight: '300',
+          lineHeight: '',
+          letterSpacing: '',
+          textTransform: '',
+          textDecoration: '',
+          fontStyle: '',
+        },
+        featuredCardDescColor: '#4b5563',
+        featuredPriceColor: '#111827',
+        featuredPriceTypo: {
+          fontSize: {
+            desktop: '36px',
+            tablet: '',
+            mobile: '',
+          },
+          fontFamily: 'Google Sans Flex',
+          fontWeight: '700',
+          lineHeight: '',
+          letterSpacing: '',
+          textTransform: '',
+          textDecoration: '',
+          fontStyle: '',
+        },
+        featuredPeriodTypo: {
+          fontSize: {
+            desktop: '14px',
+            tablet: '',
+            mobile: '',
+          },
+          fontFamily: 'Google Sans Flex',
+          fontWeight: '500',
+          lineHeight: '',
+          letterSpacing: '',
+          textTransform: '',
+          textDecoration: '',
+          fontStyle: '',
+        },
+        featuredButtonBg: '#4f46e5',
+        featuredButtonHoverBg: '#fcfcfc',
+        featuredButtonColor: '#ffffff',
+        featuredButtonHoverColor: '#4f46e5',
+        featuredButtonBorder: {
+          color: '#4f46e5',
+          width: '1px',
+          style: 'solid',
+          side: 'all',
+        },
+        featuredButtonRadius: {
+          top: '2px',
+          right: '2px',
+          bottom: '2px',
+          left: '2px',
+        },
+        featuredButtonTypo: {
+          fontSize: {
+            desktop: '14px',
+            tablet: '',
+            mobile: '',
+          },
+          fontFamily: 'Google Sans Flex',
+          fontWeight: '500',
+          lineHeight: '',
+          letterSpacing: '',
+          textTransform: '',
+          textDecoration: '',
+          fontStyle: '',
+        },
+        featuredDividerColor: '#e5e7eb',
+        featuredFeaturesTitleColor: '#111827',
+        featuredFeaturesTitleTypo: {
+          fontSize: {
+            desktop: '18px',
+            tablet: '',
+            mobile: '',
+          },
+          fontFamily: 'Google Sans Flex',
+          fontWeight: '500',
+          lineHeight: '',
+          letterSpacing: '',
+          textTransform: '',
+          textDecoration: '',
+          fontStyle: '',
+        },
+        featuredFeatureIconSize: 21,
+        featuredFeatureTextColor: '#374151',
+        featuredFeatureTextTypo: {
+          fontSize: {
+            desktop: '16px',
+            tablet: '',
+            mobile: '',
+          },
+          fontFamily: 'Google Sans Flex',
+          fontWeight: '400',
+          lineHeight: '',
+          letterSpacing: '',
+          textTransform: '',
+          textDecoration: '',
+          fontStyle: '',
+        },
+
+        //Normal
         cardBg: { type: 'solid', color: '#ffffff' },
         cardBorder: {
           color: '#e5e7eb',
@@ -117,6 +271,7 @@ export const templateData = {
           bottom: '8px',
           left: '8px',
         },
+
         cardTitleTypo: {
           fontSize: {
             desktop: '18px',

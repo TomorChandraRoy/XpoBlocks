@@ -5286,6 +5286,27 @@ const DynamicStyle = ({
     featuredCardBg,
     featuredCardBorder,
     featuredCardBoxShadow,
+    featuredCardBorderRadius,
+    featuredCardTitleTypo,
+    featuredCardTitleColor,
+    featuredCardDescTypo,
+    featuredCardDescColor,
+    featuredPriceColor,
+    featuredPriceTypo,
+    featuredPeriodTypo,
+    featuredButtonBg,
+    featuredButtonHoverBg,
+    featuredButtonColor,
+    featuredButtonHoverColor,
+    featuredButtonBorder,
+    featuredButtonRadius,
+    featuredButtonTypo,
+    featuredDividerColor,
+    featuredFeaturesTitleColor,
+    featuredFeaturesTitleTypo,
+    featuredFeatureIconSize,
+    featuredFeatureTextColor,
+    featuredFeatureTextTypo,
     cardBg,
     cardBorder,
     cardBorderRadius,
@@ -5358,6 +5379,7 @@ const DynamicStyle = ({
         ${gbbPricingCard}.is-featured {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(featuredCardBg) ? `background: ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(featuredCardBg)};` : ''}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderCss)(featuredCardBorder)}
+          ${(0,tr_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBorderRadiusCss)(featuredCardBorderRadius)}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getShadowCss)(featuredCardBoxShadow) ? `box-shadow: ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getShadowCss)(featuredCardBoxShadow)};` : ''}
         }
 
@@ -5365,9 +5387,18 @@ const DynamicStyle = ({
           border-bottom-color: ${dividerColor};
         }
 
+        ${gbbPricingCard}.is-featured .gbb-pricing-card-top {
+          ${featuredDividerColor ? `border-bottom-color: ${featuredDividerColor};` : ''}
+        }
+
         ${gbbPricingName} {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(cardTitleTypo)}
           color: ${cardTitleColor};
+        }
+
+        ${gbbPricingCard}.is-featured .gbb-pricing-name {
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredCardTitleTypo)}
+          ${featuredCardTitleColor ? `color: ${featuredCardTitleColor};` : ''}
         }
 
         ${gbbPricingDesc} {
@@ -5375,9 +5406,19 @@ const DynamicStyle = ({
           color: ${cardDescColor};
         }
 
+        ${gbbPricingCard}.is-featured .gbb-pricing-desc {
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredCardDescTypo)}
+          ${featuredCardDescColor ? `color: ${featuredCardDescColor};` : ''}
+        }
+
         ${gbbFeaturesTitle} {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuresTitleTypo)}
           color: ${featuresTitleColor};
+        }
+
+        ${gbbPricingCard}.is-featured .gbb-features-title {
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredFeaturesTitleTypo)}
+          ${featuredFeaturesTitleColor ? `color: ${featuredFeaturesTitleColor};` : ''}
         }
 
         ${gbbFeatureIcon} {
@@ -5385,9 +5426,18 @@ const DynamicStyle = ({
           height: ${featureIconSize}px;
         }
 
+        ${gbbPricingCard}.is-featured .gbb-icon-success, ${gbbPricingCard}.is-featured .gbb-icon-error {
+          ${featuredFeatureIconSize ? `width: ${featuredFeatureIconSize}px; height: ${featuredFeatureIconSize}px;` : ''}
+        }
+
         ${gbbFeatureText} {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featureTextTypo)}
           color: ${featureTextColor};
+        }
+
+        ${gbbPricingCard}.is-featured .gbb-feature-text {
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredFeatureTextTypo)}
+          ${featuredFeatureTextColor ? `color: ${featuredFeatureTextColor};` : ''}
         }
 
         ${gbbPricingPriceWrap} {
@@ -5399,9 +5449,19 @@ const DynamicStyle = ({
           color: ${priceColor};
         }
 
+        ${gbbPricingCard}.is-featured .gbb-pricing-price {
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredPriceTypo)}
+          ${featuredPriceColor ? `color: ${featuredPriceColor};` : ''}
+        }
+
         ${gbbPricingPeriod} {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(periodTypo)}
           color: ${priceColor};
+        }
+
+        ${gbbPricingCard}.is-featured .gbb-pricing-period {
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredPeriodTypo)}
+          ${featuredPriceColor ? `color: ${featuredPriceColor};` : ''}
         }
 
         ${gbbPricingButton} {
@@ -5412,9 +5472,22 @@ const DynamicStyle = ({
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderCss)(buttonBorder)}
         }
 
+        ${gbbPricingCard}.is-featured .gbb-pricing-button {
+          ${featuredButtonBg ? `background-color: ${featuredButtonBg};` : ''}
+          ${featuredButtonColor ? `color: ${featuredButtonColor};` : ''}
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredButtonTypo)}
+          ${(0,tr_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBorderRadiusCss)(featuredButtonRadius)}
+          ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderCss)(featuredButtonBorder)}
+        }
+
         ${gbbPricingButton}:hover {
           background-color: ${buttonHoverBg};
           color: ${buttonHoverColor};
+        }
+
+        ${gbbPricingCard}.is-featured .gbb-pricing-button:hover {
+          ${featuredButtonHoverBg ? `background-color: ${featuredButtonHoverBg};` : ''}
+          ${featuredButtonHoverColor ? `color: ${featuredButtonHoverColor};` : ''}
         }
 
         ${tr_tools__WEBPACK_IMPORTED_MODULE_0__.tabBreakpoint} {
