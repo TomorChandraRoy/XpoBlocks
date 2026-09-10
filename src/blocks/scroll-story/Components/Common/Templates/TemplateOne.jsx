@@ -1,62 +1,78 @@
 import { useState, useEffect, useRef } from 'react';
-import { imageIcon } from '../utils/icons';
+import { imageIcon } from '../../../utils/icons';
 
-const ScrollStory = ({ attributes, setAttributes, RichTextEl, isBackend = false }) => {
-	const {
-		blockId,
-		layout = 'sticky-right',
-		steps = []
-	} = attributes;
+const TemplateOne = ({ attributes, setAttributes, RichTextEl, isBackend = false }) => {
+	const {layout = 'sticky-right',steps = []} = attributes;
 
 	const [activeStep, setActiveStep] = useState(0);
 	const stepRefs = useRef([]);
 
-	// Frontend IntersectionObserver logic
+	// Frontend scroll / IntersectionObserver logic with requestAnimationFrame for 60/120fps performance
 	useEffect(() => {
 		if (isBackend) return;
-		
+
+		let ticking = false;
+
+		const updateActiveStepOnScroll = () => {
+			if (!ticking) {
+				window.requestAnimationFrame(() => {
+					let closestIndex = 0;
+					let minDistance = Infinity;
+					const viewportCenter = window.innerHeight / 2;
+
+					stepRefs.current.forEach((ref, index) => {
+						if (!ref) return;
+						const rect = ref.getBoundingClientRect();
+						const elementCenter = rect.top + rect.height / 2;
+						const distance = Math.abs(elementCenter - viewportCenter);
+
+						if (distance < minDistance) {
+							minDistance = distance;
+							closestIndex = index;
+						}
+					});
+
+					setActiveStep((prev) => (prev !== closestIndex ? closestIndex : prev));
+					ticking = false;
+				});
+				ticking = true;
+			}
+		};
+
 		const observerOptions = {
 			root: null,
-			rootMargin: '-50% 0px -50% 0px',
-			threshold: 0
+			threshold: [0, 0.2, 0.4, 0.6, 0.8, 1.0]
 		};
 
-		const observerCallback = (entries) => {
-			entries.forEach((entry) => {
-				if (entry.isIntersecting) {
-					const index = parseInt(entry.target.getAttribute('data-step-index'), 10);
-					if (!isNaN(index)) {
-						setActiveStep(index);
-					}
-				}
-			});
-		};
-
-		const observer = new IntersectionObserver(observerCallback, observerOptions);
+		const observer = new IntersectionObserver(() => {
+			updateActiveStepOnScroll();
+		}, observerOptions);
 
 		stepRefs.current.forEach((ref) => {
 			if (ref) observer.observe(ref);
 		});
 
+		window.addEventListener('scroll', updateActiveStepOnScroll, { passive: true });
+
 		return () => {
 			stepRefs.current.forEach((ref) => {
 				if (ref) observer.unobserve(ref);
 			});
+			window.removeEventListener('scroll', updateActiveStepOnScroll);
 		};
 	}, [isBackend, steps]);
 
-	// In the backend, clicking a step changes the active step preview
+	// Clicking a step changes active step (and scrolls into view on frontend)
 	const handleStepClick = (index) => {
-		if (isBackend) {
-			setActiveStep(index);
+		setActiveStep(index);
+		if (!isBackend && stepRefs.current[index]) {
+			stepRefs.current[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
 		}
 	};
 
 	const activeMedia = steps[activeStep]?.mediaUrl;
 	const activeLottie = steps[activeStep]?.lottieUrl;
 	const mediaType = steps[activeStep]?.mediaType || 'image';
-
-	const hasMedia = activeMedia || activeLottie;
 
 	const updateStepAttr = (index, key, value) => {
 		if (!isBackend) return;
@@ -66,8 +82,8 @@ const ScrollStory = ({ attributes, setAttributes, RichTextEl, isBackend = false 
 	};
 
 	return (
-		<div className={`gbb-scroll-story-container ${blockId} layout-${layout}`}>
-			
+		<div className={`gbb-scroll-story-container layout-${layout}`}>
+
 			<div className="gbb-scroll-story-content">
 				{steps.map((step, index) => (
 					<div
@@ -118,14 +134,32 @@ const ScrollStory = ({ attributes, setAttributes, RichTextEl, isBackend = false 
 					{mediaType === 'lottie' && (
 						activeLottie ? (
 							<div className="gbb-scroll-story-lottie fade-in" key={activeLottie}>
-								<lottie-player
-									src={activeLottie}
-									background="transparent"
-									speed="1"
-									style={{ width: '100%', height: '100%' }}
-									loop
-									autoplay
-								></lottie-player>
+								{(() => {
+									let cleanUrl = activeLottie.trim();
+									const iframeMatch = cleanUrl.match(/src=["']([^"']+)["']/);
+									if (iframeMatch && iframeMatch[1]) {
+										cleanUrl = iframeMatch[1];
+									}
+									if (cleanUrl.includes('/embed/')) {
+										return (
+											<iframe
+												src={cleanUrl}
+												style={{ width: '100%', height: '100%', border: 'none' }}
+												title={`Lottie Step ${activeStep + 1}`}
+											></iframe>
+										);
+									}
+									return (
+										<lottie-player
+											src={cleanUrl}
+											background="transparent"
+											speed="1"
+											style={{ width: '100%', height: '100%' }}
+											loop
+											autoplay
+										></lottie-player>
+									);
+								})()}
 							</div>
 						) : (
 							<div className="gbb-scroll-story-placeholder">
@@ -142,4 +176,4 @@ const ScrollStory = ({ attributes, setAttributes, RichTextEl, isBackend = false 
 	);
 };
 
-export default ScrollStory;
+export default TemplateOne;

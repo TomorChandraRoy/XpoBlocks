@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/blocks/scroll-story/Components/Common/dynamicStyle.js"
-/*!*******************************************************************!*\
-  !*** ./src/blocks/scroll-story/Components/Common/dynamicStyle.js ***!
-  \*******************************************************************/
+/***/ "./src/blocks/scroll-story/Components/Common/DynamicStyles.js"
+/*!********************************************************************!*\
+  !*** ./src/blocks/scroll-story/Components/Common/DynamicStyles.js ***!
+  \********************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -20,162 +20,61 @@ const DynamicStyle = ({
   clientId
 }) => {
   const {
-    blockId,
     progressColor = '#3b82f6',
     activeTitleColor = '#1e293b',
     inactiveTitleColor = '#94a3b8',
-    descColor = '#475569'
+    descColor = '#475569',
+    imageFit = 'cover',
+    mediaBgColor = '#f1f5f9',
+    mediaHeight = '400px',
+    mediaRadius = '20px',
+    stepGap = '60px'
   } = attributes;
-  const mainSl = `.${blockId}`;
+
+  // In editor, the prop clientId is passed as 'block-{id}'. Frontend fallback to generic class.
+  const mainSl = clientId ? `#${clientId}` : '.wp-block-guten-builder-blocks-scroll-story';
+  const gbbCnt = `${mainSl} .gbb-scroll-story-content`;
+  const gbbSPF = `${mainSl} .gbb-scroll-progress-fill`;
+  const gbbSST = `${mainSl} .gbb-scroll-story-title`;
+  const gbbSSA = `${mainSl} .gbb-scroll-story-step.is-active .gbb-scroll-story-title`;
+  const gbbSSD = `${mainSl} .gbb-scroll-story-desc`;
+  const gbbImg = `${mainSl} .gbb-scroll-story-image`;
+  const gbbMediaWrp = `${mainSl} .gbb-scroll-story-media-wrapper`;
+  const gbbMediaStk = `${mainSl} .gbb-scroll-story-media-sticky`;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("style", {
     dangerouslySetInnerHTML: {
       __html: `
-				${mainSl} {
-					display: flex;
-					flex-direction: row;
-					align-items: flex-start;
-					gap: 40px;
-					position: relative;
+				${gbbCnt} {
+					gap: ${stepGap};
 				}
 
-				${mainSl}.layout-sticky-left {
-					flex-direction: row-reverse;
-				}
-
-				${mainSl} .gbb-scroll-story-content {
-					flex: 1;
-					display: flex;
-					flex-direction: column;
-					gap: 60px;
-					padding: 50px 0 300px 0;
-				}
-
-				${mainSl} .gbb-scroll-story-media-sticky {
-					flex: 1;
-					position: sticky;
-					top: 100px;
-					height: calc(100vh - 200px);
-					min-height: 400px;
-					display: flex;
-					align-items: center;
-					justify-content: center;
-				}
-
-				${mainSl} .gbb-scroll-story-media-wrapper {
-					width: 100%;
-					height: 100%;
-					background: #f1f5f9;
-					border-radius: 20px;
-					overflow: hidden;
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					position: relative;
-				}
-
-				${mainSl} .gbb-scroll-story-image {
-					width: 100%;
-					height: 100%;
-					object-fit: cover;
-					position: absolute;
-					top: 0;
-					left: 0;
-				}
-
-				${mainSl} .gbb-scroll-story-step {
-					display: flex;
-					gap: 30px;
-					opacity: 0.4;
-					transition: opacity 0.4s ease;
-					cursor: pointer;
-				}
-
-				${mainSl} .gbb-scroll-story-step.is-active {
-					opacity: 1;
-				}
-
-				${mainSl} .gbb-scroll-progress-line {
-					width: 4px;
-					background: #e2e8f0;
-					border-radius: 4px;
-					position: relative;
-					overflow: hidden;
-					flex-shrink: 0;
-				}
-
-				${mainSl} .gbb-scroll-progress-fill {
-					position: absolute;
-					top: 0;
-					left: 0;
-					width: 100%;
-					height: 0%;
+				${gbbSPF} {
 					background: ${progressColor};
-					transition: height 0.4s ease;
 				}
 
-				${mainSl} .gbb-scroll-story-step.is-active .gbb-scroll-progress-fill {
-					height: 100%;
-				}
-
-				${mainSl} .gbb-scroll-story-text {
-					flex: 1;
-				}
-
-				${mainSl} .gbb-scroll-story-title {
-					font-size: 28px;
-					font-weight: 700;
+				${gbbSST} {
 					color: ${inactiveTitleColor};
-					margin: 0 0 16px 0;
-					transition: color 0.4s ease;
 				}
 
-				${mainSl} .gbb-scroll-story-step.is-active .gbb-scroll-story-title {
+				${gbbSSA} {
 					color: ${activeTitleColor};
 				}
 
-				${mainSl} .gbb-scroll-story-desc {
-					font-size: 16px;
-					line-height: 1.6;
+				${gbbSSD} {
 					color: ${descColor};
-					margin: 0;
 				}
 
-				.fade-in {
-					animation: fadeIn 0.5s ease-in-out;
+				${gbbImg} {
+					object-fit: ${imageFit};
 				}
 
-				@keyframes fadeIn {
-					from { opacity: 0; transform: translateY(10px); }
-					to { opacity: 1; transform: translateY(0); }
+				${gbbMediaWrp} {
+					background: ${mediaBgColor};
+					border-radius: ${mediaRadius};
 				}
 
-				@media (max-width: 768px) {
-					${mainSl} {
-						flex-direction: column-reverse;
-					}
-					${mainSl}.layout-sticky-left {
-						flex-direction: column-reverse;
-					}
-					${mainSl} .gbb-scroll-story-media-sticky {
-						position: relative;
-						top: 0;
-						height: 300px;
-						min-height: auto;
-						width: 100%;
-					}
-					${mainSl} .gbb-scroll-story-content {
-						padding: 20px 0;
-						gap: 40px;
-					}
-				}
-
-				@media (prefers-reduced-motion: reduce) {
-					.fade-in {
-						animation: none;
-					}
-					${mainSl} .gbb-scroll-story-step {
-						transition: none;
-					}
+				${gbbMediaStk} {
+					min-height: ${mediaHeight};
 				}
 			`.replace(/\s+/g, ' ')
     }
@@ -185,10 +84,44 @@ const DynamicStyle = ({
 
 /***/ },
 
-/***/ "./src/blocks/scroll-story/Components/ScrollStory.jsx"
-/*!************************************************************!*\
-  !*** ./src/blocks/scroll-story/Components/ScrollStory.jsx ***!
-  \************************************************************/
+/***/ "./src/blocks/scroll-story/Components/Common/Templates/ScrollStory.jsx"
+/*!*****************************************************************************!*\
+  !*** ./src/blocks/scroll-story/Components/Common/Templates/ScrollStory.jsx ***!
+  \*****************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _TemplateOne__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TemplateOne */ "./src/blocks/scroll-story/Components/Common/Templates/TemplateOne.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const TEMPLATES = {
+  'template-1': _TemplateOne__WEBPACK_IMPORTED_MODULE_0__["default"]
+};
+const ScrollStory = props => {
+  const {
+    attributes
+  } = props || {};
+  const {
+    selectedTemplate = 'template-1'
+  } = attributes || {};
+  const TemplateComponent = TEMPLATES[selectedTemplate] || TEMPLATES['template-1'];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(TemplateComponent, {
+    ...props
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ScrollStory);
+
+/***/ },
+
+/***/ "./src/blocks/scroll-story/Components/Common/Templates/TemplateOne.jsx"
+/*!*****************************************************************************!*\
+  !*** ./src/blocks/scroll-story/Components/Common/Templates/TemplateOne.jsx ***!
+  \*****************************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -197,65 +130,85 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _utils_icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/icons */ "./src/blocks/scroll-story/utils/icons.js");
+/* harmony import */ var _utils_icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../utils/icons */ "./src/blocks/scroll-story/utils/icons.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
-const ScrollStory = ({
+const TemplateOne = ({
   attributes,
   setAttributes,
   RichTextEl,
   isBackend = false
 }) => {
   const {
-    blockId,
     layout = 'sticky-right',
     steps = []
   } = attributes;
   const [activeStep, setActiveStep] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
   const stepRefs = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)([]);
 
-  // Frontend IntersectionObserver logic
+  // Frontend scroll / IntersectionObserver logic with requestAnimationFrame for 60/120fps performance
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     if (isBackend) return;
+    let ticking = false;
+    const updateActiveStepOnScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          let closestIndex = 0;
+          let minDistance = Infinity;
+          const viewportCenter = window.innerHeight / 2;
+          stepRefs.current.forEach((ref, index) => {
+            if (!ref) return;
+            const rect = ref.getBoundingClientRect();
+            const elementCenter = rect.top + rect.height / 2;
+            const distance = Math.abs(elementCenter - viewportCenter);
+            if (distance < minDistance) {
+              minDistance = distance;
+              closestIndex = index;
+            }
+          });
+          setActiveStep(prev => prev !== closestIndex ? closestIndex : prev);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
     const observerOptions = {
       root: null,
-      rootMargin: '-50% 0px -50% 0px',
-      threshold: 0
+      threshold: [0, 0.2, 0.4, 0.6, 0.8, 1.0]
     };
-    const observerCallback = entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const index = parseInt(entry.target.getAttribute('data-step-index'), 10);
-          if (!isNaN(index)) {
-            setActiveStep(index);
-          }
-        }
-      });
-    };
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const observer = new IntersectionObserver(() => {
+      updateActiveStepOnScroll();
+    }, observerOptions);
     stepRefs.current.forEach(ref => {
       if (ref) observer.observe(ref);
+    });
+    window.addEventListener('scroll', updateActiveStepOnScroll, {
+      passive: true
     });
     return () => {
       stepRefs.current.forEach(ref => {
         if (ref) observer.unobserve(ref);
       });
+      window.removeEventListener('scroll', updateActiveStepOnScroll);
     };
   }, [isBackend, steps]);
 
-  // In the backend, clicking a step changes the active step preview
+  // Clicking a step changes active step (and scrolls into view on frontend)
   const handleStepClick = index => {
-    if (isBackend) {
-      setActiveStep(index);
+    setActiveStep(index);
+    if (!isBackend && stepRefs.current[index]) {
+      stepRefs.current[index].scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      });
     }
   };
   const activeMedia = steps[activeStep]?.mediaUrl;
   const activeLottie = steps[activeStep]?.lottieUrl;
   const mediaType = steps[activeStep]?.mediaType || 'image';
-  const hasMedia = activeMedia || activeLottie;
   const updateStepAttr = (index, key, value) => {
     if (!isBackend) return;
     const newSteps = [...steps];
@@ -268,7 +221,7 @@ const ScrollStory = ({
     });
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    className: `gbb-scroll-story-container ${blockId} layout-${layout}`,
+    className: `gbb-scroll-story-container layout-${layout}`,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "gbb-scroll-story-content",
       children: steps.map((step, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
@@ -317,17 +270,35 @@ const ScrollStory = ({
           }) : null
         })), mediaType === 'lottie' && (activeLottie ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "gbb-scroll-story-lottie fade-in",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("lottie-player", {
-            src: activeLottie,
-            background: "transparent",
-            speed: "1",
-            style: {
-              width: '100%',
-              height: '100%'
-            },
-            loop: true,
-            autoplay: true
-          })
+          children: (() => {
+            let cleanUrl = activeLottie.trim();
+            const iframeMatch = cleanUrl.match(/src=["']([^"']+)["']/);
+            if (iframeMatch && iframeMatch[1]) {
+              cleanUrl = iframeMatch[1];
+            }
+            if (cleanUrl.includes('/embed/')) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("iframe", {
+                src: cleanUrl,
+                style: {
+                  width: '100%',
+                  height: '100%',
+                  border: 'none'
+                },
+                title: `Lottie Step ${activeStep + 1}`
+              });
+            }
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("lottie-player", {
+              src: cleanUrl,
+              background: "transparent",
+              speed: "1",
+              style: {
+                width: '100%',
+                height: '100%'
+              },
+              loop: true,
+              autoplay: true
+            });
+          })()
         }, activeLottie) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "gbb-scroll-story-placeholder",
           children: isBackend ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
@@ -338,7 +309,7 @@ const ScrollStory = ({
     })]
   });
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ScrollStory);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TemplateOne);
 
 /***/ },
 
@@ -350,9 +321,277 @@ const ScrollStory = ({
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   imageIcon: () => (/* binding */ imageIcon)
+/* harmony export */   GeneralIcon: () => (/* binding */ GeneralIcon),
+/* harmony export */   StyleIcon: () => (/* binding */ StyleIcon),
+/* harmony export */   TemplateOneSvg: () => (/* binding */ TemplateOneSvg),
+/* harmony export */   imageIcon: () => (/* binding */ imageIcon),
+/* harmony export */   imageSVGIcon: () => (/* binding */ imageSVGIcon)
 /* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+
 const imageIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-image"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>';
+const imageSVGIcon = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "20 20 140 140",
+  width: "100%",
+  height: "100%",
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("defs", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("style", {
+      children: `
+        .icon-stroke {
+          stroke: #F62477;
+          stroke-width: 7;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          fill: none;
+        }
+        .icon-fill {
+          fill: #F62477;
+        }
+      `
+    })
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
+    transform: "translate(10, 5)",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+      className: "icon-stroke",
+      d: "M100,120 H40 A14,14 0 0,1 26,106 V74 A14,14 0 0,1 40,60 H65"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("polyline", {
+      className: "icon-stroke",
+      points: "27,100 48,78 68,98 84,82 100,98"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("circle", {
+      cx: "76",
+      cy: "74",
+      r: "5",
+      className: "icon-fill"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+      className: "icon-stroke",
+      d: "M68,54 H116 C128,54 135,62 135,76 V100 C135,116 118,130 96,130"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+      className: "icon-stroke",
+      d: "M68,54 C48,54 48,34 68,34 C82,34 82,46 72,46 C66,46 64,43 64,40"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+      className: "icon-stroke",
+      d: "M68,124 C78,142 102,146 124,136 L142,106"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("polygon", {
+      className: "icon-fill",
+      points: "144,95 129,112 147,117"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+      className: "icon-stroke",
+      strokeWidth: "5",
+      d: "M138,50 C140,56 139,63 137,68"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+      className: "icon-stroke",
+      strokeWidth: "4.5",
+      d: "M128,144 C134,142 139,138 142,133"
+    })]
+  })]
+});
+const GeneralIcon = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
+  width: "16",
+  height: "16",
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "2",
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  style: {
+    marginRight: '6px'
+  },
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("line", {
+    x1: "4",
+    y1: "6",
+    x2: "20",
+    y2: "6"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("line", {
+    x1: "4",
+    y1: "12",
+    x2: "20",
+    y2: "12"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("line", {
+    x1: "4",
+    y1: "18",
+    x2: "20",
+    y2: "18"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("circle", {
+    cx: "8",
+    cy: "6",
+    r: "2.5",
+    fill: "currentColor"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("circle", {
+    cx: "16",
+    cy: "12",
+    r: "2.5",
+    fill: "currentColor"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("circle", {
+    cx: "10",
+    cy: "18",
+    r: "2.5",
+    fill: "currentColor"
+  })]
+});
+const StyleIcon = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+  width: "16",
+  height: "16",
+  viewBox: "0 0 20 20",
+  fill: "currentColor",
+  style: {
+    marginRight: '6px'
+  },
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+    d: "M5 0 4 1H1v10.516l1-1V2h2v1h7V2h2v2.463l1-1V1h-3l-1-1zm.414 1h4.172l.414.414V2H5v-.586zm13.139 0-.205.006-.202.035-.195.063-.183.087-.172.112-.155.135-3.89 3.888-.223.207-.244.186-.256.164-.271.14-.282.118-.29.091-.301.067-.301.04-.305.013-.307-.012-.3-.041-.3-.067-.29-.091-.283-.118-.272-.14-.256-.164-.242-.186-.224-.207-7.073 7.072 7.073 7.07 7.07-7.07-.207-.226-.186-.242-.164-.256-.14-.272-.118-.283-.091-.29-.067-.298-.039-.302-.014-.307.014-.305.04-.3.066-.301.091-.291.118-.282.14-.27.164-.257.186-.244.207-.223 3.889-3.89.134-.155.112-.17.087-.185.063-.195.035-.202.006-.205-.021-.203-.047-.2-.077-.189-.1-.18-.124-.163-.143-.143-.164-.125-.18-.1-.189-.076-.197-.047zm-.108 1.002h.114l.107.025.102.047.087.07.07.088.048.102.025.107v.114l-.025.11-.047.1-.07.089-3.89 3.886-.241.262-.221.281-.197.297-.172.31-.149.325-.123.336-.095.342-.069.351-.039.354-.012.355.016.356.045.355.074.348.1.343.127.332.152.323.176.308-.432.432L8.25 7.094l.432-.432.308.176.324.154.332.125.342.1.35.074.353.045.356.016.355-.012.354-.04.351-.068.342-.095.336-.121.324-.149.31-.174.298-.197.281-.22.262-.243 3.888-3.888.086-.07.102-.048zM3 6v1h2.516l1-1zm4.543 1.8 5.656 5.657-1.554 1.557-.02-.256-.037-.254-.03-.125-.037-.123-.05-.117-.065-.112-.078-.103-.09-.088-.105-.076-.113-.059-.122-.043-.125-.025-.128-.012h-.127l-.13.012-.126.02-.25.056-.244.074-.243.084-.476.19-.442.17-.007.02-.03-.007.037-.013.497-1.291.11-.332.095-.34.037-.172.025-.172.012-.174-.01-.176-.014-.088-.021-.084-.027-.084-.04-.08-.044-.074-.057-.068-.063-.063-.068-.054-.076-.045-.08-.035-.084-.028-.086-.015-.088-.01-.088-.002-.174.015-.174.036-.168.045-.335.105-.33.115-.168.055-.147.037v.014l-.025-.008.025-.006.018-.299.021-.31.002-.157-.004-.156-.017-.154-.03-.154-.045-.149-.06-.144-.072-.137-.086-.131-.1-.121-.11-.111-.119-.102-.123-.094zM3 8v1h.516l1-1zm2.592 1.75.127.08.119.092.105.105.043.06.035.067.03.069.015.072.016.148-.01.3-.021.296-.012.299.008.148.021.149.043.142.065.135.04.06.05.06.052.052.059.047.064.039.067.035.142.045.147.021h.148l.15-.015.145-.027.29-.079.282-.095.282-.098.271-.078.004-.024.012.02-.016.004-.035.176-.055.197-.129.387-.296.763-.149.381-.068.194-.06.195-.048.2-.015.099-.008.103v.102l.014.101.027.1.039.094.053.088.066.078.078.068.088.05.094.042.101.025.1.012.104.002.101-.01.102-.017.197-.05.195-.062.192-.068.76-.3.386-.136.2-.048.101-.018.086-.006-.004-.016.02.014-.016.002.02.066.013.083.018.168.017.335.02.336.039.334-2.11 2.112-5.656-5.657zM1 13.281V17h3.72l-1-1H2v-1.719z"
+  })
+});
+const TemplateOneSvg = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 800 500",
+  width: "100%",
+  height: "100%",
+  style: {
+    fontFamily: 'system-ui, -apple-system, sans-serif'
+  },
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+    width: "800",
+    height: "500",
+    fill: "#f8fafc",
+    rx: "12"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
+    transform: "translate(60, 80)",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+      x: "18",
+      y: "20",
+      width: "4",
+      height: "260",
+      fill: "#e2e8f0",
+      rx: "2"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+      x: "18",
+      y: "20",
+      width: "4",
+      height: "120",
+      fill: "#3b82f6",
+      rx: "2"
+    }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("circle", {
+      cx: "20",
+      cy: "20",
+      r: "12",
+      fill: "#3b82f6",
+      stroke: "#ffffff",
+      strokeWidth: "4"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+      x: "50",
+      y: "10",
+      width: "160",
+      height: "20",
+      fill: "#1e293b",
+      rx: "4"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+      x: "50",
+      y: "40",
+      width: "220",
+      height: "10",
+      fill: "#94a3b8",
+      rx: "4"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+      x: "50",
+      y: "60",
+      width: "180",
+      height: "10",
+      fill: "#94a3b8",
+      rx: "4"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("circle", {
+      cx: "20",
+      cy: "140",
+      r: "12",
+      fill: "#cbd5e1",
+      stroke: "#ffffff",
+      strokeWidth: "4"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+      x: "50",
+      y: "130",
+      width: "140",
+      height: "20",
+      fill: "#64748b",
+      rx: "4"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+      x: "50",
+      y: "160",
+      width: "200",
+      height: "10",
+      fill: "#cbd5e1",
+      rx: "4"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+      x: "50",
+      y: "180",
+      width: "170",
+      height: "10",
+      fill: "#cbd5e1",
+      rx: "4"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("circle", {
+      cx: "20",
+      cy: "260",
+      r: "12",
+      fill: "#cbd5e1",
+      stroke: "#ffffff",
+      strokeWidth: "4"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+      x: "50",
+      y: "250",
+      width: "150",
+      height: "20",
+      fill: "#64748b",
+      rx: "4"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+      x: "50",
+      y: "280",
+      width: "190",
+      height: "10",
+      fill: "#cbd5e1",
+      rx: "4"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+      x: "50",
+      y: "300",
+      width: "160",
+      height: "10",
+      fill: "#cbd5e1",
+      rx: "4"
+    })]
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
+    transform: "translate(420, 50)",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+      width: "320",
+      height: "400",
+      fill: "#e2e8f0",
+      rx: "16"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
+      x: "110",
+      y: "150",
+      width: "100",
+      height: "100",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "#94a3b8",
+      strokeWidth: "1",
+      strokeLinecap: "round",
+      strokeLinejoin: "round",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+        width: "18",
+        height: "18",
+        x: "3",
+        y: "3",
+        rx: "2",
+        ry: "2"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("circle", {
+        cx: "9",
+        cy: "9",
+        r: "2"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+        d: "m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"
+      })]
+    })]
+  })]
+});
 
 /***/ },
 
@@ -366,8 +605,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-dom/client */ "react-dom/client");
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_dom_client__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/blocks/scroll-story/style.scss");
-/* harmony import */ var _Components_Common_dynamicStyle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Components/Common/dynamicStyle */ "./src/blocks/scroll-story/Components/Common/dynamicStyle.js");
-/* harmony import */ var _Components_ScrollStory__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Components/ScrollStory */ "./src/blocks/scroll-story/Components/ScrollStory.jsx");
+/* harmony import */ var _Components_Common_DynamicStyles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Components/Common/DynamicStyles */ "./src/blocks/scroll-story/Components/Common/DynamicStyles.js");
+/* harmony import */ var _Components_Common_Templates_ScrollStory__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Components/Common/Templates/ScrollStory */ "./src/blocks/scroll-story/Components/Common/Templates/ScrollStory.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
 
@@ -381,9 +620,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!el.dataset.attributes) return;
     const attributes = JSON.parse(el.dataset.attributes);
     (0,react_dom_client__WEBPACK_IMPORTED_MODULE_0__.createRoot)(el).render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Common_dynamicStyle__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Common_DynamicStyles__WEBPACK_IMPORTED_MODULE_2__["default"], {
         attributes: attributes
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_ScrollStory__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Common_Templates_ScrollStory__WEBPACK_IMPORTED_MODULE_3__["default"], {
         attributes: attributes,
         RichTextEl: RichTextEl,
         isBackend: false

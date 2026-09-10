@@ -1,8 +1,8 @@
 import { createRoot } from 'react-dom/client';
 import './style.scss';
 
-import DynamicStyle from './Components/Common/dynamicStyle';
-import ScrollStory from './Components/ScrollStory';
+import DynamicStyle from './Components/Common/DynamicStyles';
+import ScrollStory from './Components/Common/Templates/ScrollStory';
 
 document.addEventListener('DOMContentLoaded', () => {
 	const storyEls = document.querySelectorAll('.wp-block-guten-builder-blocks-scroll-story');
