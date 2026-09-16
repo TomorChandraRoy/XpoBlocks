@@ -1,4 +1,5 @@
 {
+  "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "name": "guten-builder-blocks/table-of-contents",
   "version": "1.0.0",
@@ -11,8 +12,13 @@
     "index",
     "outline"
   ],
+  "textdomain": "guten-builder-blocks",
   "attributes": {
-    "blockId": {
+    "align": {
+      "type": "string",
+      "default": "wide"
+    },
+    "selectedTemplate": {
       "type": "string",
       "default": ""
     },
@@ -21,87 +27,162 @@
       "default": [
         "h2",
         "h3",
-        "h4",
-        "h5",
-        "h6"
+        "h4"
       ]
     },
     "titleText": {
       "type": "string",
-      "default": "Table of Contents"
+      "default": ""
+    },
+    "contentTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "contentSubtitle": {
+      "type": "string",
+      "default": ""
+    },
+    "items": {
+      "type": "array",
+      "default": []
+    },
+    "containerWidth": {
+      "type": "string",
+      "default": "1140px"
+    },
+    "itemsGap": {
+      "type": "string",
+      "default": ""
+    },
+    "sidebarWidth": {
+      "type": "string",
+      "default": "320px"
+    },
+    "contentHeight": {
+      "type": "string",
+      "default": "85vh"
+    },
+    "sidebarBorder": {
+      "type": "object"
+    },
+    "sidebarBorderRadius": {
+      "type": "string"
     },
     "headerBgColor": {
       "type": "string",
-      "default": "transparent"
+      "default": ""
     },
     "headerTextColor": {
       "type": "string",
-      "default": "#1e293b"
-    },
-    "activeHeaderBgColor": {
-      "type": "string",
-      "default": "#f8fafc"
-    },
-    "activeHeaderTextColor": {
-      "type": "string",
-      "default": "#0f172a"
-    },
-    "contentBgColor": {
-      "type": "string",
-      "default": "transparent"
-    },
-    "contentTextColor": {
-      "type": "string",
-      "default": "#475569"
-    },
-    "borderColor": {
-      "type": "string",
-      "default": "#e2e8f0"
-    },
-    "activeBorderColor": {
-      "type": "string",
-      "default": "#cbd5e1"
+      "default": ""
     },
     "iconColor": {
       "type": "string",
       "default": "#64748b"
     },
+    "sideHeaderTypography": {
+      "type": "object",
+      "default": {}
+    },
+    "headerIconSize": {
+      "type": "string",
+      "default": ""
+    },
+    "headerBorderWidth": {
+      "type": "object"
+    },
+    "sidebarBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "sidebarItemColor": {
+      "type": "string",
+      "default": ""
+    },
+    "sidebarItemTypography": {
+      "type": "object",
+      "default": {}
+    },
+    "activeHeaderBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "activeTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "activeBorderLine": {
+      "type": "object",
+      "default": ""
+    },
     "activeIconColor": {
       "type": "string",
-      "default": "#0f172a"
+      "default": ""
     },
-    "borderRadius": {
-      "type": "number",
-      "default": 8
+    "activeBorderRadius": {
+      "type": "string"
     },
-    "borderWidth": {
-      "type": "number",
-      "default": 0
+    "sideTextIconSize": {
+      "type": "string",
+      "default": ""
     },
-    "gap": {
-      "type": "number",
-      "default": 12
+    "contentBgColor": {
+      "type": "string",
+      "default": ""
     },
-    "titleFontSize": {
-      "type": "number",
-      "default": 16
+    "contentBorderRadius": {
+      "type": "string",
+      "default": ""
     },
-    "contentFontSize": {
-      "type": "number",
-      "default": 14
+    "contentBorder": {
+      "type": "object",
+      "default": ""
+    },
+    "contentHeaderTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "contentHeaderTypography": {
+      "type": "object",
+      "default": {}
+    },
+    "contentHeaderBorderLine": {
+      "type": "object",
+      "default": ""
+    },
+    "contentDescriptionColor": {
+      "type": "string",
+      "default": ""
+    },
+    "contentDescriptionTypography": {
+      "type": "object",
+      "default": {}
+    },
+    "contentTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "contentTitleTypography": {
+      "type": "object",
+      "default": {}
+    },
+    "contentParagraphColor": {
+      "type": "string",
+      "default": ""
+    },
+    "contentParagraphTypography": {
+      "type": "object",
+      "default": {}
     }
   },
   "supports": {
     "html": false,
     "anchor": true,
     "align": [
-      "left",
-      "right",
       "wide",
       "full"
     ]
   },
-  "textdomain": "guten-builder-blocks",
   "editorScript": "file:./index.js",
   "viewScript": "file:./view.js",
   "style": "file:./style-view.css",

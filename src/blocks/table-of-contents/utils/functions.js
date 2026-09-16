@@ -19,23 +19,6 @@ export const updateData = (attr, value, ...props) => {
   });
 };
 
-/** Reusable Array Manipulation Functions **/
-export const getAddedItems = (items, defaultItem) => {
-    return [...items, defaultItem];
-};
-
-export const getDeletedItems = (items, index) => {
-    return items.filter((_, i) => i !== index);
-};
-
-export const getDuplicatedItems = (items, index) => {
-    const newItems = [...items];
-    // Copy the item exactly, but you could modify the title here if needed
-    const duplicatedItem = { ...newItems[index] };
-    newItems.splice(index + 1, 0, duplicatedItem);
-    return newItems;
-};
-
 /** Reusable UI Components **/
 export const CustomColorPicker = ({ label, value, onChange, defaultVal = '#ffffff', marginTop = '10px' }) => (
     <>
@@ -46,3 +29,24 @@ export const CustomColorPicker = ({ label, value, onChange, defaultVal = '#fffff
         />
     </>
 );
+
+/** Auto Slug Generation Helper **/
+export const generateSlug = (text, defaultId = 'section') => {
+  if (!text) return defaultId;
+  const slug = String(text)
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/[\s-]+/g, '-');
+  return slug || defaultId;
+};
+
+export const getItemId = (item, index = 0) => {
+  if (item?.id && item.id.trim() !== '') {
+    return generateSlug(item.id);
+  }
+  return generateSlug(item?.title, `section-${index + 1}`);
+};
+
+
+

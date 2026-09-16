@@ -5,6 +5,12 @@ import General from './General/General';
 import Style from './Style/Style';
 
 const Settings = ({ attributes, setAttributes, clientId }) => {
+  const { selectedTemplate = '' } = attributes;
+  const isTemplateSelected = Boolean(selectedTemplate);
+
+  if (!isTemplateSelected) {
+    return null;
+  }
   return (
     <InspectorControls>
       <TabPanel className="guten-builder-blocks-tab-panel wp-block-guten-builder-blocks-table-of-contents" activeClass="guten-builder-blocks-active-tab" tabs={generalStyleTabs}>
@@ -19,4 +25,3 @@ const Settings = ({ attributes, setAttributes, clientId }) => {
   );
 };
 export default Settings;
-

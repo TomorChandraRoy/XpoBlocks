@@ -1,102 +1,142 @@
-const DynamicStyles = ({ attributes, id }) => {
-  const {
-    headerBgColor = '#ffffff',
-    headerTextColor = '#1e293b',
-    activeHeaderBgColor = '#f8fafc',
-    activeHeaderTextColor = '#0f172a',
-    contentBgColor = '#ffffff',
-    contentTextColor = '#475569',
-    borderColor = '#e2e8f0',
-    activeBorderColor = '#cbd5e1',
-    iconColor = '#64748b',
-    activeIconColor = '#0f172a',
-    borderRadius = 8,
-    borderWidth = 1,
-    gap = 12,
-    titleFontSize = 16,
-    contentFontSize = 14,
-    blockId,
-  } = attributes;
+import { getTypographyCss, getBorderCss, getBorderRadiusCss } from 'tr-tools';
 
-  const mainSl = `#${id || blockId || 'gbb-faq-react'}`;
-  const item = `${mainSl} .gbb-toc-item`;
-  const itemOpen = `${mainSl} .gbb-toc-item.is-open`;
-  const header = `${mainSl} .gbb-toc-header`;
-  const headerOpen = `${itemOpen} .gbb-toc-header`;
-  const icon = `${mainSl} .gbb-toc-icon`;
-  const iconOpen = `${itemOpen} .gbb-toc-icon`;
-  const content = `${mainSl} .gbb-toc-content`;
-  const contentOpen = `${itemOpen} .gbb-toc-content`;
+const DynamicStyles = ({ attributes, id }) => {
+
+  const { itemsGap = 12, containerWidth, sidebarWidth, contentHeight, sidebarBorder, sidebarBorderRadius, headerBgColor, headerTextColor, iconColor, sideHeaderTypography, headerIconSize, headerBorderWidth, sidebarBgColor, sidebarItemTypography, sidebarItemColor, activeHeaderBgColor, activeTextColor, activeBorderLine, activeIconColor, activeBorderRadius, sideTextIconSize, contentBgColor, contentBorderRadius,contentBorder,contentHeaderTextColor,contentHeaderTypography, contentHeaderBorderLine,contentDescriptionColor,contentDescriptionTypography,contentTitleColor,contentTitleTypography,    contentParagraphColor,contentParagraphTypography,} = attributes || {};
+
+  const mainSl = `#${id}`;
+
+  // --- SIDEBAR SELECTORS ---
+  const wrapper = `${mainSl} .gbb-toc-wrapper`;
+  const sidebar = `${wrapper} .gbb-toc-sidebar`;
+  const stickyBox = `${sidebar} .gbb-toc-sticky-box`;
+  const header = `${stickyBox} .gbb-toc-header`;
+  const headerText = `${header} .gbb-toc-header-title`;
+  const headerContentText = `${headerText} .gbb-toc-header-text`;
+  const icon = `${headerText} .gbb-toc-header-icon, ${header} .gbb-toc-arrow-icon`;
+
+  const body = `${stickyBox} .gbb-toc-body`;
+  const linkContainer = `${body} .gbb-toc-list-container`;
+  const list = `${linkContainer} .gbb-toc-list`;
+  const item = `${list} .gbb-toc-item`;
+  const link = `${item} .gbb-toc-link`;
+  const itemActive = `${item}.is-active`;
+
+  // --- CONTENT AREA SELECTORS ---
+  const contentArea = `${wrapper} .gbb-toc-content-area`;
+  const contentTitle = `${contentArea} .gbb-toc-content-title`;
+  const contentSubtitle = `${contentArea} .gbb-toc-content-subtitle`;
+  const sectionWrapper = `${contentArea} .gbb-toc-section-wrapper`;
+  const sectionHeading = `${sectionWrapper} .gbb-toc-section-heading-2, ${sectionWrapper} .gbb-toc-section-heading-3`;
+  const sectionParagraph = `${sectionWrapper} .gbb-toc-section-paragraph`;
+
+
 
   return (
     <style
       dangerouslySetInnerHTML={{
         __html: `
-        ${mainSl} {
-            gap: ${Math.max(0, parseInt(gap, 10))}px;
+        /* Layout */
+        ${wrapper} {
+            max-width: ${containerWidth};
+            gap: ${itemsGap};
         }
 
-        ${item} {
-            border-width: ${Math.max(0, parseInt(borderWidth, 10))}px;
-            border-style: solid;
-            border-color: ${borderColor};
-            border-radius: ${Math.max(0, parseInt(borderRadius, 10))}px;
-            background: ${headerBgColor};
-            overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        ${sidebar} {
+            width: ${sidebarWidth};
         }
 
-        ${itemOpen} {
-            border-color: ${activeBorderColor};
-            background: ${activeHeaderBgColor};
+        /* SIDEBAR STYLES (Strictly Sidebar ONLY) */
+        ${stickyBox} {
+            ${getBorderCss(sidebarBorder)}
+            ${getBorderRadiusCss(sidebarBorderRadius)}
+            transition: border-color 0.3s ease;
         }
 
         ${header} {
-            background: ${headerBgColor};
-            color: ${headerTextColor};
-            font-size: ${Math.max(10, parseInt(titleFontSize, 10))}px;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            font-weight: 600;
-            padding: 16px 20px;
+            background-color: ${headerBgColor};
+            ${getBorderCss(headerBorderWidth)}
         }
 
-        ${headerOpen} {
-            background: ${activeHeaderBgColor};
-            color: ${activeHeaderTextColor};
+        ${headerContentText} {
+            color: ${headerTextColor};
+            ${getTypographyCss(sideHeaderTypography)}
         }
 
         ${icon} {
             color: ${iconColor};
-            transition: transform 0.3s;
+            width:${headerIconSize};
+            height:${headerIconSize};
+            transition: color 0.3s ease, transform 0.3s ease;
         }
 
-        ${iconOpen} {
-            color: ${activeIconColor};
-            transform: rotate(180deg);
+        ${header}:hover .gbb-toc-header-icon,
+        ${header}:hover .gbb-toc-arrow-icon {
         }
 
-        ${content} {
-            background: ${contentBgColor};
-            color: ${contentTextColor};
-            font-size: ${Math.max(10, parseInt(contentFontSize, 10))}px;
-            padding: 0 20px;
-            max-height: 0px;
-            opacity: 0;
-            overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            line-height: 1.6;
-            border-top: none;
+
+        ${body} {
+          background-color: ${sidebarBgColor};
         }
 
-        ${contentOpen} {
-            border-top: ${Math.max(0, parseInt(borderWidth, 10))}px solid ${activeBorderColor};
-            padding: 16px 20px;
-            max-height: 1000px;
-            opacity: 1;
+        ${link} {
+          ${getTypographyCss(sidebarItemTypography)}
+          color:${sidebarItemColor};
+        }
+
+        ${link} svg {
+          width: ${sideTextIconSize};
+          height: ${sideTextIconSize};
+        }
+
+        ${itemActive} {
+          background-color: ${activeHeaderBgColor} !important;
+          ${getBorderCss(activeBorderLine)}
+          ${getBorderRadiusCss(activeBorderRadius)}
+        }
+
+        ${itemActive} .gbb-toc-link {
+          color:${activeTextColor} !important;
+        }
+
+        ${itemActive} .gbb-toc-link svg {
+          color:${activeIconColor} !important;
+        }
+
+        /*CONTENT AREA STYLES (Strictly Content Area ONLY) */
+        ${contentArea} {
+            height: ${contentHeight};
+            transition: border-color 0.3s ease;
+            background-color: ${contentBgColor};
+            ${getBorderRadiusCss(contentBorderRadius)}
+            ${getBorderCss(contentBorder)}
+        }
+
+        ${contentArea}:hover {
+
+        }
+
+        ${contentTitle} {
+          color:${contentHeaderTextColor};
+          ${getTypographyCss(contentHeaderTypography)}
+          ${getBorderCss(contentHeaderBorderLine)}
+        }
+
+        ${contentSubtitle} {
+          color:${contentDescriptionColor};
+          ${getTypographyCss(contentDescriptionTypography)}
+
+        }
+
+        ${sectionHeading} {
+          color:${contentTitleColor};
+          ${getTypographyCss(contentTitleTypography)}
+        }
+
+        ${sectionParagraph} {
+          color:${contentParagraphColor};
+          ${getTypographyCss(contentParagraphTypography)}
+
         }
         `,
       }}
@@ -105,4 +145,3 @@ const DynamicStyles = ({ attributes, id }) => {
 };
 
 export default DynamicStyles;
-

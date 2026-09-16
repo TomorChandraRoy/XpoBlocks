@@ -485,22 +485,27 @@ const BorderControl = ({
   label = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border', 'guten-builder-blocks'),
   value,
   onChange,
-  defaultBorder
+  defaultBorder,
+  defaultValue,
+  defaultVal
 }) => {
+  const fallback = defaultBorder || defaultValue || defaultVal;
   const currentVal = {
     ...DEFAULT_BORDER,
-    ...defaultBorder,
-    ...value
+    ...fallback,
+    ...(typeof value === 'object' && value !== null ? value : {})
   };
   const updateField = (field, val) => {
-    onChange({
-      ...currentVal,
-      [field]: val
-    });
+    if (onChange) {
+      onChange({
+        ...currentVal,
+        [field]: val
+      });
+    }
   };
   const resetVal = {
     ...DEFAULT_BORDER,
-    ...defaultBorder
+    ...fallback
   };
   const isChanged = value && typeof value === 'object' && Object.keys(value).some(key => value[key] !== resetVal[key]);
   const handleReset = () => {
@@ -3008,22 +3013,27 @@ const ShadowControl = ({
   label = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Box Shadow', 'guten-builder-blocks'),
   value,
   onChange,
-  defaultShadow
+  defaultShadow,
+  defaultValue,
+  defaultVal
 }) => {
+  const fallback = defaultShadow || defaultValue || defaultVal;
   const currentVal = {
     ...DEFAULT_SHADOW,
-    ...defaultShadow,
-    ...value
+    ...fallback,
+    ...(typeof value === 'object' && value !== null ? value : {})
   };
   const updateField = (field, val) => {
-    onChange({
-      ...currentVal,
-      [field]: val
-    });
+    if (onChange) {
+      onChange({
+        ...currentVal,
+        [field]: val
+      });
+    }
   };
   const resetVal = {
     ...DEFAULT_SHADOW,
-    ...defaultShadow
+    ...fallback
   };
   const isChanged = value && typeof value === 'object' && Object.keys(value).some(key => value[key] !== resetVal[key]);
   const handleReset = () => {
@@ -4674,7 +4684,6 @@ const UnitControl = ({
         children: [label && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
           style: {
             fontSize: "13px",
-            fontWeight: 500,
             color: "#1e293b",
             whiteSpace: "nowrap"
           },
