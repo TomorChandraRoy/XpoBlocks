@@ -1,8 +1,9 @@
 {
+  "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "name": "guten-builder-blocks/video-modal",
   "version": "1.0.0",
-  "title": "Guten Video Modal",
+  "title": "Video Modal",
   "category": "guten-builder",
   "description": "Enterprise-ready video container with graceful lazy loading, inline playback, and strict URL safelists.",
   "keywords": [
@@ -12,7 +13,12 @@
     "vimeo",
     "player"
   ],
+  "textdomain": "guten-builder-blocks",
   "attributes": {
+    "selectedTemplate": {
+      "type": "string",
+      "default": ""
+    },
     "videoUrl": {
       "type": "string",
       "default": ""
@@ -86,16 +92,11 @@
     "align": [
       "wide",
       "full"
-    ],
-    "spacing": {
-      "margin": true,
-      "padding": true
-    }
+    ]
   },
-  "textdomain": "guten-builder-blocks",
   "editorScript": "file:./index.js",
   "viewScript": "file:./view.js",
-  "style": "file:./style-index.css",
+  "style": "file:./style-view.css",
   "editorStyle": "file:./index.css",
   "render": "file:./render.php"
 }
