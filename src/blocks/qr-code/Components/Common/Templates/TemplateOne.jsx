@@ -19,7 +19,7 @@ const TemplateOne = ({ attributes, isEditor = false }) => {
 
   return (
     <div className="gbb-qr-wrapper">
-      <div className="gbb-qr-container template-1">
+      <div className="gbb-qr-container">
         {(titleText || descriptionText) && (
           <div className="gbb-qr-header">
             {titleText && <h3 className="gbb-qr-title">{titleText}</h3>}
@@ -27,7 +27,7 @@ const TemplateOne = ({ attributes, isEditor = false }) => {
           </div>
         )}
 
-        <div className="gbb-qr-code-wrapper" style={{ backgroundColor: transparentBg ? 'transparent' : bgColor }}>
+        <div className="gbb-qr-code-wrapper" >
           <svg
             ref={svgRef}
             className="gbb-qr-svg"

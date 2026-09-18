@@ -6260,26 +6260,124 @@ __webpack_require__.r(__webpack_exports__);
 
 //Edit.js file jasche
 const templateData = {
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('FAQ Accordion Layouts', 'guten-builder-blocks'),
+  subtitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select a layout for your FAQ accordion block.', 'guten-builder-blocks'),
   templates: [{
     id: 'template-1',
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template 1', 'guten-builder-blocks'),
     tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Classic Minimal', 'guten-builder-blocks'),
     icon: _icons__WEBPACK_IMPORTED_MODULE_1__.TemplateOneSvg,
     attributes: {
-      iconType: 'chevron',
+      subtitle: '',
+      title: '',
+      description: '',
+      faqsData: [{
+        question: '',
+        answer: ''
+      }, {
+        question: '',
+        answer: ''
+      }, {
+        question: '',
+        answer: ''
+      }, {
+        question: '',
+        answer: ''
+      }],
+      showHeader: false,
+      allowMultiple: false,
       iconPosition: 'right',
-      subtitleColor: '#475569',
-      titleColor: '#0f172a',
-      descriptionColor: '#64748b',
-      questionColor: '#0f172a',
-      answerColor: '#475569',
+      iconType: 'chevron',
+      iconSize: 22,
       iconColor: '#0f172a',
+      subtitleColor: '#475569',
+      subtitleTypography: {
+        fontSize: {
+          desktop: '16px',
+          tablet: '14px',
+          mobile: '12px'
+        },
+        fontFamily: '',
+        fontWeight: '400',
+        lineHeight: '',
+        letterSpacing: '',
+        textTransform: 'none',
+        textDecoration: 'none',
+        fontStyle: 'normal'
+      },
+      titleColor: '#0f172a',
+      titleTypography: {
+        fontSize: {
+          desktop: '24px',
+          tablet: '23px',
+          mobile: '22px'
+        },
+        fontFamily: '',
+        fontWeight: '700',
+        lineHeight: '',
+        letterSpacing: '',
+        textTransform: 'none',
+        textDecoration: 'none',
+        fontStyle: 'normal'
+      },
+      descriptionColor: '#64748b',
+      descriptionTypography: {
+        fontSize: {
+          desktop: '14px',
+          tablet: '14px',
+          mobile: '13px'
+        },
+        fontFamily: '',
+        fontWeight: '400',
+        lineHeight: '',
+        letterSpacing: '',
+        textTransform: 'none',
+        textDecoration: 'none',
+        fontStyle: 'normal'
+      },
+      questionBg: {},
       questionBorder: {
         color: '#e0e7ff',
         width: '1px',
         style: 'solid',
         side: 'all'
-      }
+      },
+      questionBorderRadius: {
+        top: '6px',
+        right: '6px',
+        bottom: '6px',
+        left: '6px'
+      },
+      questionTypography: {
+        fontSize: {
+          desktop: '16px',
+          tablet: '16px',
+          mobile: '14px'
+        },
+        fontFamily: '',
+        fontWeight: '600',
+        lineHeight: '',
+        letterSpacing: '',
+        textTransform: 'none',
+        textDecoration: 'none',
+        fontStyle: 'normal'
+      },
+      questionColor: '#0f172a',
+      answerTypography: {
+        fontSize: {
+          desktop: '14px',
+          tablet: '14px',
+          mobile: '13px'
+        },
+        fontFamily: "",
+        fontWeight: "400",
+        lineHeight: "",
+        letterSpacing: "",
+        textTransform: "none",
+        textDecoration: "none",
+        fontStyle: "normal"
+      },
+      answerColor: '#475569'
     }
   }, {
     id: 'template-2',
@@ -8972,7 +9070,7 @@ var castImmutable = (value) => value;
   \*****************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/accordion","version":"1.0.0","title":"FAQ Accordion","description":"High-performance responsive FAQ accordion with smooth animations and customizable themes.","category":"guten-builder","keywords":["faq","accordion","toggle","collapse"],"textdomain":"guten-builder-blocks","attributes":{"align":{"type":"string","default":""},"selectedTemplate":{"type":"string","default":""},"subtitle":{"type":"string","default":""},"title":{"type":"string","default":""},"description":{"type":"string","default":""},"faqsData":{"type":"array","default":[{"question":"","answer":""},{"question":"","answer":""},{"question":"","answer":""},{"question":"","answer":""}]},"showHeader":{"type":"boolean","default":false},"allowMultiple":{"type":"boolean","default":false},"iconPosition":{"type":"string","default":"right"},"iconType":{"type":"string","default":"chevron"},"iconSize":{"type":"number","default":22},"iconColor":{"type":"string","default":""},"subtitleColor":{"type":"string","default":"#475569"},"subtitleTypography":{"type":"object","default":{"fontSize":{"desktop":"16px","tablet":"14px","mobile":"12px"},"fontFamily":"","fontWeight":"400","lineHeight":"","letterSpacing":"","textTransform":"none","textDecoration":"none","fontStyle":"normal"}},"titleColor":{"type":"string","default":"#0f172a"},"titleTypography":{"type":"object","default":{"fontSize":{"desktop":"24px","tablet":"23px","mobile":"22px"},"fontFamily":"","fontWeight":"700","lineHeight":"","letterSpacing":"","textTransform":"none","textDecoration":"none","fontStyle":"normal"}},"descriptionColor":{"type":"string","default":"#64748b"},"descriptionTypography":{"type":"object","default":{"fontSize":{"desktop":"14px","tablet":"14px","mobile":"13px"},"fontFamily":"","fontWeight":"400","lineHeight":"","letterSpacing":"","textTransform":"none","textDecoration":"none","fontStyle":"normal"}},"questionBg":{"type":"object","default":{}},"questionBorder":{"type":"object","default":{"color":"#e0e7ff","width":"1px","style":"solid","side":"all"}},"questionBorderRadius":{"type":"object","default":{"top":"6px","right":"6px","bottom":"6px","left":"6px"}},"questionTypography":{"type":"object","default":{"fontSize":{"desktop":"16px","tablet":"16px","mobile":"14px"},"fontFamily":"","fontWeight":"600","lineHeight":"","letterSpacing":"","textTransform":"none","textDecoration":"none","fontStyle":"normal"}},"answerTypography":{"type":"object","default":{"fontSize":{"desktop":"14px","tablet":"14px","mobile":"13px"},"fontFamily":"","fontWeight":"400","lineHeight":"","letterSpacing":"","textTransform":"none","textDecoration":"none","fontStyle":"normal"}},"questionColor":{"type":"string","default":"#0f172a"},"answerColor":{"type":"string","default":"#475569"}},"supports":{"html":false,"anchor":true,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","viewScript":"file:./view.js","style":"file:./style-view.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/accordion","version":"1.0.0","title":"FAQ Accordion","description":"High-performance responsive FAQ accordion with smooth animations and customizable themes.","category":"guten-builder","keywords":["faq","accordion","toggle","collapse"],"textdomain":"guten-builder-blocks","attributes":{"align":{"type":"string","default":""},"selectedTemplate":{"type":"string","default":""},"subtitle":{"type":"string","default":""},"title":{"type":"string","default":""},"description":{"type":"string","default":""},"faqsData":{"type":"array","default":[{"question":"","answer":""},{"question":"","answer":""},{"question":"","answer":""},{"question":"","answer":""}]},"showHeader":{"type":"boolean","default":false},"allowMultiple":{"type":"boolean","default":false},"iconPosition":{"type":"string","default":""},"iconType":{"type":"string","default":""},"iconSize":{"type":"number"},"iconColor":{"type":"string","default":""},"subtitleColor":{"type":"string","default":""},"subtitleTypography":{"type":"object","default":{}},"titleColor":{"type":"string","default":"#0f172a"},"titleTypography":{"type":"object","default":{}},"descriptionColor":{"type":"string","default":"#64748b"},"descriptionTypography":{"type":"object","default":{}},"questionBg":{"type":"object","default":{}},"questionBorder":{"type":"object","default":{}},"questionBorderRadius":{"type":"object","default":{"top":"6px","right":"6px","bottom":"6px","left":"6px"}},"questionTypography":{"type":"object","default":{}},"answerTypography":{"type":"object","default":{}},"questionColor":{"type":"string","default":""},"answerColor":{"type":"string","default":""}},"supports":{"html":false,"anchor":true,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","viewScript":"file:./view.js","style":"file:./style-view.css","render":"file:./render.php"}');
 
 /***/ }
 

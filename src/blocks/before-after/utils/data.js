@@ -12,7 +12,18 @@ export const templateData = {
       label: __('Template 1', 'guten-builder-blocks'),
       tag: __('Classic Slider', 'guten-builder-blocks'),
       icon: TemplateOneSvg,
-      attributes: {}
-    }
-  ]
+      attributes: {
+        labelTypography: {
+          fontSize: { desktop: '14px', tablet: '14px', mobile: '14px' },
+          fontFamily: '',
+          fontWeight: '600',
+          lineHeight: '',
+          letterSpacing: '',
+          textTransform: 'none',
+          textDecoration: 'none',
+          fontStyle: 'normal',
+        },
+      },
+    },
+  ],
 };

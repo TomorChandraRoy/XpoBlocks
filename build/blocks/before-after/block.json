@@ -74,21 +74,7 @@
       }
     },
     "labelTypography": {
-      "type": "object",
-      "default": {
-        "fontSize": {
-          "desktop": "14px",
-          "tablet": "14px",
-          "mobile": "14px"
-        },
-        "fontFamily": "",
-        "fontWeight": "600",
-        "lineHeight": "",
-        "letterSpacing": "",
-        "textTransform": "none",
-        "textDecoration": "none",
-        "fontStyle": "normal"
-      }
+      "type": "object"
     },
     "labelBorderRadius": {
       "type": "object",

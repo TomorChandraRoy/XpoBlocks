@@ -5381,8 +5381,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var tr_tools__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tr-tools */ "../tr-tools/index.js");
+/* harmony import */ var tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tr-tools/utils/options */ "../tr-tools/utils/options.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+
+
 
 
 
@@ -5391,20 +5395,29 @@ const Style = ({
   setAttributes
 }) => {
   const {
-    qrSize = 220,
-    fgColor = '#0f172a',
-    bgColor = '#ffffff',
-    transparentBg = false,
-    downloadBtnColor = '#10b981',
-    containerBg = '#ffffff',
-    containerBorderColor = '#e2e8f0',
-    containerRadius = 16
+    qrSize,
+    fgColor,
+    bgColor,
+    transparentBg,
+    downloadBtnColor,
+    containerBg,
+    containerBorder,
+    containerBorderColor,
+    containerRadius,
+    showDownloadBtn,
+    titleText,
+    titleColor,
+    titleTypography,
+    descriptionText,
+    descriptionColor,
+    descriptionTypography
   } = attributes || {};
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('🎨 QR Code Colors & Dimensions', 'guten-builder-blocks'),
+  const units = [(0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.pxUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.remUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.emUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.vwUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.perUnit)()];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('QR Code Colors & Dimensions', 'guten-builder-blocks'),
       initialOpen: true,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('QR Code Size (px)', 'guten-builder-blocks'),
         value: qrSize,
         onChange: val => setAttributes({
@@ -5412,66 +5425,102 @@ const Style = ({
         }),
         min: 140,
         max: 450
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-        className: "components-base-control__label",
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Foreground Color', 'guten-builder-blocks')
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Foreground Color', 'guten-builder-blocks'),
         value: fgColor,
         onChange: val => setAttributes({
-          fgColor: val || '#0f172a'
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+          fgColor: val
+        }),
+        defaultColor: "#0f172a"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Transparent Background', 'guten-builder-blocks'),
         checked: transparentBg,
         onChange: val => setAttributes({
           transparentBg: val
         })
-      }), !transparentBg && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-          className: "components-base-control__label",
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background Color', 'guten-builder-blocks')
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
-          value: bgColor,
+      }), !transparentBg && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background Color', 'guten-builder-blocks'),
+        value: bgColor,
+        onChange: val => setAttributes({
+          bgColor: val
+        }),
+        defaultColor: "#ffffff"
+      })]
+    }), (titleText || descriptionText) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Header Text Style', 'guten-builder-blocks'),
+      initialOpen: false,
+      children: [titleText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title Color', 'guten-builder-blocks'),
+          value: titleColor,
           onChange: val => setAttributes({
-            bgColor: val || '#ffffff'
+            titleColor: val
+          }),
+          defaultColor: "#0f172a"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title Typography', 'guten-builder-blocks'),
+          value: titleTypography,
+          onChange: val => setAttributes({
+            titleTypography: val
+          })
+        })]
+      }), descriptionText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description Color', 'guten-builder-blocks'),
+          value: descriptionColor,
+          onChange: val => setAttributes({
+            descriptionColor: val
+          }),
+          defaultColor: "#64748b"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description Typography', 'guten-builder-blocks'),
+          value: descriptionTypography,
+          onChange: val => setAttributes({
+            descriptionTypography: val
           })
         })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('🎨 Button & Container Style', 'guten-builder-blocks'),
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button & Container Style', 'guten-builder-blocks'),
       initialOpen: false,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-        className: "components-base-control__label",
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Download Button Color', 'guten-builder-blocks')
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
+      children: [showDownloadBtn && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Download Button Color', 'guten-builder-blocks'),
         value: downloadBtnColor,
         onChange: val => setAttributes({
-          downloadBtnColor: val || '#10b981'
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-        className: "components-base-control__label",
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container Background', 'guten-builder-blocks')
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
+          downloadBtnColor: val
+        }),
+        defaultColor: "#10b981"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container Background', 'guten-builder-blocks'),
         value: containerBg,
         onChange: val => setAttributes({
-          containerBg: val || '#ffffff'
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-        className: "components-base-control__label",
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container Border Color', 'guten-builder-blocks')
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
-        value: containerBorderColor,
+          containerBg: val
+        }),
+        defaultColor: "#ffffff00"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BorderControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container Border', 'guten-builder-blocks'),
+        value: containerBorder,
         onChange: val => setAttributes({
-          containerBorderColor: val || '#e2e8f0'
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container Corner Radius (px)', 'guten-builder-blocks'),
+          containerBorder: val
+        }),
+        defaultBorder: {
+          color: containerBorderColor || '#e2e8f0',
+          width: '',
+          style: 'solid'
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.SpacingControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container Border Radius', 'guten-builder-blocks'),
         value: containerRadius,
         onChange: val => setAttributes({
           containerRadius: val
         }),
-        min: 0,
-        max: 40
+        units: units,
+        defaultVal: {
+          top: '16px',
+          right: '16px',
+          bottom: '16px',
+          left: '16px'
+        }
       })]
     })]
   });
@@ -5493,8 +5542,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var tr_tools__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tr-tools */ "../tr-tools/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 const DynamicStyles = ({
@@ -5503,22 +5554,34 @@ const DynamicStyles = ({
 }) => {
   const {
     containerBg = '#ffffff',
-    containerBorderColor = '#e2e8f0',
-    containerRadius = 16,
-    downloadBtnColor = '#10b981'
+    containerBorder,
+    containerRadius,
+    downloadBtnColor = '#10b981',
+    titleColor,
+    titleTypography,
+    descriptionColor,
+    descriptionTypography
   } = attributes || {};
   const css = `
-    #${id}.gbb-qr-container {
+    #${id} .gbb-qr-container {
       background-color: ${containerBg};
-      border-color: ${containerBorderColor};
-      border-radius: ${containerRadius}px;
+      ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_1__.getBorderCss)(containerBorder)}
+      ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_1__.getBorderRadiusCss)(containerRadius)}
+    }
+    #${id} .gbb-qr-title {
+      ${titleColor ? `color: ${titleColor};` : ''}
+      ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_1__.getTypographyCss)(titleTypography)}
+    }
+    #${id} .gbb-qr-description {
+      ${descriptionColor ? `color: ${descriptionColor};` : ''}
+      ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_1__.getTypographyCss)(descriptionTypography)}
     }
     #${id} .gbb-qr-download-btn {
       background-color: ${downloadBtnColor};
       box-shadow: 0 4px 12px ${downloadBtnColor}40;
     }
   `;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("style", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("style", {
     dangerouslySetInnerHTML: {
       __html: css
     }
@@ -5628,7 +5691,7 @@ const TemplateOne = ({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
     className: "gbb-qr-wrapper",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-      className: "gbb-qr-container template-1",
+      className: "gbb-qr-container",
       children: [(titleText || descriptionText) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "gbb-qr-header",
         children: [titleText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
@@ -5640,9 +5703,6 @@ const TemplateOne = ({
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "gbb-qr-code-wrapper",
-        style: {
-          backgroundColor: transparentBg ? 'transparent' : bgColor
-        },
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("svg", {
           ref: svgRef,
           className: "gbb-qr-svg",
@@ -5752,26 +5812,50 @@ const templateData = {
     tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Modern frame card with dynamic title, subtitle, logo overlay, and CTA download button.', 'guten-builder-blocks'),
     icon: _icons__WEBPACK_IMPORTED_MODULE_1__.TemplateOneSvg,
     attributes: {
-      qrText: "https://wordpress.org",
+      qrText: 'https://wordpress.org',
       qrSize: 220,
       qrMargin: 2,
-      fgColor: "#0f172a",
-      bgColor: "#ffffff",
+      fgColor: '#0f172a',
+      bgColor: '#ffffff',
       transparentBg: false,
-      errorCorrectionLevel: "M",
-      logoUrl: "",
+      errorCorrectionLevel: 'M',
+      logoUrl: '',
       logoWidth: 42,
       logoHeight: 42,
       showLogoBg: true,
-      titleText: "Scan QR Code",
-      descriptionText: "Point your phone camera to scan and visit the link.",
-      showDownloadBtn: true,
-      downloadBtnText: "Download QR Code",
-      downloadBtnColor: "#10b981",
-      containerBg: "#ffffff",
-      containerBorderColor: "#e2e8f0",
-      containerRadius: 16,
-      align: "center"
+      titleText: 'Scan QR Code',
+      descriptionText: 'Point your phone camera to scan and visit the link.',
+      showDownloadBtn: false,
+      downloadBtnText: 'Download QR Code',
+      downloadBtnColor: '#10b981',
+      containerBg: '#ffffff00',
+      containerBorder: {
+        color: '#e2e8f0',
+        width: '',
+        style: 'solid',
+        side: 'all'
+      },
+      containerRadius: {
+        top: '16px',
+        right: '16px',
+        bottom: '16px',
+        left: '16px'
+      },
+      titleColor: '#0f172a',
+      titleTypography: {
+        fontSize: {
+          desktop: '1.35rem'
+        },
+        fontWeight: '700'
+      },
+      descriptionColor: '#64748b',
+      descriptionTypography: {
+        fontSize: {
+          desktop: '0.9rem'
+        },
+        fontWeight: '400'
+      },
+      align: 'center'
     }
   }]
 };
@@ -9760,7 +9844,7 @@ module.exports = window["wp"]["i18n"];
 (module) {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"guten-builder-blocks/qr-code","version":"1.0.0","title":"QR Code Generator","category":"guten-builder","description":"Generate dynamic and customizable QR codes with custom styling, logos, and download options.","keywords":["qr","qrcode","generator","link","barcode"],"textdomain":"guten-builder-blocks","attributes":{"selectedTemplate":{"type":"string","default":""},"qrText":{"type":"string","default":""},"qrSize":{"type":"number"},"qrMargin":{"type":"number"},"fgColor":{"type":"string","default":""},"bgColor":{"type":"string","default":""},"transparentBg":{"type":"boolean"},"errorCorrectionLevel":{"type":"string","default":""},"logoUrl":{"type":"string","default":""},"logoWidth":{"type":"number"},"logoHeight":{"type":"number"},"showLogoBg":{"type":"boolean"},"titleText":{"type":"string","default":""},"descriptionText":{"type":"string","default":""},"showDownloadBtn":{"type":"boolean"},"downloadBtnText":{"type":"string","default":""},"downloadBtnColor":{"type":"string","default":""},"containerBg":{"type":"string","default":""},"containerBorderColor":{"type":"string","default":""},"containerRadius":{"type":"number"},"align":{"type":"string","default":""}},"supports":{"align":["center","wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"guten-builder-blocks/qr-code","version":"1.0.0","title":"QR Code Generator","category":"guten-builder","description":"Generate dynamic and customizable QR codes with custom styling, logos, and download options.","keywords":["qr","qrcode","generator","link","barcode"],"textdomain":"guten-builder-blocks","attributes":{"selectedTemplate":{"type":"string","default":""},"qrText":{"type":"string","default":""},"qrSize":{"type":"number"},"qrMargin":{"type":"number"},"fgColor":{"type":"string","default":""},"bgColor":{"type":"string","default":""},"transparentBg":{"type":"boolean"},"errorCorrectionLevel":{"type":"string","default":""},"logoUrl":{"type":"string","default":""},"logoWidth":{"type":"number"},"logoHeight":{"type":"number"},"showLogoBg":{"type":"boolean"},"titleText":{"type":"string","default":""},"descriptionText":{"type":"string","default":""},"showDownloadBtn":{"type":"boolean"},"downloadBtnText":{"type":"string","default":""},"downloadBtnColor":{"type":"string","default":""},"containerBg":{"type":"string","default":""},"containerBorderColor":{"type":"string","default":""},"containerBorder":{"type":"object"},"containerRadius":{"type":"object"},"titleColor":{"type":"string","default":""},"titleTypography":{"type":"object"},"descriptionColor":{"type":"string","default":""},"descriptionTypography":{"type":"object"},"align":{"type":"string","default":""}},"supports":{"align":["center","wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
 
 /***/ }
 

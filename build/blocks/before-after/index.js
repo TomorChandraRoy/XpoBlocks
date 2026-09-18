@@ -5508,10 +5508,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var tr_tools__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tr-tools */ "../tr-tools/index.js");
 /* harmony import */ var tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tr-tools/utils/options */ "../tr-tools/utils/options.js");
-/* harmony import */ var _utils_options__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../utils/options */ "./src/blocks/before-after/utils/options.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
-
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
@@ -5528,19 +5526,19 @@ const Style = ({
     labelBorderRadius,
     wrapperBorderRadius
   } = attributes;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Labels', 'guten-builder-blocks'),
       initialOpen: false,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text Color :', 'guten-builder-blocks'),
         value: labelColor,
         onChange: color => setAttributes({
           labelColor: color
         }),
         defaultColor: "#ffffff"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BackgroundControl, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BackgroundControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background :', 'guten-builder-blocks'),
         value: labelBg,
         onChange: val => setAttributes({
@@ -5550,14 +5548,27 @@ const Style = ({
           type: 'solid',
           color: 'rgba(0, 0, 0, 0.6)'
         }
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Typography :', 'guten-builder-blocks'),
         value: labelTypography,
         onChange: val => setAttributes({
           labelTypography: val
         }),
-        defaultTypography: _utils_options__WEBPACK_IMPORTED_MODULE_4__.defaultLabelTypo
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.SpacingControl, {
+        defaultTypography: {
+          fontSize: {
+            desktop: '14px',
+            tablet: '14px',
+            mobile: '14px'
+          },
+          fontFamily: '',
+          fontWeight: '600',
+          lineHeight: '',
+          letterSpacing: '',
+          textTransform: 'none',
+          textDecoration: 'none',
+          fontStyle: 'normal'
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.SpacingControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border Radius :', 'guten-builder-blocks'),
         value: labelBorderRadius,
         onChange: val => setAttributes({
@@ -5571,11 +5582,11 @@ const Style = ({
           left: '5px'
         }
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Layout & Container', 'guten-builder-blocks'),
       initialOpen: false,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.SpacingControl, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.SpacingControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border Radius :', 'guten-builder-blocks'),
         value: wrapperBorderRadius,
         onChange: val => setAttributes({
@@ -5832,7 +5843,22 @@ const templateData = {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template 1', 'guten-builder-blocks'),
     tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Classic Slider', 'guten-builder-blocks'),
     icon: _icons__WEBPACK_IMPORTED_MODULE_1__.TemplateOneSvg,
-    attributes: {}
+    attributes: {
+      labelTypography: {
+        fontSize: {
+          desktop: '14px',
+          tablet: '14px',
+          mobile: '14px'
+        },
+        fontFamily: '',
+        fontWeight: '600',
+        lineHeight: '',
+        letterSpacing: '',
+        textTransform: 'none',
+        textDecoration: 'none',
+        fontStyle: 'normal'
+      }
+    }
   }]
 };
 
@@ -8239,7 +8265,7 @@ var castImmutable = (value) => value;
   \********************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/before-after","version":"1.0.0","title":"Before/After","description":"Interactive image comparison slider with CSS-based masking and hardware-accelerated transitions.","category":"guten-builder","keywords":["before after","image comparison","slider","photo compare","comparison"],"textdomain":"guten-builder-blocks","attributes":{"beforeImage":{"type":"object","properties":{"url":{"type":"string"},"alt":{"type":"string"}},"default":null},"afterImage":{"type":"object","properties":{"url":{"type":"string"},"alt":{"type":"string"}},"default":null},"showLabels":{"type":"boolean","default":true},"beforeLabel":{"type":"string","default":"Before"},"afterLabel":{"type":"string","default":"After"},"dividerIcon":{"type":"string","default":"dots"},"customDividerIcon":{"type":"string","default":""},"dividerIconSize":{"type":"number","default":16},"labelColor":{"type":"string","default":"#ffffff"},"labelBg":{"type":"object","default":{"type":"solid","color":"rgba(0, 0, 0, 0.6)"}},"labelTypography":{"type":"object","default":{"fontSize":{"desktop":"14px","tablet":"14px","mobile":"14px"},"fontFamily":"","fontWeight":"600","lineHeight":"","letterSpacing":"","textTransform":"none","textDecoration":"none","fontStyle":"normal"}},"labelBorderRadius":{"type":"object","default":{"top":"5px","right":"5px","bottom":"5px","left":"5px"}},"wrapperBorderRadius":{"type":"object","default":{"top":"5px","right":"5px","bottom":"5px","left":"5px"}},"dividerStyle":{"type":"string","default":"solid"},"dividerColor":{"type":"string","default":"#ffffff"},"handleColor":{"type":"string","default":"#111111"},"handleIconColor":{"type":"string","default":"#ffffff"},"selectedTemplate":{"type":"string","default":""}},"supports":{"html":false,"anchor":true,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","viewScript":"file:./view.js","style":"file:./style-view.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/before-after","version":"1.0.0","title":"Before/After","description":"Interactive image comparison slider with CSS-based masking and hardware-accelerated transitions.","category":"guten-builder","keywords":["before after","image comparison","slider","photo compare","comparison"],"textdomain":"guten-builder-blocks","attributes":{"beforeImage":{"type":"object","properties":{"url":{"type":"string"},"alt":{"type":"string"}},"default":null},"afterImage":{"type":"object","properties":{"url":{"type":"string"},"alt":{"type":"string"}},"default":null},"showLabels":{"type":"boolean","default":true},"beforeLabel":{"type":"string","default":"Before"},"afterLabel":{"type":"string","default":"After"},"dividerIcon":{"type":"string","default":"dots"},"customDividerIcon":{"type":"string","default":""},"dividerIconSize":{"type":"number","default":16},"labelColor":{"type":"string","default":"#ffffff"},"labelBg":{"type":"object","default":{"type":"solid","color":"rgba(0, 0, 0, 0.6)"}},"labelTypography":{"type":"object"},"labelBorderRadius":{"type":"object","default":{"top":"5px","right":"5px","bottom":"5px","left":"5px"}},"wrapperBorderRadius":{"type":"object","default":{"top":"5px","right":"5px","bottom":"5px","left":"5px"}},"dividerStyle":{"type":"string","default":"solid"},"dividerColor":{"type":"string","default":"#ffffff"},"handleColor":{"type":"string","default":"#111111"},"handleIconColor":{"type":"string","default":"#ffffff"},"selectedTemplate":{"type":"string","default":""}},"supports":{"html":false,"anchor":true,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","viewScript":"file:./view.js","style":"file:./style-view.css","render":"file:./render.php"}');
 
 /***/ }
 

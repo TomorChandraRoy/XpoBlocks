@@ -20,17 +20,6 @@
   text-align: center;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-.wp-block-guten-builder-blocks-qr-code .gbb-qr-container.template-1 {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
-  border-style: solid;
-  border-width: 1px;
-}
-.wp-block-guten-builder-blocks-qr-code .gbb-qr-container.template-2 {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-  border-style: solid;
-  border-width: 1px;
-  padding: 1.5rem 1.25rem;
-}
 .wp-block-guten-builder-blocks-qr-code .gbb-qr-header {
   margin-bottom: 1.25rem;
   width: 100%;
@@ -53,10 +42,6 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 12px;
-  border-radius: 12px;
-  background: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 .wp-block-guten-builder-blocks-qr-code .gbb-qr-svg {
   display: block;

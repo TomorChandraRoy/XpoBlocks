@@ -64,15 +64,14 @@
     },
     "iconPosition": {
       "type": "string",
-      "default": "right"
+      "default": ""
     },
     "iconType": {
       "type": "string",
-      "default": "chevron"
+      "default": ""
     },
     "iconSize": {
-      "type": "number",
-      "default": 22
+      "type": "number"
     },
     "iconColor": {
       "type": "string",
@@ -80,24 +79,11 @@
     },
     "subtitleColor": {
       "type": "string",
-      "default": "#475569"
+      "default": ""
     },
     "subtitleTypography": {
       "type": "object",
-      "default": {
-        "fontSize": {
-          "desktop": "16px",
-          "tablet": "14px",
-          "mobile": "12px"
-        },
-        "fontFamily": "",
-        "fontWeight": "400",
-        "lineHeight": "",
-        "letterSpacing": "",
-        "textTransform": "none",
-        "textDecoration": "none",
-        "fontStyle": "normal"
-      }
+      "default": {}
     },
     "titleColor": {
       "type": "string",
@@ -105,20 +91,7 @@
     },
     "titleTypography": {
       "type": "object",
-      "default": {
-        "fontSize": {
-          "desktop": "24px",
-          "tablet": "23px",
-          "mobile": "22px"
-        },
-        "fontFamily": "",
-        "fontWeight": "700",
-        "lineHeight": "",
-        "letterSpacing": "",
-        "textTransform": "none",
-        "textDecoration": "none",
-        "fontStyle": "normal"
-      }
+      "default": {}
     },
     "descriptionColor": {
       "type": "string",
@@ -126,20 +99,7 @@
     },
     "descriptionTypography": {
       "type": "object",
-      "default": {
-        "fontSize": {
-          "desktop": "14px",
-          "tablet": "14px",
-          "mobile": "13px"
-        },
-        "fontFamily": "",
-        "fontWeight": "400",
-        "lineHeight": "",
-        "letterSpacing": "",
-        "textTransform": "none",
-        "textDecoration": "none",
-        "fontStyle": "normal"
-      }
+      "default": {}
     },
     "questionBg": {
       "type": "object",
@@ -147,12 +107,7 @@
     },
     "questionBorder": {
       "type": "object",
-      "default": {
-        "color": "#e0e7ff",
-        "width": "1px",
-        "style": "solid",
-        "side": "all"
-      }
+      "default": {}
     },
     "questionBorderRadius": {
       "type": "object",
@@ -165,45 +120,19 @@
     },
     "questionTypography": {
       "type": "object",
-      "default": {
-        "fontSize": {
-          "desktop": "16px",
-          "tablet": "16px",
-          "mobile": "14px"
-        },
-        "fontFamily": "",
-        "fontWeight": "600",
-        "lineHeight": "",
-        "letterSpacing": "",
-        "textTransform": "none",
-        "textDecoration": "none",
-        "fontStyle": "normal"
-      }
+      "default": {}
     },
     "answerTypography": {
       "type": "object",
-      "default": {
-        "fontSize": {
-          "desktop": "14px",
-          "tablet": "14px",
-          "mobile": "13px"
-        },
-        "fontFamily": "",
-        "fontWeight": "400",
-        "lineHeight": "",
-        "letterSpacing": "",
-        "textTransform": "none",
-        "textDecoration": "none",
-        "fontStyle": "normal"
-      }
+      "default": {}
     },
     "questionColor": {
       "type": "string",
-      "default": "#0f172a"
+      "default": ""
     },
     "answerColor": {
       "type": "string",
-      "default": "#475569"
+      "default": ""
     }
   },
   "supports": {

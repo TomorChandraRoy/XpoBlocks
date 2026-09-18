@@ -1,13 +1,31 @@
 import React from 'react';
+import { getBorderRadiusCss, getBorderCss, getTypographyCss } from 'tr-tools';
 
 const DynamicStyles = ({ attributes, id }) => {
-  const {containerBg = '#ffffff',containerBorderColor = '#e2e8f0',containerRadius = 16,downloadBtnColor = '#10b981'} = attributes || {};
+  const {
+    containerBg = '#ffffff',
+    containerBorder,
+    containerRadius,
+    downloadBtnColor = '#10b981',
+    titleColor,
+    titleTypography,
+    descriptionColor,
+    descriptionTypography,
+  } = attributes || {};
 
   const css = `
-    #${id}.gbb-qr-container {
+    #${id} .gbb-qr-container {
       background-color: ${containerBg};
-      border-color: ${containerBorderColor};
-      border-radius: ${containerRadius}px;
+      ${getBorderCss(containerBorder)}
+      ${getBorderRadiusCss(containerRadius)}
+    }
+    #${id} .gbb-qr-title {
+      ${titleColor ? `color: ${titleColor};` : ''}
+      ${getTypographyCss(titleTypography)}
+    }
+    #${id} .gbb-qr-description {
+      ${descriptionColor ? `color: ${descriptionColor};` : ''}
+      ${getTypographyCss(descriptionTypography)}
     }
     #${id} .gbb-qr-download-btn {
       background-color: ${downloadBtnColor};

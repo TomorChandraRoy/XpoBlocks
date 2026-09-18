@@ -79,8 +79,25 @@
       "type": "string",
       "default": ""
     },
+    "containerBorder": {
+      "type": "object"
+    },
     "containerRadius": {
-      "type": "number"
+      "type": "object"
+    },
+    "titleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "titleTypography": {
+      "type": "object"
+    },
+    "descriptionColor": {
+      "type": "string",
+      "default": ""
+    },
+    "descriptionTypography": {
+      "type": "object"
     },
     "align": {
       "type": "string",
