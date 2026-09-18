@@ -1,0 +1,107 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "guten-builder-blocks/qr-code",
+  "version": "1.0.0",
+  "title": "QR Code Generator",
+  "category": "guten-builder",
+  "description": "Generate dynamic and customizable QR codes with custom styling, logos, and download options.",
+  "keywords": [
+    "qr",
+    "qrcode",
+    "generator",
+    "link",
+    "barcode"
+  ],
+  "textdomain": "guten-builder-blocks",
+  "attributes": {
+    "selectedTemplate": {
+      "type": "string",
+      "default": ""
+    },
+    "qrText": {
+      "type": "string",
+      "default": ""
+    },
+    "qrSize": {
+      "type": "number"
+    },
+    "qrMargin": {
+      "type": "number"
+    },
+    "fgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "bgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "transparentBg": {
+      "type": "boolean"
+    },
+    "errorCorrectionLevel": {
+      "type": "string",
+      "default": ""
+    },
+    "logoUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "logoWidth": {
+      "type": "number"
+    },
+    "logoHeight": {
+      "type": "number"
+    },
+    "showLogoBg": {
+      "type": "boolean"
+    },
+    "titleText": {
+      "type": "string",
+      "default": ""
+    },
+    "descriptionText": {
+      "type": "string",
+      "default": ""
+    },
+    "showDownloadBtn": {
+      "type": "boolean"
+    },
+    "downloadBtnText": {
+      "type": "string",
+      "default": ""
+    },
+    "downloadBtnColor": {
+      "type": "string",
+      "default": ""
+    },
+    "containerBg": {
+      "type": "string",
+      "default": ""
+    },
+    "containerBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "containerRadius": {
+      "type": "number"
+    },
+    "align": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "align": [
+      "center",
+      "wide",
+      "full"
+    ]
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-view.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}

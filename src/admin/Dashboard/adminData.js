@@ -105,16 +105,24 @@ export const blockBannerConfigs = {
     ),
     previewImage: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200"><rect width="300" height="200" fill="%230f172a"/><g transform="translate(25,20)"><rect x="0" y="0" width="250" height="160" rx="10" fill="%231e293b" stroke="%23334155"/><circle cx="30" cy="35" r="5" fill="%2310b981"/><rect x="45" y="32" width="150" height="6" rx="3" fill="%2334d399"/><circle cx="50" cy="65" r="4" fill="%2364748b"/><rect x="65" y="62" width="120" height="6" rx="3" fill="%2364748b"/><circle cx="50" cy="95" r="4" fill="%2364748b"/><rect x="65" y="92" width="140" height="6" rx="3" fill="%2364748b"/><circle cx="30" cy="125" r="5" fill="%2364748b"/><rect x="45" y="122" width="160" height="6" rx="3" fill="%2364748b"/></g></svg>'
   },
-  'video-modal': {
-    title: 'VIDEO MODAL',
-    tag: 'LIGHTBOX POPUP PLAYER',
+  'qr-code': {
+    title: 'QR CODE GENERATOR',
+    tag: 'DYNAMIC & CUSTOM QR CODES',
     icon: (
       <svg className="brand-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="4" width="20" height="16" rx="3"/>
-        <polygon points="10 8 16 12 10 16 10 8"/>
+        <rect x="3" y="3" width="7" height="7" rx="1.5" stroke="#10b981" strokeWidth="2"/>
+        <rect x="5" y="5" width="3" height="3" fill="#10b981"/>
+        <rect x="14" y="3" width="7" height="7" rx="1.5" stroke="#10b981" strokeWidth="2"/>
+        <rect x="16" y="5" width="3" height="3" fill="#10b981"/>
+        <rect x="3" y="14" width="7" height="7" rx="1.5" stroke="#10b981" strokeWidth="2"/>
+        <rect x="5" y="16" width="3" height="3" fill="#10b981"/>
+        <rect x="14" y="14" width="3" height="3" fill="#10b981"/>
+        <rect x="18" y="14" width="3" height="3" fill="#10b981"/>
+        <rect x="14" y="18" width="3" height="3" fill="#10b981"/>
+        <rect x="18" y="18" width="3" height="3" fill="#10b981"/>
       </svg>
     ),
-    previewImage: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200"><rect width="300" height="200" fill="%230f172a"/><g transform="translate(20,20)"><rect x="0" y="0" width="260" height="160" rx="12" fill="%231e293b" stroke="%23334155"/><circle cx="130" cy="80" r="28" fill="%2310b981" opacity="0.95"/><polygon points="125,68 142,80 125,92" fill="%23ffffff"/><rect x="25" y="130" width="110" height="10" rx="5" fill="%23ffffff" opacity="0.85"/></g></svg>'
+    previewImage: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200"><rect width="300" height="200" fill="%230f172a"/><g transform="translate(60,20)"><rect x="0" y="0" width="180" height="160" rx="12" fill="%231e293b" stroke="%23334155"/><rect x="40" y="20" width="100" height="100" rx="8" fill="%23ffffff"/><rect x="50" y="30" width="30" height="30" fill="%230f172a"/><rect x="100" y="30" width="30" height="30" fill="%230f172a"/><rect x="50" y="80" width="30" height="30" fill="%230f172a"/><rect x="100" y="80" width="15" height="15" fill="%2310b981"/><rect x="115" y="95" width="15" height="15" fill="%2310b981"/><rect x="40" y="132" width="100" height="18" rx="5" fill="%2310b981"/></g></svg>'
   }
 };
 

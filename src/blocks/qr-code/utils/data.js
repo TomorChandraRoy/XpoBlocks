@@ -1,0 +1,37 @@
+import { __ } from '@wordpress/i18n';
+import { TemplateOneSvg } from './icons';
+
+export const templateData = {
+  title: __('QR Code Layouts', 'guten-builder-blocks'),
+  subtitle: __('Select a layout for your QR code generator block.', 'guten-builder-blocks'),
+  templates: [
+    {
+      id: 'template-1',
+      label: __('Frame Card Layout', 'guten-builder-blocks'),
+      tag: __('Modern frame card with dynamic title, subtitle, logo overlay, and CTA download button.', 'guten-builder-blocks'),
+      icon: TemplateOneSvg,
+      attributes: {
+        qrText:"https://wordpress.org",
+        qrSize:220,
+        qrMargin:2,
+        fgColor:"#0f172a",
+        bgColor:"#ffffff",
+        transparentBg:false,
+        errorCorrectionLevel:"M",
+        logoUrl:"",
+        logoWidth:42,
+        logoHeight:42,
+        showLogoBg:true,
+        titleText:"Scan QR Code",
+        descriptionText:"Point your phone camera to scan and visit the link.",
+        showDownloadBtn:true,
+        downloadBtnText:"Download QR Code",
+        downloadBtnColor:"#10b981",
+        containerBg:"#ffffff",
+        containerBorderColor:"#e2e8f0",
+        containerRadius:16,
+        align:"center",
+      },
+    },
+  ],
+};

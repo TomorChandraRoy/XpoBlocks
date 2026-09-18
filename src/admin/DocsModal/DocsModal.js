@@ -152,21 +152,21 @@ const blockDocsData = {
       'The block will automatically discover and link all headings on the page.'
     ]
   },
-  'video-modal': {
-    title: 'Video Modal Documentation',
-    badge: 'LIGHTBOX MEDIA',
-    summary: 'Displays a thumbnail card with a pulsing play button that opens YouTube, Vimeo, or MP4 videos in a popup modal.',
+  'qr-code': {
+    title: 'QR Code Generator Documentation',
+    badge: 'UTILITY & INTERACTIVE',
+    summary: 'Generates customizable vector QR codes for websites, text, phone numbers, and emails with logo overlay and instant image download support.',
     features: [
-      'YouTube, Vimeo, and self-hosted MP4 support',
-      'Pulsing play button ring overlay',
-      'Full-screen lightbox modal player',
-      'Autoplay on popup open'
+      'URL, text, email, and phone QR code generator',
+      'Custom foreground, background, and button colors',
+      'Center logo overlay with white background badge option',
+      'High-resolution PNG image download button on frontend'
     ],
     usageSteps: [
-      'Add the "Video Modal" block to your hero section or video gallery.',
-      'Paste your video URL (e.g., YouTube watch link or direct MP4 URL).',
-      'Upload a custom thumbnail cover image.',
-      'Customize play button color, size, and ripple animation speed.'
+      'Add the "QR Code Generator" block to your page layout.',
+      'Enter your desired target URL or text in the Inspector sidebar.',
+      'Customize colors, dimensions, and optionally upload a center logo.',
+      'Save page and test frontend QR code scanning or PNG download.'
     ]
   }
 };

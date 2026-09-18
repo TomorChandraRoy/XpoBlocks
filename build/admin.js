@@ -1038,9 +1038,9 @@ const blockBannerConfigs = {
     }),
     previewImage: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200"><rect width="300" height="200" fill="%230f172a"/><g transform="translate(25,20)"><rect x="0" y="0" width="250" height="160" rx="10" fill="%231e293b" stroke="%23334155"/><circle cx="30" cy="35" r="5" fill="%2310b981"/><rect x="45" y="32" width="150" height="6" rx="3" fill="%2334d399"/><circle cx="50" cy="65" r="4" fill="%2364748b"/><rect x="65" y="62" width="120" height="6" rx="3" fill="%2364748b"/><circle cx="50" cy="95" r="4" fill="%2364748b"/><rect x="65" y="92" width="140" height="6" rx="3" fill="%2364748b"/><circle cx="30" cy="125" r="5" fill="%2364748b"/><rect x="45" y="122" width="160" height="6" rx="3" fill="%2364748b"/></g></svg>'
   },
-  'video-modal': {
-    title: 'VIDEO MODAL',
-    tag: 'LIGHTBOX POPUP PLAYER',
+  'qr-code': {
+    title: 'QR CODE GENERATOR',
+    tag: 'DYNAMIC & CUSTOM QR CODES',
     icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
       className: "brand-icon",
       width: "16",
@@ -1052,16 +1052,74 @@ const blockBannerConfigs = {
       strokeLinecap: "round",
       strokeLinejoin: "round",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-        x: "2",
-        y: "4",
-        width: "20",
-        height: "16",
-        rx: "3"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("polygon", {
-        points: "10 8 16 12 10 16 10 8"
+        x: "3",
+        y: "3",
+        width: "7",
+        height: "7",
+        rx: "1.5",
+        stroke: "#10b981",
+        strokeWidth: "2"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+        x: "5",
+        y: "5",
+        width: "3",
+        height: "3",
+        fill: "#10b981"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+        x: "14",
+        y: "3",
+        width: "7",
+        height: "7",
+        rx: "1.5",
+        stroke: "#10b981",
+        strokeWidth: "2"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+        x: "16",
+        y: "5",
+        width: "3",
+        height: "3",
+        fill: "#10b981"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+        x: "3",
+        y: "14",
+        width: "7",
+        height: "7",
+        rx: "1.5",
+        stroke: "#10b981",
+        strokeWidth: "2"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+        x: "5",
+        y: "16",
+        width: "3",
+        height: "3",
+        fill: "#10b981"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+        x: "14",
+        y: "14",
+        width: "3",
+        height: "3",
+        fill: "#10b981"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+        x: "18",
+        y: "14",
+        width: "3",
+        height: "3",
+        fill: "#10b981"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+        x: "14",
+        y: "18",
+        width: "3",
+        height: "3",
+        fill: "#10b981"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+        x: "18",
+        y: "18",
+        width: "3",
+        height: "3",
+        fill: "#10b981"
       })]
     }),
-    previewImage: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200"><rect width="300" height="200" fill="%230f172a"/><g transform="translate(20,20)"><rect x="0" y="0" width="260" height="160" rx="12" fill="%231e293b" stroke="%23334155"/><circle cx="130" cy="80" r="28" fill="%2310b981" opacity="0.95"/><polygon points="125,68 142,80 125,92" fill="%23ffffff"/><rect x="25" y="130" width="110" height="10" rx="5" fill="%23ffffff" opacity="0.85"/></g></svg>'
+    previewImage: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200"><rect width="300" height="200" fill="%230f172a"/><g transform="translate(60,20)"><rect x="0" y="0" width="180" height="160" rx="12" fill="%231e293b" stroke="%23334155"/><rect x="40" y="20" width="100" height="100" rx="8" fill="%23ffffff"/><rect x="50" y="30" width="30" height="30" fill="%230f172a"/><rect x="100" y="30" width="30" height="30" fill="%230f172a"/><rect x="50" y="80" width="30" height="30" fill="%230f172a"/><rect x="100" y="80" width="15" height="15" fill="%2310b981"/><rect x="115" y="95" width="15" height="15" fill="%2310b981"/><rect x="40" y="132" width="100" height="18" rx="5" fill="%2310b981"/></g></svg>'
   }
 };
 const getBlockBannerConfig = block => {
@@ -1299,12 +1357,12 @@ const blockDocsData = {
     features: ['Automatic heading detection (H2, H3, H4)', 'Smooth scroll offset alignment for fixed headers', 'Collapsible box toggle (Expand / Collapse)', 'SEO friendly schema markup'],
     usageSteps: ['Place the "Table of Contents" block at the top of your long-form article.', 'Select which heading tags to include (e.g. H2 and H3).', 'Customize container background, active indicator color, and typography.', 'The block will automatically discover and link all headings on the page.']
   },
-  'video-modal': {
-    title: 'Video Modal Documentation',
-    badge: 'LIGHTBOX MEDIA',
-    summary: 'Displays a thumbnail card with a pulsing play button that opens YouTube, Vimeo, or MP4 videos in a popup modal.',
-    features: ['YouTube, Vimeo, and self-hosted MP4 support', 'Pulsing play button ring overlay', 'Full-screen lightbox modal player', 'Autoplay on popup open'],
-    usageSteps: ['Add the "Video Modal" block to your hero section or video gallery.', 'Paste your video URL (e.g., YouTube watch link or direct MP4 URL).', 'Upload a custom thumbnail cover image.', 'Customize play button color, size, and ripple animation speed.']
+  'qr-code': {
+    title: 'QR Code Generator Documentation',
+    badge: 'UTILITY & INTERACTIVE',
+    summary: 'Generates customizable vector QR codes for websites, text, phone numbers, and emails with logo overlay and instant image download support.',
+    features: ['URL, text, email, and phone QR code generator', 'Custom foreground, background, and button colors', 'Center logo overlay with white background badge option', 'High-resolution PNG image download button on frontend'],
+    usageSteps: ['Add the "QR Code Generator" block to your page layout.', 'Enter your desired target URL or text in the Inspector sidebar.', 'Customize colors, dimensions, and optionally upload a center logo.', 'Save page and test frontend QR code scanning or PNG download.']
   }
 };
 const DocsModal = ({
