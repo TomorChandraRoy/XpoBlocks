@@ -6,7 +6,7 @@
   "title": "Button",
   "category": "guten-builder",
   "icon": "button",
-  "description": "A simple button block.",
+  "description": "Add high-converting call-to-action (CTA) buttons with customizable styling, hover animations, and dynamic 3D effects to boost engagement.",
   "textdomain": "guten-builder-blocks",
   "attributes": {
     "selectedTemplate": {

@@ -5426,15 +5426,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _utils_options__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../utils/options */ "./src/blocks/pricing-table/utils/options.js");
-/* harmony import */ var _General_General__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./General/General */ "./src/blocks/pricing-table/Components/Backend/Settings/General/General.js");
-/* harmony import */ var _Style_Style__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Style/Style */ "./src/blocks/pricing-table/Components/Backend/Settings/Style/Style.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _utils_options__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../utils/options */ "./src/blocks/pricing-table/utils/options.js");
+/* harmony import */ var _General_General__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./General/General */ "./src/blocks/pricing-table/Components/Backend/Settings/General/General.js");
+/* harmony import */ var _Style_Style__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Style/Style */ "./src/blocks/pricing-table/Components/Backend/Settings/Style/Style.js");
+/* harmony import */ var tr_tools__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tr-tools */ "../tr-tools/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__);
+
+
 
 
 
@@ -5453,22 +5458,25 @@ const Settings = ({
   if (!isTemplateSelected) {
     return null;
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TabPanel, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_6__.DocsLink, {
+      link: "https://gutenbuilder.com/docs/pricing-table",
+      text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Documentation', 'guten-builder-blocks')
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TabPanel, {
       className: "guten-builder-blocks-tab-panel wp-block-guten-builder-blocks-pricing-table",
       activeClass: "guten-builder-blocks-active-tab",
-      tabs: _utils_options__WEBPACK_IMPORTED_MODULE_2__.generalStyleTabs,
-      children: tab => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
-        children: ['general' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_General_General__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      tabs: _utils_options__WEBPACK_IMPORTED_MODULE_3__.generalStyleTabs,
+      children: tab => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+        children: ['general' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_General_General__WEBPACK_IMPORTED_MODULE_4__["default"], {
           attributes: attributes,
           setAttributes: setAttributes,
           clientId: clientId
-        }), 'style' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Style_Style__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        }), 'style' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Style_Style__WEBPACK_IMPORTED_MODULE_5__["default"], {
           attributes: attributes,
           setAttributes: setAttributes
         })]
       })
-    })
+    })]
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Settings);
@@ -6596,6 +6604,9 @@ const templateData = {
           iconColor: '#4338ca'
         }]
       }],
+      columns: 3,
+      gap: 24,
+      containerWidth: '1200px',
       badgeTypo: {
         fontSize: {
           desktop: '12px',
@@ -6823,38 +6834,6 @@ const templateData = {
         fontStyle: ''
       },
       cardDescColor: '#4b5563',
-      featureIconSize: 21,
-      featureTextColor: '#374151',
-      featureTextTypo: {
-        fontSize: {
-          desktop: '16px',
-          tablet: '',
-          mobile: ''
-        },
-        fontFamily: 'Google Sans Flex',
-        fontWeight: '400',
-        lineHeight: '',
-        letterSpacing: '',
-        textTransform: '',
-        textDecoration: '',
-        fontStyle: ''
-      },
-      featuresTitleColor: '#111827',
-      featuresTitleTypo: {
-        fontSize: {
-          desktop: '18px',
-          tablet: '',
-          mobile: ''
-        },
-        fontFamily: 'Google Sans Flex',
-        fontWeight: '500',
-        lineHeight: '',
-        letterSpacing: '',
-        textTransform: '',
-        textDecoration: '',
-        fontStyle: ''
-      },
-      dividerColor: '#e5e7eb',
       priceColor: '#111827',
       priceTypo: {
         fontSize: {
@@ -6908,6 +6887,38 @@ const templateData = {
         },
         fontFamily: 'Google Sans Flex',
         fontWeight: '500',
+        lineHeight: '',
+        letterSpacing: '',
+        textTransform: '',
+        textDecoration: '',
+        fontStyle: ''
+      },
+      dividerColor: '#e5e7eb',
+      featuresTitleColor: '#111827',
+      featuresTitleTypo: {
+        fontSize: {
+          desktop: '18px',
+          tablet: '',
+          mobile: ''
+        },
+        fontFamily: 'Google Sans Flex',
+        fontWeight: '500',
+        lineHeight: '',
+        letterSpacing: '',
+        textTransform: '',
+        textDecoration: '',
+        fontStyle: ''
+      },
+      featureIconSize: 21,
+      featureTextColor: '#374151',
+      featureTextTypo: {
+        fontSize: {
+          desktop: '16px',
+          tablet: '',
+          mobile: ''
+        },
+        fontFamily: 'Google Sans Flex',
+        fontWeight: '400',
         lineHeight: '',
         letterSpacing: '',
         textTransform: '',
@@ -7805,7 +7816,7 @@ module.exports = window["wp"]["i18n"];
   \*********************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/pricing-table","version":"1.0.0","title":"Pricing Table","description":"Showcase your subscription plans or products with a stunning pricing grid.","category":"guten-builder","keywords":["pricing","price list","table","grid"],"attributes":{"selectedTemplate":{"type":"string","default":""},"pricingTables":{"type":"array","default":[]},"align":{"type":"string","default":"wide"},"columns":{"type":"number","default":3},"gap":{"type":"number","default":24},"containerWidth":{"type":"string","default":"1200px"},"badgeTypo":{"type":"object","default":{}},"badgeColor":{"type":"string","default":"#ffffff"},"badgeBgColor":{"type":"string","default":"#4f46e5"},"badgeRadius":{"type":"object"},"featuredCardBorder":{"type":"object"},"featuredCardBg":{"type":"object"},"featuredCardBoxShadow":{"type":"object"},"featuredCardBorderRadius":{"type":"object"},"featuredCardTitleTypo":{"type":"object"},"featuredCardTitleColor":{"type":"string"},"featuredCardDescTypo":{"type":"object"},"featuredCardDescColor":{"type":"string"},"featuredPriceColor":{"type":"string"},"featuredPriceTypo":{"type":"object"},"featuredPeriodTypo":{"type":"object"},"featuredButtonBg":{"type":"string"},"featuredButtonHoverBg":{"type":"string"},"featuredButtonColor":{"type":"string"},"featuredButtonHoverColor":{"type":"string"},"featuredButtonBorder":{"type":"object"},"featuredButtonRadius":{"type":"object"},"featuredButtonTypo":{"type":"object"},"featuredDividerColor":{"type":"string"},"featuredFeaturesTitleColor":{"type":"string"},"featuredFeaturesTitleTypo":{"type":"object"},"featuredFeatureIconSize":{"type":"number","default":21},"featuredFeatureTextColor":{"type":"string"},"featuredFeatureTextTypo":{"type":"object"},"cardBg":{"type":"object"},"cardBorder":{"type":"object"},"cardBoxShadow":{"type":"object"},"cardBorderRadius":{"type":"object"},"cardTitleTypo":{"type":"object"},"cardTitleColor":{"type":"string"},"cardDescTypo":{"type":"object"},"cardDescColor":{"type":"string"},"priceColor":{"type":"string"},"priceTypo":{"type":"object"},"periodTypo":{"type":"object"},"buttonBg":{"type":"string"},"buttonHoverBg":{"type":"string"},"buttonRadius":{"type":"object"},"buttonTypo":{"type":"object"},"buttonColor":{"type":"string"},"buttonHoverColor":{"type":"string"},"buttonBorder":{"type":"object"},"dividerColor":{"type":"string"},"featuresTitleColor":{"type":"string"},"featuresTitleTypo":{"type":"object"},"featureIconSize":{"type":"number","default":21},"featureTextColor":{"type":"string"},"featureTextTypo":{"type":"object"}},"supports":{"html":false,"align":["wide","full"]},"textdomain":"guten-builder-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/pricing-table","version":"1.0.0","title":"Pricing Table","description":"Showcase your subscription plans or products with a stunning pricing grid.","category":"guten-builder","keywords":["pricing","price list","table","grid"],"attributes":{"selectedTemplate":{"type":"string","default":""},"pricingTables":{"type":"array","default":[]},"align":{"type":"string","default":"wide"},"columns":{"type":"number"},"gap":{"type":"number"},"containerWidth":{"type":"string","default":""},"badgeTypo":{"type":"object","default":{}},"badgeColor":{"type":"string","default":""},"badgeBgColor":{"type":"string","default":""},"badgeRadius":{"type":"object"},"featuredCardBorder":{"type":"object"},"featuredCardBg":{"type":"object"},"featuredCardBoxShadow":{"type":"object"},"featuredCardBorderRadius":{"type":"object"},"featuredCardTitleTypo":{"type":"object"},"featuredCardTitleColor":{"type":"string"},"featuredCardDescTypo":{"type":"object"},"featuredCardDescColor":{"type":"string"},"featuredPriceColor":{"type":"string"},"featuredPriceTypo":{"type":"object"},"featuredPeriodTypo":{"type":"object"},"featuredButtonBg":{"type":"string"},"featuredButtonHoverBg":{"type":"string"},"featuredButtonColor":{"type":"string"},"featuredButtonHoverColor":{"type":"string"},"featuredButtonBorder":{"type":"object"},"featuredButtonRadius":{"type":"object"},"featuredButtonTypo":{"type":"object"},"featuredDividerColor":{"type":"string"},"featuredFeaturesTitleColor":{"type":"string"},"featuredFeaturesTitleTypo":{"type":"object"},"featuredFeatureIconSize":{"type":"number","default":21},"featuredFeatureTextColor":{"type":"string"},"featuredFeatureTextTypo":{"type":"object"},"cardBg":{"type":"object"},"cardBorder":{"type":"object"},"cardBoxShadow":{"type":"object"},"cardBorderRadius":{"type":"object"},"cardTitleTypo":{"type":"object"},"cardTitleColor":{"type":"string"},"cardDescTypo":{"type":"object"},"cardDescColor":{"type":"string"},"priceColor":{"type":"string"},"priceTypo":{"type":"object"},"periodTypo":{"type":"object"},"buttonBg":{"type":"string"},"buttonHoverBg":{"type":"string"},"buttonRadius":{"type":"object"},"buttonTypo":{"type":"object"},"buttonColor":{"type":"string"},"buttonHoverColor":{"type":"string"},"buttonBorder":{"type":"object"},"dividerColor":{"type":"string"},"featuresTitleColor":{"type":"string"},"featuresTitleTypo":{"type":"object"},"featureIconSize":{"type":"number","default":21},"featureTextColor":{"type":"string"},"featureTextTypo":{"type":"object"}},"supports":{"html":false,"align":["wide","full"]},"textdomain":"guten-builder-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
 
 /***/ }
 

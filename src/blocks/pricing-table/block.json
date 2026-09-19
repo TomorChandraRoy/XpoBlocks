@@ -20,16 +20,14 @@
       "default": "wide"
     },
     "columns": {
-      "type": "number",
-      "default": 3
+      "type": "number"
     },
     "gap": {
-      "type": "number",
-      "default": 24
+      "type": "number"
     },
     "containerWidth": {
       "type": "string",
-      "default": "1200px"
+      "default": ""
     },
     "badgeTypo": {
       "type": "object",
@@ -37,11 +35,11 @@
     },
     "badgeColor": {
       "type": "string",
-      "default": "#ffffff"
+      "default": ""
     },
     "badgeBgColor": {
       "type": "string",
-      "default": "#4f46e5"
+      "default": ""
     },
     "badgeRadius": {
       "type": "object"

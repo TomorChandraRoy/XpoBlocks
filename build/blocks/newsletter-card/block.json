@@ -26,7 +26,7 @@
     },
     "containerMaxWidth": {
       "type": "string",
-      "default": "1000px"
+      "default": ""
     },
     "containerBg": {
       "type": "object",
@@ -38,7 +38,7 @@
     },
     "titleColor": {
       "type": "string",
-      "default": "#1e293b"
+      "default": ""
     },
     "titleTypography": {
       "type": "object",
@@ -46,7 +46,7 @@
     },
     "descriptionColor": {
       "type": "string",
-      "default": "#64748b"
+      "default": ""
     },
     "descriptionTypography": {
       "type": "object",
@@ -54,7 +54,7 @@
     },
     "inputColor": {
       "type": "string",
-      "default": "#0f172a"
+      "default": ""
     },
     "inputBg": {
       "type": "object",
@@ -70,7 +70,7 @@
     },
     "buttonColor": {
       "type": "string",
-      "default": "#ffffff"
+      "default": ""
     },
     "buttonBg": {
       "type": "object",

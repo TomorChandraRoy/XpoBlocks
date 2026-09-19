@@ -22,11 +22,11 @@
     },
     "itemHeight": {
       "type": "string",
-      "default": "100px"
+      "default": ""
     },
     "containerMaxWidth": {
       "type": "string",
-      "default": "1024px"
+      "default": ""
     },
     "showBorder": {
       "type": "boolean",
@@ -41,8 +41,7 @@
       "default": true
     },
     "speed": {
-      "type": "number",
-      "default": 30
+      "type": "number"
     },
     "reverseDirection": {
       "type": "boolean",
@@ -65,8 +64,7 @@
       "default": false
     },
     "siblingBlurIntensity": {
-      "type": "number",
-      "default": 3
+      "type": "number"
     },
     "showProgressRail": {
       "type": "boolean",
@@ -74,7 +72,7 @@
     },
     "progressRailPosition": {
       "type": "string",
-      "default": "right"
+      "default": ""
     },
     "showInteractionIndicator": {
       "type": "boolean",
@@ -91,11 +89,10 @@
     },
     "frameBg": {
       "type": "string",
-      "default": "#ffffff"
+      "default": ""
     },
     "frameRadius": {
-      "type": "number",
-      "default": 12
+      "type": "number"
     },
     "enableSweepAnimation": {
       "type": "boolean",
@@ -103,27 +100,18 @@
     },
     "textGradient": {
       "type": "object",
-      "default": {
-        "gradientType": "linear",
-        "angle": 90,
-        "stops": [
-          { "color": "#ffaa40", "location": 0 },
-          { "color": "#9c40ff", "location": 50 },
-          { "color": "#ffaa40", "location": 100 }
-        ]
-      }
+      "default": {}
     },
     "containerBg": {
       "type": "string",
-      "default": "#ffffff"
+      "default": ""
     },
     "containerBorderColor": {
       "type": "string",
-      "default": "#e2e8f0"
+      "default": ""
     },
     "containerRadius": {
-      "type": "number",
-      "default": 8
+      "type": "number"
     },
     "align": {
       "type": "string",

@@ -32,7 +32,7 @@
     },
     "dividerColor": {
       "type": "string",
-      "default": "#d1d5db"
+      "default": ""
     },
     "textTypography": {
       "type": "object"

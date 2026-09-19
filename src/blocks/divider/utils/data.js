@@ -13,6 +13,9 @@ export const templateData = {
       tag: __('Classic Divider', 'guten-builder-blocks'),
       icon: TemplateOneSvg,
       attributes: {
+        dividerType: 'text',
+        text: 'Text',
+        iconName: 'tabler--crown',
         dividerWidth: { desktop: '100%', tablet: '', mobile: '' },
         dividerHeight: { desktop: '1px', tablet: '', mobile: '' },
         dividerColor: '#d1d5db',
@@ -24,10 +27,10 @@ export const templateData = {
           letterSpacing: '',
           textTransform: 'none',
           textDecoration: 'none',
-          fontStyle: 'normal'
+          fontStyle: 'normal',
         },
-        iconSize: { desktop: '20px', tablet: '', mobile: '' }
-      }
+        iconSize: { desktop: '20px', tablet: '', mobile: '' },
+      },
     },
     {
       id: 'template-2',
@@ -37,8 +40,8 @@ export const templateData = {
       attributes: {
         dividerWidth: { desktop: '100%', tablet: '', mobile: '' },
         dividerHeight: { desktop: '1px', tablet: '', mobile: '' },
-        dividerColor: '#d1d5db'
-      }
-    }
-  ]
+        dividerColor: '#d1d5db',
+      },
+    },
+  ],
 };

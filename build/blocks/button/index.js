@@ -5257,8 +5257,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_options__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../utils/options */ "./src/blocks/button/utils/options.js");
 /* harmony import */ var _General_General__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./General/General */ "./src/blocks/button/Components/Backend/Settings/General/General.js");
 /* harmony import */ var _Style_Style__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Style/Style */ "./src/blocks/button/Components/Backend/Settings/Style/Style.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var tr_tools__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tr-tools */ "../tr-tools/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__);
+
 
 
 
@@ -5280,24 +5282,27 @@ const Settings = ({
   if (!isTemplateSelected) {
     return null;
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TabPanel, {
-        className: "guten-builder-blocks-tab-panel wp-block-guten-builder-blocks-button",
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_6__.DocsLink, {
+        link: "https://gutenbuilder.com/docs/buttons",
+        text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Documentation', 'guten-builder-blocks')
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TabPanel, {
+        className: "guten-builder-blocks-tab-panel",
         activeClass: "guten-builder-blocks-active-tab",
         tabs: _utils_options__WEBPACK_IMPORTED_MODULE_3__.generalStyleTabs,
-        children: tab => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
-          children: ['general' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_General_General__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        children: tab => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+          children: ['general' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_General_General__WEBPACK_IMPORTED_MODULE_4__["default"], {
             attributes: attributes,
             setAttributes: setAttributes
-          }), 'style' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Style_Style__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          }), 'style' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Style_Style__WEBPACK_IMPORTED_MODULE_5__["default"], {
             attributes: attributes,
             setAttributes: setAttributes
           })]
         })
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.BlockControls, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.AlignmentToolbar, {
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.BlockControls, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.AlignmentToolbar, {
         value: buttonAlign,
         onChange: val => setAttributes({
           buttonAlign: val
@@ -6209,7 +6214,7 @@ module.exports = window["wp"]["i18n"];
   \**************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"guten-builder-blocks/button","version":"1.0.0","title":"Button","category":"guten-builder","icon":"button","description":"A simple button block.","textdomain":"guten-builder-blocks","attributes":{"selectedTemplate":{"type":"string","default":""},"buttonText":{"type":"string","default":""},"buttonAlign":{"type":"string","default":"center"},"buttonUrl":{"type":"string","default":""},"openInNewTab":{"type":"boolean","default":false},"textColor":{"type":"string"},"buttonBg":{"type":"object"},"hoverTextColor":{"type":"string"},"hoverButtonBg":{"type":"object"},"buttonBorderRadius":{"type":"object"},"buttonOffsetY":{"type":"number","default":-4},"buttonHoverOffsetY":{"type":"number","default":-6},"buttonEdgeBg":{"type":"object"},"buttonBoxShadow":{"type":"object"},"enable3DEffect":{"type":"boolean","default":true},"buttonWidth":{"type":"object"},"buttonPadding":{"type":"object"}},"supports":{"html":false,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"guten-builder-blocks/button","version":"1.0.0","title":"Button","category":"guten-builder","icon":"button","description":"Add high-converting call-to-action (CTA) buttons with customizable styling, hover animations, and dynamic 3D effects to boost engagement.","textdomain":"guten-builder-blocks","attributes":{"selectedTemplate":{"type":"string","default":""},"buttonText":{"type":"string","default":""},"buttonAlign":{"type":"string","default":"center"},"buttonUrl":{"type":"string","default":""},"openInNewTab":{"type":"boolean","default":false},"textColor":{"type":"string"},"buttonBg":{"type":"object"},"hoverTextColor":{"type":"string"},"hoverButtonBg":{"type":"object"},"buttonBorderRadius":{"type":"object"},"buttonOffsetY":{"type":"number","default":-4},"buttonHoverOffsetY":{"type":"number","default":-6},"buttonEdgeBg":{"type":"object"},"buttonBoxShadow":{"type":"object"},"enable3DEffect":{"type":"boolean","default":true},"buttonWidth":{"type":"object"},"buttonPadding":{"type":"object"}},"supports":{"html":false,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
 
 /***/ }
 

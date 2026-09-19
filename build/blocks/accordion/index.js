@@ -5433,11 +5433,14 @@ const Settings = ({
     selectedTemplate = ''
   } = attributes;
   const isTemplateSelected = Boolean(selectedTemplate);
+  if (!isTemplateSelected) {
+    return null;
+  }
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_4__.DocsLink, {
       link: "https://gutenbuilder.com/docs/accordion",
       text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Documentation', 'guten-builder-blocks')
-    }), isTemplateSelected && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TabPanel, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TabPanel, {
       className: "guten-builder-blocks-tab-panel",
       activeClass: "guten-builder-blocks-active-tab",
       tabs: _utils_options__WEBPACK_IMPORTED_MODULE_3__.subStyleTabs,

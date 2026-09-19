@@ -10,14 +10,18 @@ const Settings = ({ attributes, setAttributes, clientId }) => {
   const { selectedTemplate = '' } = attributes;
   const isTemplateSelected = Boolean(selectedTemplate);
 
+  if (!isTemplateSelected) {
+    return null;
+  }
+
   return (
     <InspectorControls>
-      <DocsLink 
-        link="https://gutenbuilder.com/docs/accordion" 
-        text={__('Documentation', 'guten-builder-blocks')} 
+      <DocsLink
+        link="https://gutenbuilder.com/docs/accordion"
+        text={__('Documentation', 'guten-builder-blocks')}
       />
 
-      {isTemplateSelected && (
+      {/* {isTemplateSelected && ( */}
         <TabPanel className="guten-builder-blocks-tab-panel" activeClass="guten-builder-blocks-active-tab" tabs={subStyleTabs}>
           {tab => (
             <>
@@ -26,7 +30,7 @@ const Settings = ({ attributes, setAttributes, clientId }) => {
             </>
           )}
         </TabPanel>
-      )}
+      {/* )} */}
     </InspectorControls>
   );
 };
