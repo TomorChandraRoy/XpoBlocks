@@ -15,10 +15,6 @@
   ],
   "textdomain": "guten-builder-blocks",
   "attributes": {
-    "blockId": {
-      "type": "string",
-      "default": ""
-    },
     "selectedTemplate": {
       "type": "string",
       "default": ""
@@ -45,29 +41,19 @@
     },
     "playerAlign": {
       "type": "string",
-      "default": "center"
+      "default": ""
     },
     "timeDisplayMode": {
       "type": "string",
-      "default": "total"
+      "default": ""
     },
     "playerBorder": {
       "type": "object",
-      "default": {
-        "color": "#e5e7eb",
-        "width": "1px",
-        "style": "solid",
-        "side": "all"
-      }
+      "default": {}
     },
     "playerBorderRadius": {
       "type": "object",
-      "default": {
-        "top": "16px",
-        "right": "16px",
-        "bottom": "16px",
-        "left": "16px"
-      }
+      "default": {}
     },
     "playerBg": {
       "type": "object",
@@ -75,82 +61,43 @@
     },
     "labelColor": {
       "type": "string",
-      "default": "#6b7280"
+      "default": ""
     },
     "titleColor": {
       "type": "string",
-      "default": "#111827"
+      "default": ""
     },
     "artistColor": {
       "type": "string",
-      "default": "#6b7280"
+      "default": ""
     },
     "labelTypography": {
       "type": "object",
-      "default": {
-        "fontSize": {
-          "desktop": "13px",
-          "tablet": "13px",
-          "mobile": "13px"
-        },
-        "fontFamily": "",
-        "fontWeight": "600",
-        "lineHeight": "",
-        "letterSpacing": "0.08em",
-        "textTransform": "uppercase",
-        "textDecoration": "none",
-        "fontStyle": "normal"
-      }
+      "default": {}
     },
     "titleTypography": {
       "type": "object",
-      "default": {
-        "fontSize": {
-          "desktop": "22px",
-          "tablet": "22px",
-          "mobile": "22px"
-        },
-        "fontFamily": "",
-        "fontWeight": "700",
-        "lineHeight": "",
-        "letterSpacing": "",
-        "textTransform": "none",
-        "textDecoration": "none",
-        "fontStyle": "normal"
-      }
+      "default": {}
     },
     "artistTypography": {
       "type": "object",
-      "default": {
-        "fontSize": {
-          "desktop": "15px",
-          "tablet": "15px",
-          "mobile": "15px"
-        },
-        "fontFamily": "",
-        "fontWeight": "400",
-        "lineHeight": "",
-        "letterSpacing": "",
-        "textTransform": "none",
-        "textDecoration": "none",
-        "fontStyle": "normal"
-      }
+      "default": {}
     },
     "progressColor": {
       "type": "string",
-      "default": "#F62477"
+      "default": ""
     },
     "progressBg": {
       "type": "string",
-      "default": "#e5e7eb"
+      "default": ""
     },
     "timeColor": {
       "type": "string",
-      "default": "#9ca3af"
+      "default": ""
     },
     "controlColor": {
       "type": "string",
-      "default": "#F62477"
+      "default": ""
     }
   },
   "supports": {

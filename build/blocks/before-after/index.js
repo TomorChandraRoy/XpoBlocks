@@ -5844,6 +5844,17 @@ const templateData = {
     tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Classic Slider', 'guten-builder-blocks'),
     icon: _icons__WEBPACK_IMPORTED_MODULE_1__.TemplateOneSvg,
     attributes: {
+      showLabels: true,
+      beforeLabel: 'Before',
+      afterLabel: 'After',
+      dividerIcon: 'dots',
+      customDividerIcon: '',
+      dividerIconSize: 16,
+      labelColor: '#ffffff',
+      labelBg: {
+        type: 'solid',
+        color: 'rgba(0, 0, 0, 0.6)'
+      },
       labelTypography: {
         fontSize: {
           desktop: '14px',
@@ -5857,7 +5868,23 @@ const templateData = {
         textTransform: 'none',
         textDecoration: 'none',
         fontStyle: 'normal'
-      }
+      },
+      labelBorderRadius: {
+        top: '5px',
+        right: '5px',
+        bottom: '5px',
+        left: '5px'
+      },
+      wrapperBorderRadius: {
+        top: '5px',
+        right: '5px',
+        bottom: '5px',
+        left: '5px'
+      },
+      dividerStyle: 'solid',
+      dividerColor: '#ffffff',
+      handleColor: '#111111',
+      handleIconColor: '#ffffff'
     }
   }]
 };
@@ -8265,7 +8292,7 @@ var castImmutable = (value) => value;
   \********************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/before-after","version":"1.0.0","title":"Before/After","description":"Interactive image comparison slider with CSS-based masking and hardware-accelerated transitions.","category":"guten-builder","keywords":["before after","image comparison","slider","photo compare","comparison"],"textdomain":"guten-builder-blocks","attributes":{"beforeImage":{"type":"object","properties":{"url":{"type":"string"},"alt":{"type":"string"}},"default":null},"afterImage":{"type":"object","properties":{"url":{"type":"string"},"alt":{"type":"string"}},"default":null},"showLabels":{"type":"boolean","default":true},"beforeLabel":{"type":"string","default":"Before"},"afterLabel":{"type":"string","default":"After"},"dividerIcon":{"type":"string","default":"dots"},"customDividerIcon":{"type":"string","default":""},"dividerIconSize":{"type":"number","default":16},"labelColor":{"type":"string","default":"#ffffff"},"labelBg":{"type":"object","default":{"type":"solid","color":"rgba(0, 0, 0, 0.6)"}},"labelTypography":{"type":"object"},"labelBorderRadius":{"type":"object","default":{"top":"5px","right":"5px","bottom":"5px","left":"5px"}},"wrapperBorderRadius":{"type":"object","default":{"top":"5px","right":"5px","bottom":"5px","left":"5px"}},"dividerStyle":{"type":"string","default":"solid"},"dividerColor":{"type":"string","default":"#ffffff"},"handleColor":{"type":"string","default":"#111111"},"handleIconColor":{"type":"string","default":"#ffffff"},"selectedTemplate":{"type":"string","default":""}},"supports":{"html":false,"anchor":true,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","viewScript":"file:./view.js","style":"file:./style-view.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/before-after","version":"1.0.0","title":"Before/After","description":"Interactive image comparison slider with CSS-based masking and hardware-accelerated transitions.","category":"guten-builder","keywords":["before after","image comparison","slider","photo compare","comparison"],"textdomain":"guten-builder-blocks","attributes":{"selectedTemplate":{"type":"string","default":""},"beforeImage":{"type":"object","properties":{"url":{"type":"string"},"alt":{"type":"string"}},"default":null},"afterImage":{"type":"object","properties":{"url":{"type":"string"},"alt":{"type":"string"}},"default":null},"showLabels":{"type":"boolean","default":true},"beforeLabel":{"type":"string","default":""},"afterLabel":{"type":"string","default":""},"dividerIcon":{"type":"string","default":""},"customDividerIcon":{"type":"string","default":""},"dividerIconSize":{"type":"number"},"labelColor":{"type":"string","default":""},"labelBg":{"type":"object","default":{}},"labelTypography":{"type":"object"},"labelBorderRadius":{"type":"object","default":{}},"wrapperBorderRadius":{"type":"object","default":{}},"dividerStyle":{"type":"string","default":""},"dividerColor":{"type":"string","default":""},"handleColor":{"type":"string","default":""},"handleIconColor":{"type":"string","default":""}},"supports":{"html":false,"anchor":true,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","viewScript":"file:./view.js","style":"file:./style-view.css","render":"file:./render.php"}');
 
 /***/ }
 

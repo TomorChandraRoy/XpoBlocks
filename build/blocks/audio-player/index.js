@@ -5335,15 +5335,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _utils_options__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../utils/options */ "./src/blocks/audio-player/utils/options.js");
-/* harmony import */ var _General_General__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./General/General */ "./src/blocks/audio-player/Components/Backend/Settings/General/General.js");
-/* harmony import */ var _Style_Style__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Style/Style */ "./src/blocks/audio-player/Components/Backend/Settings/Style/Style.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _utils_options__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../utils/options */ "./src/blocks/audio-player/utils/options.js");
+/* harmony import */ var _General_General__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./General/General */ "./src/blocks/audio-player/Components/Backend/Settings/General/General.js");
+/* harmony import */ var _Style_Style__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Style/Style */ "./src/blocks/audio-player/Components/Backend/Settings/Style/Style.js");
+/* harmony import */ var tr_tools__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tr-tools */ "../tr-tools/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__);
+
+
 
 
 
@@ -5362,22 +5367,25 @@ const Settings = ({
   if (!isTemplateSelected) {
     return null;
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TabPanel, {
-      className: "guten-builder-blocks-tab-panel wp-block-guten-builder-blocks-audio-player",
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_6__.DocsLink, {
+      link: "https://gutenbuilder.com/docs/audio-player",
+      text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Documentation', 'guten-builder-blocks')
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TabPanel, {
+      className: "guten-builder-blocks-tab-panel",
       activeClass: "guten-builder-blocks-active-tab",
-      tabs: _utils_options__WEBPACK_IMPORTED_MODULE_2__.generalStyleTabs,
-      children: tab => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
-        children: ['general' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_General_General__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      tabs: _utils_options__WEBPACK_IMPORTED_MODULE_3__.generalStyleTabs,
+      children: tab => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+        children: ['general' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_General_General__WEBPACK_IMPORTED_MODULE_4__["default"], {
           attributes: attributes,
           setAttributes: setAttributes,
           clientId: clientId
-        }), 'style' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Style_Style__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        }), 'style' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Style_Style__WEBPACK_IMPORTED_MODULE_5__["default"], {
           attributes: attributes,
           setAttributes: setAttributes
         })]
       })
-    })
+    })]
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Settings);
@@ -6043,7 +6051,75 @@ const templateData = {
     tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Modern Audio Card', 'guten-builder-blocks'),
     icon: _icon__WEBPACK_IMPORTED_MODULE_1__.TemplateOneSvg,
     attributes: {
-      labelText: ''
+      audioUrl: '',
+      coverUrl: '',
+      labelText: '',
+      text: '',
+      subtitle: '',
+      playerAlign: 'center',
+      timeDisplayMode: 'total',
+      playerBorder: {
+        color: '#e5e7eb',
+        width: '1px',
+        style: 'solid',
+        side: 'all'
+      },
+      playerBorderRadius: {
+        top: '16px',
+        right: '16px',
+        bottom: '16px',
+        left: '16px'
+      },
+      playerBg: {},
+      labelColor: '#6b7280',
+      titleColor: '#111827',
+      artistColor: '#6b7280',
+      labelTypography: {
+        fontSize: {
+          desktop: '13px',
+          tablet: '13px',
+          mobile: '13px'
+        },
+        fontFamily: '',
+        fontWeight: '600',
+        lineHeight: '',
+        letterSpacing: '0.08em',
+        textTransform: 'uppercase',
+        textDecoration: 'none',
+        fontStyle: 'normal'
+      },
+      titleTypography: {
+        fontSize: {
+          desktop: '22px',
+          tablet: '22px',
+          mobile: '22px'
+        },
+        fontFamily: '',
+        fontWeight: '700',
+        lineHeight: '',
+        letterSpacing: '',
+        textTransform: 'none',
+        textDecoration: 'none',
+        fontStyle: 'normal'
+      },
+      artistTypography: {
+        fontSize: {
+          desktop: '15px',
+          tablet: '15px',
+          mobile: '15px'
+        },
+        fontFamily: '',
+        fontWeight: '400',
+        lineHeight: '',
+        letterSpacing: '',
+        textTransform: 'none',
+        textDecoration: 'none',
+        fontStyle: 'normal'
+      },
+      progressColor: '#F62477',
+      progressBg: '#e5e7eb',
+      timeColor: '#9ca3af',
+      controlColor: '#F62477'
     }
   }]
 };
@@ -6719,7 +6795,7 @@ module.exports = window["wp"]["i18n"];
   \********************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/audio-player","version":"1.0.0","title":"Audio Player","description":"Ultra-optimized Gutenberg audio player with seek controls and accessible playback UI.","category":"guten-builder","keywords":["audio player","audio","music player","podcast","sound","media player"],"textdomain":"guten-builder-blocks","attributes":{"blockId":{"type":"string","default":""},"selectedTemplate":{"type":"string","default":""},"audioUrl":{"type":"string","default":""},"coverUrl":{"type":"string","default":""},"labelText":{"type":"string","default":""},"text":{"type":"string","default":""},"subtitle":{"type":"string","default":""},"playerAlign":{"type":"string","default":"center"},"timeDisplayMode":{"type":"string","default":"total"},"playerBorder":{"type":"object","default":{"color":"#e5e7eb","width":"1px","style":"solid","side":"all"}},"playerBorderRadius":{"type":"object","default":{"top":"16px","right":"16px","bottom":"16px","left":"16px"}},"playerBg":{"type":"object","default":{}},"labelColor":{"type":"string","default":"#6b7280"},"titleColor":{"type":"string","default":"#111827"},"artistColor":{"type":"string","default":"#6b7280"},"labelTypography":{"type":"object","default":{"fontSize":{"desktop":"13px","tablet":"13px","mobile":"13px"},"fontFamily":"","fontWeight":"600","lineHeight":"","letterSpacing":"0.08em","textTransform":"uppercase","textDecoration":"none","fontStyle":"normal"}},"titleTypography":{"type":"object","default":{"fontSize":{"desktop":"22px","tablet":"22px","mobile":"22px"},"fontFamily":"","fontWeight":"700","lineHeight":"","letterSpacing":"","textTransform":"none","textDecoration":"none","fontStyle":"normal"}},"artistTypography":{"type":"object","default":{"fontSize":{"desktop":"15px","tablet":"15px","mobile":"15px"},"fontFamily":"","fontWeight":"400","lineHeight":"","letterSpacing":"","textTransform":"none","textDecoration":"none","fontStyle":"normal"}},"progressColor":{"type":"string","default":"#F62477"},"progressBg":{"type":"string","default":"#e5e7eb"},"timeColor":{"type":"string","default":"#9ca3af"},"controlColor":{"type":"string","default":"#F62477"}},"supports":{"html":false,"anchor":true,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","viewScript":"file:./view.js","style":"file:./style-view.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/audio-player","version":"1.0.0","title":"Audio Player","description":"Ultra-optimized Gutenberg audio player with seek controls and accessible playback UI.","category":"guten-builder","keywords":["audio player","audio","music player","podcast","sound","media player"],"textdomain":"guten-builder-blocks","attributes":{"selectedTemplate":{"type":"string","default":""},"audioUrl":{"type":"string","default":""},"coverUrl":{"type":"string","default":""},"labelText":{"type":"string","default":""},"text":{"type":"string","default":""},"subtitle":{"type":"string","default":""},"playerAlign":{"type":"string","default":""},"timeDisplayMode":{"type":"string","default":""},"playerBorder":{"type":"object","default":{}},"playerBorderRadius":{"type":"object","default":{}},"playerBg":{"type":"object","default":{}},"labelColor":{"type":"string","default":""},"titleColor":{"type":"string","default":""},"artistColor":{"type":"string","default":""},"labelTypography":{"type":"object","default":{}},"titleTypography":{"type":"object","default":{}},"artistTypography":{"type":"object","default":{}},"progressColor":{"type":"string","default":""},"progressBg":{"type":"string","default":""},"timeColor":{"type":"string","default":""},"controlColor":{"type":"string","default":""}},"supports":{"html":false,"anchor":true,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","viewScript":"file:./view.js","style":"file:./style-view.css","render":"file:./render.php"}');
 
 /***/ }
 

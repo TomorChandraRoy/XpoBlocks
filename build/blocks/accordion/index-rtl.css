@@ -2,59 +2,9 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/accordion/editor.scss ***!
   \*********************************************************************************************************************************************************************************************************************************************************/
 /* Editor specific styling for FAQ Accordion block */
-.guten-builder-blocks-tab-panel .components-tab-panel__tabs {
-  display: flex;
-  border-bottom: 1px solid #e0e0e0;
-}
-.guten-builder-blocks-tab-panel .components-tab-panel__tabs .components-tab-panel__tabs-item {
-  flex: 1;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 10px 0;
-  font-weight: 500;
-  font-size: 13px;
-  color: #757575;
-  border: none;
-  background: transparent;
-  border-bottom: 2px solid transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.guten-builder-blocks-tab-panel .components-tab-panel__tabs .components-tab-panel__tabs-item.guten-builder-blocks-active-tab {
-  color: #F62477;
-  border-bottom-color: #F62477;
-  font-weight: 600;
-}
-/* Editor Panel Customization */
-.block-editor-block-inspector .components-panel__body.bPlPanelBody {
-  /* Remove extra WordPress focus shadow/outline for both Open and Closed states */
-}
-.block-editor-block-inspector .components-panel__body.bPlPanelBody .components-panel__body-title button:focus, .block-editor-block-inspector .components-panel__body.bPlPanelBody .components-panel__body-title button:active, .block-editor-block-inspector .components-panel__body.bPlPanelBody .components-panel__body-title button:focus-visible {
-  box-shadow: none !important;
-  outline: none !important;
-}
-.block-editor-block-inspector .components-panel__body.bPlPanelBody .components-panel__body-title button:hover {
-  background-color: rgba(229, 9, 98, 0.1607843137) !important;
-  color: rgba(233, 23, 118, 0.9607843137) !important;
-}
-.block-editor-block-inspector .components-panel__body.bPlPanelBody.is-opened {
-  border: 1px solid #F62477 !important;
-  margin-bottom: 1px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-.block-editor-block-inspector .components-panel__body.bPlPanelBody.is-opened .components-panel__body-title {
-  background-color: #e6f0f9 !important;
-}
-.block-editor-block-inspector .components-panel__body.bPlPanelBody.is-opened .components-panel__body-title button {
-  background-color: rgba(229, 9, 98, 0.1607843137) !important;
-  color: rgba(233, 23, 118, 0.9607843137) !important;
-  font-weight: 500;
-}
-.block-editor-block-inspector .components-panel__body.bPlPanelBody.is-opened .components-panel__body-title button:hover {
-  background-color: rgba(229, 9, 98, 0.1607843137) !important;
-}
+/* .wp-block-guten-builder-blocks-accordion {
+
+}*/
 /*!************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!../tr-tools/Components/TemplateSelector/TemplateSelector.scss ***!
   \************************************************************************************************************************************************************************************************************************************************************************************/

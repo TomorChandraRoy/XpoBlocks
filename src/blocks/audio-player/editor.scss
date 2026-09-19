@@ -1,5 +1,32 @@
 /* Editor specific styles for Audio Player block */
 
-/*.wp-block-guten-builder-blocks-audio-player{
+.guten-builder-blocks-tab-panel {
+	.components-tab-panel__tabs {
+		display: flex;
+		border-bottom: 1px solid #e0e0e0;
 
-}*/
+		.components-tab-panel__tabs-item {
+			flex: 1;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			padding: 10px 0;
+			font-weight: 500;
+			font-size: 13px;
+			color: #757575;
+			border: none;
+			background: transparent;
+			border-bottom: 2px solid transparent;
+			cursor: pointer;
+			transition: all 0.3s ease;
+
+			&.guten-builder-blocks-active-tab {
+				color: #F62477;
+				border-bottom-color: #F62477;
+				font-weight: 600;
+			}
+		}
+	}
+}
+

@@ -8,6 +8,10 @@
   "keywords": ["before after", "image comparison", "slider", "photo compare", "comparison"],
   "textdomain": "guten-builder-blocks",
   "attributes": {
+    "selectedTemplate": {
+      "type": "string",
+      "default": ""
+    },
     "beforeImage": {
       "type": "object",
       "properties": {
@@ -38,60 +42,55 @@
     },
     "beforeLabel": {
       "type": "string",
-      "default": "Before"
+      "default": ""
     },
     "afterLabel": {
       "type": "string",
-      "default": "After"
+      "default": ""
     },
     "dividerIcon": {
       "type": "string",
-      "default": "dots"
+      "default": ""
     },
     "customDividerIcon": {
       "type": "string",
       "default": ""
     },
     "dividerIconSize": {
-      "type": "number",
-      "default": 16
+      "type": "number"
     },
     "labelColor": {
       "type": "string",
-      "default": "#ffffff"
+      "default": ""
     },
     "labelBg": {
       "type": "object",
-      "default": { "type": "solid", "color": "rgba(0, 0, 0, 0.6)" }
+      "default": {}
     },
     "labelTypography": {
       "type": "object"
     },
     "labelBorderRadius": {
       "type": "object",
-      "default": { "top": "5px", "right": "5px", "bottom": "5px", "left": "5px" }
+      "default": {}
     },
     "wrapperBorderRadius": {
       "type": "object",
-      "default": { "top": "5px", "right": "5px", "bottom": "5px", "left": "5px" }
+      "default": {}
     },
     "dividerStyle": {
       "type": "string",
-      "default": "solid"
+      "default": ""
     },
     "dividerColor": {
       "type": "string",
-      "default": "#ffffff"
+      "default": ""
     },
     "handleColor": {
       "type": "string",
-      "default": "#111111"
+      "default": ""
     },
     "handleIconColor": {
-      "type": "string",
-      "default": "#ffffff"
-    },
-    "selectedTemplate": {
       "type": "string",
       "default": ""
     }
