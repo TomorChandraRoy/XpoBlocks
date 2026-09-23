@@ -2,6 +2,7 @@ import { useState} from 'react';
 import Header from 'tr-tools/AdminDashboard/components/Header';
 import Overview from 'tr-tools/AdminDashboard/components/Overview/Overview';
 import AllBlocks from 'tr-tools/AdminDashboard/components/AllBlocks/AllBlocks';
+import FreeVsProCard from 'tr-tools/AdminDashboard/components/FreeVSPro/FreeVsProCard';
 
 const App = props => {
   const [activeTab, setActiveTab] = useState('overview');
@@ -13,6 +14,7 @@ const App = props => {
       {/* activeTab অনুযায়ী Component Render করুন */}
       {activeTab === 'overview' && <Overview {...props} />}
       {activeTab === 'all-blocks' && <AllBlocks {...props} />}
+      {activeTab === 'free-vs-pro' && <FreeVsProCard {...props} />}
     </>
   );
 };

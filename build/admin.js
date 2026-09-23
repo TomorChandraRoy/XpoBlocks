@@ -754,6 +754,139 @@ const getBlockBannerConfig = block => {
 
 /***/ },
 
+/***/ "../tr-tools/AdminDashboard/components/FreeVSPro/FreeVsProCard.jsx"
+/*!*************************************************************************!*\
+  !*** ../tr-tools/AdminDashboard/components/FreeVSPro/FreeVsProCard.jsx ***!
+  \*************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _FreeVsProCard_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FreeVsProCard.scss */ "../tr-tools/AdminDashboard/components/FreeVSPro/FreeVsProCard.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const FreeVsProCard = () => {
+  const comparisonFeatures = [{
+    feature: 'Gutenberg Block Suite',
+    desc: 'High-performance interactive blocks for Gutenberg editor',
+    free: '11 Core Blocks',
+    pro: '35+ Pro Blocks'
+  }, {
+    feature: 'Starter Section Templates',
+    desc: 'Ready-to-use section blocks and full page layouts',
+    free: '14 Free Layouts',
+    pro: '100+ Premium Templates'
+  }, {
+    feature: 'Support & Lifetime Updates',
+    desc: 'Dedicated technical support and continuous plugin improvements',
+    free: 'Community Forum',
+    pro: '24/7 Priority Support + Updates'
+  }];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: "overview-free-vs-pro-wrap",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "free-vs-pro-card",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "card-top-banner",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "banner-left",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+            children: "Compare Free vs PRO Features"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+            children: "Supercharge your WordPress Gutenberg editing experience with Guten Builder PRO."
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "banner-right",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+            href: "https://gutenbuilder.com/pro",
+            target: "_blank",
+            rel: "noopener noreferrer",
+            className: "btn-upgrade-pro",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+              width: "18",
+              height: "18",
+              viewBox: "0 0 24 24",
+              fill: "none",
+              stroke: "currentColor",
+              strokeWidth: "2.5",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                d: "m2 4 3 12h14l3-12-6 7-4-5-4 5-6-7z"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                d: "M5 20h14"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+              children: "Upgrade to PRO Now"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+              width: "16",
+              height: "16",
+              viewBox: "0 0 24 24",
+              fill: "none",
+              stroke: "currentColor",
+              strokeWidth: "2.5",
+              className: "arrow-icon",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                d: "M5 12h14M12 5l7 7-7 7"
+              })
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+            className: "guarantee-text",
+            children: "\uD83D\uDD12 14-Day Money-Back Guarantee \u2022 Instant Activation"
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "comparison-table-container",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "table-header",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "col-feature",
+            children: "FEATURE COMPARISON"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "col-free",
+            children: "FREE PLAN"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "col-pro",
+            children: "PRO PLAN"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "table-body",
+          children: comparisonFeatures.map((item, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "table-row",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              className: "col-feature",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                className: "feature-name",
+                children: item.feature
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                className: "feature-desc",
+                children: item.desc
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+              className: "col-free",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                className: "badge-free",
+                children: item.free
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+              className: "col-pro",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                className: "badge-pro",
+                children: item.pro
+              })
+            })]
+          }, index))
+        })]
+      })]
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FreeVsProCard);
+
+/***/ },
+
 /***/ "../tr-tools/AdminDashboard/components/Header.jsx"
 /*!********************************************************!*\
   !*** ../tr-tools/AdminDashboard/components/Header.jsx ***!
@@ -807,12 +940,37 @@ const Header = props => {
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Navbar_Navbar__WEBPACK_IMPORTED_MODULE_0__["default"], {
         ...props
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "header-right",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
           className: "plugin-version-badge",
           children: ["v", version]
-        })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
+          type: "button",
+          className: "btn-header-pro",
+          onClick: () => {
+            const proBanner = document.querySelector(".guten-builder-pro-banner");
+            if (proBanner) {
+              proBanner.scrollIntoView({
+                behavior: "smooth"
+              });
+            }
+          },
+          children: [!isPro && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+            xmlns: "http://www.w3.org/2000/svg",
+            width: "24",
+            height: "24",
+            viewBox: "0 0 24 24",
+            fill: "none",
+            stroke: "#fff",
+            strokeWidth: "2",
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+              d: "m2 4 3 12h14l3-12-6 7-4-7-4 7zm3 16h14"
+            })
+          }), isPro ? "Activated" : "Pro Upgrade"]
+        })]
       })]
     })
   });
@@ -978,6 +1136,26 @@ const Navbar = ({
             y2: "14.83"
           })]
         }), "Contact Support"]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
+        type: "button",
+        className: `tab-btn ${activeTab === "free-vs-pro" ? "active" : ""}`,
+        onClick: () => setActiveTab("free-vs-pro"),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+          className: "tab-icon",
+          width: "16",
+          height: "16",
+          viewBox: "0 0 24 24",
+          fill: "none",
+          stroke: "currentColor",
+          strokeWidth: "2",
+          strokeLinecap: "round",
+          strokeLinejoin: "round",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+            d: "m2 4 3 12h14l3-12-6 7-4-5-4 5-6-7z"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+            d: "M5 20h14"
+          })]
+        }), "Free vs PRO"]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
         type: "button",
         className: `tab-btn ${activeTab === "system" ? "active" : ""}`,
@@ -1178,155 +1356,6 @@ const FeatureBanner = ({
 
 /***/ },
 
-/***/ "../tr-tools/AdminDashboard/components/Overview/FreeVsProCard.jsx"
-/*!************************************************************************!*\
-  !*** ../tr-tools/AdminDashboard/components/Overview/FreeVsProCard.jsx ***!
-  \************************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _FreeVsProCard_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FreeVsProCard.scss */ "../tr-tools/AdminDashboard/components/Overview/FreeVsProCard.scss");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
-
-
-const FreeVsProCard = () => {
-  const comparisonFeatures = [{
-    feature: 'Motion-ready Gutenberg Blocks',
-    free: '10 Core Blocks',
-    pro: '35+ Pro Blocks'
-  }, {
-    feature: 'Motion Profiles & Animations',
-    free: 'Basic Presets',
-    pro: 'Full Animation Engine & Custom Curves'
-  }, {
-    feature: 'Post Grid & Dynamic Sliders',
-    free: 'Basic Grid',
-    pro: 'Advanced Layouts, Filters & Pagination'
-  }, {
-    feature: 'Starter Section Templates',
-    free: '5 Free Layouts',
-    pro: '100+ Premium Layouts & Pages'
-  }, {
-    feature: 'Asset Optimization & Speed',
-    free: 'Standard',
-    pro: 'Zero-Bloat On-Demand Loading (~12KB)'
-  }, {
-    feature: 'Support & Updates',
-    free: 'Community Forum',
-    pro: '24/7 Priority Ticket Support + Lifetime Updates'
-  }];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    className: "overview-free-vs-pro-wrap",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-      className: "free-vs-pro-card",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "card-header",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "header-badge",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
-            width: "14",
-            height: "14",
-            viewBox: "0 0 24 24",
-            fill: "none",
-            stroke: "currentColor",
-            strokeWidth: "2.5",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-              d: "m2 4 3 12h14l3-12-6 7-4-5-4 5-6-7z"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-              d: "M5 20h14"
-            })]
-          }), "PRO UPGRADE AVAILABLE"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
-          children: "Compare Free vs PRO Features"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-          children: "Supercharge your WordPress Gutenberg editing experience with Guten Builder PRO."
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "comparison-table-container",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "table-header",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "col-feature",
-            children: "FEATURE"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "col-free",
-            children: "FREE PLAN"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "col-pro",
-            children: "PRO PLAN"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "table-body",
-          children: comparisonFeatures.map((item, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "table-row",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-              className: "col-feature font-medium",
-              children: item.feature
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-              className: "col-free",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                className: "badge-free",
-                children: item.free
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-              className: "col-pro",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
-                className: "badge-pro",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
-                  width: "14",
-                  height: "14",
-                  viewBox: "0 0 24 24",
-                  fill: "none",
-                  stroke: "currentColor",
-                  strokeWidth: "3",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polyline", {
-                    points: "20 6 9 17 4 12"
-                  })
-                }), item.pro]
-              })
-            })]
-          }, index))
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "card-footer",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "footer-left",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-            children: "Ready to unlock all PRO features?"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-            children: "Upgrade today and take your site building to the next level."
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
-          href: "https://gutenbuilder.com/pro",
-          target: "_blank",
-          rel: "noopener noreferrer",
-          className: "btn-upgrade-pro",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
-            width: "18",
-            height: "18",
-            viewBox: "0 0 24 24",
-            fill: "none",
-            stroke: "currentColor",
-            strokeWidth: "2.5",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-              d: "m2 4 3 12h14l3-12-6 7-4-5-4 5-6-7z"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-              d: "M5 20h14"
-            })]
-          }), "Upgrade to PRO Now"]
-        })]
-      })]
-    })
-  });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FreeVsProCard);
-
-/***/ },
-
 /***/ "../tr-tools/AdminDashboard/components/Overview/Overview.jsx"
 /*!*******************************************************************!*\
   !*** ../tr-tools/AdminDashboard/components/Overview/Overview.jsx ***!
@@ -1340,7 +1369,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _StatsCards__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./StatsCards */ "../tr-tools/AdminDashboard/components/Overview/StatsCards.jsx");
 /* harmony import */ var _FeatureBanner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FeatureBanner */ "../tr-tools/AdminDashboard/components/Overview/FeatureBanner.jsx");
 /* harmony import */ var _PopularBlocks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PopularBlocks */ "../tr-tools/AdminDashboard/components/Overview/PopularBlocks.jsx");
-/* harmony import */ var _FreeVsProCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./FreeVsProCard */ "../tr-tools/AdminDashboard/components/Overview/FreeVsProCard.jsx");
+/* harmony import */ var _FreeVSPro_FreeVsProCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../FreeVSPro/FreeVsProCard */ "../tr-tools/AdminDashboard/components/FreeVSPro/FreeVsProCard.jsx");
 /* harmony import */ var _QuickLinks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./QuickLinks */ "../tr-tools/AdminDashboard/components/Overview/QuickLinks.jsx");
 /* harmony import */ var _Overview_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Overview.scss */ "../tr-tools/AdminDashboard/components/Overview/Overview.scss");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
@@ -1360,7 +1389,7 @@ const Overview = props => {
         ...props
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_FeatureBanner__WEBPACK_IMPORTED_MODULE_1__["default"], {
         ...props
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_PopularBlocks__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_FreeVsProCard__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_QuickLinks__WEBPACK_IMPORTED_MODULE_4__["default"], {})]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_PopularBlocks__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_QuickLinks__WEBPACK_IMPORTED_MODULE_4__["default"], {})]
     })
   });
 };
@@ -1800,8 +1829,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tr_tools_AdminDashboard_components_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tr-tools/AdminDashboard/components/Header */ "../tr-tools/AdminDashboard/components/Header.jsx");
 /* harmony import */ var tr_tools_AdminDashboard_components_Overview_Overview__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tr-tools/AdminDashboard/components/Overview/Overview */ "../tr-tools/AdminDashboard/components/Overview/Overview.jsx");
 /* harmony import */ var tr_tools_AdminDashboard_components_AllBlocks_AllBlocks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tr-tools/AdminDashboard/components/AllBlocks/AllBlocks */ "../tr-tools/AdminDashboard/components/AllBlocks/AllBlocks.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var tr_tools_AdminDashboard_components_FreeVSPro_FreeVsProCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tr-tools/AdminDashboard/components/FreeVSPro/FreeVsProCard */ "../tr-tools/AdminDashboard/components/FreeVSPro/FreeVsProCard.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+
 
 
 
@@ -1809,14 +1840,16 @@ __webpack_require__.r(__webpack_exports__);
 
 const App = props => {
   const [activeTab, setActiveTab] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('overview');
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools_AdminDashboard_components_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools_AdminDashboard_components_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
       ...props,
       activeTab: activeTab,
       setActiveTab: setActiveTab
-    }), activeTab === 'overview' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools_AdminDashboard_components_Overview_Overview__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    }), activeTab === 'overview' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools_AdminDashboard_components_Overview_Overview__WEBPACK_IMPORTED_MODULE_2__["default"], {
       ...props
-    }), activeTab === 'all-blocks' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools_AdminDashboard_components_AllBlocks_AllBlocks__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }), activeTab === 'all-blocks' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools_AdminDashboard_components_AllBlocks_AllBlocks__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      ...props
+    }), activeTab === 'free-vs-pro' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools_AdminDashboard_components_FreeVSPro_FreeVsProCard__WEBPACK_IMPORTED_MODULE_4__["default"], {
       ...props
     })]
   });
@@ -1901,6 +1934,18 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ },
 
+/***/ "../tr-tools/AdminDashboard/components/FreeVSPro/FreeVsProCard.scss"
+/*!**************************************************************************!*\
+  !*** ../tr-tools/AdminDashboard/components/FreeVSPro/FreeVsProCard.scss ***!
+  \**************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
 /***/ "../tr-tools/AdminDashboard/components/Header.scss"
 /*!*********************************************************!*\
   !*** ../tr-tools/AdminDashboard/components/Header.scss ***!
@@ -1928,18 +1973,6 @@ __webpack_require__.r(__webpack_exports__);
 /***/ "../tr-tools/AdminDashboard/components/Overview/FeatureBanner.scss"
 /*!*************************************************************************!*\
   !*** ../tr-tools/AdminDashboard/components/Overview/FeatureBanner.scss ***!
-  \*************************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ },
-
-/***/ "../tr-tools/AdminDashboard/components/Overview/FreeVsProCard.scss"
-/*!*************************************************************************!*\
-  !*** ../tr-tools/AdminDashboard/components/Overview/FreeVsProCard.scss ***!
   \*************************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
