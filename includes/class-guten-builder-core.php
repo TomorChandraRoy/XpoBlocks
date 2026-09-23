@@ -81,10 +81,6 @@ if ( !class_exists( 'Guten_Builder_Core' ) ) {
 				'cards' => true,
 				'newsletter-card' => true,
 			],
-			'performanceMode' => 'balanced',
-			'globalLerp' => 0.08,
-			'glassIntensity' => 20,
-			'accentColor' => '#10b981'
 		];
 		$settings = get_option( 'guten_builder_settings', $defaults );
 		return wp_parse_args( $settings, $defaults );

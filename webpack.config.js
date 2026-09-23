@@ -13,7 +13,8 @@ module.exports = {
   ...defaultConfig,
   entry: {
     ...defaultConfig.entry(),
-    admin: './src/admin/index.js',
+    // admin: './src/admin/index.js',
+    admin: './src/adminDashboard/index.js',
   },
   resolve: {
     ...defaultConfig.resolve,

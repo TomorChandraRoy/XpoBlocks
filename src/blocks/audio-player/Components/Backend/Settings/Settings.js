@@ -16,10 +16,7 @@ const Settings = ({ attributes, setAttributes, clientId }) => {
 
   return (
     <InspectorControls>
-      <DocsLink
-        link="https://gutenbuilder.com/docs/audio-player"
-        text={__('Documentation', 'guten-builder-blocks')}
-      />
+      <DocsLink link="https://gutenbuilder.com/docs/audio-player" text={__('Documentation', 'guten-builder-blocks')} />
 
       <TabPanel className="guten-builder-blocks-tab-panel" activeClass="guten-builder-blocks-active-tab" tabs={generalStyleTabs}>
         {tab => (

@@ -34,7 +34,7 @@ if ( !class_exists( 'Guten_Builder_Admin' ) ) {
 				'data:image/svg+xml;base64,' . base64_encode( $svg ), // ওয়ার্ডপ্রেস স্ট্যান্ডার্ড Dashicon আইকন
 				30                                           // মেনুর পজিশন (Menu Position)
 			);
-			
+
 			$settings = Guten_Builder_Core::get_settings();
 			$active_blocks = isset( $settings['activeBlocks'] ) ? $settings['activeBlocks'] : [];
 			$is_newsletter_active = ! isset( $active_blocks['newsletter-card'] ) || ! empty( $active_blocks['newsletter-card'] );
@@ -191,7 +191,11 @@ if ( !class_exists( 'Guten_Builder_Admin' ) ) {
 					$assets['version'],
 					true
 				);
+
+				
 			}
+
+
 		}
 
 		public static function enqueue_editor_assets() {

@@ -121,14 +121,10 @@ const AdminDashboard = () => {
       <header id="guten-builder-banner" className="guten-builder-banner" role="banner">
         <div className="banner-content">
           <p className="banner-subtitle">
-            WELCOME {settings?.currentUser?.name ? settings.currentUser.name.toUpperCase() : 'USER'} TO{' '}
-            {settings?.pluginDetails?.name ? settings.pluginDetails.name.toUpperCase() : 'GUTEN BUILDER BLOCKS'}
+            WELCOME {settings?.currentUser?.name ? settings.currentUser.name.toUpperCase() : 'USER'} TO {settings?.pluginDetails?.name ? settings.pluginDetails.name.toUpperCase() : 'GUTEN BUILDER BLOCKS'}
           </p>
           <h1 className="banner-title">Admin Dashboard</h1>
-          <p className="banner-description">
-            {settings?.pluginDetails?.description ||
-              'Build beautiful, high-performance WordPress websites with interactive Gutenberg blocks, customizable motion profiles, and real-time block controls.'}
-          </p>
+          <p className="banner-description">{settings?.pluginDetails?.description || 'Build beautiful, high-performance WordPress websites with interactive Gutenberg blocks, customizable motion profiles, and real-time block controls.'}</p>
         </div>
         <div className="banner-badge" role="status" aria-label="System status: Active">
           <span className="dot" aria-hidden="true"></span> Active Engine
@@ -425,8 +421,7 @@ const AdminDashboard = () => {
                 </div>
                 <ul className="release-changes-list">
                   <li>
-                    <span className="change-badge feat">FEAT</span> Introduced 10 high-performance Gutenberg blocks (Before/After Slider, Accordion, Audio Player, Pricing Table, Button, Contact Form,
-                    Marquee, Scroll Story, TOC, Video Modal).
+                    <span className="change-badge feat">FEAT</span> Introduced 10 high-performance Gutenberg blocks (Before/After Slider, Accordion, Audio Player, Pricing Table, Button, Contact Form, Marquee, Scroll Story, TOC, Video Modal).
                   </li>
                   <li>
                     <span className="change-badge feat">FEAT</span> Added In-Dashboard Live Demo Lightbox Modal with Desktop, Tablet, and Mobile viewport testing.

@@ -14,7 +14,8 @@ if ( !class_exists( 'Guten_Builder_Loader' ) ) {
 		 */
 		public static function init() {
 			require_once GUTEN_BUILDER_DIR_PATH . 'includes/class-guten-builder-core.php';
-			require_once GUTEN_BUILDER_DIR_PATH . 'includes/class-guten-builder-admin.php';
+			// require_once GUTEN_BUILDER_DIR_PATH . 'includes/class-guten-builder-admin.php';
+			require_once GUTEN_BUILDER_DIR_PATH . 'includes/guten-builder-Admin.php';
 			require_once GUTEN_BUILDER_DIR_PATH . 'includes/class-guten-builder-api.php';
 
 			if ( class_exists( 'Guten_Builder_Core' ) ) {
