@@ -1385,44 +1385,6 @@ __webpack_require__.r(__webpack_exports__);
 
 const PopularBlocks = () => {
   const blocks = [{
-    title: 'Post Grid Layout',
-    desc: 'Display blog posts in dynamic grids, masonry, and sliders.',
-    tag: 'Popular',
-    tagColor: 'orange',
-    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
-      width: "20",
-      height: "20",
-      viewBox: "0 0 24 24",
-      fill: "none",
-      stroke: "currentColor",
-      strokeWidth: "2",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
-        x: "3",
-        y: "3",
-        width: "7",
-        height: "7",
-        rx: "1"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
-        x: "14",
-        y: "3",
-        width: "7",
-        height: "7",
-        rx: "1"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
-        x: "14",
-        y: "14",
-        width: "7",
-        height: "7",
-        rx: "1"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
-        x: "3",
-        y: "14",
-        width: "7",
-        height: "7",
-        rx: "1"
-      })]
-    })
-  }, {
     title: 'Audio Player',
     desc: 'Custom waveform audio player with playlist support.',
     tag: 'New',
@@ -1493,12 +1455,42 @@ const PopularBlocks = () => {
         d: "M14 14h3v3h-3zM18 18h3v3h-3zM14 18h3v3h-3z"
       })]
     })
+  }, {
+    title: 'Pricing Table',
+    desc: 'Create beautiful, responsive pricing plans with feature comparison.',
+    tag: 'Popular',
+    tagColor: 'orange',
+    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+      width: "20",
+      height: "20",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "2",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+        x: "3",
+        y: "3",
+        width: "18",
+        height: "18",
+        rx: "2"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+        x1: "3",
+        y1: "9",
+        x2: "21",
+        y2: "9"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+        x1: "9",
+        y1: "21",
+        x2: "9",
+        y2: "9"
+      })]
+    })
   }];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     className: "overview-popular-blocks-wrap",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
       className: "section-title",
-      children: "Featured Blocks"
+      children: "Popular Blocks"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "popular-blocks-grid",
       children: blocks.map((item, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
