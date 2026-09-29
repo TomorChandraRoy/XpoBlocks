@@ -1,7 +1,7 @@
 /* Editor specific styling for Table of Contents block */
-.wp-block-guten-builder-blocks-table-of-contents,
-.gbb-toc-wrapper {
-  .gbb-toc-link {
+.wp-block-xpo-block-table-of-contents,
+.xpo-toc-wrapper {
+  .xpo-toc-link {
     outline: none !important;
     box-shadow: none !important;
 
@@ -13,8 +13,8 @@
     }
   }
 
-  .gbb-toc-container {
-    .gbb-toc-empty-msg {
+  .xpo-toc-container {
+    .xpo-toc-empty-msg {
       text-align: center;
       padding: 20px;
       color: #718096;
@@ -22,5 +22,3 @@
     }
   }
 }
-
-

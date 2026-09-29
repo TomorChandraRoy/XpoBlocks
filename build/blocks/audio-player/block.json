@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "title": "Audio Player",
   "description": "Ultra-optimized Gutenberg audio player with seek controls and accessible playback UI.",
-  "category": "guten-builder",
+  "category": "xpo-block",
   "keywords": [
     "audio player",
     "audio",

@@ -4,6 +4,8 @@ import { ColorControl, UnitControl, SpacingControl, BorderControl, Typography } 
 import { pxUnit, remUnit, emUnit, vwUnit, perUnit } from 'tr-tools/utils/options';
 import { updateData } from '../../../../utils/functions';
 
+const textDomain = 'xpo-block';
+
 const Style = ({ attributes, setAttributes }) => {
   const {sidebarBorder,sidebarBorderRadius,headerBgColor,headerTextColor,iconColor,sideHeaderTypography,headerIconSize,headerBorderWidth,sidebarBgColor,sidebarItemColor,sidebarItemTypography,activeHeaderBgColor,activeTextColor,activeBorderLine,activeIconColor,activeBorderRadius,sideTextIconSize,contentBgColor,contentBorderRadius,contentBorder,contentHeaderTextColor,contentHeaderTypography,contentHeaderBorderLine,contentDescriptionColor,contentDescriptionTypography,contentTitleColor,contentTitleTypography,contentParagraphColor,contentParagraphTypography,
   } = attributes;
@@ -11,9 +13,9 @@ const Style = ({ attributes, setAttributes }) => {
   return (
     <>
       {/* --- SIDEBAR STYLE --- */}
-      <PanelBody className="bPlPanelBody" title={__('Sidebar Header', 'guten-builder-blocks')} initialOpen={true}>
+      <PanelBody className="bPlPanelBody" title={__('Sidebar Header', textDomain)} initialOpen={true}>
         <BorderControl
-          label={__('Sidebar Border', 'guten-builder-blocks')}
+          label={__('Sidebar Border', textDomain)}
           value={sidebarBorder}
           onChange={val => setAttributes({ sidebarBorder: val })}
           defaultBorder={{
@@ -25,7 +27,7 @@ const Style = ({ attributes, setAttributes }) => {
         />
         <Spacer />
         <SpacingControl
-          label={__('Sidebar Border Radius', 'guten-builder-blocks')}
+          label={__('Sidebar Border Radius', textDomain)}
           value={sidebarBorderRadius}
           onChange={val => setAttributes({ sidebarBorderRadius: val })}
           units={[pxUnit(), remUnit(), emUnit(), vwUnit(), perUnit()]}
@@ -33,14 +35,14 @@ const Style = ({ attributes, setAttributes }) => {
         />
         <Spacer />
 
-        <ColorControl label={__('Header Background', 'guten-builder-blocks')} value={headerBgColor} onChange={val => setAttributes({ headerBgColor: val })} defaultColor="#f9fafb" />
+        <ColorControl label={__('Header Background', textDomain)} value={headerBgColor} onChange={val => setAttributes({ headerBgColor: val })} defaultColor="#f9fafb" />
 
-        <ColorControl label={__('Header Text Color', 'guten-builder-blocks')} value={headerTextColor} onChange={val => setAttributes({ headerTextColor: val })} defaultColor="#1e293b" />
-        <ColorControl label={__('Icon Color', 'guten-builder-blocks')} value={iconColor} onChange={val => setAttributes({ iconColor: val })} defaultColor="#64748b" />
+        <ColorControl label={__('Header Text Color', textDomain)} value={headerTextColor} onChange={val => setAttributes({ headerTextColor: val })} defaultColor="#1e293b" />
+        <ColorControl label={__('Icon Color', textDomain)} value={iconColor} onChange={val => setAttributes({ iconColor: val })} defaultColor="#64748b" />
         <Spacer />
 
         <Typography
-          label={__('Header Typography', 'guten-builder-blocks')}
+          label={__('Header Typography', textDomain)}
           value={sideHeaderTypography}
           onChange={val => setAttributes({ sideHeaderTypography: val })}
           defaultTypography={{
@@ -60,11 +62,11 @@ const Style = ({ attributes, setAttributes }) => {
         />
         <Spacer />
 
-        <UnitControl label={__('Header icon Size', 'guten-builder-blocks')} value={headerIconSize} onChange={val => setAttributes(updateData(attributes, val, 'headerIconSize'))} units={[pxUnit()]} defaultVal="20px" />
+        <UnitControl label={__('Header icon Size', textDomain)} value={headerIconSize} onChange={val => setAttributes(updateData(attributes, val, 'headerIconSize'))} units={[pxUnit()]} defaultVal="20px" />
         <Spacer />
 
         <BorderControl
-          label={__('Border Line ', 'guten-builder-blocks')}
+          label={__('Border Line ', textDomain)}
           value={headerBorderWidth}
           onChange={val => setAttributes({ headerBorderWidth: val })}
           units={[pxUnit()]}
@@ -77,11 +79,11 @@ const Style = ({ attributes, setAttributes }) => {
         />
       </PanelBody>
 
-      <PanelBody className="bPlPanelBody" title={__('Sidebar Content', 'guten-builder-blocks')} initialOpen={false}>
-        <ColorControl label={__('Content Background', 'guten-builder-blocks')} value={sidebarBgColor} onChange={val => setAttributes({ sidebarBgColor: val })} defaultColor="#f9fafb" />
+      <PanelBody className="bPlPanelBody" title={__('Sidebar Content', textDomain)} initialOpen={false}>
+        <ColorControl label={__('Content Background', textDomain)} value={sidebarBgColor} onChange={val => setAttributes({ sidebarBgColor: val })} defaultColor="#f9fafb" />
         <Spacer />
         <Typography
-          label={__('Text Typography', 'guten-builder-blocks')}
+          label={__('Text Typography', textDomain)}
           value={sidebarItemTypography}
           onChange={val => setAttributes({ sidebarItemTypography: val })}
           defaultTypography={{
@@ -100,16 +102,16 @@ const Style = ({ attributes, setAttributes }) => {
           }}
         />
         <Spacer />
-        <ColorControl label={__('Text Color', 'guten-builder-blocks')} value={sidebarItemColor} onChange={val => setAttributes({ sidebarItemColor: val })} defaultColor="#475569" />
+        <ColorControl label={__('Text Color', textDomain)} value={sidebarItemColor} onChange={val => setAttributes({ sidebarItemColor: val })} defaultColor="#475569" />
         <Spacer />
-        <UnitControl label={__('Text Icon Size', 'guten-builder-blocks')} value={sideTextIconSize} onChange={val => setAttributes(updateData(attributes, val, 'sideTextIconSize'))} units={[pxUnit()]} defaultVal="18px" />
+        <UnitControl label={__('Text Icon Size', textDomain)} value={sideTextIconSize} onChange={val => setAttributes(updateData(attributes, val, 'sideTextIconSize'))} units={[pxUnit()]} defaultVal="18px" />
         <Spacer />
-        <ColorControl label={__('Item Active Background', 'guten-builder-blocks')} value={activeHeaderBgColor} onChange={val => setAttributes({ activeHeaderBgColor: val })} defaultColor="#1573d1" />
+        <ColorControl label={__('Item Active Background', textDomain)} value={activeHeaderBgColor} onChange={val => setAttributes({ activeHeaderBgColor: val })} defaultColor="#1573d1" />
         <Spacer />
-        <ColorControl label={__('Active Text Color', 'guten-builder-blocks')} value={activeTextColor} onChange={val => setAttributes({ activeTextColor: val })} defaultColor="#ffffff" />
+        <ColorControl label={__('Active Text Color', textDomain)} value={activeTextColor} onChange={val => setAttributes({ activeTextColor: val })} defaultColor="#ffffff" />
         <Spacer />
         <BorderControl
-          label={__('Active Border Line', 'guten-builder-blocks')}
+          label={__('Active Border Line', textDomain)}
           value={activeBorderLine}
           onChange={val => setAttributes({ activeBorderLine: val })}
           defaultBorder={{
@@ -120,10 +122,10 @@ const Style = ({ attributes, setAttributes }) => {
           }}
         />
         <Spacer />
-        <ColorControl label={__('Active Icon Color', 'guten-builder-blocks')} value={activeIconColor} onChange={val => setAttributes({ activeIconColor: val })} defaultColor="#0f172a" />
+        <ColorControl label={__('Active Icon Color', textDomain)} value={activeIconColor} onChange={val => setAttributes({ activeIconColor: val })} defaultColor="#0f172a" />
         <Spacer />
         <SpacingControl
-          label={__('Active Border Radius', 'guten-builder-blocks')}
+          label={__('Active Border Radius', textDomain)}
           value={activeBorderRadius}
           onChange={val => setAttributes({ activeBorderRadius: val })}
           units={[pxUnit(), remUnit(), emUnit(), vwUnit(), perUnit()]}
@@ -133,13 +135,13 @@ const Style = ({ attributes, setAttributes }) => {
       </PanelBody>
 
       {/* --- CONTENT Header STYLE --- */}
-      <PanelBody className="bPlPanelBody" title={__('Content Header', 'guten-builder-blocks')} initialOpen={false}>
-        <ColorControl label={__('Content Background', 'guten-builder-blocks')} value={contentBgColor} onChange={val => setAttributes({ contentBgColor: val })} defaultColor="#f9fafb" />
+      <PanelBody className="bPlPanelBody" title={__('Content Header', textDomain)} initialOpen={false}>
+        <ColorControl label={__('Content Background', textDomain)} value={contentBgColor} onChange={val => setAttributes({ contentBgColor: val })} defaultColor="#f9fafb" />
 
-        <SpacingControl label={__('Border Radius', 'guten-builder-blocks')} value={contentBorderRadius} onChange={val => setAttributes({ contentBorderRadius: val })} units={[pxUnit(), remUnit(), emUnit(), vwUnit(), perUnit()]} defaultVal={{ top: '0px', right: '0px', bottom: '0px', left: '0px' }} />
+        <SpacingControl label={__('Border Radius', textDomain)} value={contentBorderRadius} onChange={val => setAttributes({ contentBorderRadius: val })} units={[pxUnit(), remUnit(), emUnit(), vwUnit(), perUnit()]} defaultVal={{ top: '0px', right: '0px', bottom: '0px', left: '0px' }} />
         <Spacer />
         <BorderControl
-          label={__('Border', 'guten-builder-blocks')}
+          label={__('Border', textDomain)}
           value={contentBorder}
           onChange={val => setAttributes({ contentBorder: val })}
           defaultBorder={{
@@ -150,10 +152,10 @@ const Style = ({ attributes, setAttributes }) => {
           }}
         />
         <Spacer />
-        <ColorControl label={__('Content Header Color', 'guten-builder-blocks')} value={contentHeaderTextColor} onChange={val => setAttributes({ contentHeaderTextColor: val })} defaultColor="#1e293b" />
+        <ColorControl label={__('Content Header Color', textDomain)} value={contentHeaderTextColor} onChange={val => setAttributes({ contentHeaderTextColor: val })} defaultColor="#1e293b" />
         <Spacer />
         <Typography
-          label={__('Text Typography', 'guten-builder-blocks')}
+          label={__('Text Typography', textDomain)}
           value={contentHeaderTypography}
           onChange={val => setAttributes({ contentHeaderTypography: val })}
           defaultTypography={{
@@ -173,7 +175,7 @@ const Style = ({ attributes, setAttributes }) => {
         />
         <Spacer />
         <BorderControl
-          label={__('Border Line', 'guten-builder-blocks')}
+          label={__('Border Line', textDomain)}
           value={contentHeaderBorderLine}
           onChange={val => setAttributes({ contentHeaderBorderLine: val })}
           defaultBorder={{
@@ -184,10 +186,10 @@ const Style = ({ attributes, setAttributes }) => {
           }}
         />
         <Spacer />
-        <ColorControl label={__('Content Description Color', 'guten-builder-blocks')} value={contentDescriptionColor} onChange={val => setAttributes({ contentDescriptionColor: val })} defaultColor="#6b7280" />
+        <ColorControl label={__('Content Description Color', textDomain)} value={contentDescriptionColor} onChange={val => setAttributes({ contentDescriptionColor: val })} defaultColor="#6b7280" />
         <Spacer />
         <Typography
-          label={__('Content Description Typography', 'guten-builder-blocks')}
+          label={__('Content Description Typography', textDomain)}
           value={contentDescriptionTypography}
           onChange={val => setAttributes({ contentDescriptionTypography: val })}
           defaultTypography={{
@@ -209,11 +211,11 @@ const Style = ({ attributes, setAttributes }) => {
       </PanelBody>
 
       {/* --- CONTENT AREA STYLE --- */}
-      <PanelBody className="bPlPanelBody" title={__('Content  Area', 'guten-builder-blocks')} initialOpen={false}>
-        <ColorControl label={__('Content Title Color', 'guten-builder-blocks')} value={contentTitleColor} onChange={val => setAttributes({ contentTitleColor: val })} defaultColor="#111827" />
+      <PanelBody className="bPlPanelBody" title={__('Content  Area', textDomain)} initialOpen={false}>
+        <ColorControl label={__('Content Title Color', textDomain)} value={contentTitleColor} onChange={val => setAttributes({ contentTitleColor: val })} defaultColor="#111827" />
         <Spacer />
         <Typography
-          label={__('Content Title Typography', 'guten-builder-blocks')}
+          label={__('Content Title Typography', textDomain)}
           value={contentTitleTypography}
           onChange={val => setAttributes({ contentTitleTypography: val })}
           defaultTypography={{
@@ -233,10 +235,10 @@ const Style = ({ attributes, setAttributes }) => {
         />
         <Spacer />
 
-        <ColorControl label={__('Content Paragraph Color', 'guten-builder-blocks')} value={contentParagraphColor} onChange={val => setAttributes({ contentParagraphColor: val })} defaultColor="#4b5563" />
+        <ColorControl label={__('Content Paragraph Color', textDomain)} value={contentParagraphColor} onChange={val => setAttributes({ contentParagraphColor: val })} defaultColor="#4b5563" />
         <Spacer />
         <Typography
-          label={__('Content Paragraph Typography', 'guten-builder-blocks')}
+          label={__('Content Paragraph Typography', textDomain)}
           value={contentParagraphTypography}
           onChange={val => setAttributes({ contentParagraphTypography: val })}
           defaultTypography={{

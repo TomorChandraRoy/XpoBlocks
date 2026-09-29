@@ -33,47 +33,47 @@ const DynamicStyle = ({
 
   // In editor, the prop clientId is passed as 'block-{id}'. Frontend fallback to generic class.
   const mainSl = clientId ? `#${clientId}` : '.wp-block-guten-builder-blocks-scroll-story';
-  const gbbCnt = `${mainSl} .gbb-scroll-story-content`;
-  const gbbSPF = `${mainSl} .gbb-scroll-progress-fill`;
-  const gbbSST = `${mainSl} .gbb-scroll-story-title`;
-  const gbbSSA = `${mainSl} .gbb-scroll-story-step.is-active .gbb-scroll-story-title`;
-  const gbbSSD = `${mainSl} .gbb-scroll-story-desc`;
-  const gbbImg = `${mainSl} .gbb-scroll-story-image`;
-  const gbbMediaWrp = `${mainSl} .gbb-scroll-story-media-wrapper`;
-  const gbbMediaStk = `${mainSl} .gbb-scroll-story-media-sticky`;
+  const xpoCnt = `${mainSl} .xpo-scroll-story-content`;
+  const xpoSPF = `${mainSl} .xpo-scroll-progress-fill`;
+  const xpoSST = `${mainSl} .xpo-scroll-story-title`;
+  const xpoSSA = `${mainSl} .xpo-scroll-story-step.is-active .xpo-scroll-story-title`;
+  const xpoSSD = `${mainSl} .xpo-scroll-story-desc`;
+  const xpoImg = `${mainSl} .xpo-scroll-story-image`;
+  const xpoMediaWrp = `${mainSl} .xpo-scroll-story-media-wrapper`;
+  const xpoMediaStk = `${mainSl} .xpo-scroll-story-media-sticky`;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("style", {
     dangerouslySetInnerHTML: {
       __html: `
-				${gbbCnt} {
+				${xpoCnt} {
 					gap: ${stepGap};
 				}
 
-				${gbbSPF} {
+				${xpoSPF} {
 					background: ${progressColor};
 				}
 
-				${gbbSST} {
+				${xpoSST} {
 					color: ${inactiveTitleColor};
 				}
 
-				${gbbSSA} {
+				${xpoSSA} {
 					color: ${activeTitleColor};
 				}
 
-				${gbbSSD} {
+				${xpoSSD} {
 					color: ${descColor};
 				}
 
-				${gbbImg} {
+				${xpoImg} {
 					object-fit: ${imageFit};
 				}
 
-				${gbbMediaWrp} {
+				${xpoMediaWrp} {
 					background: ${mediaBgColor};
 					border-radius: ${mediaRadius};
 				}
 
-				${gbbMediaStk} {
+				${xpoMediaStk} {
 					min-height: ${mediaHeight};
 				}
 			`.replace(/\s+/g, ' ')
@@ -136,6 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const prefix = 'xpo';
 const TemplateOne = ({
   attributes,
   setAttributes,
@@ -221,31 +222,31 @@ const TemplateOne = ({
     });
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    className: `gbb-scroll-story-container layout-${layout}`,
+    className: `${prefix}-scroll-story-container layout-${layout}`,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "gbb-scroll-story-content",
+      className: `${prefix}-scroll-story-content`,
       children: steps.map((step, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: `gbb-scroll-story-step ${index === activeStep ? 'is-active' : ''}`,
+        className: `${prefix}-scroll-story-step ${index === activeStep ? 'is-active' : ''}`,
         "data-step-index": index,
         ref: el => stepRefs.current[index] = el,
         onClick: () => handleStepClick(index),
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "gbb-scroll-progress-line",
+          className: `${prefix}-scroll-progress-line`,
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "gbb-scroll-progress-fill"
+            className: `${prefix}-scroll-progress-fill`
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "gbb-scroll-story-text",
+          className: `${prefix}-scroll-story-text`,
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(RichTextEl, {
             tagName: "h3",
-            className: "gbb-scroll-story-title",
+            className: `${prefix}-scroll-story-title`,
             value: step.title,
             onChange: val => updateStepAttr(index, 'title', val),
             placeholder: "Step Title",
             allowedFormats: ['core/bold', 'core/italic', 'core/link']
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(RichTextEl, {
             tagName: "div",
-            className: "gbb-scroll-story-desc",
+            className: `${prefix}-scroll-story-desc`,
             value: step.description,
             onChange: val => updateStepAttr(index, 'description', val),
             placeholder: "Step Description...",
@@ -254,22 +255,22 @@ const TemplateOne = ({
         })]
       }, index))
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "gbb-scroll-story-media-sticky",
+      className: `${prefix}-scroll-story-media-sticky`,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "gbb-scroll-story-media-wrapper",
+        className: `${prefix}-scroll-story-media-wrapper`,
         children: [mediaType === 'image' && (activeMedia ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
           src: activeMedia,
           alt: `Step ${activeStep + 1}`,
-          className: "gbb-scroll-story-image fade-in"
+          className: `${prefix}-scroll-story-image fade-in`
         }, activeMedia) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "gbb-scroll-story-placeholder",
+          className: `${prefix}-scroll-story-placeholder`,
           children: isBackend ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
             dangerouslySetInnerHTML: {
               __html: _utils_icons__WEBPACK_IMPORTED_MODULE_1__.imageIcon
             }
           }) : null
         })), mediaType === 'lottie' && (activeLottie ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "gbb-scroll-story-lottie fade-in",
+          className: `${prefix}-scroll-story-lottie fade-in`,
           children: (() => {
             let cleanUrl = activeLottie.trim();
             const iframeMatch = cleanUrl.match(/src=["']([^"']+)["']/);
@@ -300,7 +301,7 @@ const TemplateOne = ({
             });
           })()
         }, activeLottie) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "gbb-scroll-story-placeholder",
+          className: `${prefix}-scroll-story-placeholder`,
           children: isBackend ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
             children: "Lottie Animation"
           }) : null
@@ -615,7 +616,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const storyEls = document.querySelectorAll('.wp-block-guten-builder-blocks-scroll-story');
+  const storyEls = document.querySelectorAll('.wp-block-xpo-block-scroll-story');
   storyEls.forEach(el => {
     if (!el.dataset.attributes) return;
     const attributes = JSON.parse(el.dataset.attributes);
@@ -861,7 +862,7 @@ module.exports = window["ReactJSXRuntime"];
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
-/******/ 		const chunkLoadingGlobal = globalThis["webpackChunkguten_builder_blocks"] ||= [];
+/******/ 		const chunkLoadingGlobal = globalThis["webpackChunkxpo_block"] ||= [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();

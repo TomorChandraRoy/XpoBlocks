@@ -15,8 +15,8 @@ const Settings = ({ attributes, setAttributes, clientId }) => {
 
   return (
     <InspectorControls>
-      <DocsLink link="https://gutenbuilder.com/docs/scroll-story" text={__('Documentation', 'guten-builder-blocks')} />
-      <TabPanel className="guten-builder-blocks-tab-panel wp-block-guten-builder-blocks-scroll-story" activeClass="guten-builder-blocks-active-tab" tabs={generalStyleTabs}>
+      <DocsLink link="https://gutenbuilder.com/docs/scroll-story" text={__('Documentation', 'xpo-block')} />
+      <TabPanel className="wp-xpo-tab-panel" activeClass="wp-xpo-tab-panel-active-tab" tabs={generalStyleTabs}>
         {tab => (
           <>
             {'general' === tab.name && <General {...{ attributes, setAttributes, clientId }} />}

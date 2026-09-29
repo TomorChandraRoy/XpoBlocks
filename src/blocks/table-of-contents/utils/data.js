@@ -1,19 +1,21 @@
 import { __ } from "@wordpress/i18n";
 import { TemplateOneSvg } from "./icons";
 
+const textDomain = 'xpo-block';
+
 export const templateData = {
-  title: __('Select Table of Contents Template', 'guten-builder-blocks'),
-  subtitle: __('Choose a design template for your table of contents.', 'guten-builder-blocks'),
+  title: __('Select Table of Contents Template', textDomain),
+  subtitle: __('Choose a design template for your table of contents.', textDomain),
   templates: [
     {
       id: 'template-1',
-      label: __('Template 1', 'guten-builder-blocks'),
-      tag: __('Classic Table of Contents', 'guten-builder-blocks'),
+      label: __('Template 1', textDomain),
+      tag: __('Classic Table of Contents', textDomain),
       icon: TemplateOneSvg,
       attributes: {
-        titleText: __('Table of Contents', 'guten-builder-blocks'),
-        contentTitle: __('The Ultimate Guide to Modern Web Development', 'guten-builder-blocks'),
-        contentSubtitle: __('Explore key concepts, architecture, design patterns, and performance optimization techniques for modern web applications.', 'guten-builder-blocks'),
+        titleText: __('Table of Contents', textDomain),
+        contentTitle: __('The Ultimate Guide to Modern Web Development', textDomain),
+        contentSubtitle: __('Explore key concepts, architecture, design patterns, and performance optimization techniques for modern web applications.', textDomain),
         items: [
           { id: '', title: 'Understanding Modern Web Architecture', level: 2, paragraph: 'An overview of client-server models, microservices, micro-frontends, and serverless architectures.' },
           { id: '', title: 'Frontend Fundamentals', level: 2, paragraph: 'Core technologies driving modern user interfaces and user experience across responsive devices.' },

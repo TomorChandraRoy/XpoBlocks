@@ -2,6 +2,7 @@ import { PanelBody, SelectControl, __experimentalSpacer as Spacer } from '@wordp
 import { __ } from '@wordpress/i18n';
 import { ColorControl, UnitControl, SpacingControl } from 'tr-tools';
 import { pxUnit, remUnit, emUnit, vwUnit, perUnit } from 'tr-tools/utils/options';
+const textDomain = 'xpo-block';
 
 const Style = ({ attributes, setAttributes }) => {
 	const {
@@ -19,14 +20,14 @@ const Style = ({ attributes, setAttributes }) => {
 	const units = [pxUnit(), remUnit(), emUnit(), vwUnit(), perUnit()];
 
 	return (
-		<PanelBody className="bPlPanelBody" title={__('Style Settings', 'guten-builder-blocks')} initialOpen={true}>
+		<PanelBody className="bPlPanelBody" title={__('Style Settings', textDomain)} initialOpen={true}>
 			<SelectControl
-				label={__('Image Fit', 'guten-builder-blocks')}
+				label={__('Image Fit', textDomain)}
 				value={imageFit}
 				options={[
-					{ label: __('Cover (Fill Container)', 'guten-builder-blocks'), value: 'cover' },
-					{ label: __('Contain (Whole Image)', 'guten-builder-blocks'), value: 'contain' },
-					{ label: __('Fill (Stretch)', 'guten-builder-blocks'), value: 'fill' }
+					{ label: __('Cover (Fill Container)', textDomain), value: 'cover' },
+					{ label: __('Contain (Whole Image)', textDomain), value: 'contain' },
+					{ label: __('Fill (Stretch)', textDomain), value: 'fill' }
 				]}
 				onChange={val => setAttributes({ imageFit: val })}
 			/>
@@ -34,7 +35,7 @@ const Style = ({ attributes, setAttributes }) => {
 			<Spacer />
 
 			<UnitControl
-				label={__('Step Gap / Spacer :', 'guten-builder-blocks')}
+				label={__('Step Gap / Spacer :', textDomain)}
 				value={stepGap}
 				onChange={val => setAttributes({ stepGap: val })}
 				units={units}
@@ -44,7 +45,7 @@ const Style = ({ attributes, setAttributes }) => {
 			<Spacer />
 
 			<UnitControl
-				label={__('Media Container Height :', 'guten-builder-blocks')}
+				label={__('Media Container Height :', textDomain)}
 				value={mediaHeight}
 				onChange={val => setAttributes({ mediaHeight: val })}
 				units={units}
@@ -54,7 +55,7 @@ const Style = ({ attributes, setAttributes }) => {
 			<Spacer />
 
 			<SpacingControl
-				label={__('Media Border Radius :', 'guten-builder-blocks')}
+				label={__('Media Border Radius :', textDomain)}
 				value={mediaRadius}
 				onChange={val => setAttributes({ mediaRadius: val })}
 				units={units}
@@ -64,7 +65,7 @@ const Style = ({ attributes, setAttributes }) => {
 			<Spacer />
 
 			<ColorControl
-				label={__('Media Box Background :', 'guten-builder-blocks')}
+				label={__('Media Box Background :', textDomain)}
 				value={mediaBgColor}
 				onChange={val => setAttributes({ mediaBgColor: val })}
 				defaultColor="#f1f5f9"
@@ -73,7 +74,7 @@ const Style = ({ attributes, setAttributes }) => {
 			<Spacer />
 
 			<ColorControl
-				label={__('Progress Bar Color :', 'guten-builder-blocks')}
+				label={__('Progress Bar Color :', textDomain)}
 				value={progressColor}
 				onChange={val => setAttributes({ progressColor: val })}
 				defaultColor="#3b82f6"
@@ -82,7 +83,7 @@ const Style = ({ attributes, setAttributes }) => {
 			<Spacer />
 
 			<ColorControl
-				label={__('Active Title Color :', 'guten-builder-blocks')}
+				label={__('Active Title Color :', textDomain)}
 				value={activeTitleColor}
 				onChange={val => setAttributes({ activeTitleColor: val })}
 				defaultColor="#1e293b"
@@ -91,7 +92,7 @@ const Style = ({ attributes, setAttributes }) => {
 			<Spacer />
 
 			<ColorControl
-				label={__('Inactive Title Color :', 'guten-builder-blocks')}
+				label={__('Inactive Title Color :', textDomain)}
 				value={inactiveTitleColor}
 				onChange={val => setAttributes({ inactiveTitleColor: val })}
 				defaultColor="#94a3b8"
@@ -100,7 +101,7 @@ const Style = ({ attributes, setAttributes }) => {
 			<Spacer />
 
 			<ColorControl
-				label={__('Description Color :', 'guten-builder-blocks')}
+				label={__('Description Color :', textDomain)}
 				value={descColor}
 				onChange={val => setAttributes({ descColor: val })}
 				defaultColor="#475569"

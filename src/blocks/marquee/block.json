@@ -3,7 +3,7 @@
   "name": "guten-builder-blocks/marquee",
   "version": "1.0.2",
   "title": "Marquee",
-  "category": "guten-builder",
+  "category": "xpo-block",
   "description": "Infinite scrolling marquee optimized for logos and images with hardware-accelerated physics.",
   "keywords": ["marquee", "scrolling text", "ticker", "moving text", "loop text"],
   "textdomain": "guten-builder-blocks",

@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "title": "Before/After",
   "description": "Interactive image comparison slider with CSS-based masking and hardware-accelerated transitions.",
-  "category": "guten-builder",
+  "category": "xpo-block",
   "keywords": [
     "before after",
     "image comparison",

@@ -4,7 +4,7 @@ import App from "./App";
 import { dashboardInfo } from "./data/data";
 
 domReady(() => {
-  const rootElement = document.getElementById("guten-builder-admin-root"); //includes admin.php file thake
+  const rootElement = document.getElementById('xpo-block-admin-root'); //includes admin.php file thake
   const info = rootElement && rootElement.dataset && rootElement.dataset.info
     ? JSON.parse(rootElement.dataset.info)
     : {};

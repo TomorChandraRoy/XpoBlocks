@@ -6,7 +6,7 @@ import TableOfContents from './Components/Common/Templates/TableOfContents';
 
 
 document.addEventListener('DOMContentLoaded', () => {
-	const containers = document.querySelectorAll('.wp-block-guten-builder-blocks-table-of-contents');
+	const containers = document.querySelectorAll('.wp-block-xpo-block-table-of-contents');
 	containers.forEach(container => {
 		if (container.dataset.initialized) return;
 		container.dataset.initialized = 'true';

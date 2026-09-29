@@ -8,10 +8,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Generate a unique block ID if not provided
-$block_id = ! empty( $attributes['blockId'] ) ? sanitize_html_class( $attributes['blockId'] ) : wp_unique_id( 'gbb-toc-' );
+$block_id = ! empty( $attributes['blockId'] ) ? sanitize_html_class( $attributes['blockId'] ) : wp_unique_id( 'xpo-toc-' );
 
 // Prepare necessary custom classes for the wrapper as an array
-$wrapper_classes = array('gbb-toc-container', $block_id);
+$wrapper_classes = array('xpo-toc-container', $block_id);
 
 // get_block_wrapper_attributes automatically applies Gutenberg sidebar styles (margin, padding, border etc.)
 // implode(' ', $wrapper_classes) converts the array of classes into a single space-separated string, 

@@ -13,49 +13,49 @@ const DynamicStyle = ({ attributes, clientId }) => {
 
 	// In editor, the prop clientId is passed as 'block-{id}'. Frontend fallback to generic class.
 	const mainSl = clientId ? `#${clientId}` : '.wp-block-guten-builder-blocks-scroll-story';
-	const gbbCnt = `${mainSl} .gbb-scroll-story-content`;
-	const gbbSPF = `${mainSl} .gbb-scroll-progress-fill`;
-	const gbbSST = `${mainSl} .gbb-scroll-story-title`;
-	const gbbSSA = `${mainSl} .gbb-scroll-story-step.is-active .gbb-scroll-story-title`;
-	const gbbSSD = `${mainSl} .gbb-scroll-story-desc`;
-	const gbbImg = `${mainSl} .gbb-scroll-story-image`;
-	const gbbMediaWrp = `${mainSl} .gbb-scroll-story-media-wrapper`;
-	const gbbMediaStk = `${mainSl} .gbb-scroll-story-media-sticky`;
+	const xpoCnt = `${mainSl} .xpo-scroll-story-content`;
+	const xpoSPF = `${mainSl} .xpo-scroll-progress-fill`;
+	const xpoSST = `${mainSl} .xpo-scroll-story-title`;
+	const xpoSSA = `${mainSl} .xpo-scroll-story-step.is-active .xpo-scroll-story-title`;
+	const xpoSSD = `${mainSl} .xpo-scroll-story-desc`;
+	const xpoImg = `${mainSl} .xpo-scroll-story-image`;
+	const xpoMediaWrp = `${mainSl} .xpo-scroll-story-media-wrapper`;
+	const xpoMediaStk = `${mainSl} .xpo-scroll-story-media-sticky`;
 
 	return (
     <style
       dangerouslySetInnerHTML={{
         __html: `
-				${gbbCnt} {
+				${xpoCnt} {
 					gap: ${stepGap};
 				}
 
-				${gbbSPF} {
+				${xpoSPF} {
 					background: ${progressColor};
 				}
 
-				${gbbSST} {
+				${xpoSST} {
 					color: ${inactiveTitleColor};
 				}
 
-				${gbbSSA} {
+				${xpoSSA} {
 					color: ${activeTitleColor};
 				}
 
-				${gbbSSD} {
+				${xpoSSD} {
 					color: ${descColor};
 				}
 
-				${gbbImg} {
+				${xpoImg} {
 					object-fit: ${imageFit};
 				}
 
-				${gbbMediaWrp} {
+				${xpoMediaWrp} {
 					background: ${mediaBgColor};
 					border-radius: ${mediaRadius};
 				}
 
-				${gbbMediaStk} {
+				${xpoMediaStk} {
 					min-height: ${mediaHeight};
 				}
 			`.replace(/\s+/g, ' '),

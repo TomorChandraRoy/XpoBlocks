@@ -7,7 +7,7 @@ export const generalStyleTabs = [
     title: (
       <span style={{ display: 'inline-flex', alignItems: 'center' }}>
         <GeneralIcon />
-        {__('General', 'guten-builder-blocks')}
+        {__('General', 'xpo-block')}
       </span>
     ),
   },
@@ -16,7 +16,7 @@ export const generalStyleTabs = [
     title: (
       <span style={{ display: 'inline-flex', alignItems: 'center' }}>
         <StyleIcon/>
-        {__('Style', 'guten-builder-blocks')}
+        {__('Style', 'xpo-block')}
       </span>
     ),
   },

@@ -1,7 +1,7 @@
 /*!***********************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/scroll-story/style.scss ***!
   \***********************************************************************************************************************************************************************************************************************************************************/
-.wp-block-guten-builder-blocks-scroll-story .gbb-scroll-story-container {
+.wp-block-xpo-block-scroll-story .xpo-scroll-story-container {
   margin-bottom: 30px;
   display: flex;
   flex-direction: row;
@@ -10,17 +10,17 @@
   position: relative;
   padding: 0px 8px;
 }
-.wp-block-guten-builder-blocks-scroll-story .gbb-scroll-story-container.layout-sticky-left {
+.wp-block-xpo-block-scroll-story .xpo-scroll-story-container.layout-sticky-left {
   flex-direction: row-reverse;
 }
-.wp-block-guten-builder-blocks-scroll-story .gbb-scroll-story-container .gbb-scroll-story-content {
+.wp-block-xpo-block-scroll-story .xpo-scroll-story-container .xpo-scroll-story-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 60px;
   padding: 50px 0 300px 0;
 }
-.wp-block-guten-builder-blocks-scroll-story .gbb-scroll-story-container .gbb-scroll-story-media-sticky {
+.wp-block-xpo-block-scroll-story .xpo-scroll-story-container .xpo-scroll-story-media-sticky {
   flex: 1;
   position: sticky;
   top: 100px;
@@ -30,7 +30,7 @@
   align-items: center;
   justify-content: center;
 }
-.wp-block-guten-builder-blocks-scroll-story .gbb-scroll-story-container .gbb-scroll-story-media-wrapper {
+.wp-block-xpo-block-scroll-story .xpo-scroll-story-container .xpo-scroll-story-media-wrapper {
   width: 100%;
   height: 100%;
   background: #f1f5f9;
@@ -41,7 +41,7 @@
   justify-content: center;
   position: relative;
 }
-.wp-block-guten-builder-blocks-scroll-story .gbb-scroll-story-container .gbb-scroll-story-image {
+.wp-block-xpo-block-scroll-story .xpo-scroll-story-container .xpo-scroll-story-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -49,20 +49,20 @@
   top: 0;
   left: 0;
 }
-.wp-block-guten-builder-blocks-scroll-story .gbb-scroll-story-container .gbb-scroll-story-step {
+.wp-block-xpo-block-scroll-story .xpo-scroll-story-container .xpo-scroll-story-step {
   display: flex;
   gap: 30px;
   opacity: 0.4;
   transition: opacity 0.4s ease;
   cursor: pointer;
 }
-.wp-block-guten-builder-blocks-scroll-story .gbb-scroll-story-container .gbb-scroll-story-step.is-active {
+.wp-block-xpo-block-scroll-story .xpo-scroll-story-container .xpo-scroll-story-step.is-active {
   opacity: 1;
 }
-.wp-block-guten-builder-blocks-scroll-story .gbb-scroll-story-container .gbb-scroll-story-step.is-active .gbb-scroll-progress-fill {
+.wp-block-xpo-block-scroll-story .xpo-scroll-story-container .xpo-scroll-story-step.is-active .xpo-scroll-progress-fill {
   height: 100%;
 }
-.wp-block-guten-builder-blocks-scroll-story .gbb-scroll-story-container .gbb-scroll-progress-line {
+.wp-block-xpo-block-scroll-story .xpo-scroll-story-container .xpo-scroll-progress-line {
   width: 4px;
   background: #e2e8f0;
   border-radius: 4px;
@@ -70,7 +70,7 @@
   overflow: hidden;
   flex-shrink: 0;
 }
-.wp-block-guten-builder-blocks-scroll-story .gbb-scroll-story-container .gbb-scroll-progress-fill {
+.wp-block-xpo-block-scroll-story .xpo-scroll-story-container .xpo-scroll-progress-fill {
   position: absolute;
   top: 0;
   left: 0;
@@ -78,44 +78,44 @@
   height: 0%;
   transition: height 0.4s ease;
 }
-.wp-block-guten-builder-blocks-scroll-story .gbb-scroll-story-container .gbb-scroll-story-text {
+.wp-block-xpo-block-scroll-story .xpo-scroll-story-container .xpo-scroll-story-text {
   flex: 1;
 }
-.wp-block-guten-builder-blocks-scroll-story .gbb-scroll-story-container .gbb-scroll-story-title {
+.wp-block-xpo-block-scroll-story .xpo-scroll-story-container .xpo-scroll-story-title {
   font-size: 28px;
   font-weight: 700;
   margin: 0 0 16px 0;
   transition: color 0.4s ease;
 }
-.wp-block-guten-builder-blocks-scroll-story .gbb-scroll-story-container .gbb-scroll-story-desc {
+.wp-block-xpo-block-scroll-story .xpo-scroll-story-container .xpo-scroll-story-desc {
   font-size: 16px;
   line-height: 1.6;
   margin: 0;
 }
 @media (max-width: 768px) {
-  .wp-block-guten-builder-blocks-scroll-story .gbb-scroll-story-container {
+  .wp-block-xpo-block-scroll-story .xpo-scroll-story-container {
     flex-direction: column-reverse;
   }
-  .wp-block-guten-builder-blocks-scroll-story .gbb-scroll-story-container.layout-sticky-left {
+  .wp-block-xpo-block-scroll-story .xpo-scroll-story-container.layout-sticky-left {
     flex-direction: column-reverse;
   }
-  .wp-block-guten-builder-blocks-scroll-story .gbb-scroll-story-container .gbb-scroll-story-media-sticky {
+  .wp-block-xpo-block-scroll-story .xpo-scroll-story-container .xpo-scroll-story-media-sticky {
     position: relative;
     top: 0;
     height: 300px;
     min-height: auto;
     width: 100%;
   }
-  .wp-block-guten-builder-blocks-scroll-story .gbb-scroll-story-container .gbb-scroll-story-content {
+  .wp-block-xpo-block-scroll-story .xpo-scroll-story-container .xpo-scroll-story-content {
     padding: 20px 0;
     gap: 40px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .wp-block-guten-builder-blocks-scroll-story .gbb-scroll-story-container .fade-in {
+  .wp-block-xpo-block-scroll-story .xpo-scroll-story-container .fade-in {
     animation: none;
   }
-  .wp-block-guten-builder-blocks-scroll-story .gbb-scroll-story-container .gbb-scroll-story-step {
+  .wp-block-xpo-block-scroll-story .xpo-scroll-story-container .xpo-scroll-story-step {
     transition: none;
   }
 }

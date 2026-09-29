@@ -4,7 +4,7 @@
   "name": "guten-builder-blocks/newsletter-card",
   "version": "1.0.0",
   "title": "Newsletter Card",
-  "category": "guten-builder",
+  "category": "xpo-block",
   "description": "Add a visually appealing newsletter subscription card to grow your email list and engage with your audience.",
   "textdomain": "guten-builder-blocks",
   "attributes": {

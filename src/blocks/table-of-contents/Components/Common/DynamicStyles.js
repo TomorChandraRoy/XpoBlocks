@@ -7,28 +7,28 @@ const DynamicStyles = ({ attributes, id }) => {
   const mainSl = `#${id}`;
 
   // --- SIDEBAR SELECTORS ---
-  const wrapper = `${mainSl} .gbb-toc-wrapper`;
-  const sidebar = `${wrapper} .gbb-toc-sidebar`;
-  const stickyBox = `${sidebar} .gbb-toc-sticky-box`;
-  const header = `${stickyBox} .gbb-toc-header`;
-  const headerText = `${header} .gbb-toc-header-title`;
-  const headerContentText = `${headerText} .gbb-toc-header-text`;
-  const icon = `${headerText} .gbb-toc-header-icon, ${header} .gbb-toc-arrow-icon`;
+  const wrapper = `${mainSl} .xpo-toc-wrapper`;
+  const sidebar = `${wrapper} .xpo-toc-sidebar`;
+  const stickyBox = `${sidebar} .xpo-toc-sticky-box`;
+  const header = `${stickyBox} .xpo-toc-header`;
+  const headerText = `${header} .xpo-toc-header-title`;
+  const headerContentText = `${headerText} .xpo-toc-header-text`;
+  const icon = `${headerText} .xpo-toc-header-icon, ${header} .xpo-toc-arrow-icon`;
 
-  const body = `${stickyBox} .gbb-toc-body`;
-  const linkContainer = `${body} .gbb-toc-list-container`;
-  const list = `${linkContainer} .gbb-toc-list`;
-  const item = `${list} .gbb-toc-item`;
-  const link = `${item} .gbb-toc-link`;
+  const body = `${stickyBox} .xpo-toc-body`;
+  const linkContainer = `${body} .xpo-toc-list-container`;
+  const list = `${linkContainer} .xpo-toc-list`;
+  const item = `${list} .xpo-toc-item`;
+  const link = `${item} .xpo-toc-link`;
   const itemActive = `${item}.is-active`;
 
   // --- CONTENT AREA SELECTORS ---
-  const contentArea = `${wrapper} .gbb-toc-content-area`;
-  const contentTitle = `${contentArea} .gbb-toc-content-title`;
-  const contentSubtitle = `${contentArea} .gbb-toc-content-subtitle`;
-  const sectionWrapper = `${contentArea} .gbb-toc-section-wrapper`;
-  const sectionHeading = `${sectionWrapper} .gbb-toc-section-heading-2, ${sectionWrapper} .gbb-toc-section-heading-3`;
-  const sectionParagraph = `${sectionWrapper} .gbb-toc-section-paragraph`;
+  const contentArea = `${wrapper} .xpo-toc-content-area`;
+  const contentTitle = `${contentArea} .xpo-toc-content-title`;
+  const contentSubtitle = `${contentArea} .xpo-toc-content-subtitle`;
+  const sectionWrapper = `${contentArea} .xpo-toc-section-wrapper`;
+  const sectionHeading = `${sectionWrapper} .xpo-toc-section-heading-2, ${sectionWrapper} .xpo-toc-section-heading-3`;
+  const sectionParagraph = `${sectionWrapper} .xpo-toc-section-paragraph`;
 
 
 

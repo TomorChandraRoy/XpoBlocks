@@ -2,6 +2,504 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "../tr-tools/AdminDashboard/DocsModal/DocsModal.jsx"
+/*!**********************************************************!*\
+  !*** ../tr-tools/AdminDashboard/DocsModal/DocsModal.jsx ***!
+  \**********************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _data_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./data.js */ "../tr-tools/AdminDashboard/DocsModal/data.js");
+/* harmony import */ var _docsModal_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./docsModal.scss */ "../tr-tools/AdminDashboard/DocsModal/docsModal.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+const DocsModal = ({
+  block,
+  onClose
+}) => {
+  if (!block) return null;
+  const resolveKey = b => {
+    if (!b) return "table-of-contents";
+    let raw = typeof b === "string" ? b : b.id || b.key || b.name || "";
+    const cleanKey = String(raw).trim().replace(/^xpo-block\//, "").replace(/^wp-block-xpo-block-/, "");
+    return _data_js__WEBPACK_IMPORTED_MODULE_1__.docsContentData[cleanKey] ? cleanKey : "table-of-contents";
+  };
+  const [activeKey, setActiveKey] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(() => resolveKey(block));
+
+  // State to track expanded/collapsed navigation categories
+  const [expandedCats, setExpandedCats] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    "getting-started": true,
+    "how-to-use": true,
+    faqs: true
+  });
+  const toggleCategory = catKey => {
+    setExpandedCats(prev => ({
+      ...prev,
+      [catKey]: !prev[catKey]
+    }));
+  };
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    if (block) {
+      setActiveKey(resolveKey(block));
+    }
+  }, [block]);
+  const doc = _data_js__WEBPACK_IMPORTED_MODULE_1__.docsContentData[activeKey] || _data_js__WEBPACK_IMPORTED_MODULE_1__.docsContentData["table-of-contents"];
+  const modalContent = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    className: "docs-modal-overlay",
+    onClick: onClose,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "docs-layout-wrapper",
+      onClick: e => e.stopPropagation(),
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+        type: "button",
+        className: "docs-modal-close-btn",
+        onClick: onClose,
+        "aria-label": "Close Documentation",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("svg", {
+          width: "18",
+          height: "18",
+          viewBox: "0 0 24 24",
+          fill: "none",
+          stroke: "currentColor",
+          strokeWidth: "2.5",
+          strokeLinecap: "round",
+          strokeLinejoin: "round",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("line", {
+            x1: "18",
+            y1: "6",
+            x2: "6",
+            y2: "18"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("line", {
+            x1: "6",
+            y1: "6",
+            x2: "18",
+            y2: "18"
+          })]
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("aside", {
+        className: "docs-sidebar",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "sidebar-header",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("svg", {
+            className: "sidebar-brand-icon",
+            width: "20",
+            height: "20",
+            viewBox: "0 0 24 24",
+            fill: "none",
+            stroke: "#2563eb",
+            strokeWidth: "2",
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+              d: "M4 19.5A2.5 2.5 0 0 1 6.5 17H20"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+              d: "M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "sidebar-brand-title",
+            children: "XpoBlock Docs"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("nav", {
+          className: "sidebar-nav",
+          children: _data_js__WEBPACK_IMPORTED_MODULE_1__.navCategories.map(cat => {
+            const isExpanded = expandedCats[cat.key] !== false;
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              className: "nav-group",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("button", {
+                type: "button",
+                className: "nav-group-header-btn",
+                onClick: () => toggleCategory(cat.key),
+                "aria-expanded": isExpanded,
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                  children: cat.label
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("svg", {
+                  className: `group-arrow ${isExpanded ? "open" : ""}`,
+                  width: "14",
+                  height: "14",
+                  viewBox: "0 0 24 24",
+                  fill: "none",
+                  stroke: "currentColor",
+                  strokeWidth: "2",
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("polyline", {
+                    points: "6 9 12 15 18 9"
+                  })
+                })]
+              }), isExpanded && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("ul", {
+                className: "nav-items-list",
+                children: cat.items.map(item => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+                    type: "button",
+                    className: `nav-item-btn ${activeKey === item.key ? "active" : ""}`,
+                    onClick: () => {
+                      if (_data_js__WEBPACK_IMPORTED_MODULE_1__.docsContentData[item.key]) {
+                        setActiveKey(item.key);
+                      }
+                    },
+                    children: item.label
+                  })
+                }, item.key))
+              })]
+            }, cat.key);
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("main", {
+        className: "docs-main-content",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "docs-breadcrumb-bar",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("svg", {
+            className: "home-icon",
+            width: "16",
+            height: "16",
+            viewBox: "0 0 24 24",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: "2",
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+              d: "m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("polyline", {
+              points: "9 22 9 12 15 12 15 22"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "breadcrumb-sep",
+            children: "/"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "breadcrumb-link",
+            children: "Docs"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "breadcrumb-sep",
+            children: "/"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "breadcrumb-link",
+            children: doc.category || "How To Use"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "breadcrumb-sep",
+            children: "/"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "breadcrumb-current",
+            children: doc.title
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "docs-content-body",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "content-title-section",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+              className: "docs-type-badge",
+              children: doc.category || "GUIDE"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
+              className: "docs-title-heading",
+              children: doc.title
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+              className: "docs-summary-lead",
+              children: doc.summary
+            }), doc.details && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+              className: "docs-details-text",
+              children: doc.details
+            })]
+          }), doc.features && doc.features.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "docs-detail-section",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+              children: "\u2728 Key Features"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("ul", {
+              className: "docs-features-grid",
+              children: doc.features.map((feat, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                  className: "feature-check",
+                  children: "\u2713"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                  children: feat
+                })]
+              }, index))
+            })]
+          }), doc.usageSteps && doc.usageSteps.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "docs-detail-section",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+              children: "\uD83D\uDE80 How To Use"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("ol", {
+              className: "docs-steps-list",
+              children: doc.usageSteps.map((step, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                  className: "step-badge",
+                  children: index + 1
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                  className: "step-desc",
+                  children: step
+                })]
+              }, index))
+            })]
+          })]
+        })]
+      })]
+    })
+  });
+  return typeof document !== "undefined" ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createPortal)(modalContent, document.body) : modalContent;
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DocsModal);
+
+/***/ },
+
+/***/ "../tr-tools/AdminDashboard/DocsModal/data.js"
+/*!****************************************************!*\
+  !*** ../tr-tools/AdminDashboard/DocsModal/data.js ***!
+  \****************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   docsContentData: () => (/* binding */ docsContentData),
+/* harmony export */   navCategories: () => (/* binding */ navCategories)
+/* harmony export */ });
+const navCategories = [{
+  key: "getting-started",
+  label: "Getting Started",
+  items: [{
+    key: "intro",
+    label: "Introduction"
+  }, {
+    key: "requirement",
+    label: "Requirement"
+  }, {
+    key: "installation",
+    label: "Installation"
+  }
+  // { key: "purchase", label: "Purchase Process" },
+  // { key: "license", label: "License Activation" },
+  ]
+}, {
+  key: "how-to-use",
+  label: "How To Use",
+  items: [{
+    key: "before-after",
+    label: "Before/After Slider"
+  }, {
+    key: "accordion",
+    label: "FAQ Accordion"
+  }, {
+    key: "audio-player",
+    label: "Audio Player"
+  }, {
+    key: "pricing-table",
+    label: "Pricing Table"
+  }, {
+    key: "button",
+    label: "Action Button"
+  }, {
+    key: "contact-form",
+    label: "Contact Form"
+  }, {
+    key: "marquee",
+    label: "Marquee Slider"
+  }, {
+    key: "scroll-story",
+    label: "Scroll Story"
+  }, {
+    key: "table-of-contents",
+    label: "Table of Contents"
+  }, {
+    key: "qr-code",
+    label: "QR Code Generator"
+  }]
+}, {
+  key: "faqs",
+  label: "FAQs",
+  items: [{
+    key: "faqs",
+    label: "Frequently Asked Questions"
+  }]
+}];
+const docsContentData = {
+  // Getting Started
+  intro: {
+    category: "Getting Started",
+    title: "Introduction",
+    breadcrumb: ["Docs", "Getting Started", "Introduction"],
+    summary: "Welcome to XpoBlock! Transform your standard WordPress editor into a modern, motion-ready block builder suite.",
+    details: "XpoBlock is designed for performance, flexibility, and ease of use. It offers 11+ lightweight blocks including interactive Before/After image comparison, FAQ accordions, custom audio waveform players, dynamic pricing tables, and marquee sliders.",
+    // features: [
+    //   "11+ Core Gutenberg Blocks with zero bloat",
+    //   "Modular asset loading (loads CSS/JS only when block is active)",
+    //   "Fully responsive and mobile optimized out of the box",
+    //   "SEO friendly HTML5 structure and schema markup",
+    // ],
+    usageSteps: ["Install and activate the XpoBlock plugin.", "Navigate to WP Admin > XpoBlock to view and toggle available blocks.", "Open any page or post in Gutenberg editor to start adding blocks."]
+  },
+  requirement: {
+    category: "Getting Started",
+    title: "Requirement",
+    breadcrumb: ["Docs", "Getting Started", "Requirement"],
+    summary: "Minimum system and WordPress environment requirements for optimal performance.",
+    details: "Ensure your web hosting environment meets the following specifications to get the best experience with XpoBlock.",
+    features: ["WordPress Version: 5.9 or higher (WordPress 6.0+ recommended)", "PHP Version: 7.4 or higher (PHP 8.1+ recommended)", "MySQL Version: 5.6+ or MariaDB 10.1+", "Gutenberg Block Editor enabled"],
+    usageSteps: ["Check your WordPress version under Dashboard > Updates.", "Verify PHP version under Tools > Site Health > Info.", "Ensure modern browser compatibility (Chrome, Firefox, Edge, Safari)."]
+  },
+  installation: {
+    category: "Getting Started",
+    title: "Installation",
+    breadcrumb: ["Docs", "Getting Started", "Installation"],
+    summary: "Like any other WordPress plugin, you can easily install and activate XpoBlock directly from the WordPress Plugin Directory.",
+    details: "Go to your WordPress Dashboard and navigate to Plugins > Add New. In the search bar, type 'XpoBlock', then click the Install Now button when the plugin appears in the results.",
+    features: ["One-click installation via WordPress Plugin Directory", "Manual ZIP upload support via WP Admin", "Automatic updates support", "Zero database pollution on uninstall"],
+    usageSteps: ["Go to your WordPress Dashboard and click Plugins > Add New.", "In the search box, type 'XpoBlock' and press enter.", "Click 'Install Now' on the XpoBlock plugin card.", "Click 'Activate' once the installation finishes."]
+  },
+  // purchase: {
+  //   category: "Getting Started",
+  //   title: "Purchase Process",
+  //   breadcrumb: ["Docs", "Getting Started", "Purchase Process"],
+  //   summary:
+  //     "How to purchase and upgrade to XpoBlock PRO for premium blocks and priority support.",
+  //   details:
+  //     "Upgrading to XpoBlock PRO unlocks 35+ advanced blocks, motion profiles, parallax effects, and 24/7 dedicated support.",
+  //   features: [
+  //     "Single Site, 5-Site, and Unlimited Site License tiers",
+  //     "Instant license key generation upon purchase",
+  //     "14-Day Money-Back Guarantee",
+  //     "Automatic 1-click update notifications in WP Admin",
+  //   ],
+  //   usageSteps: [
+  //     "Visit xpoblock.com/pro and choose your preferred pricing tier.",
+  //     "Complete the checkout process with PayPal or Credit Card.",
+  //     "Download the XpoBlock PRO ZIP file from your confirmation email.",
+  //     "Upload the ZIP file under Plugins > Add New > Upload Plugin.",
+  //   ],
+  // },
+
+  // license: {
+  //   category: "Getting Started",
+  //   title: "License Activation",
+  //   breadcrumb: ["Docs", "Getting Started", "License Activation"],
+  //   summary:
+  //     "Activate your license key to enable automatic updates and premium features.",
+  //   details:
+  //     "After installing XpoBlock PRO, enter your valid license key to receive lifetime plugin updates and premium templates.",
+  //   features: [
+  //     "Seamless 1-click key validation",
+  //     "Deactivate & re-activate license on new staging domains",
+  //     "Real-time license status monitoring",
+  //   ],
+  //   usageSteps: [
+  //     "Go to XpoBlock > License in your WP Dashboard.",
+  //     "Paste your license key into the designated input box.",
+  //     "Click 'Activate License' and enjoy all PRO features.",
+  //   ],
+  // },
+
+  // How To Use (Block Guides)
+  "before-after": {
+    category: "How To Use",
+    title: "Before/After Slider",
+    breadcrumb: ["Docs", "How To Use", "Before/After Slider"],
+    summary: "Interactive image comparison block allowing users to drag a split handle to compare two images side-by-side.",
+    details: "Perfect for showcasing renovation projects, photo editing results, design makeovers, and dental/medical transformations.",
+    features: ["Dual Image Upload (Before image & After image support)", "Customizable slider handle color, glow intensity, and initial position", "Custom text labels for Before and After badges"],
+    usageSteps: ["Add the 'Before/After Slider' block into your Gutenberg canvas.", "In the Block Settings sidebar, select your 'Before' and 'After' media images.", "Pick your preferred slider handle style.", "Save and publish your post to test the live touch/mouse drag comparison."]
+  },
+  accordion: {
+    category: "How To Use",
+    title: "FAQ Accordion",
+    breadcrumb: ["Docs", "How To Use", "FAQ Accordion"],
+    summary: "Organize collapsible text panels for frequently asked questions, product specs, or structured documentation.",
+    details: "Improves page readability and SEO with structured Schema.org FAQ markup for Google rich snippets.",
+    features: ["Unlimited accordion item repeater", "Single-item open or multi-item expand modes", "Custom expandable icons (+ / -, chevron, arrow)", "Rich text editing inside accordion bodies"],
+    usageSteps: ["Insert the 'FAQ Accordion' block onto your page.", "Click 'Add Accordion Item' to create new question/answer rows.", "Customize question typography, active background color, and icon placement in settings.", "Preview collapsible smooth animations on desktop and mobile viewports."]
+  },
+  "audio-player": {
+    category: "How To Use",
+    title: "Audio Player",
+    breadcrumb: ["Docs", "How To Use", "Audio Player"],
+    summary: "Futuristic neon audio player block featuring dynamic equalizer wave animations, playback speed controls, and volume adjustments.",
+    details: "Ideal for podcasters, musicians, voiceover artists, and audio course creators.",
+    features: ["Direct MP3 file upload or external audio stream URL", "Dynamic audio spectrum equalizer visualizer", "1.0x - 2.0x playback speed toggles", "Custom cover image and artist subtitle display"],
+    usageSteps: ["Add the 'Audio Player' block to your layout.", "Upload an MP3 file via the WordPress Media Library or insert an audio URL.", "Set track title, artist name, and album artwork.", "Choose player theme colors in the sidebar inspector."]
+  },
+  "pricing-table": {
+    category: "How To Use",
+    title: "Pricing Table",
+    breadcrumb: ["Docs", "How To Use", "Pricing Table"],
+    summary: "Display responsive pricing tiers with highlighted featured plans, feature checklists, and action buttons.",
+    details: "Designed for SaaS products, service agencies, memberships, and digital downloads.",
+    features: ["Multi-column plan comparison cards", "Highlighted 'Popular' or 'Best Value' plan ribbons", "Monthly / Annual price toggle switch support", "Custom checkmark list items and CTA buttons"],
+    usageSteps: ["Insert the 'Pricing Table' block into your page.", "Configure plan names (Basic, Pro, Agency) and pricing values.", "Enable the 'Featured' toggle on your primary plan to highlight it with a neon border.", "Set button link URLs for direct checkout redirection."]
+  },
+  button: {
+    category: "How To Use",
+    title: "Action Button",
+    breadcrumb: ["Docs", "How To Use", "Action Button"],
+    summary: "High-converting call-to-action button with hover glow effects, icon pickers, and smooth click animations.",
+    details: "Drive user actions with eye-catching button designs, customizable gradients, and smooth hover physics.",
+    features: ["Gradient backgrounds and neon glow shadows", "Integrated dashicon & SVG icon alignment", "Hover scale and lift animations", "Target window options (_self or _blank)"],
+    usageSteps: ["Add the 'Action Button' block to any content section.", "Type your button text and enter the target URL.", "Select icon position (Left or Right) and adjust border radius.", "Customize background gradients and hover state effects."]
+  },
+  "contact-form": {
+    category: "How To Use",
+    title: "Contact Form",
+    breadcrumb: ["Docs", "How To Use", "Contact Form"],
+    summary: "Clean, responsive contact form block with built-in AJAX submission, input validation, and customizable fields.",
+    details: "Receive inquiries directly to your email without needing heavy third-party form plugins.",
+    features: ["Field builder for Name, Email, Subject, and Message", "AJAX submission without page reloads", "Custom success toast and error notification messages", "Admin email receiver configuration"],
+    usageSteps: ["Insert the 'Contact Form' block into your page or contact section.", "Specify the recipient email address in block settings.", "Customize input placeholder text, submit button label, and button styling.", "Publish page and test submission."]
+  },
+  marquee: {
+    category: "How To Use",
+    title: "Marquee Slider",
+    breadcrumb: ["Docs", "How To Use", "Marquee Slider"],
+    summary: "Continuous smooth scrolling text and image ticker for announcements, brand logos, and trending tags.",
+    details: "Add high-energy visual movement to your site headers, client logo bars, or promotion tickers.",
+    features: ["Infinite seamless ticker loop animation", "Adjustable scroll speed and direction (Left / Right)", "Pause-on-hover interaction support", "Custom text badges, icons, or sponsor logos"],
+    usageSteps: ["Add the 'Marquee Slider' block to your page header or body.", "Add text items, tags, or logos to the ticker track.", "Adjust scroll speed (e.g. 20s per loop) in the inspector controls.", "Enable 'Pause on Hover' to let users inspect scrolling content."]
+  },
+  "scroll-story": {
+    category: "How To Use",
+    title: "Scroll Story",
+    breadcrumb: ["Docs", "How To Use", "Scroll Story"],
+    summary: "Engaging scroll-driven timeline story block that highlights steps or history as the user scrolls down.",
+    details: "Great for company timelines, product roadmaps, step-by-step tutorials, and event schedules.",
+    features: ["Scroll-triggered active step indicators", "Progress line fill as user scrolls down", "Step images, icons, and timestamp badges", "Smooth entry animations"],
+    usageSteps: ["Insert the 'Scroll Story' block on your page.", "Add story milestone steps with dates, titles, and descriptions.", "Upload milestone images or select custom step icons.", "Publish and test the scroll trigger active indicators."]
+  },
+  "table-of-contents": {
+    category: "How To Use",
+    title: "Table of Contents",
+    breadcrumb: ["Docs", "How To Use", "Table of Contents"],
+    summary: "Automatically parses post headings (H1-H6) to build a collapsible, smooth-scrolling Table of Contents.",
+    details: "Enhances blog post navigation, user experience, and Google search jump links.",
+    features: ["Automatic heading detection (H2, H3, H4)", "Smooth scroll offset alignment for fixed headers", "Collapsible box toggle (Expand / Collapse)", "SEO friendly schema markup"],
+    usageSteps: ["Place the 'Table of Contents' block at the top of your long-form article.", "Select which heading tags to include (e.g. H2 and H3).", "Customize container background, active indicator color, and typography.", "The block will automatically discover and link all headings on the page."]
+  },
+  "qr-code": {
+    category: "How To Use",
+    title: "QR Code Generator",
+    breadcrumb: ["Docs", "How To Use", "QR Code Generator"],
+    summary: "Generates customizable vector QR codes for websites, text, phone numbers, and emails with logo overlay and instant image download support.",
+    details: "Perfect for menus, event tickets, Wi-Fi passwords, contact vCards, and mobile app download links.",
+    features: ["URL, text, email, and phone QR code generator", "Custom foreground, background, and button colors", "Center logo overlay with white background badge option", "High-resolution PNG image download button on frontend"],
+    usageSteps: ["Add the 'QR Code Generator' block to your page layout.", "Enter your desired target URL or text in the Inspector sidebar.", "Customize colors, dimensions, and optionally upload a center logo.", "Save page and test frontend QR code scanning or PNG download."]
+  },
+  // FAQs
+  faqs: {
+    category: "FAQs",
+    title: "Frequently Asked Questions",
+    breadcrumb: ["Docs", "FAQs", "General Questions"],
+    summary: "Common questions and answers regarding XpoBlock compatibility and usage.",
+    details: "Find quick answers to common questions about theme compatibility, site speed, and updates.",
+    features: ["Does it work with any WordPress theme? Yes, 100% compatible with Block Themes and Classic Themes.", "Will it slow down my website? No, scripts and styles load conditionally on-demand (~12KB).", "Can I use it alongside Gutenberg plugins? Yes, it operates seamlessly without conflicts.", "Is it compatible with Elementor or WooCommerce? Yes, works inside WordPress block areas."],
+    usageSteps: ["If you experience any issues, verify your WordPress and PHP versions.", "Deactivate conflicting cache plugins if block styles are not updating.", "Contact support if you need further technical assistance."]
+  }
+};
+
+/***/ },
+
 /***/ "../tr-tools/Components/BackgroundControl/BackgroundControl.js"
 /*!*********************************************************************!*\
   !*** ../tr-tools/Components/BackgroundControl/BackgroundControl.js ***!
@@ -986,15 +1484,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _DocsLink_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DocsLink.scss */ "../tr-tools/Components/DocsLink/DocsLink.scss");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _AdminDashboard_DocsModal_DocsModal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../AdminDashboard/DocsModal/DocsModal */ "../tr-tools/AdminDashboard/DocsModal/DocsModal.jsx");
+/* harmony import */ var _DocsLink_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./DocsLink.scss */ "../tr-tools/Components/DocsLink/DocsLink.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
-const ExternalLinkIcon = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
+
+
+const ExternalLinkIcon = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("svg", {
   width: "12",
   height: "12",
   viewBox: "0 0 24 24",
@@ -1003,11 +1506,11 @@ const ExternalLinkIcon = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORT
   strokeWidth: "2.5",
   strokeLinecap: "round",
   strokeLinejoin: "round",
-  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
     d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("polyline", {
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("polyline", {
     points: "15 3 21 3 21 9"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("line", {
     x1: "10",
     y1: "14",
     x2: "21",
@@ -1018,14 +1521,35 @@ const DocsLink = ({
   link,
   text
 }) => {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    className: "gbb-inspector-docs-wrapper",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
-      href: link,
-      target: "_blank",
-      rel: "noopener noreferrer",
-      children: [text || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Documentation', 'tr-tools'), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(ExternalLinkIcon, {})]
-    })
+  const [isOpen, setIsOpen] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const getBlockKey = url => {
+    if (!url) return 'table-of-contents';
+    const cleanUrl = String(url).trim().replace(/\/$/, '');
+    const parts = cleanUrl.split('/');
+    return parts[parts.length - 1] || 'table-of-contents';
+  };
+  const blockKey = getBlockKey(link);
+  const handleClick = e => {
+    e.preventDefault();
+    setIsOpen(true);
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      className: "gbb-inspector-docs-wrapper",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("a", {
+        href: link || '#',
+        onClick: handleClick,
+        style: {
+          cursor: 'pointer'
+        },
+        children: [text || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Documentation', 'tr-tools'), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(ExternalLinkIcon, {})]
+      })
+    }), isOpen && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AdminDashboard_DocsModal_DocsModal__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      block: {
+        id: blockKey
+      },
+      onClose: () => setIsOpen(false)
+    })]
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DocsLink);
@@ -5185,6 +5709,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-block';
 const General = ({
   attributes,
   setAttributes
@@ -5202,7 +5727,7 @@ const General = ({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template Presets', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template Presets', textDomain),
       initialOpen: true,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
         style: {
@@ -5210,7 +5735,7 @@ const General = ({
           color: '#64748b',
           marginBottom: '12px'
         },
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Switch or apply a predefined Table of Contents template style.', 'guten-builder-blocks')
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Switch or apply a predefined Table of Contents template style.', textDomain)
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
         isSecondary: true,
         onClick: () => setAttributes((0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.updateData)(attributes, '', 'selectedTemplate')),
@@ -5218,32 +5743,32 @@ const General = ({
           width: '100%',
           justifyContent: 'center'
         },
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Change Template', 'guten-builder-blocks')
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Change Template', textDomain)
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Dimensions & Layout', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Dimensions & Layout', textDomain),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.UnitControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container Max Width', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container Max Width', textDomain),
         value: containerWidth,
         defaultVal: "1140px",
         onChange: val => setAttributes((0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.updateData)(attributes, val, 'containerWidth')),
         units: [(0,tr_tools__WEBPACK_IMPORTED_MODULE_2__.pxUnit)(1140), (0,tr_tools__WEBPACK_IMPORTED_MODULE_2__.perUnit)(100)]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.UnitControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Spacing Between Items', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Spacing Between Items', textDomain),
         value: itemsGap,
         onChange: val => setAttributes((0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.updateData)(attributes, val, 'itemsGap')),
         units: [(0,tr_tools__WEBPACK_IMPORTED_MODULE_2__.pxUnit)(12)],
         defaultVal: "12px"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.UnitControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Sidebar Width', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Sidebar Width', textDomain),
         value: sidebarWidth,
         defaultVal: "320px",
         onChange: val => setAttributes((0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.updateData)(attributes, val, 'sidebarWidth')),
         units: [(0,tr_tools__WEBPACK_IMPORTED_MODULE_2__.pxUnit)(320), (0,tr_tools__WEBPACK_IMPORTED_MODULE_2__.perUnit)(30)]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.UnitControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Area Height', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Area Height', textDomain),
         value: contentHeight,
         defaultVal: "85vh",
         onChange: val => setAttributes((0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.updateData)(attributes, val, 'contentHeight')),
@@ -5251,37 +5776,37 @@ const General = ({
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Header & Content Text', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Header & Content Text', textDomain),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('TOC Title :', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('TOC Title :', textDomain),
         value: titleText,
         onChange: val => setAttributes((0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.updateData)(attributes, val, 'titleText')),
-        placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Table of Contents', 'guten-builder-blocks')
+        placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Table of Contents', textDomain)
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Main Title :', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Main Title :', textDomain),
         value: contentTitle,
         onChange: val => setAttributes((0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.updateData)(attributes, val, 'contentTitle')),
-        placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Main Content Title', 'guten-builder-blocks')
+        placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Main Content Title', textDomain)
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextareaControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Subtitle :', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Subtitle :', textDomain),
         value: contentSubtitle,
         onChange: val => setAttributes((0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.updateData)(attributes, val, 'contentSubtitle')),
-        placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Subtitle description', 'guten-builder-blocks'),
+        placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Subtitle description', textDomain),
         rows: 2
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ItemsPanel, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('TOC Items Manager', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('TOC Items Manager', textDomain),
       initialOpen: true,
       items: items,
       onChange: newItems => setAttributes((0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.updateData)(attributes, newItems, 'items')),
       defaultItem: {
         id: 'new-section',
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('New Section Title', 'guten-builder-blocks'),
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('New Section Title', textDomain),
         level: 2,
         paragraph: ''
       },
-      addButtonLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Add TOC Item', 'guten-builder-blocks'),
+      addButtonLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Add TOC Item', textDomain),
       itemTitleKey: "title",
       ItemSettings: _PanelItems__WEBPACK_IMPORTED_MODULE_4__["default"]
     })]
@@ -5310,7 +5835,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const defaultParagraph = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('This area contains the contextual contents mapped perfectly from the reference URL. Custom logic structure applies standard WordPress ecosystem optimization procedures natively.', 'guten-builder-blocks');
+const textDomain = 'xpo-block';
+const defaultParagraph = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('This area contains the contextual contents mapped perfectly from the reference URL. Custom logic structure applies standard WordPress ecosystem optimization procedures natively.', textDomain);
 const PanelItems = ({
   item,
   updateField
@@ -5323,31 +5849,31 @@ const PanelItems = ({
       paddingBottom: '8px'
     },
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title :', 'guten-builder-blocks'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title :', textDomain),
       value: item.title !== undefined ? item.title : '',
       onChange: val => updateField('title', val)
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Anchor ID (Optional) :', 'guten-builder-blocks'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Anchor ID (Optional) :', textDomain),
       value: item.id !== undefined ? item.id : '',
       onChange: val => updateField('id', val),
-      help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enter a custom section ID. If left empty, an automatic ID will be generated from the title.', 'guten-builder-blocks')
+      help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enter a custom section ID. If left empty, an automatic ID will be generated from the title.', textDomain)
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Heading Level :', 'guten-builder-blocks'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Heading Level :', textDomain),
       value: item.level !== undefined ? item.level : 2,
       options: [{
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('H2', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('H2', textDomain),
         value: 2
       }, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('H3', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('H3', textDomain),
         value: 3
       }, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('H4', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('H4', textDomain),
         value: 4
       }],
       onChange: val => updateField('level', Number(val)),
       __next40pxDefaultSize: true
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextareaControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Section Content :', 'guten-builder-blocks'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Section Content :', textDomain),
       value: item.paragraph !== undefined ? item.paragraph : defaultParagraph,
       onChange: val => updateField('paragraph', val),
       rows: 3
@@ -5388,6 +5914,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-block';
 const Settings = ({
   attributes,
   setAttributes,
@@ -5403,10 +5930,10 @@ const Settings = ({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_6__.DocsLink, {
       link: "https://gutenbuilder.com/docs/table-of-contents",
-      text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Documentation', 'guten-builder-blocks')
+      text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Documentation', textDomain)
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TabPanel, {
-      className: "guten-builder-blocks-tab-panel wp-block-guten-builder-blocks-table-of-contents",
-      activeClass: "guten-builder-blocks-active-tab",
+      className: "wp-xpo-tab-panel",
+      activeClass: "wp-xpo-tab-panel-active-tab",
       tabs: _utils_options__WEBPACK_IMPORTED_MODULE_3__.generalStyleTabs,
       children: tab => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
         children: ['general' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_General_General__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -5450,6 +5977,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-block';
 const Style = ({
   attributes,
   setAttributes
@@ -5488,10 +6016,10 @@ const Style = ({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Sidebar Header', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Sidebar Header', textDomain),
       initialOpen: true,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BorderControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Sidebar Border', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Sidebar Border', textDomain),
         value: sidebarBorder,
         onChange: val => setAttributes({
           sidebarBorder: val
@@ -5503,7 +6031,7 @@ const Style = ({
           side: 'all'
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.SpacingControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Sidebar Border Radius', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Sidebar Border Radius', textDomain),
         value: sidebarBorderRadius,
         onChange: val => setAttributes({
           sidebarBorderRadius: val
@@ -5516,28 +6044,28 @@ const Style = ({
           left: '0px'
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Header Background', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Header Background', textDomain),
         value: headerBgColor,
         onChange: val => setAttributes({
           headerBgColor: val
         }),
         defaultColor: "#f9fafb"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Header Text Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Header Text Color', textDomain),
         value: headerTextColor,
         onChange: val => setAttributes({
           headerTextColor: val
         }),
         defaultColor: "#1e293b"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Icon Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Icon Color', textDomain),
         value: iconColor,
         onChange: val => setAttributes({
           iconColor: val
         }),
         defaultColor: "#64748b"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Header Typography', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Header Typography', textDomain),
         value: sideHeaderTypography,
         onChange: val => setAttributes({
           sideHeaderTypography: val
@@ -5557,13 +6085,13 @@ const Style = ({
           fontStyle: ''
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.UnitControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Header icon Size', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Header icon Size', textDomain),
         value: headerIconSize,
         onChange: val => setAttributes((0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(attributes, val, 'headerIconSize')),
         units: [(0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.pxUnit)()],
         defaultVal: "20px"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BorderControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border Line ', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border Line ', textDomain),
         value: headerBorderWidth,
         onChange: val => setAttributes({
           headerBorderWidth: val
@@ -5578,17 +6106,17 @@ const Style = ({
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Sidebar Content', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Sidebar Content', textDomain),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Background', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Background', textDomain),
         value: sidebarBgColor,
         onChange: val => setAttributes({
           sidebarBgColor: val
         }),
         defaultColor: "#f9fafb"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text Typography', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text Typography', textDomain),
         value: sidebarItemTypography,
         onChange: val => setAttributes({
           sidebarItemTypography: val
@@ -5608,34 +6136,34 @@ const Style = ({
           fontStyle: ''
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text Color', textDomain),
         value: sidebarItemColor,
         onChange: val => setAttributes({
           sidebarItemColor: val
         }),
         defaultColor: "#475569"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.UnitControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text Icon Size', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text Icon Size', textDomain),
         value: sideTextIconSize,
         onChange: val => setAttributes((0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(attributes, val, 'sideTextIconSize')),
         units: [(0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.pxUnit)()],
         defaultVal: "18px"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Item Active Background', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Item Active Background', textDomain),
         value: activeHeaderBgColor,
         onChange: val => setAttributes({
           activeHeaderBgColor: val
         }),
         defaultColor: "#1573d1"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Active Text Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Active Text Color', textDomain),
         value: activeTextColor,
         onChange: val => setAttributes({
           activeTextColor: val
         }),
         defaultColor: "#ffffff"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BorderControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Active Border Line', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Active Border Line', textDomain),
         value: activeBorderLine,
         onChange: val => setAttributes({
           activeBorderLine: val
@@ -5647,14 +6175,14 @@ const Style = ({
           side: 'left'
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Active Icon Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Active Icon Color', textDomain),
         value: activeIconColor,
         onChange: val => setAttributes({
           activeIconColor: val
         }),
         defaultColor: "#0f172a"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.SpacingControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Active Border Radius', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Active Border Radius', textDomain),
         value: activeBorderRadius,
         onChange: val => setAttributes({
           activeBorderRadius: val
@@ -5669,17 +6197,17 @@ const Style = ({
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {})]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Header', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Header', textDomain),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Background', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Background', textDomain),
         value: contentBgColor,
         onChange: val => setAttributes({
           contentBgColor: val
         }),
         defaultColor: "#f9fafb"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.SpacingControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border Radius', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border Radius', textDomain),
         value: contentBorderRadius,
         onChange: val => setAttributes({
           contentBorderRadius: val
@@ -5692,7 +6220,7 @@ const Style = ({
           left: '0px'
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BorderControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border', textDomain),
         value: contentBorder,
         onChange: val => setAttributes({
           contentBorder: val
@@ -5704,14 +6232,14 @@ const Style = ({
           side: 'all'
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Header Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Header Color', textDomain),
         value: contentHeaderTextColor,
         onChange: val => setAttributes({
           contentHeaderTextColor: val
         }),
         defaultColor: "#1e293b"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text Typography', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text Typography', textDomain),
         value: contentHeaderTypography,
         onChange: val => setAttributes({
           contentHeaderTypography: val
@@ -5731,7 +6259,7 @@ const Style = ({
           fontStyle: ''
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BorderControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border Line', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border Line', textDomain),
         value: contentHeaderBorderLine,
         onChange: val => setAttributes({
           contentHeaderBorderLine: val
@@ -5743,14 +6271,14 @@ const Style = ({
           side: 'bottom'
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Description Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Description Color', textDomain),
         value: contentDescriptionColor,
         onChange: val => setAttributes({
           contentDescriptionColor: val
         }),
         defaultColor: "#6b7280"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Description Typography', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Description Typography', textDomain),
         value: contentDescriptionTypography,
         onChange: val => setAttributes({
           contentDescriptionTypography: val
@@ -5772,17 +6300,17 @@ const Style = ({
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {})]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content  Area', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content  Area', textDomain),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Title Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Title Color', textDomain),
         value: contentTitleColor,
         onChange: val => setAttributes({
           contentTitleColor: val
         }),
         defaultColor: "#111827"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Title Typography', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Title Typography', textDomain),
         value: contentTitleTypography,
         onChange: val => setAttributes({
           contentTitleTypography: val
@@ -5802,14 +6330,14 @@ const Style = ({
           fontStyle: ''
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Paragraph Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Paragraph Color', textDomain),
         value: contentParagraphColor,
         onChange: val => setAttributes({
           contentParagraphColor: val
         }),
         defaultColor: "#4b5563"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Paragraph Typography', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Paragraph Typography', textDomain),
         value: contentParagraphTypography,
         onChange: val => setAttributes({
           contentParagraphTypography: val
@@ -5893,27 +6421,27 @@ const DynamicStyles = ({
   const mainSl = `#${id}`;
 
   // --- SIDEBAR SELECTORS ---
-  const wrapper = `${mainSl} .gbb-toc-wrapper`;
-  const sidebar = `${wrapper} .gbb-toc-sidebar`;
-  const stickyBox = `${sidebar} .gbb-toc-sticky-box`;
-  const header = `${stickyBox} .gbb-toc-header`;
-  const headerText = `${header} .gbb-toc-header-title`;
-  const headerContentText = `${headerText} .gbb-toc-header-text`;
-  const icon = `${headerText} .gbb-toc-header-icon, ${header} .gbb-toc-arrow-icon`;
-  const body = `${stickyBox} .gbb-toc-body`;
-  const linkContainer = `${body} .gbb-toc-list-container`;
-  const list = `${linkContainer} .gbb-toc-list`;
-  const item = `${list} .gbb-toc-item`;
-  const link = `${item} .gbb-toc-link`;
+  const wrapper = `${mainSl} .xpo-toc-wrapper`;
+  const sidebar = `${wrapper} .xpo-toc-sidebar`;
+  const stickyBox = `${sidebar} .xpo-toc-sticky-box`;
+  const header = `${stickyBox} .xpo-toc-header`;
+  const headerText = `${header} .xpo-toc-header-title`;
+  const headerContentText = `${headerText} .xpo-toc-header-text`;
+  const icon = `${headerText} .xpo-toc-header-icon, ${header} .xpo-toc-arrow-icon`;
+  const body = `${stickyBox} .xpo-toc-body`;
+  const linkContainer = `${body} .xpo-toc-list-container`;
+  const list = `${linkContainer} .xpo-toc-list`;
+  const item = `${list} .xpo-toc-item`;
+  const link = `${item} .xpo-toc-link`;
   const itemActive = `${item}.is-active`;
 
   // --- CONTENT AREA SELECTORS ---
-  const contentArea = `${wrapper} .gbb-toc-content-area`;
-  const contentTitle = `${contentArea} .gbb-toc-content-title`;
-  const contentSubtitle = `${contentArea} .gbb-toc-content-subtitle`;
-  const sectionWrapper = `${contentArea} .gbb-toc-section-wrapper`;
-  const sectionHeading = `${sectionWrapper} .gbb-toc-section-heading-2, ${sectionWrapper} .gbb-toc-section-heading-3`;
-  const sectionParagraph = `${sectionWrapper} .gbb-toc-section-paragraph`;
+  const contentArea = `${wrapper} .xpo-toc-content-area`;
+  const contentTitle = `${contentArea} .xpo-toc-content-title`;
+  const contentSubtitle = `${contentArea} .xpo-toc-content-subtitle`;
+  const sectionWrapper = `${contentArea} .xpo-toc-section-wrapper`;
+  const sectionHeading = `${sectionWrapper} .xpo-toc-section-heading-2, ${sectionWrapper} .xpo-toc-section-heading-3`;
+  const sectionParagraph = `${sectionWrapper} .xpo-toc-section-paragraph`;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("style", {
     dangerouslySetInnerHTML: {
       __html: `
@@ -6088,6 +6616,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const prefix = 'xpo';
 const TemplateOne = ({
   attributes,
   setAttributes
@@ -6127,18 +6656,18 @@ const TemplateOne = ({
     });
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    className: "gbb-toc-wrapper",
+    className: `${prefix}-toc-wrapper`,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "gbb-toc-sidebar",
+      className: `${prefix}-toc-sidebar`,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        className: "gbb-toc-sticky-box",
+        className: `${prefix}-toc-sticky-box`,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "gbb-toc-header",
+          className: `${prefix}-toc-header`,
           onClick: () => setIsOpen(!isOpen),
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-            className: "gbb-toc-header-title",
+            className: `${prefix}-toc-header-title`,
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
-              className: "gbb-toc-header-icon",
+              className: `${prefix}-toc-header-icon`,
               fill: "none",
               stroke: "currentColor",
               strokeWidth: "2",
@@ -6150,20 +6679,20 @@ const TemplateOne = ({
               })
             }), isEditor ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
               tagName: "span",
-              className: "gbb-toc-header-text",
+              className: `${prefix}-toc-header-text`,
               value: titleText,
               onChange: val => setAttributes({
                 titleText: val
               }),
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter Table of Contents Title here....', 'guten-builder-blocks'),
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter Table of Contents Title here....', 'xpo-block'),
               onClick: e => e.stopPropagation()
             }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
               tagName: "span",
-              className: "gbb-toc-header-text",
+              className: `${prefix}-toc-header-text`,
               value: titleText
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
-            className: `gbb-toc-arrow-icon ${isOpen ? 'open' : 'closed'}`,
+            className: `${prefix}-toc-arrow-icon ${isOpen ? 'open' : 'closed'}`,
             fill: "none",
             stroke: "currentColor",
             strokeWidth: "2",
@@ -6175,18 +6704,18 @@ const TemplateOne = ({
             })
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-          className: `gbb-toc-body ${isOpen ? 'open' : 'closed'}`,
+          className: `${prefix}-toc-body ${isOpen ? 'open' : 'closed'}`,
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "gbb-toc-list-container",
+            className: `${prefix}-toc-list-container`,
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul", {
-              className: "gbb-toc-list",
+              className: `${prefix}-toc-list`,
               children: items.map((item, index) => {
                 const itemId = (0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.getItemId)(item, index);
                 return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-                  className: `gbb-toc-item level-${item.level} ${activeId === itemId ? 'is-active' : ''}`,
+                  className: `${prefix}-toc-item level-${item.level} ${activeId === itemId ? 'is-active' : ''}`,
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("button", {
                     onClick: e => handleSmoothScroll(itemId, e),
-                    className: `gbb-toc-link level-${item.level}`,
+                    className: `${prefix}-toc-link level-${item.level}`,
                     children: [item.level > 2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
                       width: "12",
                       height: "12",
@@ -6206,7 +6735,7 @@ const TemplateOne = ({
                       tagName: "span",
                       value: item.title,
                       onChange: val => updateItemField(index, 'title', val),
-                      placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Item title...', 'guten-builder-blocks')
+                      placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Item title...', 'xpo-block')
                     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
                       tagName: "span",
                       value: item.title
@@ -6219,64 +6748,64 @@ const TemplateOne = ({
         })]
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-      className: "gbb-toc-content-area",
+      className: `${prefix}-toc-content-area`,
       children: [isEditor ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
           tagName: "h1",
-          className: "gbb-toc-content-title",
+          className: `${prefix}-toc-content-title`,
           value: contentTitle,
           onChange: val => setAttributes({
             contentTitle: val
           }),
-          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter content title...', 'guten-builder-blocks')
+          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter content title...', 'xpo-block')
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
           tagName: "p",
-          className: "gbb-toc-content-subtitle",
+          className: `${prefix}-toc-content-subtitle`,
           value: contentSubtitle,
           onChange: val => setAttributes({
             contentSubtitle: val
           }),
-          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter subtitle...', 'guten-builder-blocks')
+          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter subtitle...', 'xpo-block')
         })]
       }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
         children: [contentTitle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
           tagName: "h1",
-          className: "gbb-toc-content-title",
+          className: `${prefix}-toc-content-title`,
           value: contentTitle
         }), contentSubtitle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
           tagName: "p",
-          className: "gbb-toc-content-subtitle",
+          className: `${prefix}-toc-content-subtitle`,
           value: contentSubtitle
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "gbb-toc-section-wrapper",
+        className: `${prefix}-toc-section-wrapper`,
         children: items.map((section, index) => {
           const sectionId = (0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.getItemId)(section, index);
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
             id: sectionId,
-            className: "gbb-toc-section-block",
+            className: `${prefix}-toc-section-block`,
             children: isEditor ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
                 tagName: section.level === 2 ? 'h2' : 'h3',
-                className: section.level === 2 ? 'gbb-toc-section-heading-2' : 'gbb-toc-section-heading-3',
+                className: section.level === 2 ? `${prefix}-toc-section-heading-2` : `${prefix}-toc-section-heading-3`,
                 value: section.title,
                 onChange: val => updateItemField(index, 'title', val),
-                placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Section heading...', 'guten-builder-blocks')
+                placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Section heading...', 'xpo-block')
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
                 tagName: "p",
-                className: "gbb-toc-section-paragraph",
+                className: `${prefix}-toc-section-paragraph`,
                 value: section.paragraph || sectionParagraph,
                 onChange: val => updateItemField(index, 'paragraph', val),
-                placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Section paragraph...', 'guten-builder-blocks')
+                placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Section paragraph...', 'xpo-block')
               })]
             }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
                 tagName: section.level === 2 ? 'h2' : 'h3',
-                className: section.level === 2 ? 'gbb-toc-section-heading-2' : 'gbb-toc-section-heading-3',
+                className: section.level === 2 ? `${prefix}-toc-section-heading-2` : `${prefix}-toc-section-heading-3`,
                 value: section.title
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
                 tagName: "p",
-                className: "gbb-toc-section-paragraph",
+                className: `${prefix}-toc-section-paragraph`,
                 value: section.paragraph || sectionParagraph
               })]
             })
@@ -6333,18 +6862,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./icons */ "./src/blocks/table-of-contents/utils/icons.js");
 
 
+const textDomain = 'xpo-block';
 const templateData = {
-  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select Table of Contents Template', 'guten-builder-blocks'),
-  subtitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Choose a design template for your table of contents.', 'guten-builder-blocks'),
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select Table of Contents Template', textDomain),
+  subtitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Choose a design template for your table of contents.', textDomain),
   templates: [{
     id: 'template-1',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template 1', 'guten-builder-blocks'),
-    tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Classic Table of Contents', 'guten-builder-blocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template 1', textDomain),
+    tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Classic Table of Contents', textDomain),
     icon: _icons__WEBPACK_IMPORTED_MODULE_1__.TemplateOneSvg,
     attributes: {
-      titleText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Table of Contents', 'guten-builder-blocks'),
-      contentTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('The Ultimate Guide to Modern Web Development', 'guten-builder-blocks'),
-      contentSubtitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Explore key concepts, architecture, design patterns, and performance optimization techniques for modern web applications.', 'guten-builder-blocks'),
+      titleText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Table of Contents', textDomain),
+      contentTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('The Ultimate Guide to Modern Web Development', textDomain),
+      contentSubtitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Explore key concepts, architecture, design patterns, and performance optimization techniques for modern web applications.', textDomain),
       items: [{
         id: '',
         title: 'Understanding Modern Web Architecture',
@@ -6904,6 +7434,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-block';
 const generalStyleTabs = [{
   name: 'general',
   title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
@@ -6911,7 +7442,7 @@ const generalStyleTabs = [{
       display: 'inline-flex',
       alignItems: 'center'
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.GeneralIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('General', 'guten-builder-blocks')]
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.GeneralIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('General', textDomain)]
   })
 }, {
   name: 'style',
@@ -6920,9 +7451,21 @@ const generalStyleTabs = [{
       display: 'inline-flex',
       alignItems: 'center'
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.StyleIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style', 'guten-builder-blocks')]
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.StyleIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style', textDomain)]
   })
 }];
+
+/***/ },
+
+/***/ "../tr-tools/AdminDashboard/DocsModal/docsModal.scss"
+/*!***********************************************************!*\
+  !*** ../tr-tools/AdminDashboard/DocsModal/docsModal.scss ***!
+  \***********************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
 
 /***/ },
 
@@ -8862,7 +9405,7 @@ var castImmutable = (value) => value;
   \*************************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"guten-builder-blocks/table-of-contents","version":"1.0.0","title":"Table of Contents","description":"Dynamic Table of Contents block to automatically generate a list of headings.","category":"guten-builder","keywords":["toc","table of contents","index","outline"],"textdomain":"guten-builder-blocks","attributes":{"align":{"type":"string","default":"wide"},"selectedTemplate":{"type":"string","default":""},"allowedHeaders":{"type":"array","default":["h2","h3","h4"]},"titleText":{"type":"string","default":""},"contentTitle":{"type":"string","default":""},"contentSubtitle":{"type":"string","default":""},"items":{"type":"array","default":[]},"containerWidth":{"type":"string","default":"1140px"},"itemsGap":{"type":"string","default":""},"sidebarWidth":{"type":"string","default":"320px"},"contentHeight":{"type":"string","default":"85vh"},"sidebarBorder":{"type":"object"},"sidebarBorderRadius":{"type":"string"},"headerBgColor":{"type":"string","default":""},"headerTextColor":{"type":"string","default":""},"iconColor":{"type":"string","default":"#64748b"},"sideHeaderTypography":{"type":"object","default":{}},"headerIconSize":{"type":"string","default":""},"headerBorderWidth":{"type":"object"},"sidebarBgColor":{"type":"string","default":""},"sidebarItemColor":{"type":"string","default":""},"sidebarItemTypography":{"type":"object","default":{}},"activeHeaderBgColor":{"type":"string","default":""},"activeTextColor":{"type":"string","default":""},"activeBorderLine":{"type":"object","default":""},"activeIconColor":{"type":"string","default":""},"activeBorderRadius":{"type":"string"},"sideTextIconSize":{"type":"string","default":""},"contentBgColor":{"type":"string","default":""},"contentBorderRadius":{"type":"string","default":""},"contentBorder":{"type":"object","default":""},"contentHeaderTextColor":{"type":"string","default":""},"contentHeaderTypography":{"type":"object","default":{}},"contentHeaderBorderLine":{"type":"object","default":""},"contentDescriptionColor":{"type":"string","default":""},"contentDescriptionTypography":{"type":"object","default":{}},"contentTitleColor":{"type":"string","default":""},"contentTitleTypography":{"type":"object","default":{}},"contentParagraphColor":{"type":"string","default":""},"contentParagraphTypography":{"type":"object","default":{}}},"supports":{"html":false,"anchor":true,"align":["wide","full"]},"editorScript":"file:./index.js","viewScript":"file:./view.js","style":"file:./style-view.css","editorStyle":"file:./index.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"xpo-block/table-of-contents","version":"1.0.0","title":"Table of Contents","description":"Dynamic Table of Contents block to automatically generate a list of headings.","category":"xpo-block","keywords":["toc","table of contents","index","outline"],"textdomain":"xpo-block","attributes":{"align":{"type":"string","default":"wide"},"selectedTemplate":{"type":"string","default":""},"allowedHeaders":{"type":"array","default":["h2","h3","h4"]},"titleText":{"type":"string","default":""},"contentTitle":{"type":"string","default":""},"contentSubtitle":{"type":"string","default":""},"items":{"type":"array","default":[]},"containerWidth":{"type":"string","default":"1140px"},"itemsGap":{"type":"string","default":""},"sidebarWidth":{"type":"string","default":"320px"},"contentHeight":{"type":"string","default":"85vh"},"sidebarBorder":{"type":"object"},"sidebarBorderRadius":{"type":"string"},"headerBgColor":{"type":"string","default":""},"headerTextColor":{"type":"string","default":""},"iconColor":{"type":"string","default":"#64748b"},"sideHeaderTypography":{"type":"object","default":{}},"headerIconSize":{"type":"string","default":""},"headerBorderWidth":{"type":"object"},"sidebarBgColor":{"type":"string","default":""},"sidebarItemColor":{"type":"string","default":""},"sidebarItemTypography":{"type":"object","default":{}},"activeHeaderBgColor":{"type":"string","default":""},"activeTextColor":{"type":"string","default":""},"activeBorderLine":{"type":"object","default":""},"activeIconColor":{"type":"string","default":""},"activeBorderRadius":{"type":"string"},"sideTextIconSize":{"type":"string","default":""},"contentBgColor":{"type":"string","default":""},"contentBorderRadius":{"type":"string","default":""},"contentBorder":{"type":"object","default":""},"contentHeaderTextColor":{"type":"string","default":""},"contentHeaderTypography":{"type":"object","default":{}},"contentHeaderBorderLine":{"type":"object","default":""},"contentDescriptionColor":{"type":"string","default":""},"contentDescriptionTypography":{"type":"object","default":{}},"contentTitleColor":{"type":"string","default":""},"contentTitleTypography":{"type":"object","default":{}},"contentParagraphColor":{"type":"string","default":""},"contentParagraphTypography":{"type":"object","default":{}}},"supports":{"html":false,"anchor":true,"align":["wide","full"]},"editorScript":"file:./index.js","viewScript":"file:./view.js","style":"file:./style-view.css","editorStyle":"file:./index.css","render":"file:./render.php"}');
 
 /***/ }
 
@@ -9038,7 +9581,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
-/******/ 		const chunkLoadingGlobal = globalThis["webpackChunkguten_builder_blocks"] ||= [];
+/******/ 		const chunkLoadingGlobal = globalThis["webpackChunkxpo_block"] ||= [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();

@@ -4,11 +4,11 @@
 @charset "UTF-8";
 /* Editor specific styles for Audio Player block */
 /* ব্লক এডিটর সাইডবারের TabPanel (যেমন: General / Style ট্যাব)-এর হেডার ট্যাব আইটেম এবং অ্যাক্টিভ ট্যাবের স্টাইলিং */
-.guten-builder-blocks-tab-panel .components-tab-panel__tabs {
+.wp-xpo-tab-panel .components-tab-panel__tabs {
   display: flex;
   border-bottom: 1px solid #e0e0e0;
 }
-.guten-builder-blocks-tab-panel .components-tab-panel__tabs .components-tab-panel__tabs-item {
+.wp-xpo-tab-panel .components-tab-panel__tabs .components-tab-panel__tabs-item {
   flex: 1;
   display: inline-flex;
   justify-content: center;
@@ -24,7 +24,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.guten-builder-blocks-tab-panel .components-tab-panel__tabs .components-tab-panel__tabs-item.guten-builder-blocks-active-tab {
+.wp-xpo-tab-panel .components-tab-panel__tabs .components-tab-panel__tabs-item.wp-xpo-tab-panel-active-tab {
   color: #F62477;
   border-bottom-color: #F62477;
   font-weight: 600;
@@ -2063,6 +2063,363 @@
   font-size: 16px;
   width: 16px;
   height: 16px;
+}
+/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!../tr-tools/AdminDashboard/DocsModal/docsModal.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************/
+/* ==========================================================================
+   Documentation Lightbox Modal & Sidebar Layout Styles
+   ========================================================================== */
+@keyframes fadeInDocsModal {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.docs-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999999;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: fadeInDocsModal 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.docs-modal-overlay .docs-layout-wrapper,
+.docs-modal-overlay .docs-modal-container {
+  position: relative;
+  background: #ffffff;
+  width: 100%;
+  max-width: 1060px;
+  height: 85vh;
+  max-height: 780px;
+  display: flex;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  /* Floating Close Button */
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-modal-close-btn,
+.docs-modal-overlay .docs-modal-container .docs-modal-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  z-index: 50;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-modal-close-btn svg,
+.docs-modal-overlay .docs-modal-container .docs-modal-close-btn svg {
+  display: block;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-modal-close-btn:hover,
+.docs-modal-overlay .docs-modal-container .docs-modal-close-btn:hover {
+  background: #ef4444;
+  color: #ffffff;
+  border-color: #ef4444;
+  transform: scale(1.08);
+}
+.docs-modal-overlay .docs-layout-wrapper,
+.docs-modal-overlay .docs-modal-container {
+  /* Left Sidebar Navigation */
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-sidebar,
+.docs-modal-overlay .docs-modal-container .docs-sidebar {
+  width: 270px;
+  background: #f8fafc;
+  border-right: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-sidebar .sidebar-header,
+.docs-modal-overlay .docs-modal-container .docs-sidebar .sidebar-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-sidebar .sidebar-header .sidebar-brand-icon,
+.docs-modal-overlay .docs-modal-container .docs-sidebar .sidebar-header .sidebar-brand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-sidebar .sidebar-header .sidebar-brand-title,
+.docs-modal-overlay .docs-modal-container .docs-sidebar .sidebar-header .sidebar-brand-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-sidebar .sidebar-nav,
+.docs-modal-overlay .docs-modal-container .docs-sidebar .sidebar-nav {
+  flex: 1;
+  padding: 20px 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-sidebar .sidebar-nav .nav-group .nav-group-header-btn,
+.docs-modal-overlay .docs-modal-container .docs-sidebar .sidebar-nav .nav-group .nav-group-header-btn {
+  width: 100%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 6px 10px;
+  margin-bottom: 6px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: capitalize;
+  border-radius: 6px;
+  transition: background 0.15s ease;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-sidebar .sidebar-nav .nav-group .nav-group-header-btn:hover,
+.docs-modal-overlay .docs-modal-container .docs-sidebar .sidebar-nav .nav-group .nav-group-header-btn:hover {
+  background: #f1f5f9;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-sidebar .sidebar-nav .nav-group .nav-group-header-btn .group-arrow,
+.docs-modal-overlay .docs-modal-container .docs-sidebar .sidebar-nav .nav-group .nav-group-header-btn .group-arrow {
+  color: #64748b;
+  display: block;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: rotate(-90deg);
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-sidebar .sidebar-nav .nav-group .nav-group-header-btn .group-arrow.open,
+.docs-modal-overlay .docs-modal-container .docs-sidebar .sidebar-nav .nav-group .nav-group-header-btn .group-arrow.open {
+  transform: rotate(0deg);
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-sidebar .sidebar-nav .nav-group .nav-items-list,
+.docs-modal-overlay .docs-modal-container .docs-sidebar .sidebar-nav .nav-group .nav-items-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-sidebar .sidebar-nav .nav-group .nav-items-list li .nav-item-btn,
+.docs-modal-overlay .docs-modal-container .docs-sidebar .sidebar-nav .nav-group .nav-items-list li .nav-item-btn {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-sidebar .sidebar-nav .nav-group .nav-items-list li .nav-item-btn:hover,
+.docs-modal-overlay .docs-modal-container .docs-sidebar .sidebar-nav .nav-group .nav-items-list li .nav-item-btn:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-sidebar .sidebar-nav .nav-group .nav-items-list li .nav-item-btn.active,
+.docs-modal-overlay .docs-modal-container .docs-sidebar .sidebar-nav .nav-group .nav-items-list li .nav-item-btn.active {
+  background: #e0e7ff;
+  color: #1d4ed8;
+  font-weight: 700;
+}
+.docs-modal-overlay .docs-layout-wrapper,
+.docs-modal-overlay .docs-modal-container {
+  /* Right Main Content Area */
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-main-content,
+.docs-modal-overlay .docs-modal-container .docs-main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  overflow: hidden;
+  /* Breadcrumb Header Bar */
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-main-content .docs-breadcrumb-bar,
+.docs-modal-overlay .docs-modal-container .docs-main-content .docs-breadcrumb-bar {
+  padding: 18px 28px;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  background: #ffffff;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-main-content .docs-breadcrumb-bar .home-icon,
+.docs-modal-overlay .docs-modal-container .docs-main-content .docs-breadcrumb-bar .home-icon {
+  color: #64748b;
+  display: block;
+  margin-right: 2px;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-main-content .docs-breadcrumb-bar .breadcrumb-sep,
+.docs-modal-overlay .docs-modal-container .docs-main-content .docs-breadcrumb-bar .breadcrumb-sep {
+  color: #cbd5e1;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-main-content .docs-breadcrumb-bar .breadcrumb-link,
+.docs-modal-overlay .docs-modal-container .docs-main-content .docs-breadcrumb-bar .breadcrumb-link {
+  color: #64748b;
+  font-weight: 500;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-main-content .docs-breadcrumb-bar .breadcrumb-current,
+.docs-modal-overlay .docs-modal-container .docs-main-content .docs-breadcrumb-bar .breadcrumb-current {
+  color: #0f172a;
+  font-weight: 700;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-main-content,
+.docs-modal-overlay .docs-modal-container .docs-main-content {
+  /* Content Scroll Body */
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-main-content .docs-content-body,
+.docs-modal-overlay .docs-modal-container .docs-main-content .docs-content-body {
+  flex: 1;
+  padding: 32px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-main-content .docs-content-body .content-title-section .docs-type-badge,
+.docs-modal-overlay .docs-modal-container .docs-main-content .docs-content-body .content-title-section .docs-type-badge {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 800;
+  background: #eff6ff;
+  color: #2563eb;
+  padding: 4px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-main-content .docs-content-body .content-title-section .docs-title-heading,
+.docs-modal-overlay .docs-modal-container .docs-main-content .docs-content-body .content-title-section .docs-title-heading {
+  margin: 0 0 10px;
+  font-size: 26px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-main-content .docs-content-body .content-title-section .docs-summary-lead,
+.docs-modal-overlay .docs-modal-container .docs-main-content .docs-content-body .content-title-section .docs-summary-lead {
+  font-size: 14.5px;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0 0 8px;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-main-content .docs-content-body .content-title-section .docs-details-text,
+.docs-modal-overlay .docs-modal-container .docs-main-content .docs-content-body .content-title-section .docs-details-text {
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-main-content .docs-content-body,
+.docs-modal-overlay .docs-modal-container .docs-main-content .docs-content-body {
+  /* Detail Sections */
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-main-content .docs-content-body .docs-detail-section h3,
+.docs-modal-overlay .docs-modal-container .docs-main-content .docs-content-body .docs-detail-section h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-main-content .docs-content-body .docs-detail-section .docs-features-grid,
+.docs-modal-overlay .docs-modal-container .docs-main-content .docs-content-body .docs-detail-section .docs-features-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-main-content .docs-content-body .docs-detail-section .docs-features-grid li,
+.docs-modal-overlay .docs-modal-container .docs-main-content .docs-content-body .docs-detail-section .docs-features-grid li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  color: #334155;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-main-content .docs-content-body .docs-detail-section .docs-features-grid li .feature-check,
+.docs-modal-overlay .docs-modal-container .docs-main-content .docs-content-body .docs-detail-section .docs-features-grid li .feature-check {
+  color: #10b981;
+  font-weight: 800;
+  font-size: 14px;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-main-content .docs-content-body .docs-detail-section .docs-steps-list,
+.docs-modal-overlay .docs-modal-container .docs-main-content .docs-content-body .docs-detail-section .docs-steps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-main-content .docs-content-body .docs-detail-section .docs-steps-list li,
+.docs-modal-overlay .docs-modal-container .docs-main-content .docs-content-body .docs-detail-section .docs-steps-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 12px 16px;
+  border-radius: 8px;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-main-content .docs-content-body .docs-detail-section .docs-steps-list li .step-badge,
+.docs-modal-overlay .docs-modal-container .docs-main-content .docs-content-body .docs-detail-section .docs-steps-list li .step-badge {
+  width: 22px;
+  height: 22px;
+  background: #2563eb;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.docs-modal-overlay .docs-layout-wrapper .docs-main-content .docs-content-body .docs-detail-section .docs-steps-list li .step-desc,
+.docs-modal-overlay .docs-modal-container .docs-main-content .docs-content-body .docs-detail-section .docs-steps-list li .step-desc {
+  font-size: 13.5px;
+  color: #334155;
+  line-height: 1.5;
 }
 /*!********************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!../tr-tools/Components/DocsLink/DocsLink.scss ***!

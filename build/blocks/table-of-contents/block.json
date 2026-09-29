@@ -1,18 +1,18 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "guten-builder-blocks/table-of-contents",
+  "name": "xpo-block/table-of-contents",
   "version": "1.0.0",
   "title": "Table of Contents",
   "description": "Dynamic Table of Contents block to automatically generate a list of headings.",
-  "category": "guten-builder",
+  "category": "xpo-block",
   "keywords": [
     "toc",
     "table of contents",
     "index",
     "outline"
   ],
-  "textdomain": "guten-builder-blocks",
+  "textdomain": "xpo-block",
   "attributes": {
     "align": {
       "type": "string",

@@ -1,121 +1,102 @@
-=== Guten Builder ===
-Contributors:		tomorroy
-Donate link:		https://gum.co/wpdonate/
-Tags:				block, gutenberg, button, cards, review
-Requires at least:	6.3+
-Tested up to:		6.5.5
-Stable tag:			1.0.0
-Requires PHP:		7.2
-License:			GPLv3 or later
-License URI:		http://www.gnu.org/licenses/gpl-3.0.html
+=== XpoBlock ===
+Contributors: tomorroy
+Donate link: https://gum.co/wpdonate/
+Tags: xpo-block, block, pricing-table, timeline, accordion
+Requires at least: 6.7
+Tested up to: 6.7
+Stable tag: 1.0.0
+Requires PHP: 7.4
+License: GPLv3 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Build beautiful WordPress websites with Button, Cards, and Review Gutenberg Blocks.
+Build beautiful WordPress websites with powerful and customizable Gutenberg blocks.
 
 == Description ==
 
-[Plugin Demo](https://bblockswp.com/demo/guten-builder-blocks) | [Documentation](https://bplugins.com/docs/guten-builder-blocks) | [Get Pro Version](https://bblockswp.com/demo/guten-builder-blocks/#pricing)
 
-**[Demos](https://bblockswp.com/demo/guten-builder-blocks)**
+XpoBlock provides a collection of beautifully designed, easily customizable Gutenberg blocks to enhance your WordPress website editing experience.
 
-Guten Builder provides a collection of beautifully designed, easily customizable Gutenberg blocks to enhance your WordPress website editing experience.
+=== Key Features & Included Blocks ===
 
-### Guten Builder Blocks
-- **Button Block**: Create stunning and highly customizable buttons.
-- **Cards Block**: Display content beautifully with versatile card layouts.
-- **Review Block**: Showcase customer reviews and ratings to build trust.
+* **Accordion Block**: Create collapsible content sections and FAQ accordions with ease.
+* **Audio Player Block**: Embed audio players with custom layout and control options.
+* **Before After Block**: Display interactive before-and-after image comparison sliders.
+* **Button Block**: Design eye-catching call-to-action buttons with custom styles and icons.
+* **Divider Block**: Add stylish section separators and custom horizontal dividers.
+* **Marquee Block**: Create smooth scrolling text tickers and animated content marquees.
+* **Newsletter Card Block**: Capture email leads with attractive newsletter subscription cards.
+* **Pricing Table Block**: Build responsive pricing tiers with badges and feature lists.
+* **QR Code Block**: Generate dynamic QR codes directly inside your Gutenberg editor.
+* **Scroll Story Block**: Create interactive, scroll-driven story elements and presentations.
+* **Table of Contents Block**: Auto-generate structured navigation headings for long posts.
 
+=== How to Use ===
 
-= How to use Guten Builder =
-- First, install the Guten Builder plugin from the WordPress dashboard.
-- Add the Button, Cards, or Review block from the block inserter in the Gutenberg editor.
-- You can change block settings from the right-side settings sidebar.
-- Enjoy!
+1. Install and activate the **XpoBlock** plugin from the WordPress dashboard.
+2. Open any post or page in the Gutenberg Block Editor.
+3. Click the **+** (Block Inserter) button and search for **XpoBlock** or specific block names.
+4. Insert your desired block and customize its options from the right-hand settings sidebar.
+5. Publish or update your page!
 
-* For installation help click on Installation Tab
+=== Support & Feedback ===
 
-
-### User Feedback
-
-#### ⭐⭐⭐⭐⭐ [Rating Title](rating link)
-
-❛❛***Rating Description***❜❜
-
-***-[Rating User](rating user url)***
-
-
-#### - Did you like this plugin? Dislike it? Have a feature request? [Please share your feedback with us](mailto:support@bplugins.com 'Send feedback')
-
+Have a question, feature request, or feedback?
+* [Visit Support Forum](https://wordpress.org/support/plugin/xpo-block/)
+* [Contact Us](mailto:support@bplugins.com)
 
 
 == Installation ==
 
-### From Gutenberg Editor:
-1. Go to the WordPress Block/Gutenberg Editor
-2. Search For **Guten Builder**
-3. Click on the desired block to add it
+=== From WordPress Dashboard ===
+1. Go to **Plugins** > **Add New**.
+2. Search for **XpoBlock**.
+3. Click **Install Now** and then **Activate**.
 
-### Download & Upload:
-1. Download the **Guten Builder** plugin (*.zip file*)
-2. In your admin area, go to the Plugins menu and click on **Add New**
-3. Click on **Upload Plugin** and choose the **`guten-builder-blocks.zip`** file and click on **Install Now**
-4. Activate the plugin and Enjoy!
+=== Uploading Zip File ===
+1. Download the plugin zip file (`xpo-block.zip`).
+2. Go to **Plugins** > **Add New** > **Upload Plugin**.
+3. Choose the zip file and click **Install Now**.
+4. Activate the plugin after installation completes.
 
-### Manually:
-1. Download and upload the **Guten Builder** plugin to the **`/wp-content/plugins/`** directory
-2. Activate the plugin through the Plugins menu in WordPress
+=== Manual Installation ===
+1. Extract the `xpo-block.zip` folder.
+2. Upload the `xpo-block` directory to `/wp-content/plugins/`.
+3. Activate **XpoBlock** through the **Plugins** menu in WordPress.
 
 
 == Frequently Asked Questions ==
 
 = Does it work with any WordPress theme? =
 
-Yes, it will work with any standard WordPress theme.
+Yes, XpoBlock is built using native WordPress Gutenberg standards and works seamlessly with all modern WordPress block and classic themes.
 
-= Can I change block settings? =
+= Can I customize individual block settings? =
 
-Yes, you can change block settings from the Gutenberg block editor's right sidebar.
+Yes, each block comes with extensive control options in the block sidebar inspector, including typography, colors, padding, borders, and responsive settings.
 
-= How many times can I reuse a block? =
+= Is it compatible with Full Site Editing (FSE)? =
 
-You can use unlimited times as you want.
+Yes, all blocks are compatible with Site Editor (FSE), Block Templates, and page builder areas.
 
 = Where can I get support? =
 
-You can post your questions on the [support forum here](https://wordpress.org/support/plugin/guten-builder-blocks/)
+You can post your questions on the [WordPress support forum](https://wordpress.org/support/plugin/xpo-block/).
 
 
 == Screenshots ==
 
-1. Screenshot 1
-2. Screenshot 2
+1. Overview of XpoBlock in the block inserter.
+2. Customizing block settings in the inspector sidebar.
 
 
 == Changelog ==
 
-= 1.0.0 =
-* Initial Release
+= 1.0.0 - 27 September 2026 =
+* Initial release.
 
 
 == Upgrade Notice ==
 
-= 1.0.0 =
-* Initial Release
+= 1.0.0 - 27 September 2026 =
+* Initial release.
 
-
-== External Service Integration ==
-
-= Service Name: package.js =
-- Docs link: package docs link
-
-
-== Developer Notes ==
-
-* Assets file name
-assets file destination. ex: public/js/*.min.js
-
-
-* Public source code GitHub link for review, study, and contribute.
-
-https://github.com/bplugins/guten-builder-blocks
-
-For more information on how to contribute to this plugin, please visit our GitHub repository.

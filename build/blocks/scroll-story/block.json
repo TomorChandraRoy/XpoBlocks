@@ -1,11 +1,11 @@
 {
   "apiVersion": 3,
-  "name": "guten-builder-blocks/scroll-story",
+  "name": "xpo-block/scroll-story",
   "version": "1.0.0",
   "title": "Scroll Story",
   "description": "Showcase features or timelines with a beautiful scrolling sticky layout.",
-  "category": "guten-builder",
-  "textdomain": "guten-builder-blocks",
+  "category": "xpo-block",
+  "textdomain": "xpo-block",
   "keywords": [
     "scroll",
     "story",
@@ -61,6 +61,10 @@
     "stepGap": {
       "type": "string",
       "default": ""
+    },
+    "align": {
+      "type": "string",
+      "default": "wide"
     }
   },
   "supports": {

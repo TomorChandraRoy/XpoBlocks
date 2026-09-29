@@ -1,8 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import { imageIcon } from '../../../utils/icons';
 
+const prefix = 'xpo';
+
 const TemplateOne = ({ attributes, setAttributes, RichTextEl, isBackend = false }) => {
-	const {layout = 'sticky-right',steps = []} = attributes;
+	const { layout = 'sticky-right', steps = [] } = attributes;
 
 	const [activeStep, setActiveStep] = useState(0);
 	const stepRefs = useRef([]);
@@ -82,24 +84,24 @@ const TemplateOne = ({ attributes, setAttributes, RichTextEl, isBackend = false 
 	};
 
 	return (
-		<div className={`gbb-scroll-story-container layout-${layout}`}>
+		<div className={`${prefix}-scroll-story-container layout-${layout}`}>
 
-			<div className="gbb-scroll-story-content">
+			<div className={`${prefix}-scroll-story-content`}>
 				{steps.map((step, index) => (
 					<div
 						key={index}
-						className={`gbb-scroll-story-step ${index === activeStep ? 'is-active' : ''}`}
+						className={`${prefix}-scroll-story-step ${index === activeStep ? 'is-active' : ''}`}
 						data-step-index={index}
 						ref={(el) => (stepRefs.current[index] = el)}
 						onClick={() => handleStepClick(index)}
 					>
-						<div className="gbb-scroll-progress-line">
-							<div className="gbb-scroll-progress-fill"></div>
+						<div className={`${prefix}-scroll-progress-line`}>
+							<div className={`${prefix}-scroll-progress-fill`}></div>
 						</div>
-						<div className="gbb-scroll-story-text">
+						<div className={`${prefix}-scroll-story-text`}>
 							<RichTextEl
 								tagName="h3"
-								className="gbb-scroll-story-title"
+								className={`${prefix}-scroll-story-title`}
 								value={step.title}
 								onChange={(val) => updateStepAttr(index, 'title', val)}
 								placeholder="Step Title"
@@ -107,7 +109,7 @@ const TemplateOne = ({ attributes, setAttributes, RichTextEl, isBackend = false 
 							/>
 							<RichTextEl
 								tagName="div"
-								className="gbb-scroll-story-desc"
+								className={`${prefix}-scroll-story-desc`}
 								value={step.description}
 								onChange={(val) => updateStepAttr(index, 'description', val)}
 								placeholder="Step Description..."
@@ -118,13 +120,13 @@ const TemplateOne = ({ attributes, setAttributes, RichTextEl, isBackend = false 
 				))}
 			</div>
 
-			<div className="gbb-scroll-story-media-sticky">
-				<div className="gbb-scroll-story-media-wrapper">
+			<div className={`${prefix}-scroll-story-media-sticky`}>
+				<div className={`${prefix}-scroll-story-media-wrapper`}>
 					{mediaType === 'image' && (
 						activeMedia ? (
-							<img src={activeMedia} alt={`Step ${activeStep + 1}`} className="gbb-scroll-story-image fade-in" key={activeMedia} />
+							<img src={activeMedia} alt={`Step ${activeStep + 1}`} className={`${prefix}-scroll-story-image fade-in`} key={activeMedia} />
 						) : (
-							<div className="gbb-scroll-story-placeholder">
+							<div className={`${prefix}-scroll-story-placeholder`}>
 								{isBackend ? (
 									<span dangerouslySetInnerHTML={{ __html: imageIcon }} />
 								) : null}
@@ -133,7 +135,7 @@ const TemplateOne = ({ attributes, setAttributes, RichTextEl, isBackend = false 
 					)}
 					{mediaType === 'lottie' && (
 						activeLottie ? (
-							<div className="gbb-scroll-story-lottie fade-in" key={activeLottie}>
+							<div className={`${prefix}-scroll-story-lottie fade-in`} key={activeLottie}>
 								{(() => {
 									let cleanUrl = activeLottie.trim();
 									const iframeMatch = cleanUrl.match(/src=["']([^"']+)["']/);
@@ -162,7 +164,7 @@ const TemplateOne = ({ attributes, setAttributes, RichTextEl, isBackend = false 
 								})()}
 							</div>
 						) : (
-							<div className="gbb-scroll-story-placeholder">
+							<div className={`${prefix}-scroll-story-placeholder`}>
 								{isBackend ? (
 									<span>Lottie Animation</span>
 								) : null}

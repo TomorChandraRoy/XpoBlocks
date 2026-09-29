@@ -3,6 +3,8 @@ import { __ } from '@wordpress/i18n';
 import { RichText } from '@wordpress/block-editor';
 import { getItemId } from '../../../utils/functions';
 
+const prefix = 'xpo';
+
 const TemplateOne = ({ attributes, setAttributes }) => {
   const [isOpen, setIsOpen] = useState(true);
   const [activeId, setActiveId] = useState(null);
@@ -31,42 +33,42 @@ const TemplateOne = ({ attributes, setAttributes }) => {
   };
 
   return (
-    <div className="gbb-toc-wrapper">
+    <div className={`${prefix}-toc-wrapper`}>
       {/* --- SIDEBAR TABLE OF CONTENTS --- */}
-      <div className="gbb-toc-sidebar">
-        <div className="gbb-toc-sticky-box">
+      <div className={`${prefix}-toc-sidebar`}>
+        <div className={`${prefix}-toc-sticky-box`}>
           {/* Header Panel Button with Accordion Handler */}
-          <div className="gbb-toc-header" onClick={() => setIsOpen(!isOpen)}>
-            <div className="gbb-toc-header-title">
-              <svg className="gbb-toc-header-icon" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <div className={`${prefix}-toc-header`} onClick={() => setIsOpen(!isOpen)}>
+            <div className={`${prefix}-toc-header-title`}>
+              <svg className={`${prefix}-toc-header-icon`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h7" />
               </svg>
               {isEditor ? (
-                <RichText tagName="span" className="gbb-toc-header-text" value={titleText} onChange={val => setAttributes({ titleText: val })} placeholder={__('Enter Table of Contents Title here....', 'guten-builder-blocks')} onClick={e => e.stopPropagation()} />
+                <RichText tagName="span" className={`${prefix}-toc-header-text`} value={titleText} onChange={val => setAttributes({ titleText: val })} placeholder={__('Enter Table of Contents Title here....', 'xpo-block')} onClick={e => e.stopPropagation()} />
               ) : (
-                <RichText.Content tagName="span" className="gbb-toc-header-text" value={titleText} />
+                <RichText.Content tagName="span" className={`${prefix}-toc-header-text`} value={titleText} />
               )}
             </div>
-            <svg className={`gbb-toc-arrow-icon ${isOpen ? 'open' : 'closed'}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <svg className={`${prefix}-toc-arrow-icon ${isOpen ? 'open' : 'closed'}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
           </div>
 
           {/* Navigation Body */}
-          <div className={`gbb-toc-body ${isOpen ? 'open' : 'closed'}`}>
-            <div className="gbb-toc-list-container">
-              <ul className="gbb-toc-list">
+          <div className={`${prefix}-toc-body ${isOpen ? 'open' : 'closed'}`}>
+            <div className={`${prefix}-toc-list-container`}>
+              <ul className={`${prefix}-toc-list`}>
                 {items.map((item, index) => {
                   const itemId = getItemId(item, index);
                   return (
-                    <li key={itemId || index} className={`gbb-toc-item level-${item.level} ${activeId === itemId ? 'is-active' : ''}`}>
-                      <button onClick={e => handleSmoothScroll(itemId, e)} className={`gbb-toc-link level-${item.level}`} >
+                    <li key={itemId || index} className={`${prefix}-toc-item level-${item.level} ${activeId === itemId ? 'is-active' : ''}`}>
+                      <button onClick={e => handleSmoothScroll(itemId, e)} className={`${prefix}-toc-link level-${item.level}`} >
                         {item.level > 2 && (
                           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                             <polyline points="9 18 15 12 9 6"></polyline>
                           </svg>
                         )}
-                        {isEditor ? <RichText tagName="span" value={item.title} onChange={val => updateItemField(index, 'title', val)} placeholder={__('Item title...', 'guten-builder-blocks')} /> : <RichText.Content tagName="span" value={item.title} />}
+                        {isEditor ? <RichText tagName="span" value={item.title} onChange={val => updateItemField(index, 'title', val)} placeholder={__('Item title...', 'xpo-block')} /> : <RichText.Content tagName="span" value={item.title} />}
                       </button>
                     </li>
                   );
@@ -78,33 +80,33 @@ const TemplateOne = ({ attributes, setAttributes }) => {
       </div>
 
       {/* --- MAIN BLOG CONTENT PREVIEW LAYOUT --- */}
-      <div className="gbb-toc-content-area">
+      <div className={`${prefix}-toc-content-area`}>
         {isEditor ? (
           <>
-            <RichText tagName="h1" className="gbb-toc-content-title" value={contentTitle} onChange={val => setAttributes({ contentTitle: val })} placeholder={__('Enter content title...', 'guten-builder-blocks')} />
-            <RichText tagName="p" className="gbb-toc-content-subtitle" value={contentSubtitle} onChange={val => setAttributes({ contentSubtitle: val })} placeholder={__('Enter subtitle...', 'guten-builder-blocks')} />
+            <RichText tagName="h1" className={`${prefix}-toc-content-title`} value={contentTitle} onChange={val => setAttributes({ contentTitle: val })} placeholder={__('Enter content title...', 'xpo-block')} />
+            <RichText tagName="p" className={`${prefix}-toc-content-subtitle`} value={contentSubtitle} onChange={val => setAttributes({ contentSubtitle: val })} placeholder={__('Enter subtitle...', 'xpo-block')} />
           </>
         ) : (
           <>
-            {contentTitle && <RichText.Content tagName="h1" className="gbb-toc-content-title" value={contentTitle} />}
-            {contentSubtitle && <RichText.Content tagName="p" className="gbb-toc-content-subtitle" value={contentSubtitle} />}
+            {contentTitle && <RichText.Content tagName="h1" className={`${prefix}-toc-content-title`} value={contentTitle} />}
+            {contentSubtitle && <RichText.Content tagName="p" className={`${prefix}-toc-content-subtitle`} value={contentSubtitle} />}
           </>
         )}
 
-        <div className="gbb-toc-section-wrapper">
+        <div className={`${prefix}-toc-section-wrapper`}>
           {items.map((section, index) => {
             const sectionId = getItemId(section, index);
             return (
-              <div key={sectionId || index} id={sectionId} className="gbb-toc-section-block">
+              <div key={sectionId || index} id={sectionId} className={`${prefix}-toc-section-block`}>
                 {isEditor ? (
                   <>
-                    <RichText tagName={section.level === 2 ? 'h2' : 'h3'} className={section.level === 2 ? 'gbb-toc-section-heading-2' : 'gbb-toc-section-heading-3'} value={section.title} onChange={val => updateItemField(index, 'title', val)} placeholder={__('Section heading...', 'guten-builder-blocks')} />
-                    <RichText tagName="p" className="gbb-toc-section-paragraph" value={section.paragraph || sectionParagraph} onChange={val => updateItemField(index, 'paragraph', val)} placeholder={__('Section paragraph...', 'guten-builder-blocks')} />
+                    <RichText tagName={section.level === 2 ? 'h2' : 'h3'} className={section.level === 2 ? `${prefix}-toc-section-heading-2` : `${prefix}-toc-section-heading-3`} value={section.title} onChange={val => updateItemField(index, 'title', val)} placeholder={__('Section heading...', 'xpo-block')} />
+                    <RichText tagName="p" className={`${prefix}-toc-section-paragraph`} value={section.paragraph || sectionParagraph} onChange={val => updateItemField(index, 'paragraph', val)} placeholder={__('Section paragraph...', 'xpo-block')} />
                   </>
                 ) : (
                   <>
-                    <RichText.Content tagName={section.level === 2 ? 'h2' : 'h3'} className={section.level === 2 ? 'gbb-toc-section-heading-2' : 'gbb-toc-section-heading-3'} value={section.title} />
-                    <RichText.Content tagName="p" className="gbb-toc-section-paragraph" value={section.paragraph || sectionParagraph} />
+                    <RichText.Content tagName={section.level === 2 ? 'h2' : 'h3'} className={section.level === 2 ? `${prefix}-toc-section-heading-2` : `${prefix}-toc-section-heading-3`} value={section.title} />
+                    <RichText.Content tagName="p" className={`${prefix}-toc-section-paragraph`} value={section.paragraph || sectionParagraph} />
                   </>
                 )}
               </div>

@@ -5,7 +5,7 @@ import DynamicStyle from './Components/Common/DynamicStyles';
 import ScrollStory from './Components/Common/Templates/ScrollStory';
 
 document.addEventListener('DOMContentLoaded', () => {
-	const storyEls = document.querySelectorAll('.wp-block-guten-builder-blocks-scroll-story');
+	const storyEls = document.querySelectorAll('.wp-block-xpo-block-scroll-story');
 	storyEls.forEach(el => {
 		if (!el.dataset.attributes) return;
 		const attributes = JSON.parse(el.dataset.attributes);

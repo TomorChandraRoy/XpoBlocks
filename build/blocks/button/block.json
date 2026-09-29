@@ -4,7 +4,7 @@
   "name": "guten-builder-blocks/button",
   "version": "1.0.0",
   "title": "Button",
-  "category": "guten-builder",
+  "category": "xpo-block",
   "icon": "button",
   "description": "Add high-converting call-to-action (CTA) buttons with customizable styling, hover animations, and dynamic 3D effects to boost engagement.",
   "textdomain": "guten-builder-blocks",

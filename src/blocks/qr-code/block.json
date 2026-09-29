@@ -4,7 +4,7 @@
   "name": "guten-builder-blocks/qr-code",
   "version": "1.0.0",
   "title": "QR Code Generator",
-  "category": "guten-builder",
+  "category": "xpo-block",
   "description": "Generate dynamic and customizable QR codes with custom styling, logos, and download options.",
   "keywords": ["qr", "qrcode", "generator", "link", "barcode"],
   "textdomain": "guten-builder-blocks",

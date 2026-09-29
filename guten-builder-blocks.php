@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Guten Builder Blocks
+ * Plugin Name: XpoBlock
  * Description: Build beautiful WordPress websites with Pricing Table, Slider, Testimonial, Review, Team, Gallery, FAQ, Accordion, Tabs, Cards, and 30+ Gutenberg Blocks.
  * Version: 1.0.0
  * Author: Tomor Roy
@@ -8,7 +8,7 @@
  * Requires PHP: 7.4
  * License: GPL-3.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-3.0.html
- * Text Domain: guten-builder-blocks
+ * Text Domain: xpo-block
  */
 
 
@@ -16,20 +16,20 @@
 if ( !defined( 'ABSPATH' ) ) { exit; }
 
 // Plugin Constants
-define( 'GUTEN_BUILDER_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.0' );
-define( 'GUTEN_BUILDER_DIR_URL', plugin_dir_url( __FILE__ ) );
-define( 'GUTEN_BUILDER_DIR_PATH', plugin_dir_path( __FILE__ ) );
-define( 'GUTEN_BUILDER_BASENAME', plugin_basename( __FILE__ ) );
-define( 'GUTEN_BUILDER_FILE', __FILE__ );
+define( 'XPO_BLOCK_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.0' );
+define( 'XPO_BLOCK_DIR_URL', plugin_dir_url( __FILE__ ) );
+define( 'XPO_BLOCK_DIR_PATH', plugin_dir_path( __FILE__ ) );
+define( 'XPO_BLOCK_BASENAME', plugin_basename( __FILE__ ) );
+define( 'XPO_BLOCK_FILE', __FILE__ );
 
 // Include Loader Class
-require_once GUTEN_BUILDER_DIR_PATH . 'includes/class-guten-builder-loader.php';
+require_once XPO_BLOCK_DIR_PATH . 'includes/class-xpo-block-loader.php';
 
-if ( !class_exists( 'Guten_Builder_Plugin' ) ) {
-	class Guten_Builder_Plugin {
+if ( !class_exists( 'Xpo_Block_Plugin' ) ) {
+	class Xpo_Block_Plugin {
 		function __construct() {
 			add_action( 'init', [ $this, 'onInit' ] ); // Register blocks
-			Guten_Builder_Loader::init(); // Loader এর মাধ্যমে Core ও Admin ফাইল লোড ও Init করা
+			Xpo_Block_Loader::init(); // Loader এর মাধ্যমে Core ও Admin ফাইল লোড ও Init করা
 		}
 
 		/**
@@ -47,7 +47,7 @@ if ( !class_exists( 'Guten_Builder_Plugin' ) ) {
 			}
 		}
 	}
-	new Guten_Builder_Plugin();
+	new Xpo_Block_Plugin();
 }
 
 

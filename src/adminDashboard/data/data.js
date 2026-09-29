@@ -1,16 +1,16 @@
-import cover from './image/cover.png';
+import cover from './image/cover.jpg';
 
-const slug = 'guten builder blocks';
+const slug = 'XpoBlock';
 
 export const featureBannerData = {
-  title: 'Build High-Performance Websites with Gutenberg Block Suite',
+  title: 'Build High-Performance Websites with XpoBlock',
   description: 'Transform your WordPress editor with 11+ ultra-fast, motion-ready blocks including Interactive Before/After, Audio Waveform Player, Parallax Scroll Story, Smooth Marquee, and Dynamic Pricing Tables.',
   primaryBtnText: '+ Add New Page',
   secondaryBtnText: 'Explore All 11 Blocks',
   videoBtnText: 'Watch Video Demo',
-  youtubeVideoId: 'https://www.youtube.com/watch?v=2O7oDm1FaPU&list=RD2O7oDm1FaPU&start_radio=1',
+  youtubeVideoId: '',
   coverImage: cover,
-  isVideo: true,
+  isVideo: false,
 };
 
 export const dashboardInfo = info => {

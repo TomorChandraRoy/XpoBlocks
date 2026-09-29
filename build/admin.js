@@ -2,6 +2,504 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "../tr-tools/AdminDashboard/DocsModal/DocsModal.jsx"
+/*!**********************************************************!*\
+  !*** ../tr-tools/AdminDashboard/DocsModal/DocsModal.jsx ***!
+  \**********************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _data_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./data.js */ "../tr-tools/AdminDashboard/DocsModal/data.js");
+/* harmony import */ var _docsModal_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./docsModal.scss */ "../tr-tools/AdminDashboard/DocsModal/docsModal.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+const DocsModal = ({
+  block,
+  onClose
+}) => {
+  if (!block) return null;
+  const resolveKey = b => {
+    if (!b) return "table-of-contents";
+    let raw = typeof b === "string" ? b : b.id || b.key || b.name || "";
+    const cleanKey = String(raw).trim().replace(/^xpo-block\//, "").replace(/^wp-block-xpo-block-/, "");
+    return _data_js__WEBPACK_IMPORTED_MODULE_1__.docsContentData[cleanKey] ? cleanKey : "table-of-contents";
+  };
+  const [activeKey, setActiveKey] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(() => resolveKey(block));
+
+  // State to track expanded/collapsed navigation categories
+  const [expandedCats, setExpandedCats] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    "getting-started": true,
+    "how-to-use": true,
+    faqs: true
+  });
+  const toggleCategory = catKey => {
+    setExpandedCats(prev => ({
+      ...prev,
+      [catKey]: !prev[catKey]
+    }));
+  };
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    if (block) {
+      setActiveKey(resolveKey(block));
+    }
+  }, [block]);
+  const doc = _data_js__WEBPACK_IMPORTED_MODULE_1__.docsContentData[activeKey] || _data_js__WEBPACK_IMPORTED_MODULE_1__.docsContentData["table-of-contents"];
+  const modalContent = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    className: "docs-modal-overlay",
+    onClick: onClose,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "docs-layout-wrapper",
+      onClick: e => e.stopPropagation(),
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+        type: "button",
+        className: "docs-modal-close-btn",
+        onClick: onClose,
+        "aria-label": "Close Documentation",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("svg", {
+          width: "18",
+          height: "18",
+          viewBox: "0 0 24 24",
+          fill: "none",
+          stroke: "currentColor",
+          strokeWidth: "2.5",
+          strokeLinecap: "round",
+          strokeLinejoin: "round",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("line", {
+            x1: "18",
+            y1: "6",
+            x2: "6",
+            y2: "18"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("line", {
+            x1: "6",
+            y1: "6",
+            x2: "18",
+            y2: "18"
+          })]
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("aside", {
+        className: "docs-sidebar",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "sidebar-header",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("svg", {
+            className: "sidebar-brand-icon",
+            width: "20",
+            height: "20",
+            viewBox: "0 0 24 24",
+            fill: "none",
+            stroke: "#2563eb",
+            strokeWidth: "2",
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+              d: "M4 19.5A2.5 2.5 0 0 1 6.5 17H20"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+              d: "M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "sidebar-brand-title",
+            children: "XpoBlock Docs"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("nav", {
+          className: "sidebar-nav",
+          children: _data_js__WEBPACK_IMPORTED_MODULE_1__.navCategories.map(cat => {
+            const isExpanded = expandedCats[cat.key] !== false;
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              className: "nav-group",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("button", {
+                type: "button",
+                className: "nav-group-header-btn",
+                onClick: () => toggleCategory(cat.key),
+                "aria-expanded": isExpanded,
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                  children: cat.label
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("svg", {
+                  className: `group-arrow ${isExpanded ? "open" : ""}`,
+                  width: "14",
+                  height: "14",
+                  viewBox: "0 0 24 24",
+                  fill: "none",
+                  stroke: "currentColor",
+                  strokeWidth: "2",
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("polyline", {
+                    points: "6 9 12 15 18 9"
+                  })
+                })]
+              }), isExpanded && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("ul", {
+                className: "nav-items-list",
+                children: cat.items.map(item => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+                    type: "button",
+                    className: `nav-item-btn ${activeKey === item.key ? "active" : ""}`,
+                    onClick: () => {
+                      if (_data_js__WEBPACK_IMPORTED_MODULE_1__.docsContentData[item.key]) {
+                        setActiveKey(item.key);
+                      }
+                    },
+                    children: item.label
+                  })
+                }, item.key))
+              })]
+            }, cat.key);
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("main", {
+        className: "docs-main-content",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "docs-breadcrumb-bar",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("svg", {
+            className: "home-icon",
+            width: "16",
+            height: "16",
+            viewBox: "0 0 24 24",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: "2",
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+              d: "m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("polyline", {
+              points: "9 22 9 12 15 12 15 22"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "breadcrumb-sep",
+            children: "/"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "breadcrumb-link",
+            children: "Docs"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "breadcrumb-sep",
+            children: "/"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "breadcrumb-link",
+            children: doc.category || "How To Use"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "breadcrumb-sep",
+            children: "/"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "breadcrumb-current",
+            children: doc.title
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "docs-content-body",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "content-title-section",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+              className: "docs-type-badge",
+              children: doc.category || "GUIDE"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
+              className: "docs-title-heading",
+              children: doc.title
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+              className: "docs-summary-lead",
+              children: doc.summary
+            }), doc.details && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+              className: "docs-details-text",
+              children: doc.details
+            })]
+          }), doc.features && doc.features.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "docs-detail-section",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+              children: "\u2728 Key Features"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("ul", {
+              className: "docs-features-grid",
+              children: doc.features.map((feat, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                  className: "feature-check",
+                  children: "\u2713"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                  children: feat
+                })]
+              }, index))
+            })]
+          }), doc.usageSteps && doc.usageSteps.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "docs-detail-section",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+              children: "\uD83D\uDE80 How To Use"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("ol", {
+              className: "docs-steps-list",
+              children: doc.usageSteps.map((step, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                  className: "step-badge",
+                  children: index + 1
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                  className: "step-desc",
+                  children: step
+                })]
+              }, index))
+            })]
+          })]
+        })]
+      })]
+    })
+  });
+  return typeof document !== "undefined" ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createPortal)(modalContent, document.body) : modalContent;
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DocsModal);
+
+/***/ },
+
+/***/ "../tr-tools/AdminDashboard/DocsModal/data.js"
+/*!****************************************************!*\
+  !*** ../tr-tools/AdminDashboard/DocsModal/data.js ***!
+  \****************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   docsContentData: () => (/* binding */ docsContentData),
+/* harmony export */   navCategories: () => (/* binding */ navCategories)
+/* harmony export */ });
+const navCategories = [{
+  key: "getting-started",
+  label: "Getting Started",
+  items: [{
+    key: "intro",
+    label: "Introduction"
+  }, {
+    key: "requirement",
+    label: "Requirement"
+  }, {
+    key: "installation",
+    label: "Installation"
+  }
+  // { key: "purchase", label: "Purchase Process" },
+  // { key: "license", label: "License Activation" },
+  ]
+}, {
+  key: "how-to-use",
+  label: "How To Use",
+  items: [{
+    key: "before-after",
+    label: "Before/After Slider"
+  }, {
+    key: "accordion",
+    label: "FAQ Accordion"
+  }, {
+    key: "audio-player",
+    label: "Audio Player"
+  }, {
+    key: "pricing-table",
+    label: "Pricing Table"
+  }, {
+    key: "button",
+    label: "Action Button"
+  }, {
+    key: "contact-form",
+    label: "Contact Form"
+  }, {
+    key: "marquee",
+    label: "Marquee Slider"
+  }, {
+    key: "scroll-story",
+    label: "Scroll Story"
+  }, {
+    key: "table-of-contents",
+    label: "Table of Contents"
+  }, {
+    key: "qr-code",
+    label: "QR Code Generator"
+  }]
+}, {
+  key: "faqs",
+  label: "FAQs",
+  items: [{
+    key: "faqs",
+    label: "Frequently Asked Questions"
+  }]
+}];
+const docsContentData = {
+  // Getting Started
+  intro: {
+    category: "Getting Started",
+    title: "Introduction",
+    breadcrumb: ["Docs", "Getting Started", "Introduction"],
+    summary: "Welcome to XpoBlock! Transform your standard WordPress editor into a modern, motion-ready block builder suite.",
+    details: "XpoBlock is designed for performance, flexibility, and ease of use. It offers 11+ lightweight blocks including interactive Before/After image comparison, FAQ accordions, custom audio waveform players, dynamic pricing tables, and marquee sliders.",
+    // features: [
+    //   "11+ Core Gutenberg Blocks with zero bloat",
+    //   "Modular asset loading (loads CSS/JS only when block is active)",
+    //   "Fully responsive and mobile optimized out of the box",
+    //   "SEO friendly HTML5 structure and schema markup",
+    // ],
+    usageSteps: ["Install and activate the XpoBlock plugin.", "Navigate to WP Admin > XpoBlock to view and toggle available blocks.", "Open any page or post in Gutenberg editor to start adding blocks."]
+  },
+  requirement: {
+    category: "Getting Started",
+    title: "Requirement",
+    breadcrumb: ["Docs", "Getting Started", "Requirement"],
+    summary: "Minimum system and WordPress environment requirements for optimal performance.",
+    details: "Ensure your web hosting environment meets the following specifications to get the best experience with XpoBlock.",
+    features: ["WordPress Version: 5.9 or higher (WordPress 6.0+ recommended)", "PHP Version: 7.4 or higher (PHP 8.1+ recommended)", "MySQL Version: 5.6+ or MariaDB 10.1+", "Gutenberg Block Editor enabled"],
+    usageSteps: ["Check your WordPress version under Dashboard > Updates.", "Verify PHP version under Tools > Site Health > Info.", "Ensure modern browser compatibility (Chrome, Firefox, Edge, Safari)."]
+  },
+  installation: {
+    category: "Getting Started",
+    title: "Installation",
+    breadcrumb: ["Docs", "Getting Started", "Installation"],
+    summary: "Like any other WordPress plugin, you can easily install and activate XpoBlock directly from the WordPress Plugin Directory.",
+    details: "Go to your WordPress Dashboard and navigate to Plugins > Add New. In the search bar, type 'XpoBlock', then click the Install Now button when the plugin appears in the results.",
+    features: ["One-click installation via WordPress Plugin Directory", "Manual ZIP upload support via WP Admin", "Automatic updates support", "Zero database pollution on uninstall"],
+    usageSteps: ["Go to your WordPress Dashboard and click Plugins > Add New.", "In the search box, type 'XpoBlock' and press enter.", "Click 'Install Now' on the XpoBlock plugin card.", "Click 'Activate' once the installation finishes."]
+  },
+  // purchase: {
+  //   category: "Getting Started",
+  //   title: "Purchase Process",
+  //   breadcrumb: ["Docs", "Getting Started", "Purchase Process"],
+  //   summary:
+  //     "How to purchase and upgrade to XpoBlock PRO for premium blocks and priority support.",
+  //   details:
+  //     "Upgrading to XpoBlock PRO unlocks 35+ advanced blocks, motion profiles, parallax effects, and 24/7 dedicated support.",
+  //   features: [
+  //     "Single Site, 5-Site, and Unlimited Site License tiers",
+  //     "Instant license key generation upon purchase",
+  //     "14-Day Money-Back Guarantee",
+  //     "Automatic 1-click update notifications in WP Admin",
+  //   ],
+  //   usageSteps: [
+  //     "Visit xpoblock.com/pro and choose your preferred pricing tier.",
+  //     "Complete the checkout process with PayPal or Credit Card.",
+  //     "Download the XpoBlock PRO ZIP file from your confirmation email.",
+  //     "Upload the ZIP file under Plugins > Add New > Upload Plugin.",
+  //   ],
+  // },
+
+  // license: {
+  //   category: "Getting Started",
+  //   title: "License Activation",
+  //   breadcrumb: ["Docs", "Getting Started", "License Activation"],
+  //   summary:
+  //     "Activate your license key to enable automatic updates and premium features.",
+  //   details:
+  //     "After installing XpoBlock PRO, enter your valid license key to receive lifetime plugin updates and premium templates.",
+  //   features: [
+  //     "Seamless 1-click key validation",
+  //     "Deactivate & re-activate license on new staging domains",
+  //     "Real-time license status monitoring",
+  //   ],
+  //   usageSteps: [
+  //     "Go to XpoBlock > License in your WP Dashboard.",
+  //     "Paste your license key into the designated input box.",
+  //     "Click 'Activate License' and enjoy all PRO features.",
+  //   ],
+  // },
+
+  // How To Use (Block Guides)
+  "before-after": {
+    category: "How To Use",
+    title: "Before/After Slider",
+    breadcrumb: ["Docs", "How To Use", "Before/After Slider"],
+    summary: "Interactive image comparison block allowing users to drag a split handle to compare two images side-by-side.",
+    details: "Perfect for showcasing renovation projects, photo editing results, design makeovers, and dental/medical transformations.",
+    features: ["Dual Image Upload (Before image & After image support)", "Customizable slider handle color, glow intensity, and initial position", "Custom text labels for Before and After badges"],
+    usageSteps: ["Add the 'Before/After Slider' block into your Gutenberg canvas.", "In the Block Settings sidebar, select your 'Before' and 'After' media images.", "Pick your preferred slider handle style.", "Save and publish your post to test the live touch/mouse drag comparison."]
+  },
+  accordion: {
+    category: "How To Use",
+    title: "FAQ Accordion",
+    breadcrumb: ["Docs", "How To Use", "FAQ Accordion"],
+    summary: "Organize collapsible text panels for frequently asked questions, product specs, or structured documentation.",
+    details: "Improves page readability and SEO with structured Schema.org FAQ markup for Google rich snippets.",
+    features: ["Unlimited accordion item repeater", "Single-item open or multi-item expand modes", "Custom expandable icons (+ / -, chevron, arrow)", "Rich text editing inside accordion bodies"],
+    usageSteps: ["Insert the 'FAQ Accordion' block onto your page.", "Click 'Add Accordion Item' to create new question/answer rows.", "Customize question typography, active background color, and icon placement in settings.", "Preview collapsible smooth animations on desktop and mobile viewports."]
+  },
+  "audio-player": {
+    category: "How To Use",
+    title: "Audio Player",
+    breadcrumb: ["Docs", "How To Use", "Audio Player"],
+    summary: "Futuristic neon audio player block featuring dynamic equalizer wave animations, playback speed controls, and volume adjustments.",
+    details: "Ideal for podcasters, musicians, voiceover artists, and audio course creators.",
+    features: ["Direct MP3 file upload or external audio stream URL", "Dynamic audio spectrum equalizer visualizer", "1.0x - 2.0x playback speed toggles", "Custom cover image and artist subtitle display"],
+    usageSteps: ["Add the 'Audio Player' block to your layout.", "Upload an MP3 file via the WordPress Media Library or insert an audio URL.", "Set track title, artist name, and album artwork.", "Choose player theme colors in the sidebar inspector."]
+  },
+  "pricing-table": {
+    category: "How To Use",
+    title: "Pricing Table",
+    breadcrumb: ["Docs", "How To Use", "Pricing Table"],
+    summary: "Display responsive pricing tiers with highlighted featured plans, feature checklists, and action buttons.",
+    details: "Designed for SaaS products, service agencies, memberships, and digital downloads.",
+    features: ["Multi-column plan comparison cards", "Highlighted 'Popular' or 'Best Value' plan ribbons", "Monthly / Annual price toggle switch support", "Custom checkmark list items and CTA buttons"],
+    usageSteps: ["Insert the 'Pricing Table' block into your page.", "Configure plan names (Basic, Pro, Agency) and pricing values.", "Enable the 'Featured' toggle on your primary plan to highlight it with a neon border.", "Set button link URLs for direct checkout redirection."]
+  },
+  button: {
+    category: "How To Use",
+    title: "Action Button",
+    breadcrumb: ["Docs", "How To Use", "Action Button"],
+    summary: "High-converting call-to-action button with hover glow effects, icon pickers, and smooth click animations.",
+    details: "Drive user actions with eye-catching button designs, customizable gradients, and smooth hover physics.",
+    features: ["Gradient backgrounds and neon glow shadows", "Integrated dashicon & SVG icon alignment", "Hover scale and lift animations", "Target window options (_self or _blank)"],
+    usageSteps: ["Add the 'Action Button' block to any content section.", "Type your button text and enter the target URL.", "Select icon position (Left or Right) and adjust border radius.", "Customize background gradients and hover state effects."]
+  },
+  "contact-form": {
+    category: "How To Use",
+    title: "Contact Form",
+    breadcrumb: ["Docs", "How To Use", "Contact Form"],
+    summary: "Clean, responsive contact form block with built-in AJAX submission, input validation, and customizable fields.",
+    details: "Receive inquiries directly to your email without needing heavy third-party form plugins.",
+    features: ["Field builder for Name, Email, Subject, and Message", "AJAX submission without page reloads", "Custom success toast and error notification messages", "Admin email receiver configuration"],
+    usageSteps: ["Insert the 'Contact Form' block into your page or contact section.", "Specify the recipient email address in block settings.", "Customize input placeholder text, submit button label, and button styling.", "Publish page and test submission."]
+  },
+  marquee: {
+    category: "How To Use",
+    title: "Marquee Slider",
+    breadcrumb: ["Docs", "How To Use", "Marquee Slider"],
+    summary: "Continuous smooth scrolling text and image ticker for announcements, brand logos, and trending tags.",
+    details: "Add high-energy visual movement to your site headers, client logo bars, or promotion tickers.",
+    features: ["Infinite seamless ticker loop animation", "Adjustable scroll speed and direction (Left / Right)", "Pause-on-hover interaction support", "Custom text badges, icons, or sponsor logos"],
+    usageSteps: ["Add the 'Marquee Slider' block to your page header or body.", "Add text items, tags, or logos to the ticker track.", "Adjust scroll speed (e.g. 20s per loop) in the inspector controls.", "Enable 'Pause on Hover' to let users inspect scrolling content."]
+  },
+  "scroll-story": {
+    category: "How To Use",
+    title: "Scroll Story",
+    breadcrumb: ["Docs", "How To Use", "Scroll Story"],
+    summary: "Engaging scroll-driven timeline story block that highlights steps or history as the user scrolls down.",
+    details: "Great for company timelines, product roadmaps, step-by-step tutorials, and event schedules.",
+    features: ["Scroll-triggered active step indicators", "Progress line fill as user scrolls down", "Step images, icons, and timestamp badges", "Smooth entry animations"],
+    usageSteps: ["Insert the 'Scroll Story' block on your page.", "Add story milestone steps with dates, titles, and descriptions.", "Upload milestone images or select custom step icons.", "Publish and test the scroll trigger active indicators."]
+  },
+  "table-of-contents": {
+    category: "How To Use",
+    title: "Table of Contents",
+    breadcrumb: ["Docs", "How To Use", "Table of Contents"],
+    summary: "Automatically parses post headings (H1-H6) to build a collapsible, smooth-scrolling Table of Contents.",
+    details: "Enhances blog post navigation, user experience, and Google search jump links.",
+    features: ["Automatic heading detection (H2, H3, H4)", "Smooth scroll offset alignment for fixed headers", "Collapsible box toggle (Expand / Collapse)", "SEO friendly schema markup"],
+    usageSteps: ["Place the 'Table of Contents' block at the top of your long-form article.", "Select which heading tags to include (e.g. H2 and H3).", "Customize container background, active indicator color, and typography.", "The block will automatically discover and link all headings on the page."]
+  },
+  "qr-code": {
+    category: "How To Use",
+    title: "QR Code Generator",
+    breadcrumb: ["Docs", "How To Use", "QR Code Generator"],
+    summary: "Generates customizable vector QR codes for websites, text, phone numbers, and emails with logo overlay and instant image download support.",
+    details: "Perfect for menus, event tickets, Wi-Fi passwords, contact vCards, and mobile app download links.",
+    features: ["URL, text, email, and phone QR code generator", "Custom foreground, background, and button colors", "Center logo overlay with white background badge option", "High-resolution PNG image download button on frontend"],
+    usageSteps: ["Add the 'QR Code Generator' block to your page layout.", "Enter your desired target URL or text in the Inspector sidebar.", "Customize colors, dimensions, and optionally upload a center logo.", "Save page and test frontend QR code scanning or PNG download."]
+  },
+  // FAQs
+  faqs: {
+    category: "FAQs",
+    title: "Frequently Asked Questions",
+    breadcrumb: ["Docs", "FAQs", "General Questions"],
+    summary: "Common questions and answers regarding XpoBlock compatibility and usage.",
+    details: "Find quick answers to common questions about theme compatibility, site speed, and updates.",
+    features: ["Does it work with any WordPress theme? Yes, 100% compatible with Block Themes and Classic Themes.", "Will it slow down my website? No, scripts and styles load conditionally on-demand (~12KB).", "Can I use it alongside Gutenberg plugins? Yes, it operates seamlessly without conflicts.", "Is it compatible with Elementor or WooCommerce? Yes, works inside WordPress block areas."],
+    usageSteps: ["If you experience any issues, verify your WordPress and PHP versions.", "Deactivate conflicting cache plugins if block styles are not updating.", "Contact support if you need further technical assistance."]
+  }
+};
+
+/***/ },
+
 /***/ "../tr-tools/AdminDashboard/components/AllBlocks/AllBlocks.jsx"
 /*!*********************************************************************!*\
   !*** ../tr-tools/AdminDashboard/components/AllBlocks/AllBlocks.jsx ***!
@@ -20,13 +518,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _AllBlocks_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AllBlocks.scss */ "../tr-tools/AdminDashboard/components/AllBlocks/AllBlocks.scss");
 /* harmony import */ var _Banner_Banner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Banner/Banner */ "../tr-tools/AdminDashboard/components/AllBlocks/Banner/Banner.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _DocsModal_DocsModal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../DocsModal/DocsModal */ "../tr-tools/AdminDashboard/DocsModal/DocsModal.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
 
 
 
 
 
+
+// import DemoModal from "../../DemoModal/DemoModal";
 
 const AllBlocks = props => {
   const {
@@ -40,6 +541,9 @@ const AllBlocks = props => {
   const [saveMessage, setSaveMessage] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("");
   const [searchQuery, setSearchQuery] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("");
   const [filterStatus, setFilterStatus] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("all");
+  const [docsBlock, setDocsBlock] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  // const [demoBlock, setDemoBlock] = useState(null);
+
   const isBlockActive = blockId => {
     const val = blocksState[blockId];
     return val !== false && val !== "false" && val !== "" && val !== 0;
@@ -97,23 +601,23 @@ const AllBlocks = props => {
   const totalBlocksCount = availableBlocks.length;
   const activeBlocksCount = availableBlocks.filter(block => isBlockActive(block.id)).length;
   const disabledBlocksCount = totalBlocksCount - activeBlocksCount;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
     className: "all-blocks-wrap",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
       className: "all-blocks-header",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h2", {
           className: "all-blocks-title",
           children: "All Blocks"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
           className: "all-blocks-desc",
           children: "Toggle block availability for the WordPress editor in real-time."
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        children: [saveMessage && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        children: [saveMessage && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
           className: "save-message",
           children: saveMessage
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
           className: "btn-save",
           isPrimary: true,
           onClick: saveSettings,
@@ -122,11 +626,11 @@ const AllBlocks = props => {
           children: isSaving ? "Saving..." : "Save Changes"
         })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
       className: "suite-toolbar",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
         className: "search-input-wrapper",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("svg", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("svg", {
           className: "search-icon",
           width: "16",
           height: "16",
@@ -134,67 +638,67 @@ const AllBlocks = props => {
           fill: "none",
           stroke: "currentColor",
           strokeWidth: "2",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("circle", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("circle", {
             cx: "11",
             cy: "11",
             r: "8"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("line", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("line", {
             x1: "21",
             y1: "21",
             x2: "16.65",
             y2: "16.65"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
           type: "text",
           className: "search-input",
           placeholder: "Search blocks by name or description...",
           value: searchQuery,
           onChange: e => setSearchQuery(e.target.value)
-        }), searchQuery && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+        }), searchQuery && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
           className: "clear-search",
           onClick: () => setSearchQuery(""),
           "aria-label": "Clear search",
           children: "\xD7"
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
         className: "filter-group",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("button", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("button", {
           className: `filter-btn ${filterStatus === "all" ? "active" : ""}`,
           onClick: () => setFilterStatus("all"),
           children: ["All (", totalBlocksCount, ")"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("button", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("button", {
           className: `filter-btn ${filterStatus === "active" ? "active" : ""}`,
           onClick: () => setFilterStatus("active"),
           children: ["Active (", activeBlocksCount, ")"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("button", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("button", {
           className: `filter-btn ${filterStatus === "inactive" ? "active" : ""}`,
           onClick: () => setFilterStatus("inactive"),
           children: ["Disabled (", disabledBlocksCount, ")"]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
         className: "bulk-group",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
           className: "bulk-btn",
           onClick: () => setAllBlocksState(true),
           children: "Enable All"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
           className: "bulk-divider",
           children: "|"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
           className: "bulk-btn",
           onClick: () => setAllBlocksState(false),
           children: "Disable All"
         })]
       })]
-    }), filteredBlocks.length === 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    }), filteredBlocks.length === 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
       className: "empty-blocks-state",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
         className: "empty-title",
         children: "No matching blocks found"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
         className: "empty-desc",
         children: "Try searching for a different keyword or reset your status filter."
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
         className: "btn-secondary",
         onClick: () => {
           setSearchQuery("");
@@ -202,42 +706,34 @@ const AllBlocks = props => {
         },
         children: "Reset Filters"
       })]
-    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       className: "blocks-grid",
       children: filteredBlocks.map(block => {
         const isActive = isBlockActive(block.id);
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
           className: `block-card ${isActive ? "is-active" : "is-disabled"}`,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Banner_Banner__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Banner_Banner__WEBPACK_IMPORTED_MODULE_4__["default"], {
             block: block
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
             className: "block-content",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
               className: "block-header",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
                 className: "block-title",
                 children: block.title
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
                 className: `block-badge ${isActive ? "badge-active" : "badge-disabled"}`,
                 children: isActive ? "Active" : "Disabled"
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
               className: "block-desc",
               children: block.desc || block.description
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
               className: "block-links",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
-                type: "button",
-                className: "block-link demo-link",
-                onClick: e => {
-                  e.preventDefault();
-                  setDemoBlock(block);
-                },
-                children: "Live Demo"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
                 className: "link-divider",
                 children: "|"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
                 type: "button",
                 className: "block-link docs-link",
                 onClick: e => {
@@ -246,9 +742,9 @@ const AllBlocks = props => {
                 },
                 children: "Read Docs"
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
               className: "block-toggle",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
                 label: isActive ? "Enabled for Editor" : "Disabled",
                 checked: isActive,
                 onChange: () => toggleBlock(block.id)
@@ -257,6 +753,9 @@ const AllBlocks = props => {
           })]
         }, block.id);
       })
+    }), docsBlock && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_DocsModal_DocsModal__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      block: docsBlock,
+      onClose: () => setDocsBlock(null)
     })]
   });
 };
@@ -754,136 +1253,208 @@ const getBlockBannerConfig = block => {
 
 /***/ },
 
-/***/ "../tr-tools/AdminDashboard/components/FreeVSPro/FreeVsProCard.jsx"
-/*!*************************************************************************!*\
-  !*** ../tr-tools/AdminDashboard/components/FreeVSPro/FreeVsProCard.jsx ***!
-  \*************************************************************************/
+/***/ "../tr-tools/AdminDashboard/components/Changelog/Changelog.jsx"
+/*!*********************************************************************!*\
+  !*** ../tr-tools/AdminDashboard/components/Changelog/Changelog.jsx ***!
+  \*********************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _FreeVsProCard_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FreeVsProCard.scss */ "../tr-tools/AdminDashboard/components/FreeVSPro/FreeVsProCard.scss");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Changelog_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Changelog.scss */ "../tr-tools/AdminDashboard/components/Changelog/Changelog.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
 
 
-const FreeVsProCard = () => {
-  const comparisonFeatures = [{
-    feature: 'Gutenberg Block Suite',
-    desc: 'High-performance interactive blocks for Gutenberg editor',
-    free: '11 Core Blocks',
-    pro: '35+ Pro Blocks'
-  }, {
-    feature: 'Starter Section Templates',
-    desc: 'Ready-to-use section blocks and full page layouts',
-    free: '14 Free Layouts',
-    pro: '100+ Premium Templates'
-  }, {
-    feature: 'Support & Lifetime Updates',
-    desc: 'Dedicated technical support and continuous plugin improvements',
-    free: 'Community Forum',
-    pro: '24/7 Priority Support + Updates'
-  }];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    className: "overview-free-vs-pro-wrap",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-      className: "free-vs-pro-card",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "card-top-banner",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "banner-left",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
-            children: "Compare Free vs PRO Features"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-            children: "Supercharge your WordPress Gutenberg editing experience with Guten Builder PRO."
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "banner-right",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
-            href: "https://gutenbuilder.com/pro",
-            target: "_blank",
-            rel: "noopener noreferrer",
-            className: "btn-upgrade-pro",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
-              width: "18",
-              height: "18",
-              viewBox: "0 0 24 24",
-              fill: "none",
-              stroke: "currentColor",
-              strokeWidth: "2.5",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                d: "m2 4 3 12h14l3-12-6 7-4-5-4 5-6-7z"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                d: "M5 20h14"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-              children: "Upgrade to PRO Now"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
-              width: "16",
-              height: "16",
-              viewBox: "0 0 24 24",
-              fill: "none",
-              stroke: "currentColor",
-              strokeWidth: "2.5",
-              className: "arrow-icon",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                d: "M5 12h14M12 5l7 7-7 7"
-              })
+
+const changelogData = [{
+  version: "v1.0.0",
+  date: "September 30 2026",
+  badge: "Initial Stable Release",
+  badgeType: "stable",
+  summary: "First official stable release of XpoBlock. Featuring 11+ high-performance Gutenberg blocks.",
+  categories: [{
+    name: "✨ New Features",
+    type: "feat",
+    items: ["Introduced 11 high-performance Gutenberg blocks (Before/After Slider, Accordion, Audio Player, Pricing Table, Action Button, Contact Form, Marquee Slider, Scroll Story, Table of Contents, QR Code Generator)."]
+  }]
+}];
+const Changelog = () => {
+  const [searchQuery, setSearchQuery] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("");
+  const [activeFilter, setActiveFilter] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("all");
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: "changelog-wrapper",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "changelog-hero",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "hero-content",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "hero-title-group",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            className: "hero-icon",
+            children: "\uD83D\uDE80"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+              className: "hero-title",
+              children: "Release Notes & Changelog"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+              className: "hero-subtitle",
+              children: "Track updates, new Gutenberg blocks, performance optimizations, and bug fixes for XpoBlock."
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-            className: "guarantee-text",
-            children: "\uD83D\uDD12 14-Day Money-Back Guarantee \u2022 Instant Activation"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "hero-stats",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "stat-pill",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "stat-label",
+              children: "Current Release"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "stat-value",
+              children: "v1.0.0"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "stat-pill",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "stat-label",
+              children: "Total Releases"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "stat-value",
+              children: "1 Release"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "stat-pill",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "stat-label",
+              children: "Status"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "stat-badge-online",
+              children: "\u25CF Active & Stable"
+            })]
           })]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "comparison-table-container",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "table-header",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "col-feature",
-            children: "FEATURE COMPARISON"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "col-free",
-            children: "FREE PLAN"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "col-pro",
-            children: "PRO PLAN"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "changelog-toolbar",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "search-box",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
+          width: "16",
+          height: "16",
+          viewBox: "0 0 24 24",
+          fill: "none",
+          stroke: "currentColor",
+          strokeWidth: "2",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("circle", {
+            cx: "11",
+            cy: "11",
+            r: "8"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
+            x1: "21",
+            y1: "21",
+            x2: "16.65",
+            y2: "16.65"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "table-body",
-          children: comparisonFeatures.map((item, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "table-row",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-              className: "col-feature",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                className: "feature-name",
-                children: item.feature
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                className: "feature-desc",
-                children: item.desc
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-              className: "col-free",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                className: "badge-free",
-                children: item.free
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-              className: "col-pro",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                className: "badge-pro",
-                children: item.pro
-              })
-            })]
-          }, index))
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+          type: "text",
+          placeholder: "Search release notes (e.g. Accordion, Slider, FIX)...",
+          value: searchQuery,
+          onChange: e => setSearchQuery(e.target.value)
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "filter-chips",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          type: "button",
+          className: `filter-btn ${activeFilter === "all" ? "active" : ""}`,
+          onClick: () => setActiveFilter("all"),
+          children: "All Changes"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          type: "button",
+          className: `filter-btn ${activeFilter === "feat" ? "active" : ""}`,
+          onClick: () => setActiveFilter("feat"),
+          children: "\u2728 New Features"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          type: "button",
+          className: `filter-btn ${activeFilter === "perf" ? "active" : ""}`,
+          onClick: () => setActiveFilter("perf"),
+          children: "\u26A1 Speed & Perf"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          type: "button",
+          className: `filter-btn ${activeFilter === "fix" ? "active" : ""}`,
+          onClick: () => setActiveFilter("fix"),
+          children: "\uD83D\uDC1B Bug Fixes"
         })]
       })]
-    })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "changelog-timeline-list",
+      children: changelogData.map((release, idx) => {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "timeline-release-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            className: "release-node-badge",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "pulse-dot"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "release-card-inner",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "release-card-header",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                className: "version-info",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                  className: "version-tag",
+                  children: release.version
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+                  className: "release-date",
+                  children: ["\uD83D\uDCC5 ", release.date]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                  className: `status-badge ${release.badgeType}`,
+                  children: release.badge
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+              className: "release-summary",
+              children: release.summary
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "release-categories",
+              children: release.categories.map((cat, cIdx) => {
+                if (activeFilter !== "all" && activeFilter !== cat.type) {
+                  return null;
+                }
+                const filteredItems = cat.items.filter(item => item.toLowerCase().includes(searchQuery.toLowerCase()));
+                if (searchQuery && filteredItems.length === 0) {
+                  return null;
+                }
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                  className: `category-block ${cat.type}`,
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+                    className: "category-title",
+                    children: cat.name
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("ul", {
+                    className: "category-items-list",
+                    children: filteredItems.map((item, iIdx) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("li", {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        className: "check-bullet",
+                        children: "\u2022"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        children: item
+                      })]
+                    }, iIdx))
+                  })]
+                }, cIdx);
+              })
+            })]
+          })]
+        }, idx);
+      })
+    })]
   });
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FreeVsProCard);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Changelog);
 
 /***/ },
 
@@ -940,37 +1511,12 @@ const Header = props => {
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Navbar_Navbar__WEBPACK_IMPORTED_MODULE_0__["default"], {
         ...props
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "header-right",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
           className: "plugin-version-badge",
           children: ["v", version]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
-          type: "button",
-          className: "btn-header-pro",
-          onClick: () => {
-            const proBanner = document.querySelector(".guten-builder-pro-banner");
-            if (proBanner) {
-              proBanner.scrollIntoView({
-                behavior: "smooth"
-              });
-            }
-          },
-          children: [!isPro && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
-            xmlns: "http://www.w3.org/2000/svg",
-            width: "24",
-            height: "24",
-            viewBox: "0 0 24 24",
-            fill: "none",
-            stroke: "#fff",
-            strokeWidth: "2",
-            strokeLinecap: "round",
-            strokeLinejoin: "round",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
-              d: "m2 4 3 12h14l3-12-6 7-4-7-4 7zm3 16h14"
-            })
-          }), isPro ? "Activated" : "Pro Upgrade"]
-        })]
+        })
       })]
     })
   });
@@ -1094,70 +1640,6 @@ const Navbar = ({
         }), "Release (Changelog)"]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
         type: "button",
-        className: `tab-btn ${activeTab === "contact-support" ? "active" : ""}`,
-        onClick: () => setActiveTab("contact-support"),
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
-          className: "tab-icon",
-          width: "16",
-          height: "16",
-          viewBox: "0 0 24 24",
-          fill: "none",
-          stroke: "currentColor",
-          strokeWidth: "2",
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
-            cx: "12",
-            cy: "12",
-            r: "10"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
-            cx: "12",
-            cy: "12",
-            r: "4"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
-            x1: "4.93",
-            y1: "4.93",
-            x2: "9.17",
-            y2: "9.17"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
-            x1: "14.83",
-            y1: "14.83",
-            x2: "19.07",
-            y2: "19.07"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
-            x1: "14.83",
-            y1: "9.17",
-            x2: "19.07",
-            y2: "4.93"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
-            x1: "4.93",
-            y1: "19.07",
-            x2: "9.17",
-            y2: "14.83"
-          })]
-        }), "Contact Support"]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
-        type: "button",
-        className: `tab-btn ${activeTab === "free-vs-pro" ? "active" : ""}`,
-        onClick: () => setActiveTab("free-vs-pro"),
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
-          className: "tab-icon",
-          width: "16",
-          height: "16",
-          viewBox: "0 0 24 24",
-          fill: "none",
-          stroke: "currentColor",
-          strokeWidth: "2",
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-            d: "m2 4 3 12h14l3-12-6 7-4-5-4 5-6-7z"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-            d: "M5 20h14"
-          })]
-        }), "Free vs PRO"]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
-        type: "button",
         className: `tab-btn ${activeTab === "system" ? "active" : ""}`,
         onClick: () => setActiveTab("system"),
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
@@ -1184,24 +1666,6 @@ const Navbar = ({
             y2: "8"
           })]
         }), "System Info"]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
-        type: "button",
-        className: `tab-btn ${activeTab === "feedback" ? "active" : ""}`,
-        onClick: () => setActiveTab("feedback"),
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
-          className: "tab-icon",
-          width: "16",
-          height: "16",
-          viewBox: "0 0 24 24",
-          fill: "none",
-          stroke: "currentColor",
-          strokeWidth: "2",
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-            d: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-          })
-        }), "Feedback"]
       })]
     })
   });
@@ -1369,12 +1833,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _StatsCards__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./StatsCards */ "../tr-tools/AdminDashboard/components/Overview/StatsCards.jsx");
 /* harmony import */ var _FeatureBanner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FeatureBanner */ "../tr-tools/AdminDashboard/components/Overview/FeatureBanner.jsx");
 /* harmony import */ var _PopularBlocks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PopularBlocks */ "../tr-tools/AdminDashboard/components/Overview/PopularBlocks.jsx");
-/* harmony import */ var _FreeVSPro_FreeVsProCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../FreeVSPro/FreeVsProCard */ "../tr-tools/AdminDashboard/components/FreeVSPro/FreeVsProCard.jsx");
-/* harmony import */ var _QuickLinks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./QuickLinks */ "../tr-tools/AdminDashboard/components/Overview/QuickLinks.jsx");
-/* harmony import */ var _Overview_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Overview.scss */ "../tr-tools/AdminDashboard/components/Overview/Overview.scss");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
-
+/* harmony import */ var _QuickLinks_QuickLinks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../QuickLinks/QuickLinks */ "../tr-tools/AdminDashboard/components/QuickLinks/QuickLinks.jsx");
+/* harmony import */ var _Overview_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Overview.scss */ "../tr-tools/AdminDashboard/components/Overview/Overview.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
 
 
 
@@ -1382,14 +1844,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const Overview = props => {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("main", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("main", {
       className: "guten-builder-overview-wraper",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_StatsCards__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_StatsCards__WEBPACK_IMPORTED_MODULE_0__["default"], {
         ...props
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_FeatureBanner__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FeatureBanner__WEBPACK_IMPORTED_MODULE_1__["default"], {
         ...props
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_PopularBlocks__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_QuickLinks__WEBPACK_IMPORTED_MODULE_4__["default"], {})]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_PopularBlocks__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_QuickLinks_QuickLinks__WEBPACK_IMPORTED_MODULE_3__["default"], {})]
     })
   });
 };
@@ -1546,140 +2008,6 @@ const PopularBlocks = () => {
 
 /***/ },
 
-/***/ "../tr-tools/AdminDashboard/components/Overview/QuickLinks.jsx"
-/*!*********************************************************************!*\
-  !*** ../tr-tools/AdminDashboard/components/Overview/QuickLinks.jsx ***!
-  \*********************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _QuickLinks_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./QuickLinks.scss */ "../tr-tools/AdminDashboard/components/Overview/QuickLinks.scss");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
-
-
-const QuickLinks = () => {
-  const links = [{
-    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
-      width: "22",
-      height: "22",
-      viewBox: "0 0 24 24",
-      fill: "none",
-      stroke: "currentColor",
-      strokeWidth: "2",
-      strokeLinecap: "round",
-      strokeLinejoin: "round",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-        d: "M4 19.5A2.5 2.5 0 0 1 6.5 17H20"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-        d: "M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
-      })]
-    }),
-    badgeClass: 'blue',
-    title: 'Documentation',
-    desc: 'Explore comprehensive guides & block customization docs.',
-    actionText: 'Read Docs →',
-    url: '#'
-  }, {
-    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
-      width: "22",
-      height: "22",
-      viewBox: "0 0 24 24",
-      fill: "none",
-      stroke: "currentColor",
-      strokeWidth: "2",
-      strokeLinecap: "round",
-      strokeLinejoin: "round",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polygon", {
-        points: "23 7 16 12 23 17 23 7"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
-        x: "1",
-        y: "5",
-        width: "15",
-        height: "14",
-        rx: "2",
-        ry: "2"
-      })]
-    }),
-    badgeClass: 'purple',
-    title: 'Video Tutorials',
-    desc: 'Watch step-by-step video guides to build pages fast.',
-    actionText: 'Watch Videos →',
-    url: '#'
-  }, {
-    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
-      width: "22",
-      height: "22",
-      viewBox: "0 0 24 24",
-      fill: "none",
-      stroke: "currentColor",
-      strokeWidth: "2",
-      strokeLinecap: "round",
-      strokeLinejoin: "round",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-        d: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-      })
-    }),
-    badgeClass: 'green',
-    title: 'Need Help?',
-    desc: 'Facing issues? Reach out to our dedicated support team.',
-    actionText: 'Get Support →',
-    url: '#'
-  }, {
-    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
-      width: "22",
-      height: "22",
-      viewBox: "0 0 24 24",
-      fill: "none",
-      stroke: "currentColor",
-      strokeWidth: "2",
-      strokeLinecap: "round",
-      strokeLinejoin: "round",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polygon", {
-        points: "12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-      })
-    }),
-    badgeClass: 'gold',
-    title: 'Leave a Review',
-    desc: 'If you like Guten Builder, consider leaving a 5-star review.',
-    actionText: 'Rate Plugin ★★★★★',
-    url: '#'
-  }];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-    className: "overview-quick-links-wrap",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-      className: "section-title",
-      children: "Help & Resources"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "quick-links-grid",
-      children: links.map((item, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "quick-link-card",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: `link-icon-wrap ${item.badgeClass}`,
-          children: item.icon
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "link-content",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h4", {
-            children: item.title
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-            children: item.desc
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-            href: item.url,
-            className: "link-action",
-            children: item.actionText
-          })]
-        })]
-      }, index))
-    })]
-  });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (QuickLinks);
-
-/***/ },
-
 /***/ "../tr-tools/AdminDashboard/components/Overview/StatsCards.jsx"
 /*!*********************************************************************!*\
   !*** ../tr-tools/AdminDashboard/components/Overview/StatsCards.jsx ***!
@@ -1814,6 +2142,292 @@ const StatsCards = props => {
 
 /***/ },
 
+/***/ "../tr-tools/AdminDashboard/components/QuickLinks/QuickLinks.jsx"
+/*!***********************************************************************!*\
+  !*** ../tr-tools/AdminDashboard/components/QuickLinks/QuickLinks.jsx ***!
+  \***********************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _DocsModal_DocsModal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../DocsModal/DocsModal */ "../tr-tools/AdminDashboard/DocsModal/DocsModal.jsx");
+/* harmony import */ var _QuickLinks_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./QuickLinks.scss */ "../tr-tools/AdminDashboard/components/QuickLinks/QuickLinks.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+const QuickLinks = () => {
+  const [docsBlock, setDocsBlock] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  const links = [{
+    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("svg", {
+      width: "22",
+      height: "22",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "2",
+      strokeLinecap: "round",
+      strokeLinejoin: "round",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+        d: "M4 19.5A2.5 2.5 0 0 1 6.5 17H20"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+        d: "M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+      })]
+    }),
+    badgeClass: 'blue',
+    title: 'Documentation',
+    desc: 'Explore comprehensive guides & block customization docs.',
+    actionText: 'Read Docs →',
+    onClick: () => setDocsBlock({
+      id: 'intro'
+    })
+  }, {
+    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("svg", {
+      width: "22",
+      height: "22",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "2",
+      strokeLinecap: "round",
+      strokeLinejoin: "round",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("polygon", {
+        points: "23 7 16 12 23 17 23 7"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("rect", {
+        x: "1",
+        y: "5",
+        width: "15",
+        height: "14",
+        rx: "2",
+        ry: "2"
+      })]
+    }),
+    badgeClass: 'purple',
+    title: 'Video Tutorials',
+    desc: 'Watch step-by-step video guides to build pages fast.',
+    actionText: 'Watch Videos →',
+    url: '#'
+  }, {
+    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("svg", {
+      width: "22",
+      height: "22",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "2",
+      strokeLinecap: "round",
+      strokeLinejoin: "round",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+        d: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+      })
+    }),
+    badgeClass: 'green',
+    title: 'Need Help?',
+    desc: 'Facing issues? Reach out to our dedicated support team.',
+    actionText: 'Get Support →',
+    url: '#'
+  }, {
+    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("svg", {
+      width: "22",
+      height: "22",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "2",
+      strokeLinecap: "round",
+      strokeLinejoin: "round",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("polygon", {
+        points: "12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+      })
+    }),
+    badgeClass: 'gold',
+    title: 'Leave a Review',
+    desc: 'If you like Guten Builder, consider leaving a 5-star review.',
+    actionText: 'Rate Plugin ★★★★★',
+    url: '#'
+  }];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    className: "overview-quick-links-wrap",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+      className: "section-title",
+      children: "Help & Resources"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "quick-links-grid",
+      children: links.map((item, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "quick-link-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: `link-icon-wrap ${item.badgeClass}`,
+          children: item.icon
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "link-content",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h4", {
+            children: item.title
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+            children: item.desc
+          }), item.onClick ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+            type: "button",
+            className: "link-action link-action-btn",
+            onClick: item.onClick,
+            children: item.actionText
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+            href: item.url,
+            className: "link-action",
+            children: item.actionText
+          })]
+        })]
+      }, index))
+    }), docsBlock && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_DocsModal_DocsModal__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      block: docsBlock,
+      onClose: () => setDocsBlock(null)
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (QuickLinks);
+
+/***/ },
+
+/***/ "../tr-tools/AdminDashboard/components/System/System.jsx"
+/*!***************************************************************!*\
+  !*** ../tr-tools/AdminDashboard/components/System/System.jsx ***!
+  \***************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _System_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./System.scss */ "../tr-tools/AdminDashboard/components/System/System.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+const System = props => {
+  const {
+    version = "1.0.0",
+    wpVersion = "6.7",
+    phpVersion = "8.0",
+    adminUrl = "",
+    slug = "guten-builder-blocks",
+    isPro = false,
+    availableBlocks = [],
+    activeBlocks = {}
+  } = props;
+  const [copied, setCopied] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+
+  // Calculate active blocks count
+  const totalBlocks = availableBlocks.length || 11;
+  const activeCount = Object.keys(activeBlocks).length > 0 ? Object.values(activeBlocks).filter(Boolean).length : totalBlocks;
+  const handleCopyReport = () => {
+    const report = `
+=== Guten Builder Blocks System Report ===
+Plugin Name: ${slug}
+Plugin Version: v${version}
+License Status: ${isPro ? "PRO Edition" : "Free Edition"}
+WordPress Version: v${wpVersion}
+PHP Version: v${phpVersion}
+Admin URL: ${adminUrl}
+Active Blocks: ${activeCount} of ${totalBlocks} Enabled
+Memory Limit: 256M
+Max Upload Size: 64MB
+    `.trim();
+    navigator.clipboard.writeText(report);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "system-wrapper",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "system-grid",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "system-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "card-header",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            className: "card-icon",
+            children: "\uD83D\uDD0C"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+            children: "Plugin & License Details"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "info-list",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "info-row",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "info-key",
+              children: "Plugin Slug"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "info-val code-text",
+              children: slug
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "info-row",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "info-key",
+              children: "Plugin Version"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+              className: "info-val badge-blue",
+              children: ["v", version]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "info-row",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "info-key",
+              children: "Active Gutenberg Blocks"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+              className: "info-val badge-emerald",
+              children: [activeCount, " of ", totalBlocks, " Active"]
+            })]
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "system-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "card-header",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            className: "card-icon",
+            children: "\uD83C\uDF10"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+            children: "WordPress Environment"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "info-list",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "info-row",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "info-key",
+              children: "WordPress Version"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+              className: "info-val badge-dark",
+              children: ["v", wpVersion]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "info-row",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "info-key",
+              children: "PHP Version"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+              className: "info-val badge-purple",
+              children: ["v", phpVersion]
+            })]
+          })]
+        })]
+      })]
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (System);
+
+/***/ },
+
 /***/ "./src/adminDashboard/App.jsx"
 /*!************************************!*\
   !*** ./src/adminDashboard/App.jsx ***!
@@ -1829,27 +2443,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tr_tools_AdminDashboard_components_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tr-tools/AdminDashboard/components/Header */ "../tr-tools/AdminDashboard/components/Header.jsx");
 /* harmony import */ var tr_tools_AdminDashboard_components_Overview_Overview__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tr-tools/AdminDashboard/components/Overview/Overview */ "../tr-tools/AdminDashboard/components/Overview/Overview.jsx");
 /* harmony import */ var tr_tools_AdminDashboard_components_AllBlocks_AllBlocks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tr-tools/AdminDashboard/components/AllBlocks/AllBlocks */ "../tr-tools/AdminDashboard/components/AllBlocks/AllBlocks.jsx");
-/* harmony import */ var tr_tools_AdminDashboard_components_FreeVSPro_FreeVsProCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tr-tools/AdminDashboard/components/FreeVSPro/FreeVsProCard */ "../tr-tools/AdminDashboard/components/FreeVSPro/FreeVsProCard.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var tr_tools_AdminDashboard_components_Changelog_Changelog__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tr-tools/AdminDashboard/components/Changelog/Changelog */ "../tr-tools/AdminDashboard/components/Changelog/Changelog.jsx");
+/* harmony import */ var tr_tools_AdminDashboard_components_System_System__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tr-tools/AdminDashboard/components/System/System */ "../tr-tools/AdminDashboard/components/System/System.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
 
 
 
+
+// import FreeVsProCard from 'tr-tools/AdminDashboard/components/FreeVSPro/FreeVsProCard';
 
 
 
 const App = props => {
   const [activeTab, setActiveTab] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('overview');
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools_AdminDashboard_components_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(tr_tools_AdminDashboard_components_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
       ...props,
       activeTab: activeTab,
       setActiveTab: setActiveTab
-    }), activeTab === 'overview' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools_AdminDashboard_components_Overview_Overview__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    }), activeTab === 'overview' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(tr_tools_AdminDashboard_components_Overview_Overview__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      ...props,
+      activeTab: activeTab,
+      setActiveTab: setActiveTab
+    }), activeTab === 'all-blocks' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(tr_tools_AdminDashboard_components_AllBlocks_AllBlocks__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      ...props,
+      activeTab: activeTab,
+      setActiveTab: setActiveTab
+    }), activeTab === 'changelog' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(tr_tools_AdminDashboard_components_Changelog_Changelog__WEBPACK_IMPORTED_MODULE_4__["default"], {
       ...props
-    }), activeTab === 'all-blocks' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools_AdminDashboard_components_AllBlocks_AllBlocks__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      ...props
-    }), activeTab === 'free-vs-pro' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools_AdminDashboard_components_FreeVSPro_FreeVsProCard__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }), activeTab === 'system' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(tr_tools_AdminDashboard_components_System_System__WEBPACK_IMPORTED_MODULE_5__["default"], {
       ...props
     })]
   });
@@ -1869,18 +2492,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   dashboardInfo: () => (/* binding */ dashboardInfo),
 /* harmony export */   featureBannerData: () => (/* binding */ featureBannerData)
 /* harmony export */ });
-/* harmony import */ var _image_cover_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./image/cover.png */ "./src/adminDashboard/data/image/cover.png");
+/* harmony import */ var _image_cover_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./image/cover.jpg */ "./src/adminDashboard/data/image/cover.jpg");
 
-const slug = 'guten builder blocks';
+const slug = 'XpoBlock';
 const featureBannerData = {
-  title: 'Build High-Performance Websites with Gutenberg Block Suite',
+  title: 'Build High-Performance Websites with XpoBlock',
   description: 'Transform your WordPress editor with 11+ ultra-fast, motion-ready blocks including Interactive Before/After, Audio Waveform Player, Parallax Scroll Story, Smooth Marquee, and Dynamic Pricing Tables.',
   primaryBtnText: '+ Add New Page',
   secondaryBtnText: 'Explore All 11 Blocks',
   videoBtnText: 'Watch Video Demo',
-  youtubeVideoId: 'https://www.youtube.com/watch?v=2O7oDm1FaPU&list=RD2O7oDm1FaPU&start_radio=1',
-  coverImage: _image_cover_png__WEBPACK_IMPORTED_MODULE_0__,
-  isVideo: true
+  youtubeVideoId: '',
+  coverImage: _image_cover_jpg__WEBPACK_IMPORTED_MODULE_0__,
+  isVideo: false
 };
 const dashboardInfo = info => {
   const {
@@ -1910,6 +2533,18 @@ const dashboardInfo = info => {
 
 /***/ },
 
+/***/ "../tr-tools/AdminDashboard/DocsModal/docsModal.scss"
+/*!***********************************************************!*\
+  !*** ../tr-tools/AdminDashboard/DocsModal/docsModal.scss ***!
+  \***********************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
 /***/ "../tr-tools/AdminDashboard/components/AllBlocks/AllBlocks.scss"
 /*!**********************************************************************!*\
   !*** ../tr-tools/AdminDashboard/components/AllBlocks/AllBlocks.scss ***!
@@ -1934,10 +2569,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ },
 
-/***/ "../tr-tools/AdminDashboard/components/FreeVSPro/FreeVsProCard.scss"
-/*!**************************************************************************!*\
-  !*** ../tr-tools/AdminDashboard/components/FreeVSPro/FreeVsProCard.scss ***!
-  \**************************************************************************/
+/***/ "../tr-tools/AdminDashboard/components/Changelog/Changelog.scss"
+/*!**********************************************************************!*\
+  !*** ../tr-tools/AdminDashboard/components/Changelog/Changelog.scss ***!
+  \**********************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -2006,18 +2641,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ },
 
-/***/ "../tr-tools/AdminDashboard/components/Overview/QuickLinks.scss"
-/*!**********************************************************************!*\
-  !*** ../tr-tools/AdminDashboard/components/Overview/QuickLinks.scss ***!
-  \**********************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ },
-
 /***/ "../tr-tools/AdminDashboard/components/Overview/StatsCards.scss"
 /*!**********************************************************************!*\
   !*** ../tr-tools/AdminDashboard/components/Overview/StatsCards.scss ***!
@@ -2030,13 +2653,37 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ },
 
-/***/ "./src/adminDashboard/data/image/cover.png"
+/***/ "../tr-tools/AdminDashboard/components/QuickLinks/QuickLinks.scss"
+/*!************************************************************************!*\
+  !*** ../tr-tools/AdminDashboard/components/QuickLinks/QuickLinks.scss ***!
+  \************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "../tr-tools/AdminDashboard/components/System/System.scss"
+/*!****************************************************************!*\
+  !*** ../tr-tools/AdminDashboard/components/System/System.scss ***!
+  \****************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "./src/adminDashboard/data/image/cover.jpg"
 /*!*************************************************!*\
-  !*** ./src/adminDashboard/data/image/cover.png ***!
+  !*** ./src/adminDashboard/data/image/cover.jpg ***!
   \*************************************************/
 (module, __unused_webpack_exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "images/cover.006f1df8.png";
+module.exports = __webpack_require__.p + "images/cover.655fc710.jpg";
 
 /***/ },
 
@@ -2233,7 +2880,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_1___default()(() => {
-  const rootElement = document.getElementById("guten-builder-admin-root"); //includes admin.php file thake
+  const rootElement = document.getElementById('xpo-block-admin-root'); //includes admin.php file thake
   const info = rootElement && rootElement.dataset && rootElement.dataset.info ? JSON.parse(rootElement.dataset.info) : {};
   if (rootElement) {
     (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createRoot)(rootElement).render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_App__WEBPACK_IMPORTED_MODULE_2__["default"], {
