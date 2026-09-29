@@ -5659,30 +5659,30 @@ const DynamicStyles = ({
   id
 }) => {
   const {
-    containerBg = '#ffffff',
+    containerBg,
     containerBorder,
     containerRadius,
-    downloadBtnColor = '#10b981',
+    downloadBtnColor,
     titleColor,
     titleTypography,
     descriptionColor,
     descriptionTypography
   } = attributes || {};
   const css = `
-    #${id} .gbb-qr-container {
+    #${id} .xpo-qr-container {
       background-color: ${containerBg};
       ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_1__.getBorderCss)(containerBorder)}
       ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_1__.getBorderRadiusCss)(containerRadius)}
     }
-    #${id} .gbb-qr-title {
+    #${id} .xpo-qr-title {
       ${titleColor ? `color: ${titleColor};` : ''}
       ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_1__.getTypographyCss)(titleTypography)}
     }
-    #${id} .gbb-qr-description {
+    #${id} .xpo-qr-description {
       ${descriptionColor ? `color: ${descriptionColor};` : ''}
       ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_1__.getTypographyCss)(descriptionTypography)}
     }
-    #${id} .gbb-qr-download-btn {
+    #${id} .xpo-qr-download-btn {
       background-color: ${downloadBtnColor};
       box-shadow: 0 4px 12px ${downloadBtnColor}40;
     }
@@ -5795,23 +5795,23 @@ const TemplateOne = ({
     });
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-    className: "gbb-qr-wrapper",
+    className: "xpo-qr-wrapper",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-      className: "gbb-qr-container",
+      className: "xpo-qr-container",
       children: [(titleText || descriptionText) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        className: "gbb-qr-header",
+        className: "xpo-qr-header",
         children: [titleText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
-          className: "gbb-qr-title",
+          className: "xpo-qr-title",
           children: titleText
         }), descriptionText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-          className: "gbb-qr-description",
+          className: "xpo-qr-description",
           children: descriptionText
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        className: "gbb-qr-code-wrapper",
+        className: "xpo-qr-code-wrapper",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("svg", {
           ref: svgRef,
-          className: "gbb-qr-svg",
+          className: "xpo-qr-svg",
           width: svgTotalSize,
           height: svgTotalSize,
           viewBox: `0 0 ${svgTotalSize} ${svgTotalSize}`,
@@ -5833,7 +5833,7 @@ const TemplateOne = ({
             }, `${r}-${c}`);
           }))]
         }), logoUrl && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-          className: `gbb-qr-logo-overlay ${showLogoBg ? 'with-bg' : ''}`,
+          className: `xpo-qr-logo-overlay ${showLogoBg ? 'with-bg' : ''}`,
           style: {
             width: `${logoWidth}px`,
             height: `${logoHeight}px`
@@ -5846,10 +5846,10 @@ const TemplateOne = ({
           })
         })]
       }), showDownloadBtn && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "gbb-qr-footer",
+        className: "xpo-qr-footer",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("button", {
           type: "button",
-          className: "gbb-qr-download-btn",
+          className: "xpo-qr-download-btn",
           onClick: onDownload,
           title: isEditor ? 'Preview on live site to download' : downloadBtnText,
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_utils_icons__WEBPACK_IMPORTED_MODULE_2__.DownloadIcon, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
@@ -6462,7 +6462,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const containers = document.querySelectorAll('.wp-block-guten-builder-blocks-qr-code');
+  const containers = document.querySelectorAll('.wp-block-xpo-block-qr-code');
   containers.forEach(container => {
     if (container.dataset.initialized) return;
     container.dataset.initialized = 'true';

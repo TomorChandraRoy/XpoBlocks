@@ -5737,6 +5737,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-block';
 const General = ({
   attributes,
   setAttributes
@@ -5755,39 +5756,39 @@ const General = ({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('QR Content', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('QR Content', textDomain),
       initialOpen: true,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextareaControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('QR Content / URL', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('QR Content / URL', textDomain),
         value: qrText,
         onChange: val => setAttributes({
           qrText: val
         }),
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enter URL, plain text, email, or phone number to encode.', 'guten-builder-blocks')
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enter URL, plain text, email, or phone number to encode.', textDomain)
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Error Correction Level', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Error Correction Level', textDomain),
         value: errorCorrectionLevel,
         options: _utils_options__WEBPACK_IMPORTED_MODULE_3__.errorCorrectionOptions,
         onChange: val => setAttributes({
           errorCorrectionLevel: val
         }),
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Higher levels (Q/H) allow scanning even if a center logo covers parts of the QR code.', 'guten-builder-blocks')
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Higher levels (Q/H) allow scanning even if a center logo covers parts of the QR code.', textDomain)
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Center Logo', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Center Logo', textDomain),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.MediaControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Logo Image / Source', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Logo Image / Source', textDomain),
         value: logoUrl,
         onChange: val => setAttributes({
           logoUrl: val
         }),
         allowedTypes: ['image'],
-        buttonLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Upload / Select Logo', 'guten-builder-blocks')
+        buttonLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Upload / Select Logo', textDomain)
       }), logoUrl && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Logo Size (px)', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Logo Size (px)', textDomain),
           value: logoWidth,
           onChange: val => setAttributes({
             logoWidth: val,
@@ -5796,26 +5797,26 @@ const General = ({
           min: 20,
           max: 100
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('White Background Circle', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('White Background Circle', textDomain),
           checked: showLogoBg,
           onChange: val => setAttributes({
             showLogoBg: val
           }),
-          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Adds a white circular background behind the logo for contrast.', 'guten-builder-blocks')
+          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Adds a white circular background behind the logo for contrast.', textDomain)
         })]
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Header Text', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Header Text', textDomain),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title', textDomain),
         value: titleText,
         onChange: val => setAttributes({
           titleText: val
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextareaControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description', textDomain),
         value: descriptionText,
         onChange: val => setAttributes({
           descriptionText: val
@@ -5823,16 +5824,16 @@ const General = ({
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Download Button', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Download Button', textDomain),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Show Download Button', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Show Download Button', textDomain),
         checked: showDownloadBtn,
         onChange: val => setAttributes({
           showDownloadBtn: val
         })
       }), showDownloadBtn && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Label', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Label', textDomain),
         value: downloadBtnText,
         onChange: val => setAttributes({
           downloadBtnText: val
@@ -5876,6 +5877,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-block';
 const Settings = ({
   attributes,
   setAttributes
@@ -5889,19 +5891,19 @@ const Settings = ({
   }
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_6__.DocsLink, {
-      link: "https://gutenbuilder.com/docs/qr-code",
-      text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Documentation', 'guten-builder-blocks')
+      link: "https://xpo.com/docs/qr-code",
+      text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Documentation', textDomain)
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TabPanel, {
-      className: "guten-builder-blocks-tab-panel wp-block-guten-builder-blocks-qr-code",
-      activeClass: "guten-builder-blocks-active-tab",
+      className: "wp-xpo-tab-panel",
+      activeClass: "wp-xpo-tab-panel-active-tab",
       tabs: _utils_options__WEBPACK_IMPORTED_MODULE_3__.generalStyleTabs,
       children: tab => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
         children: ['general' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_General_General__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          attributes: attributes,
-          setAttributes: setAttributes
+          attributes,
+          setAttributes
         }), 'style' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Style_Style__WEBPACK_IMPORTED_MODULE_5__["default"], {
-          attributes: attributes,
-          setAttributes: setAttributes
+          attributes,
+          setAttributes
         })]
       })
     })]
@@ -5935,6 +5937,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-block';
 const Style = ({
   attributes,
   setAttributes
@@ -5960,10 +5963,10 @@ const Style = ({
   const units = [(0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.pxUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.remUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.emUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.vwUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.perUnit)()];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('QR Code Colors & Dimensions', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('QR Code Colors & Dimensions', textDomain),
       initialOpen: true,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('QR Code Size (px)', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('QR Code Size (px)', textDomain),
         value: qrSize,
         onChange: val => setAttributes({
           qrSize: val
@@ -5971,20 +5974,20 @@ const Style = ({
         min: 140,
         max: 450
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Foreground Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Foreground Color', textDomain),
         value: fgColor,
         onChange: val => setAttributes({
           fgColor: val
         }),
         defaultColor: "#0f172a"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Transparent Background', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Transparent Background', textDomain),
         checked: transparentBg,
         onChange: val => setAttributes({
           transparentBg: val
         })
       }), !transparentBg && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background Color', textDomain),
         value: bgColor,
         onChange: val => setAttributes({
           bgColor: val
@@ -5992,18 +5995,18 @@ const Style = ({
         defaultColor: "#ffffff"
       })]
     }), (titleText || descriptionText) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Header Text Style', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Header Text Style', textDomain),
       initialOpen: false,
       children: [titleText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title Color', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title Color', textDomain),
           value: titleColor,
           onChange: val => setAttributes({
             titleColor: val
           }),
           defaultColor: "#0f172a"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title Typography', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title Typography', textDomain),
           value: titleTypography,
           onChange: val => setAttributes({
             titleTypography: val
@@ -6011,14 +6014,14 @@ const Style = ({
         })]
       }), descriptionText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description Color', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description Color', textDomain),
           value: descriptionColor,
           onChange: val => setAttributes({
             descriptionColor: val
           }),
           defaultColor: "#64748b"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description Typography', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description Typography', textDomain),
           value: descriptionTypography,
           onChange: val => setAttributes({
             descriptionTypography: val
@@ -6026,24 +6029,24 @@ const Style = ({
         })]
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button & Container Style', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button & Container Style', textDomain),
       initialOpen: false,
       children: [showDownloadBtn && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Download Button Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Download Button Color', textDomain),
         value: downloadBtnColor,
         onChange: val => setAttributes({
           downloadBtnColor: val
         }),
         defaultColor: "#10b981"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container Background', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container Background', textDomain),
         value: containerBg,
         onChange: val => setAttributes({
           containerBg: val
         }),
         defaultColor: "#ffffff00"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BorderControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container Border', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container Border', textDomain),
         value: containerBorder,
         onChange: val => setAttributes({
           containerBorder: val
@@ -6054,7 +6057,7 @@ const Style = ({
           style: 'solid'
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.SpacingControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container Border Radius', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container Border Radius', textDomain),
         value: containerRadius,
         onChange: val => setAttributes({
           containerRadius: val
@@ -6098,30 +6101,30 @@ const DynamicStyles = ({
   id
 }) => {
   const {
-    containerBg = '#ffffff',
+    containerBg,
     containerBorder,
     containerRadius,
-    downloadBtnColor = '#10b981',
+    downloadBtnColor,
     titleColor,
     titleTypography,
     descriptionColor,
     descriptionTypography
   } = attributes || {};
   const css = `
-    #${id} .gbb-qr-container {
+    #${id} .xpo-qr-container {
       background-color: ${containerBg};
       ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_1__.getBorderCss)(containerBorder)}
       ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_1__.getBorderRadiusCss)(containerRadius)}
     }
-    #${id} .gbb-qr-title {
+    #${id} .xpo-qr-title {
       ${titleColor ? `color: ${titleColor};` : ''}
       ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_1__.getTypographyCss)(titleTypography)}
     }
-    #${id} .gbb-qr-description {
+    #${id} .xpo-qr-description {
       ${descriptionColor ? `color: ${descriptionColor};` : ''}
       ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_1__.getTypographyCss)(descriptionTypography)}
     }
-    #${id} .gbb-qr-download-btn {
+    #${id} .xpo-qr-download-btn {
       background-color: ${downloadBtnColor};
       box-shadow: 0 4px 12px ${downloadBtnColor}40;
     }
@@ -6234,23 +6237,23 @@ const TemplateOne = ({
     });
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-    className: "gbb-qr-wrapper",
+    className: "xpo-qr-wrapper",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-      className: "gbb-qr-container",
+      className: "xpo-qr-container",
       children: [(titleText || descriptionText) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        className: "gbb-qr-header",
+        className: "xpo-qr-header",
         children: [titleText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
-          className: "gbb-qr-title",
+          className: "xpo-qr-title",
           children: titleText
         }), descriptionText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-          className: "gbb-qr-description",
+          className: "xpo-qr-description",
           children: descriptionText
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        className: "gbb-qr-code-wrapper",
+        className: "xpo-qr-code-wrapper",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("svg", {
           ref: svgRef,
-          className: "gbb-qr-svg",
+          className: "xpo-qr-svg",
           width: svgTotalSize,
           height: svgTotalSize,
           viewBox: `0 0 ${svgTotalSize} ${svgTotalSize}`,
@@ -6272,7 +6275,7 @@ const TemplateOne = ({
             }, `${r}-${c}`);
           }))]
         }), logoUrl && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-          className: `gbb-qr-logo-overlay ${showLogoBg ? 'with-bg' : ''}`,
+          className: `xpo-qr-logo-overlay ${showLogoBg ? 'with-bg' : ''}`,
           style: {
             width: `${logoWidth}px`,
             height: `${logoHeight}px`
@@ -6285,10 +6288,10 @@ const TemplateOne = ({
           })
         })]
       }), showDownloadBtn && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "gbb-qr-footer",
+        className: "xpo-qr-footer",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("button", {
           type: "button",
-          className: "gbb-qr-download-btn",
+          className: "xpo-qr-download-btn",
           onClick: onDownload,
           title: isEditor ? 'Preview on live site to download' : downloadBtnText,
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_utils_icons__WEBPACK_IMPORTED_MODULE_2__.DownloadIcon, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
@@ -6348,9 +6351,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./icons */ "./src/blocks/qr-code/utils/icons.js");
 
 
+const textDomain = "xpo-block";
 const templateData = {
-  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('QR Code Layouts', 'guten-builder-blocks'),
-  subtitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select a layout for your QR code generator block.', 'guten-builder-blocks'),
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('QR Code Layouts', textDomain),
+  subtitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select a layout for your QR code generator block.', textDomain),
   templates: [{
     id: 'template-1',
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Frame Card Layout', 'guten-builder-blocks'),
@@ -6958,6 +6962,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = "xpo-block";
 const generalStyleTabs = [{
   name: 'general',
   title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
@@ -6965,7 +6970,7 @@ const generalStyleTabs = [{
       display: 'inline-flex',
       alignItems: 'center'
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.GeneralIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('General', 'guten-builder-blocks')]
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.GeneralIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('General', textDomain)]
   })
 }, {
   name: 'style',
@@ -6974,7 +6979,7 @@ const generalStyleTabs = [{
       display: 'inline-flex',
       alignItems: 'center'
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.StyleIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style', 'guten-builder-blocks')]
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.StyleIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style', textDomain)]
   })
 }];
 const errorCorrectionOptions = [{
@@ -10402,7 +10407,7 @@ module.exports = window["wp"]["i18n"];
 (module) {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"guten-builder-blocks/qr-code","version":"1.0.0","title":"QR Code Generator","category":"xpo-block","description":"Generate dynamic and customizable QR codes with custom styling, logos, and download options.","keywords":["qr","qrcode","generator","link","barcode"],"textdomain":"guten-builder-blocks","attributes":{"selectedTemplate":{"type":"string","default":""},"qrText":{"type":"string","default":""},"qrSize":{"type":"number"},"qrMargin":{"type":"number"},"fgColor":{"type":"string","default":""},"bgColor":{"type":"string","default":""},"transparentBg":{"type":"boolean"},"errorCorrectionLevel":{"type":"string","default":""},"logoUrl":{"type":"string","default":""},"logoWidth":{"type":"number"},"logoHeight":{"type":"number"},"showLogoBg":{"type":"boolean"},"titleText":{"type":"string","default":""},"descriptionText":{"type":"string","default":""},"showDownloadBtn":{"type":"boolean"},"downloadBtnText":{"type":"string","default":""},"downloadBtnColor":{"type":"string","default":""},"containerBg":{"type":"string","default":""},"containerBorderColor":{"type":"string","default":""},"containerBorder":{"type":"object"},"containerRadius":{"type":"object"},"titleColor":{"type":"string","default":""},"titleTypography":{"type":"object"},"descriptionColor":{"type":"string","default":""},"descriptionTypography":{"type":"object"},"align":{"type":"string","default":""}},"supports":{"align":["center","wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"xpo-block/qr-code","version":"1.0.0","title":"QR Code Generator","category":"xpo-block","description":"Generate dynamic and customizable QR codes with custom styling, logos, and download options.","keywords":["qr","qrcode","generator","link","barcode"],"textdomain":"xpo-block","attributes":{"selectedTemplate":{"type":"string","default":""},"qrText":{"type":"string","default":""},"qrSize":{"type":"number"},"qrMargin":{"type":"number"},"fgColor":{"type":"string","default":""},"bgColor":{"type":"string","default":""},"transparentBg":{"type":"boolean"},"errorCorrectionLevel":{"type":"string","default":""},"logoUrl":{"type":"string","default":""},"logoWidth":{"type":"number"},"logoHeight":{"type":"number"},"showLogoBg":{"type":"boolean"},"titleText":{"type":"string","default":""},"descriptionText":{"type":"string","default":""},"showDownloadBtn":{"type":"boolean"},"downloadBtnText":{"type":"string","default":""},"downloadBtnColor":{"type":"string","default":""},"containerBg":{"type":"string","default":""},"containerBorderColor":{"type":"string","default":""},"containerBorder":{"type":"object"},"containerRadius":{"type":"object"},"titleColor":{"type":"string","default":""},"titleTypography":{"type":"object"},"descriptionColor":{"type":"string","default":""},"descriptionTypography":{"type":"object"},"align":{"type":"string","default":""}},"supports":{"align":["center","wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
 
 /***/ }
 

@@ -18,7 +18,7 @@ const Settings = ({ attributes, setAttributes, clientId }) => {
   return (
     <InspectorControls>
 
-      <DocsLink link="https://gutenbuilder.com/docs/table-of-contents" text={__('Documentation', textDomain)} />
+      <DocsLink link="https://xpo.com/docs/table-of-contents" text={__('Documentation', textDomain)} />
 
       <TabPanel className="wp-xpo-tab-panel" activeClass="wp-xpo-tab-panel-active-tab" tabs={generalStyleTabs}>
         {tab => (

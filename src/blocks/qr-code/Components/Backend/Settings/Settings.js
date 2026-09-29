@@ -5,21 +5,23 @@ import { generalStyleTabs } from '../../../utils/options';
 import General from './General/General';
 import Style from './Style/Style';
 import { DocsLink } from 'tr-tools';
-const Settings = ({ attributes, setAttributes }) => {
-    const { selectedTemplate = '' } = attributes;
-    const isTemplateSelected = Boolean(selectedTemplate);
+const textDomain = 'xpo-block';
 
-    if (!isTemplateSelected) {
-      return null;
-    }
+const Settings = ({ attributes, setAttributes }) => {
+  const { selectedTemplate = '' } = attributes;
+  const isTemplateSelected = Boolean(selectedTemplate);
+
+  if (!isTemplateSelected) {
+    return null;
+  }
   return (
     <InspectorControls>
-      <DocsLink link="https://gutenbuilder.com/docs/qr-code" text={__('Documentation', 'guten-builder-blocks')} />
-      <TabPanel className="guten-builder-blocks-tab-panel wp-block-guten-builder-blocks-qr-code" activeClass="guten-builder-blocks-active-tab" tabs={generalStyleTabs}>
+      <DocsLink link="https://xpo.com/docs/qr-code" text={__('Documentation', textDomain)} />
+      <TabPanel className="wp-xpo-tab-panel" activeClass="wp-xpo-tab-panel-active-tab" tabs={generalStyleTabs}>
         {tab => (
           <>
-            {'general' === tab.name && <General attributes={attributes} setAttributes={setAttributes} />}
-            {'style' === tab.name && <Style attributes={attributes} setAttributes={setAttributes} />}
+            {'general' === tab.name && <General {...{ attributes, setAttributes }} />}
+            {'style' === tab.name && <Style {...{ attributes, setAttributes }} />}
           </>
         )}
       </TabPanel>

@@ -8,10 +8,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Generate a unique block ID if not provided
-$block_id = ! empty( $attributes['blockId'] ) ? sanitize_html_class( $attributes['blockId'] ) : wp_unique_id( 'gbb-qr-' );
+$block_id = ! empty( $attributes['blockId'] ) ? sanitize_html_class( $attributes['blockId'] ) : wp_unique_id( 'xpo-block-qr-' );
 
 // Prepare necessary custom classes for the wrapper as an array
-$wrapper_classes = array( 'gbb-qr-container', $block_id );
+$wrapper_classes = array( 'xpo-block-qr-container', $block_id );
 
 $wrapper_attrs = get_block_wrapper_attributes( array(
 	'class' => implode( ' ', $wrapper_classes ),

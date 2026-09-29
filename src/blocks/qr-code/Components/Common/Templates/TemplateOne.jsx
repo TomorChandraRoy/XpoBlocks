@@ -3,6 +3,9 @@ import { generateQRMatrix } from '../../../utils/qr-generator';
 import { DownloadIcon } from '../../../utils/icons';
 import { handleDownload } from '../../../utils/funtions';
 
+
+
+
 const TemplateOne = ({ attributes, isEditor = false }) => {
   const {qrText ,qrSize ,qrMargin ,fgColor,bgColor,transparentBg ,errorCorrectionLevel,logoUrl,logoWidth,logoHeight,showLogoBg,titleText,descriptionText,showDownloadBtn,downloadBtnText} = attributes || {};
 
@@ -18,19 +21,19 @@ const TemplateOne = ({ attributes, isEditor = false }) => {
   };
 
   return (
-    <div className="gbb-qr-wrapper">
-      <div className="gbb-qr-container">
+    <div className="xpo-qr-wrapper">
+      <div className="xpo-qr-container">
         {(titleText || descriptionText) && (
-          <div className="gbb-qr-header">
-            {titleText && <h3 className="gbb-qr-title">{titleText}</h3>}
-            {descriptionText && <p className="gbb-qr-description">{descriptionText}</p>}
+          <div className="xpo-qr-header">
+            {titleText && <h3 className="xpo-qr-title">{titleText}</h3>}
+            {descriptionText && <p className="xpo-qr-description">{descriptionText}</p>}
           </div>
         )}
 
-        <div className="gbb-qr-code-wrapper" >
+        <div className="xpo-qr-code-wrapper" >
           <svg
             ref={svgRef}
-            className="gbb-qr-svg"
+            className="xpo-qr-svg"
             width={svgTotalSize}
             height={svgTotalSize}
             viewBox={`0 0 ${svgTotalSize} ${svgTotalSize}`}
@@ -49,7 +52,7 @@ const TemplateOne = ({ attributes, isEditor = false }) => {
 
           {logoUrl && (
             <div
-              className={`gbb-qr-logo-overlay ${showLogoBg ? 'with-bg' : ''}`}
+              className={`xpo-qr-logo-overlay ${showLogoBg ? 'with-bg' : ''}`}
               style={{ width: `${logoWidth}px`, height: `${logoHeight}px` }}
             >
               <img src={logoUrl} alt="QR Logo" width={logoWidth} height={logoHeight} />
@@ -58,8 +61,8 @@ const TemplateOne = ({ attributes, isEditor = false }) => {
         </div>
 
         {showDownloadBtn && (
-          <div className="gbb-qr-footer">
-            <button type="button" className="gbb-qr-download-btn" onClick={onDownload} title={isEditor ? 'Preview on live site to download' : downloadBtnText}>
+          <div className="xpo-qr-footer">
+            <button type="button" className="xpo-qr-download-btn" onClick={onDownload} title={isEditor ? 'Preview on live site to download' : downloadBtnText}>
               <DownloadIcon />
               <span>{downloadBtnText}</span>
             </button>

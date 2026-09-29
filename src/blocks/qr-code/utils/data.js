@@ -1,9 +1,11 @@
 import { __ } from '@wordpress/i18n';
 import { TemplateOneSvg } from './icons';
 
+const textDomain="xpo-block";
+
 export const templateData = {
-  title: __('QR Code Layouts', 'guten-builder-blocks'),
-  subtitle: __('Select a layout for your QR code generator block.', 'guten-builder-blocks'),
+  title: __('QR Code Layouts', textDomain),
+  subtitle: __('Select a layout for your QR code generator block.', textDomain),
   templates: [
     {
       id: 'template-1',

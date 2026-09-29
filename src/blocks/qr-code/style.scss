@@ -1,5 +1,5 @@
-.wp-block-guten-builder-blocks-qr-code {
-  .gbb-qr-wrapper {
+.wp-block-xpo-block-qr-code {
+  .xpo-qr-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,7 +8,7 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
-  .gbb-qr-container {
+  .xpo-qr-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,12 +21,12 @@
 
   }
 
-  .gbb-qr-header {
+  .xpo-qr-header {
     margin-bottom: 1.25rem;
     width: 100%;
   }
 
-  .gbb-qr-title {
+  .xpo-qr-title {
     margin: 0 0 0.4rem 0;
     font-size: 1.35rem;
     font-weight: 700;
@@ -34,14 +34,14 @@
     line-height: 1.3;
   }
 
-  .gbb-qr-description {
+  .xpo-qr-description {
     margin: 0;
     font-size: 0.9rem;
     color: #64748b;
     line-height: 1.5;
   }
 
-  .gbb-qr-code-wrapper {
+  .xpo-qr-code-wrapper {
     position: relative;
     display: inline-flex;
     justify-content: center;
@@ -50,13 +50,13 @@
 
   }
 
-  .gbb-qr-svg {
+  .xpo-qr-svg {
     display: block;
     max-width: 100%;
     height: auto;
   }
 
-  .gbb-qr-logo-overlay {
+  .xpo-qr-logo-overlay {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -80,14 +80,14 @@
     }
   }
 
-  .gbb-qr-footer {
+  .xpo-qr-footer {
     margin-top: 1.5rem;
     width: 100%;
     display: flex;
     justify-content: center;
   }
 
-  .gbb-qr-download-btn {
+  .xpo-qr-download-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
