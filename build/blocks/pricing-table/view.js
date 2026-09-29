@@ -5683,13 +5683,13 @@ const ThemeOne = ({
     });
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    className: "gbb-pricing-container",
+    className: "xpo-pricing-container",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "gbb-pricing-grid",
+      className: "xpo-pricing-grid",
       children: pricingTables.map((plan, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: `gbb-pricing-card ${plan.isFeatured ? 'is-featured' : ''}`,
+        className: `xpo-pricing-card ${plan.isFeatured ? 'is-featured' : ''}`,
         children: [plan.isFeatured && plan.badgeText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "gbb-pricing-badge",
+          className: "xpo-pricing-badge",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(RichTextEl, {
             tagName: "span",
             value: plan.badgeText,
@@ -5697,25 +5697,25 @@ const ThemeOne = ({
             placeholder: "POPULAR"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "gbb-pricing-card-top",
+          className: "xpo-pricing-card-top",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(RichTextEl, {
             tagName: "h2",
-            className: "gbb-pricing-name",
+            className: "xpo-pricing-name",
             value: plan.name,
             onChange: val => updatePricingTable(index, 'name', val),
             placeholder: "Plan Name"
           }), (isBackend || plan.desc) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(RichTextEl, {
             tagName: "p",
-            className: "gbb-pricing-desc",
+            className: "xpo-pricing-desc",
             value: plan.desc,
             onChange: val => updatePricingTable(index, 'desc', val),
             placeholder: "Description"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
-            className: "gbb-pricing-price-wrap",
+            className: "xpo-pricing-price-wrap",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("strong", {
-              className: "gbb-pricing-price",
+              className: "xpo-pricing-price",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                className: "gbb-currency-icon",
+                className: "xpo-currency-icon",
                 style: {
                   color: plan.currencyColor
                 },
@@ -5727,7 +5727,7 @@ const ThemeOne = ({
                 placeholder: "Price"
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-              className: "gbb-pricing-period",
+              className: "xpo-pricing-period",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(RichTextEl, {
                 tagName: "span",
                 value: plan.period,
@@ -5737,12 +5737,12 @@ const ThemeOne = ({
             })]
           }), isBackend ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(RichTextEl, {
             tagName: "div",
-            className: "gbb-pricing-button",
+            className: "xpo-pricing-button",
             value: plan.linkLabel,
             onChange: val => updatePricingTable(index, 'linkLabel', val),
             placeholder: "Button Text"
           }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-            className: "gbb-pricing-button",
+            className: "xpo-pricing-button",
             href: plan.link || '#',
             target: plan.isLinkNewTab ? '_blank' : '_self',
             rel: plan.isLinkNewTab ? 'noopener noreferrer' : undefined,
@@ -5752,26 +5752,26 @@ const ThemeOne = ({
             })
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "gbb-pricing-card-bottom",
+          className: "xpo-pricing-card-bottom",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(RichTextEl, {
             tagName: "p",
-            className: "gbb-features-title",
+            className: "xpo-features-title",
             value: plan.featuresTitle || "What's included:",
             onChange: val => updatePricingTable(index, 'featuresTitle', val),
             placeholder: "Features Title"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
-            className: "gbb-features-list",
+            className: "xpo-features-list",
             children: plan.features && plan.features.map((feature, fIndex) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
-              className: "gbb-feature-item",
+              className: "xpo-feature-item",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_0__.RenderIcon, {
                 value: feature.icon || 'fas-check',
-                className: "gbb-icon-success",
+                className: "xpo-icon-success",
                 style: {
                   color: feature.iconColor
                 }
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(RichTextEl, {
                 tagName: "span",
-                className: "gbb-feature-text",
+                className: "xpo-feature-text",
                 value: feature.label,
                 onChange: val => updateFeature(index, fIndex, val),
                 placeholder: "Feature item"
@@ -5866,138 +5866,138 @@ const DynamicStyle = ({
     featureTextTypo
   } = attributes;
   const mainSl = `#${clientId}`;
-  const gbbPricingContainer = `${mainSl} .gbb-pricing-container`;
-  const gbbPricingGrid = `${gbbPricingContainer} .gbb-pricing-grid`;
-  const gbbPricingCard = `${gbbPricingGrid} .gbb-pricing-card`;
-  const gbbPricingName = `${gbbPricingCard} .gbb-pricing-name`;
-  const gbbPricingDesc = `${gbbPricingCard} .gbb-pricing-desc`;
-  const gbbPricingBadge = `${gbbPricingCard} .gbb-pricing-badge`;
-  const gbbPricingCardTop = `${gbbPricingCard} .gbb-pricing-card-top`;
-  const gbbPricingPriceWrap = `${gbbPricingCard} .gbb-pricing-price-wrap`;
-  const gbbPricingPrice = `${gbbPricingCard} .gbb-pricing-price`;
-  const gbbPricingPeriod = `${gbbPricingCard} .gbb-pricing-period`;
-  const gbbPricingButton = `${gbbPricingCard} .gbb-pricing-button`;
-  const gbbFeaturesTitle = `${gbbPricingCard} .gbb-features-title`;
-  const gbbFeatureIcon = `${gbbPricingCard} .gbb-icon-success, ${gbbPricingCard} .gbb-icon-error`;
-  const gbbFeatureText = `${gbbPricingCard} .gbb-feature-text`;
+  const xpoPricingContainer = `${mainSl} .xpo-pricing-container`;
+  const xpoPricingGrid = `${xpoPricingContainer} .xpo-pricing-grid`;
+  const xpoPricingCard = `${xpoPricingGrid} .xpo-pricing-card`;
+  const xpoPricingName = `${xpoPricingCard} .xpo-pricing-name`;
+  const xpoPricingDesc = `${xpoPricingCard} .xpo-pricing-desc`;
+  const xpoPricingBadge = `${xpoPricingCard} .xpo-pricing-badge`;
+  const xpoPricingCardTop = `${xpoPricingCard} .xpo-pricing-card-top`;
+  const xpoPricingPriceWrap = `${xpoPricingCard} .xpo-pricing-price-wrap`;
+  const xpoPricingPrice = `${xpoPricingCard} .xpo-pricing-price`;
+  const xpoPricingPeriod = `${xpoPricingCard} .xpo-pricing-period`;
+  const xpoPricingButton = `${xpoPricingCard} .xpo-pricing-button`;
+  const xpoFeaturesTitle = `${xpoPricingCard} .xpo-features-title`;
+  const xpoFeatureIcon = `${xpoPricingCard} .xpo-icon-success, ${xpoPricingCard} .xpo-icon-error`;
+  const xpoFeatureText = `${xpoPricingCard} .xpo-feature-text`;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("style", {
     dangerouslySetInnerHTML: {
       __html: `
-        ${gbbPricingContainer} {
+        ${xpoPricingContainer} {
           max-width: ${containerWidth};
         }
 
-        ${gbbPricingGrid} {
+        ${xpoPricingGrid} {
           grid-template-columns: repeat(${columns}, 1fr);
           gap: ${gap}px;
         }
 
-        ${gbbPricingBadge}  span {
+        ${xpoPricingBadge}  span {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(badgeTypo)}
           color: ${badgeColor};
         }
 
-        ${gbbPricingBadge} {
+        ${xpoPricingBadge} {
           background-color: ${badgeBgColor};
           ${(0,tr_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBorderRadiusCss)(badgeRadius)}
         }
 
-        ${gbbPricingCard} {
+        ${xpoPricingCard} {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(cardBg) ? `background: ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(cardBg)};` : ''}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderCss)(cardBorder)}
           ${(0,tr_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBorderRadiusCss)(cardBorderRadius)}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getShadowCss)(cardBoxShadow) ? `box-shadow: ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getShadowCss)(cardBoxShadow)};` : ''}
         }
 
-        ${gbbPricingCard}.is-featured {
+        ${xpoPricingCard}.is-featured {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(featuredCardBg) ? `background: ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(featuredCardBg)};` : ''}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderCss)(featuredCardBorder)}
           ${(0,tr_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBorderRadiusCss)(featuredCardBorderRadius)}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getShadowCss)(featuredCardBoxShadow) ? `box-shadow: ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getShadowCss)(featuredCardBoxShadow)};` : ''}
         }
 
-        ${gbbPricingCardTop} {
+        ${xpoPricingCardTop} {
           border-bottom-color: ${dividerColor};
         }
 
-        ${gbbPricingCard}.is-featured .gbb-pricing-card-top {
+        ${xpoPricingCard}.is-featured .xpo-pricing-card-top {
           ${featuredDividerColor ? `border-bottom-color: ${featuredDividerColor};` : ''}
         }
 
-        ${gbbPricingName} {
+        ${xpoPricingName} {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(cardTitleTypo)}
           color: ${cardTitleColor};
         }
 
-        ${gbbPricingCard}.is-featured .gbb-pricing-name {
+        ${xpoPricingCard}.is-featured .xpo-pricing-name {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredCardTitleTypo)}
           ${featuredCardTitleColor ? `color: ${featuredCardTitleColor};` : ''}
         }
 
-        ${gbbPricingDesc} {
+        ${xpoPricingDesc} {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(cardDescTypo)}
           color: ${cardDescColor};
         }
 
-        ${gbbPricingCard}.is-featured .gbb-pricing-desc {
+        ${xpoPricingCard}.is-featured .xpo-pricing-desc {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredCardDescTypo)}
           ${featuredCardDescColor ? `color: ${featuredCardDescColor};` : ''}
         }
 
-        ${gbbFeaturesTitle} {
+        ${xpoFeaturesTitle} {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuresTitleTypo)}
           color: ${featuresTitleColor};
         }
 
-        ${gbbPricingCard}.is-featured .gbb-features-title {
+        ${xpoPricingCard}.is-featured .xpo-features-title {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredFeaturesTitleTypo)}
           ${featuredFeaturesTitleColor ? `color: ${featuredFeaturesTitleColor};` : ''}
         }
 
-        ${gbbFeatureIcon} {
+        ${xpoFeatureIcon} {
           width: ${featureIconSize}px;
           height: ${featureIconSize}px;
         }
 
-        ${gbbPricingCard}.is-featured .gbb-icon-success, ${gbbPricingCard}.is-featured .gbb-icon-error {
+        ${xpoPricingCard}.is-featured .xpo-icon-success, ${xpoPricingCard}.is-featured .xpo-icon-error {
           ${featuredFeatureIconSize ? `width: ${featuredFeatureIconSize}px; height: ${featuredFeatureIconSize}px;` : ''}
         }
 
-        ${gbbFeatureText} {
+        ${xpoFeatureText} {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featureTextTypo)}
           color: ${featureTextColor};
         }
 
-        ${gbbPricingCard}.is-featured .gbb-feature-text {
+        ${xpoPricingCard}.is-featured .xpo-feature-text {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredFeatureTextTypo)}
           ${featuredFeatureTextColor ? `color: ${featuredFeatureTextColor};` : ''}
         }
 
-        ${gbbPricingPriceWrap} {
+        ${xpoPricingPriceWrap} {
           /* Wrapper styles if needed */
         }
 
-        ${gbbPricingPrice} {
+        ${xpoPricingPrice} {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(priceTypo)}
           color: ${priceColor};
         }
 
-        ${gbbPricingCard}.is-featured .gbb-pricing-price {
+        ${xpoPricingCard}.is-featured .xpo-pricing-price {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredPriceTypo)}
           ${featuredPriceColor ? `color: ${featuredPriceColor};` : ''}
         }
 
-        ${gbbPricingPeriod} {
+        ${xpoPricingPeriod} {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(periodTypo)}
           color: ${priceColor};
         }
 
-        ${gbbPricingCard}.is-featured .gbb-pricing-period {
+        ${xpoPricingCard}.is-featured .xpo-pricing-period {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredPeriodTypo)}
           ${featuredPriceColor ? `color: ${featuredPriceColor};` : ''}
         }
 
-        ${gbbPricingButton} {
+        ${xpoPricingButton} {
           background-color: ${buttonBg};
           color: ${buttonColor};
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(buttonTypo)}
@@ -6005,7 +6005,7 @@ const DynamicStyle = ({
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderCss)(buttonBorder)}
         }
 
-        ${gbbPricingCard}.is-featured .gbb-pricing-button {
+        ${xpoPricingCard}.is-featured .xpo-pricing-button {
           ${featuredButtonBg ? `background-color: ${featuredButtonBg};` : ''}
           ${featuredButtonColor ? `color: ${featuredButtonColor};` : ''}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredButtonTypo)}
@@ -6013,24 +6013,24 @@ const DynamicStyle = ({
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderCss)(featuredButtonBorder)}
         }
 
-        ${gbbPricingButton}:hover {
+        ${xpoPricingButton}:hover {
           background-color: ${buttonHoverBg};
           color: ${buttonHoverColor};
         }
 
-        ${gbbPricingCard}.is-featured .gbb-pricing-button:hover {
+        ${xpoPricingCard}.is-featured .xpo-pricing-button:hover {
           ${featuredButtonHoverBg ? `background-color: ${featuredButtonHoverBg};` : ''}
           ${featuredButtonHoverColor ? `color: ${featuredButtonHoverColor};` : ''}
         }
 
         ${tr_tools__WEBPACK_IMPORTED_MODULE_0__.tabBreakpoint} {
-          ${gbbPricingGrid} {
+          ${xpoPricingGrid} {
             grid-template-columns: repeat(${columns > 2 ? 2 : columns}, 1fr);
           }
         }
 
         ${tr_tools__WEBPACK_IMPORTED_MODULE_0__.mobileBreakpoint} {
-          ${gbbPricingGrid} {
+          ${xpoPricingGrid} {
             grid-template-columns: 1fr;
           }
         }
@@ -6063,7 +6063,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const tableEls = document.querySelectorAll('.wp-block-guten-builder-blocks-pricing-table');
+  const tableEls = document.querySelectorAll('.wp-block-xpo-block-pricing-table');
   tableEls.forEach(tableEl => {
     if (!tableEl.dataset.attributes) return;
     const attributes = JSON.parse(tableEl.dataset.attributes);

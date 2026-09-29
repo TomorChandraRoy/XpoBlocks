@@ -5,7 +5,7 @@ import DynamicStyle from './Components/Common/dynamicStyle';
 import PricingTable from './Components/Common/Templates/PricingTable';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const tableEls = document.querySelectorAll('.wp-block-guten-builder-blocks-pricing-table');
+  const tableEls = document.querySelectorAll('.wp-block-xpo-block-pricing-table');
   tableEls.forEach(tableEl => {
     if (!tableEl.dataset.attributes) return;
     const attributes = JSON.parse(tableEl.dataset.attributes);

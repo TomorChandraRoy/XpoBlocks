@@ -6,140 +6,140 @@ const DynamicStyle = ({ attributes, clientId }) => {
 
 
   const mainSl = `#${clientId}`;
-  const gbbPricingContainer = `${mainSl} .gbb-pricing-container`;
-  const gbbPricingGrid = `${gbbPricingContainer} .gbb-pricing-grid`;
-  const gbbPricingCard = `${gbbPricingGrid} .gbb-pricing-card`;
-  const gbbPricingName = `${gbbPricingCard} .gbb-pricing-name`;
-  const gbbPricingDesc = `${gbbPricingCard} .gbb-pricing-desc`;
-  const gbbPricingBadge = `${gbbPricingCard} .gbb-pricing-badge`;
-  const gbbPricingCardTop = `${gbbPricingCard} .gbb-pricing-card-top`;
-  const gbbPricingPriceWrap = `${gbbPricingCard} .gbb-pricing-price-wrap`;
-  const gbbPricingPrice = `${gbbPricingCard} .gbb-pricing-price`;
-  const gbbPricingPeriod = `${gbbPricingCard} .gbb-pricing-period`;
-  const gbbPricingButton = `${gbbPricingCard} .gbb-pricing-button`;
-  const gbbFeaturesTitle = `${gbbPricingCard} .gbb-features-title`;
-  const gbbFeatureIcon = `${gbbPricingCard} .gbb-icon-success, ${gbbPricingCard} .gbb-icon-error`;
-  const gbbFeatureText = `${gbbPricingCard} .gbb-feature-text`;
+  const xpoPricingContainer = `${mainSl} .xpo-pricing-container`;
+  const xpoPricingGrid = `${xpoPricingContainer} .xpo-pricing-grid`;
+  const xpoPricingCard = `${xpoPricingGrid} .xpo-pricing-card`;
+  const xpoPricingName = `${xpoPricingCard} .xpo-pricing-name`;
+  const xpoPricingDesc = `${xpoPricingCard} .xpo-pricing-desc`;
+  const xpoPricingBadge = `${xpoPricingCard} .xpo-pricing-badge`;
+  const xpoPricingCardTop = `${xpoPricingCard} .xpo-pricing-card-top`;
+  const xpoPricingPriceWrap = `${xpoPricingCard} .xpo-pricing-price-wrap`;
+  const xpoPricingPrice = `${xpoPricingCard} .xpo-pricing-price`;
+  const xpoPricingPeriod = `${xpoPricingCard} .xpo-pricing-period`;
+  const xpoPricingButton = `${xpoPricingCard} .xpo-pricing-button`;
+  const xpoFeaturesTitle = `${xpoPricingCard} .xpo-features-title`;
+  const xpoFeatureIcon = `${xpoPricingCard} .xpo-icon-success, ${xpoPricingCard} .xpo-icon-error`;
+  const xpoFeatureText = `${xpoPricingCard} .xpo-feature-text`;
 
   return (
     <style
       dangerouslySetInnerHTML={{
         __html: `
-        ${gbbPricingContainer} {
+        ${xpoPricingContainer} {
           max-width: ${containerWidth};
         }
 
-        ${gbbPricingGrid} {
+        ${xpoPricingGrid} {
           grid-template-columns: repeat(${columns}, 1fr);
           gap: ${gap}px;
         }
 
-        ${gbbPricingBadge}  span {
+        ${xpoPricingBadge}  span {
           ${getTypographyCss(badgeTypo)}
           color: ${badgeColor};
         }
 
-        ${gbbPricingBadge} {
+        ${xpoPricingBadge} {
           background-color: ${badgeBgColor};
           ${getBorderRadiusCss(badgeRadius)}
         }
 
-        ${gbbPricingCard} {
+        ${xpoPricingCard} {
           ${getBackgroundCss(cardBg) ? `background: ${getBackgroundCss(cardBg)};` : ''}
           ${getBorderCss(cardBorder)}
           ${getBorderRadiusCss(cardBorderRadius)}
           ${getShadowCss(cardBoxShadow) ? `box-shadow: ${getShadowCss(cardBoxShadow)};` : ''}
         }
 
-        ${gbbPricingCard}.is-featured {
+        ${xpoPricingCard}.is-featured {
           ${getBackgroundCss(featuredCardBg) ? `background: ${getBackgroundCss(featuredCardBg)};` : ''}
           ${getBorderCss(featuredCardBorder)}
           ${getBorderRadiusCss(featuredCardBorderRadius)}
           ${getShadowCss(featuredCardBoxShadow) ? `box-shadow: ${getShadowCss(featuredCardBoxShadow)};` : ''}
         }
 
-        ${gbbPricingCardTop} {
+        ${xpoPricingCardTop} {
           border-bottom-color: ${dividerColor};
         }
 
-        ${gbbPricingCard}.is-featured .gbb-pricing-card-top {
+        ${xpoPricingCard}.is-featured .xpo-pricing-card-top {
           ${featuredDividerColor ? `border-bottom-color: ${featuredDividerColor};` : ''}
         }
 
-        ${gbbPricingName} {
+        ${xpoPricingName} {
           ${getTypographyCss(cardTitleTypo)}
           color: ${cardTitleColor};
         }
 
-        ${gbbPricingCard}.is-featured .gbb-pricing-name {
+        ${xpoPricingCard}.is-featured .xpo-pricing-name {
           ${getTypographyCss(featuredCardTitleTypo)}
           ${featuredCardTitleColor ? `color: ${featuredCardTitleColor};` : ''}
         }
 
-        ${gbbPricingDesc} {
+        ${xpoPricingDesc} {
           ${getTypographyCss(cardDescTypo)}
           color: ${cardDescColor};
         }
 
-        ${gbbPricingCard}.is-featured .gbb-pricing-desc {
+        ${xpoPricingCard}.is-featured .xpo-pricing-desc {
           ${getTypographyCss(featuredCardDescTypo)}
           ${featuredCardDescColor ? `color: ${featuredCardDescColor};` : ''}
         }
 
-        ${gbbFeaturesTitle} {
+        ${xpoFeaturesTitle} {
           ${getTypographyCss(featuresTitleTypo)}
           color: ${featuresTitleColor};
         }
 
-        ${gbbPricingCard}.is-featured .gbb-features-title {
+        ${xpoPricingCard}.is-featured .xpo-features-title {
           ${getTypographyCss(featuredFeaturesTitleTypo)}
           ${featuredFeaturesTitleColor ? `color: ${featuredFeaturesTitleColor};` : ''}
         }
 
-        ${gbbFeatureIcon} {
+        ${xpoFeatureIcon} {
           width: ${featureIconSize}px;
           height: ${featureIconSize}px;
         }
 
-        ${gbbPricingCard}.is-featured .gbb-icon-success, ${gbbPricingCard}.is-featured .gbb-icon-error {
+        ${xpoPricingCard}.is-featured .xpo-icon-success, ${xpoPricingCard}.is-featured .xpo-icon-error {
           ${featuredFeatureIconSize ? `width: ${featuredFeatureIconSize}px; height: ${featuredFeatureIconSize}px;` : ''}
         }
 
-        ${gbbFeatureText} {
+        ${xpoFeatureText} {
           ${getTypographyCss(featureTextTypo)}
           color: ${featureTextColor};
         }
 
-        ${gbbPricingCard}.is-featured .gbb-feature-text {
+        ${xpoPricingCard}.is-featured .xpo-feature-text {
           ${getTypographyCss(featuredFeatureTextTypo)}
           ${featuredFeatureTextColor ? `color: ${featuredFeatureTextColor};` : ''}
         }
 
-        ${gbbPricingPriceWrap} {
+        ${xpoPricingPriceWrap} {
           /* Wrapper styles if needed */
         }
 
-        ${gbbPricingPrice} {
+        ${xpoPricingPrice} {
           ${getTypographyCss(priceTypo)}
           color: ${priceColor};
         }
 
-        ${gbbPricingCard}.is-featured .gbb-pricing-price {
+        ${xpoPricingCard}.is-featured .xpo-pricing-price {
           ${getTypographyCss(featuredPriceTypo)}
           ${featuredPriceColor ? `color: ${featuredPriceColor};` : ''}
         }
 
-        ${gbbPricingPeriod} {
+        ${xpoPricingPeriod} {
           ${getTypographyCss(periodTypo)}
           color: ${priceColor};
         }
 
-        ${gbbPricingCard}.is-featured .gbb-pricing-period {
+        ${xpoPricingCard}.is-featured .xpo-pricing-period {
           ${getTypographyCss(featuredPeriodTypo)}
           ${featuredPriceColor ? `color: ${featuredPriceColor};` : ''}
         }
 
-        ${gbbPricingButton} {
+        ${xpoPricingButton} {
           background-color: ${buttonBg};
           color: ${buttonColor};
           ${getTypographyCss(buttonTypo)}
@@ -147,7 +147,7 @@ const DynamicStyle = ({ attributes, clientId }) => {
           ${getBorderCss(buttonBorder)}
         }
 
-        ${gbbPricingCard}.is-featured .gbb-pricing-button {
+        ${xpoPricingCard}.is-featured .xpo-pricing-button {
           ${featuredButtonBg ? `background-color: ${featuredButtonBg};` : ''}
           ${featuredButtonColor ? `color: ${featuredButtonColor};` : ''}
           ${getTypographyCss(featuredButtonTypo)}
@@ -155,24 +155,24 @@ const DynamicStyle = ({ attributes, clientId }) => {
           ${getBorderCss(featuredButtonBorder)}
         }
 
-        ${gbbPricingButton}:hover {
+        ${xpoPricingButton}:hover {
           background-color: ${buttonHoverBg};
           color: ${buttonHoverColor};
         }
 
-        ${gbbPricingCard}.is-featured .gbb-pricing-button:hover {
+        ${xpoPricingCard}.is-featured .xpo-pricing-button:hover {
           ${featuredButtonHoverBg ? `background-color: ${featuredButtonHoverBg};` : ''}
           ${featuredButtonHoverColor ? `color: ${featuredButtonHoverColor};` : ''}
         }
 
         ${tabBreakpoint} {
-          ${gbbPricingGrid} {
+          ${xpoPricingGrid} {
             grid-template-columns: repeat(${columns > 2 ? 2 : columns}, 1fr);
           }
         }
 
         ${mobileBreakpoint} {
-          ${gbbPricingGrid} {
+          ${xpoPricingGrid} {
             grid-template-columns: 1fr;
           }
         }

@@ -5702,6 +5702,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-blocks';
 const General = ({
   attributes,
   setAttributes
@@ -5715,7 +5716,7 @@ const General = ({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template Presets', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template Presets', textDomain),
       initialOpen: true,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
         style: {
@@ -5723,7 +5724,7 @@ const General = ({
           color: '#64748b',
           marginBottom: '12px'
         },
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Switch or apply a predefined pricing template style.', 'guten-builder-blocks')
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Switch or apply a predefined pricing template style.', textDomain)
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
         isSecondary: true,
         onClick: () => setAttributes({
@@ -5733,13 +5734,13 @@ const General = ({
           width: '100%',
           justifyContent: 'center'
         },
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Change Template', 'guten-builder-blocks')
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Change Template', textDomain)
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ItemsPanel, {
       items: pricingTables,
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Pricing Tables', 'guten-builder-blocks') //Panelbody aer name
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Pricing Tables', textDomain) //Panelbody aer name
       ,
-      addButtonLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('＋ Add Pricing Card', 'guten-builder-blocks'),
+      addButtonLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('＋ Add Pricing Card', textDomain),
       itemTitleKey: "name" //kon property ke items title hishebe dekhabe
       ,
       defaultItem: {
@@ -5753,7 +5754,7 @@ const General = ({
         linkLabel: 'Buy Now',
         isFeatured: false,
         badgeText: 'POPULAR',
-        featuresTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("What's included:", 'guten-builder-blocks'),
+        featuresTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("What's included:", textDomain),
         features: [{
           label: 'Feature 1',
           icon: 'fas-check',
@@ -5770,10 +5771,10 @@ const General = ({
       ItemSettings: _PanelItems__WEBPACK_IMPORTED_MODULE_3__["default"]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Layout Settings', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Layout Settings', textDomain),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Columns', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Columns', textDomain),
         value: columns,
         onChange: value => setAttributes({
           columns: value
@@ -5781,7 +5782,7 @@ const General = ({
         min: 1,
         max: 4
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Gap (px)', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Gap (px)', textDomain),
         value: gap,
         onChange: value => setAttributes({
           gap: value
@@ -5789,7 +5790,7 @@ const General = ({
         min: 0,
         max: 100
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.UnitControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Max Width', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Max Width', textDomain),
         value: containerWidth,
         defaultVal: "1200px",
         onChange: value => setAttributes({
@@ -5825,6 +5826,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-block';
 const FeatureItemSettings = ({
   item: featureItem,
   updateField: updateFeatureField
@@ -5835,11 +5837,11 @@ const FeatureItemSettings = ({
     gap: '12px'
   },
   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Feature Label', 'guten-builder-blocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Feature Label', textDomain),
     value: featureItem.label,
     onChange: val => updateFeatureField('label', val)
   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.IconControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Feature Icon', 'guten-builder-blocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Feature Icon', textDomain),
     value: featureItem.icon,
     defaultValue: "fas-check",
     onChange: val => updateFeatureField('icon', val),
@@ -5861,21 +5863,21 @@ const PanelItems = ({
       paddingBottom: '8px'
     },
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Make Popular (Highlight)', 'guten-builder-blocks'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Make Popular (Highlight)', textDomain),
       checked: item.isFeatured,
       onChange: val => updateField('isFeatured', val)
     }), item.isFeatured && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Badge Text', 'guten-builder-blocks'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Badge Text', textDomain),
       value: item.badgeText,
       onChange: val => updateField('badgeText', val),
       placeholder: "e.g. POPULAR"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Plan Name', 'guten-builder-blocks'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Plan Name', textDomain),
       value: item.name,
       onChange: val => updateField('name', val),
       placeholder: "e.g. Basic Plan"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextareaControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description', 'guten-builder-blocks'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description', textDomain),
       value: item.desc,
       onChange: val => updateField('desc', val),
       rows: 2,
@@ -5887,45 +5889,45 @@ const PanelItems = ({
         gap: '8px'
       },
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Currency', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Currency', textDomain),
         value: item.priceCurrency,
         onChange: val => updateField('priceCurrency', val),
         placeholder: "e.g. $"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Price', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Price', textDomain),
         value: item.price,
         onChange: val => updateField('price', val),
         placeholder: "e.g. 29"
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Period', 'guten-builder-blocks'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Period', textDomain),
       value: item.period,
       onChange: val => updateField('period', val),
       placeholder: "e.g. /month"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Link', 'guten-builder-blocks'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Link', textDomain),
       value: item.link,
       onChange: val => updateField('link', val),
       placeholder: "https://"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Open link in new tab', 'guten-builder-blocks'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Open link in new tab', textDomain),
       checked: item.isLinkNewTab,
       onChange: val => updateField('isLinkNewTab', val)
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Label', 'guten-builder-blocks'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Label', textDomain),
       value: item.linkLabel,
       onChange: val => updateField('linkLabel', val),
       placeholder: "e.g. Get Started"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Features Title', 'guten-builder-blocks'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Features Title', textDomain),
       value: item.featuresTitle,
       onChange: val => updateField('featuresTitle', val),
       placeholder: "e.g. What's included:"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ItemsPanel, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Features List', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Features List', textDomain),
       initialOpen: false,
       items: item.features || [],
-      addButtonLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)(' Add Feature', 'guten-builder-blocks'),
+      addButtonLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)(' Add Feature', textDomain),
       itemTitleKey: "label",
       defaultItem: {
         label: 'New Feature',
@@ -5970,6 +5972,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-blocks';
 const Settings = ({
   attributes,
   setAttributes,
@@ -5984,11 +5987,11 @@ const Settings = ({
   }
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_6__.DocsLink, {
-      link: "https://gutenbuilder.com/docs/pricing-table",
-      text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Documentation', 'guten-builder-blocks')
+      link: "https://xpo.com/docs/pricing-table",
+      text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Documentation', textDomain)
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TabPanel, {
-      className: "guten-builder-blocks-tab-panel wp-block-guten-builder-blocks-pricing-table",
-      activeClass: "guten-builder-blocks-active-tab",
+      className: "wp-xpo-tab-panel",
+      activeClass: "wp-xpo-tab-panel-active-tab",
       tabs: _utils_options__WEBPACK_IMPORTED_MODULE_3__.generalStyleTabs,
       children: tab => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
         children: ['general' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_General_General__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -6030,6 +6033,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-blocks';
 const Style = ({
   attributes,
   setAttributes
@@ -6093,31 +6097,31 @@ const Style = ({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: [hasPopularCard && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Badge Layout', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Badge Layout', textDomain),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Badge Typography', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Badge Typography', textDomain),
         value: badgeTypo,
         defaultTypography: _utils_options__WEBPACK_IMPORTED_MODULE_3__.defaultPopularTypo,
         onChange: val => setAttributes({
           badgeTypo: val
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Badge Text Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Badge Text Color', textDomain),
         value: badgeColor,
         defaultColor: '#ffffff',
         onChange: val => setAttributes({
           badgeColor: val || '#ffffff'
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Badge Background Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Badge Background Color', textDomain),
         value: badgeBgColor,
         defaultColor: '#4f46e5',
         onChange: val => setAttributes({
           badgeBgColor: val || '#4f46e5'
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.SpacingControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Badge Border Radius', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Badge Border Radius', textDomain),
         value: badgeRadius,
         onChange: val => setAttributes({
           badgeRadius: val
@@ -6131,10 +6135,10 @@ const Style = ({
       })]
     }), hasPopularCard && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Popular Layout', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Popular Layout', textDomain),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BackgroundControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Card Background', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Card Background', textDomain),
         value: featuredCardBg,
         onChange: val => setAttributes({
           featuredCardBg: val
@@ -6144,7 +6148,7 @@ const Style = ({
           color: '#f8fafc'
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BorderControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Card Border', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Card Border', textDomain),
         value: featuredCardBorder,
         onChange: val => setAttributes({
           featuredCardBorder: val
@@ -6156,7 +6160,7 @@ const Style = ({
           side: 'all'
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.SpacingControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Card Border Radius', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Card Border Radius', textDomain),
         value: featuredCardBorderRadius,
         onChange: val => setAttributes({
           featuredCardBorderRadius: val
@@ -6168,7 +6172,7 @@ const Style = ({
           left: '8px'
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ShadowControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Card Box Shadow', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Card Box Shadow', textDomain),
         value: featuredCardBoxShadow,
         onChange: val => setAttributes({
           featuredCardBoxShadow: val
@@ -6181,86 +6185,86 @@ const Style = ({
           color: 'rgba(79, 70, 229, 0.1)'
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title Color', textDomain),
         value: featuredCardTitleColor,
         onChange: val => setAttributes({
           featuredCardTitleColor: val
         }),
         defaultColor: "#111827"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title Typography', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title Typography', textDomain),
         value: featuredCardTitleTypo,
         onChange: val => setAttributes({
           featuredCardTitleTypo: val
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description Color', textDomain),
         value: featuredCardDescColor,
         onChange: val => setAttributes({
           featuredCardDescColor: val
         }),
         defaultColor: "#4b5563"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description Typography', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description Typography', textDomain),
         value: featuredCardDescTypo,
         onChange: val => setAttributes({
           featuredCardDescTypo: val
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Price & Period Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Price & Period Color', textDomain),
         value: featuredPriceColor,
         onChange: val => setAttributes({
           featuredPriceColor: val
         }),
         defaultColor: "#111827"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Price Typography', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Price Typography', textDomain),
         value: featuredPriceTypo,
         onChange: val => setAttributes({
           featuredPriceTypo: val
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Period Typography', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Period Typography', textDomain),
         value: featuredPeriodTypo,
         onChange: val => setAttributes({
           featuredPeriodTypo: val
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Background', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Background', textDomain),
         value: featuredButtonBg,
         onChange: val => setAttributes({
           featuredButtonBg: val
         }),
         defaultColor: "#4f46e5"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Hover Background', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Hover Background', textDomain),
         value: featuredButtonHoverBg,
         onChange: val => setAttributes({
           featuredButtonHoverBg: val
         }),
         defaultColor: "#fcfcfc"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Text Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Text Color', textDomain),
         value: featuredButtonColor,
         onChange: val => setAttributes({
           featuredButtonColor: val
         }),
         defaultColor: "#ffffff"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Hover Text Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Hover Text Color', textDomain),
         value: featuredButtonHoverColor,
         onChange: val => setAttributes({
           featuredButtonHoverColor: val
         }),
         defaultColor: "#4f46e5"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Typography', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Typography', textDomain),
         value: featuredButtonTypo,
         onChange: val => setAttributes({
           featuredButtonTypo: val
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BorderControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Border', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Border', textDomain),
         value: featuredButtonBorder,
         onChange: val => setAttributes({
           featuredButtonBorder: val
@@ -6272,7 +6276,7 @@ const Style = ({
           side: 'all'
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.SpacingControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Border Radius', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Border Radius', textDomain),
         value: featuredButtonRadius,
         onChange: val => setAttributes({
           featuredButtonRadius: val
@@ -6284,27 +6288,27 @@ const Style = ({
           left: '2px'
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Divider Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Divider Color', textDomain),
         value: featuredDividerColor,
         onChange: val => setAttributes({
           featuredDividerColor: val
         }),
         defaultColor: "#e5e7eb"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Features Title Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Features Title Color', textDomain),
         value: featuredFeaturesTitleColor,
         onChange: val => setAttributes({
           featuredFeaturesTitleColor: val
         }),
         defaultColor: "#111827"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Features Title Typography', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Features Title Typography', textDomain),
         value: featuredFeaturesTitleTypo,
         onChange: val => setAttributes({
           featuredFeaturesTitleTypo: val
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Feature Icon Size', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Feature Icon Size', textDomain),
         value: featuredFeatureIconSize,
         onChange: val => setAttributes({
           featuredFeatureIconSize: val
@@ -6312,14 +6316,14 @@ const Style = ({
         min: 10,
         max: 60
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Feature Text Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Feature Text Color', textDomain),
         value: featuredFeatureTextColor,
         onChange: val => setAttributes({
           featuredFeatureTextColor: val
         }),
         defaultColor: "#374151"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Feature Text Typography', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Feature Text Typography', textDomain),
         value: featuredFeatureTextTypo,
         onChange: val => setAttributes({
           featuredFeatureTextTypo: val
@@ -6327,10 +6331,10 @@ const Style = ({
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Normal Layout', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Normal Layout', textDomain),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BackgroundControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background', textDomain),
         value: cardBg,
         onChange: val => setAttributes({
           cardBg: val
@@ -6340,7 +6344,7 @@ const Style = ({
           color: '#ffffff'
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BorderControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border', textDomain),
         value: cardBorder,
         onChange: val => setAttributes({
           cardBorder: val
@@ -6352,7 +6356,7 @@ const Style = ({
           side: 'all'
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.SpacingControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border Radius', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border Radius', textDomain),
         value: cardBorderRadius,
         onChange: val => setAttributes({
           cardBorderRadius: val
@@ -6364,7 +6368,7 @@ const Style = ({
           left: '8px'
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ShadowControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Box Shadow', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Box Shadow', textDomain),
         value: cardBoxShadow,
         onChange: val => setAttributes({
           cardBoxShadow: val
@@ -6377,86 +6381,86 @@ const Style = ({
           color: 'rgba(0, 0, 0, 0.1)'
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title Color', textDomain),
         value: cardTitleColor,
         onChange: val => setAttributes({
           cardTitleColor: val
         }),
         defaultColor: "#111827"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title Typography', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title Typography', textDomain),
         value: cardTitleTypo,
         onChange: val => setAttributes({
           cardTitleTypo: val
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description Color', textDomain),
         value: cardDescColor,
         onChange: val => setAttributes({
           cardDescColor: val
         }),
         defaultColor: "#4b5563"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description Typography', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description Typography', textDomain),
         value: cardDescTypo,
         onChange: val => setAttributes({
           cardDescTypo: val
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Price & Period Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Price & Period Color', textDomain),
         value: priceColor,
         onChange: val => setAttributes({
           priceColor: val
         }),
         defaultColor: "#111827"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Price Typography', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Price Typography', textDomain),
         value: priceTypo,
         onChange: val => setAttributes({
           priceTypo: val
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Period Typography', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Period Typography', textDomain),
         value: periodTypo,
         onChange: val => setAttributes({
           periodTypo: val
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Background', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Background', textDomain),
         value: buttonBg,
         onChange: val => setAttributes({
           buttonBg: val
         }),
         defaultColor: "#4f46e5"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Hover Background', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Hover Background', textDomain),
         value: buttonHoverBg,
         onChange: val => setAttributes({
           buttonHoverBg: val
         }),
         defaultColor: "#fcfcfc"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Text Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Text Color', textDomain),
         value: buttonColor,
         onChange: val => setAttributes({
           buttonColor: val
         }),
         defaultColor: "#ffffff"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Hover Text Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Hover Text Color', textDomain),
         value: buttonHoverColor,
         onChange: val => setAttributes({
           buttonHoverColor: val
         }),
         defaultColor: "#4f46e5"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Typography', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Typography', textDomain),
         value: buttonTypo,
         onChange: val => setAttributes({
           buttonTypo: val
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BorderControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Border', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Border', textDomain),
         value: buttonBorder,
         onChange: val => setAttributes({
           buttonBorder: val
@@ -6468,7 +6472,7 @@ const Style = ({
           side: 'all'
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.SpacingControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Border Radius', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Border Radius', textDomain),
         value: buttonRadius,
         onChange: val => setAttributes({
           buttonRadius: val
@@ -6480,27 +6484,27 @@ const Style = ({
           left: '2px'
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Divider Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Divider Color', textDomain),
         value: dividerColor,
         onChange: val => setAttributes({
           dividerColor: val
         }),
         defaultColor: "#e5e7eb"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Features Title Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Features Title Color', textDomain),
         value: featuresTitleColor,
         onChange: val => setAttributes({
           featuresTitleColor: val
         }),
         defaultColor: "#111827"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Features Title Typography', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Features Title Typography', textDomain),
         value: featuresTitleTypo,
         onChange: val => setAttributes({
           featuresTitleTypo: val
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Feature Icon Size', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Feature Icon Size', textDomain),
         value: featureIconSize,
         onChange: val => setAttributes({
           featureIconSize: val
@@ -6508,14 +6512,14 @@ const Style = ({
         min: 10,
         max: 60
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Feature Text Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Feature Text Color', textDomain),
         value: featureTextColor,
         onChange: val => setAttributes({
           featureTextColor: val
         }),
         defaultColor: "#374151"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Feature Text Typography', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Feature Text Typography', textDomain),
         value: featureTextTypo,
         onChange: val => setAttributes({
           featureTextTypo: val
@@ -6603,13 +6607,13 @@ const ThemeOne = ({
     });
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    className: "gbb-pricing-container",
+    className: "xpo-pricing-container",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "gbb-pricing-grid",
+      className: "xpo-pricing-grid",
       children: pricingTables.map((plan, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: `gbb-pricing-card ${plan.isFeatured ? 'is-featured' : ''}`,
+        className: `xpo-pricing-card ${plan.isFeatured ? 'is-featured' : ''}`,
         children: [plan.isFeatured && plan.badgeText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "gbb-pricing-badge",
+          className: "xpo-pricing-badge",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(RichTextEl, {
             tagName: "span",
             value: plan.badgeText,
@@ -6617,25 +6621,25 @@ const ThemeOne = ({
             placeholder: "POPULAR"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "gbb-pricing-card-top",
+          className: "xpo-pricing-card-top",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(RichTextEl, {
             tagName: "h2",
-            className: "gbb-pricing-name",
+            className: "xpo-pricing-name",
             value: plan.name,
             onChange: val => updatePricingTable(index, 'name', val),
             placeholder: "Plan Name"
           }), (isBackend || plan.desc) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(RichTextEl, {
             tagName: "p",
-            className: "gbb-pricing-desc",
+            className: "xpo-pricing-desc",
             value: plan.desc,
             onChange: val => updatePricingTable(index, 'desc', val),
             placeholder: "Description"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
-            className: "gbb-pricing-price-wrap",
+            className: "xpo-pricing-price-wrap",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("strong", {
-              className: "gbb-pricing-price",
+              className: "xpo-pricing-price",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                className: "gbb-currency-icon",
+                className: "xpo-currency-icon",
                 style: {
                   color: plan.currencyColor
                 },
@@ -6647,7 +6651,7 @@ const ThemeOne = ({
                 placeholder: "Price"
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-              className: "gbb-pricing-period",
+              className: "xpo-pricing-period",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(RichTextEl, {
                 tagName: "span",
                 value: plan.period,
@@ -6657,12 +6661,12 @@ const ThemeOne = ({
             })]
           }), isBackend ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(RichTextEl, {
             tagName: "div",
-            className: "gbb-pricing-button",
+            className: "xpo-pricing-button",
             value: plan.linkLabel,
             onChange: val => updatePricingTable(index, 'linkLabel', val),
             placeholder: "Button Text"
           }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-            className: "gbb-pricing-button",
+            className: "xpo-pricing-button",
             href: plan.link || '#',
             target: plan.isLinkNewTab ? '_blank' : '_self',
             rel: plan.isLinkNewTab ? 'noopener noreferrer' : undefined,
@@ -6672,26 +6676,26 @@ const ThemeOne = ({
             })
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "gbb-pricing-card-bottom",
+          className: "xpo-pricing-card-bottom",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(RichTextEl, {
             tagName: "p",
-            className: "gbb-features-title",
+            className: "xpo-features-title",
             value: plan.featuresTitle || "What's included:",
             onChange: val => updatePricingTable(index, 'featuresTitle', val),
             placeholder: "Features Title"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
-            className: "gbb-features-list",
+            className: "xpo-features-list",
             children: plan.features && plan.features.map((feature, fIndex) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
-              className: "gbb-feature-item",
+              className: "xpo-feature-item",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_0__.RenderIcon, {
                 value: feature.icon || 'fas-check',
-                className: "gbb-icon-success",
+                className: "xpo-icon-success",
                 style: {
                   color: feature.iconColor
                 }
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(RichTextEl, {
                 tagName: "span",
-                className: "gbb-feature-text",
+                className: "xpo-feature-text",
                 value: feature.label,
                 onChange: val => updateFeature(index, fIndex, val),
                 placeholder: "Feature item"
@@ -6786,138 +6790,138 @@ const DynamicStyle = ({
     featureTextTypo
   } = attributes;
   const mainSl = `#${clientId}`;
-  const gbbPricingContainer = `${mainSl} .gbb-pricing-container`;
-  const gbbPricingGrid = `${gbbPricingContainer} .gbb-pricing-grid`;
-  const gbbPricingCard = `${gbbPricingGrid} .gbb-pricing-card`;
-  const gbbPricingName = `${gbbPricingCard} .gbb-pricing-name`;
-  const gbbPricingDesc = `${gbbPricingCard} .gbb-pricing-desc`;
-  const gbbPricingBadge = `${gbbPricingCard} .gbb-pricing-badge`;
-  const gbbPricingCardTop = `${gbbPricingCard} .gbb-pricing-card-top`;
-  const gbbPricingPriceWrap = `${gbbPricingCard} .gbb-pricing-price-wrap`;
-  const gbbPricingPrice = `${gbbPricingCard} .gbb-pricing-price`;
-  const gbbPricingPeriod = `${gbbPricingCard} .gbb-pricing-period`;
-  const gbbPricingButton = `${gbbPricingCard} .gbb-pricing-button`;
-  const gbbFeaturesTitle = `${gbbPricingCard} .gbb-features-title`;
-  const gbbFeatureIcon = `${gbbPricingCard} .gbb-icon-success, ${gbbPricingCard} .gbb-icon-error`;
-  const gbbFeatureText = `${gbbPricingCard} .gbb-feature-text`;
+  const xpoPricingContainer = `${mainSl} .xpo-pricing-container`;
+  const xpoPricingGrid = `${xpoPricingContainer} .xpo-pricing-grid`;
+  const xpoPricingCard = `${xpoPricingGrid} .xpo-pricing-card`;
+  const xpoPricingName = `${xpoPricingCard} .xpo-pricing-name`;
+  const xpoPricingDesc = `${xpoPricingCard} .xpo-pricing-desc`;
+  const xpoPricingBadge = `${xpoPricingCard} .xpo-pricing-badge`;
+  const xpoPricingCardTop = `${xpoPricingCard} .xpo-pricing-card-top`;
+  const xpoPricingPriceWrap = `${xpoPricingCard} .xpo-pricing-price-wrap`;
+  const xpoPricingPrice = `${xpoPricingCard} .xpo-pricing-price`;
+  const xpoPricingPeriod = `${xpoPricingCard} .xpo-pricing-period`;
+  const xpoPricingButton = `${xpoPricingCard} .xpo-pricing-button`;
+  const xpoFeaturesTitle = `${xpoPricingCard} .xpo-features-title`;
+  const xpoFeatureIcon = `${xpoPricingCard} .xpo-icon-success, ${xpoPricingCard} .xpo-icon-error`;
+  const xpoFeatureText = `${xpoPricingCard} .xpo-feature-text`;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("style", {
     dangerouslySetInnerHTML: {
       __html: `
-        ${gbbPricingContainer} {
+        ${xpoPricingContainer} {
           max-width: ${containerWidth};
         }
 
-        ${gbbPricingGrid} {
+        ${xpoPricingGrid} {
           grid-template-columns: repeat(${columns}, 1fr);
           gap: ${gap}px;
         }
 
-        ${gbbPricingBadge}  span {
+        ${xpoPricingBadge}  span {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(badgeTypo)}
           color: ${badgeColor};
         }
 
-        ${gbbPricingBadge} {
+        ${xpoPricingBadge} {
           background-color: ${badgeBgColor};
           ${(0,tr_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBorderRadiusCss)(badgeRadius)}
         }
 
-        ${gbbPricingCard} {
+        ${xpoPricingCard} {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(cardBg) ? `background: ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(cardBg)};` : ''}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderCss)(cardBorder)}
           ${(0,tr_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBorderRadiusCss)(cardBorderRadius)}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getShadowCss)(cardBoxShadow) ? `box-shadow: ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getShadowCss)(cardBoxShadow)};` : ''}
         }
 
-        ${gbbPricingCard}.is-featured {
+        ${xpoPricingCard}.is-featured {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(featuredCardBg) ? `background: ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(featuredCardBg)};` : ''}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderCss)(featuredCardBorder)}
           ${(0,tr_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBorderRadiusCss)(featuredCardBorderRadius)}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getShadowCss)(featuredCardBoxShadow) ? `box-shadow: ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getShadowCss)(featuredCardBoxShadow)};` : ''}
         }
 
-        ${gbbPricingCardTop} {
+        ${xpoPricingCardTop} {
           border-bottom-color: ${dividerColor};
         }
 
-        ${gbbPricingCard}.is-featured .gbb-pricing-card-top {
+        ${xpoPricingCard}.is-featured .xpo-pricing-card-top {
           ${featuredDividerColor ? `border-bottom-color: ${featuredDividerColor};` : ''}
         }
 
-        ${gbbPricingName} {
+        ${xpoPricingName} {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(cardTitleTypo)}
           color: ${cardTitleColor};
         }
 
-        ${gbbPricingCard}.is-featured .gbb-pricing-name {
+        ${xpoPricingCard}.is-featured .xpo-pricing-name {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredCardTitleTypo)}
           ${featuredCardTitleColor ? `color: ${featuredCardTitleColor};` : ''}
         }
 
-        ${gbbPricingDesc} {
+        ${xpoPricingDesc} {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(cardDescTypo)}
           color: ${cardDescColor};
         }
 
-        ${gbbPricingCard}.is-featured .gbb-pricing-desc {
+        ${xpoPricingCard}.is-featured .xpo-pricing-desc {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredCardDescTypo)}
           ${featuredCardDescColor ? `color: ${featuredCardDescColor};` : ''}
         }
 
-        ${gbbFeaturesTitle} {
+        ${xpoFeaturesTitle} {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuresTitleTypo)}
           color: ${featuresTitleColor};
         }
 
-        ${gbbPricingCard}.is-featured .gbb-features-title {
+        ${xpoPricingCard}.is-featured .xpo-features-title {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredFeaturesTitleTypo)}
           ${featuredFeaturesTitleColor ? `color: ${featuredFeaturesTitleColor};` : ''}
         }
 
-        ${gbbFeatureIcon} {
+        ${xpoFeatureIcon} {
           width: ${featureIconSize}px;
           height: ${featureIconSize}px;
         }
 
-        ${gbbPricingCard}.is-featured .gbb-icon-success, ${gbbPricingCard}.is-featured .gbb-icon-error {
+        ${xpoPricingCard}.is-featured .xpo-icon-success, ${xpoPricingCard}.is-featured .xpo-icon-error {
           ${featuredFeatureIconSize ? `width: ${featuredFeatureIconSize}px; height: ${featuredFeatureIconSize}px;` : ''}
         }
 
-        ${gbbFeatureText} {
+        ${xpoFeatureText} {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featureTextTypo)}
           color: ${featureTextColor};
         }
 
-        ${gbbPricingCard}.is-featured .gbb-feature-text {
+        ${xpoPricingCard}.is-featured .xpo-feature-text {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredFeatureTextTypo)}
           ${featuredFeatureTextColor ? `color: ${featuredFeatureTextColor};` : ''}
         }
 
-        ${gbbPricingPriceWrap} {
+        ${xpoPricingPriceWrap} {
           /* Wrapper styles if needed */
         }
 
-        ${gbbPricingPrice} {
+        ${xpoPricingPrice} {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(priceTypo)}
           color: ${priceColor};
         }
 
-        ${gbbPricingCard}.is-featured .gbb-pricing-price {
+        ${xpoPricingCard}.is-featured .xpo-pricing-price {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredPriceTypo)}
           ${featuredPriceColor ? `color: ${featuredPriceColor};` : ''}
         }
 
-        ${gbbPricingPeriod} {
+        ${xpoPricingPeriod} {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(periodTypo)}
           color: ${priceColor};
         }
 
-        ${gbbPricingCard}.is-featured .gbb-pricing-period {
+        ${xpoPricingCard}.is-featured .xpo-pricing-period {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredPeriodTypo)}
           ${featuredPriceColor ? `color: ${featuredPriceColor};` : ''}
         }
 
-        ${gbbPricingButton} {
+        ${xpoPricingButton} {
           background-color: ${buttonBg};
           color: ${buttonColor};
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(buttonTypo)}
@@ -6925,7 +6929,7 @@ const DynamicStyle = ({
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderCss)(buttonBorder)}
         }
 
-        ${gbbPricingCard}.is-featured .gbb-pricing-button {
+        ${xpoPricingCard}.is-featured .xpo-pricing-button {
           ${featuredButtonBg ? `background-color: ${featuredButtonBg};` : ''}
           ${featuredButtonColor ? `color: ${featuredButtonColor};` : ''}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(featuredButtonTypo)}
@@ -6933,24 +6937,24 @@ const DynamicStyle = ({
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderCss)(featuredButtonBorder)}
         }
 
-        ${gbbPricingButton}:hover {
+        ${xpoPricingButton}:hover {
           background-color: ${buttonHoverBg};
           color: ${buttonHoverColor};
         }
 
-        ${gbbPricingCard}.is-featured .gbb-pricing-button:hover {
+        ${xpoPricingCard}.is-featured .xpo-pricing-button:hover {
           ${featuredButtonHoverBg ? `background-color: ${featuredButtonHoverBg};` : ''}
           ${featuredButtonHoverColor ? `color: ${featuredButtonHoverColor};` : ''}
         }
 
         ${tr_tools__WEBPACK_IMPORTED_MODULE_0__.tabBreakpoint} {
-          ${gbbPricingGrid} {
+          ${xpoPricingGrid} {
             grid-template-columns: repeat(${columns > 2 ? 2 : columns}, 1fr);
           }
         }
 
         ${tr_tools__WEBPACK_IMPORTED_MODULE_0__.mobileBreakpoint} {
-          ${gbbPricingGrid} {
+          ${xpoPricingGrid} {
             grid-template-columns: 1fr;
           }
         }
@@ -7006,124 +7010,125 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./icons */ "./src/blocks/pricing-table/utils/icons.js");
 
 
+const textDomain = 'xpo-blocks';
 const templateData = {
-  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select Pricing Table Template', 'guten-builder-blocks'),
-  subtitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Choose a design template for your pricing grid.', 'guten-builder-blocks'),
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select Pricing Table Template', textDomain),
+  subtitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Choose a design template for your pricing grid.', textDomain),
   templates: [{
     id: 'template-1',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template 1', 'guten-builder-blocks'),
-    tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Standard Pricing Table', 'guten-builder-blocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template 1', textDomain),
+    tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Standard Pricing Table', textDomain),
     icon: _icons__WEBPACK_IMPORTED_MODULE_1__.TemplateOneSvg,
     attributes: {
       pricingTables: [{
-        name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Starter', 'guten-builder-blocks'),
-        desc: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Lorem ipsum dolor sit amet consectetur adipisicing elit.', 'guten-builder-blocks'),
+        name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Starter', textDomain),
+        desc: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Lorem ipsum dolor sit amet consectetur adipisicing elit.', textDomain),
         price: '20',
         priceCurrency: '$',
         period: '/month',
         link: '#',
         isLinkNewTab: false,
-        linkLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Get Started', 'guten-builder-blocks'),
+        linkLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Get Started', textDomain),
         isFeatured: false,
         badgeText: '',
-        featuresTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("What's included:", 'guten-builder-blocks'),
+        featuresTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("What's included:", textDomain),
         features: [{
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('10 users', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('10 users', textDomain),
           icon: 'fas-check',
           iconColor: '#4338ca'
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('2GB of storage', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('2GB of storage', textDomain),
           icon: 'fas-check',
           iconColor: '#4338ca'
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Email support', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Email support', textDomain),
           icon: 'fas-check',
           iconColor: '#4338ca'
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Help center access', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Help center access', textDomain),
           icon: 'fas-check',
           iconColor: '#4338ca'
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Phone support', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Phone support', textDomain),
           icon: 'fas-xmark',
           iconColor: '#ef4444'
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Community access', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Community access', textDomain),
           icon: 'fas-xmark',
           iconColor: '#ef4444'
         }]
       }, {
-        name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Pro', 'guten-builder-blocks'),
-        desc: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Lorem ipsum dolor sit amet consectetur adipisicing elit.', 'guten-builder-blocks'),
+        name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Pro', textDomain),
+        desc: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Lorem ipsum dolor sit amet consectetur adipisicing elit.', textDomain),
         price: '30',
         priceCurrency: '$',
         period: '/month',
         link: '#',
         isLinkNewTab: false,
         isLinkNewTab: false,
-        linkLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Get Started', 'guten-builder-blocks'),
+        linkLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Get Started', textDomain),
         isFeatured: true,
-        badgeText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Popular', 'guten-builder-blocks'),
-        featuresTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("What's included:", 'guten-builder-blocks'),
+        badgeText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Popular', textDomain),
+        featuresTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("What's included:", textDomain),
         features: [{
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('20 users', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('20 users', textDomain),
           icon: 'fas-check',
           iconColor: '#4338ca'
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('5GB of storage', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('5GB of storage', textDomain),
           icon: 'fas-check',
           iconColor: '#4338ca'
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Email support', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Email support', textDomain),
           icon: 'fas-check',
           iconColor: '#4338ca'
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Help center access', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Help center access', textDomain),
           icon: 'fas-check',
           iconColor: '#4338ca'
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Phone support', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Phone support', textDomain),
           icon: 'fas-check',
           iconColor: '#4338ca'
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Community access', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Community access', textDomain),
           icon: 'fas-xmark',
           iconColor: '#ef4444'
         }]
       }, {
-        name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enterprise', 'guten-builder-blocks'),
-        desc: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Lorem ipsum dolor sit amet consectetur adipisicing elit.', 'guten-builder-blocks'),
+        name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enterprise', textDomain),
+        desc: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Lorem ipsum dolor sit amet consectetur adipisicing elit.', textDomain),
         price: '100',
         priceCurrency: '$',
         period: '/month',
         link: '#',
         isLinkNewTab: false,
-        linkLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Get Started', 'guten-builder-blocks'),
+        linkLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Get Started', textDomain),
         isFeatured: false,
         badgeText: '',
-        featuresTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("What's included:", 'guten-builder-blocks'),
+        featuresTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("What's included:", textDomain),
         features: [{
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('50 users', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('50 users', textDomain),
           icon: 'fas-check',
           iconColor: '#4338ca'
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('20GB of storage', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('20GB of storage', textDomain),
           icon: 'fas-check',
           iconColor: '#4338ca'
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Email support', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Email support', textDomain),
           icon: 'fas-check',
           iconColor: '#4338ca'
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Help center access', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Help center access', textDomain),
           icon: 'fas-check',
           iconColor: '#4338ca'
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Phone support', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Phone support', textDomain),
           icon: 'fas-check',
           iconColor: '#4338ca'
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Community access', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Community access', textDomain),
           icon: 'fas-check',
           iconColor: '#4338ca'
         }]
@@ -7463,6 +7468,8 @@ const templateData = {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   GeneralIcon: () => (/* binding */ GeneralIcon),
+/* harmony export */   StyleIcon: () => (/* binding */ StyleIcon),
 /* harmony export */   TemplateOneSvg: () => (/* binding */ TemplateOneSvg),
 /* harmony export */   pricingIcon: () => (/* binding */ pricingIcon)
 /* harmony export */ });
@@ -7588,6 +7595,62 @@ const pricingIcon = {
     })]
   })
 };
+const GeneralIcon = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+  width: "16",
+  height: "16",
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "2",
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  style: {
+    marginRight: '6px'
+  },
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+    x1: "4",
+    y1: "6",
+    x2: "20",
+    y2: "6"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+    x1: "4",
+    y1: "12",
+    x2: "20",
+    y2: "12"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+    x1: "4",
+    y1: "18",
+    x2: "20",
+    y2: "18"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
+    cx: "8",
+    cy: "6",
+    r: "2.5",
+    fill: "currentColor"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
+    cx: "16",
+    cy: "12",
+    r: "2.5",
+    fill: "currentColor"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
+    cx: "10",
+    cy: "18",
+    r: "2.5",
+    fill: "currentColor"
+  })]
+});
+const StyleIcon = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+  width: "16",
+  height: "16",
+  viewBox: "0 0 20 20",
+  fill: "currentColor",
+  style: {
+    marginRight: '6px'
+  },
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    d: "M5 0 4 1H1v10.516l1-1V2h2v1h7V2h2v2.463l1-1V1h-3l-1-1zm.414 1h4.172l.414.414V2H5v-.586zm13.139 0-.205.006-.202.035-.195.063-.183.087-.172.112-.155.135-3.89 3.888-.223.207-.244.186-.256.164-.271.14-.282.118-.29.091-.301.067-.301.04-.305.013-.307-.012-.3-.041-.3-.067-.29-.091-.283-.118-.272-.14-.256-.164-.242-.186-.224-.207-7.073 7.072 7.073 7.07 7.07-7.07-.207-.226-.186-.242-.164-.256-.14-.272-.118-.283-.091-.29-.067-.298-.039-.302-.014-.307.014-.305.04-.3.066-.301.091-.291.118-.282.14-.27.164-.257.186-.244.207-.223 3.889-3.89.134-.155.112-.17.087-.185.063-.195.035-.202.006-.205-.021-.203-.047-.2-.077-.189-.1-.18-.124-.163-.143-.143-.164-.125-.18-.1-.189-.076-.197-.047zm-.108 1.002h.114l.107.025.102.047.087.07.07.088.048.102.025.107v.114l-.025.11-.047.1-.07.089-3.89 3.886-.241.262-.221.281-.197.297-.172.31-.149.325-.123.336-.095.342-.069.351-.039.354-.012.355.016.356.045.355.074.348.1.343.127.332.152.323.176.308-.432.432L8.25 7.094l.432-.432.308.176.324.154.332.125.342.1.35.074.353.045.356.016.355-.012.354-.04.351-.068.342-.095.336-.121.324-.149.31-.174.298-.197.281-.22.262-.243 3.888-3.888.086-.07.102-.048zM3 6v1h2.516l1-1zm4.543 1.8 5.656 5.657-1.554 1.557-.02-.256-.037-.254-.03-.125-.037-.123-.05-.117-.065-.112-.078-.103-.09-.088-.105-.076-.113-.059-.122-.043-.125-.025-.128-.012h-.127l-.13.012-.126.02-.25.056-.244.074-.243.084-.476.19-.442.17-.007.02-.03-.007.037-.013.497-1.291.11-.332.095-.34.037-.172.025-.172.012-.174-.01-.176-.014-.088-.021-.084-.027-.084-.04-.08-.044-.074-.057-.068-.063-.063-.068-.054-.076-.045-.08-.035-.084-.028-.086-.015-.088-.01-.088-.002-.174.015-.174.036-.168.045-.335.105-.33.115-.168.055-.147.037v.014l-.025-.008.025-.006.018-.299.021-.31.002-.157-.004-.156-.017-.154-.03-.154-.045-.149-.06-.144-.072-.137-.086-.131-.1-.121-.11-.111-.119-.102-.123-.094zM3 8v1h.516l1-1zm2.592 1.75.127.08.119.092.105.105.043.06.035.067.03.069.015.072.016.148-.01.3-.021.296-.012.299.008.148.021.149.043.142.065.135.04.06.05.06.052.052.059.047.064.039.067.035.142.045.147.021h.148l.15-.015.145-.027.29-.079.282-.095.282-.098.271-.078.004-.024.012.02-.016.004-.035.176-.055.197-.129.387-.296.763-.149.381-.068.194-.06.195-.048.2-.015.099-.008.103v.102l.014.101.027.1.039.094.053.088.066.078.078.068.088.05.094.042.101.025.1.012.104.002.101-.01.102-.017.197-.05.195-.062.192-.068.76-.3.386-.136.2-.048.101-.018.086-.006-.004-.016.02.014-.016.002.02.066.013.083.018.168.017.335.02.336.039.334-2.11 2.112-5.656-5.657zM1 13.281V17h3.72l-1-1H2v-1.719z"
+  })
+});
 const TemplateOneSvg = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 600 400",
@@ -7994,44 +8057,6 @@ const TemplateOneSvg = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED
   })]
 });
 
-// export const TemplateTwoSvg = () => (
-//   <svg
-//     xmlns="http://www.w3.org/2000/svg"
-//     viewBox="0 0 600 400"
-//     width="100%"
-//     height="100%"
-//     style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
-//   >
-//     <rect width="600" height="400" fill="#09090b" rx="8" />
-
-//     {/* Card 1 - Left */}
-//     <rect x="60" y="55" width="220" height="290" rx="12" fill="#18181b" stroke="#27272a" strokeWidth="1.5" />
-//     <rect x="90" y="85" width="80" height="14" rx="3" fill="#a1a1aa" />
-//     <rect x="90" y="115" width="100" height="26" rx="4" fill="#ffffff" />
-//     <line x1="80" y1="155" x2="260" y2="155" stroke="#27272a" strokeWidth="1.5" />
-//     <circle cx="95" cy="180" r="5" fill="#e4e4e7" />
-//     <rect x="110" y="176" width="110" height="8" rx="2" fill="#71717a" />
-//     <circle cx="95" cy="205" r="5" fill="#e4e4e7" />
-//     <rect x="110" y="201" width="95" height="8" rx="2" fill="#71717a" />
-//     <circle cx="95" cy="230" r="5" fill="#52525b" />
-//     <rect x="110" y="226" width="80" height="8" rx="2" fill="#52525b" />
-//     <rect x="90" y="280" width="160" height="36" rx="8" fill="#27272a" />
-
-//     {/* Card 2 - Right (Highlighted Gold) */}
-//     <rect x="320" y="55" width="220" height="290" rx="12" fill="#18181b" stroke="#facc15" strokeWidth="2" />
-//     <rect x="350" y="85" width="90" height="14" rx="3" fill="#facc15" />
-//     <rect x="350" y="115" width="110" height="26" rx="4" fill="#ffffff" />
-//     <line x1="340" y1="155" x2="520" y2="155" stroke="#27272a" strokeWidth="1.5" />
-//     <circle cx="355" cy="180" r="5" fill="#facc15" />
-//     <rect x="370" y="176" width="120" height="8" rx="2" fill="#d4d4d8" />
-//     <circle cx="355" cy="205" r="5" fill="#facc15" />
-//     <rect x="370" y="201" width="105" height="8" rx="2" fill="#d4d4d8" />
-//     <circle cx="355" cy="230" r="5" fill="#facc15" />
-//     <rect x="370" y="226" width="115" height="8" rx="2" fill="#d4d4d8" />
-//     <rect x="350" y="280" width="160" height="36" rx="8" fill="#facc15" />
-//   </svg>
-// );
-
 /***/ },
 
 /***/ "./src/blocks/pricing-table/utils/options.js"
@@ -8047,13 +8072,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./icons */ "./src/blocks/pricing-table/utils/icons.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
 
+
+
+const textDomain = "xpo-block";
 const generalStyleTabs = [{
   name: 'general',
-  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('General', 'textdomain')
+  title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center'
+    },
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.GeneralIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('General', textDomain)]
+  })
 }, {
   name: 'style',
-  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style', 'textdomain')
+  title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center'
+    },
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.StyleIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style', textDomain)]
+  })
 }];
 const defaultPopularTypo = {
   fontSize: {
@@ -8352,7 +8395,7 @@ module.exports = window["wp"]["i18n"];
   \*********************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/pricing-table","version":"1.0.0","title":"Pricing Table","description":"Showcase your subscription plans or products with a stunning pricing grid.","category":"xpo-block","keywords":["pricing","price list","table","grid"],"attributes":{"selectedTemplate":{"type":"string","default":""},"pricingTables":{"type":"array","default":[]},"align":{"type":"string","default":"wide"},"columns":{"type":"number"},"gap":{"type":"number"},"containerWidth":{"type":"string","default":""},"badgeTypo":{"type":"object","default":{}},"badgeColor":{"type":"string","default":""},"badgeBgColor":{"type":"string","default":""},"badgeRadius":{"type":"object"},"featuredCardBorder":{"type":"object"},"featuredCardBg":{"type":"object"},"featuredCardBoxShadow":{"type":"object"},"featuredCardBorderRadius":{"type":"object"},"featuredCardTitleTypo":{"type":"object"},"featuredCardTitleColor":{"type":"string"},"featuredCardDescTypo":{"type":"object"},"featuredCardDescColor":{"type":"string"},"featuredPriceColor":{"type":"string"},"featuredPriceTypo":{"type":"object"},"featuredPeriodTypo":{"type":"object"},"featuredButtonBg":{"type":"string"},"featuredButtonHoverBg":{"type":"string"},"featuredButtonColor":{"type":"string"},"featuredButtonHoverColor":{"type":"string"},"featuredButtonBorder":{"type":"object"},"featuredButtonRadius":{"type":"object"},"featuredButtonTypo":{"type":"object"},"featuredDividerColor":{"type":"string"},"featuredFeaturesTitleColor":{"type":"string"},"featuredFeaturesTitleTypo":{"type":"object"},"featuredFeatureIconSize":{"type":"number","default":21},"featuredFeatureTextColor":{"type":"string"},"featuredFeatureTextTypo":{"type":"object"},"cardBg":{"type":"object"},"cardBorder":{"type":"object"},"cardBoxShadow":{"type":"object"},"cardBorderRadius":{"type":"object"},"cardTitleTypo":{"type":"object"},"cardTitleColor":{"type":"string"},"cardDescTypo":{"type":"object"},"cardDescColor":{"type":"string"},"priceColor":{"type":"string"},"priceTypo":{"type":"object"},"periodTypo":{"type":"object"},"buttonBg":{"type":"string"},"buttonHoverBg":{"type":"string"},"buttonRadius":{"type":"object"},"buttonTypo":{"type":"object"},"buttonColor":{"type":"string"},"buttonHoverColor":{"type":"string"},"buttonBorder":{"type":"object"},"dividerColor":{"type":"string"},"featuresTitleColor":{"type":"string"},"featuresTitleTypo":{"type":"object"},"featureIconSize":{"type":"number","default":21},"featureTextColor":{"type":"string"},"featureTextTypo":{"type":"object"}},"supports":{"html":false,"align":["wide","full"]},"textdomain":"guten-builder-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"xpo-block/pricing-table","version":"1.0.0","title":"Pricing Table","description":"Showcase your subscription plans or products with a stunning pricing grid.","category":"xpo-block","keywords":["xpo-block","pricing","price list","table","grid"],"textdomain":"xpo-block","attributes":{"selectedTemplate":{"type":"string","default":""},"pricingTables":{"type":"array","default":[]},"align":{"type":"string","default":"wide"},"columns":{"type":"number"},"gap":{"type":"number"},"containerWidth":{"type":"string","default":""},"badgeTypo":{"type":"object","default":{}},"badgeColor":{"type":"string","default":""},"badgeBgColor":{"type":"string","default":""},"badgeRadius":{"type":"object"},"featuredCardBorder":{"type":"object"},"featuredCardBg":{"type":"object"},"featuredCardBoxShadow":{"type":"object"},"featuredCardBorderRadius":{"type":"object"},"featuredCardTitleTypo":{"type":"object"},"featuredCardTitleColor":{"type":"string"},"featuredCardDescTypo":{"type":"object"},"featuredCardDescColor":{"type":"string"},"featuredPriceColor":{"type":"string"},"featuredPriceTypo":{"type":"object"},"featuredPeriodTypo":{"type":"object"},"featuredButtonBg":{"type":"string"},"featuredButtonHoverBg":{"type":"string"},"featuredButtonColor":{"type":"string"},"featuredButtonHoverColor":{"type":"string"},"featuredButtonBorder":{"type":"object"},"featuredButtonRadius":{"type":"object"},"featuredButtonTypo":{"type":"object"},"featuredDividerColor":{"type":"string"},"featuredFeaturesTitleColor":{"type":"string"},"featuredFeaturesTitleTypo":{"type":"object"},"featuredFeatureIconSize":{"type":"number","default":21},"featuredFeatureTextColor":{"type":"string"},"featuredFeatureTextTypo":{"type":"object"},"cardBg":{"type":"object"},"cardBorder":{"type":"object"},"cardBoxShadow":{"type":"object"},"cardBorderRadius":{"type":"object"},"cardTitleTypo":{"type":"object"},"cardTitleColor":{"type":"string"},"cardDescTypo":{"type":"object"},"cardDescColor":{"type":"string"},"priceColor":{"type":"string"},"priceTypo":{"type":"object"},"periodTypo":{"type":"object"},"buttonBg":{"type":"string"},"buttonHoverBg":{"type":"string"},"buttonRadius":{"type":"object"},"buttonTypo":{"type":"object"},"buttonColor":{"type":"string"},"buttonHoverColor":{"type":"string"},"buttonBorder":{"type":"object"},"dividerColor":{"type":"string"},"featuresTitleColor":{"type":"string"},"featuresTitleTypo":{"type":"object"},"featureIconSize":{"type":"number","default":21},"featureTextColor":{"type":"string"},"featureTextTypo":{"type":"object"}},"supports":{"html":false,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
 
 /***/ }
 

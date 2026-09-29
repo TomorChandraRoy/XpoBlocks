@@ -5,6 +5,8 @@ import { generalStyleTabs } from '../../../utils/options';
 import General from './General/General';
 import Style from './Style/Style';
 import { DocsLink } from 'tr-tools';
+const textDomain = 'xpo-blocks';
+
 
 const Settings = ({ attributes, setAttributes, clientId }) => {
   const { selectedTemplate = '' } = attributes || {};
@@ -16,8 +18,8 @@ const Settings = ({ attributes, setAttributes, clientId }) => {
 
   return (
     <InspectorControls>
-      <DocsLink link="https://gutenbuilder.com/docs/pricing-table" text={__('Documentation', 'guten-builder-blocks')} />
-      <TabPanel className="guten-builder-blocks-tab-panel wp-block-guten-builder-blocks-pricing-table" activeClass="guten-builder-blocks-active-tab" tabs={generalStyleTabs}>
+      <DocsLink link="https://xpo.com/docs/pricing-table" text={__('Documentation', textDomain)} />
+      <TabPanel className="wp-xpo-tab-panel" activeClass="wp-xpo-tab-panel-active-tab" tabs={generalStyleTabs}>
         {tab => (
           <>
             {'general' === tab.name && <General attributes={attributes} setAttributes={setAttributes} clientId={clientId} />}

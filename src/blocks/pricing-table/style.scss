@@ -1,5 +1,5 @@
-.wp-block-guten-builder-blocks-pricing-table{
-.gbb-pricing-container {
+.wp-block-xpo-block-pricing-table{
+.xpo-pricing-container {
   box-sizing: border-box;
   width: 100%;
   padding: 32px 16px;
@@ -19,7 +19,7 @@
     box-sizing: border-box;
   }
 
-  .gbb-pricing-grid {
+  .xpo-pricing-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
@@ -37,7 +37,7 @@
     }
   }
 
-  .gbb-pricing-card {
+  .xpo-pricing-card {
     display: flex;
     flex-direction: column;
     background-color: #fff;
@@ -52,7 +52,7 @@
       box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.1), 0 4px 6px -2px rgba(79, 70, 229, 0.05);
     }
 
-    .gbb-pricing-badge {
+    .xpo-pricing-badge {
       position: absolute;
       top: 0;
       right: 0;
@@ -65,7 +65,7 @@
       z-index: 10;
     }
 
-    .gbb-pricing-card-top {
+    .xpo-pricing-card-top {
       padding: 16px;
       border-bottom: 1px solid #e5e7eb;
 
@@ -74,21 +74,21 @@
       }
     }
 
-    .gbb-pricing-name {
+    .xpo-pricing-name {
       font-size: 1.125rem;
       font-weight: 500;
       color: #111827;
       margin: 0;
     }
 
-    .gbb-pricing-desc {
+    .xpo-pricing-desc {
       margin-top: 8px;
       color: #374151;
       font-size: 15px;
       line-height: 1.5;
     }
 
-    .gbb-pricing-price-wrap {
+    .xpo-pricing-price-wrap {
       margin-top: 8px;
       display: flex;
       align-items: baseline;
@@ -99,7 +99,7 @@
       }
     }
 
-    .gbb-pricing-price {
+    .xpo-pricing-price {
       font-size: 1.875rem;
       font-weight: 700;
       color: #111827;
@@ -109,14 +109,14 @@
       }
     }
 
-    .gbb-pricing-period {
+    .xpo-pricing-period {
       font-size: 0.875rem;
       font-weight: 500;
       color: #374151;
       margin-left: 4px;
     }
 
-    .gbb-pricing-button {
+    .xpo-pricing-button {
       display: block;
       margin-top: 16px;
       padding: 10px 16px;
@@ -143,7 +143,7 @@
       }
     }
 
-    .gbb-pricing-card-bottom {
+    .xpo-pricing-card-bottom {
       padding: 16px;
       flex-grow: 1;
 
@@ -152,7 +152,7 @@
       }
     }
 
-    .gbb-features-title {
+    .xpo-features-title {
       font-size: 1.125rem;
       font-weight: 500;
       color: #111827;
@@ -163,7 +163,7 @@
       }
     }
 
-    .gbb-features-list {
+    .xpo-features-list {
       margin-top: 8px;
       padding: 0;
       list-style: none;
@@ -176,13 +176,13 @@
       }
     }
 
-    .gbb-feature-item {
+    .xpo-feature-item {
       display: flex;
       align-items: center;
       gap: 7px;
     }
 
-    .gbb-icon-success {
+    .xpo-icon-success {
       width: 21px;
       height: 21px;
       color: #4338ca;
@@ -190,17 +190,17 @@
       display: inline-flex;
     }
 
-    .gbb-icon-error {
+    .xpo-icon-error {
       width: 21px;
       height: 21px;
       color: #b91c1c;
       flex-shrink: 0;
     }
 
-    .gbb-feature-text {
+    .xpo-feature-text {
       color: #374151;
       font-size: 1rem;
     }
   }
 }
-}
+} 
