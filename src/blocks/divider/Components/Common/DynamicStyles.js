@@ -9,28 +9,28 @@ const DynamicStyles = ({ attributes, id }) => {
     <style
       dangerouslySetInnerHTML={{
         __html: `
-          ${dividerWidth?.desktop ? `${mainSl} .gbb-divider { width: ${dividerWidth.desktop}; }` : ''}
-          ${dividerWidth?.tablet ? `${tabBreakpoint} { ${mainSl} .gbb-divider { width: ${dividerWidth.tablet}; } }` : ''}
-          ${dividerWidth?.mobile ? `${mobileBreakpoint} { ${mainSl} .gbb-divider { width: ${dividerWidth.mobile}; } }` : ''}
+          ${dividerWidth?.desktop ? `${mainSl} .xpo-divider { width: ${dividerWidth.desktop}; }` : ''}
+          ${dividerWidth?.tablet ? `${tabBreakpoint} { ${mainSl} .xpo-divider { width: ${dividerWidth.tablet}; } }` : ''}
+          ${dividerWidth?.mobile ? `${mobileBreakpoint} { ${mainSl} .xpo-divider { width: ${dividerWidth.mobile}; } }` : ''}
 
-          ${dividerHeight?.desktop ? `${mainSl} .gbb-divider::before, ${mainSl} .gbb-divider::after { height: ${dividerHeight.desktop}; }` : ''}
-          ${dividerHeight?.tablet ? `${tabBreakpoint} { ${mainSl} .gbb-divider::before, ${mainSl} .gbb-divider::after { height: ${dividerHeight.tablet}; } }` : ''}
-          ${dividerHeight?.mobile ? `${mobileBreakpoint} { ${mainSl} .gbb-divider::before, ${mainSl} .gbb-divider::after { height: ${dividerHeight.mobile}; } }` : ''}
+          ${dividerHeight?.desktop ? `${mainSl} .xpo-divider::before, ${mainSl} .xpo-divider::after { height: ${dividerHeight.desktop}; }` : ''}
+          ${dividerHeight?.tablet ? `${tabBreakpoint} { ${mainSl} .xpo-divider::before, ${mainSl} .xpo-divider::after { height: ${dividerHeight.tablet}; } }` : ''}
+          ${dividerHeight?.mobile ? `${mobileBreakpoint} { ${mainSl} .xpo-divider::before, ${mainSl} .xpo-divider::after { height: ${dividerHeight.mobile}; } }` : ''}
 
           ${
             dividerColor
               ? `
-            ${mainSl} .gbb-divider { color: ${dividerColor}; }
-            ${mainSl} .gbb-divider::before, ${mainSl} .gbb-divider::after { background-color: ${dividerColor}; }
+            ${mainSl} .xpo-divider { color: ${dividerColor}; }
+            ${mainSl} .xpo-divider::before, ${mainSl} .xpo-divider::after { background-color: ${dividerColor}; }
           `
               : ''
           }
 
-          ${iconSize?.desktop ? `${mainSl} .gbb-divider-icon-wrapper svg { width: ${iconSize.desktop}; height: ${iconSize.desktop}; }` : ''}
-          ${iconSize?.tablet ? `${tabBreakpoint} { ${mainSl} .gbb-divider-icon-wrapper svg { width: ${iconSize.tablet}; height: ${iconSize.tablet}; } }` : ''}
-          ${iconSize?.mobile ? `${mobileBreakpoint} { ${mainSl} .gbb-divider-icon-wrapper svg { width: ${iconSize.mobile}; height: ${iconSize.mobile}; } }` : ''}
+          ${iconSize?.desktop ? `${mainSl} .xpo-divider-icon-wrapper svg { width: ${iconSize.desktop}; height: ${iconSize.desktop}; }` : ''}
+          ${iconSize?.tablet ? `${tabBreakpoint} { ${mainSl} .xpo-divider-icon-wrapper svg { width: ${iconSize.tablet}; height: ${iconSize.tablet}; } }` : ''}
+          ${iconSize?.mobile ? `${mobileBreakpoint} { ${mainSl} .xpo-divider-icon-wrapper svg { width: ${iconSize.mobile}; height: ${iconSize.mobile}; } }` : ''}
 
-          ${mainSl} .gbb-divider-text {
+          ${mainSl} .xpo-divider-text {
             ${getTypographyCss(textTypography)}
           }
         `,

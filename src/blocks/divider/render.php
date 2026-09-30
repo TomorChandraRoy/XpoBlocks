@@ -4,9 +4,9 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 
-$block_id = wp_unique_id( 'guten-builder-blocks-divider-' );
+$block_id = wp_unique_id( 'xpo-block-divider-' );
 
-$wrapper_classes = array( 'gbb-divider-container', $block_id );
+$wrapper_classes = array( 'xpo-divider-container', $block_id );
 
 $wrapper_attrs = get_block_wrapper_attributes( array( 'class' => implode( ' ', $wrapper_classes ) ) );
 ?>

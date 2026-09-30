@@ -1,6 +1,6 @@
-.wp-block-guten-builder-blocks-divider {
+.wp-block-xpo-block-divider {
   width: 100%;
-  .gbb-divider {
+  .xpo-divider {
 	display: flex;
 	align-items: center;
 	width: 100%;
@@ -25,14 +25,14 @@
 		margin-left: 12px;
 	}
 
-	.gbb-divider-icon-wrapper {
+	.xpo-divider-icon-wrapper {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		flex-shrink: 0;
 	}
 
-	.gbb-divider-icon {
+	.xpo-divider-icon {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -40,8 +40,8 @@
 }
 }
 
-.guten-builder-divider-template-2 .gbb-divider::before,
-.guten-builder-divider-template-2 .gbb-divider::after {
+.xpo-block-divider-template-2 .xpo-divider::before,
+.xpo-block-divider-template-2 .xpo-divider::after {
 	margin: 0 !important;
 }
 

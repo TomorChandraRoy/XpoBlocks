@@ -5704,6 +5704,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-blocks';
 const General = ({
   attributes,
   setAttributes
@@ -5726,7 +5727,7 @@ const General = ({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template Presets', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template Presets', textDomain),
       initialOpen: true,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
         style: {
@@ -5734,7 +5735,7 @@ const General = ({
           color: '#64748b',
           marginBottom: '12px'
         },
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Switch or apply a predefined divider template style.', 'guten-builder-blocks')
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Switch or apply a predefined divider template style.', textDomain)
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
         isSecondary: true,
         onClick: () => setAttributes({
@@ -5744,14 +5745,14 @@ const General = ({
           width: '100%',
           justifyContent: 'center'
         },
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Change Template', 'guten-builder-blocks')
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Change Template', textDomain)
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Divider Settings', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Divider Settings', textDomain),
       initialOpen: true,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.UnitControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Width :', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Width :', textDomain),
         value: dividerWidth,
         onChange: val => setAttributes({
           dividerWidth: val
@@ -5764,7 +5765,7 @@ const General = ({
           mobile: ''
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.UnitControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Thickness :', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Thickness :', textDomain),
         value: dividerHeight,
         onChange: val => setAttributes({
           dividerHeight: val
@@ -5778,49 +5779,49 @@ const General = ({
         }
       }), selectedTemplate === 'template-1' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Divider Type', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Divider Type', textDomain),
           value: dividerType,
           options: [{
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text', 'guten-builder-blocks'),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text', textDomain),
             value: 'text'
           }, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Icon', 'guten-builder-blocks'),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Icon', textDomain),
             value: 'icon'
           }],
           onChange: value => setAttributes({
             dividerType: value
           })
         }), dividerType === 'text' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text', textDomain),
           value: text,
           onChange: value => setAttributes({
             text: value
           })
         }), dividerType === 'icon' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select Icon', 'guten-builder-blocks'),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select Icon', textDomain),
             value: attributes.iconName || 'tabler--crown',
             options: [{
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Crown', 'guten-builder-blocks'),
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Crown', textDomain),
               value: 'tabler--crown'
             }, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Star', 'guten-builder-blocks'),
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Star', textDomain),
               value: 'tabler--star'
             }, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Heart', 'guten-builder-blocks'),
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Heart', textDomain),
               value: 'tabler--heart'
             }, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Circle', 'guten-builder-blocks'),
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Circle', textDomain),
               value: 'tabler--circle'
             }, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Square', 'guten-builder-blocks'),
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Square', textDomain),
               value: 'tabler--square'
             }],
             onChange: value => setAttributes({
               iconName: value
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.UnitControl, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Icon Size :', 'guten-builder-blocks'),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Icon Size :', textDomain),
             value: attributes.iconSize,
             onChange: val => setAttributes({
               iconSize: val
@@ -5872,6 +5873,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-blocks';
 const Settings = ({
   attributes,
   setAttributes
@@ -5885,11 +5887,11 @@ const Settings = ({
   }
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_6__.DocsLink, {
-      link: "https://gutenbuilder.com/docs/divider",
-      text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Documentation', 'guten-builder-blocks')
+      link: "https://xpo.com/docs/divider",
+      text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Documentation', textDomain)
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TabPanel, {
-      className: "guten-builder-blocks-tab-panel ",
-      activeClass: "guten-builder-blocks-active-tab",
+      className: "wp-xpo-tab-panel",
+      activeClass: "wp-xpo-tab-panel-active-tab",
       tabs: _utils_option__WEBPACK_IMPORTED_MODULE_3__.generalStyleTabs,
       children: tab => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
         children: ['general' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_General_General__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -5930,6 +5932,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-blocks';
 const Style = ({
   attributes,
   setAttributes
@@ -5942,17 +5945,17 @@ const Style = ({
   } = attributes || {};
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
     className: "bPlPanelBody",
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Colors', 'guten-builder-blocks'),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Colors', textDomain),
     initialOpen: true,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Color :', 'guten-builder-blocks'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Color :', textDomain),
       value: dividerColor,
       onChange: color => setAttributes({
         dividerColor: color
       }),
       defaultColor: "#d1d5db"
     }), selectedTemplate === 'template-1' && dividerType === 'text' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Typography :', 'guten-builder-blocks'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Typography :', textDomain),
       value: textTypography,
       onChange: val => setAttributes({
         textTypography: val
@@ -5997,24 +6000,24 @@ const DynamicStyles = ({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("style", {
     dangerouslySetInnerHTML: {
       __html: `
-          ${dividerWidth?.desktop ? `${mainSl} .gbb-divider { width: ${dividerWidth.desktop}; }` : ''}
-          ${dividerWidth?.tablet ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.tabBreakpoint} { ${mainSl} .gbb-divider { width: ${dividerWidth.tablet}; } }` : ''}
-          ${dividerWidth?.mobile ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.mobileBreakpoint} { ${mainSl} .gbb-divider { width: ${dividerWidth.mobile}; } }` : ''}
+          ${dividerWidth?.desktop ? `${mainSl} .xpo-divider { width: ${dividerWidth.desktop}; }` : ''}
+          ${dividerWidth?.tablet ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.tabBreakpoint} { ${mainSl} .xpo-divider { width: ${dividerWidth.tablet}; } }` : ''}
+          ${dividerWidth?.mobile ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.mobileBreakpoint} { ${mainSl} .xpo-divider { width: ${dividerWidth.mobile}; } }` : ''}
 
-          ${dividerHeight?.desktop ? `${mainSl} .gbb-divider::before, ${mainSl} .gbb-divider::after { height: ${dividerHeight.desktop}; }` : ''}
-          ${dividerHeight?.tablet ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.tabBreakpoint} { ${mainSl} .gbb-divider::before, ${mainSl} .gbb-divider::after { height: ${dividerHeight.tablet}; } }` : ''}
-          ${dividerHeight?.mobile ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.mobileBreakpoint} { ${mainSl} .gbb-divider::before, ${mainSl} .gbb-divider::after { height: ${dividerHeight.mobile}; } }` : ''}
+          ${dividerHeight?.desktop ? `${mainSl} .xpo-divider::before, ${mainSl} .xpo-divider::after { height: ${dividerHeight.desktop}; }` : ''}
+          ${dividerHeight?.tablet ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.tabBreakpoint} { ${mainSl} .xpo-divider::before, ${mainSl} .xpo-divider::after { height: ${dividerHeight.tablet}; } }` : ''}
+          ${dividerHeight?.mobile ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.mobileBreakpoint} { ${mainSl} .xpo-divider::before, ${mainSl} .xpo-divider::after { height: ${dividerHeight.mobile}; } }` : ''}
 
           ${dividerColor ? `
-            ${mainSl} .gbb-divider { color: ${dividerColor}; }
-            ${mainSl} .gbb-divider::before, ${mainSl} .gbb-divider::after { background-color: ${dividerColor}; }
+            ${mainSl} .xpo-divider { color: ${dividerColor}; }
+            ${mainSl} .xpo-divider::before, ${mainSl} .xpo-divider::after { background-color: ${dividerColor}; }
           ` : ''}
 
-          ${iconSize?.desktop ? `${mainSl} .gbb-divider-icon-wrapper svg { width: ${iconSize.desktop}; height: ${iconSize.desktop}; }` : ''}
-          ${iconSize?.tablet ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.tabBreakpoint} { ${mainSl} .gbb-divider-icon-wrapper svg { width: ${iconSize.tablet}; height: ${iconSize.tablet}; } }` : ''}
-          ${iconSize?.mobile ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.mobileBreakpoint} { ${mainSl} .gbb-divider-icon-wrapper svg { width: ${iconSize.mobile}; height: ${iconSize.mobile}; } }` : ''}
+          ${iconSize?.desktop ? `${mainSl} .xpo-divider-icon-wrapper svg { width: ${iconSize.desktop}; height: ${iconSize.desktop}; }` : ''}
+          ${iconSize?.tablet ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.tabBreakpoint} { ${mainSl} .xpo-divider-icon-wrapper svg { width: ${iconSize.tablet}; height: ${iconSize.tablet}; } }` : ''}
+          ${iconSize?.mobile ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.mobileBreakpoint} { ${mainSl} .xpo-divider-icon-wrapper svg { width: ${iconSize.mobile}; height: ${iconSize.mobile}; } }` : ''}
 
-          ${mainSl} .gbb-divider-text {
+          ${mainSl} .xpo-divider-text {
             ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_1__.getTypographyCss)(textTypography)}
           }
         `
@@ -6094,14 +6097,14 @@ const TemplateOne = ({
     'tabler--square': /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_utils_icons__WEBPACK_IMPORTED_MODULE_0__.SquareIcon, {})
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    className: "guten-builder-divider-template-1",
+    className: "xpo-block-divider-template-1",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "gbb-divider",
+      className: "xpo-divider",
       children: dividerType === 'text' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-        className: "gbb-divider-text",
+        className: "xpo-divider-text",
         children: text
       }) : dividerType === 'icon' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-        className: "gbb-divider-icon-wrapper",
+        className: "xpo-divider-icon-wrapper",
         children: icons[iconName] || icons['tabler--crown']
       }) : null
     })
@@ -6126,9 +6129,9 @@ __webpack_require__.r(__webpack_exports__);
 
 const TemplateTwo = () => {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-    className: "guten-builder-divider-template-2",
+    className: "xpo-block-divider-template-2",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-      className: "gbb-divider"
+      className: "xpo-divider"
     })
   });
 };
@@ -6179,13 +6182,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./icons */ "./src/blocks/divider/utils/icons.js");
 
 
+const textDomain = 'xpo-blocks';
 const templateData = {
-  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select Divider Template', 'guten-builder-blocks'),
-  subtitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Choose a design template for your divider.', 'guten-builder-blocks'),
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select Divider Template', textDomain),
+  subtitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Choose a design template for your divider.', textDomain),
   templates: [{
     id: 'template-1',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template 1', 'guten-builder-blocks'),
-    tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Classic Divider', 'guten-builder-blocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template 1', textDomain),
+    tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Classic Divider'),
     icon: _icons__WEBPACK_IMPORTED_MODULE_1__.TemplateOneSvg,
     attributes: {
       dividerType: 'text',
@@ -6224,8 +6228,8 @@ const templateData = {
     }
   }, {
     id: 'template-2',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template 2', 'guten-builder-blocks'),
-    tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Simple Divider', 'guten-builder-blocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template 2'),
+    tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Simple Divider'),
     icon: _icons__WEBPACK_IMPORTED_MODULE_1__.TemplateTwoSvg,
     attributes: {
       dividerWidth: {
@@ -6501,6 +6505,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-blocks';
 const generalStyleTabs = [{
   name: 'general',
   title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
@@ -6508,7 +6513,7 @@ const generalStyleTabs = [{
       display: 'inline-flex',
       alignItems: 'center'
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.GeneralIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('General', 'guten-builder-blocks')]
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.GeneralIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('General', textDomain)]
   })
 }, {
   name: 'style',
@@ -6517,7 +6522,7 @@ const generalStyleTabs = [{
       display: 'inline-flex',
       alignItems: 'center'
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.StyleIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style', 'guten-builder-blocks')]
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.StyleIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style', textDomain)]
   })
 }];
 
@@ -6803,7 +6808,7 @@ module.exports = window["wp"]["i18n"];
   \***************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"guten-builder-blocks/divider","version":"1.0.0","title":"Divider","category":"xpo-block","description":"Add a customizable dividing line to separate your content and improve page layout.","textdomain":"guten-builder-blocks","attributes":{"selectedTemplate":{"type":"string","default":""},"dividerType":{"type":"string","default":"text"},"text":{"type":"string","default":"Text"},"iconName":{"type":"string","default":"tabler--crown"},"dividerWidth":{"type":"object"},"dividerHeight":{"type":"object"},"dividerColor":{"type":"string","default":""},"textTypography":{"type":"object"},"iconSize":{"type":"object"}},"supports":{"html":false,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"xpo-blocks/divider","version":"1.0.0","title":"Divider","category":"xpo-block","description":"Add a customizable dividing line to separate your content and improve page layout.","textdomain":"xpo-blocks","attributes":{"selectedTemplate":{"type":"string","default":""},"dividerType":{"type":"string","default":"text"},"text":{"type":"string","default":"Text"},"iconName":{"type":"string","default":"tabler--crown"},"dividerWidth":{"type":"object"},"dividerHeight":{"type":"object"},"dividerColor":{"type":"string","default":""},"textTypography":{"type":"object"},"iconSize":{"type":"object"}},"supports":{"html":false,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
 
 /***/ }
 

@@ -12,12 +12,12 @@ const TemplateOne = ({ attributes }) => {
     };
 
     return (
-      <div className="guten-builder-divider-template-1">
-        <div className="gbb-divider">
+      <div className="xpo-block-divider-template-1">
+        <div className="xpo-divider">
           {dividerType === 'text' ? (
-            <span className="gbb-divider-text">{text}</span>
+            <span className="xpo-divider-text">{text}</span>
           ) : dividerType === 'icon' ? (
-            <span className="gbb-divider-icon-wrapper">
+            <span className="xpo-divider-icon-wrapper">
               {icons[iconName] || icons['tabler--crown']}
             </span>
           ) : null}

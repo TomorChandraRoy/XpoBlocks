@@ -5,7 +5,7 @@ import DynamicStyle from './Components/Common/DynamicStyles';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  const containers = document.querySelectorAll('.wp-block-guten-builder-blocks-divider');
+  const containers = document.querySelectorAll('.wp-block-xpo-block-divider');
 
   containers.forEach(container => {
 

@@ -5640,24 +5640,24 @@ const DynamicStyles = ({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("style", {
     dangerouslySetInnerHTML: {
       __html: `
-          ${dividerWidth?.desktop ? `${mainSl} .gbb-divider { width: ${dividerWidth.desktop}; }` : ''}
-          ${dividerWidth?.tablet ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.tabBreakpoint} { ${mainSl} .gbb-divider { width: ${dividerWidth.tablet}; } }` : ''}
-          ${dividerWidth?.mobile ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.mobileBreakpoint} { ${mainSl} .gbb-divider { width: ${dividerWidth.mobile}; } }` : ''}
+          ${dividerWidth?.desktop ? `${mainSl} .xpo-divider { width: ${dividerWidth.desktop}; }` : ''}
+          ${dividerWidth?.tablet ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.tabBreakpoint} { ${mainSl} .xpo-divider { width: ${dividerWidth.tablet}; } }` : ''}
+          ${dividerWidth?.mobile ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.mobileBreakpoint} { ${mainSl} .xpo-divider { width: ${dividerWidth.mobile}; } }` : ''}
 
-          ${dividerHeight?.desktop ? `${mainSl} .gbb-divider::before, ${mainSl} .gbb-divider::after { height: ${dividerHeight.desktop}; }` : ''}
-          ${dividerHeight?.tablet ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.tabBreakpoint} { ${mainSl} .gbb-divider::before, ${mainSl} .gbb-divider::after { height: ${dividerHeight.tablet}; } }` : ''}
-          ${dividerHeight?.mobile ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.mobileBreakpoint} { ${mainSl} .gbb-divider::before, ${mainSl} .gbb-divider::after { height: ${dividerHeight.mobile}; } }` : ''}
+          ${dividerHeight?.desktop ? `${mainSl} .xpo-divider::before, ${mainSl} .xpo-divider::after { height: ${dividerHeight.desktop}; }` : ''}
+          ${dividerHeight?.tablet ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.tabBreakpoint} { ${mainSl} .xpo-divider::before, ${mainSl} .xpo-divider::after { height: ${dividerHeight.tablet}; } }` : ''}
+          ${dividerHeight?.mobile ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.mobileBreakpoint} { ${mainSl} .xpo-divider::before, ${mainSl} .xpo-divider::after { height: ${dividerHeight.mobile}; } }` : ''}
 
           ${dividerColor ? `
-            ${mainSl} .gbb-divider { color: ${dividerColor}; }
-            ${mainSl} .gbb-divider::before, ${mainSl} .gbb-divider::after { background-color: ${dividerColor}; }
+            ${mainSl} .xpo-divider { color: ${dividerColor}; }
+            ${mainSl} .xpo-divider::before, ${mainSl} .xpo-divider::after { background-color: ${dividerColor}; }
           ` : ''}
 
-          ${iconSize?.desktop ? `${mainSl} .gbb-divider-icon-wrapper svg { width: ${iconSize.desktop}; height: ${iconSize.desktop}; }` : ''}
-          ${iconSize?.tablet ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.tabBreakpoint} { ${mainSl} .gbb-divider-icon-wrapper svg { width: ${iconSize.tablet}; height: ${iconSize.tablet}; } }` : ''}
-          ${iconSize?.mobile ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.mobileBreakpoint} { ${mainSl} .gbb-divider-icon-wrapper svg { width: ${iconSize.mobile}; height: ${iconSize.mobile}; } }` : ''}
+          ${iconSize?.desktop ? `${mainSl} .xpo-divider-icon-wrapper svg { width: ${iconSize.desktop}; height: ${iconSize.desktop}; }` : ''}
+          ${iconSize?.tablet ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.tabBreakpoint} { ${mainSl} .xpo-divider-icon-wrapper svg { width: ${iconSize.tablet}; height: ${iconSize.tablet}; } }` : ''}
+          ${iconSize?.mobile ? `${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_0__.mobileBreakpoint} { ${mainSl} .xpo-divider-icon-wrapper svg { width: ${iconSize.mobile}; height: ${iconSize.mobile}; } }` : ''}
 
-          ${mainSl} .gbb-divider-text {
+          ${mainSl} .xpo-divider-text {
             ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_1__.getTypographyCss)(textTypography)}
           }
         `
@@ -5686,7 +5686,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const containers = document.querySelectorAll('.wp-block-guten-builder-blocks-divider');
+  const containers = document.querySelectorAll('.wp-block-xpo-block-divider');
   containers.forEach(container => {
     if (container.dataset.initialized) return;
     container.dataset.initialized = 'true';

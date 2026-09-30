@@ -1,12 +1,12 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "guten-builder-blocks/divider",
+  "name": "xpo-blocks/divider",
   "version": "1.0.0",
   "title": "Divider",
   "category": "xpo-block",
   "description": "Add a customizable dividing line to separate your content and improve page layout.",
-  "textdomain": "guten-builder-blocks",
+  "textdomain": "xpo-blocks",
   "attributes": {
     "selectedTemplate": {
       "type": "string",

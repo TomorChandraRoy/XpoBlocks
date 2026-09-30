@@ -1,7 +1,7 @@
 const TemplateTwo = () => {
     return (
-      <div className="guten-builder-divider-template-2">
-        <div className="gbb-divider">
+      <div className="xpo-block-divider-template-2">
+        <div className="xpo-divider">
         </div>
       </div>
     );
