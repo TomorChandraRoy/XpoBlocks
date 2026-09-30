@@ -25,12 +25,12 @@ export const renderDividerIcon = (attributes) => {
   const iconSize = attributes?.dividerIconSize || 16;
 
   if (iconType === 'custom' && customIcon) {
-    return <span className="gbb-before-after-one__handle" style={{ width: `${iconSize}px`, height: `${iconSize}px`, display: 'flex', alignItems: 'center', justifyContent: 'center' }} dangerouslySetInnerHTML={{ __html: customIcon }} />;
+    return <span className="xpo-before-after-one__handle" style={{ width: `${iconSize}px`, height: `${iconSize}px`, display: 'flex', alignItems: 'center', justifyContent: 'center' }} dangerouslySetInnerHTML={{ __html: customIcon }} />;
   }
 
   if (iconType === 'arrows') {
     return (
-      <span className="gbb-before-after-one__handle">
+      <span className="xpo-before-after-one__handle">
         <ArrowsIcon iconSize={iconSize} />
       </span>
     );
@@ -38,7 +38,7 @@ export const renderDividerIcon = (attributes) => {
 
   if (iconType === 'lines') {
     return (
-      <span className="gbb-before-after-one__handle">
+      <span className="xpo-before-after-one__handle">
         <LinesIcon iconSize={iconSize} />
       </span>
     );
@@ -46,7 +46,7 @@ export const renderDividerIcon = (attributes) => {
 
   if (iconType === 'gripper') {
     return (
-      <span className="gbb-before-after-one__handle">
+      <span className="xpo-before-after-one__handle">
         <GripperIcon iconSize={iconSize} />
       </span>
     );
@@ -54,7 +54,7 @@ export const renderDividerIcon = (attributes) => {
 
   if (iconType === 'circle-arrows') {
     return (
-      <span className="gbb-before-after-one__handle">
+      <span className="xpo-before-after-one__handle">
         <CircleArrowsIcon iconSize={iconSize} />
       </span>
     );
@@ -62,7 +62,7 @@ export const renderDividerIcon = (attributes) => {
 
   if (iconType === 'plus') {
     return (
-      <span className="gbb-before-after-one__handle">
+      <span className="xpo-before-after-one__handle">
         <PlusIcon iconSize={iconSize} />
       </span>
     );
@@ -70,7 +70,7 @@ export const renderDividerIcon = (attributes) => {
 
   // Default 'dots'
   return (
-    <span className="gbb-before-after-one__handle">
+    <span className="xpo-before-after-one__handle">
       <DotsIcon iconSize={iconSize} />
     </span>
   );

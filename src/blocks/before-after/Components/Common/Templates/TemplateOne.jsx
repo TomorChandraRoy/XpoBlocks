@@ -17,32 +17,32 @@ const TemplateOne = ({ attributes }) => {
   };
 
   return (
-    <div className="gbb-before-after-one">
-      <div className="gbb-before-after-one__wrapper">
+    <div className="xpo-before-after-one">
+      <div className="xpo-before-after-one__wrapper">
         {/* After Image */}
-        <img src={afterUrl} alt="After" className="gbb-before-after-one__image" />
+        <img src={afterUrl} alt="After" className="xpo-before-after-one__image" />
 
         {/* Before Image */}
         <div
-          className="gbb-before-after-one__before-image-wrapper"
+          className="xpo-before-after-one__before-image-wrapper"
           style={{
             '--position': position,
           }}
         >
-          <img src={beforeUrl} alt="Before" className="gbb-before-after-one__image gbb-before-after-one__before-image" />
+          <img src={beforeUrl} alt="Before" className="xpo-before-after-one__image xpo-before-after-one__before-image" />
         </div>
 
         {/* Labels */}
         {attributes?.showLabels !== false && (
           <>
-            <span className="gbb-before-after-one__label gbb-before-after-one__label--before">{attributes?.beforeLabel || 'Before'}</span>
-            <span className="gbb-before-after-one__label gbb-before-after-one__label--after">{attributes?.afterLabel || 'After'}</span>
+            <span className="xpo-before-after-one__label xpo-before-after-one__label--before">{attributes?.beforeLabel || 'Before'}</span>
+            <span className="xpo-before-after-one__label xpo-before-after-one__label--after">{attributes?.afterLabel || 'After'}</span>
           </>
         )}
 
         {/* Divider */}
         <div
-          className="gbb-before-after-one__divider"
+          className="xpo-before-after-one__divider"
           style={{
             left: `${position}%`,
           }}
@@ -51,7 +51,7 @@ const TemplateOne = ({ attributes }) => {
         </div>
 
         {/* Range Slider */}
-        <input type="range" min="0" max="100" value={position} onChange={handleSliderChange} className="gbb-before-after-one__slider" aria-label="Before after comparison slider" />
+        <input type="range" min="0" max="100" value={position} onChange={handleSliderChange} className="xpo-before-after-one__slider" aria-label="Before after comparison slider" />
       </div>
     </div>
   );

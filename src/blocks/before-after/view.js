@@ -7,7 +7,7 @@ import BeforeAfter from './Components/Common/Templates/BeforeAfter.jsx';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  const containers = document.querySelectorAll('.wp-block-guten-builder-blocks-before-after');
+  const containers = document.querySelectorAll('.wp-block-xpo-block-before-after');
 
   containers.forEach(container => {
 

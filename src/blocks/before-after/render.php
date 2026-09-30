@@ -4,9 +4,9 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 
-$block_id = wp_unique_id( 'guten-builder-before-after-' ); 
+$block_id = wp_unique_id( 'xpo-block-before-after-' );
 
-$wrapper_classes = array( 'gbb-before-after-container', $block_id );
+$wrapper_classes = array( 'xpo-before-after-container', $block_id );
 
 $wrapper_attrs = get_block_wrapper_attributes( array( 'class' => implode( ' ', $wrapper_classes ) ) );
 ?>

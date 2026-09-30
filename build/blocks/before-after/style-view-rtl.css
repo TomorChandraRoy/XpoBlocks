@@ -1,12 +1,12 @@
 /*!***********************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/before-after/style.scss ***!
   \***********************************************************************************************************************************************************************************************************************************************************/
-.wp-block-guten-builder-blocks-before-after .gbb-before-after-one {
+.wp-block-xpo-block-before-after .xpo-before-after-one {
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
 }
-.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__wrapper {
+.wp-block-xpo-block-before-after .xpo-before-after-one__wrapper {
   position: relative;
   width: 100%;
   height: 500px;
@@ -15,7 +15,7 @@
   -webkit-user-select: none;
           user-select: none;
 }
-.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__image {
+.wp-block-xpo-block-before-after .xpo-before-after-one__image {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -23,7 +23,7 @@
   object-fit: cover;
   pointer-events: none;
 }
-.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__before-image-wrapper {
+.wp-block-xpo-block-before-after .xpo-before-after-one__before-image-wrapper {
   position: absolute;
   top: 0;
   right: 0;
@@ -33,14 +33,14 @@
   clip-path: inset(0 calc(100% - var(--position, 50) * 1%) 0 0);
   pointer-events: none;
 }
-.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__before-image {
+.wp-block-xpo-block-before-after .xpo-before-after-one__before-image {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   pointer-events: none;
 }
-.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__divider {
+.wp-block-xpo-block-before-after .xpo-before-after-one__divider {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -50,7 +50,7 @@
   z-index: 4;
   pointer-events: none;
 }
-.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__handle {
+.wp-block-xpo-block-before-after .xpo-before-after-one__handle {
   position: absolute;
   top: 50%;
   right: 50%;
@@ -65,7 +65,7 @@
   transform: translate(50%, -50%);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 }
-.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__label {
+.wp-block-xpo-block-before-after .xpo-before-after-one__label {
   position: absolute;
   top: 16px;
   padding: 7px 12px;
@@ -77,13 +77,13 @@
   z-index: 5;
   pointer-events: none;
 }
-.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__label--before {
+.wp-block-xpo-block-before-after .xpo-before-after-one__label--before {
   right: 16px;
 }
-.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__label--after {
+.wp-block-xpo-block-before-after .xpo-before-after-one__label--after {
   left: 16px;
 }
-.wp-block-guten-builder-blocks-before-after .gbb-before-after-one__slider {
+.wp-block-xpo-block-before-after .xpo-before-after-one__slider {
   position: absolute;
   inset: 0;
   z-index: 10;
@@ -94,10 +94,10 @@
   opacity: 0;
 }
 @media (max-width: 767px) {
-  .wp-block-guten-builder-blocks-before-after .gbb-before-after-one__wrapper {
+  .wp-block-xpo-block-before-after .xpo-before-after-one__wrapper {
     height: 350px;
   }
-  .wp-block-guten-builder-blocks-before-after .gbb-before-after-one__before-image {
+  .wp-block-xpo-block-before-after .xpo-before-after-one__before-image {
     width: 100vw;
   }
 }

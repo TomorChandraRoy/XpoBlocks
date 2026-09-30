@@ -1,12 +1,12 @@
 {
   "apiVersion": 3,
-  "name": "guten-builder-blocks/before-after",
+  "name": "xpo-block/before-after",
   "version": "1.0.0",
   "title": "Before/After",
   "description": "Interactive image comparison slider with CSS-based masking and hardware-accelerated transitions.",
   "category": "xpo-block",
   "keywords": ["before after", "image comparison", "slider", "photo compare", "comparison"],
-  "textdomain": "guten-builder-blocks",
+  "textdomain": "xpo-block",
   "attributes": {
     "selectedTemplate": {
       "type": "string",

@@ -5652,10 +5652,10 @@ const DynamicStyles = ({
   } = attributes || {};
   const mainSl = `#${id}`;
   const wrapper = mainSl;
-  const oneWrapper = `${wrapper} .gbb-before-after-one__wrapper`;
-  const label = `${oneWrapper} .gbb-before-after-one__label`;
-  const divider = `${oneWrapper} .gbb-before-after-one__divider`;
-  const handle = `${oneWrapper} .gbb-before-after-one__handle`;
+  const oneWrapper = `${wrapper} .xpo-before-after-one__wrapper`;
+  const label = `${oneWrapper} .xpo-before-after-one__label`;
+  const divider = `${oneWrapper} .xpo-before-after-one__divider`;
+  const handle = `${oneWrapper} .xpo-before-after-one__handle`;
   let dividerCss = '';
   const dColor = dividerColor || '#ffffff';
   if (dividerStyle === 'neon') {
@@ -5758,33 +5758,33 @@ const TemplateOne = ({
     setPosition(event.target.value);
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    className: "gbb-before-after-one",
+    className: "xpo-before-after-one",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "gbb-before-after-one__wrapper",
+      className: "xpo-before-after-one__wrapper",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
         src: afterUrl,
         alt: "After",
-        className: "gbb-before-after-one__image"
+        className: "xpo-before-after-one__image"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "gbb-before-after-one__before-image-wrapper",
+        className: "xpo-before-after-one__before-image-wrapper",
         style: {
           '--position': position
         },
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
           src: beforeUrl,
           alt: "Before",
-          className: "gbb-before-after-one__image gbb-before-after-one__before-image"
+          className: "xpo-before-after-one__image xpo-before-after-one__before-image"
         })
       }), attributes?.showLabels !== false && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-          className: "gbb-before-after-one__label gbb-before-after-one__label--before",
+          className: "xpo-before-after-one__label xpo-before-after-one__label--before",
           children: attributes?.beforeLabel || 'Before'
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-          className: "gbb-before-after-one__label gbb-before-after-one__label--after",
+          className: "xpo-before-after-one__label xpo-before-after-one__label--after",
           children: attributes?.afterLabel || 'After'
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "gbb-before-after-one__divider",
+        className: "xpo-before-after-one__divider",
         style: {
           left: `${position}%`
         },
@@ -5795,7 +5795,7 @@ const TemplateOne = ({
         max: "100",
         value: position,
         onChange: handleSliderChange,
-        className: "gbb-before-after-one__slider",
+        className: "xpo-before-after-one__slider",
         "aria-label": "Before after comparison slider"
       })]
     })
@@ -5846,7 +5846,7 @@ const renderDividerIcon = attributes => {
   const iconSize = attributes?.dividerIconSize || 16;
   if (iconType === 'custom' && customIcon) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-      className: "gbb-before-after-one__handle",
+      className: "xpo-before-after-one__handle",
       style: {
         width: `${iconSize}px`,
         height: `${iconSize}px`,
@@ -5861,7 +5861,7 @@ const renderDividerIcon = attributes => {
   }
   if (iconType === 'arrows') {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-      className: "gbb-before-after-one__handle",
+      className: "xpo-before-after-one__handle",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.ArrowsIcon, {
         iconSize: iconSize
       })
@@ -5869,7 +5869,7 @@ const renderDividerIcon = attributes => {
   }
   if (iconType === 'lines') {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-      className: "gbb-before-after-one__handle",
+      className: "xpo-before-after-one__handle",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.LinesIcon, {
         iconSize: iconSize
       })
@@ -5877,7 +5877,7 @@ const renderDividerIcon = attributes => {
   }
   if (iconType === 'gripper') {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-      className: "gbb-before-after-one__handle",
+      className: "xpo-before-after-one__handle",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.GripperIcon, {
         iconSize: iconSize
       })
@@ -5885,7 +5885,7 @@ const renderDividerIcon = attributes => {
   }
   if (iconType === 'circle-arrows') {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-      className: "gbb-before-after-one__handle",
+      className: "xpo-before-after-one__handle",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.CircleArrowsIcon, {
         iconSize: iconSize
       })
@@ -5893,7 +5893,7 @@ const renderDividerIcon = attributes => {
   }
   if (iconType === 'plus') {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-      className: "gbb-before-after-one__handle",
+      className: "xpo-before-after-one__handle",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.PlusIcon, {
         iconSize: iconSize
       })
@@ -5902,7 +5902,7 @@ const renderDividerIcon = attributes => {
 
   // Default 'dots'
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-    className: "gbb-before-after-one__handle",
+    className: "xpo-before-after-one__handle",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.DotsIcon, {
       iconSize: iconSize
     })
@@ -6250,7 +6250,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const containers = document.querySelectorAll('.wp-block-guten-builder-blocks-before-after');
+  const containers = document.querySelectorAll('.wp-block-xpo-block-before-after');
   containers.forEach(container => {
     if (container.dataset.initialized) return;
     container.dataset.initialized = 'true';

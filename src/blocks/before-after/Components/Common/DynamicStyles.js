@@ -5,10 +5,10 @@ const DynamicStyles = ({ attributes, id }) => {
 
   const mainSl = `#${id}`;
   const wrapper = mainSl;
-  const oneWrapper = `${wrapper} .gbb-before-after-one__wrapper`;
-  const label = `${oneWrapper} .gbb-before-after-one__label`;
-  const divider = `${oneWrapper} .gbb-before-after-one__divider`;
-  const handle = `${oneWrapper} .gbb-before-after-one__handle`;
+  const oneWrapper = `${wrapper} .xpo-before-after-one__wrapper`;
+  const label = `${oneWrapper} .xpo-before-after-one__label`;
+  const divider = `${oneWrapper} .xpo-before-after-one__divider`;
+  const handle = `${oneWrapper} .xpo-before-after-one__handle`;
 
   let dividerCss = '';
   const dColor = dividerColor || '#ffffff';
