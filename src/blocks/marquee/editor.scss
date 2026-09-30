@@ -1,6 +1,6 @@
 /* Editor specific styles for Marquee block */
-.wp-block-guten-builder-blocks-marquee {
-    .gbb-mq-empty-state {
+.wp-block-xpo-block-marquee {
+    .xpo-mq-empty-state {
         padding: 20px;
         text-align: center;
         background: #f8fafc;
@@ -8,19 +8,19 @@
     }
 
     /* Disable links inside the editor so they don't navigate away when clicked */
-    .gbb-mq-item a {
+    .xpo-mq-item a {
         pointer-events: none;
         cursor: default;
     }
 }
 
 /* Settings sidebar / Inspector controls styles */
-.gbb-mq-permission-error {
+.xpo-mq-permission-error {
     color: #ef4444;
     font-size: 12px;
 }
 
-.gbb-mq-add-btn {
+.xpo-mq-add-btn {
     width: 100%;
     justify-content: center !important;
     margin-top: 15px;
@@ -30,19 +30,19 @@
     color: #fff !important;
 }
 
-.gbb-mq-url-input-container {
+.xpo-mq-url-input-container {
     display: flex;
     flex-direction: column;
     gap: 8px;
     padding: 10px;
 
-    .gbb-mq-url-input-label {
+    .xpo-mq-url-input-label {
         font-size: 12px;
         font-weight: 500;
         color: #64748b;
     }
 
-    .gbb-mq-url-input-row {
+    .xpo-mq-url-input-row {
         display: flex;
         gap: 8px;
         width: 100%;
@@ -65,7 +65,7 @@
     }
 }
 
-.gbb-mq-images-list {
+.xpo-mq-images-list {
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -74,7 +74,7 @@
     padding-right: 6px;
 }
 
-.gbb-mq-image-item {
+.xpo-mq-image-item {
     background: #ffffff;
     padding: 12px;
     border-radius: 8px;
@@ -87,7 +87,7 @@
     }
 }
 
-.gbb-mq-image-item-header {
+.xpo-mq-image-item-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -95,7 +95,7 @@
     margin-bottom: 12px;
 }
 
-.gbb-mq-image-preview {
+.xpo-mq-image-preview {
     width: 48px;
     height: 48px;
     flex-shrink: 0;
@@ -115,7 +115,7 @@
     }
 }
 
-.gbb-mq-image-actions {
+.xpo-mq-image-actions {
     display: flex;
     gap: 4px;
     background: #f8fafc;
@@ -134,7 +134,7 @@
     }
 }
 
-.gbb-mq-image-inputs {
+.xpo-mq-image-inputs {
     background: #f8fafc;
     padding: 10px;
     border-radius: 6px;
@@ -154,7 +154,7 @@
     }
 }
 
-.gbb-mq-frame-settings-container {
+.xpo-mq-frame-settings-container {
     padding: 10px;
     background: #f8f9fa;
     border-radius: 8px;

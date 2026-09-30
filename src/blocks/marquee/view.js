@@ -6,7 +6,7 @@ import Marquee from './Components/Common/Templates/Marquee';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  const containers = document.querySelectorAll('.wp-block-guten-builder-blocks-marquee');
+  const containers = document.querySelectorAll('.wp-block-xpo-block-marquee');
 
   containers.forEach(container => {
 

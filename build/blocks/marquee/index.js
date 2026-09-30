@@ -5710,6 +5710,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-blocks';
 const General = ({
   attributes,
   setAttributes
@@ -5791,7 +5792,7 @@ const General = ({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template Presets', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template Presets', textDomain),
       initialOpen: true,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
         style: {
@@ -5799,7 +5800,7 @@ const General = ({
           color: '#64748b',
           marginBottom: '12px'
         },
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Switch or apply a predefined divider template style.', 'guten-builder-blocks')
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Switch or apply a predefined divider template style.', textDomain)
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
         isSecondary: true,
         onClick: () => setAttributes({
@@ -5809,19 +5810,19 @@ const General = ({
           width: '100%',
           justifyContent: 'center'
         },
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Change Template', 'guten-builder-blocks')
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Change Template', textDomain)
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Images & Links', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Images & Links', textDomain),
       initialOpen: true,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-        className: "gbb-mq-url-input-container",
+        className: "xpo-mq-url-input-container",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-          className: "gbb-mq-url-input-label",
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Add Image by URL (SVG/PNG/JPG)', 'guten-builder-blocks')
+          className: "xpo-mq-url-input-label",
+          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Add Image by URL (SVG/PNG/JPG)', textDomain)
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "gbb-mq-url-input-row",
+          className: "xpo-mq-url-input-row",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
             placeholder: "https://example.com/logo.svg",
             value: imageUrl,
@@ -5831,33 +5832,33 @@ const General = ({
             variant: "secondary",
             onClick: addFromUrl,
             disabled: !imageUrl,
-            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Add', 'guten-builder-blocks')
+            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Add', textDomain)
           })]
         })]
       }), images.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Open links in New Tab', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Open links in New Tab', textDomain),
           checked: openInNewTab,
           onChange: val => setAttributes({
             openInNewTab: val
           }),
-          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('N.B: Links will only be clickable on the live frontend.', 'guten-builder-blocks')
+          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('N.B: Links will only be clickable on the live frontend.', textDomain)
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-          className: "gbb-mq-images-list",
+          className: "xpo-mq-images-list",
           children: images.map((img, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "gbb-mq-image-item",
+            className: "xpo-mq-image-item",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-              className: "gbb-mq-image-item-header",
+              className: "xpo-mq-image-item-header",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-                className: "gbb-mq-image-preview",
+                className: "xpo-mq-image-preview",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
                   src: img.url,
                   alt: img.alt
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                className: "gbb-mq-image-actions",
+                className: "xpo-mq-image-actions",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
-                  text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Move Up', 'guten-builder-blocks'),
+                  text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Move Up', textDomain),
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
                     isSmall: true,
                     variant: "tertiary",
@@ -5866,7 +5867,7 @@ const General = ({
                     disabled: i === 0
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
-                  text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Move Down', 'guten-builder-blocks'),
+                  text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Move Down', textDomain),
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
                     isSmall: true,
                     variant: "tertiary",
@@ -5875,7 +5876,7 @@ const General = ({
                     disabled: i === images.length - 1
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
-                  text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove', 'guten-builder-blocks'),
+                  text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove', textDomain),
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
                     isSmall: true,
                     variant: "tertiary",
@@ -5886,10 +5887,10 @@ const General = ({
                 })]
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-              className: "gbb-mq-image-inputs",
+              className: "xpo-mq-image-inputs",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
                 label: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-                  children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Image Source URL', 'guten-builder-blocks')
+                  children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Image Source URL', textDomain)
                 }),
                 placeholder: "https://...",
                 value: img.url,
@@ -5897,7 +5898,7 @@ const General = ({
                 __nextHasNoMarginBottom: true
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
                 label: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-                  children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Destination Link', 'guten-builder-blocks')
+                  children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Destination Link', textDomain)
                 }),
                 placeholder: "https://...",
                 value: img.link,
@@ -5909,8 +5910,8 @@ const General = ({
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, {
         fallback: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
-          className: "gbb-mq-permission-error",
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('You do not have permission to upload media.', 'guten-builder-blocks')
+          className: "xpo-mq-permission-error",
+          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('You do not have permission to upload media.', textDomain)
         }),
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
           multiple: true,
@@ -5922,17 +5923,17 @@ const General = ({
             variant: "primary",
             icon: _utils_icons__WEBPACK_IMPORTED_MODULE_3__.addIcon,
             onClick: open,
-            className: "gbb-mq-add-btn",
-            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Add Images', 'guten-builder-blocks')
+            className: "xpo-mq-add-btn",
+            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Add Images', textDomain)
           })
         })
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Dimensions & Layout', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Dimensions & Layout', textDomain),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_5__.UnitControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container Max Width', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container Max Width', textDomain),
         value: containerMaxWidth,
         onChange: val => setAttributes({
           containerMaxWidth: val
@@ -5940,7 +5941,7 @@ const General = ({
         units: [(0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_6__.pxUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_6__.remUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_6__.emUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_6__.vwUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_6__.perUnit)()],
         defaultVal: "1024px"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_5__.UnitControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Image Size', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Image Size', textDomain),
         value: itemHeight,
         onChange: val => setAttributes({
           itemHeight: val
@@ -5948,19 +5949,19 @@ const General = ({
         units: [(0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_6__.pxUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_6__.remUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_6__.emUnit)()],
         defaultVal: "100px"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Show Container Border', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Show Container Border', textDomain),
         checked: showBorder,
         onChange: val => setAttributes({
           showBorder: val
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Show Top Text', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Show Top Text', textDomain),
         checked: showTopText,
         onChange: val => setAttributes({
           showTopText: val
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Edge Fade Effect', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Edge Fade Effect', textDomain),
         checked: edgeFade,
         onChange: val => setAttributes({
           edgeFade: val
@@ -5968,25 +5969,25 @@ const General = ({
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Movement & Engine', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Movement & Engine', textDomain),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Base Speed (s)', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Base Speed (s)', textDomain),
         value: speed,
         onChange: val => setAttributes({
           speed: val
         }),
         min: 1,
         max: 200,
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Lower number means faster loop duration.', 'guten-builder-blocks')
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Lower number means faster loop duration.', textDomain)
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Reverse Direction', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Reverse Direction', textDomain),
         checked: reverseDirection,
         onChange: val => setAttributes({
           reverseDirection: val
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Pause on Hover / Tap', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Pause on Hover / Tap', textDomain),
         checked: pauseOnHover,
         onChange: val => {
           setAttributes({
@@ -5998,9 +5999,9 @@ const General = ({
             });
           }
         },
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Completely stops the track when cursor is over it.', 'guten-builder-blocks')
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Completely stops the track when cursor is over it.', textDomain)
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Slow Down on Hover', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Slow Down on Hover', textDomain),
         checked: hoverSlowDown,
         onChange: val => {
           setAttributes({
@@ -6012,28 +6013,28 @@ const General = ({
             });
           }
         },
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Reduces velocity to 30% for a cinematic inspection feel.', 'guten-builder-blocks')
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Reduces velocity to 30% for a cinematic inspection feel.', textDomain)
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Smart Addons', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Smart Addons', textDomain),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Hover Lift Effect', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Hover Lift Effect', textDomain),
         checked: liftEffect,
         onChange: val => setAttributes({
           liftEffect: val
         }),
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Elevates the hovered logo organically.', 'guten-builder-blocks')
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Elevates the hovered logo organically.', textDomain)
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Sibling Focus Blur', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Sibling Focus Blur', textDomain),
         checked: siblingBlur,
         onChange: val => setAttributes({
           siblingBlur: val
         }),
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Blurs all other logos when one is hovered.', 'guten-builder-blocks')
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Blurs all other logos when one is hovered.', textDomain)
       }), siblingBlur && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Blur Intensity (px)', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Blur Intensity (px)', textDomain),
         value: siblingBlurIntensity,
         onChange: val => setAttributes({
           siblingBlurIntensity: val
@@ -6041,39 +6042,39 @@ const General = ({
         min: 1,
         max: 10
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Segmented Progress Rail', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Segmented Progress Rail', textDomain),
         checked: showProgressRail,
         onChange: val => setAttributes({
           showProgressRail: val
         }),
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Displays a tracker based on original items.', 'guten-builder-blocks')
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Displays a tracker based on original items.', textDomain)
       }), showProgressRail && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Rail Position', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Rail Position', textDomain),
         value: progressRailPosition,
         options: [{
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Right', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Right', textDomain),
           value: 'right'
         }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Bottom', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Bottom', textDomain),
           value: 'bottom'
         }],
         onChange: val => setAttributes({
           progressRailPosition: val
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Pause / Slow State Indicator', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Pause / Slow State Indicator', textDomain),
         checked: showInteractionIndicator,
         onChange: val => setAttributes({
           showInteractionIndicator: val
         }),
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Shows a state badge when marquee is paused or slowed.', 'guten-builder-blocks')
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Shows a state badge when marquee is paused or slowed.', textDomain)
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Active Center Highlight', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Active Center Highlight', textDomain),
         checked: highlightActiveCenter,
         onChange: val => setAttributes({
           highlightActiveCenter: val
         }),
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Scales and highlights the item closest to the center focus area.', 'guten-builder-blocks')
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Scales and highlights the item closest to the center focus area.', textDomain)
       })]
     })]
   });
@@ -6112,6 +6113,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-blocks';
 const Settings = ({
   attributes,
   setAttributes
@@ -6125,11 +6127,11 @@ const Settings = ({
   }
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_6__.DocsLink, {
-      link: "https://gutenbuilder.com/docs/audio-player",
-      text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Documentation', 'guten-builder-blocks')
+      link: "https://xpo.com/docs/marquee",
+      text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Documentation', textDomain)
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TabPanel, {
-      className: "guten-builder-blocks-tab-panel ",
-      activeClass: "guten-builder-blocks-active-tab",
+      className: "wp-xpo-tab-panel ",
+      activeClass: "wp-xpo-tab-panel-active-tab",
       tabs: _utils_options__WEBPACK_IMPORTED_MODULE_3__.generalStyleTabs,
       children: tab => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
         children: ['general' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_General_General__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -6170,6 +6172,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-blocks';
 const Style = ({
   attributes,
   setAttributes
@@ -6187,16 +6190,16 @@ const Style = ({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Typography & Gradient', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Typography & Gradient', textDomain),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enable Text Gradient Sweep', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enable Text Gradient Sweep', textDomain),
         checked: enableSweepAnimation,
         onChange: val => setAttributes({
           enableSweepAnimation: val
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.GradientControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text Gradient', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text Gradient', textDomain),
         value: textGradient,
         onChange: val => setAttributes({
           textGradient: val
@@ -6205,25 +6208,25 @@ const Style = ({
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Card Frames', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Card Frames', textDomain),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enable Card Frame', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enable Card Frame', textDomain),
         checked: showFrame,
         onChange: val => setAttributes({
           showFrame: val
         })
       }), showFrame && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        className: "gbb-mq-frame-settings-container",
+        className: "xpo-mq-frame-settings-container",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Frame Background', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Frame Background', textDomain),
           value: frameBg,
           onChange: val => setAttributes({
             frameBg: val
           }),
           defaultColor: "#ffffff"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Corner Radius', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Corner Radius', textDomain),
           value: frameRadius,
           onChange: val => setAttributes({
             frameRadius: val
@@ -6234,24 +6237,24 @@ const Style = ({
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container Style', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container Style', textDomain),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container Background Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container Background Color', textDomain),
         value: containerBg,
         onChange: val => setAttributes({
           containerBg: val
         }),
         defaultColor: "#ffffff"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container Border Color', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container Border Color', textDomain),
         value: containerBorderColor,
         onChange: val => setAttributes({
           containerBorderColor: val
         }),
         defaultColor: "#e2e8f0"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container Corner Radius', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container Corner Radius', textDomain),
         value: containerRadius,
         onChange: val => setAttributes({
           containerRadius: val
@@ -6305,13 +6308,13 @@ const DynamicStyle = ({
   const finalFrameBg = frameBg || '#ffffff';
   const finalFrameRadius = typeof frameRadius === 'number' ? `${frameRadius}px` : '12px';
   const mainSl = `#${id}`;
-  const blockClass = `${mainSl} .wp-block-guten-builder-blocks-marquee`;
-  const sectionClass = `${blockClass} .gbb-logo-cloud-section`;
-  const wrapperClass = `${sectionClass} .gbb-logo-cloud-wrapper`;
-  const backendImgClass = `${wrapperClass} .gbb-mq-item img`;
-  const frontendSectionClass = `${mainSl} .gbb-logo-cloud-section`;
-  const frontendWrapperClass = `${frontendSectionClass} .gbb-logo-cloud-wrapper`;
-  const frontendImgClass = `${frontendWrapperClass} .gbb-mq-item img`;
+  const blockClass = `${mainSl} .wp-block-xpo-block-marquee`;
+  const sectionClass = `${blockClass} .xpo-logo-cloud-section`;
+  const wrapperClass = `${sectionClass} .xpo-logo-cloud-wrapper`;
+  const backendImgClass = `${wrapperClass} .xpo-mq-item img`;
+  const frontendSectionClass = `${mainSl} .xpo-logo-cloud-section`;
+  const frontendWrapperClass = `${frontendSectionClass} .xpo-logo-cloud-wrapper`;
+  const frontendImgClass = `${frontendWrapperClass} .xpo-mq-item img`;
   const getSweepGradient = gradient => {
     if (!gradient || typeof gradient !== 'object') {
       return 'linear-gradient(90deg, currentColor 0%, currentColor 45%, #ffaa40 47%, #9c40ff 50%, #ffaa40 53%, currentColor 55%, currentColor 100%)';
@@ -6346,8 +6349,8 @@ const DynamicStyle = ({
             border-radius: ${typeof containerRadius === 'number' ? `${containerRadius}px` : '8px'} !important;
           }
 
-          ${wrapperClass} .gbb-border-beam-inner,
-          ${frontendWrapperClass} .gbb-border-beam-inner {
+          ${wrapperClass} .xpo-border-beam-inner,
+          ${frontendWrapperClass} .xpo-border-beam-inner {
             background-color: ${containerBg || '#ffffff'} !important;
             border-radius: ${typeof containerRadius === 'number' ? `${containerRadius}px` : '8px'} !important;
             border-color: ${containerBorderColor || '#e2e8f0'} !important;
@@ -6359,13 +6362,13 @@ const DynamicStyle = ({
           }
 
           ${showFrame ? `
-            #${id} .has-frame .gbb-mq-item {
+            #${id} .has-frame .xpo-mq-item {
               background-color: ${finalFrameBg} !important;
               border-radius: ${finalFrameRadius} !important;
             }
           ` : ''}
 
-          #${id} .gbb-logo-text-wave {
+          #${id} .xpo-logo-text-wave {
             background-image: ${gradientCss} !important;
           }
         `
@@ -6461,7 +6464,7 @@ const TemplateOne = ({
       }
       const containerRect = container.getBoundingClientRect();
       const containerCenter = containerRect.left + containerRect.width / 2;
-      const items = container.querySelectorAll('.gbb-mq-item');
+      const items = container.querySelectorAll('.xpo-mq-item');
       let closestItem = null;
       let minDistance = Infinity;
       items.forEach(item => {
@@ -6487,7 +6490,7 @@ const TemplateOne = ({
   }, [highlightActiveCenter, images]);
   if (!images || images.length === 0) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "gbb-mq-empty-state",
+      className: "xpo-mq-empty-state",
       children: "Add images to Marquee Settings"
     });
   }
@@ -6507,7 +6510,7 @@ const TemplateOne = ({
   const containerStyle = {
     '--mq-sibling-blur': `${siblingBlurIntensity}px`
   };
-  let containerClass = 'gbb-mq-container';
+  let containerClass = 'xpo-mq-container';
   if (pauseOnHover) containerClass += ' pause-on-hover';
   if (edgeFade) containerClass += ' has-edge-fade';
   if (hoverSlowDown) containerClass += ' slow-on-hover';
@@ -6516,25 +6519,25 @@ const TemplateOne = ({
   if (highlightActiveCenter) containerClass += ' has-active-center-highlight';
   if (showFrame) containerClass += ' has-frame';
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    className: "gbb-logo-cloud-section",
+    className: "xpo-logo-cloud-section",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-      className: "gbb-logo-cloud-wrapper",
+      className: "xpo-logo-cloud-wrapper",
       children: [showBorder && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "gbb-border-beam-inner"
+        className: "xpo-border-beam-inner"
       }), showTopText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "gbb-logo-text-container",
+        className: "xpo-logo-text-container",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-          className: "gbb-logo-text",
+          className: "xpo-logo-text",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
-            className: enableSweepAnimation ? 'gbb-logo-text-wave has-sweep' : 'gbb-logo-text-solid',
+            className: enableSweepAnimation ? 'xpo-logo-text-wave has-sweep' : 'xpo-logo-text-solid',
             children: ["Trusted by 1000+ companies ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-              className: "gbb-hide-mobile",
+              className: "xpo-hide-mobile",
               children: "around the world"
             })]
           })
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "gbb-logo-content",
+        className: "xpo-logo-content",
         style: {
           position: 'relative'
         },
@@ -6543,12 +6546,12 @@ const TemplateOne = ({
           ref: containerRef,
           style: containerStyle,
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "gbb-mq-track",
+            className: "xpo-mq-track",
             style: trackStyle,
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-              className: "gbb-mq-group",
+              className: "xpo-mq-group",
               children: displayImages.map((img, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                className: "gbb-mq-item",
+                className: "xpo-mq-item",
                 children: img.link ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
                   href: img.link,
                   target: attributes.openInNewTab ? '_blank' : '_self',
@@ -6563,10 +6566,10 @@ const TemplateOne = ({
                 })
               }, i))
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-              className: "gbb-mq-group",
+              className: "xpo-mq-group",
               "aria-hidden": "true",
               children: displayImages.map((img, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                className: "gbb-mq-item",
+                className: "xpo-mq-item",
                 children: img.link ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
                   href: img.link,
                   target: attributes.openInNewTab ? '_blank' : '_self',
@@ -6584,21 +6587,21 @@ const TemplateOne = ({
             })]
           })
         }), showInteractionIndicator && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "gbb-mq-indicator-badge",
+          className: "xpo-mq-indicator-badge",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-            className: "gbb-mq-indicator-dot"
+            className: "xpo-mq-indicator-dot"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-            className: "gbb-mq-indicator-text",
+            className: "xpo-mq-indicator-text",
             children: pauseOnHover ? 'PAUSED' : 'SLOWED'
           })]
         }), showProgressRail && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: `gbb-mq-rail position-${progressRailPosition}`,
+          className: `xpo-mq-rail position-${progressRailPosition}`,
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "gbb-mq-rail-track",
+            className: "xpo-mq-rail-track",
             children: [images.map((_, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-              className: "gbb-mq-rail-segment"
+              className: "xpo-mq-rail-segment"
             }, i)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-              className: "gbb-mq-rail-fill",
+              className: "xpo-mq-rail-fill",
               style: {
                 animationDuration: `${speed}s`,
                 animationDirection: reverseDirection ? 'reverse' : 'normal'
@@ -6657,13 +6660,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./icons */ "./src/blocks/marquee/utils/icons.js");
 
 
+const textDomain = 'xpo-blocks';
 const templateData = {
-  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select Marquee Template', 'guten-builder-blocks'),
-  subtitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Choose a design template for your marquee.', 'guten-builder-blocks'),
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select Marquee Template', textDomain),
+  subtitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Choose a design template for your marquee.', textDomain),
   templates: [{
     id: 'template-1',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template 1', 'guten-builder-blocks'),
-    tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Logo Marquee', 'guten-builder-blocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template 1', textDomain),
+    tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Logo Marquee', textDomain),
     icon: _icons__WEBPACK_IMPORTED_MODULE_1__.TemplateOneSvg,
     attributes: {
       images: [],
@@ -6956,6 +6960,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-blocks';
 const generalStyleTabs = [{
   name: 'general',
   title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
@@ -6963,7 +6968,7 @@ const generalStyleTabs = [{
       display: 'inline-flex',
       alignItems: 'center'
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.GeneralIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('General', 'guten-builder-blocks')]
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.GeneralIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('General', textDomain)]
   })
 }, {
   name: 'style',
@@ -6972,7 +6977,7 @@ const generalStyleTabs = [{
       display: 'inline-flex',
       alignItems: 'center'
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.StyleIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style', 'guten-builder-blocks')]
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.StyleIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style', textDomain)]
   })
 }];
 
@@ -8926,7 +8931,7 @@ var castImmutable = (value) => value;
   \***************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"guten-builder-blocks/marquee","version":"1.0.2","title":"Marquee","category":"xpo-block","description":"Infinite scrolling marquee optimized for logos and images with hardware-accelerated physics.","keywords":["marquee","scrolling text","ticker","moving text","loop text"],"textdomain":"guten-builder-blocks","attributes":{"selectedTemplate":{"type":"string","default":""},"images":{"type":"array","default":[]},"openInNewTab":{"type":"boolean","default":false},"itemHeight":{"type":"string","default":""},"containerMaxWidth":{"type":"string","default":""},"showBorder":{"type":"boolean","default":true},"showTopText":{"type":"boolean","default":true},"edgeFade":{"type":"boolean","default":true},"speed":{"type":"number"},"reverseDirection":{"type":"boolean","default":false},"pauseOnHover":{"type":"boolean","default":true},"hoverSlowDown":{"type":"boolean","default":false},"liftEffect":{"type":"boolean","default":false},"siblingBlur":{"type":"boolean","default":false},"siblingBlurIntensity":{"type":"number"},"showProgressRail":{"type":"boolean","default":false},"progressRailPosition":{"type":"string","default":""},"showInteractionIndicator":{"type":"boolean","default":false},"highlightActiveCenter":{"type":"boolean","default":false},"showFrame":{"type":"boolean","default":false},"frameBg":{"type":"string","default":""},"frameRadius":{"type":"number"},"enableSweepAnimation":{"type":"boolean","default":true},"textGradient":{"type":"object","default":{}},"containerBg":{"type":"string","default":""},"containerBorderColor":{"type":"string","default":""},"containerRadius":{"type":"number"},"align":{"type":"string","default":"wide"}},"supports":{"align":["full","wide"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"xpo-block/marquee","version":"1.0.2","title":"Marquee","category":"xpo-block","description":"Infinite scrolling marquee optimized for logos and images with hardware-accelerated physics.","keywords":["marquee","scrolling text","ticker","moving text","loop text"],"textdomain":"xpo-block","attributes":{"selectedTemplate":{"type":"string","default":""},"images":{"type":"array","default":[]},"openInNewTab":{"type":"boolean","default":false},"itemHeight":{"type":"string","default":""},"containerMaxWidth":{"type":"string","default":""},"showBorder":{"type":"boolean","default":true},"showTopText":{"type":"boolean","default":true},"edgeFade":{"type":"boolean","default":true},"speed":{"type":"number"},"reverseDirection":{"type":"boolean","default":false},"pauseOnHover":{"type":"boolean","default":true},"hoverSlowDown":{"type":"boolean","default":false},"liftEffect":{"type":"boolean","default":false},"siblingBlur":{"type":"boolean","default":false},"siblingBlurIntensity":{"type":"number"},"showProgressRail":{"type":"boolean","default":false},"progressRailPosition":{"type":"string","default":""},"showInteractionIndicator":{"type":"boolean","default":false},"highlightActiveCenter":{"type":"boolean","default":false},"showFrame":{"type":"boolean","default":false},"frameBg":{"type":"string","default":""},"frameRadius":{"type":"number"},"enableSweepAnimation":{"type":"boolean","default":true},"textGradient":{"type":"object","default":{}},"containerBg":{"type":"string","default":""},"containerBorderColor":{"type":"string","default":""},"containerRadius":{"type":"number"},"align":{"type":"string","default":"wide"}},"supports":{"align":["full","wide"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
 
 /***/ }
 

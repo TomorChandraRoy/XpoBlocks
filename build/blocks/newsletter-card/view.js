@@ -5645,11 +5645,11 @@ const DynamicStyles = ({
     buttonTypography
   } = attributes || {};
   const mainSl = `#${id}`;
-  const container = `${mainSl} .gbb-newsletter-container`;
-  const title = `${mainSl} .gbb-newsletter-title`;
-  const description = `${mainSl} .gbb-newsletter-description`;
-  const input = `${mainSl} .gbb-newsletter-input`;
-  const button = `${mainSl} .gbb-newsletter-button`;
+  const container = `${mainSl} .xpo-newsletter-container`;
+  const title = `${mainSl} .xpo-newsletter-title`;
+  const description = `${mainSl} .xpo-newsletter-description`;
+  const input = `${mainSl} .xpo-newsletter-input`;
+  const button = `${mainSl} .xpo-newsletter-button`;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("style", {
     dangerouslySetInnerHTML: {
       __html: `
@@ -5755,6 +5755,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-blocks';
 const TemplateOne = ({
   attributes,
   setAttributes
@@ -5790,7 +5791,7 @@ const TemplateOne = ({
     if (!email || !email.includes('@')) {
       setStatus({
         type: 'error',
-        message: errorMessage || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Please enter a valid email address.', 'guten-builder-blocks')
+        message: errorMessage || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Please enter a valid email address.', textDomain)
       });
       return;
     }
@@ -5813,63 +5814,63 @@ const TemplateOne = ({
       if (response.ok && data.success) {
         setStatus({
           type: 'success',
-          message: successMessage || data.message || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Thank you for subscribing!', 'guten-builder-blocks')
+          message: successMessage || data.message || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Thank you for subscribing!', textDomain)
         });
         setEmail('');
       } else {
         setStatus({
           type: 'error',
-          message: data.message || errorMessage || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Something went wrong. Please try again.', 'guten-builder-blocks')
+          message: data.message || errorMessage || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Something went wrong. Please try again.', textDomain)
         });
       }
     } catch {
       setStatus({
         type: 'error',
-        message: errorMessage || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Connection error. Please try again later.', 'guten-builder-blocks')
+        message: errorMessage || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Connection error. Please try again later.', textDomain)
       });
     } finally {
       setIsSubmitting(false);
     }
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("section", {
-    className: "gbb-newsletter-section",
+    className: "xpo-newsletter-section",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "gbb-newsletter-container",
+      className: "xpo-newsletter-container",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        className: "gbb-newsletter-content",
+        className: "xpo-newsletter-content",
         children: isEditor ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
             tagName: "h2",
-            className: "gbb-newsletter-title",
+            className: "xpo-newsletter-title",
             value: title,
             onChange: val => setAttributes({
               title: val
             }),
-            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter title...', 'guten-builder-blocks')
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter title...', textDomain)
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
             tagName: "p",
-            className: "gbb-newsletter-description",
+            className: "xpo-newsletter-description",
             value: description,
             onChange: val => setAttributes({
               description: val
             }),
-            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter description...', 'guten-builder-blocks')
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter description...', textDomain)
           })]
         }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
             tagName: "h2",
-            className: "gbb-newsletter-title",
+            className: "xpo-newsletter-title",
             value: title
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
             tagName: "p",
-            className: "gbb-newsletter-description",
+            className: "xpo-newsletter-description",
             value: description
           })]
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        className: "gbb-newsletter-form-wrapper",
+        className: "xpo-newsletter-form-wrapper",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
-          className: "gbb-newsletter-form",
+          className: "xpo-newsletter-form",
           onSubmit: handleSubmit,
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
             type: "email",
@@ -5877,18 +5878,18 @@ const TemplateOne = ({
             name: "email",
             value: email,
             onChange: e => setEmail(e.target.value),
-            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter your email', 'guten-builder-blocks'),
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter your email', textDomain),
             required: true,
             disabled: isSubmitting,
-            className: "gbb-newsletter-input"
+            className: "xpo-newsletter-input"
           }), isEditor ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
             tagName: "span",
-            className: "gbb-newsletter-button",
+            className: "xpo-newsletter-button",
             value: buttonText,
             onChange: val => setAttributes({
               buttonText: val
             }),
-            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Button text...', 'guten-builder-blocks'),
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Button text...', textDomain),
             style: {
               display: 'inline-block',
               textAlign: 'center'
@@ -5896,14 +5897,14 @@ const TemplateOne = ({
           }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
             type: "submit",
             disabled: isSubmitting,
-            className: "gbb-newsletter-button",
+            className: "xpo-newsletter-button",
             style: {
               opacity: isSubmitting ? 0.7 : 1
             },
-            children: isSubmitting ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Subscribing...', 'guten-builder-blocks') : buttonText || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Subscribe', 'guten-builder-blocks')
+            children: isSubmitting ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Subscribing...', textDomain) : buttonText || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Subscribe', textDomain)
           })]
         }), !isEditor && status.message && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          className: `gbb-newsletter-status gbb-newsletter-status--${status.type}`,
+          className: `xpo-newsletter-status xpo-newsletter-status--${status.type}`,
           style: {
             marginTop: '10px',
             padding: '8px 12px',
@@ -5943,7 +5944,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const containers = document.querySelectorAll('.wp-block-guten-builder-blocks-newsletter-card');
+  const containers = document.querySelectorAll('.wp-block-xpo-block-newsletter-card');
   containers.forEach(container => {
     if (container.dataset.initialized) return;
     container.dataset.initialized = 'true';

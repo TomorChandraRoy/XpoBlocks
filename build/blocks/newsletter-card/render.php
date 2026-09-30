@@ -4,9 +4,9 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 
-$block_id = wp_unique_id( 'guten-builder-blocks-newsletter-card-' );
+$block_id = wp_unique_id( 'xpo-block-newsletter-card-' );
 
-$wrapper_classes = array( 'gbb-newsletter-card-container', $block_id );
+$wrapper_classes = array( 'xpo-newsletter-card-container', $block_id );
 
 $wrapper_attrs = get_block_wrapper_attributes( array( 'class' => implode( ' ', $wrapper_classes ) ) );
 ?>

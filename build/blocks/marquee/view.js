@@ -5647,13 +5647,13 @@ const DynamicStyle = ({
   const finalFrameBg = frameBg || '#ffffff';
   const finalFrameRadius = typeof frameRadius === 'number' ? `${frameRadius}px` : '12px';
   const mainSl = `#${id}`;
-  const blockClass = `${mainSl} .wp-block-guten-builder-blocks-marquee`;
-  const sectionClass = `${blockClass} .gbb-logo-cloud-section`;
-  const wrapperClass = `${sectionClass} .gbb-logo-cloud-wrapper`;
-  const backendImgClass = `${wrapperClass} .gbb-mq-item img`;
-  const frontendSectionClass = `${mainSl} .gbb-logo-cloud-section`;
-  const frontendWrapperClass = `${frontendSectionClass} .gbb-logo-cloud-wrapper`;
-  const frontendImgClass = `${frontendWrapperClass} .gbb-mq-item img`;
+  const blockClass = `${mainSl} .wp-block-xpo-block-marquee`;
+  const sectionClass = `${blockClass} .xpo-logo-cloud-section`;
+  const wrapperClass = `${sectionClass} .xpo-logo-cloud-wrapper`;
+  const backendImgClass = `${wrapperClass} .xpo-mq-item img`;
+  const frontendSectionClass = `${mainSl} .xpo-logo-cloud-section`;
+  const frontendWrapperClass = `${frontendSectionClass} .xpo-logo-cloud-wrapper`;
+  const frontendImgClass = `${frontendWrapperClass} .xpo-mq-item img`;
   const getSweepGradient = gradient => {
     if (!gradient || typeof gradient !== 'object') {
       return 'linear-gradient(90deg, currentColor 0%, currentColor 45%, #ffaa40 47%, #9c40ff 50%, #ffaa40 53%, currentColor 55%, currentColor 100%)';
@@ -5688,8 +5688,8 @@ const DynamicStyle = ({
             border-radius: ${typeof containerRadius === 'number' ? `${containerRadius}px` : '8px'} !important;
           }
 
-          ${wrapperClass} .gbb-border-beam-inner,
-          ${frontendWrapperClass} .gbb-border-beam-inner {
+          ${wrapperClass} .xpo-border-beam-inner,
+          ${frontendWrapperClass} .xpo-border-beam-inner {
             background-color: ${containerBg || '#ffffff'} !important;
             border-radius: ${typeof containerRadius === 'number' ? `${containerRadius}px` : '8px'} !important;
             border-color: ${containerBorderColor || '#e2e8f0'} !important;
@@ -5701,13 +5701,13 @@ const DynamicStyle = ({
           }
 
           ${showFrame ? `
-            #${id} .has-frame .gbb-mq-item {
+            #${id} .has-frame .xpo-mq-item {
               background-color: ${finalFrameBg} !important;
               border-radius: ${finalFrameRadius} !important;
             }
           ` : ''}
 
-          #${id} .gbb-logo-text-wave {
+          #${id} .xpo-logo-text-wave {
             background-image: ${gradientCss} !important;
           }
         `
@@ -5803,7 +5803,7 @@ const TemplateOne = ({
       }
       const containerRect = container.getBoundingClientRect();
       const containerCenter = containerRect.left + containerRect.width / 2;
-      const items = container.querySelectorAll('.gbb-mq-item');
+      const items = container.querySelectorAll('.xpo-mq-item');
       let closestItem = null;
       let minDistance = Infinity;
       items.forEach(item => {
@@ -5829,7 +5829,7 @@ const TemplateOne = ({
   }, [highlightActiveCenter, images]);
   if (!images || images.length === 0) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "gbb-mq-empty-state",
+      className: "xpo-mq-empty-state",
       children: "Add images to Marquee Settings"
     });
   }
@@ -5849,7 +5849,7 @@ const TemplateOne = ({
   const containerStyle = {
     '--mq-sibling-blur': `${siblingBlurIntensity}px`
   };
-  let containerClass = 'gbb-mq-container';
+  let containerClass = 'xpo-mq-container';
   if (pauseOnHover) containerClass += ' pause-on-hover';
   if (edgeFade) containerClass += ' has-edge-fade';
   if (hoverSlowDown) containerClass += ' slow-on-hover';
@@ -5858,25 +5858,25 @@ const TemplateOne = ({
   if (highlightActiveCenter) containerClass += ' has-active-center-highlight';
   if (showFrame) containerClass += ' has-frame';
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    className: "gbb-logo-cloud-section",
+    className: "xpo-logo-cloud-section",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-      className: "gbb-logo-cloud-wrapper",
+      className: "xpo-logo-cloud-wrapper",
       children: [showBorder && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "gbb-border-beam-inner"
+        className: "xpo-border-beam-inner"
       }), showTopText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "gbb-logo-text-container",
+        className: "xpo-logo-text-container",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-          className: "gbb-logo-text",
+          className: "xpo-logo-text",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
-            className: enableSweepAnimation ? 'gbb-logo-text-wave has-sweep' : 'gbb-logo-text-solid',
+            className: enableSweepAnimation ? 'xpo-logo-text-wave has-sweep' : 'xpo-logo-text-solid',
             children: ["Trusted by 1000+ companies ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-              className: "gbb-hide-mobile",
+              className: "xpo-hide-mobile",
               children: "around the world"
             })]
           })
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "gbb-logo-content",
+        className: "xpo-logo-content",
         style: {
           position: 'relative'
         },
@@ -5885,12 +5885,12 @@ const TemplateOne = ({
           ref: containerRef,
           style: containerStyle,
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "gbb-mq-track",
+            className: "xpo-mq-track",
             style: trackStyle,
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-              className: "gbb-mq-group",
+              className: "xpo-mq-group",
               children: displayImages.map((img, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                className: "gbb-mq-item",
+                className: "xpo-mq-item",
                 children: img.link ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
                   href: img.link,
                   target: attributes.openInNewTab ? '_blank' : '_self',
@@ -5905,10 +5905,10 @@ const TemplateOne = ({
                 })
               }, i))
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-              className: "gbb-mq-group",
+              className: "xpo-mq-group",
               "aria-hidden": "true",
               children: displayImages.map((img, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                className: "gbb-mq-item",
+                className: "xpo-mq-item",
                 children: img.link ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
                   href: img.link,
                   target: attributes.openInNewTab ? '_blank' : '_self',
@@ -5926,21 +5926,21 @@ const TemplateOne = ({
             })]
           })
         }), showInteractionIndicator && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "gbb-mq-indicator-badge",
+          className: "xpo-mq-indicator-badge",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-            className: "gbb-mq-indicator-dot"
+            className: "xpo-mq-indicator-dot"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-            className: "gbb-mq-indicator-text",
+            className: "xpo-mq-indicator-text",
             children: pauseOnHover ? 'PAUSED' : 'SLOWED'
           })]
         }), showProgressRail && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: `gbb-mq-rail position-${progressRailPosition}`,
+          className: `xpo-mq-rail position-${progressRailPosition}`,
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "gbb-mq-rail-track",
+            className: "xpo-mq-rail-track",
             children: [images.map((_, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-              className: "gbb-mq-rail-segment"
+              className: "xpo-mq-rail-segment"
             }, i)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-              className: "gbb-mq-rail-fill",
+              className: "xpo-mq-rail-fill",
               style: {
                 animationDuration: `${speed}s`,
                 animationDirection: reverseDirection ? 'reverse' : 'normal'
@@ -5976,7 +5976,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const containers = document.querySelectorAll('.wp-block-guten-builder-blocks-marquee');
+  const containers = document.querySelectorAll('.wp-block-xpo-block-marquee');
   containers.forEach(container => {
     if (container.dataset.initialized) return;
     container.dataset.initialized = 'true';

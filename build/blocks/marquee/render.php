@@ -4,9 +4,9 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 
-$block_id = wp_unique_id( 'guten-builder-marquee-' );
+$block_id = wp_unique_id( 'xpo-block-marquee-' );
 
-$wrapper_classes = array( 'guten-builder-marquee-wrapper', $block_id );
+$wrapper_classes = array( 'xpo-block-marquee-wrapper', $block_id );
 
 $wrapper_attrs = get_block_wrapper_attributes( array( 'class' => implode( ' ', $wrapper_classes ) ) );
 ?>

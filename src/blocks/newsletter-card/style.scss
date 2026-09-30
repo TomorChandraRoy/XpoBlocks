@@ -1,5 +1,5 @@
-.wp-block-guten-builder-blocks-newsletter-card,
-.gbb-newsletter-card-container {
+.wp-block-xpo-block-newsletter-card,
+.xpo-newsletter-card-container {
   box-sizing: border-box;
   width: 100%;
   max-width: 100%;
@@ -10,14 +10,14 @@
     box-sizing: border-box;
   }
 
-  .gbb-newsletter-section {
+  .xpo-newsletter-section {
     width: 100%;
     max-width: 100%;
 
 
   }
 
-  .gbb-newsletter-container {
+  .xpo-newsletter-container {
     max-width: 72rem;
     width: 100%;
     margin-left: auto;
@@ -36,13 +36,13 @@
     }
   }
 
-  .gbb-newsletter-content {
+  .xpo-newsletter-content {
     max-width: 42rem;
     width: 100%;
     min-width: 0;
   }
 
-  .gbb-newsletter-title {
+  .xpo-newsletter-title {
     font-size: 1.875rem;
     line-height: 2.25rem;
     font-weight: 700;
@@ -56,17 +56,17 @@
     }
   }
 
-  .gbb-newsletter-description {
+  .xpo-newsletter-description {
     font-size: 1rem;
     color: #475569;
     line-height: 1.625;
     margin-top: 0;
     margin-bottom: 0;
   }
-  .gbb-newsletter-form-wrapper{
+  .xpo-newsletter-form-wrapper{
     max-width: 32rem;
     width: 100%;
-    .gbb-newsletter-form {
+    .xpo-newsletter-form {
     max-width: 32rem;
     width: 100%;
     min-width: 0;
@@ -84,7 +84,7 @@
       margin-left: auto;
     }
 
-      .gbb-newsletter-input {
+      .xpo-newsletter-input {
     padding: 0.75rem 0.875rem;
     font-size: 0.875rem;
     color: #0f172a;
@@ -112,7 +112,7 @@
     }
   }
 
-  .gbb-newsletter-button {
+  .xpo-newsletter-button {
     padding: 0.75rem 1rem;
     font-size: 0.875rem;
     width: max-content;

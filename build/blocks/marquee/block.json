@@ -1,6 +1,6 @@
 {
   "apiVersion": 3,
-  "name": "guten-builder-blocks/marquee",
+  "name": "xpo-block/marquee",
   "version": "1.0.2",
   "title": "Marquee",
   "category": "xpo-block",
@@ -12,7 +12,7 @@
     "moving text",
     "loop text"
   ],
-  "textdomain": "guten-builder-blocks",
+  "textdomain": "xpo-block",
   "attributes": {
     "selectedTemplate": {
       "type": "string",

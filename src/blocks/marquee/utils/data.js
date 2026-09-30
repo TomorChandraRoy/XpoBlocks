@@ -1,14 +1,14 @@
 import { __ } from "@wordpress/i18n";
 import { TemplateOneSvg } from "./icons";
-
+const textDomain = 'xpo-blocks';
 export const templateData = {
-  title: __('Select Marquee Template', 'guten-builder-blocks'),
-  subtitle: __('Choose a design template for your marquee.', 'guten-builder-blocks'),
+  title: __('Select Marquee Template', textDomain),
+  subtitle: __('Choose a design template for your marquee.', textDomain),
   templates: [
     {
       id: 'template-1',
-      label: __('Template 1', 'guten-builder-blocks'),
-      tag: __('Logo Marquee', 'guten-builder-blocks'),
+      label: __('Template 1', textDomain),
+      tag: __('Logo Marquee', textDomain),
       icon: TemplateOneSvg,
       attributes: {
         images: [],

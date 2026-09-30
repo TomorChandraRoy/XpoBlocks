@@ -6,7 +6,7 @@ import NewsletterCard from './Components/Common/Templates/NewsletterCard';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  const containers = document.querySelectorAll('.wp-block-guten-builder-blocks-newsletter-card');
+  const containers = document.querySelectorAll('.wp-block-xpo-block-newsletter-card');
 
   containers.forEach(container => {
 

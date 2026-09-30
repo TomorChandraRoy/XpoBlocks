@@ -1,4 +1,4 @@
-@keyframes gbb-mq-scroll {
+@keyframes xpo-mq-scroll {
   0% { transform: translate3d(0, 0, 0); }
   100% { transform: translate3d(-50%, 0, 0); }
 }
@@ -8,19 +8,19 @@
   100% { background-position: 100% center; }
 }
 
-.wp-block-guten-builder-blocks-marquee,
-.guten-builder-marquee-wrapper {
+.wp-block-xpo-block-marquee,
+.xpo-block-marquee-wrapper {
   overflow: hidden;
   width: 100%;
 
-  .gbb-logo-cloud-section {
+  .xpo-logo-cloud-section {
     min-height: 170px;
     padding: 15px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    .gbb-logo-cloud-wrapper {
+    .xpo-logo-cloud-wrapper {
       position: relative;
       width: 100%;
       max-width: 1024px;
@@ -30,7 +30,7 @@
       background: white;
       z-index: 1;
 
-      .gbb-border-beam-inner {
+      .xpo-border-beam-inner {
         position: absolute;
         inset: 0;
         background: white;
@@ -39,7 +39,7 @@
         border: 1px solid #e2e8f0;
       }
 
-      .gbb-logo-text-container {
+      .xpo-logo-text-container {
         position: absolute;
         top: 0;
         left: 50%;
@@ -51,7 +51,7 @@
         z-index: 2;
         white-space: nowrap;
 
-        .gbb-logo-text {
+        .xpo-logo-text {
           background: white;
           padding: 0 24px;
           text-align: center;
@@ -61,7 +61,7 @@
           letter-spacing: -0.01em;
           margin: 0;
 
-          .gbb-logo-text-wave {
+          .xpo-logo-text-wave {
             background-repeat: no-repeat;
             -webkit-background-clip: text;
             background-clip: text;
@@ -73,7 +73,7 @@
             }
 
             @media (max-width: 640px) {
-              .gbb-hide-mobile {
+              .xpo-hide-mobile {
                 display: none;
               }
             }
@@ -81,8 +81,8 @@
         }
       }
 
-      .gbb-logo-content {
-        .gbb-mq-container {
+      .xpo-logo-content {
+        .xpo-mq-container {
           overflow: hidden;
           display: flex;
           white-space: nowrap;
@@ -111,61 +111,61 @@
             background: linear-gradient(to left, white, transparent);
           }
 
-          &.pause-on-hover:hover .gbb-mq-track {
+          &.pause-on-hover:hover .xpo-mq-track {
             animation-play-state: paused;
           }
 
-          &.slow-on-hover:hover .gbb-mq-track {
+          &.slow-on-hover:hover .xpo-mq-track {
             animation-duration: calc(var(--mq-speed, 30s) * 3) !important;
           }
 
-          &.has-lift-effect .gbb-mq-item:hover {
+          &.has-lift-effect .xpo-mq-item:hover {
             transform: translateY(-5px);
           }
 
-          &.has-frame .gbb-mq-item {
+          &.has-frame .xpo-mq-item {
             padding: 15px 15px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             border: 1px solid rgba(0, 0, 0, 0.04);
           }
 
-          &.has-sibling-blur:hover .gbb-mq-item {
+          &.has-sibling-blur:hover .xpo-mq-item {
             filter: blur(var(--mq-sibling-blur, 3px));
             opacity: 0.6;
           }
 
-          &.has-sibling-blur .gbb-mq-item:hover {
+          &.has-sibling-blur .xpo-mq-item:hover {
             filter: none;
             opacity: 1;
             transform: scale(1.05);
           }
 
-          &.has-sibling-blur.has-lift-effect .gbb-mq-item:hover {
+          &.has-sibling-blur.has-lift-effect .xpo-mq-item:hover {
             transform: translateY(-5px) scale(1.05);
           }
 
-          &.has-active-center-highlight .gbb-mq-item {
+          &.has-active-center-highlight .xpo-mq-item {
             transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), filter 0.4s ease, opacity 0.4s ease;
           }
 
-          &.has-active-center-highlight .gbb-mq-item.is-active-center {
+          &.has-active-center-highlight .xpo-mq-item.is-active-center {
             transform: scale(1.18);
             z-index: 5;
           }
 
-          .gbb-mq-track {
+          .xpo-mq-track {
             display: flex;
-            animation: gbb-mq-scroll linear infinite;
+            animation: xpo-mq-scroll linear infinite;
             width: max-content;
             will-change: transform;
 
-            .gbb-mq-group {
+            .xpo-mq-group {
               display: flex;
               align-items: center;
               gap: 30px;
               padding-right: 30px; /* Crucial for seamless loop: adds the final gap before the next group */
 
-              .gbb-mq-item {
+              .xpo-mq-item {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -187,7 +187,7 @@
         }
 
         /* Interaction Indicator Badge */
-        .gbb-mq-indicator-badge {
+        .xpo-mq-indicator-badge {
           position: absolute;
           top: 10px;
           right: 15px;
@@ -211,37 +211,37 @@
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
           letter-spacing: 0.05em;
 
-          .gbb-mq-indicator-dot {
+          .xpo-mq-indicator-dot {
             width: 6px;
             height: 6px;
             border-radius: 50%;
             background-color: #ef4444; /* default red for paused */
-            animation: gbb-pulse-indicator 1.2s infinite;
+            animation: xpo-pulse-indicator 1.2s infinite;
           }
 
-          .gbb-mq-indicator-text {
+          .xpo-mq-indicator-text {
             line-height: 1;
           }
         }
 
-        .gbb-mq-container.pause-on-hover:hover ~ .gbb-mq-indicator-badge,
-        .gbb-mq-container.slow-on-hover:hover ~ .gbb-mq-indicator-badge {
+        .xpo-mq-container.pause-on-hover:hover ~ .xpo-mq-indicator-badge,
+        .xpo-mq-container.slow-on-hover:hover ~ .xpo-mq-indicator-badge {
           opacity: 1;
           transform: translateY(0);
         }
 
-        .gbb-mq-container.slow-on-hover:hover ~ .gbb-mq-indicator-badge .gbb-mq-indicator-dot {
+        .xpo-mq-container.slow-on-hover:hover ~ .xpo-mq-indicator-badge .xpo-mq-indicator-dot {
           background-color: #eab308; /* amber for slowed */
         }
 
-        @keyframes gbb-pulse-indicator {
+        @keyframes xpo-pulse-indicator {
           0% { transform: scale(0.85); opacity: 0.5; }
           50% { transform: scale(1.2); opacity: 1; }
           100% { transform: scale(0.85); opacity: 0.5; }
         }
 
         /* Segmented Progress Rail */
-        .gbb-mq-rail {
+        .xpo-mq-rail {
           position: absolute;
           pointer-events: none;
           z-index: 8;
@@ -260,7 +260,7 @@
             width: 3px;
           }
 
-          .gbb-mq-rail-track {
+          .xpo-mq-rail-track {
             position: relative;
             width: 100%;
             height: 100%;
@@ -270,33 +270,33 @@
             justify-content: space-between;
           }
 
-          &.position-bottom .gbb-mq-rail-track {
+          &.position-bottom .xpo-mq-rail-track {
             flex-direction: row;
             align-items: center;
           }
 
-          &.position-right .gbb-mq-rail-track {
+          &.position-right .xpo-mq-rail-track {
             flex-direction: column;
             align-items: center;
           }
 
-          .gbb-mq-rail-segment {
+          .xpo-mq-rail-segment {
             background: rgba(15, 23, 42, 0.12);
             border-radius: 50%;
             flex-shrink: 0;
           }
 
-          &.position-bottom .gbb-mq-rail-segment {
+          &.position-bottom .xpo-mq-rail-segment {
             width: 3px;
             height: 3px;
           }
 
-          &.position-right .gbb-mq-rail-segment {
+          &.position-right .xpo-mq-rail-segment {
             width: 3px;
             height: 3px;
           }
 
-          .gbb-mq-rail-fill {
+          .xpo-mq-rail-fill {
             position: absolute;
             top: 0;
             left: 0;
@@ -306,26 +306,26 @@
             border-radius: 3px;
           }
 
-          &.position-bottom .gbb-mq-rail-fill {
+          &.position-bottom .xpo-mq-rail-fill {
             transform-origin: left;
-            animation: gbb-mq-rail-fill-horizontal var(--mq-speed, 30s) linear infinite;
+            animation: xpo-mq-rail-fill-horizontal var(--mq-speed, 30s) linear infinite;
             animation-direction: inherit;
           }
 
-          &.position-right .gbb-mq-rail-fill {
+          &.position-right .xpo-mq-rail-fill {
             background: linear-gradient(180deg, #9c40ff, #ffaa40);
             transform-origin: top;
-            animation: gbb-mq-rail-fill-vertical var(--mq-speed, 30s) linear infinite;
+            animation: xpo-mq-rail-fill-vertical var(--mq-speed, 30s) linear infinite;
             animation-direction: inherit;
           }
         }
 
-        @keyframes gbb-mq-rail-fill-horizontal {
+        @keyframes xpo-mq-rail-fill-horizontal {
           0% { transform: scaleX(0); }
           100% { transform: scaleX(1); }
         }
 
-        @keyframes gbb-mq-rail-fill-vertical {
+        @keyframes xpo-mq-rail-fill-vertical {
           0% { transform: scaleY(0); }
           100% { transform: scaleY(1); }
         }

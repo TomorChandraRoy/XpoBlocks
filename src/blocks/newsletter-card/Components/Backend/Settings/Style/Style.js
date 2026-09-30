@@ -1,30 +1,15 @@
 import { __ } from '@wordpress/i18n';
 import { PanelBody } from '@wordpress/components';
 import { BackgroundControl, BorderControl, ColorControl, Typography } from 'tr-tools';
-
+const textDomain = 'xpo-blocks';
 const Style = ({ attributes, setAttributes }) => {
-  const {
-    containerBg,
-    containerBorder,
-    titleColor,
-    titleTypography,
-    descriptionColor,
-    descriptionTypography,
-    inputColor,
-    inputBg,
-    inputBorder,
-    inputTypography,
-    buttonColor,
-    buttonBg,
-    buttonBorder,
-    buttonTypography,
-  } = attributes;
+  const {containerBg,containerBorder,titleColor,titleTypography,descriptionColor,descriptionTypography,inputColor,inputBg,inputBorder,inputTypography,buttonColor,buttonBg,buttonBorder,buttonTypography,} = attributes;
 
   return (
     <>
-      <PanelBody className="bPlPanelBody" title={__('Container', 'guten-builder-blocks')} initialOpen={false}>
+      <PanelBody className="bPlPanelBody" title={__('Container', textDomain)} initialOpen={false}>
         <BackgroundControl
-          label={__('Background :', 'guten-builder-blocks')}
+          label={__('Background :', textDomain)}
           value={containerBg}
           onChange={val => setAttributes({ containerBg: val })}
           defaultBackground={{
@@ -34,7 +19,7 @@ const Style = ({ attributes, setAttributes }) => {
         />
 
         <BorderControl
-          label={__('Border :', 'guten-builder-blocks')}
+          label={__('Border :', textDomain)}
           value={containerBorder}
           onChange={val => setAttributes({ containerBorder: val })}
           defaultBorder={{
@@ -46,15 +31,15 @@ const Style = ({ attributes, setAttributes }) => {
         />
       </PanelBody>
 
-      <PanelBody className="bPlPanelBody" title={__('Title', 'guten-builder-blocks')} initialOpen={false}>
+      <PanelBody className="bPlPanelBody" title={__('Title', textDomain)} initialOpen={false}>
         <ColorControl
-          label={__('Color :', 'guten-builder-blocks')}
+          label={__('Color :', textDomain)}
           value={titleColor}
           onChange={val => setAttributes({ titleColor: val })}
           defaultColor="#1e293b"
         />
         <Typography
-          label={__('Typography :', 'guten-builder-blocks')}
+          label={__('Typography :', textDomain)}
           value={titleTypography}
           onChange={val => setAttributes({ titleTypography: val })}
           defaultTypography={{
@@ -70,15 +55,15 @@ const Style = ({ attributes, setAttributes }) => {
         />
       </PanelBody>
 
-      <PanelBody className="bPlPanelBody" title={__('Description', 'guten-builder-blocks')} initialOpen={false}>
+      <PanelBody className="bPlPanelBody" title={__('Description', textDomain)} initialOpen={false}>
         <ColorControl
-          label={__('Color :', 'guten-builder-blocks')}
+          label={__('Color :', textDomain)}
           value={descriptionColor}
           onChange={val => setAttributes({ descriptionColor: val })}
           defaultColor="#64748b"
         />
         <Typography
-          label={__('Typography :', 'guten-builder-blocks')}
+          label={__('Typography :', textDomain)}
           value={descriptionTypography}
           onChange={val => setAttributes({ descriptionTypography: val })}
           defaultTypography={{
@@ -94,15 +79,15 @@ const Style = ({ attributes, setAttributes }) => {
         />
       </PanelBody>
 
-      <PanelBody className="bPlPanelBody" title={__('Input Field', 'guten-builder-blocks')} initialOpen={false}>
+      <PanelBody className="bPlPanelBody" title={__('Input Field', textDomain)} initialOpen={false}>
         <ColorControl
-          label={__('Text Color :', 'guten-builder-blocks')}
+          label={__('Text Color :', textDomain)}
           value={inputColor}
           onChange={val => setAttributes({ inputColor: val })}
           defaultColor="#0f172a"
         />
         <BackgroundControl
-          label={__('Background :', 'guten-builder-blocks')}
+          label={__('Background :', textDomain)}
           value={inputBg}
           onChange={val => setAttributes({ inputBg: val })}
           defaultBackground={{
@@ -111,7 +96,7 @@ const Style = ({ attributes, setAttributes }) => {
           }}
         />
         <BorderControl
-          label={__('Border :', 'guten-builder-blocks')}
+          label={__('Border :', textDomain)}
           value={inputBorder}
           onChange={val => setAttributes({ inputBorder: val })}
           defaultBorder={{
@@ -122,7 +107,7 @@ const Style = ({ attributes, setAttributes }) => {
           }}
         />
         <Typography
-          label={__('Typography :', 'guten-builder-blocks')}
+          label={__('Typography :', textDomain)}
           value={inputTypography}
           onChange={val => setAttributes({ inputTypography: val })}
           defaultTypography={{
@@ -138,15 +123,15 @@ const Style = ({ attributes, setAttributes }) => {
         />
       </PanelBody>
 
-      <PanelBody className="bPlPanelBody" title={__('Button', 'guten-builder-blocks')} initialOpen={false}>
+      <PanelBody className="bPlPanelBody" title={__('Button', textDomain)} initialOpen={false}>
         <ColorControl
-          label={__('Text Color :', 'guten-builder-blocks')}
+          label={__('Text Color :', textDomain)}
           value={buttonColor}
           onChange={val => setAttributes({ buttonColor: val })}
           defaultColor="#ffffff"
         />
         <BackgroundControl
-          label={__('Background :', 'guten-builder-blocks')}
+          label={__('Background :', textDomain)}
           value={buttonBg}
           onChange={val => setAttributes({ buttonBg: val })}
           defaultBackground={{
@@ -155,7 +140,7 @@ const Style = ({ attributes, setAttributes }) => {
           }}
         />
         <BorderControl
-          label={__('Border :', 'guten-builder-blocks')}
+          label={__('Border :', textDomain)}
           value={buttonBorder}
           onChange={val => setAttributes({ buttonBorder: val })}
           defaultBorder={{
@@ -166,7 +151,7 @@ const Style = ({ attributes, setAttributes }) => {
           }}
         />
         <Typography
-          label={__('Typography :', 'guten-builder-blocks')}
+          label={__('Typography :', textDomain)}
           value={buttonTypography}
           onChange={val => setAttributes({ buttonTypography: val })}
           defaultTypography={{

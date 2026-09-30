@@ -1,6 +1,8 @@
 import { useState, useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { RichText } from '@wordpress/block-editor';
+const textDomain = 'xpo-blocks';
+
 
 const TemplateOne = ({ attributes, setAttributes }) => {
   const { title, description, buttonText, successMessage, errorMessage } = attributes || {};
@@ -25,7 +27,7 @@ const TemplateOne = ({ attributes, setAttributes }) => {
     if (isEditor) return;
 
     if (!email || !email.includes('@')) {
-      setStatus({ type: 'error', message: errorMessage || __('Please enter a valid email address.', 'guten-builder-blocks') });
+      setStatus({ type: 'error', message: errorMessage || __('Please enter a valid email address.', textDomain) });
       return;
     }
 
@@ -44,85 +46,85 @@ const TemplateOne = ({ attributes, setAttributes }) => {
       const data = await response.json();
 
       if (response.ok && data.success) {
-        setStatus({ type: 'success', message: successMessage || data.message || __('Thank you for subscribing!', 'guten-builder-blocks') });
+        setStatus({ type: 'success', message: successMessage || data.message || __('Thank you for subscribing!', textDomain) });
         setEmail('');
       } else {
-        setStatus({ type: 'error', message: data.message || errorMessage || __('Something went wrong. Please try again.', 'guten-builder-blocks') });
+        setStatus({ type: 'error', message: data.message || errorMessage || __('Something went wrong. Please try again.', textDomain) });
       }
     } catch {
-      setStatus({ type: 'error', message: errorMessage || __('Connection error. Please try again later.', 'guten-builder-blocks') });
+      setStatus({ type: 'error', message: errorMessage || __('Connection error. Please try again later.', textDomain) });
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <section className="gbb-newsletter-section">
-      <div className="gbb-newsletter-container">
-        <div className="gbb-newsletter-content">
+    <section className="xpo-newsletter-section">
+      <div className="xpo-newsletter-container">
+        <div className="xpo-newsletter-content">
           {isEditor ? (
             <>
               <RichText
                 tagName="h2"
-                className="gbb-newsletter-title"
+                className="xpo-newsletter-title"
                 value={title}
                 onChange={(val) => setAttributes({ title: val })}
-                placeholder={__('Enter title...', 'guten-builder-blocks')}
+                placeholder={__('Enter title...', textDomain)}
               />
               <RichText
                 tagName="p"
-                className="gbb-newsletter-description"
+                className="xpo-newsletter-description"
                 value={description}
                 onChange={(val) => setAttributes({ description: val })}
-                placeholder={__('Enter description...', 'guten-builder-blocks')}
+                placeholder={__('Enter description...', textDomain)}
               />
             </>
           ) : (
             <>
-              <RichText.Content tagName="h2" className="gbb-newsletter-title" value={title} />
-              <RichText.Content tagName="p" className="gbb-newsletter-description" value={description} />
+              <RichText.Content tagName="h2" className="xpo-newsletter-title" value={title} />
+              <RichText.Content tagName="p" className="xpo-newsletter-description" value={description} />
             </>
           )}
         </div>
 
-        <div className="gbb-newsletter-form-wrapper">
-          <form className="gbb-newsletter-form" onSubmit={handleSubmit}>
+        <div className="xpo-newsletter-form-wrapper">
+          <form className="xpo-newsletter-form" onSubmit={handleSubmit}>
             <input
               type="email"
               id="email"
               name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder={__('Enter your email', 'guten-builder-blocks')}
+              placeholder={__('Enter your email', textDomain)}
               required
               disabled={isSubmitting}
-              className="gbb-newsletter-input"
+              className="xpo-newsletter-input"
             />
 
             {isEditor ? (
               <RichText
                 tagName="span"
-                className="gbb-newsletter-button"
+                className="xpo-newsletter-button"
                 value={buttonText}
                 onChange={(val) => setAttributes({ buttonText: val })}
-                placeholder={__('Button text...', 'guten-builder-blocks')}
+                placeholder={__('Button text...', textDomain)}
                 style={{ display: 'inline-block', textAlign: 'center' }}
               />
             ) : (
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="gbb-newsletter-button"
+                className="xpo-newsletter-button"
                 style={{ opacity: isSubmitting ? 0.7 : 1 }}
               >
-                {isSubmitting ? __('Subscribing...', 'guten-builder-blocks') : (buttonText || __('Subscribe', 'guten-builder-blocks'))}
+                {isSubmitting ? __('Subscribing...', textDomain) : (buttonText || __('Subscribe', textDomain))}
               </button>
             )}
           </form>
 
           {!isEditor && status.message && (
             <div
-              className={`gbb-newsletter-status gbb-newsletter-status--${status.type}`}
+              className={`xpo-newsletter-status xpo-newsletter-status--${status.type}`}
               style={{
                 marginTop: '10px',
                 padding: '8px 12px',

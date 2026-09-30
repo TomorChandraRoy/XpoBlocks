@@ -5702,6 +5702,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-blocks';
 const General = ({
   attributes,
   setAttributes
@@ -5717,7 +5718,7 @@ const General = ({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template Presets', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template Presets', textDomain),
       initialOpen: true,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
         style: {
@@ -5725,7 +5726,7 @@ const General = ({
           color: '#64748b',
           marginBottom: '12px'
         },
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Switch or apply a predefined newsletter template style.', 'guten-builder-blocks')
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Switch or apply a predefined newsletter template style.', textDomain)
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
         isSecondary: true,
         onClick: () => setAttributes({
@@ -5735,38 +5736,38 @@ const General = ({
           width: '100%',
           justifyContent: 'center'
         },
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Change Template', 'guten-builder-blocks')
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Change Template', textDomain)
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Settings', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Settings', textDomain),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title :', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title :', textDomain),
         value: title,
         onChange: val => setAttributes({
           title: val
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextareaControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description :', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description :', textDomain),
         value: description,
         onChange: val => setAttributes({
           description: val
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Text :', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Text :', textDomain),
         value: buttonText,
         onChange: val => setAttributes({
           buttonText: val
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Success Message :', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Success Message :', textDomain),
         value: successMessage,
         onChange: val => setAttributes({
           successMessage: val
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Error Message :', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Error Message :', textDomain),
         value: errorMessage,
         onChange: val => setAttributes({
           errorMessage: val
@@ -5774,10 +5775,10 @@ const General = ({
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('General Settings', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('General Settings', textDomain),
       initialOpen: false,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.UnitControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container Max Width', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container Max Width', textDomain),
         value: containerMaxWidth,
         onChange: val => setAttributes({
           containerMaxWidth: val
@@ -5820,6 +5821,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-blocks';
 
 
 const Settings = ({
@@ -5835,11 +5837,11 @@ const Settings = ({
   }
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_5__.DocsLink, {
-      link: "https://gutenbuilder.com/docs/newsletter-card",
-      text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Documentation', 'guten-builder-blocks')
+      link: "https://xpo.com/docs/newsletter-card",
+      text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Documentation', textDomain)
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TabPanel, {
-      className: "guten-builder-blocks-tab-panel",
-      activeClass: "guten-builder-blocks-active-tab",
+      className: "wp-xpo-tab-panel",
+      activeClass: "wp-xpo-tab-panel-active-tab",
       tabs: _utils_option__WEBPACK_IMPORTED_MODULE_3__.generalStyleTabs,
       children: tab => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
         children: ['general' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_General_General__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -5878,6 +5880,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-blocks';
 const Style = ({
   attributes,
   setAttributes
@@ -5901,10 +5904,10 @@ const Style = ({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Container', textDomain),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BackgroundControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background :', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background :', textDomain),
         value: containerBg,
         onChange: val => setAttributes({
           containerBg: val
@@ -5914,7 +5917,7 @@ const Style = ({
           color: '#ffffff'
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BorderControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border :', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border :', textDomain),
         value: containerBorder,
         onChange: val => setAttributes({
           containerBorder: val
@@ -5928,17 +5931,17 @@ const Style = ({
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title', textDomain),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Color :', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Color :', textDomain),
         value: titleColor,
         onChange: val => setAttributes({
           titleColor: val
         }),
         defaultColor: "#1e293b"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Typography :', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Typography :', textDomain),
         value: titleTypography,
         onChange: val => setAttributes({
           titleTypography: val
@@ -5956,17 +5959,17 @@ const Style = ({
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description', textDomain),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Color :', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Color :', textDomain),
         value: descriptionColor,
         onChange: val => setAttributes({
           descriptionColor: val
         }),
         defaultColor: "#64748b"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Typography :', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Typography :', textDomain),
         value: descriptionTypography,
         onChange: val => setAttributes({
           descriptionTypography: val
@@ -5984,17 +5987,17 @@ const Style = ({
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Input Field', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Input Field', textDomain),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text Color :', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text Color :', textDomain),
         value: inputColor,
         onChange: val => setAttributes({
           inputColor: val
         }),
         defaultColor: "#0f172a"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BackgroundControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background :', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background :', textDomain),
         value: inputBg,
         onChange: val => setAttributes({
           inputBg: val
@@ -6004,7 +6007,7 @@ const Style = ({
           color: '#ffffff'
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BorderControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border :', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border :', textDomain),
         value: inputBorder,
         onChange: val => setAttributes({
           inputBorder: val
@@ -6016,7 +6019,7 @@ const Style = ({
           side: 'all'
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Typography :', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Typography :', textDomain),
         value: inputTypography,
         onChange: val => setAttributes({
           inputTypography: val
@@ -6034,17 +6037,17 @@ const Style = ({
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button', textDomain),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text Color :', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text Color :', textDomain),
         value: buttonColor,
         onChange: val => setAttributes({
           buttonColor: val
         }),
         defaultColor: "#ffffff"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BackgroundControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background :', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background :', textDomain),
         value: buttonBg,
         onChange: val => setAttributes({
           buttonBg: val
@@ -6054,7 +6057,7 @@ const Style = ({
           color: '#000000'
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BorderControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border :', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border :', textDomain),
         value: buttonBorder,
         onChange: val => setAttributes({
           buttonBorder: val
@@ -6066,7 +6069,7 @@ const Style = ({
           side: 'all'
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Typography :', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Typography :', textDomain),
         value: buttonTypography,
         onChange: val => setAttributes({
           buttonTypography: val
@@ -6126,11 +6129,11 @@ const DynamicStyles = ({
     buttonTypography
   } = attributes || {};
   const mainSl = `#${id}`;
-  const container = `${mainSl} .gbb-newsletter-container`;
-  const title = `${mainSl} .gbb-newsletter-title`;
-  const description = `${mainSl} .gbb-newsletter-description`;
-  const input = `${mainSl} .gbb-newsletter-input`;
-  const button = `${mainSl} .gbb-newsletter-button`;
+  const container = `${mainSl} .xpo-newsletter-container`;
+  const title = `${mainSl} .xpo-newsletter-title`;
+  const description = `${mainSl} .xpo-newsletter-description`;
+  const input = `${mainSl} .xpo-newsletter-input`;
+  const button = `${mainSl} .xpo-newsletter-button`;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("style", {
     dangerouslySetInnerHTML: {
       __html: `
@@ -6236,6 +6239,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-blocks';
 const TemplateOne = ({
   attributes,
   setAttributes
@@ -6271,7 +6275,7 @@ const TemplateOne = ({
     if (!email || !email.includes('@')) {
       setStatus({
         type: 'error',
-        message: errorMessage || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Please enter a valid email address.', 'guten-builder-blocks')
+        message: errorMessage || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Please enter a valid email address.', textDomain)
       });
       return;
     }
@@ -6294,63 +6298,63 @@ const TemplateOne = ({
       if (response.ok && data.success) {
         setStatus({
           type: 'success',
-          message: successMessage || data.message || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Thank you for subscribing!', 'guten-builder-blocks')
+          message: successMessage || data.message || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Thank you for subscribing!', textDomain)
         });
         setEmail('');
       } else {
         setStatus({
           type: 'error',
-          message: data.message || errorMessage || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Something went wrong. Please try again.', 'guten-builder-blocks')
+          message: data.message || errorMessage || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Something went wrong. Please try again.', textDomain)
         });
       }
     } catch {
       setStatus({
         type: 'error',
-        message: errorMessage || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Connection error. Please try again later.', 'guten-builder-blocks')
+        message: errorMessage || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Connection error. Please try again later.', textDomain)
       });
     } finally {
       setIsSubmitting(false);
     }
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("section", {
-    className: "gbb-newsletter-section",
+    className: "xpo-newsletter-section",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "gbb-newsletter-container",
+      className: "xpo-newsletter-container",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        className: "gbb-newsletter-content",
+        className: "xpo-newsletter-content",
         children: isEditor ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
             tagName: "h2",
-            className: "gbb-newsletter-title",
+            className: "xpo-newsletter-title",
             value: title,
             onChange: val => setAttributes({
               title: val
             }),
-            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter title...', 'guten-builder-blocks')
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter title...', textDomain)
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
             tagName: "p",
-            className: "gbb-newsletter-description",
+            className: "xpo-newsletter-description",
             value: description,
             onChange: val => setAttributes({
               description: val
             }),
-            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter description...', 'guten-builder-blocks')
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter description...', textDomain)
           })]
         }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
             tagName: "h2",
-            className: "gbb-newsletter-title",
+            className: "xpo-newsletter-title",
             value: title
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
             tagName: "p",
-            className: "gbb-newsletter-description",
+            className: "xpo-newsletter-description",
             value: description
           })]
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        className: "gbb-newsletter-form-wrapper",
+        className: "xpo-newsletter-form-wrapper",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
-          className: "gbb-newsletter-form",
+          className: "xpo-newsletter-form",
           onSubmit: handleSubmit,
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
             type: "email",
@@ -6358,18 +6362,18 @@ const TemplateOne = ({
             name: "email",
             value: email,
             onChange: e => setEmail(e.target.value),
-            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter your email', 'guten-builder-blocks'),
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter your email', textDomain),
             required: true,
             disabled: isSubmitting,
-            className: "gbb-newsletter-input"
+            className: "xpo-newsletter-input"
           }), isEditor ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
             tagName: "span",
-            className: "gbb-newsletter-button",
+            className: "xpo-newsletter-button",
             value: buttonText,
             onChange: val => setAttributes({
               buttonText: val
             }),
-            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Button text...', 'guten-builder-blocks'),
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Button text...', textDomain),
             style: {
               display: 'inline-block',
               textAlign: 'center'
@@ -6377,14 +6381,14 @@ const TemplateOne = ({
           }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
             type: "submit",
             disabled: isSubmitting,
-            className: "gbb-newsletter-button",
+            className: "xpo-newsletter-button",
             style: {
               opacity: isSubmitting ? 0.7 : 1
             },
-            children: isSubmitting ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Subscribing...', 'guten-builder-blocks') : buttonText || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Subscribe', 'guten-builder-blocks')
+            children: isSubmitting ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Subscribing...', textDomain) : buttonText || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Subscribe', textDomain)
           })]
         }), !isEditor && status.message && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          className: `gbb-newsletter-status gbb-newsletter-status--${status.type}`,
+          className: `xpo-newsletter-status xpo-newsletter-status--${status.type}`,
           style: {
             marginTop: '10px',
             padding: '8px 12px',
@@ -6447,18 +6451,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./icons */ "./src/blocks/newsletter-card/utils/icons.js");
 
 
+const textDomain = 'xpo-blocks';
 const templateData = {
-  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select Newsletter Card Template', 'guten-builder-blocks'),
-  subtitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Choose a design template for your contact form.', 'guten-builder-blocks'),
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select Newsletter Card Template', textDomain),
+  subtitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Choose a design template for your contact form.', textDomain),
   templates: [{
     id: 'template-1',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template 1', 'guten-builder-blocks'),
-    tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Split Card', 'guten-builder-blocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template 1', textDomain),
+    tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Split Card', textDomain),
     icon: _icons__WEBPACK_IMPORTED_MODULE_1__.TemplateOneSvg,
     attributes: {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Subscribe Our Newsletter', 'guten-builder-blocks'),
-      description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Subscribe to our newsletter and get the latest updates, offers and exclusive content.', 'guten-builder-blocks'),
-      buttonText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Subscribe', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Subscribe Our Newsletter', textDomain),
+      description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Subscribe to our newsletter and get the latest updates, offers and exclusive content.', textDomain),
+      buttonText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Subscribe', textDomain),
       containerMaxWidth: '1000px',
       containerBg: {
         type: 'solid',
@@ -6494,8 +6499,8 @@ const templateData = {
         color: 'transparent',
         side: 'all'
       },
-      successMessage: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Thank you for subscribing!', 'guten-builder-blocks'),
-      errorMessage: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Something went wrong. Please try again.', 'guten-builder-blocks')
+      successMessage: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Thank you for subscribing!', textDomain),
+      errorMessage: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Something went wrong. Please try again.', textDomain)
     }
   }]
 };
@@ -6690,6 +6695,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-blocks';
 const generalStyleTabs = [{
   name: 'general',
   title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
@@ -6697,7 +6703,7 @@ const generalStyleTabs = [{
       display: 'inline-flex',
       alignItems: 'center'
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.GeneralIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('General', 'guten-builder-blocks')]
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.GeneralIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('General', textDomain)]
   })
 }, {
   name: 'style',
@@ -6706,7 +6712,7 @@ const generalStyleTabs = [{
       display: 'inline-flex',
       alignItems: 'center'
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.StyleIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style', 'guten-builder-blocks')]
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.StyleIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style', textDomain)]
   })
 }];
 
@@ -6992,7 +6998,7 @@ module.exports = window["wp"]["i18n"];
   \***********************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"guten-builder-blocks/newsletter-card","version":"1.0.0","title":"Newsletter Card","category":"xpo-block","description":"Add a visually appealing newsletter subscription card to grow your email list and engage with your audience.","textdomain":"guten-builder-blocks","attributes":{"selectedTemplate":{"type":"string","default":""},"title":{"type":"string","default":""},"description":{"type":"string","default":""},"buttonText":{"type":"string","default":""},"containerMaxWidth":{"type":"string","default":""},"containerBg":{"type":"object","default":{}},"containerBorder":{"type":"object","default":{}},"titleColor":{"type":"string","default":""},"titleTypography":{"type":"object","default":{}},"descriptionColor":{"type":"string","default":""},"descriptionTypography":{"type":"object","default":{}},"inputColor":{"type":"string","default":""},"inputBg":{"type":"object","default":{}},"inputBorder":{"type":"object","default":{}},"inputTypography":{"type":"object","default":{}},"buttonColor":{"type":"string","default":""},"buttonBg":{"type":"object","default":{}},"buttonBorder":{"type":"object","default":{}},"buttonTypography":{"type":"object","default":{}},"successMessage":{"type":"string","default":""},"errorMessage":{"type":"string","default":""}},"supports":{"html":false,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"xpo-block/newsletter-card","version":"1.0.0","title":"Newsletter Card","category":"xpo-block","description":"Add a visually appealing newsletter subscription card to grow your email list and engage with your audience.","textdomain":"xpo-block","attributes":{"selectedTemplate":{"type":"string","default":""},"title":{"type":"string","default":""},"description":{"type":"string","default":""},"buttonText":{"type":"string","default":""},"containerMaxWidth":{"type":"string","default":""},"containerBg":{"type":"object","default":{}},"containerBorder":{"type":"object","default":{}},"titleColor":{"type":"string","default":""},"titleTypography":{"type":"object","default":{}},"descriptionColor":{"type":"string","default":""},"descriptionTypography":{"type":"object","default":{}},"inputColor":{"type":"string","default":""},"inputBg":{"type":"object","default":{}},"inputBorder":{"type":"object","default":{}},"inputTypography":{"type":"object","default":{}},"buttonColor":{"type":"string","default":""},"buttonBg":{"type":"object","default":{}},"buttonBorder":{"type":"object","default":{}},"buttonTypography":{"type":"object","default":{}},"successMessage":{"type":"string","default":""},"errorMessage":{"type":"string","default":""}},"supports":{"html":false,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
 
 /***/ }
 

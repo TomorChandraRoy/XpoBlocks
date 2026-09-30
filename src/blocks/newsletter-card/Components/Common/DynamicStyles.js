@@ -1,31 +1,16 @@
 import { getBackgroundCss, getBorderCss, getTypographyCss } from 'tr-tools';
 
 const DynamicStyles = ({ attributes, id }) => {
-  const {
-    containerMaxWidth,
-    containerBg,
-    containerBorder,
-    titleColor,
-    titleTypography,
-    descriptionColor,
-    descriptionTypography,
-    inputColor,
-    inputBg,
-    inputBorder,
-    inputTypography,
-    buttonColor,
-    buttonBg,
-    buttonBorder,
-    buttonTypography,
+  const {containerMaxWidth,containerBg,containerBorder,titleColor,titleTypography,descriptionColor,descriptionTypography,inputColor,inputBg,inputBorder,inputTypography,buttonColor,buttonBg,buttonBorder,buttonTypography,
   } = attributes || {};
 
   const mainSl = `#${id}`;
 
-  const container = `${mainSl} .gbb-newsletter-container`;
-  const title = `${mainSl} .gbb-newsletter-title`;
-  const description = `${mainSl} .gbb-newsletter-description`;
-  const input = `${mainSl} .gbb-newsletter-input`;
-  const button = `${mainSl} .gbb-newsletter-button`;
+  const container = `${mainSl} .xpo-newsletter-container`;
+  const title = `${mainSl} .xpo-newsletter-title`;
+  const description = `${mainSl} .xpo-newsletter-description`;
+  const input = `${mainSl} .xpo-newsletter-input`;
+  const button = `${mainSl} .xpo-newsletter-button`;
 
   return (
     <style

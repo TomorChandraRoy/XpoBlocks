@@ -11,14 +11,14 @@ const DynamicStyle = ({ attributes, id }) => {
   const finalFrameRadius = typeof frameRadius === 'number' ? `${frameRadius}px` : '12px';
 
   const mainSl = `#${id}`;
-  const blockClass = `${mainSl} .wp-block-guten-builder-blocks-marquee`;
-  const sectionClass = `${blockClass} .gbb-logo-cloud-section`;
-  const wrapperClass = `${sectionClass} .gbb-logo-cloud-wrapper`;
-  const backendImgClass = `${wrapperClass} .gbb-mq-item img`;
+  const blockClass = `${mainSl} .wp-block-xpo-block-marquee`;
+  const sectionClass = `${blockClass} .xpo-logo-cloud-section`;
+  const wrapperClass = `${sectionClass} .xpo-logo-cloud-wrapper`;
+  const backendImgClass = `${wrapperClass} .xpo-mq-item img`;
 
-  const frontendSectionClass = `${mainSl} .gbb-logo-cloud-section`;
-  const frontendWrapperClass = `${frontendSectionClass} .gbb-logo-cloud-wrapper`;
-  const frontendImgClass = `${frontendWrapperClass} .gbb-mq-item img`;
+  const frontendSectionClass = `${mainSl} .xpo-logo-cloud-section`;
+  const frontendWrapperClass = `${frontendSectionClass} .xpo-logo-cloud-wrapper`;
+  const frontendImgClass = `${frontendWrapperClass} .xpo-mq-item img`;
 
   const getSweepGradient = (gradient) => {
     if (!gradient || typeof gradient !== 'object') {
@@ -58,8 +58,8 @@ const DynamicStyle = ({ attributes, id }) => {
             border-radius: ${typeof containerRadius === 'number' ? `${containerRadius}px` : '8px'} !important;
           }
 
-          ${wrapperClass} .gbb-border-beam-inner,
-          ${frontendWrapperClass} .gbb-border-beam-inner {
+          ${wrapperClass} .xpo-border-beam-inner,
+          ${frontendWrapperClass} .xpo-border-beam-inner {
             background-color: ${containerBg || '#ffffff'} !important;
             border-radius: ${typeof containerRadius === 'number' ? `${containerRadius}px` : '8px'} !important;
             border-color: ${containerBorderColor || '#e2e8f0'} !important;
@@ -71,13 +71,13 @@ const DynamicStyle = ({ attributes, id }) => {
           }
 
           ${showFrame ? `
-            #${id} .has-frame .gbb-mq-item {
+            #${id} .has-frame .xpo-mq-item {
               background-color: ${finalFrameBg} !important;
               border-radius: ${finalFrameRadius} !important;
             }
           ` : ''}
 
-          #${id} .gbb-logo-text-wave {
+          #${id} .xpo-logo-text-wave {
             background-image: ${gradientCss} !important;
           }
         `,

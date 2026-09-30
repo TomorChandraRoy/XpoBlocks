@@ -1,27 +1,27 @@
 /*!**************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/newsletter-card/style.scss ***!
   \**************************************************************************************************************************************************************************************************************************************************************/
-.wp-block-guten-builder-blocks-newsletter-card,
-.gbb-newsletter-card-container {
+.wp-block-xpo-block-newsletter-card,
+.xpo-newsletter-card-container {
   box-sizing: border-box;
   width: 100%;
   max-width: 100%;
 }
-.wp-block-guten-builder-blocks-newsletter-card *,
-.wp-block-guten-builder-blocks-newsletter-card *::before,
-.wp-block-guten-builder-blocks-newsletter-card *::after,
-.gbb-newsletter-card-container *,
-.gbb-newsletter-card-container *::before,
-.gbb-newsletter-card-container *::after {
+.wp-block-xpo-block-newsletter-card *,
+.wp-block-xpo-block-newsletter-card *::before,
+.wp-block-xpo-block-newsletter-card *::after,
+.xpo-newsletter-card-container *,
+.xpo-newsletter-card-container *::before,
+.xpo-newsletter-card-container *::after {
   box-sizing: border-box;
 }
-.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-section,
-.gbb-newsletter-card-container .gbb-newsletter-section {
+.wp-block-xpo-block-newsletter-card .xpo-newsletter-section,
+.xpo-newsletter-card-container .xpo-newsletter-section {
   width: 100%;
   max-width: 100%;
 }
-.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-container,
-.gbb-newsletter-card-container .gbb-newsletter-container {
+.wp-block-xpo-block-newsletter-card .xpo-newsletter-container,
+.xpo-newsletter-card-container .xpo-newsletter-container {
   max-width: 72rem;
   width: 100%;
   margin-left: auto;
@@ -35,20 +35,20 @@
   border-radius: 0.5rem;
 }
 @media (min-width: 1024px) {
-  .wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-container,
-  .gbb-newsletter-card-container .gbb-newsletter-container {
+  .wp-block-xpo-block-newsletter-card .xpo-newsletter-container,
+  .xpo-newsletter-card-container .xpo-newsletter-container {
     align-items: center;
     flex-direction: row;
   }
 }
-.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-content,
-.gbb-newsletter-card-container .gbb-newsletter-content {
+.wp-block-xpo-block-newsletter-card .xpo-newsletter-content,
+.xpo-newsletter-card-container .xpo-newsletter-content {
   max-width: 42rem;
   width: 100%;
   min-width: 0;
 }
-.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-title,
-.gbb-newsletter-card-container .gbb-newsletter-title {
+.wp-block-xpo-block-newsletter-card .xpo-newsletter-title,
+.xpo-newsletter-card-container .xpo-newsletter-title {
   font-size: 1.875rem;
   line-height: 2.25rem;
   font-weight: 700;
@@ -57,27 +57,27 @@
   margin-bottom: 1.5rem;
 }
 @media (min-width: 768px) {
-  .wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-title,
-  .gbb-newsletter-card-container .gbb-newsletter-title {
+  .wp-block-xpo-block-newsletter-card .xpo-newsletter-title,
+  .xpo-newsletter-card-container .xpo-newsletter-title {
     font-size: 2.25rem;
     line-height: 2.5rem;
   }
 }
-.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-description,
-.gbb-newsletter-card-container .gbb-newsletter-description {
+.wp-block-xpo-block-newsletter-card .xpo-newsletter-description,
+.xpo-newsletter-card-container .xpo-newsletter-description {
   font-size: 1rem;
   color: #475569;
   line-height: 1.625;
   margin-top: 0;
   margin-bottom: 0;
 }
-.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-form-wrapper,
-.gbb-newsletter-card-container .gbb-newsletter-form-wrapper {
+.wp-block-xpo-block-newsletter-card .xpo-newsletter-form-wrapper,
+.xpo-newsletter-card-container .xpo-newsletter-form-wrapper {
   max-width: 32rem;
   width: 100%;
 }
-.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-form-wrapper .gbb-newsletter-form,
-.gbb-newsletter-card-container .gbb-newsletter-form-wrapper .gbb-newsletter-form {
+.wp-block-xpo-block-newsletter-card .xpo-newsletter-form-wrapper .xpo-newsletter-form,
+.xpo-newsletter-card-container .xpo-newsletter-form-wrapper .xpo-newsletter-form {
   max-width: 32rem;
   width: 100%;
   min-width: 0;
@@ -87,20 +87,20 @@
   row-gap: 1.5rem;
 }
 @media (min-width: 640px) {
-  .wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-form-wrapper .gbb-newsletter-form,
-  .gbb-newsletter-card-container .gbb-newsletter-form-wrapper .gbb-newsletter-form {
+  .wp-block-xpo-block-newsletter-card .xpo-newsletter-form-wrapper .xpo-newsletter-form,
+  .xpo-newsletter-card-container .xpo-newsletter-form-wrapper .xpo-newsletter-form {
     flex-direction: row;
     align-items: center;
   }
 }
 @media (min-width: 1024px) {
-  .wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-form-wrapper .gbb-newsletter-form,
-  .gbb-newsletter-card-container .gbb-newsletter-form-wrapper .gbb-newsletter-form {
+  .wp-block-xpo-block-newsletter-card .xpo-newsletter-form-wrapper .xpo-newsletter-form,
+  .xpo-newsletter-card-container .xpo-newsletter-form-wrapper .xpo-newsletter-form {
     margin-left: auto;
   }
 }
-.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-input,
-.gbb-newsletter-card-container .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-input {
+.wp-block-xpo-block-newsletter-card .xpo-newsletter-form-wrapper .xpo-newsletter-form .xpo-newsletter-input,
+.xpo-newsletter-card-container .xpo-newsletter-form-wrapper .xpo-newsletter-form .xpo-newsletter-input {
   padding: 0.75rem 0.875rem;
   font-size: 0.875rem;
   color: #0f172a;
@@ -114,22 +114,22 @@
   box-sizing: border-box;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-input:focus,
-.gbb-newsletter-card-container .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-input:focus {
+.wp-block-xpo-block-newsletter-card .xpo-newsletter-form-wrapper .xpo-newsletter-form .xpo-newsletter-input:focus,
+.xpo-newsletter-card-container .xpo-newsletter-form-wrapper .xpo-newsletter-form .xpo-newsletter-input:focus {
   outline: none;
   box-shadow: none;
 }
-.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-input:-webkit-autofill, .wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-input:-webkit-autofill:hover, .wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-input:-webkit-autofill:focus, .wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-input:-webkit-autofill:active,
-.gbb-newsletter-card-container .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-input:-webkit-autofill,
-.gbb-newsletter-card-container .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-input:-webkit-autofill:hover,
-.gbb-newsletter-card-container .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-input:-webkit-autofill:focus,
-.gbb-newsletter-card-container .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-input:-webkit-autofill:active {
+.wp-block-xpo-block-newsletter-card .xpo-newsletter-form-wrapper .xpo-newsletter-form .xpo-newsletter-input:-webkit-autofill, .wp-block-xpo-block-newsletter-card .xpo-newsletter-form-wrapper .xpo-newsletter-form .xpo-newsletter-input:-webkit-autofill:hover, .wp-block-xpo-block-newsletter-card .xpo-newsletter-form-wrapper .xpo-newsletter-form .xpo-newsletter-input:-webkit-autofill:focus, .wp-block-xpo-block-newsletter-card .xpo-newsletter-form-wrapper .xpo-newsletter-form .xpo-newsletter-input:-webkit-autofill:active,
+.xpo-newsletter-card-container .xpo-newsletter-form-wrapper .xpo-newsletter-form .xpo-newsletter-input:-webkit-autofill,
+.xpo-newsletter-card-container .xpo-newsletter-form-wrapper .xpo-newsletter-form .xpo-newsletter-input:-webkit-autofill:hover,
+.xpo-newsletter-card-container .xpo-newsletter-form-wrapper .xpo-newsletter-form .xpo-newsletter-input:-webkit-autofill:focus,
+.xpo-newsletter-card-container .xpo-newsletter-form-wrapper .xpo-newsletter-form .xpo-newsletter-input:-webkit-autofill:active {
   -webkit-transition: background-color 50000s ease-in-out 0s;
   transition: background-color 50000s ease-in-out 0s;
   -webkit-text-fill-color: inherit;
 }
-.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-button,
-.gbb-newsletter-card-container .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-button {
+.wp-block-xpo-block-newsletter-card .xpo-newsletter-form-wrapper .xpo-newsletter-form .xpo-newsletter-button,
+.xpo-newsletter-card-container .xpo-newsletter-form-wrapper .xpo-newsletter-form .xpo-newsletter-button {
   padding: 0.75rem 1rem;
   font-size: 0.875rem;
   width: max-content;
@@ -143,17 +143,17 @@
   transition: all 0.2s ease;
   white-space: nowrap;
 }
-.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-button:hover,
-.gbb-newsletter-card-container .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-button:hover {
+.wp-block-xpo-block-newsletter-card .xpo-newsletter-form-wrapper .xpo-newsletter-form .xpo-newsletter-button:hover,
+.xpo-newsletter-card-container .xpo-newsletter-form-wrapper .xpo-newsletter-form .xpo-newsletter-button:hover {
   background-color: #1d4ed8;
   border-color: #1d4ed8;
 }
-.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-button:focus,
-.gbb-newsletter-card-container .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-button:focus {
+.wp-block-xpo-block-newsletter-card .xpo-newsletter-form-wrapper .xpo-newsletter-form .xpo-newsletter-button:focus,
+.xpo-newsletter-card-container .xpo-newsletter-form-wrapper .xpo-newsletter-form .xpo-newsletter-button:focus {
   outline: none;
 }
-.wp-block-guten-builder-blocks-newsletter-card .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-button:focus-visible,
-.gbb-newsletter-card-container .gbb-newsletter-form-wrapper .gbb-newsletter-form .gbb-newsletter-button:focus-visible {
+.wp-block-xpo-block-newsletter-card .xpo-newsletter-form-wrapper .xpo-newsletter-form .xpo-newsletter-button:focus-visible,
+.xpo-newsletter-card-container .xpo-newsletter-form-wrapper .xpo-newsletter-form .xpo-newsletter-button:focus-visible {
   box-shadow: 0 0 0 2px #3b82f6;
 }
 

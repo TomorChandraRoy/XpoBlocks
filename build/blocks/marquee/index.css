@@ -2,25 +2,25 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/marquee/editor.scss ***!
   \*******************************************************************************************************************************************************************************************************************************************************/
 /* Editor specific styles for Marquee block */
-.wp-block-guten-builder-blocks-marquee .gbb-mq-empty-state {
+.wp-block-xpo-block-marquee .xpo-mq-empty-state {
   padding: 20px;
   text-align: center;
   background: #f8fafc;
   border: 1px dashed #cbd5e1;
 }
-.wp-block-guten-builder-blocks-marquee {
+.wp-block-xpo-block-marquee {
   /* Disable links inside the editor so they don't navigate away when clicked */
 }
-.wp-block-guten-builder-blocks-marquee .gbb-mq-item a {
+.wp-block-xpo-block-marquee .xpo-mq-item a {
   pointer-events: none;
   cursor: default;
 }
 /* Settings sidebar / Inspector controls styles */
-.gbb-mq-permission-error {
+.xpo-mq-permission-error {
   color: #ef4444;
   font-size: 12px;
 }
-.gbb-mq-add-btn {
+.xpo-mq-add-btn {
   width: 100%;
   justify-content: center !important;
   margin-top: 15px;
@@ -29,36 +29,36 @@
   border-color: #F62477 !important;
   color: #fff !important;
 }
-.gbb-mq-url-input-container {
+.xpo-mq-url-input-container {
   display: flex;
   flex-direction: column;
   gap: 8px;
   padding: 10px;
 }
-.gbb-mq-url-input-container .gbb-mq-url-input-label {
+.xpo-mq-url-input-container .xpo-mq-url-input-label {
   font-size: 12px;
   font-weight: 500;
   color: #64748b;
 }
-.gbb-mq-url-input-container .gbb-mq-url-input-row {
+.xpo-mq-url-input-container .xpo-mq-url-input-row {
   display: flex;
   gap: 8px;
   width: 100%;
   align-items: center;
 }
-.gbb-mq-url-input-container .gbb-mq-url-input-row .components-base-control {
+.xpo-mq-url-input-container .xpo-mq-url-input-row .components-base-control {
   flex-grow: 1;
   margin-bottom: 0 !important;
 }
-.gbb-mq-url-input-container .gbb-mq-url-input-row .components-base-control .components-text-control__input {
+.xpo-mq-url-input-container .xpo-mq-url-input-row .components-base-control .components-text-control__input {
   background: #ffffff;
   height: 36px;
 }
-.gbb-mq-url-input-container .gbb-mq-url-input-row .components-button {
+.xpo-mq-url-input-container .xpo-mq-url-input-row .components-button {
   height: 36px;
   flex-shrink: 0;
 }
-.gbb-mq-images-list {
+.xpo-mq-images-list {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -66,7 +66,7 @@
   overflow-y: auto;
   padding-right: 6px;
 }
-.gbb-mq-image-item {
+.xpo-mq-image-item {
   background: #ffffff;
   padding: 12px;
   border-radius: 8px;
@@ -74,17 +74,17 @@
   box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
   transition: border-color 0.2s;
 }
-.gbb-mq-image-item:hover {
+.xpo-mq-image-item:hover {
   border-color: #cbd5e1;
 }
-.gbb-mq-image-item-header {
+.xpo-mq-image-item-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
   margin-bottom: 12px;
 }
-.gbb-mq-image-preview {
+.xpo-mq-image-preview {
   width: 48px;
   height: 48px;
   flex-shrink: 0;
@@ -97,12 +97,12 @@
   overflow: hidden;
   padding: 4px;
 }
-.gbb-mq-image-preview img {
+.xpo-mq-image-preview img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
 }
-.gbb-mq-image-actions {
+.xpo-mq-image-actions {
   display: flex;
   gap: 4px;
   background: #f8fafc;
@@ -110,15 +110,15 @@
   border-radius: 6px;
   border: 1px solid #e2e8f0;
 }
-.gbb-mq-image-actions .components-button {
+.xpo-mq-image-actions .components-button {
   min-width: 32px;
   padding: 0 !important;
   color: #64748b;
 }
-.gbb-mq-image-actions .components-button.is-destructive {
+.xpo-mq-image-actions .components-button.is-destructive {
   color: #ef4444;
 }
-.gbb-mq-image-inputs {
+.xpo-mq-image-inputs {
   background: #f8fafc;
   padding: 10px;
   border-radius: 6px;
@@ -127,22 +127,22 @@
   flex-direction: column;
   gap: 10px;
 }
-.gbb-mq-image-inputs span {
+.xpo-mq-image-inputs span {
   font-size: 12px;
   font-weight: 500;
   color: #64748b;
 }
-.gbb-mq-image-inputs .components-text-control__input {
+.xpo-mq-image-inputs .components-text-control__input {
   background: #ffffff;
 }
-.gbb-mq-frame-settings-container {
+.xpo-mq-frame-settings-container {
   padding: 10px;
   background: #f8f9fa;
   border-radius: 8px;
   border: 1px solid #e2e8f0;
   margin-bottom: 15px;
 }
-.gbb-mq-frame-settings-container p {
+.xpo-mq-frame-settings-container p {
   font-weight: bold;
   margin-top: 0;
   margin-bottom: 5px;
