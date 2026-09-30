@@ -1,14 +1,15 @@
 import { __ } from "@wordpress/i18n";
 import { TemplateOneSvg } from "./icons";
+const textDomain = 'xpo-blocks';
 
 export const templateData = {
-  title: __('Select Button Template', 'guten-builder-blocks'),
-  subtitle: __('Choose a design template for your button.', 'guten-builder-blocks'),
+  title: __('Select Button Template', textDomain),
+  subtitle: __('Choose a design template for your button.', textDomain),
   templates: [
     {
       id: 'template-1',
-      label: __('Template 1', 'guten-builder-blocks'),
-      tag: __('3D Button', 'guten-builder-blocks'),
+      label: __('Template 1', textDomain),
+      tag: __('3D Button', textDomain),
       icon: TemplateOneSvg,
       attributes: {
         buttonWidth: {

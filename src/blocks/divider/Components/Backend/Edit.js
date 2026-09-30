@@ -25,7 +25,7 @@ const Edit = props => {
             isPro={true} proTemplates={['template-1']} />
           </div>
         ) : (
-          <div {...useBlockProps({ style: { padding: '3px' } })}>
+          <div {...useBlockProps({ id, style: { padding: '3px' } })}>
             <DynamicStyles attributes={attributes} id={id} />
             <Divider attributes={attributes} setAttributes={setAttributes} id={id} />
           </div>

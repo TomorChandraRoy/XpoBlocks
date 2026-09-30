@@ -1,10 +1,10 @@
 /*!*****************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/button/style.scss ***!
   \*****************************************************************************************************************************************************************************************************************************************************/
-.wp-block-guten-builder-blocks-button {
+.wp-block-xpo-block-button {
   /* From Uiverse.io by cssbuttons-io */
 }
-.wp-block-guten-builder-blocks-button .guten-builder-blocks-button {
+.wp-block-xpo-block-button .xpo-button {
   position: relative;
   display: inline-block;
   border: none;
@@ -18,7 +18,7 @@
   touch-action: manipulation;
   text-decoration: none;
 }
-.wp-block-guten-builder-blocks-button .guten-builder-blocks-button .guten-builder-blocks-button-shadow {
+.wp-block-xpo-block-button .xpo-button .xpo-button-shadow {
   position: absolute;
   top: 0;
   right: 0;
@@ -29,7 +29,7 @@
   transform: translateY(var(--shadow-default-y, 2px));
   transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
 }
-.wp-block-guten-builder-blocks-button .guten-builder-blocks-button .guten-builder-blocks-button-edge {
+.wp-block-xpo-block-button .xpo-button .xpo-button-edge {
   position: absolute;
   top: 0;
   right: 0;
@@ -38,7 +38,7 @@
   border-radius: 12px;
   background: linear-gradient(to right, hsl(340, 100%, 16%) 0%, hsl(340, 100%, 32%) 8%, hsl(340, 100%, 32%) 92%, hsl(340, 100%, 16%) 100%);
 }
-.wp-block-guten-builder-blocks-button .guten-builder-blocks-button .guten-builder-blocks-button-front {
+.wp-block-xpo-block-button .xpo-button .xpo-button-front {
   display: block;
   position: relative;
   padding: 12px 27px;
@@ -50,25 +50,25 @@
   transform: translateY(var(--button-offset-y, -4px));
   transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
 }
-.wp-block-guten-builder-blocks-button .guten-builder-blocks-button:hover {
+.wp-block-xpo-block-button .xpo-button:hover {
   filter: brightness(110%);
 }
-.wp-block-guten-builder-blocks-button .guten-builder-blocks-button:hover .guten-builder-blocks-button-front {
+.wp-block-xpo-block-button .xpo-button:hover .xpo-button-front {
   transform: translateY(var(--button-hover-y, -6px));
   transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
 }
-.wp-block-guten-builder-blocks-button .guten-builder-blocks-button:hover .guten-builder-blocks-button-shadow {
+.wp-block-xpo-block-button .xpo-button:hover .xpo-button-shadow {
   transform: translateY(var(--shadow-hover-y, 4px));
   transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
 }
-.wp-block-guten-builder-blocks-button .guten-builder-blocks-button:active .guten-builder-blocks-button-front {
+.wp-block-xpo-block-button .xpo-button:active .xpo-button-front {
   transform: translateY(var(--button-active-y, -2px));
   transition: transform 34ms;
 }
-.wp-block-guten-builder-blocks-button .guten-builder-blocks-button:active .guten-builder-blocks-button-shadow {
+.wp-block-xpo-block-button .xpo-button:active .xpo-button-shadow {
   transform: translateY(var(--shadow-active-y, 1px));
   transition: transform 34ms;
 }
-.wp-block-guten-builder-blocks-button .guten-builder-blocks-button:focus:not(:focus-visible) {
+.wp-block-xpo-block-button .xpo-button:focus:not(:focus-visible) {
   outline: none;
 }

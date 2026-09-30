@@ -1,7 +1,54 @@
 /*!******************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/button/editor.scss ***!
   \******************************************************************************************************************************************************************************************************************************************************/
+.wp-block-xpo-block-button {
+  /* Editor specific styles for Button block */
+}
 
+.wp-xpo-tab-panel .components-tab-panel__tabs {
+  display: flex;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 12px;
+}
+
+.wp-xpo-tab-panel .components-tab-panel__tabs .components-tab-panel__tabs-item,
+.wp-xpo-tab-panel .components-tab-panel__tabs .components-button {
+  flex: 1;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 8px 12px;
+  font-weight: 500;
+  font-size: 13px;
+  color: #64748b;
+  border: none;
+  background: transparent;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.wp-xpo-tab-panel .components-tab-panel__tabs .components-tab-panel__tabs-item:hover,
+.wp-xpo-tab-panel .components-tab-panel__tabs .components-button:hover {
+  color: #0f172a;
+}
+
+.wp-xpo-tab-panel .components-tab-panel__tabs .components-tab-panel__tabs-item.wp-xpo-tab-panel-active-tab, .wp-xpo-tab-panel .components-tab-panel__tabs .components-tab-panel__tabs-item.is-active,
+.wp-xpo-tab-panel .components-tab-panel__tabs .components-button.wp-xpo-tab-panel-active-tab,
+.wp-xpo-tab-panel .components-tab-panel__tabs .components-button.is-active {
+  color: #F62477;
+  border-bottom-color: #F62477;
+  font-weight: 600;
+}
+
+.bPlPanelBody .components-base-control__label,
+.bPlPanelBody label {
+  text-transform: none !important;
+  font-size: 13px !important;
+}
 /*!************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!../tr-tools/Components/TemplateSelector/TemplateSelector.scss ***!
   \************************************************************************************************************************************************************************************************************************************************************************************/

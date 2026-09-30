@@ -27,7 +27,7 @@ const Edit = props => {
           />
         </div>
       ) : (
-        <div {...useBlockProps({ style: { padding: '3px' } })}>
+        <div {...useBlockProps({ id, style: { padding: '3px' } })}>
           <DynamicStyle attributes={attributes} id={id} />
           <Button attributes={attributes} setAttributes={setAttributes} id={id} />
         </div>

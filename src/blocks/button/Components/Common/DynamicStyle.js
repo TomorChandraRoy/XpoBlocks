@@ -5,10 +5,10 @@ const DynamicStyle = ({ attributes, id }) => {
   const { buttonAlign, textColor, buttonBg, hoverTextColor, hoverButtonBg, buttonBorderRadius, buttonOffsetY, buttonHoverOffsetY, buttonEdgeBg, buttonBoxShadow, enable3DEffect, buttonWidth, buttonPadding } = attributes || {};
 
   const mainSl = `#${id}`;
-  const button = `${mainSl} .guten-builder-blocks-button`;
-  const front = `${button} .guten-builder-blocks-button-front`;
-  const shadow = `${button} .guten-builder-blocks-button-shadow`;
-  const edge = `${button} .guten-builder-blocks-button-edge`;
+  const button = `${mainSl} .xpo-button`;
+  const front = `${button} .xpo-button-front`;
+  const shadow = `${button} .xpo-button-shadow`;
+  const edge = `${button} .xpo-button-edge`;
 
   const getHoverOffset = () => (buttonHoverOffsetY !== undefined ? buttonHoverOffsetY : -6);
   const currentOffsetY = buttonOffsetY !== undefined ? buttonOffsetY : -4;
@@ -58,7 +58,7 @@ const DynamicStyle = ({ attributes, id }) => {
           ${enable3DEffect === false ? `display: none;` : ''}
           ${getBackgroundCss(buttonEdgeBg) ? `background: ${getBackgroundCss(buttonEdgeBg)};` : ''}
         }
-        ${button}:hover .guten-builder-blocks-button-front {
+        ${button}:hover .xpo-button-front {
           ${hoverTextColor ? `color: ${hoverTextColor};` : ''}
           ${getBackgroundCss(hoverButtonBg) ? `background: ${getBackgroundCss(hoverButtonBg)};` : ''}
         }

@@ -296,8 +296,11 @@ const navCategories = [{
     key: "button",
     label: "Action Button"
   }, {
-    key: "contact-form",
-    label: "Contact Form"
+    key: "newsletter-card",
+    label: "Newsletter Card"
+  }, {
+    key: "divider",
+    label: "Divider"
   }, {
     key: "marquee",
     label: "Marquee Slider"
@@ -441,14 +444,23 @@ const docsContentData = {
     features: ["Gradient backgrounds and neon glow shadows", "Integrated dashicon & SVG icon alignment", "Hover scale and lift animations", "Target window options (_self or _blank)"],
     usageSteps: ["Add the 'Action Button' block to any content section.", "Type your button text and enter the target URL.", "Select icon position (Left or Right) and adjust border radius.", "Customize background gradients and hover state effects."]
   },
-  "contact-form": {
+  "newsletter-card": {
     category: "How To Use",
-    title: "Contact Form",
-    breadcrumb: ["Docs", "How To Use", "Contact Form"],
-    summary: "Clean, responsive contact form block with built-in AJAX submission, input validation, and customizable fields.",
-    details: "Receive inquiries directly to your email without needing heavy third-party form plugins.",
-    features: ["Field builder for Name, Email, Subject, and Message", "AJAX submission without page reloads", "Custom success toast and error notification messages", "Admin email receiver configuration"],
-    usageSteps: ["Insert the 'Contact Form' block into your page or contact section.", "Specify the recipient email address in block settings.", "Customize input placeholder text, submit button label, and button styling.", "Publish page and test submission."]
+    title: "Newsletter Card",
+    breadcrumb: ["Docs", "How To Use", "Newsletter Card"],
+    summary: "Capture lead emails with modern newsletter subscription cards featuring gradient accents, input validation, and custom CTA buttons.",
+    details: "Designed to boost email list signups, offer lead magnets, and collect subscriber emails seamlessly in Gutenberg layouts.",
+    features: ["Custom title, subtitle, and subscriber input fields", "Customizable button text, colors, and success notifications", "Responsive card layouts with background styling and border radius controls", "Integration-ready form submission"],
+    usageSteps: ["Insert the 'Newsletter Card' block onto your page.", "Customize title, description, and input placeholder text in settings.", "Style the subscription button, card background, and typography.", "Publish your page to collect subscriber emails."]
+  },
+  divider: {
+    category: "How To Use",
+    title: "Divider",
+    breadcrumb: ["Docs", "How To Use", "Divider"],
+    summary: "Add a customizable dividing line with text or icon presets to separate content and improve layout hierarchy.",
+    details: "Break up long content sections with styled divider lines, custom thickness, color pickers, and centered icons or text labels.",
+    features: ["Preset templates (Text Divider, Icon Divider, Simple Line)", "Customizable width, height/thickness, and line colors", "Typography control for center text and SVG icon size pickers", "Responsive spacing and viewport width controls"],
+    usageSteps: ["Add the 'Divider' block between your content sections.", "Select your preferred template preset (Text or Icon).", "Adjust width, thickness, and line color in the inspector sidebar.", "Publish page to display styled dividing lines."]
   },
   marquee: {
     category: "How To Use",
@@ -5662,6 +5674,7 @@ const Edit = props => {
       })
     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
       ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
+        id,
         style: {
           padding: '3px'
         }
@@ -5700,6 +5713,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-blocks';
 const General = ({
   attributes,
   setAttributes
@@ -5712,7 +5726,7 @@ const General = ({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template Presets', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template Presets', textDomain),
       initialOpen: true,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
         style: {
@@ -5720,7 +5734,7 @@ const General = ({
           color: '#64748b',
           marginBottom: '12px'
         },
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Switch or apply a predefined button template style.', 'guten-builder-blocks')
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Switch or apply a predefined button template style.', textDomain)
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
         isSecondary: true,
         onClick: () => setAttributes({
@@ -5730,26 +5744,26 @@ const General = ({
           width: '100%',
           justifyContent: 'center'
         },
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Change Template', 'guten-builder-blocks')
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Change Template', textDomain)
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Content', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Content', textDomain),
       initialOpen: true,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Text', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Text', textDomain),
         value: buttonText,
         onChange: v => setAttributes({
           buttonText: v
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button URL', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button URL', textDomain),
         value: buttonUrl,
         onChange: v => setAttributes({
           buttonUrl: v
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Open in New Tab', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Open in New Tab', textDomain),
         checked: openInNewTab,
         onChange: v => setAttributes({
           openInNewTab: v
@@ -5792,6 +5806,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-blocks';
 const Settings = ({
   attributes,
   setAttributes
@@ -5809,11 +5824,11 @@ const Settings = ({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_6__.DocsLink, {
-        link: "https://gutenbuilder.com/docs/buttons",
-        text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Documentation', 'guten-builder-blocks')
+        link: "https://xpo.com/docs/button",
+        text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Documentation', textDomain)
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TabPanel, {
-        className: "guten-builder-blocks-tab-panel",
-        activeClass: "guten-builder-blocks-active-tab",
+        className: "wp-xpo-tab-panel",
+        activeClass: "wp-xpo-tab-panel-active-tab",
         tabs: _utils_options__WEBPACK_IMPORTED_MODULE_3__.generalStyleTabs,
         children: tab => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
           children: ['general' === tab.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_General_General__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -5833,15 +5848,15 @@ const Settings = ({
         }),
         describedBy: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Alignment'),
         alignmentControls: [{
-          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button in left', 'guten-builder-blocks'),
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button in left', textDomain),
           align: 'left',
           icon: 'align-left'
         }, {
-          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button in center', 'guten-builder-blocks'),
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button in center', textDomain),
           align: 'center',
           icon: 'align-center'
         }, {
-          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button in right', 'guten-builder-blocks'),
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button in right', textDomain),
           align: 'right',
           icon: 'align-right'
         }]
@@ -5876,6 +5891,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-blocks';
 const Style = ({
   attributes,
   setAttributes
@@ -5896,31 +5912,31 @@ const Style = ({
   } = attributes;
   const tabs = [{
     name: 'normal',
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Normal', 'guten-builder-blocks')
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Normal', textDomain)
   }, {
     name: 'hover',
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Hover', 'guten-builder-blocks')
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Hover', textDomain)
   }];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Colors', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Colors', textDomain),
       initialOpen: true,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TabPanel, {
-        className: "guten-builder-blocks-tab-panel",
-        activeClass: "guten-builder-blocks-active-tab",
+        className: "wp-xpo-tab-panel",
+        activeClass: "wp-xpo-tab-panel-active-tab",
         tabs: tabs,
         children: tab => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
           children: [tab.name === 'normal' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text Color :', 'guten-builder-blocks'),
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text Color :', textDomain),
               value: textColor,
               onChange: color => setAttributes({
                 textColor: color
               }),
               defaultColor: "#ffffff"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BackgroundControl, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background :', 'guten-builder-blocks'),
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background :', textDomain),
               value: buttonBg,
               onChange: val => setAttributes({
                 buttonBg: val
@@ -5932,14 +5948,14 @@ const Style = ({
             })]
           }), tab.name === 'hover' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text Color :', 'guten-builder-blocks'),
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text Color :', textDomain),
               value: hoverTextColor,
               onChange: color => setAttributes({
                 hoverTextColor: color
               }),
               defaultColor: "#ffffff"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BackgroundControl, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background :', 'guten-builder-blocks'),
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background :', textDomain),
               value: hoverButtonBg,
               onChange: val => setAttributes({
                 hoverButtonBg: val
@@ -5954,10 +5970,10 @@ const Style = ({
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Layout', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Layout', textDomain),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.UnitControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Width :', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Width :', textDomain),
         value: buttonWidth,
         onChange: val => setAttributes({
           buttonWidth: val
@@ -5965,7 +5981,7 @@ const Style = ({
         units: [(0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.pxUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.remUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.emUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.vwUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.perUnit)()],
         responsive: true
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.SpacingControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Padding :', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Padding :', textDomain),
         value: buttonPadding,
         onChange: val => setAttributes({
           buttonPadding: val
@@ -5981,10 +5997,10 @@ const Style = ({
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border', textDomain),
       initialOpen: false,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.SpacingControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border Radius :', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border Radius :', textDomain),
         value: buttonBorderRadius,
         onChange: val => setAttributes({
           buttonBorderRadius: val
@@ -5999,17 +6015,17 @@ const Style = ({
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('3D Effect', 'guten-builder-blocks'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('3D Effect', textDomain),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enable 3D Effect', 'guten-builder-blocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enable 3D Effect', textDomain),
         checked: enable3DEffect,
         onChange: val => setAttributes({
           enable3DEffect: val
         })
       }), enable3DEffect && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Depth (Translate Y)', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Depth (Translate Y)', textDomain),
           value: buttonOffsetY !== undefined ? buttonOffsetY : -4,
           onChange: val => setAttributes({
             buttonOffsetY: val
@@ -6020,7 +6036,7 @@ const Style = ({
           allowReset: true,
           resetFallbackValue: -4
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Hover Depth (Translate Y)', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Hover Depth (Translate Y)', textDomain),
           value: buttonHoverOffsetY !== undefined ? buttonHoverOffsetY : -6,
           onChange: val => setAttributes({
             buttonHoverOffsetY: val
@@ -6031,13 +6047,13 @@ const Style = ({
           allowReset: true,
           resetFallbackValue: -6
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ShadowControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Box Shadow :', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Box Shadow :', textDomain),
           value: buttonBoxShadow,
           onChange: val => setAttributes({
             buttonBoxShadow: val
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BackgroundControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Edge Background :', 'guten-builder-blocks'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Edge Background :', textDomain),
           value: buttonEdgeBg,
           onChange: val => setAttributes({
             buttonEdgeBg: val
@@ -6088,10 +6104,10 @@ const DynamicStyle = ({
     buttonPadding
   } = attributes || {};
   const mainSl = `#${id}`;
-  const button = `${mainSl} .guten-builder-blocks-button`;
-  const front = `${button} .guten-builder-blocks-button-front`;
-  const shadow = `${button} .guten-builder-blocks-button-shadow`;
-  const edge = `${button} .guten-builder-blocks-button-edge`;
+  const button = `${mainSl} .xpo-button`;
+  const front = `${button} .xpo-button-front`;
+  const shadow = `${button} .xpo-button-shadow`;
+  const edge = `${button} .xpo-button-edge`;
   const getHoverOffset = () => buttonHoverOffsetY !== undefined ? buttonHoverOffsetY : -6;
   const currentOffsetY = buttonOffsetY !== undefined ? buttonOffsetY : -4;
   const effectCss = enable3DEffect !== false ? `
@@ -6134,7 +6150,7 @@ const DynamicStyle = ({
           ${enable3DEffect === false ? `display: none;` : ''}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(buttonEdgeBg) ? `background: ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(buttonEdgeBg)};` : ''}
         }
-        ${button}:hover .guten-builder-blocks-button-front {
+        ${button}:hover .xpo-button-front {
           ${hoverTextColor ? `color: ${hoverTextColor};` : ''}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(hoverButtonBg) ? `background: ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(hoverButtonBg)};` : ''}
         }
@@ -6215,17 +6231,17 @@ const TemplateOne = ({
   } = attributes || {};
   const isEditor = !!setAttributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
-    className: "guten-builder-blocks-button",
+    className: "xpo-button",
     href: buttonUrl || '#',
     target: openInNewTab && buttonUrl ? '_blank' : undefined,
     rel: openInNewTab && buttonUrl ? 'noopener noreferrer' : undefined,
     onClick: e => isEditor && e.preventDefault(),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-      className: "guten-builder-blocks-button-shadow"
+      className: "xpo-button-shadow"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-      className: "guten-builder-blocks-button-edge"
+      className: "xpo-button-edge"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
-      className: "guten-builder-blocks-button-front text",
+      className: "xpo-button-front text",
       children: [" ", buttonText || 'Click me']
     })]
   });
@@ -6277,13 +6293,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./icons */ "./src/blocks/button/utils/icons.js");
 
 
+const textDomain = 'xpo-blocks';
 const templateData = {
-  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select Button Template', 'guten-builder-blocks'),
-  subtitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Choose a design template for your button.', 'guten-builder-blocks'),
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select Button Template', textDomain),
+  subtitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Choose a design template for your button.', textDomain),
   templates: [{
     id: 'template-1',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template 1', 'guten-builder-blocks'),
-    tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('3D Button', 'guten-builder-blocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template 1', textDomain),
+    tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('3D Button', textDomain),
     icon: _icons__WEBPACK_IMPORTED_MODULE_1__.TemplateOneSvg,
     attributes: {
       buttonWidth: {
@@ -6448,6 +6465,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-blocks';
 const generalStyleTabs = [{
   name: 'general',
   title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
@@ -6455,7 +6473,7 @@ const generalStyleTabs = [{
       display: 'inline-flex',
       alignItems: 'center'
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.GeneralIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('General', 'guten-builder-blocks')]
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.GeneralIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('General', textDomain)]
   })
 }, {
   name: 'style',
@@ -6464,7 +6482,7 @@ const generalStyleTabs = [{
       display: 'inline-flex',
       alignItems: 'center'
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.StyleIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style', 'guten-builder-blocks')]
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.StyleIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style', textDomain)]
   })
 }];
 
@@ -6750,7 +6768,7 @@ module.exports = window["wp"]["i18n"];
   \**************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"guten-builder-blocks/button","version":"1.0.0","title":"Button","category":"xpo-block","icon":"button","description":"Add high-converting call-to-action (CTA) buttons with customizable styling, hover animations, and dynamic 3D effects to boost engagement.","textdomain":"guten-builder-blocks","attributes":{"selectedTemplate":{"type":"string","default":""},"buttonText":{"type":"string","default":""},"buttonAlign":{"type":"string","default":"center"},"buttonUrl":{"type":"string","default":""},"openInNewTab":{"type":"boolean","default":false},"textColor":{"type":"string"},"buttonBg":{"type":"object"},"hoverTextColor":{"type":"string"},"hoverButtonBg":{"type":"object"},"buttonBorderRadius":{"type":"object"},"buttonOffsetY":{"type":"number","default":-4},"buttonHoverOffsetY":{"type":"number","default":-6},"buttonEdgeBg":{"type":"object"},"buttonBoxShadow":{"type":"object"},"enable3DEffect":{"type":"boolean","default":true},"buttonWidth":{"type":"object"},"buttonPadding":{"type":"object"}},"supports":{"html":false,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"xpo-block/button","version":"1.0.0","title":"Button","category":"xpo-block","icon":"button","description":"Add high-converting call-to-action (CTA) buttons with customizable styling, hover animations, and dynamic 3D effects to boost engagement.","textdomain":"xpo-block","attributes":{"selectedTemplate":{"type":"string","default":""},"buttonText":{"type":"string","default":""},"buttonAlign":{"type":"string","default":"center"},"buttonUrl":{"type":"string","default":""},"openInNewTab":{"type":"boolean","default":false},"textColor":{"type":"string"},"buttonBg":{"type":"object"},"hoverTextColor":{"type":"string"},"hoverButtonBg":{"type":"object"},"buttonBorderRadius":{"type":"object"},"buttonOffsetY":{"type":"number","default":-4},"buttonHoverOffsetY":{"type":"number","default":-6},"buttonEdgeBg":{"type":"object"},"buttonBoxShadow":{"type":"object"},"enable3DEffect":{"type":"boolean","default":true},"buttonWidth":{"type":"object"},"buttonPadding":{"type":"object"}},"supports":{"html":false,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
 
 /***/ }
 

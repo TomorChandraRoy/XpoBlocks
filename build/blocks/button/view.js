@@ -296,8 +296,11 @@ const navCategories = [{
     key: "button",
     label: "Action Button"
   }, {
-    key: "contact-form",
-    label: "Contact Form"
+    key: "newsletter-card",
+    label: "Newsletter Card"
+  }, {
+    key: "divider",
+    label: "Divider"
   }, {
     key: "marquee",
     label: "Marquee Slider"
@@ -441,14 +444,23 @@ const docsContentData = {
     features: ["Gradient backgrounds and neon glow shadows", "Integrated dashicon & SVG icon alignment", "Hover scale and lift animations", "Target window options (_self or _blank)"],
     usageSteps: ["Add the 'Action Button' block to any content section.", "Type your button text and enter the target URL.", "Select icon position (Left or Right) and adjust border radius.", "Customize background gradients and hover state effects."]
   },
-  "contact-form": {
+  "newsletter-card": {
     category: "How To Use",
-    title: "Contact Form",
-    breadcrumb: ["Docs", "How To Use", "Contact Form"],
-    summary: "Clean, responsive contact form block with built-in AJAX submission, input validation, and customizable fields.",
-    details: "Receive inquiries directly to your email without needing heavy third-party form plugins.",
-    features: ["Field builder for Name, Email, Subject, and Message", "AJAX submission without page reloads", "Custom success toast and error notification messages", "Admin email receiver configuration"],
-    usageSteps: ["Insert the 'Contact Form' block into your page or contact section.", "Specify the recipient email address in block settings.", "Customize input placeholder text, submit button label, and button styling.", "Publish page and test submission."]
+    title: "Newsletter Card",
+    breadcrumb: ["Docs", "How To Use", "Newsletter Card"],
+    summary: "Capture lead emails with modern newsletter subscription cards featuring gradient accents, input validation, and custom CTA buttons.",
+    details: "Designed to boost email list signups, offer lead magnets, and collect subscriber emails seamlessly in Gutenberg layouts.",
+    features: ["Custom title, subtitle, and subscriber input fields", "Customizable button text, colors, and success notifications", "Responsive card layouts with background styling and border radius controls", "Integration-ready form submission"],
+    usageSteps: ["Insert the 'Newsletter Card' block onto your page.", "Customize title, description, and input placeholder text in settings.", "Style the subscription button, card background, and typography.", "Publish your page to collect subscriber emails."]
+  },
+  divider: {
+    category: "How To Use",
+    title: "Divider",
+    breadcrumb: ["Docs", "How To Use", "Divider"],
+    summary: "Add a customizable dividing line with text or icon presets to separate content and improve layout hierarchy.",
+    details: "Break up long content sections with styled divider lines, custom thickness, color pickers, and centered icons or text labels.",
+    features: ["Preset templates (Text Divider, Icon Divider, Simple Line)", "Customizable width, height/thickness, and line colors", "Typography control for center text and SVG icon size pickers", "Responsive spacing and viewport width controls"],
+    usageSteps: ["Add the 'Divider' block between your content sections.", "Select your preferred template preset (Text or Icon).", "Adjust width, thickness, and line color in the inspector sidebar.", "Publish page to display styled dividing lines."]
   },
   marquee: {
     category: "How To Use",
@@ -5645,10 +5657,10 @@ const DynamicStyle = ({
     buttonPadding
   } = attributes || {};
   const mainSl = `#${id}`;
-  const button = `${mainSl} .guten-builder-blocks-button`;
-  const front = `${button} .guten-builder-blocks-button-front`;
-  const shadow = `${button} .guten-builder-blocks-button-shadow`;
-  const edge = `${button} .guten-builder-blocks-button-edge`;
+  const button = `${mainSl} .xpo-button`;
+  const front = `${button} .xpo-button-front`;
+  const shadow = `${button} .xpo-button-shadow`;
+  const edge = `${button} .xpo-button-edge`;
   const getHoverOffset = () => buttonHoverOffsetY !== undefined ? buttonHoverOffsetY : -6;
   const currentOffsetY = buttonOffsetY !== undefined ? buttonOffsetY : -4;
   const effectCss = enable3DEffect !== false ? `
@@ -5691,7 +5703,7 @@ const DynamicStyle = ({
           ${enable3DEffect === false ? `display: none;` : ''}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(buttonEdgeBg) ? `background: ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(buttonEdgeBg)};` : ''}
         }
-        ${button}:hover .guten-builder-blocks-button-front {
+        ${button}:hover .xpo-button-front {
           ${hoverTextColor ? `color: ${hoverTextColor};` : ''}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(hoverButtonBg) ? `background: ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(hoverButtonBg)};` : ''}
         }
@@ -5772,17 +5784,17 @@ const TemplateOne = ({
   } = attributes || {};
   const isEditor = !!setAttributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
-    className: "guten-builder-blocks-button",
+    className: "xpo-button",
     href: buttonUrl || '#',
     target: openInNewTab && buttonUrl ? '_blank' : undefined,
     rel: openInNewTab && buttonUrl ? 'noopener noreferrer' : undefined,
     onClick: e => isEditor && e.preventDefault(),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-      className: "guten-builder-blocks-button-shadow"
+      className: "xpo-button-shadow"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-      className: "guten-builder-blocks-button-edge"
+      className: "xpo-button-edge"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
-      className: "guten-builder-blocks-button-front text",
+      className: "xpo-button-front text",
       children: [" ", buttonText || 'Click me']
     })]
   });
@@ -5811,7 +5823,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const containers = document.querySelectorAll('.wp-block-guten-builder-blocks-button');
+  const containers = document.querySelectorAll('.wp-block-xpo-block-button');
   containers.forEach(container => {
     if (container.dataset.initialized) return;
     container.dataset.initialized = 'true';

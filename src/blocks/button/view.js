@@ -7,7 +7,7 @@ import DynamicStyle from './Components/Common/DynamicStyle';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  const containers = document.querySelectorAll('.wp-block-guten-builder-blocks-button');
+  const containers = document.querySelectorAll('.wp-block-xpo-block-button');
 
   containers.forEach(container => {
 

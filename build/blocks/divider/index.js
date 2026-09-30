@@ -296,8 +296,11 @@ const navCategories = [{
     key: "button",
     label: "Action Button"
   }, {
-    key: "contact-form",
-    label: "Contact Form"
+    key: "newsletter-card",
+    label: "Newsletter Card"
+  }, {
+    key: "divider",
+    label: "Divider"
   }, {
     key: "marquee",
     label: "Marquee Slider"
@@ -441,14 +444,23 @@ const docsContentData = {
     features: ["Gradient backgrounds and neon glow shadows", "Integrated dashicon & SVG icon alignment", "Hover scale and lift animations", "Target window options (_self or _blank)"],
     usageSteps: ["Add the 'Action Button' block to any content section.", "Type your button text and enter the target URL.", "Select icon position (Left or Right) and adjust border radius.", "Customize background gradients and hover state effects."]
   },
-  "contact-form": {
+  "newsletter-card": {
     category: "How To Use",
-    title: "Contact Form",
-    breadcrumb: ["Docs", "How To Use", "Contact Form"],
-    summary: "Clean, responsive contact form block with built-in AJAX submission, input validation, and customizable fields.",
-    details: "Receive inquiries directly to your email without needing heavy third-party form plugins.",
-    features: ["Field builder for Name, Email, Subject, and Message", "AJAX submission without page reloads", "Custom success toast and error notification messages", "Admin email receiver configuration"],
-    usageSteps: ["Insert the 'Contact Form' block into your page or contact section.", "Specify the recipient email address in block settings.", "Customize input placeholder text, submit button label, and button styling.", "Publish page and test submission."]
+    title: "Newsletter Card",
+    breadcrumb: ["Docs", "How To Use", "Newsletter Card"],
+    summary: "Capture lead emails with modern newsletter subscription cards featuring gradient accents, input validation, and custom CTA buttons.",
+    details: "Designed to boost email list signups, offer lead magnets, and collect subscriber emails seamlessly in Gutenberg layouts.",
+    features: ["Custom title, subtitle, and subscriber input fields", "Customizable button text, colors, and success notifications", "Responsive card layouts with background styling and border radius controls", "Integration-ready form submission"],
+    usageSteps: ["Insert the 'Newsletter Card' block onto your page.", "Customize title, description, and input placeholder text in settings.", "Style the subscription button, card background, and typography.", "Publish your page to collect subscriber emails."]
+  },
+  divider: {
+    category: "How To Use",
+    title: "Divider",
+    breadcrumb: ["Docs", "How To Use", "Divider"],
+    summary: "Add a customizable dividing line with text or icon presets to separate content and improve layout hierarchy.",
+    details: "Break up long content sections with styled divider lines, custom thickness, color pickers, and centered icons or text labels.",
+    features: ["Preset templates (Text Divider, Icon Divider, Simple Line)", "Customizable width, height/thickness, and line colors", "Typography control for center text and SVG icon size pickers", "Responsive spacing and viewport width controls"],
+    usageSteps: ["Add the 'Divider' block between your content sections.", "Select your preferred template preset (Text or Icon).", "Adjust width, thickness, and line color in the inspector sidebar.", "Publish page to display styled dividing lines."]
   },
   marquee: {
     category: "How To Use",
@@ -5662,6 +5674,7 @@ const Edit = props => {
       })
     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
       ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
+        id,
         style: {
           padding: '3px'
         }
@@ -6808,7 +6821,7 @@ module.exports = window["wp"]["i18n"];
   \***************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"xpo-blocks/divider","version":"1.0.0","title":"Divider","category":"xpo-block","description":"Add a customizable dividing line to separate your content and improve page layout.","textdomain":"xpo-blocks","attributes":{"selectedTemplate":{"type":"string","default":""},"dividerType":{"type":"string","default":"text"},"text":{"type":"string","default":"Text"},"iconName":{"type":"string","default":"tabler--crown"},"dividerWidth":{"type":"object"},"dividerHeight":{"type":"object"},"dividerColor":{"type":"string","default":""},"textTypography":{"type":"object"},"iconSize":{"type":"object"}},"supports":{"html":false,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"xpo-block/divider","version":"1.0.0","title":"Divider","category":"xpo-block","description":"Add a customizable dividing line to separate your content and improve page layout.","textdomain":"xpo-blocks","attributes":{"selectedTemplate":{"type":"string","default":""},"dividerType":{"type":"string","default":"text"},"text":{"type":"string","default":"Text"},"iconName":{"type":"string","default":"tabler--crown"},"dividerWidth":{"type":"object"},"dividerHeight":{"type":"object"},"dividerColor":{"type":"string","default":""},"textTypography":{"type":"object"},"iconSize":{"type":"object"}},"supports":{"html":false,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","viewScript":"file:./view.js","render":"file:./render.php"}');
 
 /***/ }
 
