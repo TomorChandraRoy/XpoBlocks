@@ -8,7 +8,7 @@
   align-items: flex-start;
   gap: 40px;
   position: relative;
-  padding: 0px 8px;
+  padding: 0 8px;
 }
 .wp-block-xpo-block-scroll-story .xpo-scroll-story-container.layout-sticky-left {
   flex-direction: row-reverse;

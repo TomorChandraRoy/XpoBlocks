@@ -39,8 +39,8 @@
 .wp-xpo-tab-panel .components-tab-panel__tabs .components-tab-panel__tabs-item.wp-xpo-tab-panel-active-tab, .wp-xpo-tab-panel .components-tab-panel__tabs .components-tab-panel__tabs-item.is-active,
 .wp-xpo-tab-panel .components-tab-panel__tabs .components-button.wp-xpo-tab-panel-active-tab,
 .wp-xpo-tab-panel .components-tab-panel__tabs .components-button.is-active {
-  color: #F62477;
-  border-bottom-color: #F62477;
+  color: #f62477;
+  border-bottom-color: #f62477;
   font-weight: 600;
 }
 

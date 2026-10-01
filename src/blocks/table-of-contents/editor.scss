@@ -1,24 +1,26 @@
 /* Editor specific styling for Table of Contents block */
 .wp-block-xpo-block-table-of-contents,
 .xpo-toc-wrapper {
-  .xpo-toc-link {
-    outline: none !important;
-    box-shadow: none !important;
 
-    *:focus,
-    span:focus,
-    [contenteditable]:focus {
-      outline: none !important;
-      box-shadow: none !important;
-    }
-  }
+	.xpo-toc-link {
+		outline: none !important;
+		box-shadow: none !important;
 
-  .xpo-toc-container {
-    .xpo-toc-empty-msg {
-      text-align: center;
-      padding: 20px;
-      color: #718096;
-      font-style: italic;
-    }
-  }
+		*:focus,
+		span:focus,
+		[contenteditable]:focus {
+			outline: none !important;
+			box-shadow: none !important;
+		}
+	}
+
+	.xpo-toc-container {
+
+		.xpo-toc-empty-msg {
+			text-align: center;
+			padding: 20px;
+			color: #718096;
+			font-style: italic;
+		}
+	}
 }

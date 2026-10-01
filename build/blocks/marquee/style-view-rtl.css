@@ -191,7 +191,8 @@
   width: auto;
   object-fit: contain;
 }
-.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track .xpo-mq-group .xpo-mq-item a:focus, .wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track .xpo-mq-group .xpo-mq-item img:focus,
+.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track .xpo-mq-group .xpo-mq-item a:focus,
+.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track .xpo-mq-group .xpo-mq-item img:focus,
 .xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track .xpo-mq-group .xpo-mq-item a:focus,
 .xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track .xpo-mq-group .xpo-mq-item img:focus {
   outline: none !important;

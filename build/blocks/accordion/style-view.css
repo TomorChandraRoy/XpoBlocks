@@ -63,7 +63,7 @@
   padding: 16px;
   border-radius: 6px;
   box-sizing: border-box;
-  background-color: #ffffff;
+  background-color: #fff;
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 .wp-block-xpo-block-accordion .xpo-template-one-wapper .xpo-faq-header:hover {
@@ -125,7 +125,7 @@
   font-size: 1.875rem;
   font-weight: 600;
   text-align: center;
-  margin: 8px 0px;
+  margin: 8px 0;
 }
 .wp-block-xpo-block-accordion .xpo-template-two-wapper .xpo-faq-description {
   font-size: 0.875rem;

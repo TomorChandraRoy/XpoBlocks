@@ -1,48 +1,48 @@
 .wp-block-xpo-block-divider {
-  width: 100%;
-  .xpo-divider {
-	display: flex;
-	align-items: center;
 	width: 100%;
-  margin: 0 auto;
-	color: #6b7280;
-	font-size: 14px;
-	line-height: 1;
 
-	&::before,
-	&::after {
-		content: '';
-		flex: 1;
-		height: 1px;
-		background-color: #d1d5db;
-	}
-
-	&::before {
-		margin-right: 12px;
-	}
-
-	&::after {
-		margin-left: 12px;
-	}
-
-	.xpo-divider-icon-wrapper {
+	.xpo-divider {
 		display: flex;
 		align-items: center;
-		justify-content: center;
-		flex-shrink: 0;
-	}
+		width: 100%;
+		margin: 0 auto;
+		color: #6b7280;
+		font-size: 14px;
+		line-height: 1;
 
-	.xpo-divider-icon {
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		&::before,
+		&::after {
+			content: "";
+			flex: 1;
+			height: 1px;
+			background-color: #d1d5db;
+		}
+
+		&::before {
+			margin-right: 12px;
+		}
+
+		&::after {
+			margin-left: 12px;
+		}
+
+		.xpo-divider-icon-wrapper {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-shrink: 0;
+		}
+
+		.xpo-divider-icon {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
 	}
-}
 }
 
 .xpo-block-divider-template-2 .xpo-divider::before,
 .xpo-block-divider-template-2 .xpo-divider::after {
 	margin: 0 !important;
 }
-
 

@@ -5,13 +5,13 @@ if (!defined('ABSPATH')) {
 }
 
 // প্রতিটি ব্লকের জন্য একটি ইউনিক আইডি (Unique Block ID) তৈরি করা
-$block_id = wp_unique_id( 'xpo-block-faq-' );
+$xpo_block_id = wp_unique_id( 'xpo-block-faq-' );
 
 // কাস্টম কন্টেইনার ক্লাস এবং ইউনিক আইডি একসাথে অ্যারে হিসেবে রাখা
-$wrapper_classes = array( 'xpo-accordion-container', $block_id );
+$xpo_wrapper_classes = array( 'xpo-accordion-container', $xpo_block_id );
 
 // WordPress Gutenberg-এর ডিফল্ট অ্যাট্রিবিউট (margin, padding, class) এবং আমাদের কাস্টম ক্লাসগুলোকে একসাথে মার্জ করা
-$wrapper_attrs = get_block_wrapper_attributes( array( 'class' => implode( ' ', $wrapper_classes ) ) );
+$xpo_wrapper_attrs = get_block_wrapper_attributes( array( 'class' => implode( ' ', $xpo_wrapper_classes ) ) );
 ?>
 
 <?php
@@ -20,8 +20,8 @@ $wrapper_attrs = get_block_wrapper_attributes( array( 'class' => implode( ' ', $
 ?>
 
 <div
-	<?php echo $wrapper_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-	id="<?php echo esc_attr( $block_id ); ?>"
+	<?php echo $xpo_wrapper_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+	id="<?php echo esc_attr( $xpo_block_id ); ?>"
 	data-attributes='<?php echo esc_attr( wp_json_encode( $attributes ) ); ?>'
 ></div>
 

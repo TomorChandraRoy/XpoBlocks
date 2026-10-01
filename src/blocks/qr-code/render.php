@@ -8,18 +8,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Generate a unique block ID if not provided
-$block_id = ! empty( $attributes['blockId'] ) ? sanitize_html_class( $attributes['blockId'] ) : wp_unique_id( 'xpo-block-qr-' );
+$xpo_block_id = ! empty( $attributes['blockId'] ) ? sanitize_html_class( $attributes['blockId'] ) : wp_unique_id( 'xpo-block-qr-' );
 
 // Prepare necessary custom classes for the wrapper as an array
-$wrapper_classes = array( 'xpo-block-qr-container', $block_id );
+$xpo_wrapper_classes = array( 'xpo-block-qr-container', $xpo_block_id );
 
-$wrapper_attrs = get_block_wrapper_attributes( array(
-	'class' => implode( ' ', $wrapper_classes ),
+$xpo_wrapper_attrs = get_block_wrapper_attributes( array(
+	'class' => implode( ' ', $xpo_wrapper_classes ),
 ) );
 ?>
 
 <div
-	<?php echo $wrapper_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-	id="<?php echo esc_attr( $block_id ); ?>"
+	<?php echo $xpo_wrapper_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+	id="<?php echo esc_attr( $xpo_block_id ); ?>"
 	data-attributes='<?php echo esc_attr( wp_json_encode( $attributes ) ); ?>'
 ></div>

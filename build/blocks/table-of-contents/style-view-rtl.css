@@ -19,7 +19,7 @@
 .wp-block-xpo-block-table-of-contents .xpo-toc-sticky-box {
   position: sticky;
   top: 24px;
-  background-color: #ffffff;
+  background-color: #fff;
   border: 1px solid #e5e7eb;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   overflow: hidden;
@@ -148,7 +148,7 @@
 }
 .wp-block-xpo-block-table-of-contents .xpo-toc-content-area {
   flex: 1;
-  background: #ffffff;
+  background: #fff;
   border: 1px solid #e5e7eb;
   padding: 32px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);

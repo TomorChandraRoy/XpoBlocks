@@ -586,7 +586,7 @@ const AllBlocks = props => {
   const saveSettings = () => {
     setIsSaving(true);
     _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1___default()({
-      path: "/guten-builder/v1/settings",
+      path: "/xpo-block/v1/settings",
       method: "POST",
       data: {
         activeBlocks: blocksState

@@ -100,7 +100,7 @@ if ( !class_exists( 'Xpo_Block_API' ) ) {
 				'pluginVersion'    => defined( 'XPO_BLOCK_VERSION' ) ? XPO_BLOCK_VERSION : '1.0.0',
 				'wpVersion'        => isset( $wp_version ) ? $wp_version : get_bloginfo( 'version' ),
 				'phpVersion'       => phpversion(),
-				'serverSoftware'   => isset( $_SERVER['SERVER_SOFTWARE'] ) ? sanitize_text_field( $_SERVER['SERVER_SOFTWARE'] ) : 'Web Server',
+				'serverSoftware'   => isset( $_SERVER['SERVER_SOFTWARE'] ) ? sanitize_text_field( wp_unslash( $_SERVER['SERVER_SOFTWARE'] ) ) : 'Web Server',
 				'maxUploadSize'    => size_format( wp_max_upload_size() ),
 				'memoryLimit'      => defined( 'WP_MEMORY_LIMIT' ) ? WP_MEMORY_LIMIT : '256M',
 			];
@@ -151,11 +151,12 @@ if ( !class_exists( 'Xpo_Block_API' ) ) {
 				'email' => $email,
 				'date'  => current_time( 'mysql' ),
 			];
-			update_option( 'xpo-block_newsletter_subscribers', $subscribers );
+			update_option( 'xpo_block_newsletter_subscribers', $subscribers );
 
 			$admin_email = get_option( 'admin_email' );
 			if ( ! empty( $admin_email ) ) {
 				$subject    = __( 'New Newsletter Subscriber', 'xpo-block' );
+				/* translators: %s: Subscriber email address. */
 				$message    = sprintf( __( 'New subscriber added: %s', 'xpo-block' ), $email );
 				$from_email = is_email( $admin_email ) ? $admin_email : 'admin@example.com';
 				$site_name  = get_bloginfo( 'name' );

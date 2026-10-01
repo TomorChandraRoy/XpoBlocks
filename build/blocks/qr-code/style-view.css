@@ -59,7 +59,7 @@
   z-index: 2;
 }
 .wp-block-xpo-block-qr-code .xpo-qr-logo-overlay.with-bg {
-  background: #ffffff;
+  background: #fff;
   border-radius: 50%;
   padding: 4px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
@@ -83,7 +83,7 @@
   padding: 10px 22px;
   font-size: 0.92rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #fff;
   border: none;
   border-radius: 8px;
   cursor: pointer;

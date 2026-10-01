@@ -89,9 +89,10 @@ if ( !class_exists( 'Xpo_Block_Core' ) ) {
 		 * আওতায় থাকা সকল টেক্সট ও লেবেল অন্যান্য ভাষায় অনুবাদ করা সম্ভব হয়।
 		 */
 		public static function load_textdomain() {
+			// phpcs:ignore PluginCheck.CodeAnalysis.DiscouragedFunctions.load_plugin_textdomainFound
 			load_plugin_textdomain( 'xpo-block', false, dirname( XPO_BLOCK_BASENAME ) . '/languages' );
 		}
-
+ 
 
 	// Register custom block category
 	public static function register_block_category( $categories, $post_or_context = null ) {

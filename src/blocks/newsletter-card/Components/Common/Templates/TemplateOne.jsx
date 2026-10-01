@@ -35,7 +35,7 @@ const TemplateOne = ({ attributes, setAttributes }) => {
     setStatus({ type: '', message: '' });
 
     try {
-      const response = await fetch('/wp-json/guten-builder/v1/subscribe', {
+      const response = await fetch('/wp-json/xpo-block/v1/subscribe', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

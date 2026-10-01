@@ -1,206 +1,212 @@
-.wp-block-xpo-block-pricing-table{
-.xpo-pricing-container {
-  box-sizing: border-box;
-  width: 100%;
-  padding: 32px 16px;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: inherit;
+.wp-block-xpo-block-pricing-table {
+
+	.xpo-pricing-container {
+		box-sizing: border-box;
+		width: 100%;
+		padding: 32px 16px;
+		margin-left: auto;
+		margin-right: auto;
+		font-family: inherit;
 
 
-  @media (min-width: 640px) {
-    padding: 48px 24px;
-  }
-  @media (min-width: 1024px) {
-    padding: 64px 32px;
-  }
+		@media (min-width: 640px) {
+			padding: 48px 24px;
+		}
 
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
+		@media (min-width: 1024px) {
+			padding: 64px 32px;
+		}
 
-  .xpo-pricing-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
+		*,
+ *::before,
+ *::after {
+			box-sizing: border-box;
+		}
 
-    @media (min-width: 640px) {
-      grid-template-columns: repeat(2, 1fr);
-      align-items: stretch;
-    }
-    @media (min-width: 768px) {
-      gap: 24px;
-    }
-    @media (min-width: 1024px) {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-    }
-  }
+		.xpo-pricing-grid {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 16px;
 
-  .xpo-pricing-card {
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    border: 1px solid #e5e7eb;
-    border-radius: 1rem;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    overflow: hidden;
+			@media (min-width: 640px) {
+				grid-template-columns: repeat(2, 1fr);
+				align-items: stretch;
+			}
 
-    position: relative;
+			@media (min-width: 768px) {
+				gap: 24px;
+			}
 
-    &.is-featured {
-      box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.1), 0 4px 6px -2px rgba(79, 70, 229, 0.05);
-    }
+			@media (min-width: 1024px) {
+				grid-template-columns: repeat(3, 1fr);
+				gap: 32px;
+			}
+		}
 
-    .xpo-pricing-badge {
-      position: absolute;
-      top: 0;
-      right: 0;
-      background-color: #4f46e5;
-      color: #ffffff;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      padding: 4px 12px;
-      z-index: 10;
-    }
+		.xpo-pricing-card {
+			display: flex;
+			flex-direction: column;
+			background-color: #fff;
+			border: 1px solid #e5e7eb;
+			border-radius: 1rem;
+			box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+			overflow: hidden;
 
-    .xpo-pricing-card-top {
-      padding: 16px;
-      border-bottom: 1px solid #e5e7eb;
+			position: relative;
 
-      @media (min-width: 640px) {
-        padding: 24px 32px;
-      }
-    }
+			&.is-featured {
+				box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.1), 0 4px 6px -2px rgba(79, 70, 229, 0.05);
+			}
 
-    .xpo-pricing-name {
-      font-size: 1.125rem;
-      font-weight: 500;
-      color: #111827;
-      margin: 0;
-    }
+			.xpo-pricing-badge {
+				position: absolute;
+				top: 0;
+				right: 0;
+				background-color: #4f46e5;
+				color: #fff;
+				font-size: 0.75rem;
+				font-weight: 700;
+				text-transform: uppercase;
+				padding: 4px 12px;
+				z-index: 10;
+			}
 
-    .xpo-pricing-desc {
-      margin-top: 8px;
-      color: #374151;
-      font-size: 15px;
-      line-height: 1.5;
-    }
+			.xpo-pricing-card-top {
+				padding: 16px;
+				border-bottom: 1px solid #e5e7eb;
 
-    .xpo-pricing-price-wrap {
-      margin-top: 8px;
-      display: flex;
-      align-items: baseline;
-      flex-wrap: wrap;
+				@media (min-width: 640px) {
+					padding: 24px 32px;
+				}
+			}
 
-      @media (min-width: 640px) {
-        margin-top: 16px;
-      }
-    }
+			.xpo-pricing-name {
+				font-size: 1.125rem;
+				font-weight: 500;
+				color: #111827;
+				margin: 0;
+			}
 
-    .xpo-pricing-price {
-      font-size: 1.875rem;
-      font-weight: 700;
-      color: #111827;
+			.xpo-pricing-desc {
+				margin-top: 8px;
+				color: #374151;
+				font-size: 15px;
+				line-height: 1.5;
+			}
 
-      @media (min-width: 640px) {
-        font-size: 2.25rem;
-      }
-    }
+			.xpo-pricing-price-wrap {
+				margin-top: 8px;
+				display: flex;
+				align-items: baseline;
+				flex-wrap: wrap;
 
-    .xpo-pricing-period {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: #374151;
-      margin-left: 4px;
-    }
+				@media (min-width: 640px) {
+					margin-top: 16px;
+				}
+			}
 
-    .xpo-pricing-button {
-      display: block;
-      margin-top: 16px;
-      padding: 10px 16px;
-      text-align: center;
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: #ffffff;
-      background-color: #4f46e5;
-      border: 1px solid #4f46e5;
-      border-radius: 0.125rem;
-      text-decoration: none;
-      word-break: keep-all;
-      overflow-wrap: normal;
-      transition: all 0.2s ease;
+			.xpo-pricing-price {
+				font-size: 1.875rem;
+				font-weight: 700;
+				color: #111827;
 
-      @media (min-width: 640px) {
-        margin-top: 24px;
-        padding: 12px 24px;
-      }
+				@media (min-width: 640px) {
+					font-size: 2.25rem;
+				}
+			}
 
-      &:hover {
-        background-color: transparent;
-        color: #4f46e5;
-      }
-    }
+			.xpo-pricing-period {
+				font-size: 0.875rem;
+				font-weight: 500;
+				color: #374151;
+				margin-left: 4px;
+			}
 
-    .xpo-pricing-card-bottom {
-      padding: 16px;
-      flex-grow: 1;
+			.xpo-pricing-button {
+				display: block;
+				margin-top: 16px;
+				padding: 10px 16px;
+				text-align: center;
+				font-size: 0.875rem;
+				font-weight: 500;
+				color: #fff;
+				background-color: #4f46e5;
+				border: 1px solid #4f46e5;
+				border-radius: 0.125rem;
+				text-decoration: none;
+				word-break: keep-all;
+				overflow-wrap: normal;
+				transition: all 0.2s ease;
 
-      @media (min-width: 640px) {
-        padding: 24px 32px;
-      }
-    }
+				@media (min-width: 640px) {
+					margin-top: 24px;
+					padding: 12px 24px;
+				}
 
-    .xpo-features-title {
-      font-size: 1.125rem;
-      font-weight: 500;
-      color: #111827;
-      margin: 0;
+				&:hover {
+					background-color: transparent;
+					color: #4f46e5;
+				}
+			}
 
-      @media (min-width: 640px) {
-        font-size: 1.25rem;
-      }
-    }
+			.xpo-pricing-card-bottom {
+				padding: 16px;
+				flex-grow: 1;
 
-    .xpo-features-list {
-      margin-top: 8px;
-      padding: 0;
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
+				@media (min-width: 640px) {
+					padding: 24px 32px;
+				}
+			}
 
-      @media (min-width: 640px) {
-        margin-top: 16px;
-      }
-    }
+			.xpo-features-title {
+				font-size: 1.125rem;
+				font-weight: 500;
+				color: #111827;
+				margin: 0;
 
-    .xpo-feature-item {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-    }
+				@media (min-width: 640px) {
+					font-size: 1.25rem;
+				}
+			}
 
-    .xpo-icon-success {
-      width: 21px;
-      height: 21px;
-      color: #4338ca;
-      flex-shrink: 0;
-      display: inline-flex;
-    }
+			.xpo-features-list {
+				margin-top: 8px;
+				padding: 0;
+				list-style: none;
+				display: flex;
+				flex-direction: column;
+				gap: 8px;
 
-    .xpo-icon-error {
-      width: 21px;
-      height: 21px;
-      color: #b91c1c;
-      flex-shrink: 0;
-    }
+				@media (min-width: 640px) {
+					margin-top: 16px;
+				}
+			}
 
-    .xpo-feature-text {
-      color: #374151;
-      font-size: 1rem;
-    }
-  }
+			.xpo-feature-item {
+				display: flex;
+				align-items: center;
+				gap: 7px;
+			}
+
+			.xpo-icon-success {
+				width: 21px;
+				height: 21px;
+				color: #4338ca;
+				flex-shrink: 0;
+				display: inline-flex;
+			}
+
+			.xpo-icon-error {
+				width: 21px;
+				height: 21px;
+				color: #b91c1c;
+				flex-shrink: 0;
+			}
+
+			.xpo-feature-text {
+				color: #374151;
+				font-size: 1rem;
+			}
+		}
+	}
 }
-} 

@@ -70,18 +70,18 @@ if ( !class_exists( 'Xpo_Block_Admin' ) ) {
 
 		public static function render_subscribers_page() {
 			if ( ! current_user_can( 'manage_options' ) ) {
-				wp_die( __( 'You do not have sufficient permissions to access this page.', 'xpo-block' ) );
+				wp_die( esc_html__( 'You do not have sufficient permissions to access this page.', 'xpo-block' ) );
 			}
 
 			$deleted_notice = false;
 
 			// Handle subscriber delete action
-			if ( isset( $_GET['action'] ) && 'delete' === $_GET['action'] && isset( $_GET['email'] ) ) {
+			if ( isset( $_GET['action'], $_GET['email'], $_GET['_wpnonce'] ) && 'delete' === sanitize_text_field( wp_unslash( $_GET['action'] ) ) ) {
+				$nonce           = sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) );
 				$email_to_delete = sanitize_email( wp_unslash( $_GET['email'] ) );
-				$nonce           = isset( $_GET['_wpnonce'] ) ? $_GET['_wpnonce'] : '';
 
 				if ( wp_verify_nonce( $nonce, 'xpo_block_delete_subscriber_' . $email_to_delete ) ) {
-					$subscribers = get_option( 'xpo-block_newsletter_subscribers', [] );
+					$subscribers = get_option( 'xpo_block_newsletter_subscribers', [] );
 					if ( is_array( $subscribers ) ) {
 						$updated_subscribers = [];
 						foreach ( $subscribers as $sub ) {
@@ -90,13 +90,13 @@ if ( !class_exists( 'Xpo_Block_Admin' ) ) {
 								$updated_subscribers[] = $sub;
 							}
 						}
-						update_option( 'xpo-block_newsletter_subscribers', $updated_subscribers );
+						update_option( 'xpo_block_newsletter_subscribers', $updated_subscribers );
 						$deleted_notice = true;
 					}
 				}
 			}
 
-			$subscribers = get_option( 'xpo-block_newsletter_subscribers', [] );
+			$subscribers = get_option( 'xpo_block_newsletter_subscribers', [] );
 			if ( ! is_array( $subscribers ) ) {
 				$subscribers = [];
 			}
@@ -132,7 +132,10 @@ if ( !class_exists( 'Xpo_Block_Admin' ) ) {
 				<div style="margin-top: 20px; max-width: 950px;">
 					<div style="background: #fff; border: 1px solid #c3c4c7; border-radius: 4px; padding: 15px 20px; margin-bottom: 15px;">
 						<strong style="font-size: 16px; color: #1d2327;">
-							<?php printf( esc_html__( 'Total Subscribers: %d', 'xpo-block' ), count( $subscribers ) ); ?>
+							<?php
+							/* translators: %d: Total number of subscribers. */
+							printf( esc_html__( 'Total Subscribers: %d', 'xpo-block' ), count( $subscribers ) );
+							?>
 						</strong>
 					</div>
 

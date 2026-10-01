@@ -2,6 +2,7 @@
 
 /* ব্লক এডিটর সাইডবারের TabPanel (যেমন: General / Style ট্যাব)-এর হেডার ট্যাব আইটেম এবং অ্যাক্টিভ ট্যাবের স্টাইলিং */
 .wp-xpo-tab-panel {
+
 	.components-tab-panel__tabs {
 		display: flex;
 		border-bottom: 1px solid #e0e0e0;
@@ -23,8 +24,8 @@
 			transition: all 0.3s ease;
 
 			&.wp-xpo-tab-panel-active-tab {
-				color: #F62477;
-				border-bottom-color: #F62477;
+				color: #f62477;
+				border-bottom-color: #f62477;
 				font-weight: 600;
 			}
 		}

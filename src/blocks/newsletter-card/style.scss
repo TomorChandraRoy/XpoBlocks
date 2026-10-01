@@ -1,146 +1,148 @@
 .wp-block-xpo-block-newsletter-card,
 .xpo-newsletter-card-container {
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 100%;
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 100%;
 
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
 
-  .xpo-newsletter-section {
-    width: 100%;
-    max-width: 100%;
+	.xpo-newsletter-section {
+		width: 100%;
+		max-width: 100%;
 
 
-  }
+	}
 
-  .xpo-newsletter-container {
-    max-width: 72rem;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: column;
-    column-gap: 2rem;
-    row-gap: 2.5rem;
-    background-color: #f9fafb;
-   padding: 2rem 1.5rem;
-    border-radius: 0.5rem;
+	.xpo-newsletter-container {
+		max-width: 72rem;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		display: flex;
+		flex-direction: column;
+		column-gap: 2rem;
+		row-gap: 2.5rem;
+		background-color: #f9fafb;
+		padding: 2rem 1.5rem;
+		border-radius: 0.5rem;
 
-    @media (min-width: 1024px) {
-      align-items: center;
-      flex-direction: row;
-    }
-  }
+		@media (min-width: 1024px) {
+			align-items: center;
+			flex-direction: row;
+		}
+	}
 
-  .xpo-newsletter-content {
-    max-width: 42rem;
-    width: 100%;
-    min-width: 0;
-  }
+	.xpo-newsletter-content {
+		max-width: 42rem;
+		width: 100%;
+		min-width: 0;
+	}
 
-  .xpo-newsletter-title {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-    font-weight: 700;
-    color: #0f172a;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
+	.xpo-newsletter-title {
+		font-size: 1.875rem;
+		line-height: 2.25rem;
+		font-weight: 700;
+		color: #0f172a;
+		margin-top: 0;
+		margin-bottom: 1.5rem;
 
-    @media (min-width: 768px) {
-      font-size: 2.25rem;
-      line-height: 2.5rem;
-    }
-  }
+		@media (min-width: 768px) {
+			font-size: 2.25rem;
+			line-height: 2.5rem;
+		}
+	}
 
-  .xpo-newsletter-description {
-    font-size: 1rem;
-    color: #475569;
-    line-height: 1.625;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  .xpo-newsletter-form-wrapper{
-    max-width: 32rem;
-    width: 100%;
-    .xpo-newsletter-form {
-    max-width: 32rem;
-    width: 100%;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    column-gap: 1rem;
-    row-gap: 1.5rem;
+	.xpo-newsletter-description {
+		font-size: 1rem;
+		color: #475569;
+		line-height: 1.625;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
 
-    @media (min-width: 640px) {
-      flex-direction: row;
-      align-items: center;
-    }
+	.xpo-newsletter-form-wrapper {
+		max-width: 32rem;
+		width: 100%;
 
-    @media (min-width: 1024px) {
-      margin-left: auto;
-    }
+		.xpo-newsletter-form {
+			max-width: 32rem;
+			width: 100%;
+			min-width: 0;
+			display: flex;
+			flex-direction: column;
+			column-gap: 1rem;
+			row-gap: 1.5rem;
 
-      .xpo-newsletter-input {
-    padding: 0.75rem 0.875rem;
-    font-size: 0.875rem;
-    color: #0f172a;
-    border-radius: 0.375rem;
-    background-color: #ffffff;
-    width: 100%;
-    min-width: 0;
-    flex: 1 1 auto;
-    border: 1px solid #cbd5e1;
-    outline: none;
-    box-sizing: border-box;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+			@media (min-width: 640px) {
+				flex-direction: row;
+				align-items: center;
+			}
 
-    &:focus {
-      outline: none;
-      box-shadow: none;
-    }
+			@media (min-width: 1024px) {
+				margin-left: auto;
+			}
 
-    &:-webkit-autofill,
-    &:-webkit-autofill:hover,
-    &:-webkit-autofill:focus,
-    &:-webkit-autofill:active {
-      transition: background-color 50000s ease-in-out 0s;
-      -webkit-text-fill-color: inherit;
-    }
-  }
+			.xpo-newsletter-input {
+				padding: 0.75rem 0.875rem;
+				font-size: 0.875rem;
+				color: #0f172a;
+				border-radius: 0.375rem;
+				background-color: #fff;
+				width: 100%;
+				min-width: 0;
+				flex: 1 1 auto;
+				border: 1px solid #cbd5e1;
+				outline: none;
+				box-sizing: border-box;
+				transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
-  .xpo-newsletter-button {
-    padding: 0.75rem 1rem;
-    font-size: 0.875rem;
-    width: max-content;
-    flex-shrink: 0;
-    border-radius: 0.375rem;
-    font-weight: 600;
-    cursor: pointer;
-    color: #ffffff;
-    border: none;
-    background-color: #2563eb;
-    transition: all 0.2s ease;
-    white-space: nowrap;
+				&:focus {
+					outline: none;
+					box-shadow: none;
+				}
 
-    &:hover {
-      background-color: #1d4ed8;
-      border-color: #1d4ed8;
-    }
+				&:-webkit-autofill,
+				&:-webkit-autofill:hover,
+				&:-webkit-autofill:focus,
+				&:-webkit-autofill:active {
+					transition: background-color 50000s ease-in-out 0s;
+					-webkit-text-fill-color: inherit;
+				}
+			}
 
-    &:focus {
-      outline: none;
-    }
+			.xpo-newsletter-button {
+				padding: 0.75rem 1rem;
+				font-size: 0.875rem;
+				width: max-content;
+				flex-shrink: 0;
+				border-radius: 0.375rem;
+				font-weight: 600;
+				cursor: pointer;
+				color: #fff;
+				border: none;
+				background-color: #2563eb;
+				transition: all 0.2s ease;
+				white-space: nowrap;
 
-    &:focus-visible {
-      box-shadow: 0 0 0 2px #3b82f6;
-    }
-  }
-  }
-  }
+				&:hover {
+					background-color: #1d4ed8;
+					border-color: #1d4ed8;
+				}
+
+				&:focus {
+					outline: none;
+				}
+
+				&:focus-visible {
+					box-shadow: 0 0 0 2px #3b82f6;
+				}
+			}
+		}
+	}
 
 }
 

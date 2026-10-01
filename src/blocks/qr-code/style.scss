@@ -1,115 +1,116 @@
 .wp-block-xpo-block-qr-code {
-  .xpo-qr-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 1.5rem 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  }
 
-  .xpo-qr-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 440px;
-    width: 100%;
-    padding: 2rem 1.5rem;
-    box-sizing: border-box;
-    text-align: center;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+	.xpo-qr-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		margin: 1.5rem 0;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	}
 
-  }
+	.xpo-qr-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		max-width: 440px;
+		width: 100%;
+		padding: 2rem 1.5rem;
+		box-sizing: border-box;
+		text-align: center;
+		transition: transform 0.25s ease, box-shadow 0.25s ease;
 
-  .xpo-qr-header {
-    margin-bottom: 1.25rem;
-    width: 100%;
-  }
+	}
 
-  .xpo-qr-title {
-    margin: 0 0 0.4rem 0;
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: #0f172a;
-    line-height: 1.3;
-  }
+	.xpo-qr-header {
+		margin-bottom: 1.25rem;
+		width: 100%;
+	}
 
-  .xpo-qr-description {
-    margin: 0;
-    font-size: 0.9rem;
-    color: #64748b;
-    line-height: 1.5;
-  }
+	.xpo-qr-title {
+		margin: 0 0 0.4rem 0;
+		font-size: 1.35rem;
+		font-weight: 700;
+		color: #0f172a;
+		line-height: 1.3;
+	}
 
-  .xpo-qr-code-wrapper {
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+	.xpo-qr-description {
+		margin: 0;
+		font-size: 0.9rem;
+		color: #64748b;
+		line-height: 1.5;
+	}
+
+	.xpo-qr-code-wrapper {
+		position: relative;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
 
 
-  }
+	}
 
-  .xpo-qr-svg {
-    display: block;
-    max-width: 100%;
-    height: auto;
-  }
+	.xpo-qr-svg {
+		display: block;
+		max-width: 100%;
+		height: auto;
+	}
 
-  .xpo-qr-logo-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
+	.xpo-qr-logo-overlay {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 2;
 
-    &.with-bg {
-      background: #ffffff;
-      border-radius: 50%;
-      padding: 4px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-    }
+		&.with-bg {
+			background: #fff;
+			border-radius: 50%;
+			padding: 4px;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+		}
 
-    img {
-      display: block;
-      object-fit: contain;
-      border-radius: 4px;
-    }
-  }
+		img {
+			display: block;
+			object-fit: contain;
+			border-radius: 4px;
+		}
+	}
 
-  .xpo-qr-footer {
-    margin-top: 1.5rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
+	.xpo-qr-footer {
+		margin-top: 1.5rem;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
 
-  .xpo-qr-download-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 10px 22px;
-    font-size: 0.92rem;
-    font-weight: 600;
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+	.xpo-qr-download-btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		padding: 10px 22px;
+		font-size: 0.92rem;
+		font-weight: 600;
+		color: #fff;
+		border: none;
+		border-radius: 8px;
+		cursor: pointer;
+		transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+		box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
 
-    &:hover {
-      opacity: 0.92;
-      transform: translateY(-1px);
-      box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
-    }
+		&:hover {
+			opacity: 0.92;
+			transform: translateY(-1px);
+			box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
+		}
 
-    &:active {
-      transform: translateY(0);
-    }
-  }
+		&:active {
+			transform: translateY(0);
+		}
+	}
 }

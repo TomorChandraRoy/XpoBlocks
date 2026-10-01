@@ -1,169 +1,170 @@
 /* Editor specific styles for Marquee block */
 .wp-block-xpo-block-marquee {
-    .xpo-mq-empty-state {
-        padding: 20px;
-        text-align: center;
-        background: #f8fafc;
-        border: 1px dashed #cbd5e1;
-    }
 
-    /* Disable links inside the editor so they don't navigate away when clicked */
-    .xpo-mq-item a {
-        pointer-events: none;
-        cursor: default;
-    }
+	.xpo-mq-empty-state {
+		padding: 20px;
+		text-align: center;
+		background: #f8fafc;
+		border: 1px dashed #cbd5e1;
+	}
+
+	/* Disable links inside the editor so they don't navigate away when clicked */
+	.xpo-mq-item a {
+		pointer-events: none;
+		cursor: default;
+	}
 }
 
 /* Settings sidebar / Inspector controls styles */
 .xpo-mq-permission-error {
-    color: #ef4444;
-    font-size: 12px;
+	color: #ef4444;
+	font-size: 12px;
 }
 
 .xpo-mq-add-btn {
-    width: 100%;
-    justify-content: center !important;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    background-color: #F62477 !important;
-    border-color: #F62477 !important;
-    color: #fff !important;
+	width: 100%;
+	justify-content: center !important;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	background-color: #f62477 !important;
+	border-color: #f62477 !important;
+	color: #fff !important;
 }
 
 .xpo-mq-url-input-container {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	padding: 10px;
 
-    .xpo-mq-url-input-label {
-        font-size: 12px;
-        font-weight: 500;
-        color: #64748b;
-    }
+	.xpo-mq-url-input-label {
+		font-size: 12px;
+		font-weight: 500;
+		color: #64748b;
+	}
 
-    .xpo-mq-url-input-row {
-        display: flex;
-        gap: 8px;
-        width: 100%;
-        align-items: center;
+	.xpo-mq-url-input-row {
+		display: flex;
+		gap: 8px;
+		width: 100%;
+		align-items: center;
 
-        .components-base-control {
-            flex-grow: 1;
-            margin-bottom: 0 !important;
+		.components-base-control {
+			flex-grow: 1;
+			margin-bottom: 0 !important;
 
-            .components-text-control__input {
-                background: #ffffff;
-                height: 36px;
-            }
-        }
+			.components-text-control__input {
+				background: #fff;
+				height: 36px;
+			}
+		}
 
-        .components-button {
-            height: 36px;
-            flex-shrink: 0;
-        }
-    }
+		.components-button {
+			height: 36px;
+			flex-shrink: 0;
+		}
+	}
 }
 
 .xpo-mq-images-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    max-height: 350px;
-    overflow-y: auto;
-    padding-right: 6px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	max-height: 350px;
+	overflow-y: auto;
+	padding-right: 6px;
 }
 
 .xpo-mq-image-item {
-    background: #ffffff;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
-    transition: border-color 0.2s;
+	background: #fff;
+	padding: 12px;
+	border-radius: 8px;
+	border: 1px solid #e2e8f0;
+	box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+	transition: border-color 0.2s;
 
-    &:hover {
-        border-color: #cbd5e1;
-    }
+	&:hover {
+		border-color: #cbd5e1;
+	}
 }
 
 .xpo-mq-image-item-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 12px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 12px;
 }
 
 .xpo-mq-image-preview {
-    width: 48px;
-    height: 48px;
-    flex-shrink: 0;
-    background: #f8fafc;
-    border-radius: 6px;
-    border: 1px solid #e2e8f0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding: 4px;
+	width: 48px;
+	height: 48px;
+	flex-shrink: 0;
+	background: #f8fafc;
+	border-radius: 6px;
+	border: 1px solid #e2e8f0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	padding: 4px;
 
-    img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-    }
+	img {
+		max-width: 100%;
+		max-height: 100%;
+		object-fit: contain;
+	}
 }
 
 .xpo-mq-image-actions {
-    display: flex;
-    gap: 4px;
-    background: #f8fafc;
-    padding: 4px;
-    border-radius: 6px;
-    border: 1px solid #e2e8f0;
+	display: flex;
+	gap: 4px;
+	background: #f8fafc;
+	padding: 4px;
+	border-radius: 6px;
+	border: 1px solid #e2e8f0;
 
-    .components-button {
-        min-width: 32px;
-        padding: 0 !important;
-        color: #64748b;
+	.components-button {
+		min-width: 32px;
+		padding: 0 !important;
+		color: #64748b;
 
-        &.is-destructive {
-            color: #ef4444;
-        }
-    }
+		&.is-destructive {
+			color: #ef4444;
+		}
+	}
 }
 
 .xpo-mq-image-inputs {
-    background: #f8fafc;
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #e2e8f0;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+	background: #f8fafc;
+	padding: 10px;
+	border-radius: 6px;
+	border: 1px solid #e2e8f0;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 
-    span {
-        font-size: 12px;
-        font-weight: 500;
-        color: #64748b;
-    }
+	span {
+		font-size: 12px;
+		font-weight: 500;
+		color: #64748b;
+	}
 
-    .components-text-control__input {
-        background: #ffffff;
-    }
+	.components-text-control__input {
+		background: #fff;
+	}
 }
 
 .xpo-mq-frame-settings-container {
-    padding: 10px;
-    background: #f8f9fa;
-    border-radius: 8px;
-    border: 1px solid #e2e8f0;
-    margin-bottom: 15px;
+	padding: 10px;
+	background: #f8f9fa;
+	border-radius: 8px;
+	border: 1px solid #e2e8f0;
+	margin-bottom: 15px;
 
-    p {
-        font-weight: bold;
-        margin-top: 0;
-        margin-bottom: 5px;
-    }
+	p {
+		font-weight: 700;
+		margin-top: 0;
+		margin-bottom: 5px;
+	}
 }

@@ -1,48 +1,50 @@
 .wp-block-xpo-block-button {
-  /* Editor specific styles for Button block */
+
+	/* Editor specific styles for Button block */
 }
 
 .wp-xpo-tab-panel {
-  .components-tab-panel__tabs {
-    display: flex;
-    border-bottom: 1px solid #e2e8f0;
-    margin-bottom: 12px;
 
-    .components-tab-panel__tabs-item,
-    .components-button {
-      flex: 1;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 8px 12px;
-      font-weight: 500;
-      font-size: 13px;
-      color: #64748b;
-      border: none;
-      background: transparent;
-      border-bottom: 2px solid transparent;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      box-shadow: none !important;
-      outline: none !important;
+	.components-tab-panel__tabs {
+		display: flex;
+		border-bottom: 1px solid #e2e8f0;
+		margin-bottom: 12px;
 
-      &:hover {
-        color: #0f172a;
-      }
+		.components-tab-panel__tabs-item,
+		.components-button {
+			flex: 1;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			padding: 8px 12px;
+			font-weight: 500;
+			font-size: 13px;
+			color: #64748b;
+			border: none;
+			background: transparent;
+			border-bottom: 2px solid transparent;
+			cursor: pointer;
+			transition: all 0.2s ease;
+			box-shadow: none !important;
+			outline: none !important;
 
-      &.wp-xpo-tab-panel-active-tab,
-      &.is-active {
-        color: #F62477;
-        border-bottom-color: #F62477;
-        font-weight: 600;
-      }
-    }
-  }
+			&:hover {
+				color: #0f172a;
+			}
+
+			&.wp-xpo-tab-panel-active-tab,
+			&.is-active {
+				color: #f62477;
+				border-bottom-color: #f62477;
+				font-weight: 600;
+			}
+		}
+	}
 }
 
 .bPlPanelBody .components-base-control__label,
 .bPlPanelBody label {
-  text-transform: none !important;
-  font-size: 13px !important;
+	text-transform: none !important;
+	font-size: 13px !important;
 }

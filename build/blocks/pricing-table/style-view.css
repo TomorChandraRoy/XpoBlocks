@@ -19,7 +19,9 @@
     padding: 64px 32px;
   }
 }
-.wp-block-xpo-block-pricing-table .xpo-pricing-container *, .wp-block-xpo-block-pricing-table .xpo-pricing-container *::before, .wp-block-xpo-block-pricing-table .xpo-pricing-container *::after {
+.wp-block-xpo-block-pricing-table .xpo-pricing-container *,
+.wp-block-xpo-block-pricing-table .xpo-pricing-container *::before,
+.wp-block-xpo-block-pricing-table .xpo-pricing-container *::after {
   box-sizing: border-box;
 }
 .wp-block-xpo-block-pricing-table .xpo-pricing-container .xpo-pricing-grid {
@@ -62,7 +64,7 @@
   top: 0;
   right: 0;
   background-color: #4f46e5;
-  color: #ffffff;
+  color: #fff;
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -124,7 +126,7 @@
   text-align: center;
   font-size: 0.875rem;
   font-weight: 500;
-  color: #ffffff;
+  color: #fff;
   background-color: #4f46e5;
   border: 1px solid #4f46e5;
   border-radius: 0.125rem;

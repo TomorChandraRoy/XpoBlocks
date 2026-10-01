@@ -1,4 +1,5 @@
 .wp-block-xpo-block-before-after {
+
 	.xpo-before-after-one {
 		width: 100%;
 		max-width: 900px;
@@ -47,7 +48,7 @@
 			top: 0;
 			bottom: 0;
 			width: 4px;
-			background: #ffffff;
+			background: #fff;
 			transform: translateX(-50%);
 			z-index: 4;
 			pointer-events: none;
@@ -62,8 +63,8 @@
 			justify-content: center;
 			width: 48px;
 			height: 48px;
-			background: #111111;
-			border: 3px solid #ffffff;
+			background: #111;
+			border: 3px solid #fff;
 			border-radius: 50%;
 			transform: translate(-50%, -50%);
 			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
@@ -103,6 +104,7 @@
 	}
 
 	@media (max-width: 767px) {
+
 		.xpo-before-after-one__wrapper {
 			height: 350px;
 		}
