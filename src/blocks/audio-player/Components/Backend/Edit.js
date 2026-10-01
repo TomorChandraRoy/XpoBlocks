@@ -26,7 +26,7 @@ const Edit = props => {
           />
         </div>
       ) : (
-        <div {...useBlockProps({ className: 'gbb-audio-player-container' })}>
+        <div {...useBlockProps({ className: 'xpo-audio-player-container' })}>
           <DynamicStyles attributes={attributes} id={id} />
           <AudioPlayer attributes={attributes} setAttributes={setAttributes} id={id} />
         </div>

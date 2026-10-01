@@ -4,9 +4,9 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 
-$block_id = wp_unique_id( 'guten-builder-audio-player-' );
+$block_id = wp_unique_id( 'xpo-block-audio-player-' );
 
-$wrapper_classes = array( 'gbb-audio-player-container', $block_id );
+$wrapper_classes = array( 'xpo-audio-player-container', $block_id );
 
 $wrapper_attrs = get_block_wrapper_attributes( array( 'class' => implode( ' ', $wrapper_classes ) ) );
 ?>

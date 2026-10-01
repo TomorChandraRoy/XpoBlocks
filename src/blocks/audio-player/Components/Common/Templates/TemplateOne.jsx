@@ -150,22 +150,22 @@ const togglePlay = () => {
 
 
 	return (
-		<div className={`gbb-audio-player-one ${id}`} >
+		<div className={`xpo-audio-player-one ${id}`} >
 			<audio ref={audioRef} src={audioUrl} onLoadedMetadata={updateProgress} />
 
-      <div className="gbb-audio-player-one__top">
-        <div className="gbb-audio-player-one__cover">
+      <div className="xpo-audio-player-one__top">
+        <div className="xpo-audio-player-one__cover">
           <img src={coverUrl || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='100%25' height='100%25' fill='%23cbd5e1'/%3E%3Ccircle cx='150' cy='150' r='50' fill='%2394a3b8'/%3E%3Ccircle cx='150' cy='150' r='15' fill='%23cbd5e1'/%3E%3C/svg%3E"} alt="Audio Cover" />
         </div>
 
-        <div className="gbb-audio-player-one__content">
-          <span className="gbb-audio-player-one__label">{labelText || 'Now Playing'}</span>
+        <div className="xpo-audio-player-one__content">
+          <span className="xpo-audio-player-one__label">{labelText || 'Now Playing'}</span>
 
-          <h3 className="gbb-audio-player-one__title">{text || 'Your Audio Title'}</h3>
+          <h3 className="xpo-audio-player-one__title">{text || 'Your Audio Title'}</h3>
 
-          <p className="gbb-audio-player-one__artist">{subtitle || 'Artist / Author Name'}</p>
+          <p className="xpo-audio-player-one__artist">{subtitle || 'Artist / Author Name'}</p>
 
-          <div className="gbb-audio-player-one__progress">
+          <div className="xpo-audio-player-one__progress">
             <input
               type="range"
               min="0"
@@ -181,7 +181,7 @@ const togglePlay = () => {
           </div>
 
           {timeDisplayMode !== 'none' && (
-            <div className="gbb-audio-player-one__time">
+            <div className="xpo-audio-player-one__time">
               <span>{formatTime(currentTime)}</span>
               {timeDisplayMode !== 'elapsed' && (
                 <span>
@@ -195,12 +195,12 @@ const togglePlay = () => {
         </div>
       </div>
 
-      <div className="gbb-audio-player-one__controls">
+      <div className="xpo-audio-player-one__controls">
         <button type="button" onClick={() => skipTime(-10)} aria-label="Backward 10 seconds" disabled={!audioUrl}>
           ◀◀
         </button>
 
-        <button type="button" className={`gbb-audio-player-one__play ${isPlaying ? 'is-playing' : 'is-paused'}`} onClick={togglePlay} aria-label="Play audio" disabled={!audioUrl}>
+        <button type="button" className={`xpo-audio-player-one__play ${isPlaying ? 'is-playing' : 'is-paused'}`} onClick={togglePlay} aria-label="Play audio" disabled={!audioUrl}>
           {isPlaying ? '❚❚' : '▶'}
         </button>
 
@@ -208,11 +208,11 @@ const togglePlay = () => {
           ▶▶
         </button>
 
-        <div className="gbb-audio-player-one__volume">
+        <div className="xpo-audio-player-one__volume">
           <button
             type="button"
             onClick={toggleMute}
-            className="gbb-audio-player-one__mute-btn"
+            className="xpo-audio-player-one__mute-btn"
             aria-label={volume > 0 ? 'Mute' : 'Unmute'}
           >
             {volume > 0 ? (

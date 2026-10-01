@@ -1,14 +1,16 @@
 import { __ } from "@wordpress/i18n";
 import { TemplateOneSvg } from "./icon";
+const textDomain = 'xpo-blocks';
+
 
 export const templateData = {
-  title: __('Select Audio Player Template', 'guten-builder-blocks'),
-  subtitle: __('Choose a design template for your audio player block.', 'guten-builder-blocks'),
+  title: __('Select Audio Player Template', textDomain),
+  subtitle: __('Choose a design template for your audio player block.', textDomain),
   templates: [
     {
       id: 'template-1',
-      label: __('Template 1', 'guten-builder-blocks'),
-      tag: __('Modern Audio Card', 'guten-builder-blocks'),
+      label: __('Template 1', textDomain),
+      tag: __('Modern Audio Card', textDomain),
       icon: TemplateOneSvg,
       attributes: {
         audioUrl: '',

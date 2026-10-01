@@ -5657,15 +5657,15 @@ const DynamicStyles = ({
   } = attributes || {};
   const mainSl = `#${id}`;
   const wrapper = mainSl;
-  const topPart = `${mainSl} .gbb-audio-player-one__top`;
-  const infoContent = `${topPart} .gbb-audio-player-one__content`;
-  const labelText = `${infoContent} .gbb-audio-player-one__label `;
-  const titleText = `${infoContent} .gbb-audio-player-one__title`;
-  const artistText = `${infoContent} .gbb-audio-player-one__artist`;
-  const timeText = `${infoContent} .gbb-audio-player-one__time`;
-  const controlsPart = `${wrapper} .gbb-audio-player-one__controls`;
+  const topPart = `${mainSl} .xpo-audio-player-one__top`;
+  const infoContent = `${topPart} .xpo-audio-player-one__content`;
+  const labelText = `${infoContent} .xpo-audio-player-one__label `;
+  const titleText = `${infoContent} .xpo-audio-player-one__title`;
+  const artistText = `${infoContent} .xpo-audio-player-one__artist`;
+  const timeText = `${infoContent} .xpo-audio-player-one__time`;
+  const controlsPart = `${wrapper} .xpo-audio-player-one__controls`;
   const controlButtons = `${controlsPart} button`;
-  const playButton = `${controlsPart} .gbb-audio-player-one__play`;
+  const playButton = `${controlsPart} .xpo-audio-player-one__play`;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("style", {
     dangerouslySetInnerHTML: {
       __html: `
@@ -5673,7 +5673,7 @@ const DynamicStyles = ({
           justify-content: ${playerAlign};
         }
 
-        ${wrapper} .gbb-audio-player-one {
+        ${wrapper} .xpo-audio-player-one {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(playerBg) ? `background: ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(playerBg)};` : ''}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderCss)(playerBorder)}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderRadiusCss)(playerBorderRadius)}
@@ -5694,7 +5694,7 @@ const DynamicStyles = ({
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(artistTypography)}
         }
 
-        ${wrapper} .gbb-audio-player-one__progress input {
+        ${wrapper} .xpo-audio-player-one__progress input {
           background: linear-gradient(
             to right,
             ${progressColor ? progressColor : '#F62477'} calc(7px + var(--progress) * 1% - 14px * var(--progress) / 100),
@@ -5702,15 +5702,15 @@ const DynamicStyles = ({
           ) !important;
         }
 
-        ${wrapper} .gbb-audio-player-one__progress input::-webkit-slider-thumb {
+        ${wrapper} .xpo-audio-player-one__progress input::-webkit-slider-thumb {
           background: ${progressColor ? progressColor : '#F62477'} !important;
         }
 
-        ${wrapper} .gbb-audio-player-one__progress input::-moz-range-thumb {
+        ${wrapper} .xpo-audio-player-one__progress input::-moz-range-thumb {
           background: ${progressColor ? progressColor : '#F62477'} !important;
         }
 
-        ${wrapper} .gbb-audio-player-one__volume input {
+        ${wrapper} .xpo-audio-player-one__volume input {
           background: linear-gradient(
             to right,
             ${controlColor ? controlColor : '#F62477'} calc(6px + var(--volume-progress) * 1% - 12px * var(--volume-progress) / 100),
@@ -5718,11 +5718,11 @@ const DynamicStyles = ({
           ) !important;
         }
 
-        ${wrapper} .gbb-audio-player-one__volume input::-webkit-slider-thumb {
+        ${wrapper} .xpo-audio-player-one__volume input::-webkit-slider-thumb {
           background: ${controlColor ? controlColor : '#F62477'} !important;
         }
 
-        ${wrapper} .gbb-audio-player-one__volume input::-moz-range-thumb {
+        ${wrapper} .xpo-audio-player-one__volume input::-moz-range-thumb {
           background: ${controlColor ? controlColor : '#F62477'} !important;
         }
 
@@ -5923,32 +5923,32 @@ const TemplateOne = ({
     };
   }, [isPlaying]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    className: `gbb-audio-player-one ${id}`,
+    className: `xpo-audio-player-one ${id}`,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("audio", {
       ref: audioRef,
       src: audioUrl,
       onLoadedMetadata: updateProgress
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "gbb-audio-player-one__top",
+      className: "xpo-audio-player-one__top",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "gbb-audio-player-one__cover",
+        className: "xpo-audio-player-one__cover",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
           src: coverUrl || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='100%25' height='100%25' fill='%23cbd5e1'/%3E%3Ccircle cx='150' cy='150' r='50' fill='%2394a3b8'/%3E%3Ccircle cx='150' cy='150' r='15' fill='%23cbd5e1'/%3E%3C/svg%3E",
           alt: "Audio Cover"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "gbb-audio-player-one__content",
+        className: "xpo-audio-player-one__content",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-          className: "gbb-audio-player-one__label",
+          className: "xpo-audio-player-one__label",
           children: labelText || 'Now Playing'
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-          className: "gbb-audio-player-one__title",
+          className: "xpo-audio-player-one__title",
           children: text || 'Your Audio Title'
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-          className: "gbb-audio-player-one__artist",
+          className: "xpo-audio-player-one__artist",
           children: subtitle || 'Artist / Author Name'
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "gbb-audio-player-one__progress",
+          className: "xpo-audio-player-one__progress",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
             type: "range",
             min: "0",
@@ -5962,7 +5962,7 @@ const TemplateOne = ({
             }
           })
         }), timeDisplayMode !== 'none' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "gbb-audio-player-one__time",
+          className: "xpo-audio-player-one__time",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
             children: formatTime(currentTime)
           }), timeDisplayMode !== 'elapsed' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
@@ -5971,7 +5971,7 @@ const TemplateOne = ({
         })]
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "gbb-audio-player-one__controls",
+      className: "xpo-audio-player-one__controls",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
         type: "button",
         onClick: () => skipTime(-10),
@@ -5980,7 +5980,7 @@ const TemplateOne = ({
         children: "\u25C0\u25C0"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
         type: "button",
-        className: `gbb-audio-player-one__play ${isPlaying ? 'is-playing' : 'is-paused'}`,
+        className: `xpo-audio-player-one__play ${isPlaying ? 'is-playing' : 'is-paused'}`,
         onClick: togglePlay,
         "aria-label": "Play audio",
         disabled: !audioUrl,
@@ -5992,11 +5992,11 @@ const TemplateOne = ({
         disabled: !audioUrl,
         children: "\u25B6\u25B6"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "gbb-audio-player-one__volume",
+        className: "xpo-audio-player-one__volume",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
           type: "button",
           onClick: toggleMute,
-          className: "gbb-audio-player-one__mute-btn",
+          className: "xpo-audio-player-one__mute-btn",
           "aria-label": volume > 0 ? 'Mute' : 'Unmute',
           children: volume > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
             width: "18",
@@ -6076,7 +6076,7 @@ __webpack_require__.r(__webpack_exports__);
 // পেজের সমস্ত HTML লোড সম্পন্ন হওয়ার পর স্ক্রিপ্টটি চালু হবে
 
 document.addEventListener('DOMContentLoaded', () => {
-  const containers = document.querySelectorAll('.wp-block-guten-builder-blocks-audio-player');
+  const containers = document.querySelectorAll('.wp-block-xpo-block-audio-player');
   containers.forEach(container => {
     if (container.dataset.initialized) return;
     container.dataset.initialized = 'true';
