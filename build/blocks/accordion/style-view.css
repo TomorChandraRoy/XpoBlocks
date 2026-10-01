@@ -1,10 +1,10 @@
 /*!********************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/accordion/style.scss ***!
   \********************************************************************************************************************************************************************************************************************************************************/
-.wp-block-guten-builder-blocks-accordion {
+.wp-block-xpo-block-accordion {
   /*Template One Styles*/
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-one-wapper {
+.wp-block-xpo-block-accordion .xpo-template-one-wapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,13 +13,13 @@
   padding: 20px 12px;
   box-sizing: border-box;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-one-wapper .gbb-faq-subtitle {
+.wp-block-xpo-block-accordion .xpo-template-one-wapper .xpo-faq-subtitle {
   font-size: 16px;
   font-weight: 500;
   /* color: #475569; */
   margin: 0;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-one-wapper .gbb-faq-title {
+.wp-block-xpo-block-accordion .xpo-template-one-wapper .xpo-faq-title {
   font-size: 28px;
   font-weight: 600;
   margin-top: 8px;
@@ -27,18 +27,18 @@
   color: #0f172a;
 }
 @media (min-width: 768px) {
-  .wp-block-guten-builder-blocks-accordion .gbb-template-one-wapper .gbb-faq-title {
+  .wp-block-xpo-block-accordion .xpo-template-one-wapper .xpo-faq-title {
     font-size: 36px;
   }
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-one-wapper .gbb-faq-description {
+.wp-block-xpo-block-accordion .xpo-template-one-wapper .xpo-faq-description {
   font-size: 14px;
   color: #64748b;
   margin-top: 16px;
   margin-bottom: 0;
   max-width: 384px;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-one-wapper .gbb-faq-list {
+.wp-block-xpo-block-accordion .xpo-template-one-wapper .xpo-faq-list {
   width: 100%;
   margin-top: 24px;
   display: flex;
@@ -47,13 +47,13 @@
   align-items: flex-start;
   text-align: left;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-one-wapper .gbb-faq-item {
+.wp-block-xpo-block-accordion .xpo-template-one-wapper .xpo-faq-item {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-one-wapper .gbb-faq-header {
+.wp-block-xpo-block-accordion .xpo-template-one-wapper .xpo-faq-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -66,23 +66,23 @@
   background-color: #ffffff;
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-one-wapper .gbb-faq-header:hover {
+.wp-block-xpo-block-accordion .xpo-template-one-wapper .xpo-faq-header:hover {
   background-color: #f8fafc;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-one-wapper .gbb-faq-question {
+.wp-block-xpo-block-accordion .xpo-template-one-wapper .xpo-faq-question {
   font-size: 14px;
   font-weight: 600;
   margin: 0;
   color: #1e293b;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-one-wapper .gbb-faq-arrow {
+.wp-block-xpo-block-accordion .xpo-template-one-wapper .xpo-faq-arrow {
   transition: transform 0.5s ease-in-out;
   flex-shrink: 0;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-one-wapper .gbb-faq-arrow.is-open {
+.wp-block-xpo-block-accordion .xpo-template-one-wapper .xpo-faq-arrow.is-open {
   transform: rotate(180deg);
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-one-wapper .gbb-faq-answer {
+.wp-block-xpo-block-accordion .xpo-template-one-wapper .xpo-faq-answer {
   font-size: 14px;
   color: #64748b;
   padding-left: 16px;
@@ -91,22 +91,22 @@
   margin: 0;
   overflow: hidden;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-one-wapper .gbb-faq-answer.is-open {
+.wp-block-xpo-block-accordion .xpo-template-one-wapper .xpo-faq-answer.is-open {
   opacity: 1;
   max-height: 300px;
   transform: translateY(0);
   padding-top: 16px;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-one-wapper .gbb-faq-answer.is-closed {
+.wp-block-xpo-block-accordion .xpo-template-one-wapper .xpo-faq-answer.is-closed {
   opacity: 0;
   max-height: 0;
   transform: translateY(-8px);
   padding-top: 0;
 }
-.wp-block-guten-builder-blocks-accordion {
+.wp-block-xpo-block-accordion {
   /* Template Two Styles */
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-two-wapper .gbb-faq-container {
+.wp-block-xpo-block-accordion .xpo-template-two-wapper .xpo-faq-container {
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -115,19 +115,19 @@
   justify-content: center;
   padding: 25px 20px;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-two-wapper .gbb-faq-subtitle {
+.wp-block-xpo-block-accordion .xpo-template-two-wapper .xpo-faq-subtitle {
   color: #4f46e5;
   font-size: 0.875rem;
   font-weight: 500;
   margin: 0;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-two-wapper .gbb-faq-title {
+.wp-block-xpo-block-accordion .xpo-template-two-wapper .xpo-faq-title {
   font-size: 1.875rem;
   font-weight: 600;
   text-align: center;
   margin: 8px 0px;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-two-wapper .gbb-faq-description {
+.wp-block-xpo-block-accordion .xpo-template-two-wapper .xpo-faq-description {
   font-size: 0.875rem;
   color: #64748b;
   margin-top: 0.5rem;
@@ -135,29 +135,29 @@
   text-align: center;
   margin-bottom: 0;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-two-wapper .gbb-faq-item {
+.wp-block-xpo-block-accordion .xpo-template-two-wapper .xpo-faq-item {
   padding-top: 1rem;
   padding-bottom: 1rem;
   cursor: pointer;
   width: 100%;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-two-wapper .gbb-faq-header {
+.wp-block-xpo-block-accordion .xpo-template-two-wapper .xpo-faq-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-two-wapper .gbb-faq-question {
+.wp-block-xpo-block-accordion .xpo-template-two-wapper .xpo-faq-question {
   font-size: 1rem;
   font-weight: 500;
   margin: 0;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-two-wapper .gbb-faq-arrow {
+.wp-block-xpo-block-accordion .xpo-template-two-wapper .xpo-faq-arrow {
   transition: all 0.5s ease-in-out;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-two-wapper .gbb-faq-arrow.is-open {
+.wp-block-xpo-block-accordion .xpo-template-two-wapper .xpo-faq-arrow.is-open {
   transform: rotate(180deg);
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-two-wapper .gbb-faq-answer {
+.wp-block-xpo-block-accordion .xpo-template-two-wapper .xpo-faq-answer {
   font-size: 0.875rem;
   color: #64748b;
   transition: all 0.5s ease-in-out;
@@ -165,35 +165,35 @@
   margin: 0;
   overflow: hidden;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-two-wapper .gbb-faq-answer.is-open {
+.wp-block-xpo-block-accordion .xpo-template-two-wapper .xpo-faq-answer.is-open {
   opacity: 1;
   max-height: 300px;
   transform: translateY(0);
   padding-top: 1rem;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-two-wapper .gbb-faq-answer.is-closed {
+.wp-block-xpo-block-accordion .xpo-template-two-wapper .xpo-faq-answer.is-closed {
   opacity: 0;
   max-height: 0;
   transform: translateY(-0.5rem);
 }
-.wp-block-guten-builder-blocks-accordion {
+.wp-block-xpo-block-accordion {
   /* Template Three Styles */
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper {
+.wp-block-xpo-block-accordion .xpo-template-three-wapper {
   padding: 8px;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-section {
+.wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-section {
   margin-top: 1.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
 }
 @media (min-width: 768px) {
-  .wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-section {
+  .wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-section {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-header-content {
+.wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-header-content {
   max-width: 48rem;
   margin-left: auto;
   margin-right: auto;
@@ -201,17 +201,17 @@
   margin-bottom: 3rem;
 }
 @media (min-width: 768px) {
-  .wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-header-content {
+  .wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-header-content {
     margin-bottom: 4rem;
   }
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-header-content .gbb-faq-subtitle {
+.wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-header-content .xpo-faq-subtitle {
   font-size: 0.875rem;
   font-weight: 500;
   color: #4f46e5;
   margin-bottom: 0.5rem;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-header-content .gbb-faq-title {
+.wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-header-content .xpo-faq-title {
   color: #0f172a;
   font-size: 1.875rem;
   font-weight: 700;
@@ -219,19 +219,19 @@
   margin-top: 8px;
 }
 @media (min-width: 768px) {
-  .wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-header-content .gbb-faq-title {
+  .wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-header-content .xpo-faq-title {
     font-size: 2.25rem;
   }
 }
-:global(.dark) .wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-header-content .gbb-faq-title, .dark .wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-header-content .gbb-faq-title {
+:global(.dark) .wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-header-content .xpo-faq-title, .dark .wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-header-content .xpo-faq-title {
   color: #f8fafc;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-header-content .gbb-faq-description {
+.wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-header-content .xpo-faq-description {
   font-size: 0.875rem;
   color: #64748b;
   margin-bottom: 0;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-list {
+.wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-list {
   max-width: 56rem;
   margin-left: auto;
   margin-right: auto;
@@ -239,7 +239,7 @@
   flex-direction: column;
   gap: 0.5rem;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-item {
+.wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-item {
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 1rem;
@@ -247,23 +247,23 @@
   border-radius: 0.5rem;
   transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-item:hover {
+.wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-item:hover {
   background-color: #f9fafb;
 }
-:global(.dark) .wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-item:hover, .dark .wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-item:hover {
+:global(.dark) .wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-item:hover, .dark .wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-item:hover {
   background-color: #262626;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-item.is-open {
+.wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-item.is-open {
   background-color: #f9fafb;
 }
-:global(.dark) .wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-item.is-open, .dark .wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-item.is-open {
+:global(.dark) .wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-item.is-open, .dark .wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-item.is-open {
   background-color: #262626;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-item h3 {
+.wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-item h3 {
   margin: 0;
   padding: 0;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-toggle {
+.wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-toggle {
   cursor: pointer;
   text-align: left;
   width: 100%;
@@ -279,47 +279,47 @@
   background: transparent;
   padding: 0;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-toggle:focus-visible {
+.wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-toggle:focus-visible {
   box-shadow: 0 0 0 2px #3b82f6;
 }
-:global(.dark) .wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-toggle, .dark .wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-toggle {
+:global(.dark) .wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-toggle, .dark .wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-toggle {
   color: #f8fafc;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-toggle.gbb-icon-left .gbb-faq-arrow {
+.wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-toggle.xpo-icon-left .xpo-faq-arrow {
   margin-right: 1rem;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-toggle.gbb-icon-left .gbb-faq-question-text {
+.wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-toggle.xpo-icon-left .xpo-faq-question-text {
   margin-right: 0;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-toggle.gbb-icon-right .gbb-faq-arrow {
+.wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-toggle.xpo-icon-right .xpo-faq-arrow {
   margin-left: auto;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-toggle.gbb-icon-right .gbb-faq-question-text {
+.wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-toggle.xpo-icon-right .xpo-faq-question-text {
   margin-right: 1rem;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-question-text {
+.wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-question-text {
   width: 100%;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-arrow {
+.wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-arrow {
   flex-shrink: 0;
   transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-arrow.is-open {
+.wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-arrow.is-open {
   transform: rotate(180deg);
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-content-wrapper {
+.wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-content-wrapper {
   overflow: hidden;
   transition: all 300ms ease-in-out;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-content-inner {
+.wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-content-inner {
   margin-top: 1rem;
 }
-.wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-answer {
+.wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-answer {
   font-size: 1rem;
   color: #475569;
   line-height: 1.625;
 }
-:global(.dark) .wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-answer, .dark .wp-block-guten-builder-blocks-accordion .gbb-template-three-wapper .gbb-faq-answer {
+:global(.dark) .wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-answer, .dark .wp-block-xpo-block-accordion .xpo-template-three-wapper .xpo-faq-answer {
   color: #94a3b8;
 }
 

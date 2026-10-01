@@ -3,6 +3,8 @@ import { PanelBody, __experimentalSpacer as Spacer } from '@wordpress/components
 import { ColorControl, Typography, BackgroundControl, BorderControl, SpacingControl } from 'tr-tools';
 import { pxUnit, remUnit, emUnit, vwUnit, perUnit } from 'tr-tools/utils/options';
 import { defaultSubtitleTypo, defaultTitleTypo, defaultDescriptionTypo, defaultQuestionTypo, defaultAnswerTypo } from '../../../../utils/options';
+const textDomain = 'xpo-blocks';
+
 
 const Style = ({ attributes, setAttributes }) => {
   const { selectedTemplate = 'template-1', subtitleColor, subtitleTypography, titleColor, titleTypography, descriptionColor, descriptionTypography, questionBg = '#FFFFFF', questionBorder, questionBorderRadius, questionTypography, answerTypography, questionColor, answerColor, showHeader } = attributes;
@@ -10,9 +12,9 @@ const Style = ({ attributes, setAttributes }) => {
   return (
     <>
       {showHeader && (
-        <PanelBody className="bPlPanelBody" title={__(' Heading', 'guten-builder-blocks')} initialOpen={true}>
+        <PanelBody className="bPlPanelBody" title={__(' Heading',textDomain)} initialOpen={true}>
           <ColorControl
-            label={__('Subtitle Color', 'guten-builder-blocks')}
+            label={__('Subtitle Color',textDomain)}
             value={subtitleColor}
             onChange={color => {
               setAttributes({ subtitleColor: color });
@@ -21,7 +23,7 @@ const Style = ({ attributes, setAttributes }) => {
           />
 
           <Typography
-            label={__('Subtitle Typography', 'guten-builder-blocks')}
+            label={__('Subtitle Typography',textDomain)}
             value={subtitleTypography}
             onChange={val => {
               setAttributes({ subtitleTypography: val });
@@ -30,7 +32,7 @@ const Style = ({ attributes, setAttributes }) => {
           />
 
           <ColorControl
-            label={__('Title Color', 'guten-builder-blocks')}
+            label={__('Title Color',textDomain)}
             value={titleColor}
             onChange={color => {
               setAttributes({ titleColor: color });
@@ -39,7 +41,7 @@ const Style = ({ attributes, setAttributes }) => {
           />
 
           <Typography
-            label={__('Title Typography', 'guten-builder-blocks')}
+            label={__('Title Typography',textDomain)}
             value={titleTypography}
             onChange={val => {
               setAttributes({ titleTypography: val });
@@ -48,7 +50,7 @@ const Style = ({ attributes, setAttributes }) => {
           />
 
           <ColorControl
-            label={__('Description Color', 'guten-builder-blocks')}
+            label={__('Description Color',textDomain)}
             value={descriptionColor}
             onChange={color => {
               setAttributes({ descriptionColor: color });
@@ -57,7 +59,7 @@ const Style = ({ attributes, setAttributes }) => {
           />
 
           <Typography
-            label={__('Description Typography', 'guten-builder-blocks')}
+            label={__('Description Typography',textDomain)}
             value={descriptionTypography}
             onChange={val => {
               setAttributes({ descriptionTypography: val });
@@ -67,10 +69,10 @@ const Style = ({ attributes, setAttributes }) => {
         </PanelBody>
       )}
 
-      <PanelBody className="bPlPanelBody" title={__('Q/A Content', 'guten-builder-blocks')} initialOpen={false}>
+      <PanelBody className="bPlPanelBody" title={__('Q/A Content',textDomain)} initialOpen={false}>
         {(selectedTemplate === 'template-1' || selectedTemplate === 'template-3') && (
           <>
-            <BackgroundControl label={__('Question Bg :', 'guten-builder-blocks')} value={questionBg} onChange={val => setAttributes({ questionBg: val })} />
+            <BackgroundControl label={__('Question Bg :',textDomain)} value={questionBg} onChange={val => setAttributes({ questionBg: val })} />
             <Spacer />
           </>
         )}
@@ -78,7 +80,7 @@ const Style = ({ attributes, setAttributes }) => {
         {(selectedTemplate === 'template-1' || selectedTemplate === 'template-2' || selectedTemplate === 'template-3') && (
           <>
             <BorderControl
-              label={__('Question Border :', 'guten-builder-blocks')}
+              label={__('Question Border :',textDomain)}
               value={questionBorder}
               onChange={val => setAttributes({ questionBorder: val })}
               defaultBorder={
@@ -104,7 +106,7 @@ const Style = ({ attributes, setAttributes }) => {
         {(selectedTemplate === 'template-1' || selectedTemplate === 'template-3') && (
           <>
             <SpacingControl
-              label={__('Border Radius :', 'guten-builder-blocks')}
+              label={__('Border Radius :',textDomain)}
               value={questionBorderRadius}
               onChange={val => setAttributes({ questionBorderRadius: val })}
               units={[pxUnit(), remUnit(), emUnit(), vwUnit(), perUnit()]}
@@ -114,7 +116,7 @@ const Style = ({ attributes, setAttributes }) => {
           </>
         )}
         <ColorControl
-          label={__('Question Color', 'guten-builder-blocks')}
+          label={__('Question Color',textDomain)}
           value={questionColor}
           onChange={color => {
             setAttributes({ questionColor: color });
@@ -123,7 +125,7 @@ const Style = ({ attributes, setAttributes }) => {
         />
 
         <Typography
-          label={__('Question Typography', 'guten-builder-blocks')}
+          label={__('Question Typography',textDomain)}
           value={questionTypography}
           onChange={val => {
             setAttributes({ questionTypography: val });
@@ -133,7 +135,7 @@ const Style = ({ attributes, setAttributes }) => {
 
         <Spacer />
         <ColorControl
-          label={__('Answer Color', 'guten-builder-blocks')}
+          label={__('Answer Color',textDomain)}
           value={answerColor}
           onChange={color => {
             setAttributes({ answerColor: color });
@@ -142,7 +144,7 @@ const Style = ({ attributes, setAttributes }) => {
         />
 
         <Typography
-          label={__('Answer Typography', 'guten-builder-blocks')}
+          label={__('Answer Typography',textDomain)}
           value={answerTypography}
           onChange={val => {
             setAttributes({ answerTypography: val });

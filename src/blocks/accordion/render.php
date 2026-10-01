@@ -5,10 +5,10 @@ if (!defined('ABSPATH')) {
 }
 
 // প্রতিটি ব্লকের জন্য একটি ইউনিক আইডি (Unique Block ID) তৈরি করা
-$block_id = wp_unique_id( 'guten-builder-faq-' );
+$block_id = wp_unique_id( 'xpo-block-faq-' );
 
 // কাস্টম কন্টেইনার ক্লাস এবং ইউনিক আইডি একসাথে অ্যারে হিসেবে রাখা
-$wrapper_classes = array( 'gbb-accordion-container', $block_id );
+$wrapper_classes = array( 'xpo-accordion-container', $block_id );
 
 // WordPress Gutenberg-এর ডিফল্ট অ্যাট্রিবিউট (margin, padding, class) এবং আমাদের কাস্টম ক্লাসগুলোকে একসাথে মার্জ করা
 $wrapper_attrs = get_block_wrapper_attributes( array( 'class' => implode( ' ', $wrapper_classes ) ) );

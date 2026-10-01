@@ -104,7 +104,6 @@ if ( !class_exists( 'Xpo_Block_Core' ) ) {
 				[
 					'slug'  => 'xpo-block',
 					'title' => __( 'XpoBlock', 'xpo-block' ),
-					'icon'  => 'grid-view',
 				],
 			],
 			$categories

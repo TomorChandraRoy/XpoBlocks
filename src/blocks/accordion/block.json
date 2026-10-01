@@ -1,12 +1,12 @@
 {
   "apiVersion": 3,
-  "name": "guten-builder-blocks/accordion",
+  "name": "xpo-block/accordion",
   "version": "1.0.0",
   "title": "FAQ Accordion",
   "description": "High-performance responsive FAQ accordion with smooth animations and customizable themes.",
   "category": "xpo-block",
   "keywords": ["faq", "accordion", "toggle", "collapse"],
-  "textdomain": "guten-builder-blocks",
+  "textdomain": "xpo-block",
   "attributes": {
     "align": {
       "type": "string",

@@ -5657,13 +5657,13 @@ const DynamicStyles = ({
   } = attributes || {};
   const mainSl = `#${id}`;
   const wrapper = mainSl;
-  const subtitle = `${wrapper} .gbb-faq-subtitle`;
-  const title = `${wrapper} .gbb-faq-title`;
-  const description = `${wrapper} .gbb-faq-description`;
-  const header = `${wrapper} .gbb-faq-header`;
-  const question = `${wrapper} .gbb-faq-question, ${wrapper} .gbb-faq-question-text`;
-  const answer = `${wrapper} .gbb-faq-answer`;
-  const icon = `${wrapper} .gbb-faq-arrow`;
+  const subtitle = `${wrapper} .xpo-faq-subtitle`;
+  const title = `${wrapper} .xpo-faq-title`;
+  const description = `${wrapper} .xpo-faq-description`;
+  const header = `${wrapper} .xpo-faq-header`;
+  const question = `${wrapper} .xpo-faq-question, ${wrapper} .xpo-faq-question-text`;
+  const answer = `${wrapper} .xpo-faq-answer`;
+  const icon = `${wrapper} .xpo-faq-arrow`;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("style", {
     dangerouslySetInnerHTML: {
       __html: `
@@ -5685,14 +5685,14 @@ const DynamicStyles = ({
         ${header} {
 
         }
-        ${mainSl}.gbb-template-one-wapper .gbb-faq-header,
-        ${mainSl}.gbb-template-three-wapper .gbb-faq-item {
+        ${mainSl}.xpo-template-one-wapper .xpo-faq-header,
+        ${mainSl}.xpo-template-three-wapper .xpo-faq-item {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(questionBg) ? `background: ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(questionBg)};` : ''}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderCss)(questionBorder)}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderRadiusCss)(questionBorderRadius)}
         }
 
-        ${mainSl}.gbb-template-two-wapper .gbb-faq-item {
+        ${mainSl}.xpo-template-two-wapper .xpo-faq-item {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderCss)(questionBorder)}
         }
 
@@ -5817,6 +5817,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-blocks';
 const TemplateOne = ({
   attributes,
   setAttributes,
@@ -5839,79 +5840,79 @@ const TemplateOne = ({
     iconColor = ''
   } = attributes || {};
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-    className: "gbb-template-one-wapper",
+    className: "xpo-template-one-wapper",
     id: id,
     children: [showHeader && (isEditor ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
         tagName: "p",
-        className: "gbb-faq-subtitle",
+        className: "xpo-faq-subtitle",
         value: subtitle,
         onChange: val => setAttributes({
           subtitle: val
         }),
-        placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your subtitle here', 'guten-builder-blocks')
+        placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your subtitle here', textDomain)
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
         tagName: "h1",
-        className: "gbb-faq-title",
+        className: "xpo-faq-title",
         value: title,
         onChange: val => setAttributes({
           title: val
         }),
-        placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your title here', 'guten-builder-blocks')
+        placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your title here', textDomain)
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
         tagName: "p",
-        className: "gbb-faq-description",
+        className: "xpo-faq-description",
         value: description,
         onChange: val => setAttributes({
           description: val
         }),
-        placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your description here', 'guten-builder-blocks')
+        placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your description here', textDomain)
       })]
     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
       children: [subtitle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
         tagName: "p",
-        className: "gbb-faq-subtitle",
+        className: "xpo-faq-subtitle",
         value: subtitle
       }), title && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
         tagName: "h1",
-        className: "gbb-faq-title",
+        className: "xpo-faq-title",
         value: title
       }), description && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
         tagName: "p",
-        className: "gbb-faq-description",
+        className: "xpo-faq-description",
         value: description
       })]
     })), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      className: "gbb-faq-list",
+      className: "xpo-faq-list",
       children: faqsData.map((faq, index) => {
         const isOpen = openIndices.includes(index);
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          className: "gbb-faq-item",
+          className: "xpo-faq-item",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-            className: `gbb-faq-header gbb-icon-${iconPosition}`,
+            className: `xpo-faq-header xpo-icon-${iconPosition}`,
             onClick: () => toggleItem(index),
             children: [iconPosition === 'left' && (0,_utils_functions__WEBPACK_IMPORTED_MODULE_2__.renderFaqIcon)(isOpen, iconType, iconSize, iconColor), isEditor ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
               tagName: "h2",
-              className: "gbb-faq-question",
+              className: "xpo-faq-question",
               value: faq.question,
               onChange: val => updateFaqQuestion(index, val),
               onClick: e => e.stopPropagation(),
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your accordion Question here', 'guten-builder-blocks')
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your accordion Question here', textDomain)
             }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
               tagName: "h2",
-              className: "gbb-faq-question",
+              className: "xpo-faq-question",
               value: faq.question
             }), iconPosition === 'right' && (0,_utils_functions__WEBPACK_IMPORTED_MODULE_2__.renderFaqIcon)(isOpen, iconType, iconSize, iconColor)]
           }), isEditor ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
             tagName: "p",
-            className: `gbb-faq-answer ${isOpen ? 'is-open' : 'is-closed'}`,
+            className: `xpo-faq-answer ${isOpen ? 'is-open' : 'is-closed'}`,
             value: faq.answer,
             onChange: val => updateFaqAnswer(index, val),
             onClick: e => e.stopPropagation(),
-            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your accordion answer here ...', 'guten-builder-blocks')
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your accordion answer here ...', textDomain)
           }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
             tagName: "p",
-            className: `gbb-faq-answer ${isOpen ? 'is-open' : 'is-closed'}`,
+            className: `xpo-faq-answer ${isOpen ? 'is-open' : 'is-closed'}`,
             value: faq.answer
           })]
         }, index);
@@ -5947,6 +5948,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-blocks';
 const TemplateThree = ({
   attributes,
   setAttributes,
@@ -5970,59 +5972,59 @@ const TemplateThree = ({
   } = attributes || {};
   const contentRefs = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)([]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-    className: "gbb-template-three-wapper",
+    className: "xpo-template-three-wapper",
     id: id,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("section", {
-      className: "gbb-faq-section",
+      className: "xpo-faq-section",
       children: [showHeader && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "gbb-faq-header-content",
+        className: "xpo-faq-header-content",
         children: isEditor ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
             tagName: "p",
-            className: "gbb-faq-subtitle",
+            className: "xpo-faq-subtitle",
             value: subtitle,
             onChange: val => setAttributes({
               subtitle: val
             }),
-            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your subtitle here', 'guten-builder-blocks')
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your subtitle here', textDomain)
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
             tagName: "h1",
-            className: "gbb-faq-title",
+            className: "xpo-faq-title",
             value: title,
             onChange: val => setAttributes({
               title: val
             }),
-            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your title here', 'guten-builder-blocks')
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your title here', textDomain)
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
             tagName: "p",
-            className: "gbb-faq-description",
+            className: "xpo-faq-description",
             value: description,
             onChange: val => setAttributes({
               description: val
             }),
-            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your description here', 'guten-builder-blocks')
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your description here', textDomain)
           })]
         }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
           children: [subtitle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
             tagName: "p",
-            className: "gbb-faq-subtitle",
+            className: "xpo-faq-subtitle",
             value: subtitle
           }), title && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
             tagName: "h1",
-            className: "gbb-faq-title",
+            className: "xpo-faq-title",
             value: title
           }), description && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
             tagName: "p",
-            className: "gbb-faq-description",
+            className: "xpo-faq-description",
             value: description
           })]
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "gbb-faq-list",
+        className: "xpo-faq-list",
         children: faqsData.map((faq, index) => {
           const isOpen = openIndices.includes(index);
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-            className: `gbb-faq-item ${isOpen ? 'is-open' : ''}`,
+            className: `xpo-faq-item ${isOpen ? 'is-open' : ''}`,
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
               id: `faq-heading-${index}`,
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("button", {
@@ -6030,15 +6032,15 @@ const TemplateThree = ({
                 "aria-expanded": isOpen,
                 "aria-controls": `faq-panel-${index}`,
                 onClick: () => toggleItem(index),
-                className: `gbb-faq-toggle gbb-icon-${iconPosition}`,
+                className: `xpo-faq-toggle xpo-icon-${iconPosition}`,
                 children: [iconPosition === 'left' && (0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.renderFaqIcon)(isOpen, iconType, iconSize, iconColor), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-                  className: "gbb-faq-question-text",
+                  className: "xpo-faq-question-text",
                   children: isEditor ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
                     tagName: "span",
                     value: faq.question,
                     onChange: val => updateFaqQuestion(index, val),
                     onClick: e => e.stopPropagation(),
-                    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your question here', 'guten-builder-blocks')
+                    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your question here', textDomain)
                   }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
                     tagName: "span",
                     value: faq.question
@@ -6054,19 +6056,19 @@ const TemplateThree = ({
               style: {
                 maxHeight: isOpen ? `${contentRefs.current[index]?.scrollHeight}px` : '0px'
               },
-              className: "gbb-faq-content-wrapper",
+              className: "xpo-faq-content-wrapper",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                className: "gbb-faq-content-inner",
+                className: "xpo-faq-content-inner",
                 children: isEditor ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
                   tagName: "p",
-                  className: "gbb-faq-answer",
+                  className: "xpo-faq-answer",
                   value: faq.answer,
                   onChange: val => updateFaqAnswer(index, val),
                   onClick: e => e.stopPropagation(),
-                  placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your answer here', 'guten-builder-blocks')
+                  placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your answer here', textDomain)
                 }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
                   tagName: "p",
-                  className: "gbb-faq-answer",
+                  className: "xpo-faq-answer",
                   value: faq.answer
                 })
               })
@@ -6102,6 +6104,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-blocks';
 const TemplateTwo = ({
   attributes,
   setAttributes,
@@ -6124,79 +6127,79 @@ const TemplateTwo = ({
     iconColor = ''
   } = attributes || {};
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-    className: "gbb-template-two-wapper",
+    className: "xpo-template-two-wapper",
     id: id,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "gbb-faq-container",
+      className: "xpo-faq-container",
       children: [showHeader && (isEditor ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
           tagName: "p",
-          className: "gbb-faq-subtitle",
+          className: "xpo-faq-subtitle",
           value: subtitle,
           onChange: val => setAttributes({
             subtitle: val
           }),
-          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your subtitle here', 'guten-builder-blocks')
+          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your subtitle here', textDomain)
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
           tagName: "h1",
-          className: "gbb-faq-title",
+          className: "xpo-faq-title",
           value: title,
           onChange: val => setAttributes({
             title: val
           }),
-          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your title here', 'guten-builder-blocks')
+          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your title here', textDomain)
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
           tagName: "p",
-          className: "gbb-faq-description",
+          className: "xpo-faq-description",
           value: description,
           onChange: val => setAttributes({
             description: val
           }),
-          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your description here', 'guten-builder-blocks')
+          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your description here', textDomain)
         })]
       }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
         children: [subtitle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
           tagName: "p",
-          className: "gbb-faq-subtitle",
+          className: "xpo-faq-subtitle",
           value: subtitle
         }), title && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
           tagName: "h1",
-          className: "gbb-faq-title",
+          className: "xpo-faq-title",
           value: title
         }), description && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
           tagName: "p",
-          className: "gbb-faq-description",
+          className: "xpo-faq-description",
           value: description
         })]
       })), faqsData.map((faq, index) => {
         const isOpen = openIndices.includes(index);
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          className: "gbb-faq-item",
+          className: "xpo-faq-item",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-            className: `gbb-faq-header gbb-icon-${iconPosition}`,
+            className: `xpo-faq-header xpo-icon-${iconPosition}`,
             onClick: () => toggleItem(index),
             children: [iconPosition === 'left' && (0,_utils_functions__WEBPACK_IMPORTED_MODULE_2__.renderFaqIcon)(isOpen, iconType, iconSize, iconColor), isEditor ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
               tagName: "h3",
-              className: "gbb-faq-question",
+              className: "xpo-faq-question",
               value: faq.question,
               onChange: val => updateFaqQuestion(index, val),
               onClick: e => e.stopPropagation(),
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your question here', 'guten-builder-blocks')
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your question here', textDomain)
             }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
               tagName: "h3",
-              className: "gbb-faq-question",
+              className: "xpo-faq-question",
               value: faq.question
             }), iconPosition === 'right' && (0,_utils_functions__WEBPACK_IMPORTED_MODULE_2__.renderFaqIcon)(isOpen, iconType, iconSize, iconColor)]
           }), isEditor ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
             tagName: "p",
-            className: `gbb-faq-answer ${isOpen ? 'is-open' : 'is-closed'}`,
+            className: `xpo-faq-answer ${isOpen ? 'is-open' : 'is-closed'}`,
             value: faq.answer,
             onChange: val => updateFaqAnswer(index, val),
             onClick: e => e.stopPropagation(),
-            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your answer here', 'guten-builder-blocks')
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your answer here', textDomain)
           }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
             tagName: "p",
-            className: `gbb-faq-answer ${isOpen ? 'is-open' : 'is-closed'}`,
+            className: `xpo-faq-answer ${isOpen ? 'is-open' : 'is-closed'}`,
             value: faq.answer
           })]
         }, index);
@@ -6344,7 +6347,7 @@ __webpack_require__.r(__webpack_exports__);
 
 document.addEventListener('DOMContentLoaded', () => {
   // পেজে থাকা সমস্ত Accordion ব্লক কন্টেইনার খুঁজে বের করা
-  const containers = document.querySelectorAll('.wp-block-guten-builder-blocks-accordion');
+  const containers = document.querySelectorAll('.wp-block-xpo-block-accordion');
   containers.forEach(container => {
     // ডুপ্লিকেট রেন্ডারিং প্রতিরোধ: যদি এই ব্লকটি আগেই চালু হয়ে থাকে, তবে ফ্ল্যাগ দেখে থামিয়ে দেওয়া
     if (container.dataset.initialized) return;

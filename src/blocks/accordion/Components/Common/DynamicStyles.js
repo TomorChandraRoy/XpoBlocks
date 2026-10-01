@@ -7,13 +7,13 @@ const DynamicStyles = ({ attributes, id }) => {
 
   const wrapper = mainSl;
 
-  const subtitle = `${wrapper} .gbb-faq-subtitle`;
-  const title = `${wrapper} .gbb-faq-title`;
-  const description = `${wrapper} .gbb-faq-description`;
-  const header = `${wrapper} .gbb-faq-header`;
-  const question = `${wrapper} .gbb-faq-question, ${wrapper} .gbb-faq-question-text`;
-  const answer = `${wrapper} .gbb-faq-answer`;
-  const icon = `${wrapper} .gbb-faq-arrow`;
+  const subtitle = `${wrapper} .xpo-faq-subtitle`;
+  const title = `${wrapper} .xpo-faq-title`;
+  const description = `${wrapper} .xpo-faq-description`;
+  const header = `${wrapper} .xpo-faq-header`;
+  const question = `${wrapper} .xpo-faq-question, ${wrapper} .xpo-faq-question-text`;
+  const answer = `${wrapper} .xpo-faq-answer`;
+  const icon = `${wrapper} .xpo-faq-arrow`;
 
 
   return (
@@ -38,14 +38,14 @@ const DynamicStyles = ({ attributes, id }) => {
         ${header} {
 
         }
-        ${mainSl}.gbb-template-one-wapper .gbb-faq-header,
-        ${mainSl}.gbb-template-three-wapper .gbb-faq-item {
+        ${mainSl}.xpo-template-one-wapper .xpo-faq-header,
+        ${mainSl}.xpo-template-three-wapper .xpo-faq-item {
           ${getBackgroundCss(questionBg) ? `background: ${getBackgroundCss(questionBg)};` : ''}
           ${getBorderCss(questionBorder)}
           ${getBorderRadiusCss(questionBorderRadius)}
         }
 
-        ${mainSl}.gbb-template-two-wapper .gbb-faq-item {
+        ${mainSl}.xpo-template-two-wapper .xpo-faq-item {
           ${getBorderCss(questionBorder)}
         }
 
