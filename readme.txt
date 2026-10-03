@@ -1,6 +1,5 @@
 === XpoBlock ===
 Contributors: tomorroy
-Donate link: https://gum.co/wpdonate/
 Tags: xpo-block, block, pricing-table, timeline, accordion
 Requires at least: 6.7
 Tested up to: 7.1
@@ -42,7 +41,6 @@ XpoBlock provides a collection of beautifully designed, easily customizable Gute
 
 Have a question, feature request, or feedback?
 * [Visit Support Forum](https://wordpress.org/support/plugin/xpo-block/)
-* [Contact Us](mailto:support@bplugins.com)
 
 
 == Installation ==

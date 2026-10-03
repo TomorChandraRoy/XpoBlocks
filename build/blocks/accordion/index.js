@@ -7601,6 +7601,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const textDomain = 'xpo-blocks';
 const subStyleTabs = [{
   name: 'general',
   title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
@@ -7608,7 +7609,7 @@ const subStyleTabs = [{
       display: 'inline-flex',
       alignItems: 'center'
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.GeneralIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('General', 'guten-builder-blocks')]
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.GeneralIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('General', textDomain)]
   })
 }, {
   name: 'style',
@@ -7617,7 +7618,7 @@ const subStyleTabs = [{
       display: 'inline-flex',
       alignItems: 'center'
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.StyleIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style', 'guten-builder-blocks')]
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.StyleIcon, {}), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style', textDomain)]
   })
 }];
 const defaultSubtitleTypo = {
@@ -8124,7 +8125,7 @@ var getProxyDraft = (value) => {
 var latest = (state) => state.copy_ || state.base_;
 var getValue = (value) => {
   const proxyDraft = getProxyDraft(value);
-  return proxyDraft ? proxyDraft.copy_ ?? proxyDraft.base_ : value;
+  return proxyDraft ? getFinalValue(proxyDraft) : value;
 };
 var getFinalValue = (state) => state.modified_ ? state.copy_ : state.base_;
 function shallowCopy(base, strict) {
@@ -8499,7 +8500,7 @@ var objectTraps = {
     ) && isArrayIndex(prop)) {
       return value;
     }
-    if (value === peek(state.base_, prop)) {
+    if (value === peek(state.base_, prop) || isRelocatedBaseRef(state, prop, value)) {
       prepareCopy(state);
       const childKey = state.type_ === 1 /* Array */ ? +prop : prop;
       const childDraft = createProxy(state.scope_, value, state, childKey);
@@ -8533,7 +8534,7 @@ var objectTraps = {
       markChanged(state);
     }
     if (state.copy_[prop] === value && // special case: handle new props with value 'undefined'
-    (value !== void 0 || prop in state.copy_) || // special case: NaN
+    (value !== void 0 || has(state.copy_, prop, state.type_)) || // special case: NaN
     Number.isNaN(value) && Number.isNaN(state.copy_[prop]))
       return true;
     state.copy_[prop] = value;
@@ -8601,6 +8602,12 @@ function peek(draft, prop) {
   const state = draft[DRAFT_STATE];
   const source = state ? latest(state) : draft;
   return source[prop];
+}
+function isRelocatedBaseRef(state, prop, value) {
+  if (state.type_ !== 1 /* Array */ || !state.allIndicesReassigned_ || state.assigned_?.get(prop) || !isDraftable(value) || value[DRAFT_STATE]) {
+    return false;
+  }
+  return state.baseRefs_.has(value);
 }
 function readPropFromProto(state, source, prop) {
   const desc = getDescriptorFromProto(source, prop);
@@ -9087,7 +9094,7 @@ function enablePatches() {
         if (isFunction(base) && p === PROTOTYPE)
           die(errorOffset + 3);
         base = get(base, p);
-        if (!isObjectish(base))
+        if (base === null || !isObjectish(base))
           die(errorOffset + 2, path.join("/"));
       }
       const type = getArchtype(base);
@@ -9164,6 +9171,8 @@ function enablePatches() {
 }
 
 // src/plugins/mapset.ts
+var _globalIterator = globalThis.Iterator;
+var hasIteratorFrom = typeof _globalIterator?.from === "function";
 function enableMapSet() {
   class DraftMap extends Map {
     constructor(target, parent) {
@@ -9257,8 +9266,7 @@ function enableMapSet() {
     }
     values() {
       const iterator = this.keys();
-      return {
-        [Symbol.iterator]: () => this.values(),
+      return iteratorFrom({
         next: () => {
           const r = iterator.next();
           if (r.done)
@@ -9269,12 +9277,11 @@ function enableMapSet() {
             value
           };
         }
-      };
+      });
     }
     entries() {
       const iterator = this.keys();
-      return {
-        [Symbol.iterator]: () => this.entries(),
+      return iteratorFrom({
         next: () => {
           const r = iterator.next();
           if (r.done)
@@ -9285,11 +9292,21 @@ function enableMapSet() {
             value: [r.value, value]
           };
         }
-      };
+      });
     }
     [(DRAFT_STATE, Symbol.iterator)]() {
       return this.entries();
     }
+  }
+  function iteratorFrom(iterable) {
+    if (hasIteratorFrom) {
+      return _globalIterator.from(iterable);
+    }
+    const iterator = {
+      ...iterable,
+      [Symbol.iterator]: () => iterator
+    };
+    return iterator;
   }
   function proxyMap_(target, parent) {
     const map = new DraftMap(target, parent);
@@ -9479,13 +9496,17 @@ function enableArrayMethods() {
   function executeArrayMethod(state, operation, markLength = true) {
     prepareCopy(state);
     const result = operation();
+    markArrayChanged(state, markLength);
+    return result;
+  }
+  function markArrayChanged(state, markLength = true) {
     markChanged(state);
     if (markLength)
       state.assigned_.set("length", true);
-    return result;
   }
   function markAllIndicesReassigned(state) {
     state.allIndicesReassigned_ = true;
+    state.baseRefs_ = new Set(state.base_);
   }
   function normalizeSliceIndex(index, length) {
     if (index < 0) {
@@ -9495,27 +9516,33 @@ function enableArrayMethods() {
   }
   function handleInsertedValues(state, startIndex, values) {
     for (let i = 0; i < values.length; i++) {
-      const index = startIndex + i;
+      const index = "" + (startIndex + i);
       state.assigned_.set(index, true);
       handleCrossReference(state, index, values[i]);
     }
   }
   function handleSimpleOperation(state, method, args) {
-    return executeArrayMethod(state, () => {
-      const lengthBefore = state.copy_.length;
-      const result = state.copy_[method](...args);
-      if (SHIFTING_METHODS.has(method)) {
-        markAllIndicesReassigned(state);
-      }
-      if (method === "push" && args.length > 0) {
-        handleInsertedValues(state, lengthBefore, args);
-      } else if (method === "unshift" && args.length > 0) {
-        handleInsertedValues(state, 0, args);
-      }
-      return RESULT_RETURNING_METHODS.has(method) ? result : state.draft_;
-    });
+    const isInsert = method === "push" || method === "unshift";
+    if (isInsert ? args.length === 0 : latest(state).length === 0) {
+      return isInsert ? latest(state).length : void 0;
+    }
+    prepareCopy(state);
+    const lengthBefore = state.copy_.length;
+    const result = state.copy_[method](...args);
+    markArrayChanged(state);
+    if (SHIFTING_METHODS.has(method)) {
+      markAllIndicesReassigned(state);
+    }
+    if (method === "push") {
+      handleInsertedValues(state, lengthBefore, args);
+    } else if (method === "unshift") {
+      handleInsertedValues(state, 0, args);
+    }
+    return RESULT_RETURNING_METHODS.has(method) ? result : state.draft_;
   }
   function handleReorderingOperation(state, method, args) {
+    if (latest(state).length <= 1)
+      return state.draft_;
     return executeArrayMethod(
       state,
       () => {
@@ -9540,12 +9567,23 @@ function enableArrayMethods() {
             return handleReorderingOperation(state, method, args);
           }
           if (method === "splice") {
-            const res = executeArrayMethod(
-              state,
-              () => state.copy_.splice(...args)
+            const insertCount = args.length > 2 ? args.length - 2 : 0;
+            if (insertCount === 0) {
+              const length = latest(state).length;
+              if (args.length === 0 || normalizeSliceIndex(args[0] ?? 0, length) === length || args.length > 1 && !(args[1] >= 1)) {
+                return [];
+              }
+            }
+            prepareCopy(state);
+            const res = state.copy_.splice(
+              ...args
             );
+            if (res.length === 0 && insertCount === 0) {
+              return res;
+            }
+            markArrayChanged(state);
             markAllIndicesReassigned(state);
-            if (args.length > 2) {
+            if (insertCount > 0) {
               const startIndex = normalizeSliceIndex(
                 args[0] ?? 0,
                 state.copy_.length
@@ -9667,59 +9705,34 @@ module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"xpo-block/acco
 /******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			const getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = (module) => {
+/******/ 		const getter = module && module.__esModule ?
+/******/ 			() => (module['default']) :
+/******/ 			() => (module);
+/******/ 		__webpack_require__.d(getter, { a: getter });
+/******/ 		return getter;
+/******/ 	};
 /******/ 	
 /******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
-/******/ 		// define getter/value functions for harmony exports
-/******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			if(Array.isArray(definition)) {
-/******/ 				var i = 0;
-/******/ 				while(i < definition.length) {
-/******/ 					var key = definition[i++];
-/******/ 					var binding = definition[i++];
-/******/ 					if(!__webpack_require__.o(exports, key)) {
-/******/ 						if(binding === 0) {
-/******/ 							Object.defineProperty(exports, key, { enumerable: true, value: definition[i++] });
-/******/ 						} else {
-/******/ 							Object.defineProperty(exports, key, { enumerable: true, get: binding });
-/******/ 						}
-/******/ 					} else if(binding === 0) { i++; }
-/******/ 				}
-/******/ 			} else {
-/******/ 				for(var key in definition) {
-/******/ 					if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 						Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 					}
-/******/ 				}
+/******/ 	// define getter/value functions for harmony exports
+/******/ 	__webpack_require__.d = (exports, definition) => {
+/******/ 		for(var key in definition) {
+/******/ 			if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 				Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
 /******/ 			}
-/******/ 		};
-/******/ 	})();
+/******/ 		}
+/******/ 	};
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => (Object.hasOwn(obj, prop))
-/******/ 	})();
+/******/ 	__webpack_require__.o = (obj, prop) => (Object.hasOwn(obj, prop));
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = (exports) => {
+/******/ 		Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
 /******/ 	
 /************************************************************************/
 let __webpack_exports__ = {};

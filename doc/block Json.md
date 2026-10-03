@@ -1,7 +1,7 @@
 namespace/block-name — এখানে namespace = carousel    = namespace‑এuppercase (capital letter) দেওয়া যাবে না only lowercase
 
 "title": "Test Purpose",  niyer moto dito paro uppercase ba lowercase
-"textdomain": "guten-builder-blocks", ta block aer name aer namespace aer sate mil ditle vlo hoy na dileo pbm nai "name": "guten-builder-blocks",
+"textdomain": "xpo-block", ta block aer name aer namespace aer sate mil ditle vlo hoy na dileo pbm nai "name": "xpo-block",
 
 
 block aer name change korle ✅style.css  ✅view.js ✅ editor.scss ✅ Settings.js aer tabpanel aer modhe ✅ ✅ ✅ ✅
@@ -9,7 +9,7 @@ block aer name change korle ✅style.css  ✅view.js ✅ editor.scss ✅ Setting
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "guten-builder-blocks/button",
+	"name": "xpo-block/button",
 	"version": "1.0.0",
 	"title": "Test Purpose",
 	"category": "widgets",
@@ -17,7 +17,7 @@ block aer name change korle ✅style.css  ✅view.js ✅ editor.scss ✅ Setting
 	"keywords": [
 		"Test Purpose"
 	],
-	"textdomain": "guten-builder-blocks",
+	"textdomain": "xpo-block",
 	"attributes": {
 		"alignment": {
 			"type": "string",

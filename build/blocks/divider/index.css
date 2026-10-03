@@ -183,17 +183,20 @@
   color: #0f172a;
   text-decoration: underline;
 }
+
 .gbb-template-image {
   width: 100%;
   height: auto;
   display: block;
   border-radius: 6px;
 }
+
 /* PRO বাটনের ওভারলে (এটিতে গোলাপি রঙের বদলে হালকা ব্লার থাকবে) */
 .gbb-template-hover-overlay.is-pro-overlay {
   background: rgba(255, 255, 255, 0.7) !important;
   backdrop-filter: blur(2px);
 }
+
 .gbb-pro-buttons {
   display: flex;
   flex-direction: column;
@@ -201,6 +204,7 @@
   transform: translateY(15px);
   transition: transform 0.25s ease;
 }
+
 /* Demo Button */
 .gbb-btn-demo {
   background: #333333;
@@ -214,9 +218,11 @@
   transition: background 0.2s;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 .gbb-btn-demo:hover {
   background: #000000;
 }
+
 /* PRO Button */
 .gbb-btn-pro {
   background: #16a34a; /* সবুজ রং */
@@ -233,13 +239,16 @@
   transition: background 0.2s;
   box-shadow: 0 4px 6px rgba(22, 163, 74, 0.3);
 }
+
 .gbb-btn-pro:hover {
   background: #15803d;
 }
+
 /* হোভার করলে বাটনগুলো উপরে উঠে আসবে */
 .gbb-template-card:hover .gbb-pro-buttons {
   transform: translateY(0);
 }
+
 /* --- Ready Patterns Modal Styles --- */
 .gbb-patterns-modal-overlay {
   position: fixed;
@@ -259,6 +268,7 @@
     padding: 16px;
   }
 }
+
 .gbb-patterns-modal-container {
   width: 100%;
   max-width: 1200px;
@@ -273,6 +283,7 @@
   animation: gbbSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   border: 1px solid #f1f5f9;
 }
+
 @keyframes gbbFadeIn {
   from {
     opacity: 0;
@@ -406,6 +417,7 @@
 .gbb-patterns-modal-header .gbb-header-right .gbb-patterns-modal-close:active {
   transform: scale(0.95);
 }
+
 /* Modal Body */
 .gbb-patterns-modal-body {
   padding: 32px;
@@ -418,6 +430,7 @@
     padding: 16px;
   }
 }
+
 /* Patterns Grid Layout */
 .gbb-patterns-grid {
   display: grid;
@@ -436,6 +449,7 @@
     gap: 16px;
   }
 }
+
 /* Patterns List Layout */
 .view-mode-list .gbb-patterns-grid {
   grid-template-columns: 1fr;
@@ -469,6 +483,7 @@
   align-items: flex-start;
   gap: 16px;
 }
+
 /* Pattern Card */
 .gbb-pattern-card {
   background-color: #ffffff;
@@ -1682,7 +1697,6 @@
   box-shadow: none !important;
   min-width: 22px !important;
 }
-
 .tr-custom-unit-control select *,
 .tr-custom-unit-control button *,
 .tr-custom-unit-control .components-button *,
@@ -1775,7 +1789,6 @@
   box-shadow: none !important;
   min-width: 22px !important;
 }
-
 .tr-custom-unit-control select *,
 .tr-custom-unit-control button *,
 .tr-custom-unit-control .components-button *,
@@ -1855,48 +1868,39 @@
   padding: 16px;
   min-width: 250px;
 }
-
 .tr-border-control-content .tr-border-control-field {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 12px;
 }
-
 .tr-border-control-content .tr-border-control-field .tr-border-control-label {
   font-size: 13px;
   color: #1e293b;
 }
-
 .tr-border-control-content .tr-border-control-field .tr-border-style-select,
 .tr-border-control-content .tr-border-control-field .tr-border-side-select {
   margin-bottom: 0;
   min-width: 130px;
 }
-
 .tr-border-control-content .tr-border-control-field .tr-border-style-select select,
 .tr-border-control-content .tr-border-control-field .tr-border-side-select select {
   min-height: 32px;
 }
-
 .tr-border-control-content .tr-border-control-field .tr-border-style-select .components-base-control__field .components-input-control__container .components-select-control__input,
 .tr-border-control-content .tr-border-control-field .tr-border-side-select .components-base-control__field .components-input-control__container .components-select-control__input {
   min-height: 32px !important;
   height: 32px !important;
 }
-
 .tr-border-control-content .tr-border-control-field .tr-border-width-input {
   max-width: 130px;
 }
-
 .tr-border-control-content {
   /* Override internal ColorControl margins to match fields */
 }
-
 .tr-border-control-content .tr-color-control {
   margin-bottom: 12px;
 }
-
 .tr-border-control-content .tr-color-control__label {
   font-size: 13px;
 }
@@ -1967,7 +1971,6 @@
 }
 
 /* Override UnitControl borders to attach them */
-
 .bPlBoxControl .bplUnitControlWrapper .components-input-control__container {
   border-radius: 0;
   width: 100%;
@@ -1995,7 +1998,6 @@
 }
 
 /* Reduce suffix size to give input more space */
-
 .bPlBoxControl .bplUnitControlWrapper select,
 .bPlBoxControl .bplUnitControlWrapper button,
 .bPlBoxControl .bplUnitControlWrapper .components-button,
@@ -2478,6 +2480,7 @@
   background: #e0e0e0;
   color: #333;
 }
+
 .tr-shadow-control-popover .components-popover__content {
   min-width: 280px;
   padding: 16px;

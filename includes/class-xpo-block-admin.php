@@ -1,21 +1,23 @@
 <?php
-if ( !defined( 'ABSPATH' ) ) { exit; }
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
-if ( !class_exists( 'Xpo_Block_Admin' ) ) {
+if ( ! class_exists( 'Xpo_Block_Admin' ) ) {
 	class Xpo_Block_Admin {
     /**
 		 * ১. ইনিশিয়ালাইজার মেথড (Initialize Hooks)
 		 * ওয়ার্ডপ্রেস এডমিন মেনু এবং সিএসএস/জেএস ফাইল লোডের অ্যাকশন হুকগুলো রেজিস্টার করে।
 		 * PHP-তে __CLASS__ হলো একটি Magic Constant (ম্যাজিক কনস্ট্যান্ট)।
      * এটি যে ক্লাসের (Class) ভেতরে লেখা হয়, সেই ক্লাসের নামটি নির্দেশ করে।
-     * ফাইলে ক্লাসটি হচ্ছে Guten_Builder_Admin।এর মানে হলো:add_action( 'admin_menu', [ 'Guten_Builder_Admin', 'register_admin_menu' ] );
-
+		 * ফাইলে ক্লাসটি হচ্ছে Xpo_Block_Admin। এর মানে হলো: add_action( 'admin_menu', [ 'Xpo_Block_Admin', 'register_admin_menu' ] );
+		 * ওয়ার্ডপ্রেসকে বলে দেওয়া হচ্ছে— এডমিন মেনু ও ফাইলগুলো রেডি করার কাজ শুরু করো।
 		 */
 		public static function init() {
 			add_action( 'admin_menu', [ __CLASS__, 'register_admin_menu' ] );
 			add_action( 'admin_enqueue_scripts', [ __CLASS__, 'enqueue_admin_assets' ] );
+			add_action( 'admin_init', [ __CLASS__, 'handle_activation_redirect' ] );
 		}
-
 
     public static function register_admin_menu() {
 
@@ -24,15 +26,15 @@ if ( !class_exists( 'Xpo_Block_Admin' ) ) {
       add_menu_page(
         __( 'XpoBlock', 'xpo-block' ), // পেজের টাইটেল (Page Title)
         __( 'XpoBlock', 'xpo-block' ), // সাইডবার মেনুর নাম (Menu Title)
-        'manage_options',                            // ইউজার পারমিশন/ক্যাপাবিলিটি (Capability)
-        'xpo-block',                             // মেনু পেজ স্ল্যাগ (Menu Slug)
-        [ __CLASS__, 'render_admin_page' ],          // কলব্যাক ফাংশন (Callback function to render page HTML)
-        'data:image/svg+xml;base64,' . base64_encode( $svg ), // ওয়ার্ডপ্রেস স্ট্যান্ডার্ড Dashicon আইকন
-        30                                           // মেনুর পজিশন (Menu Position)
+				'manage_options',              // ইউজার পারমিশন/ক্যাপাবিলিটি (Capability)
+				'xpo-block',                   // মেনু পেজ স্ল্যাগ (Menu Slug)
+				[ __CLASS__, 'render_admin_page' ], // কলব্যাক ফাংশন (Callback function to render page HTML)
+				'data:image/svg+xml;base64,' . base64_encode( $svg ), // মেনু আইকন
+				30                             // মেনুর পজিশন (Menu Position)
       );
 
-			$settings = Xpo_Block_Core::get_settings();
-			$active_blocks = isset( $settings['activeBlocks'] ) ? $settings['activeBlocks'] : [];
+			$settings             = Xpo_Block_Core::get_settings();
+			$active_blocks        = isset( $settings['activeBlocks'] ) ? $settings['activeBlocks'] : [];
 			$is_newsletter_active = ! isset( $active_blocks['newsletter-card'] ) || ! empty( $active_blocks['newsletter-card'] );
 
 			if ( $is_newsletter_active ) {
@@ -49,25 +51,28 @@ if ( !class_exists( 'Xpo_Block_Admin' ) ) {
 
     /**
      * ৩. এডমিন পেজ মার্কআপ (Render Admin Page Markup)
-     * React Admin Dashboard অ্যাপ রেন্ডার করার জন্য মূল HTML কন্টেইনার (<div id="guten-builder-admin-root">) তৈরি করে।
+		 * React Admin Dashboard অ্যাপ রেন্ডার করার জন্য মূল HTML কন্টেইনার (<div id="xpo-block-admin-root">) তৈরি করে।
      */
     public static function render_admin_page() {
       ?>
-      <div id="xpo-block-admin-root"
-				data-info='<?php echo esc_attr( wp_json_encode( [
-					'version' => XPO_BLOCK_VERSION,
-					'adminUrl' => admin_url(),
-					'isPro' => false,
+				<div id="xpo-block-admin-root"
+					data-info='<?php echo esc_attr( wp_json_encode( [
+					'version'         => XPO_BLOCK_VERSION,
+					'adminUrl'        => admin_url(),
+					'isPro'           => false,
 					'wpVersion'       => get_bloginfo( 'version' ),
-    			'phpVersion'      => phpversion(),
-					'activeBlocks'        => Xpo_Block_Core::get_settings(),
+					'phpVersion'      => phpversion(),
+					'activeBlocks'    => Xpo_Block_Core::get_settings(),
 					'availableBlocks' => Xpo_Block_Core::get_available_blocks(),
-				] ) ); ?>'
-			>
-		</div>
+					] ) ); ?>'
+				>
+				</div>
       <?php
 		}
 
+		/**
+		 * Render Subscribers Page
+		 */
 		public static function render_subscribers_page() {
 			if ( ! current_user_can( 'manage_options' ) ) {
 				wp_die( esc_html__( 'You do not have sufficient permissions to access this page.', 'xpo-block' ) );
@@ -90,6 +95,7 @@ if ( !class_exists( 'Xpo_Block_Admin' ) ) {
 								$updated_subscribers[] = $sub;
 							}
 						}
+
 						update_option( 'xpo_block_newsletter_subscribers', $updated_subscribers );
 						$deleted_notice = true;
 					}
@@ -100,98 +106,68 @@ if ( !class_exists( 'Xpo_Block_Admin' ) ) {
 			if ( ! is_array( $subscribers ) ) {
 				$subscribers = [];
 			}
-			?>
-			<div class="wrap">
-				<h1 class="wp-heading-inline"><?php esc_html_e( 'Newsletter Subscribers', 'xpo-block' ); ?></h1>
-				<hr class="wp-header-end">
 
-				<?php if ( $deleted_notice ) : ?>
-					<div class="notice notice-success is-dismissible" style="margin-top: 15px;">
-						<p><?php esc_html_e( 'Subscriber deleted successfully.', 'xpo-block' ); ?></p>
-					</div>
-				<?php endif; ?>
-
-				<div style="margin-top: 15px; margin-bottom: 20px; background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #2563eb; border-radius: 6px; padding: 14px 18px; display: flex; align-items: center; gap: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-					<div style="background: #2563eb; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-							<circle cx="12" cy="12" r="10"></circle>
-							<line x1="12" y1="16" x2="12" y2="12"></line>
-							<line x1="12" y1="8" x2="12.01" y2="8"></line>
-						</svg>
-					</div>
-					<div style="font-size: 14px; color: #1e3a8a; line-height: 1.5;">
-						<strong style="color: #1e40af;"><?php esc_html_e( 'Note:', 'xpo-block' ); ?></strong>
-						<?php esc_html_e( 'Subscribers collected via the', 'xpo-block' ); ?>
-						<span style="background: #bfdbfe; color: #1e3a8a; padding: 2px 8px; border-radius: 4px; font-weight: 600; font-size: 13px; margin: 0 2px;">
-							<?php esc_html_e( 'Newsletter Card Block', 'xpo-block' ); ?>
-						</span>
-						<?php esc_html_e( 'on your website will automatically appear here.', 'xpo-block' ); ?>
-					</div>
-				</div>
-
-				<div style="margin-top: 20px; max-width: 950px;">
-					<div style="background: #fff; border: 1px solid #c3c4c7; border-radius: 4px; padding: 15px 20px; margin-bottom: 15px;">
-						<strong style="font-size: 16px; color: #1d2327;">
-							<?php
-							/* translators: %d: Total number of subscribers. */
-							printf( esc_html__( 'Total Subscribers: %d', 'xpo-block' ), count( $subscribers ) );
-							?>
-						</strong>
-					</div>
-
-					<table class="wp-list-table widefat fixed striped table-view-list">
-						<thead>
-							<tr>
-								<th style="width: 60px;">#</th>
-								<th><?php esc_html_e( 'Email Address', 'xpo-block' ); ?></th>
-								<th style="width: 220px;"><?php esc_html_e( 'Subscribed Date', 'xpo-block' ); ?></th>
-								<th style="width: 100px; text-align: right; padding-right: 15px;"><?php esc_html_e( 'Actions', 'xpo-block' ); ?></th>
-							</tr>
-						</thead>
-						<tbody>
-							<?php if ( ! empty( $subscribers ) ) : ?>
-								<?php foreach ( array_reverse( $subscribers ) as $index => $sub ) :
-									$email = is_array( $sub ) ? $sub['email'] : $sub;
-									$date  = is_array( $sub ) && isset( $sub['date'] ) ? $sub['date'] : '-';
-									$delete_url = wp_nonce_url(
-										add_query_arg([
-											'page'   => 'xpo-block-subscribers',
-											'action' => 'delete',
-											'email'  => urlencode( $email ),
-										], admin_url( 'admin.php' )),
-										'xpo_block_delete_subscriber_' . $email
-									);
-									?>
-									<tr>
-										<td><?php echo esc_html( count( $subscribers ) - $index ); ?></td>
-										<td><strong><?php echo esc_html( $email ); ?></strong></td>
-										<td><?php echo esc_html( $date ); ?></td>
-										<td style="text-align: right; padding-right: 15px;">
-											<a href="<?php echo esc_url( $delete_url ); ?>"
-											   class="button button-small button-link-delete"
-											   style="color: #b32d2e; text-decoration: none;"
-											   onclick="return confirm('<?php esc_attr_e( 'Are you sure you want to delete this subscriber?', 'xpo-block' ); ?>');">
-												<?php esc_html_e( 'Delete', 'xpo-block' ); ?>
-											</a>
-										</td>
-									</tr>
-								<?php endforeach; ?>
-							<?php else : ?>
-								<tr>
-									<td colspan="4"><?php esc_html_e( 'No subscribers found yet.', 'xpo-block' ); ?></td>
-								</tr>
-							<?php endif; ?>
-						</tbody>
-					</table>
-				</div>
-			</div>
-			<?php
+			// Load HTML View Template
+			$view_file = XPO_BLOCK_DIR_PATH . 'includes/views/admin-subscribers.php';
+			if ( file_exists( $view_file ) ) {
+				include $view_file;
+			}
 		}
 
 
-    //  ১. যেকোনো মূল টপ-লেভেল মেনুর জন্য ওয়ার্ডপ্রেস প্রিফিক্স হিসেবে দেয়: toplevel_page_ ২. তার সাথে যুক্ত করে আপনার দেওয়া admin_menu-page array-এর menu_slug (guten-builder): guten-builder
+		/**
+		 * Plugin activation callback to set redirect transient.
+		 */
+		public static function activate() {
+			set_transient( 'xpo_block_activation_redirect', true, 30 );
+		}
+
+		/**
+		 * Handles single-plugin activation redirect to XpoBlock Dashboard.
+		 * Strictly adheres to WordPress.org Plugin Review Guidelines.
+		 */
+		public static function handle_activation_redirect() {
+			// 1. Check if transient exists
+			if ( ! get_transient( 'xpo_block_activation_redirect' ) ) {
+				return;
+			}
+
+			// 2. Delete transient immediately to prevent multiple redirects
+			delete_transient( 'xpo_block_activation_redirect' );
+
+			// 3. Do not redirect during Network Activation
+			if ( is_network_admin() ) {
+				return;
+			}
+
+			// 4. Do not redirect during Bulk Activation
+			if ( isset( $_GET['activate-multi'] ) ) {
+				return;
+			}
+
+			// 5. Do not redirect during AJAX or WP-CLI
+			if ( ( defined( 'DOING_AJAX' ) && DOING_AJAX ) || ( defined( 'WP_CLI' ) && WP_CLI ) ) {
+				return;
+			}
+
+			// 6. Check user capability
+			if ( ! current_user_can( 'manage_options' ) ) {
+				return;
+			}
+
+			// 7. Safe redirect to plugin dashboard page
+			wp_safe_redirect( admin_url( 'admin.php?page=xpo-block' ) );
+			exit;
+		}
+
+
+		/**
+		 * Enqueue admin scripts and styles.
+		 *
+		 * @param string $hook The current admin page hook.
+		 */
 		public static function enqueue_admin_assets( $hook ) {
-			// শুধুমাত্র Guten Builder এবং Subscribers পেজে ফাইল লোড করা (Guard Clause)
+			// শুধুমাত্র XpoBlock এবং Subscribers পেজে ফাইল লোড করা (Guard Clause)
 			if ( 'toplevel_page_xpo-block' !== $hook && 'xpo-block_page_xpo-block-subscribers' !== $hook ) {
 				return;
 			}
@@ -228,22 +204,5 @@ if ( !class_exists( 'Xpo_Block_Admin' ) ) {
 				);
 			}
 		}
-
-
-		public static function enqueue_editor_assets() {
-			$asset_file = XPO_BLOCK_DIR_PATH . 'build/editor.asset.php';
-			if ( file_exists( $asset_file ) ) {
-				$assets = include $asset_file;
-				if ( file_exists( XPO_BLOCK_DIR_PATH . 'build/editor.css' ) ) {
-					wp_enqueue_style(
-						'xpo-block-editor-css',
-						XPO_BLOCK_DIR_URL . 'build/editor.css',
-						[ 'wp-edit-blocks', 'wp-components' ],
-						$assets['version']
-					);
-				}
-			}
-		}
-  }
+	}
 }
-

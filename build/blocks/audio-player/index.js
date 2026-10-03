@@ -5731,7 +5731,8 @@ const General = ({
     playerAlign,
     text,
     subtitle,
-    labelText
+    labelText,
+    selectedTemplate = 'template-1'
   } = attributes;
   const prevClientId = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useRef)(clientId);
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useEffect)(() => {
@@ -5744,6 +5745,7 @@ const General = ({
       prevClientId.current = clientId;
     }
   }, [blockId, clientId, setAttributes]);
+  const isTemplateTwo = selectedTemplate === 'template-2';
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
@@ -5780,17 +5782,19 @@ const General = ({
         allowedTypes: ['audio'],
         buttonLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Upload / Select Audio', textDomain),
         help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Provide a direct audio file URL (e.g., ending with .mp3, .wav) or CDN/hosting link. Shared landing pages (like Jumpshare, Dropbox) will not work.', textDomain)
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_3__.MediaControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Cover Image URL / Source :', textDomain),
-        value: coverUrl,
-        onChange: val => setAttributes({
-          coverUrl: val
-        }),
-        allowedTypes: ['image'],
-        buttonLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Upload / Select Image', textDomain),
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Provide a direct image URL (e.g., ending with .jpg, .png, .webp) or CDN/hosting link.', textDomain)
+      }), !isTemplateTwo && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_3__.MediaControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Cover Image URL / Source :', textDomain),
+          value: coverUrl,
+          onChange: val => setAttributes({
+            coverUrl: val
+          }),
+          allowedTypes: ['image'],
+          buttonLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Upload / Select Image', textDomain),
+          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Provide a direct image URL (e.g., ending with .jpg, .png, .webp) or CDN/hosting link.', textDomain)
+        })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+    }), !isTemplateTwo && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Track Information', textDomain),
       initialOpen: false,
@@ -5947,8 +5951,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tr_tools__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tr-tools */ "../tr-tools/index.js");
 /* harmony import */ var tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tr-tools/utils/options */ "../tr-tools/utils/options.js");
 /* harmony import */ var _utils_options__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../utils/options */ "./src/blocks/audio-player/utils/options.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _utils_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../utils/data */ "./src/blocks/audio-player/utils/data.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
+
 
 
 
@@ -5973,85 +5979,91 @@ const Style = ({
     progressColor,
     progressBg,
     timeColor,
-    controlColor
+    controlColor,
+    selectedTemplate = 'template-1'
   } = attributes;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+
+  // যে টেমপ্লেট সিলেক্ট থাকবে, তার ডিফল্ট ডাটা data.js থেকে স্বয়ংক্রিয়ভাবে খুঁজে নিবে (Template 1, 2, 3, 4, 5...)
+  const currentPreset = _utils_data__WEBPACK_IMPORTED_MODULE_5__.templateData.templates.find(t => t.id === selectedTemplate) || _utils_data__WEBPACK_IMPORTED_MODULE_5__.templateData.templates[0];
+  const defaultValues = currentPreset?.attributes || {};
+  const isTemplateTwo = selectedTemplate === 'template-2';
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Player', textDomain),
       initialOpen: false,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BackgroundControl, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BackgroundControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background :', textDomain),
         value: playerBg,
         onChange: val => setAttributes({
           playerBg: val
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BorderControl, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.BorderControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border :'),
         value: playerBorder,
         onChange: val => setAttributes({
           playerBorder: val
         }),
-        defaultBorder: {
+        defaultBorder: defaultValues.playerBorder || {
           color: '#e5e7eb',
           width: '1px',
           style: 'solid',
           side: 'all'
         }
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.SpacingControl, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.SpacingControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border Radius :'),
         value: playerBorderRadius,
         onChange: val => setAttributes({
           playerBorderRadius: val
         }),
         units: [(0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.pxUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.remUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.emUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.vwUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.perUnit)()],
-        defaultVal: {
+        defaultVal: defaultValues.playerBorderRadius || {
           top: '16px',
           right: '16px',
           bottom: '16px',
           left: '16px'
         }
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+    }), !isTemplateTwo && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Track Info'),
       initialOpen: false,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Label Color :'),
         value: labelColor,
         onChange: color => setAttributes({
           labelColor: color
         }),
         defaultColor: "#6b7280"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Label Typography :'),
         value: labelTypography,
         onChange: val => setAttributes({
           labelTypography: val
         }),
         defaultTypography: _utils_options__WEBPACK_IMPORTED_MODULE_4__.defaultLabelTypo
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title Color :'),
         value: titleColor,
         onChange: color => setAttributes({
           titleColor: color
         }),
         defaultColor: "#111827"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title Typography :'),
         value: titleTypography,
         onChange: val => setAttributes({
           titleTypography: val
         }),
         defaultTypography: _utils_options__WEBPACK_IMPORTED_MODULE_4__.defaultTitleTypo
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Artist Color :'),
         value: artistColor,
         onChange: color => setAttributes({
           artistColor: color
         }),
         defaultColor: "#6b7280"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.Typography, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Artist Typography :'),
         value: artistTypography,
         onChange: val => setAttributes({
@@ -6059,43 +6071,43 @@ const Style = ({
         }),
         defaultTypography: _utils_options__WEBPACK_IMPORTED_MODULE_4__.defaultArtistTypo
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Progress Bar'),
       initialOpen: false,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Progress Color :'),
         value: progressColor,
         onChange: color => setAttributes({
           progressColor: color
         }),
-        defaultColor: "#F62477"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+        defaultColor: defaultValues.progressColor || "#F62477"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Progress Background :'),
         value: progressBg,
         onChange: color => setAttributes({
           progressBg: color
         }),
-        defaultColor: "#e5e7eb"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+        defaultColor: defaultValues.progressBg || "#e5e7eb"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Time Color :'),
         value: timeColor,
         onChange: color => setAttributes({
           timeColor: color
         }),
-        defaultColor: "#9ca3af"
+        defaultColor: defaultValues.timeColor || "#9ca3af"
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Controls'),
       initialOpen: false,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.ColorControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Color :'),
         value: controlColor,
         onChange: color => setAttributes({
           controlColor: color
         }),
-        defaultColor: "#F62477"
+        defaultColor: defaultValues.controlColor || "#F62477"
       })
     })]
   });
@@ -6157,7 +6169,8 @@ const DynamicStyles = ({
           justify-content: ${playerAlign};
         }
 
-        ${wrapper} .xpo-audio-player-one {
+        ${wrapper} .xpo-audio-player-one,
+        ${wrapper} .xpo-audio-player-two {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(playerBg) ? `background: ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(playerBg)};` : ''}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderCss)(playerBorder)}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderRadiusCss)(playerBorderRadius)}
@@ -6178,7 +6191,8 @@ const DynamicStyles = ({
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(artistTypography)}
         }
 
-        ${wrapper} .xpo-audio-player-one__progress input {
+        ${wrapper} .xpo-audio-player-one__progress input,
+        ${wrapper} .xpo-audio-player-two__progress input {
           background: linear-gradient(
             to right,
             ${progressColor ? progressColor : '#F62477'} calc(7px + var(--progress) * 1% - 14px * var(--progress) / 100),
@@ -6186,15 +6200,18 @@ const DynamicStyles = ({
           ) !important;
         }
 
-        ${wrapper} .xpo-audio-player-one__progress input::-webkit-slider-thumb {
+        ${wrapper} .xpo-audio-player-one__progress input::-webkit-slider-thumb,
+        ${wrapper} .xpo-audio-player-two__progress input::-webkit-slider-thumb {
           background: ${progressColor ? progressColor : '#F62477'} !important;
         }
 
-        ${wrapper} .xpo-audio-player-one__progress input::-moz-range-thumb {
+        ${wrapper} .xpo-audio-player-one__progress input::-moz-range-thumb,
+        ${wrapper} .xpo-audio-player-two__progress input::-moz-range-thumb {
           background: ${progressColor ? progressColor : '#F62477'} !important;
         }
 
-        ${wrapper} .xpo-audio-player-one__volume input {
+        ${wrapper} .xpo-audio-player-one__volume input,
+        ${wrapper} .xpo-audio-player-two__volume input {
           background: linear-gradient(
             to right,
             ${controlColor ? controlColor : '#F62477'} calc(6px + var(--volume-progress) * 1% - 12px * var(--volume-progress) / 100),
@@ -6202,19 +6219,23 @@ const DynamicStyles = ({
           ) !important;
         }
 
-        ${wrapper} .xpo-audio-player-one__volume input::-webkit-slider-thumb {
+        ${wrapper} .xpo-audio-player-one__volume input::-webkit-slider-thumb,
+        ${wrapper} .xpo-audio-player-two__volume input::-webkit-slider-thumb {
           background: ${controlColor ? controlColor : '#F62477'} !important;
         }
 
-        ${wrapper} .xpo-audio-player-one__volume input::-moz-range-thumb {
+        ${wrapper} .xpo-audio-player-one__volume input::-moz-range-thumb,
+        ${wrapper} .xpo-audio-player-two__volume input::-moz-range-thumb {
           background: ${controlColor ? controlColor : '#F62477'} !important;
         }
 
-        ${timeText} {
+        ${timeText},
+        ${wrapper} .xpo-audio-player-two__time {
           ${timeColor ? `color: ${timeColor};` : ''}
         }
 
-        ${controlButtons} {
+        ${controlButtons},
+        ${wrapper} .xpo-audio-player-two__btn {
           ${controlColor ? `color: ${controlColor};` : ''}
         }
 
@@ -6240,12 +6261,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _TemplateOne__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TemplateOne */ "./src/blocks/audio-player/Components/Common/Templates/TemplateOne.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _TemplateTwo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TemplateTwo */ "./src/blocks/audio-player/Components/Common/Templates/TemplateTwo.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 const TEMPLATES = {
-  'template-1': _TemplateOne__WEBPACK_IMPORTED_MODULE_0__["default"]
+  'template-1': _TemplateOne__WEBPACK_IMPORTED_MODULE_0__["default"],
+  'template-2': _TemplateTwo__WEBPACK_IMPORTED_MODULE_1__["default"]
 };
 const AudioPlayer = ({
   attributes,
@@ -6256,7 +6280,7 @@ const AudioPlayer = ({
     selectedTemplate = 'template-1'
   } = attributes || {};
   const TemplateComponent = TEMPLATES[selectedTemplate] || TEMPLATES['template-1'];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(TemplateComponent, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(TemplateComponent, {
     attributes: attributes,
     setAttributes: setAttributes,
     id: id
@@ -6276,213 +6300,155 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _utils_useAudioPlayer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../utils/useAudioPlayer */ "./src/blocks/audio-player/utils/useAudioPlayer.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
 
 
-
+const DEFAULT_COVER_SVG = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='100%25' height='100%25' fill='%23cbd5e1'/%3E%3Ccircle cx='150' cy='150' r='50' fill='%2394a3b8'/%3E%3Ccircle cx='150' cy='150' r='15' fill='%23cbd5e1'/%3E%3C/svg%3E";
 const TemplateOne = ({
   attributes,
   id
 }) => {
   const {
     audioUrl = '',
-    text = '',
-    subtitle = '',
+    text = 'Your Audio Title',
+    subtitle = 'Artist / Author Name',
     coverUrl = '',
-    labelText = '',
+    labelText = 'Now Playing',
     timeDisplayMode = 'total'
   } = attributes || {};
-  const audioRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
-  const [isPlaying, setIsPlaying] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
-  const [progress, setProgress] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
-  const [currentTime, setCurrentTime] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
-  const [duration, setDuration] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
-  const [volume, setVolume] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(1);
-  const prevVolumeRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(1);
-  const togglePlay = () => {
-    if (!audioRef.current || !audioUrl) return;
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
-  const updateProgress = () => {
-    if (!audioRef.current) return;
-    const current = audioRef.current.currentTime;
-    const total = audioRef.current.duration || 0;
-    setCurrentTime(current);
-    setDuration(total);
-    setProgress(current / total * 100 || 0);
-  };
-  const handleProgressChange = event => {
-    const value = Number(event.target.value);
-    if (!audioRef.current || !duration) return;
-    audioRef.current.currentTime = value;
-    setCurrentTime(value);
-    setProgress(value / duration * 100 || 0);
-  };
-  const skipTime = seconds => {
-    if (!audioRef.current) return;
-    audioRef.current.currentTime += seconds;
-  };
-  const handleVolumeChange = event => {
-    const value = Number(event.target.value);
-    setVolume(value);
-    if (audioRef.current) {
-      audioRef.current.volume = value;
-    }
-  };
-  const toggleMute = () => {
-    if (volume > 0) {
-      prevVolumeRef.current = volume;
-      setVolume(0);
-      if (audioRef.current) {
-        audioRef.current.volume = 0;
-      }
-    } else {
-      const restoreVal = prevVolumeRef.current > 0 ? prevVolumeRef.current : 1;
-      setVolume(restoreVal);
-      if (audioRef.current) {
-        audioRef.current.volume = restoreVal;
-      }
-    }
-  };
-  const formatTime = time => {
-    if (!time || Number.isNaN(time)) {
-      return '00:00';
-    }
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time % 60);
-    return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-  };
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    const handleEnded = () => {
-      setIsPlaying(false);
-      setProgress(0);
-    };
-    audio.addEventListener('ended', handleEnded);
-    return () => {
-      audio.removeEventListener('ended', handleEnded);
-    };
-  }, []);
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    if (!audioUrl) {
-      setIsPlaying(false);
-      setProgress(0);
-      setCurrentTime(0);
-      setDuration(0);
-      if (audioRef.current) {
-        audioRef.current.pause();
-      }
-    }
-  }, [audioUrl]);
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    let animationFrameId;
-    const updateSmoothProgress = () => {
-      if (audioRef.current && !audioRef.current.paused) {
-        const current = audioRef.current.currentTime;
-        const total = audioRef.current.duration || 0;
-        setCurrentTime(current);
-        setDuration(total);
-        setProgress(current / total * 100 || 0);
-        animationFrameId = requestAnimationFrame(updateSmoothProgress);
-      }
-    };
-    if (isPlaying) {
-      animationFrameId = requestAnimationFrame(updateSmoothProgress);
-    } else {
-      cancelAnimationFrame(animationFrameId);
-    }
-    return () => {
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, [isPlaying]);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+
+  // অডিও প্লেয়ারের সমস্ত ব্যাকগ্রাউন্ড লজিক, বাটন ও হ্যান্ডলার কাস্টম হুক থেকে নেওয়া
+  const {
+    audioRef,
+    activeAudioUrl,
+    currentTime,
+    duration,
+    isPlaying,
+    isMuted,
+    currentVolume,
+    progressPercent,
+    volumePercent,
+    formattedCurrentTime,
+    formattedDuration,
+    formattedRemainingTime,
+    togglePlay,
+    skipTime,
+    toggleMute,
+    handleVolumeChange,
+    handlePlay,
+    handlePause,
+    handleEnded,
+    handleTimeUpdate,
+    handleLoadedMetadata,
+    handleStartSeek,
+    handleSliderChange,
+    handleEndSeek
+  } = (0,_utils_useAudioPlayer__WEBPACK_IMPORTED_MODULE_0__["default"])(audioUrl);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     className: `xpo-audio-player-one ${id}`,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("audio", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("audio", {
       ref: audioRef,
-      src: audioUrl,
-      onLoadedMetadata: updateProgress
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      src: activeAudioUrl || undefined,
+      preload: "auto",
+      onPlay: handlePlay,
+      onPause: handlePause,
+      onEnded: handleEnded,
+      onTimeUpdate: handleTimeUpdate,
+      onLoadedMetadata: handleLoadedMetadata,
+      onDurationChange: handleLoadedMetadata,
+      onCanPlay: handleLoadedMetadata,
+      onCanPlayThrough: handleLoadedMetadata,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+        children: "Your browser doesn't support HTML5 audio."
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "xpo-audio-player-one__top",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
         className: "xpo-audio-player-one__cover",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-          src: coverUrl || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='100%25' height='100%25' fill='%23cbd5e1'/%3E%3Ccircle cx='150' cy='150' r='50' fill='%2394a3b8'/%3E%3Ccircle cx='150' cy='150' r='15' fill='%23cbd5e1'/%3E%3C/svg%3E",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          src: coverUrl || DEFAULT_COVER_SVG,
           alt: "Audio Cover"
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "xpo-audio-player-one__content",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
           className: "xpo-audio-player-one__label",
-          children: labelText || 'Now Playing'
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+          children: labelText || 'No Label'
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
           className: "xpo-audio-player-one__title",
           children: text || 'Your Audio Title'
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
           className: "xpo-audio-player-one__artist",
           children: subtitle || 'Artist / Author Name'
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           className: "xpo-audio-player-one__progress",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
             type: "range",
             min: "0",
             max: duration || 100,
             step: "any",
             value: currentTime,
-            onChange: handleProgressChange,
+            onPointerDown: handleStartSeek,
+            onMouseDown: handleStartSeek,
+            onTouchStart: handleStartSeek,
+            onInput: handleSliderChange,
+            onChange: handleSliderChange,
+            onPointerUp: handleEndSeek,
+            onMouseUp: handleEndSeek,
+            onTouchEnd: handleEndSeek,
+            onClick: handleEndSeek,
             disabled: !audioUrl,
             style: {
-              '--progress': progress
+              '--progress': progressPercent
             }
-          })
-        }), timeDisplayMode !== 'none' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "xpo-audio-player-one__time",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-            children: formatTime(currentTime)
-          }), timeDisplayMode !== 'elapsed' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-            children: timeDisplayMode === 'remaining' ? `-${formatTime(Math.max(0, duration - currentTime))}` : formatTime(duration)
+          }), timeDisplayMode !== 'none' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "xpo-audio-player-one__time",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+              children: formattedCurrentTime
+            }), timeDisplayMode === 'remaining' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+              children: formattedRemainingTime
+            }), timeDisplayMode === 'total' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+              children: formattedDuration
+            })]
           })]
         })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "xpo-audio-player-one__controls",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
         type: "button",
         onClick: () => skipTime(-10),
         "aria-label": "Backward 10 seconds",
         disabled: !audioUrl,
+        title: "Backward 10 seconds",
         children: "\u25C0\u25C0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
         type: "button",
         className: `xpo-audio-player-one__play ${isPlaying ? 'is-playing' : 'is-paused'}`,
         onClick: togglePlay,
-        "aria-label": "Play audio",
+        "aria-label": isPlaying ? 'Pause' : 'Play',
         disabled: !audioUrl,
+        title: isPlaying ? 'Pause' : 'Play',
         children: isPlaying ? '❚❚' : '▶'
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
         type: "button",
         onClick: () => skipTime(10),
         "aria-label": "Forward 10 seconds",
         disabled: !audioUrl,
+        title: "Forward 10 seconds",
         children: "\u25B6\u25B6"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "xpo-audio-player-one__volume",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
           type: "button",
           onClick: toggleMute,
           className: "xpo-audio-player-one__mute-btn",
-          "aria-label": volume > 0 ? 'Mute' : 'Unmute',
-          children: volume > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
+          "aria-label": !isMuted && currentVolume > 0 ? 'Mute' : 'Unmute',
+          title: !isMuted && currentVolume > 0 ? 'Mute' : 'Unmute',
+          disabled: !audioUrl,
+          children: !isMuted && currentVolume > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
             width: "18",
             height: "18",
             viewBox: "0 0 24 24",
@@ -6491,12 +6457,12 @@ const TemplateOne = ({
             strokeWidth: "2.5",
             strokeLinecap: "round",
             strokeLinejoin: "round",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("polygon", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polygon", {
               points: "11 5 6 9 2 9 2 15 6 15 11 19 11 5"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
               d: "M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"
             })]
-          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
             width: "18",
             height: "18",
             viewBox: "0 0 24 24",
@@ -6505,29 +6471,30 @@ const TemplateOne = ({
             strokeWidth: "2.5",
             strokeLinecap: "round",
             strokeLinejoin: "round",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("polygon", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polygon", {
               points: "11 5 6 9 2 9 2 15 6 15 11 19 11 5"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
               x1: "23",
               y1: "9",
               x2: "17",
               y2: "15"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
               x1: "17",
               y1: "9",
               x2: "23",
               y2: "15"
             })]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
           type: "range",
           min: "0",
           max: "1",
           step: "0.01",
-          value: volume,
+          value: currentVolume,
           onChange: handleVolumeChange,
+          disabled: !audioUrl,
           style: {
-            '--volume-progress': volume * 100
+            '--volume-progress': volumePercent
           }
         })]
       })]
@@ -6535,6 +6502,260 @@ const TemplateOne = ({
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TemplateOne);
+
+/***/ },
+
+/***/ "./src/blocks/audio-player/Components/Common/Templates/TemplateTwo.jsx"
+/*!*****************************************************************************!*\
+  !*** ./src/blocks/audio-player/Components/Common/Templates/TemplateTwo.jsx ***!
+  \*****************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _utils_useAudioPlayer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../utils/useAudioPlayer */ "./src/blocks/audio-player/utils/useAudioPlayer.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const TemplateTwo = ({
+  attributes,
+  id
+}) => {
+  const {
+    audioUrl = '',
+    timeDisplayMode = 'total'
+  } = attributes || {};
+  const {
+    audioRef,
+    activeAudioUrl,
+    currentTime,
+    duration,
+    isPlaying,
+    isMuted,
+    currentVolume,
+    progressPercent,
+    volumePercent,
+    formattedCurrentTime,
+    formattedDuration,
+    formattedRemainingTime,
+    togglePlay,
+    skipTime,
+    toggleMute,
+    handleVolumeChange,
+    handlePlay,
+    handlePause,
+    handleEnded,
+    handleTimeUpdate,
+    handleLoadedMetadata,
+    handleStartSeek,
+    handleSliderChange,
+    handleEndSeek
+  } = (0,_utils_useAudioPlayer__WEBPACK_IMPORTED_MODULE_0__["default"])(audioUrl);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: `xpo-audio-player-two ${id}`,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("audio", {
+      ref: audioRef,
+      src: activeAudioUrl || undefined,
+      preload: "auto",
+      onPlay: handlePlay,
+      onPause: handlePause,
+      onEnded: handleEnded,
+      onTimeUpdate: handleTimeUpdate,
+      onLoadedMetadata: handleLoadedMetadata,
+      onDurationChange: handleLoadedMetadata,
+      onCanPlay: handleLoadedMetadata,
+      onCanPlayThrough: handleLoadedMetadata,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+        children: "Your browser doesn't support HTML5 audio."
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+      type: "button",
+      className: "xpo-audio-player-two__btn xpo-audio-player-two__btn--backward",
+      onClick: () => skipTime(-10),
+      disabled: !audioUrl,
+      "aria-label": "Backward 10 seconds",
+      title: "Backward 10 seconds",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+        width: "20",
+        height: "20",
+        viewBox: "0 0 24 24",
+        fill: "none",
+        stroke: "currentColor",
+        strokeWidth: "2",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+          d: "M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+          d: "M3 3v5h5"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("text", {
+          x: "12",
+          y: "15.5",
+          fontSize: "8.5",
+          fontWeight: "bold",
+          textAnchor: "middle",
+          fill: "currentColor",
+          stroke: "none",
+          children: "10"
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+      type: "button",
+      className: `xpo-audio-player-two__btn xpo-audio-player-two__btn--play ${isPlaying ? 'is-playing' : 'is-paused'}`,
+      onClick: togglePlay,
+      disabled: !audioUrl,
+      "aria-label": isPlaying ? 'Pause' : 'Play',
+      title: isPlaying ? 'Pause' : 'Play',
+      children: isPlaying ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+        width: "18",
+        height: "18",
+        viewBox: "0 0 24 24",
+        fill: "currentColor",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+          d: "M6 19h4V5H6v14zm8-14v14h4V5h-4z"
+        })
+      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+        width: "18",
+        height: "18",
+        viewBox: "0 0 24 24",
+        fill: "currentColor",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+          d: "M8 5v14l11-7z"
+        })
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+      type: "button",
+      className: "xpo-audio-player-two__btn xpo-audio-player-two__btn--forward",
+      onClick: () => skipTime(10),
+      disabled: !audioUrl,
+      "aria-label": "Forward 10 seconds",
+      title: "Forward 10 seconds",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+        width: "20",
+        height: "20",
+        viewBox: "0 0 24 24",
+        fill: "none",
+        stroke: "currentColor",
+        strokeWidth: "2",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+          d: "M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+          d: "M21 3v5h-5"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("text", {
+          x: "12",
+          y: "15.5",
+          fontSize: "8.5",
+          fontWeight: "bold",
+          textAnchor: "middle",
+          fill: "currentColor",
+          stroke: "none",
+          children: "10"
+        })]
+      })
+    }), timeDisplayMode !== 'none' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+      className: "xpo-audio-player-two__time xpo-audio-player-two__time--current",
+      children: formattedCurrentTime
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "xpo-audio-player-two__progress",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "range",
+        min: "0",
+        max: duration || 100,
+        step: "any",
+        value: currentTime,
+        onPointerDown: handleStartSeek,
+        onMouseDown: handleStartSeek,
+        onTouchStart: handleStartSeek,
+        onInput: handleSliderChange,
+        onChange: handleSliderChange,
+        onPointerUp: handleEndSeek,
+        onMouseUp: handleEndSeek,
+        onTouchEnd: handleEndSeek,
+        onClick: handleEndSeek,
+        disabled: !audioUrl,
+        "aria-label": "Progress slider",
+        style: {
+          '--progress': progressPercent
+        }
+      })
+    }), timeDisplayMode !== 'none' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+      className: "xpo-audio-player-two__time xpo-audio-player-two__time--total",
+      children: timeDisplayMode === 'remaining' ? formattedRemainingTime : formattedDuration
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "xpo-audio-player-two__volume",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+        type: "button",
+        className: "xpo-audio-player-two__btn xpo-audio-player-two__btn--volume",
+        onClick: toggleMute,
+        disabled: !audioUrl,
+        "aria-label": !isMuted && currentVolume > 0 ? 'Mute' : 'Unmute',
+        title: !isMuted && currentVolume > 0 ? 'Mute' : 'Unmute',
+        children: !isMuted && currentVolume > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+          width: "20",
+          height: "20",
+          viewBox: "0 0 24 24",
+          fill: "none",
+          stroke: "currentColor",
+          strokeWidth: "2",
+          strokeLinecap: "round",
+          strokeLinejoin: "round",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polygon", {
+            points: "11 5 6 9 2 9 2 15 6 15 11 19 11 5",
+            fill: "currentColor",
+            stroke: "none"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+            d: "M15.54 8.46a5 5 0 0 1 0 7.07"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+            d: "M19.07 4.93a10 10 0 0 1 0 14.14"
+          })]
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+          width: "20",
+          height: "20",
+          viewBox: "0 0 24 24",
+          fill: "none",
+          stroke: "currentColor",
+          strokeWidth: "2",
+          strokeLinecap: "round",
+          strokeLinejoin: "round",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polygon", {
+            points: "11 5 6 9 2 9 2 15 6 15 11 19 11 5",
+            fill: "currentColor",
+            stroke: "none"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+            x1: "23",
+            y1: "9",
+            x2: "17",
+            y2: "15"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+            x1: "17",
+            y1: "9",
+            x2: "23",
+            y2: "15"
+          })]
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "range",
+        min: "0",
+        max: "1",
+        step: "0.01",
+        value: currentVolume,
+        onChange: handleVolumeChange,
+        disabled: !audioUrl,
+        "aria-label": "Volume slider",
+        className: "xpo-audio-player-two__volume-slider",
+        style: {
+          '--volume-progress': volumePercent
+        }
+      })]
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TemplateTwo);
 
 /***/ },
 
@@ -6661,6 +6882,33 @@ const templateData = {
       timeColor: '#9ca3af',
       controlColor: '#F62477'
     }
+  }, {
+    id: 'template-2',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Template 2', textDomain),
+    tag: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Minimal Pill Player', textDomain),
+    icon: _icon__WEBPACK_IMPORTED_MODULE_1__.TemplateTwoSvg,
+    attributes: {
+      audioUrl: '',
+      playerAlign: 'center',
+      timeDisplayMode: 'total',
+      playerBorder: {
+        color: '#e5e7eb',
+        width: '1px',
+        style: 'solid',
+        side: 'all'
+      },
+      playerBorderRadius: {
+        top: '9px',
+        right: '9px',
+        bottom: '9px',
+        left: '9px'
+      },
+      playerBg: {},
+      progressColor: '#9ca3af',
+      progressBg: '#e5e7eb',
+      timeColor: '#374151',
+      controlColor: '#111827'
+    }
   }]
 };
 
@@ -6677,6 +6925,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   GeneralIcon: () => (/* binding */ GeneralIcon),
 /* harmony export */   StyleIcon: () => (/* binding */ StyleIcon),
 /* harmony export */   TemplateOneSvg: () => (/* binding */ TemplateOneSvg),
+/* harmony export */   TemplateTwoSvg: () => (/* binding */ TemplateTwoSvg),
 /* harmony export */   audioPlayerIcon: () => (/* binding */ audioPlayerIcon)
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
@@ -6979,6 +7228,114 @@ const TemplateOneSvg = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED
     fill: "#3b82f6"
   })]
 });
+const TemplateTwoSvg = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 800 160",
+  width: "100%",
+  height: "100%",
+  style: {
+    fontFamily: "system-ui, -apple-system, sans-serif"
+  },
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+    x: "10",
+    y: "20",
+    width: "780",
+    height: "120",
+    rx: "60",
+    fill: "#ffffff",
+    stroke: "#e5e7eb",
+    strokeWidth: "2"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
+    transform: "translate(60, 80)",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+      d: "M 0 -12 A 12 12 0 1 0 12 0",
+      fill: "none",
+      stroke: "#111827",
+      strokeWidth: "2.5",
+      strokeLinecap: "round"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("polygon", {
+      points: "-4,-14 2,-14 -1,-8",
+      fill: "#111827"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+      x: "0",
+      y: "4",
+      fontSize: "9",
+      fontWeight: "bold",
+      textAnchor: "middle",
+      fill: "#111827",
+      children: "10"
+    })]
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("polygon", {
+    points: "120,68 140,80 120,92",
+    fill: "#111827"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
+    transform: "translate(190, 80)",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+      d: "M 0 -12 A 12 12 0 1 1 -12 0",
+      fill: "none",
+      stroke: "#111827",
+      strokeWidth: "2.5",
+      strokeLinecap: "round"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("polygon", {
+      points: "4,-14 -2,-14 1,-8",
+      fill: "#111827"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+      x: "0",
+      y: "4",
+      fontSize: "9",
+      fontWeight: "bold",
+      textAnchor: "middle",
+      fill: "#111827",
+      children: "10"
+    })]
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "240",
+    y: "85",
+    fontSize: "16",
+    fontWeight: "500",
+    fill: "#374151",
+    children: "0:00"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+    x: "290",
+    y: "77",
+    width: "370",
+    height: "6",
+    rx: "3",
+    fill: "#e5e7eb"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
+    x: "290",
+    y: "77",
+    width: "60",
+    height: "6",
+    rx: "3",
+    fill: "#9ca3af"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("text", {
+    x: "680",
+    y: "85",
+    fontSize: "16",
+    fontWeight: "500",
+    fill: "#374151",
+    children: "0:10"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
+    transform: "translate(735, 70)",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("polygon", {
+      points: "0,6 6,6 12,0 12,20 6,14 0,14",
+      fill: "#111827"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+      d: "M 16 6 A 6 6 0 0 1 16 14",
+      stroke: "#111827",
+      strokeWidth: "2",
+      strokeLinecap: "round",
+      fill: "none"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+      d: "M 19 3 A 10 10 0 0 1 19 17",
+      stroke: "#111827",
+      strokeWidth: "2",
+      strokeLinecap: "round",
+      fill: "none"
+    })]
+  })]
+});
 
 /***/ },
 
@@ -7065,6 +7422,234 @@ const defaultArtistTypo = {
   textDecoration: 'none',
   fontStyle: 'normal'
 };
+
+/***/ },
+
+/***/ "./src/blocks/audio-player/utils/useAudioPlayer.js"
+/*!*********************************************************!*\
+  !*** ./src/blocks/audio-player/utils/useAudioPlayer.js ***!
+  \*********************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   formatTime: () => (/* binding */ formatTime),
+/* harmony export */   useAudioPlayer: () => (/* binding */ useAudioPlayer)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+/**
+ * সময়কে সেকেন্ড থেকে মিনিট ও সেকেন্ডের ফরম্যাটে (mm:ss) রূপান্তর করার হেল্পার ফাংশন
+ * @param {number} time
+ * @returns {string} e.g. "03:45"
+ */
+const formatTime = time => {
+  if (isNaN(time) || !time || time < 0) return '0:00';
+  const minutes = Math.floor(time / 60);
+  const seconds = Math.floor(time % 60);
+  return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+};
+
+/**
+ * অডিও প্লেয়ারের স্টেট, মেটাডাটা, কন্ট্রোলস, লোকাল Blob লোডার ও সিকিং কাস্টম হুক
+ * @param {string} audioUrl
+ */
+const useAudioPlayer = (audioUrl = '') => {
+  const [activeAudioUrl, setActiveAudioUrl] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
+  const [currentTime, setCurrentTime] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
+  const [duration, setDuration] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
+  const [isPlaying, setIsPlaying] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const [volume, setVolume] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1);
+  const [isMuted, setIsMuted] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const audioRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const isDraggingRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(false);
+
+  // ১. WordPress Studio / Localhost-এর জন্য মেমোরি Blob URL তৈরি
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    if (!audioUrl) {
+      setActiveAudioUrl('');
+      setIsPlaying(false);
+      return;
+    }
+    let isMounted = true;
+    let blobUrl = null;
+    if (audioUrl.includes('localhost') || audioUrl.includes('127.0.0.1') || audioUrl.startsWith('/')) {
+      fetch(encodeURI(audioUrl)).then(res => {
+        if (!res.ok) throw new Error('Fetch failed');
+        return res.blob();
+      }).then(blob => {
+        if (isMounted) {
+          blobUrl = URL.createObjectURL(blob);
+          setActiveAudioUrl(blobUrl);
+        }
+      }).catch(() => {
+        if (isMounted) {
+          setActiveAudioUrl(encodeURI(audioUrl));
+        }
+      });
+    } else {
+      setActiveAudioUrl(encodeURI(audioUrl));
+    }
+    return () => {
+      isMounted = false;
+      if (blobUrl) {
+        URL.revokeObjectURL(blobUrl);
+      }
+    };
+  }, [audioUrl]);
+
+  // ২. অডিও ফাইল লোড ও মেটাডাটা ইভেন্ট লিসেনার
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    setCurrentTime(0);
+    setDuration(0);
+    setIsPlaying(false);
+    if (activeAudioUrl) {
+      audio.load();
+    }
+    const checkAndSetDuration = () => {
+      if (audio.duration && !isNaN(audio.duration) && isFinite(audio.duration) && audio.duration > 0) {
+        setDuration(audio.duration);
+      }
+    };
+    if (audio.readyState >= 1) {
+      checkAndSetDuration();
+    }
+    audio.addEventListener('loadedmetadata', checkAndSetDuration);
+    audio.addEventListener('durationchange', checkAndSetDuration);
+    audio.addEventListener('canplay', checkAndSetDuration);
+    audio.addEventListener('canplaythrough', checkAndSetDuration);
+    return () => {
+      audio.removeEventListener('loadedmetadata', checkAndSetDuration);
+      audio.removeEventListener('durationchange', checkAndSetDuration);
+      audio.removeEventListener('canplay', checkAndSetDuration);
+      audio.removeEventListener('canplaythrough', checkAndSetDuration);
+    };
+  }, [activeAudioUrl]);
+
+  // ৩. Play / Pause টগল
+  const togglePlay = () => {
+    const audio = audioRef.current;
+    if (!audio || !activeAudioUrl) return;
+    if (isPlaying) {
+      audio.pause();
+    } else {
+      audio.play().catch(() => {});
+    }
+  };
+
+  // ৪. সময় এগিয়ে বা পিছিয়ে নেওয়া (যেমন: -১০ সেকেন্ড বা +১০ সেকেন্ড)
+  const skipTime = amount => {
+    const audio = audioRef.current;
+    if (!audio || !duration) return;
+    const targetTime = Math.max(0, Math.min(duration, (audio.currentTime || 0) + amount));
+    audio.currentTime = targetTime;
+    setCurrentTime(targetTime);
+  };
+
+  // ৫. ভলিউম পরিবর্তন
+  const handleVolumeChange = e => {
+    const newVol = parseFloat(e.target.value);
+    setVolume(newVol);
+    setIsMuted(newVol === 0);
+    if (audioRef.current) {
+      audioRef.current.volume = newVol;
+    }
+  };
+
+  // ৬. Mute / Unmute টগল
+  const toggleMute = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (isMuted) {
+      audio.volume = volume > 0 ? volume : 1;
+      setIsMuted(false);
+    } else {
+      audio.volume = 0;
+      setIsMuted(true);
+    }
+  };
+
+  // ৭. অডিও চলাকালীন সময় আপডেট
+  const handleTimeUpdate = () => {
+    if (audioRef.current && !isDraggingRef.current) {
+      setCurrentTime(audioRef.current.currentTime || 0);
+    }
+  };
+
+  // ৮. মেটাডাটা লোড হলে সময় নেওয়া
+  const handleLoadedMetadata = () => {
+    if (audioRef.current && !isNaN(audioRef.current.duration) && isFinite(audioRef.current.duration) && audioRef.current.duration > 0) {
+      setDuration(audioRef.current.duration);
+    }
+  };
+
+  // ৯. স্লাইডার ড্র্যাগ শুরু
+  const handleStartSeek = e => {
+    if (e && e.stopPropagation) e.stopPropagation();
+    isDraggingRef.current = true;
+  };
+
+  // ১০. স্লাইডার টানার সময় লাইভ ভ্যালু আপডেট
+  const handleSliderChange = e => {
+    const newTime = parseFloat(e.target.value);
+    setCurrentTime(newTime);
+  };
+
+  // ১১. স্লাইডার ছেড়ে দিলে অডিওতে নতুন সময় সেট করা
+  const handleEndSeek = e => {
+    if (e && e.stopPropagation) e.stopPropagation();
+    const newTime = parseFloat(e.target.value);
+    setCurrentTime(newTime);
+    if (audioRef.current) {
+      try {
+        audioRef.current.currentTime = newTime;
+      } catch {
+        // Safe failover
+      }
+    }
+    setTimeout(() => {
+      isDraggingRef.current = false;
+    }, 150);
+  };
+
+  // প্রগ্রেস ও ভলিউম পার্সেন্টেজ হিসাব
+  const progressPercent = duration > 0 ? currentTime / duration * 100 : 0;
+  const currentVolume = isMuted ? 0 : volume;
+  const volumePercent = currentVolume * 100;
+  return {
+    audioRef,
+    activeAudioUrl,
+    currentTime,
+    duration,
+    isPlaying,
+    volume,
+    isMuted,
+    currentVolume,
+    progressPercent,
+    volumePercent,
+    formattedCurrentTime: formatTime(currentTime),
+    formattedDuration: formatTime(duration),
+    formattedRemainingTime: `-${formatTime(Math.max(0, duration - currentTime))}`,
+    togglePlay,
+    skipTime,
+    toggleMute,
+    handleVolumeChange,
+    handlePlay: () => setIsPlaying(true),
+    handlePause: () => setIsPlaying(false),
+    handleEnded: () => setIsPlaying(false),
+    handleTimeUpdate,
+    handleLoadedMetadata,
+    handleStartSeek,
+    handleSliderChange,
+    handleEndSeek
+  };
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (useAudioPlayer);
 
 /***/ },
 
@@ -7391,23 +7976,19 @@ module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"xpo-block/audi
 /******/ 	/* webpack/runtime/chunk loaded */
 /******/ 	(() => {
 /******/ 		const deferred = [];
-/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 		__webpack_require__.O = (result, chunkIds, fn) => {
 /******/ 			if(chunkIds) {
-/******/ 				priority = priority || 0;
-/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
-/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				deferred.push([chunkIds, fn]);
 /******/ 				return;
 /******/ 			}
-/******/ 			let notFulfilled = Infinity;
 /******/ 			for (var i = 0; i < deferred.length; i++) {
-/******/ 				let [chunkIds, fn, priority] = deferred[i];
+/******/ 				let [chunkIds, fn] = deferred[i];
 /******/ 				let fulfilled = true;
 /******/ 				for (var j = 0; j < chunkIds.length; j++) {
-/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 					if (__webpack_require__.O.j(chunkIds[j])) {
 /******/ 						chunkIds.splice(j--, 1);
 /******/ 					} else {
 /******/ 						fulfilled = false;
-/******/ 						if(priority < notFulfilled) notFulfilled = priority;
 /******/ 					}
 /******/ 				}
 /******/ 				if(fulfilled) {
@@ -7421,59 +8002,34 @@ module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"xpo-block/audi
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			const getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = (module) => {
+/******/ 		const getter = module && module.__esModule ?
+/******/ 			() => (module['default']) :
+/******/ 			() => (module);
+/******/ 		__webpack_require__.d(getter, { a: getter });
+/******/ 		return getter;
+/******/ 	};
 /******/ 	
 /******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
-/******/ 		// define getter/value functions for harmony exports
-/******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			if(Array.isArray(definition)) {
-/******/ 				var i = 0;
-/******/ 				while(i < definition.length) {
-/******/ 					var key = definition[i++];
-/******/ 					var binding = definition[i++];
-/******/ 					if(!__webpack_require__.o(exports, key)) {
-/******/ 						if(binding === 0) {
-/******/ 							Object.defineProperty(exports, key, { enumerable: true, value: definition[i++] });
-/******/ 						} else {
-/******/ 							Object.defineProperty(exports, key, { enumerable: true, get: binding });
-/******/ 						}
-/******/ 					} else if(binding === 0) { i++; }
-/******/ 				}
-/******/ 			} else {
-/******/ 				for(var key in definition) {
-/******/ 					if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 						Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 					}
-/******/ 				}
+/******/ 	// define getter/value functions for harmony exports
+/******/ 	__webpack_require__.d = (exports, definition) => {
+/******/ 		for(var key in definition) {
+/******/ 			if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 				Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
 /******/ 			}
-/******/ 		};
-/******/ 	})();
+/******/ 		}
+/******/ 	};
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => (Object.hasOwn(obj, prop))
-/******/ 	})();
+/******/ 	__webpack_require__.o = (obj, prop) => (Object.hasOwn(obj, prop));
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = (exports) => {
+/******/ 		Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
 /******/ 	(() => {

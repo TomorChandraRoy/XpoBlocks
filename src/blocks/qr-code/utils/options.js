@@ -28,8 +28,8 @@ export const generalStyleTabs = [
 
 
 export const errorCorrectionOptions = [
-  { label: __('L - Low (7%)', 'guten-builder-blocks'), value: 'L' },
-  { label: __('M - Medium (15%)', 'guten-builder-blocks'), value: 'M' },
-  { label: __('Q - Quality (25%)', 'guten-builder-blocks'), value: 'Q' },
-  { label: __('H - High (30% Best for Logos)', 'guten-builder-blocks'), value: 'H' },
+  { label: __('L - Low (7%)', textDomain), value: 'L' },
+  { label: __('M - Medium (15%)', textDomain), value: 'M' },
+  { label: __('Q - Quality (25%)', textDomain), value: 'Q' },
+  { label: __('H - High (30% Best for Logos)', textDomain), value: 'H' },
 ];

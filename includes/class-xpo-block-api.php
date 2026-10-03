@@ -49,7 +49,7 @@ if ( !class_exists( 'Xpo_Block_API' ) ) {
 		 * - ক্লায়েন্ট (Admin Dashboard) থেকে পাঠানো REST request এর JSON সেটিংস গ্রহণ করে।
 		 * - সেভ করার প্রয়োজন নেই এমন ফিল্ডগুলো (যেমন: availableBlocks, systemInfo, currentUser) বাদ দেয়।
 		 * - `activeBlocks` এর প্রতিটি ব্লক আইডি সেনিটাইজ করে বুলিয়ান (true/false) ভ্যালুতে রূপান্তর করে এবং অন্যান্য ফিল্ডগুলো সেনিটাইজ করে।
-		 * - সেনিটাইজড ডেটা `update_option()` দিয়ে 'guten_builder_settings' অপশনে ডেটাবেজে সেভ করে।
+		 * - সেনিটাইজড ডেটা `update_option()` দিয়ে 'xpo_block_settings' অপশনে ডেটাবেজে সেভ করে।
 		 * - সেভ শেষে আপডেট হওয়া সেটিংস, এভেলেবল ব্লকস, ইউজারের নাম এবং সিস্টেম ইনফোর রেসপন্স ডাটা রিটার্ন করে।
 		 *
 		 * @param \WP_REST_Request $request REST API রিকোয়েস্ট অবজেক্ট।

@@ -235,3 +235,151 @@
     width: 120px;
   }
 }
+.wp-block-xpo-block-audio-player .xpo-audio-player-two {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  padding: 12px 24px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 9999px;
+  box-sizing: border-box;
+  gap: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+.wp-block-xpo-block-audio-player .xpo-audio-player-two__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #111827;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+.wp-block-xpo-block-audio-player .xpo-audio-player-two__btn:hover:not(:disabled) {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+.wp-block-xpo-block-audio-player .xpo-audio-player-two__btn:disabled {
+  color: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.wp-block-xpo-block-audio-player .xpo-audio-player-two__btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+.wp-block-xpo-block-audio-player .xpo-audio-player-two__btn--play {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: transparent;
+  color: #111827;
+}
+.wp-block-xpo-block-audio-player .xpo-audio-player-two__btn--backward, .wp-block-xpo-block-audio-player .xpo-audio-player-two__btn--forward, .wp-block-xpo-block-audio-player .xpo-audio-player-two__btn--volume {
+  color: #111827;
+}
+.wp-block-xpo-block-audio-player .xpo-audio-player-two__time {
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  -webkit-user-select: none;
+          user-select: none;
+}
+.wp-block-xpo-block-audio-player .xpo-audio-player-two__progress {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 60px;
+}
+.wp-block-xpo-block-audio-player .xpo-audio-player-two__progress input {
+  width: 100%;
+  height: 5px;
+  margin: 0;
+  cursor: pointer;
+  appearance: none;
+  border-radius: 10px;
+  background: linear-gradient(to left, #9ca3af calc(6px + var(--progress) * 1% - 12px * var(--progress) / 100), #e5e7eb calc(6px + var(--progress) * 1% - 12px * var(--progress) / 100));
+}
+.wp-block-xpo-block-audio-player .xpo-audio-player-two__progress input:focus {
+  outline: none;
+  box-shadow: none;
+}
+.wp-block-xpo-block-audio-player .xpo-audio-player-two__progress input::-webkit-slider-thumb {
+  width: 12px;
+  height: 12px;
+  appearance: none;
+  border: 0;
+  border-radius: 50%;
+  background: #111827;
+  cursor: pointer;
+  -webkit-transition: transform 0.1s ease;
+  transition: transform 0.1s ease;
+}
+.wp-block-xpo-block-audio-player .xpo-audio-player-two__progress input::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+.wp-block-xpo-block-audio-player .xpo-audio-player-two__progress input::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: 0;
+  border-radius: 50%;
+  background: #111827;
+  cursor: pointer;
+}
+.wp-block-xpo-block-audio-player .xpo-audio-player-two__volume {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.wp-block-xpo-block-audio-player .xpo-audio-player-two__volume-slider {
+  width: 70px;
+  height: 5px;
+  margin: 0;
+  cursor: pointer;
+  appearance: none;
+  border-radius: 10px;
+  background: linear-gradient(to left, #111827 calc(6px + var(--volume-progress) * 1% - 12px * var(--volume-progress) / 100), #e5e7eb calc(6px + var(--volume-progress) * 1% - 12px * var(--volume-progress) / 100));
+}
+.wp-block-xpo-block-audio-player .xpo-audio-player-two__volume-slider:focus {
+  outline: none;
+  box-shadow: none;
+}
+.wp-block-xpo-block-audio-player .xpo-audio-player-two__volume-slider::-webkit-slider-thumb {
+  width: 12px;
+  height: 12px;
+  appearance: none;
+  border: 0;
+  border-radius: 50%;
+  background: #111827;
+  cursor: pointer;
+  -webkit-transition: transform 0.1s ease;
+  transition: transform 0.1s ease;
+}
+.wp-block-xpo-block-audio-player .xpo-audio-player-two__volume-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+.wp-block-xpo-block-audio-player .xpo-audio-player-two__volume-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: 0;
+  border-radius: 50%;
+  background: #111827;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .wp-block-xpo-block-audio-player .xpo-audio-player-two {
+    padding: 10px 16px;
+    gap: 10px;
+    border-radius: 24px;
+    flex-wrap: wrap;
+  }
+  .wp-block-xpo-block-audio-player .xpo-audio-player-two__volume-slider {
+    width: 50px;
+  }
+}

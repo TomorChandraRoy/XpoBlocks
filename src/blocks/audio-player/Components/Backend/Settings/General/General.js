@@ -7,7 +7,7 @@ const textDomain = 'xpo-blocks';
 
 
 const General = ({ attributes, setAttributes, clientId }) => {
-	const { blockId, audioUrl, coverUrl,   timeDisplayMode, playerAlign, text, subtitle, labelText} = attributes;
+	const { blockId, audioUrl, coverUrl, timeDisplayMode, playerAlign, text, subtitle, labelText, selectedTemplate = 'template-1' } = attributes;
 
 	const prevClientId = useRef( clientId );
 
@@ -22,6 +22,7 @@ const General = ({ attributes, setAttributes, clientId }) => {
 		}
 	}, [ blockId, clientId, setAttributes ] );
 
+	const isTemplateTwo = selectedTemplate === 'template-2';
 
 	return (
     <>
@@ -42,23 +43,28 @@ const General = ({ attributes, setAttributes, clientId }) => {
           help={__('Provide a direct audio file URL (e.g., ending with .mp3, .wav) or CDN/hosting link. Shared landing pages (like Jumpshare, Dropbox) will not work.', textDomain)}
         />
 
-        <hr />
-
-        <MediaControl
-          label={__('Cover Image URL / Source :', textDomain)}
-          value={coverUrl}
-          onChange={val => setAttributes({ coverUrl: val })}
-          allowedTypes={['image']}
-          buttonLabel={__('Upload / Select Image', textDomain)}
-          help={__('Provide a direct image URL (e.g., ending with .jpg, .png, .webp) or CDN/hosting link.', textDomain)}
-        />
+        {!isTemplateTwo && (
+          <>
+            <hr />
+            <MediaControl
+              label={__('Cover Image URL / Source :', textDomain)}
+              value={coverUrl}
+              onChange={val => setAttributes({ coverUrl: val })}
+              allowedTypes={['image']}
+              buttonLabel={__('Upload / Select Image', textDomain)}
+              help={__('Provide a direct image URL (e.g., ending with .jpg, .png, .webp) or CDN/hosting link.', textDomain)}
+            />
+          </>
+        )}
       </PanelBody>
 
-      <PanelBody className="bPlPanelBody" title={__('Track Information', textDomain)} initialOpen={false}>
-        <TextControl label={__('Label Text :', textDomain)} value={labelText} onChange={val => setAttributes({ labelText: val })} />
-        <TextControl label={__('Track Title :', textDomain)} value={text} onChange={val => setAttributes({ text: val })} />
-        <TextControl label={__('Artist / Author :', textDomain)} value={subtitle} onChange={val => setAttributes({ subtitle: val })} />
-      </PanelBody>
+      {!isTemplateTwo && (
+        <PanelBody className="bPlPanelBody" title={__('Track Information', textDomain)} initialOpen={false}>
+          <TextControl label={__('Label Text :', textDomain)} value={labelText} onChange={val => setAttributes({ labelText: val })} />
+          <TextControl label={__('Track Title :', textDomain)} value={text} onChange={val => setAttributes({ text: val })} />
+          <TextControl label={__('Artist / Author :', textDomain)} value={subtitle} onChange={val => setAttributes({ subtitle: val })} />
+        </PanelBody>
+      )}
 
 {/*
 

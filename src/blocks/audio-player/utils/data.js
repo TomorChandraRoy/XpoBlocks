@@ -1,5 +1,5 @@
 import { __ } from "@wordpress/i18n";
-import { TemplateOneSvg } from "./icon";
+import { TemplateOneSvg, TemplateTwoSvg } from "./icon";
 const textDomain = 'xpo-blocks';
 
 
@@ -71,6 +71,34 @@ export const templateData = {
         progressBg: '#e5e7eb',
         timeColor: '#9ca3af',
         controlColor: '#F62477',
+      },
+    },
+    {
+      id: 'template-2',
+      label: __('Template 2', textDomain),
+      tag: __('Minimal Pill Player', textDomain),
+      icon: TemplateTwoSvg,
+      attributes: {
+        audioUrl: '',
+        playerAlign: 'center',
+        timeDisplayMode: 'total',
+        playerBorder: {
+          color: '#e5e7eb',
+          width: '1px',
+          style: 'solid',
+          side: 'all',
+        },
+        playerBorderRadius: {
+          top: '9px',
+          right: '9px',
+          bottom: '9px',
+          left: '9px',
+        },
+        playerBg: {},
+        progressColor: '#9ca3af',
+        progressBg: '#e5e7eb',
+        timeColor: '#374151',
+        controlColor: '#111827',
       },
     },
   ],

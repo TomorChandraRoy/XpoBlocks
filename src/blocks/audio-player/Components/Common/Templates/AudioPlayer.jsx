@@ -1,7 +1,9 @@
 import TemplateOne from './TemplateOne';
+import TemplateTwo from './TemplateTwo';
 
 const TEMPLATES = {
   'template-1': TemplateOne,
+  'template-2': TemplateTwo,
 };
 
 const AudioPlayer = ({ attributes, setAttributes, id }) => {

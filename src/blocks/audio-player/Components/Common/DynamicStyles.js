@@ -15,7 +15,6 @@ const DynamicStyles = ({ attributes, id }) => {
   const controlButtons = `${controlsPart} button`;
   const playButton = `${controlsPart} .xpo-audio-player-one__play`;
 
-
   return (
     <style
       dangerouslySetInnerHTML={{
@@ -24,7 +23,8 @@ const DynamicStyles = ({ attributes, id }) => {
           justify-content: ${playerAlign};
         }
 
-        ${wrapper} .xpo-audio-player-one {
+        ${wrapper} .xpo-audio-player-one,
+        ${wrapper} .xpo-audio-player-two {
           ${getBackgroundCss(playerBg) ? `background: ${getBackgroundCss(playerBg)};` : ''}
           ${getBorderCss(playerBorder)}
           ${getBorderRadiusCss(playerBorderRadius)}
@@ -45,7 +45,8 @@ const DynamicStyles = ({ attributes, id }) => {
           ${getTypographyCss(artistTypography)}
         }
 
-        ${wrapper} .xpo-audio-player-one__progress input {
+        ${wrapper} .xpo-audio-player-one__progress input,
+        ${wrapper} .xpo-audio-player-two__progress input {
           background: linear-gradient(
             to right,
             ${progressColor ? progressColor : '#F62477'} calc(7px + var(--progress) * 1% - 14px * var(--progress) / 100),
@@ -53,15 +54,18 @@ const DynamicStyles = ({ attributes, id }) => {
           ) !important;
         }
 
-        ${wrapper} .xpo-audio-player-one__progress input::-webkit-slider-thumb {
+        ${wrapper} .xpo-audio-player-one__progress input::-webkit-slider-thumb,
+        ${wrapper} .xpo-audio-player-two__progress input::-webkit-slider-thumb {
           background: ${progressColor ? progressColor : '#F62477'} !important;
         }
 
-        ${wrapper} .xpo-audio-player-one__progress input::-moz-range-thumb {
+        ${wrapper} .xpo-audio-player-one__progress input::-moz-range-thumb,
+        ${wrapper} .xpo-audio-player-two__progress input::-moz-range-thumb {
           background: ${progressColor ? progressColor : '#F62477'} !important;
         }
 
-        ${wrapper} .xpo-audio-player-one__volume input {
+        ${wrapper} .xpo-audio-player-one__volume input,
+        ${wrapper} .xpo-audio-player-two__volume input {
           background: linear-gradient(
             to right,
             ${controlColor ? controlColor : '#F62477'} calc(6px + var(--volume-progress) * 1% - 12px * var(--volume-progress) / 100),
@@ -69,19 +73,23 @@ const DynamicStyles = ({ attributes, id }) => {
           ) !important;
         }
 
-        ${wrapper} .xpo-audio-player-one__volume input::-webkit-slider-thumb {
+        ${wrapper} .xpo-audio-player-one__volume input::-webkit-slider-thumb,
+        ${wrapper} .xpo-audio-player-two__volume input::-webkit-slider-thumb {
           background: ${controlColor ? controlColor : '#F62477'} !important;
         }
 
-        ${wrapper} .xpo-audio-player-one__volume input::-moz-range-thumb {
+        ${wrapper} .xpo-audio-player-one__volume input::-moz-range-thumb,
+        ${wrapper} .xpo-audio-player-two__volume input::-moz-range-thumb {
           background: ${controlColor ? controlColor : '#F62477'} !important;
         }
 
-        ${timeText} {
+        ${timeText},
+        ${wrapper} .xpo-audio-player-two__time {
           ${timeColor ? `color: ${timeColor};` : ''}
         }
 
-        ${controlButtons} {
+        ${controlButtons},
+        ${wrapper} .xpo-audio-player-two__btn {
           ${controlColor ? `color: ${controlColor};` : ''}
         }
 
@@ -95,3 +103,4 @@ const DynamicStyles = ({ attributes, id }) => {
 };
 
 export default DynamicStyles;
+

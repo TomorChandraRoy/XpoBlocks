@@ -50,5 +50,10 @@ if ( !class_exists( 'Xpo_Block_Plugin' ) ) {
 	new Xpo_Block_Plugin();
 }
 
+/**
+ * Register activation hook to set redirect transient.
+ */
+register_activation_hook( __FILE__, [ 'Xpo_Block_Admin', 'activate' ] );
+
 
 

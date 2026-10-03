@@ -9,8 +9,8 @@ export const templateData = {
   templates: [
     {
       id: 'template-1',
-      label: __('Frame Card Layout', 'guten-builder-blocks'),
-      tag: __('Modern frame card with dynamic title, subtitle, logo overlay, and CTA download button.', 'guten-builder-blocks'),
+      label: __('Frame Card Layout', textDomain),
+      tag: __('Modern frame card with dynamic title, subtitle, logo overlay, and CTA download button.', textDomain),
       icon: TemplateOneSvg,
       attributes: {
         qrText: 'https://wordpress.org',

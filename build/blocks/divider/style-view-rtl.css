@@ -36,6 +36,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .xpo-block-divider-template-2 .xpo-divider::before,
 .xpo-block-divider-template-2 .xpo-divider::after {
   margin: 0 !important;

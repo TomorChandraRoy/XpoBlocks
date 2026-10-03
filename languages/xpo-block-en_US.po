@@ -9,182 +9,578 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-29T11:48:52+00:00\n"
+"POT-Creation-Date: 2026-10-02T15:53:13+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: xpo-block\n"
 
 #. Plugin Name of the plugin
-#: guten-builder-blocks.php
+#: xpo-block.php
+#: includes/class-xpo-block-admin.php:27
+#: includes/class-xpo-block-admin.php:28
+#: includes/class-xpo-block-core.php:57
 msgid "XpoBlock"
 msgstr ""
 
 #. Description of the plugin
-#: guten-builder-blocks.php
+#: xpo-block.php
 msgid "Build beautiful WordPress websites with Pricing Table, Slider, Testimonial, Review, Team, Gallery, FAQ, Accordion, Tabs, Cards, and 30+ Gutenberg Blocks."
 msgstr ""
 
 #. Author of the plugin
-#: guten-builder-blocks.php
+#: xpo-block.php
 msgid "Tomor Roy"
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/General/General.js:18
-msgid "Link Settings"
+#: includes/class-xpo-block-admin.php:43
+#: includes/class-xpo-block-admin.php:44
+msgid "Subscribers"
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/General/General.js:20
-msgid "Action Type"
+#: includes/class-xpo-block-admin.php:78
+msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/General/General.js:23
-msgid "Link"
+#: includes/class-xpo-block-api.php:125
+msgid "Please provide a valid email address."
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/General/General.js:24
-msgid "Popup"
+#: includes/class-xpo-block-api.php:146
+msgid "You are already subscribed to our newsletter!"
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/General/General.js:25
-#: src/blocks/button/Components/Backend/Settings/General/General.js:51
-msgid "None"
+#: includes/class-xpo-block-api.php:158
+msgid "New Newsletter Subscriber"
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/General/General.js:33
-msgid "URL"
+#. translators: %s: Subscriber email address.
+#: includes/class-xpo-block-api.php:160
+#, php-format
+msgid "New subscriber added: %s"
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/General/General.js:38
-msgid "Open in new tab"
+#: includes/class-xpo-block-api.php:172
+msgid "Thank you for subscribing!"
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/General/General.js:46
-msgid "Security & Access"
+#: includes/views/admin-subscribers.php:13
+msgid "Newsletter Subscribers"
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/General/General.js:48
-msgid "Security Type"
+#: includes/views/admin-subscribers.php:18
+msgid "Subscriber deleted successfully."
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/General/General.js:52
-#: src/blocks/button/Components/Backend/Settings/General/General.js:60
-msgid "Password"
+#: includes/views/admin-subscribers.php:31
+msgid "Note:"
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/General/General.js:53
-#: src/blocks/button/Components/Backend/Settings/General/General.js:69
-msgid "User Role"
+#: includes/views/admin-subscribers.php:32
+msgid "Subscribers collected via the"
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/General/General.js:72
-msgid "Administrator"
+#: includes/views/admin-subscribers.php:34
+msgid "Newsletter Card Block"
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/General/General.js:73
-msgid "Editor"
+#: includes/views/admin-subscribers.php:36
+msgid "on your website will automatically appear here."
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/General/General.js:74
-msgid "Author"
+#. translators: %d: Total number of subscribers.
+#: includes/views/admin-subscribers.php:45
+#, php-format
+msgid "Total Subscribers: %d"
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/General/General.js:75
-msgid "Subscriber"
+#: includes/views/admin-subscribers.php:54
+msgid "Email Address"
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/General/General.js:82
-msgid "Tooltip Settings"
+#: includes/views/admin-subscribers.php:55
+msgid "Subscribed Date"
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/General/General.js:84
-msgid "Tooltip Text"
+#: includes/views/admin-subscribers.php:56
+msgid "Actions"
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/General/General.js:91
-msgid "Tooltip Position"
+#: includes/views/admin-subscribers.php:81
+msgid "Are you sure you want to delete this subscriber?"
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/General/General.js:94
-msgid "Top"
+#: includes/views/admin-subscribers.php:82
+msgid "Delete"
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/General/General.js:95
-msgid "Bottom"
+#: includes/views/admin-subscribers.php:89
+msgid "No subscribers found yet."
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/General/General.js:96
-msgid "Left"
+#: build/blocks/audio-player/index.js:1
+#: build/blocks/qr-code/index.js:1
+#: build/blocks/scroll-story/index.js:1
+#: build/blocks/table-of-contents/index.js:1
+#: src/blocks/scroll-story/Components/Backend/Settings/Settings.js:18
+msgid "Documentation"
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/General/General.js:97
-msgid "Right"
+#: build/blocks/scroll-story/index.js:1
+#: src/blocks/scroll-story/utils/option.js:10
+msgid "General"
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/Style/Style.js:15
-msgid "Spacing"
+#: build/blocks/scroll-story/index.js:1
+#: src/blocks/scroll-story/utils/option.js:19
+msgid "Style"
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/Style/Style.js:18
-msgid "Padding"
+#: build/blocks/scroll-story/index.js:1
+#: src/blocks/scroll-story/utils/data.js:5
+msgid "Select Scroll Story Template"
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/Style/Style.js:25
-msgid "Margin"
+#: build/blocks/scroll-story/index.js:1
+#: src/blocks/scroll-story/utils/data.js:6
+msgid "Choose a design template for your scroll story."
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/Style/Style.js:35
-msgid "Colors"
+#: build/blocks/scroll-story/index.js:1
+#: src/blocks/scroll-story/utils/data.js:10
+msgid "Template 1"
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/Style/Style.js:38
-msgid "Background Color"
+#: build/blocks/scroll-story/index.js:1
+#: src/blocks/scroll-story/utils/data.js:11
+msgid "Classic Scroll Story"
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Backend/Settings/Style/Style.js:52
-msgid "Text Color"
+#: build/blocks/scroll-story/index.js:1
+#: src/blocks/scroll-story/utils/data.js:18
+msgid "Welcome to our story"
 msgstr ""
 
-#: build/blocks/button/index.js:1
-#: src/blocks/button/Components/Common/Button.jsx:22
-msgid "Add text..."
+#: build/blocks/scroll-story/index.js:1
+#: src/blocks/scroll-story/utils/data.js:19
+msgid "This is the first step. Scroll down to see the magic happen."
+msgstr ""
+
+#: build/blocks/scroll-story/index.js:1
+#: src/blocks/scroll-story/utils/data.js:25
+msgid "Second Step"
+msgstr ""
+
+#: build/blocks/scroll-story/index.js:1
+#: src/blocks/scroll-story/utils/data.js:26
+msgid "As you scroll, the content changes and progress updates automatically."
+msgstr ""
+
+#: build/blocks/scroll-story/index.js:1
+#: src/blocks/scroll-story/utils/data.js:32
+msgid "Third Step"
+msgstr ""
+
+#: build/blocks/scroll-story/index.js:1
+#: src/blocks/scroll-story/utils/data.js:33
+msgid "You can add Lottie animations or images to showcase your story."
+msgstr ""
+
+#: build/blocks/scroll-story/index.js:1
+#: src/blocks/scroll-story/utils/data.js:39
+msgid "Fourth Step"
+msgstr ""
+
+#: build/blocks/scroll-story/index.js:1
+#: src/blocks/scroll-story/utils/data.js:40
+msgid "Engage your visitors with responsive sticky scrolling interactive elements."
+msgstr ""
+
+#: build/blocks/table-of-contents/index.js:1
+#: build/blocks/table-of-contents/view.js:1
+#: src/blocks/table-of-contents/Components/Common/Templates/TemplateOne.jsx:47
+msgid "Enter Table of Contents Title here...."
+msgstr ""
+
+#: build/blocks/table-of-contents/index.js:1
+#: build/blocks/table-of-contents/view.js:1
+#: src/blocks/table-of-contents/Components/Common/Templates/TemplateOne.jsx:71
+msgid "Item title..."
+msgstr ""
+
+#: build/blocks/table-of-contents/index.js:1
+#: build/blocks/table-of-contents/view.js:1
+#: src/blocks/table-of-contents/Components/Common/Templates/TemplateOne.jsx:86
+msgid "Enter content title..."
+msgstr ""
+
+#: build/blocks/table-of-contents/index.js:1
+#: build/blocks/table-of-contents/view.js:1
+#: src/blocks/table-of-contents/Components/Common/Templates/TemplateOne.jsx:87
+msgid "Enter subtitle..."
+msgstr ""
+
+#: build/blocks/table-of-contents/index.js:1
+#: build/blocks/table-of-contents/view.js:1
+#: src/blocks/table-of-contents/Components/Common/Templates/TemplateOne.jsx:103
+msgid "Section heading..."
+msgstr ""
+
+#: build/blocks/table-of-contents/index.js:1
+#: build/blocks/table-of-contents/view.js:1
+#: src/blocks/table-of-contents/Components/Common/Templates/TemplateOne.jsx:104
+msgid "Section paragraph..."
+msgstr ""
+
+#: build/blocks/accordion/block.json
+#: src/blocks/accordion/block.json
+msgctxt "block title"
+msgid "FAQ Accordion"
+msgstr ""
+
+#: build/blocks/accordion/block.json
+#: src/blocks/accordion/block.json
+msgctxt "block description"
+msgid "High-performance responsive FAQ accordion with smooth animations and customizable themes."
+msgstr ""
+
+#: build/blocks/accordion/block.json
+#: src/blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr ""
+
+#: build/blocks/accordion/block.json
+#: src/blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr ""
+
+#: build/blocks/accordion/block.json
+#: src/blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr ""
+
+#: build/blocks/accordion/block.json
+#: src/blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr ""
+
+#: build/blocks/audio-player/block.json
+#: src/blocks/audio-player/block.json
+msgctxt "block title"
+msgid "Audio Player"
+msgstr ""
+
+#: build/blocks/audio-player/block.json
+#: src/blocks/audio-player/block.json
+msgctxt "block description"
+msgid "Ultra-optimized Gutenberg audio player with seek controls and accessible playback UI."
+msgstr ""
+
+#: build/blocks/audio-player/block.json
+#: src/blocks/audio-player/block.json
+msgctxt "block keyword"
+msgid "audio player"
+msgstr ""
+
+#: build/blocks/audio-player/block.json
+#: src/blocks/audio-player/block.json
+msgctxt "block keyword"
+msgid "audio"
+msgstr ""
+
+#: build/blocks/audio-player/block.json
+#: src/blocks/audio-player/block.json
+msgctxt "block keyword"
+msgid "music player"
+msgstr ""
+
+#: build/blocks/audio-player/block.json
+#: src/blocks/audio-player/block.json
+msgctxt "block keyword"
+msgid "podcast"
+msgstr ""
+
+#: build/blocks/audio-player/block.json
+#: src/blocks/audio-player/block.json
+msgctxt "block keyword"
+msgid "sound"
+msgstr ""
+
+#: build/blocks/audio-player/block.json
+#: src/blocks/audio-player/block.json
+msgctxt "block keyword"
+msgid "media player"
+msgstr ""
+
+#: build/blocks/before-after/block.json
+#: src/blocks/before-after/block.json
+msgctxt "block title"
+msgid "Before/After"
+msgstr ""
+
+#: build/blocks/before-after/block.json
+#: src/blocks/before-after/block.json
+msgctxt "block description"
+msgid "Interactive image comparison slider with CSS-based masking and hardware-accelerated transitions."
+msgstr ""
+
+#: build/blocks/before-after/block.json
+#: src/blocks/before-after/block.json
+msgctxt "block keyword"
+msgid "before after"
+msgstr ""
+
+#: build/blocks/before-after/block.json
+#: src/blocks/before-after/block.json
+msgctxt "block keyword"
+msgid "image comparison"
+msgstr ""
+
+#: build/blocks/before-after/block.json
+#: src/blocks/before-after/block.json
+msgctxt "block keyword"
+msgid "slider"
+msgstr ""
+
+#: build/blocks/before-after/block.json
+#: src/blocks/before-after/block.json
+msgctxt "block keyword"
+msgid "photo compare"
+msgstr ""
+
+#: build/blocks/before-after/block.json
+#: src/blocks/before-after/block.json
+msgctxt "block keyword"
+msgid "comparison"
 msgstr ""
 
 #: build/blocks/button/block.json
 #: src/blocks/button/block.json
 msgctxt "block title"
-msgid "GB Button"
+msgid "Button"
 msgstr ""
 
 #: build/blocks/button/block.json
 #: src/blocks/button/block.json
 msgctxt "block description"
-msgid "A simple button block."
+msgid "Add high-converting call-to-action (CTA) buttons with customizable styling, hover animations, and dynamic 3D effects to boost engagement."
+msgstr ""
+
+#: build/blocks/marquee/block.json
+#: src/blocks/marquee/block.json
+msgctxt "block title"
+msgid "Marquee"
+msgstr ""
+
+#: build/blocks/marquee/block.json
+#: src/blocks/marquee/block.json
+msgctxt "block description"
+msgid "Infinite scrolling marquee optimized for logos and images with hardware-accelerated physics."
+msgstr ""
+
+#: build/blocks/marquee/block.json
+#: src/blocks/marquee/block.json
+msgctxt "block keyword"
+msgid "marquee"
+msgstr ""
+
+#: build/blocks/marquee/block.json
+#: src/blocks/marquee/block.json
+msgctxt "block keyword"
+msgid "scrolling text"
+msgstr ""
+
+#: build/blocks/marquee/block.json
+#: src/blocks/marquee/block.json
+msgctxt "block keyword"
+msgid "ticker"
+msgstr ""
+
+#: build/blocks/marquee/block.json
+#: src/blocks/marquee/block.json
+msgctxt "block keyword"
+msgid "moving text"
+msgstr ""
+
+#: build/blocks/marquee/block.json
+#: src/blocks/marquee/block.json
+msgctxt "block keyword"
+msgid "loop text"
+msgstr ""
+
+#: build/blocks/newsletter-card/block.json
+#: src/blocks/newsletter-card/block.json
+msgctxt "block title"
+msgid "Newsletter Card"
+msgstr ""
+
+#: build/blocks/newsletter-card/block.json
+#: src/blocks/newsletter-card/block.json
+msgctxt "block description"
+msgid "Add a visually appealing newsletter subscription card to grow your email list and engage with your audience."
+msgstr ""
+
+#: build/blocks/pricing-table/block.json
+#: src/blocks/pricing-table/block.json
+msgctxt "block title"
+msgid "Pricing Table"
+msgstr ""
+
+#: build/blocks/pricing-table/block.json
+#: src/blocks/pricing-table/block.json
+msgctxt "block description"
+msgid "Showcase your subscription plans or products with a stunning pricing grid."
+msgstr ""
+
+#: build/blocks/pricing-table/block.json
+#: src/blocks/pricing-table/block.json
+msgctxt "block keyword"
+msgid "xpo-block"
+msgstr ""
+
+#: build/blocks/pricing-table/block.json
+#: src/blocks/pricing-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr ""
+
+#: build/blocks/pricing-table/block.json
+#: src/blocks/pricing-table/block.json
+msgctxt "block keyword"
+msgid "price list"
+msgstr ""
+
+#: build/blocks/pricing-table/block.json
+#: src/blocks/pricing-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr ""
+
+#: build/blocks/pricing-table/block.json
+#: src/blocks/pricing-table/block.json
+msgctxt "block keyword"
+msgid "grid"
+msgstr ""
+
+#: build/blocks/qr-code/block.json
+#: src/blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR Code Generator"
+msgstr ""
+
+#: build/blocks/qr-code/block.json
+#: src/blocks/qr-code/block.json
+msgctxt "block description"
+msgid "Generate dynamic and customizable QR codes with custom styling, logos, and download options."
+msgstr ""
+
+#: build/blocks/qr-code/block.json
+#: src/blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr ""
+
+#: build/blocks/qr-code/block.json
+#: src/blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qrcode"
+msgstr ""
+
+#: build/blocks/qr-code/block.json
+#: src/blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "generator"
+msgstr ""
+
+#: build/blocks/qr-code/block.json
+#: src/blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "link"
+msgstr ""
+
+#: build/blocks/qr-code/block.json
+#: src/blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr ""
+
+#: build/blocks/scroll-story/block.json
+#: src/blocks/scroll-story/block.json
+msgctxt "block title"
+msgid "Scroll Story"
+msgstr ""
+
+#: build/blocks/scroll-story/block.json
+#: src/blocks/scroll-story/block.json
+msgctxt "block description"
+msgid "Showcase features or timelines with a beautiful scrolling sticky layout."
+msgstr ""
+
+#: build/blocks/scroll-story/block.json
+#: src/blocks/scroll-story/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr ""
+
+#: build/blocks/scroll-story/block.json
+#: src/blocks/scroll-story/block.json
+msgctxt "block keyword"
+msgid "story"
+msgstr ""
+
+#: build/blocks/scroll-story/block.json
+#: src/blocks/scroll-story/block.json
+msgctxt "block keyword"
+msgid "sticky"
+msgstr ""
+
+#: build/blocks/scroll-story/block.json
+#: src/blocks/scroll-story/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr ""
+
+#: build/blocks/scroll-story/block.json
+#: src/blocks/scroll-story/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr ""
+
+#: build/blocks/table-of-contents/block.json
+#: src/blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of Contents"
+msgstr ""
+
+#: build/blocks/table-of-contents/block.json
+#: src/blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "Dynamic Table of Contents block to automatically generate a list of headings."
+msgstr ""
+
+#: build/blocks/table-of-contents/block.json
+#: src/blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr ""
+
+#: build/blocks/table-of-contents/block.json
+#: src/blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "table of contents"
+msgstr ""
+
+#: build/blocks/table-of-contents/block.json
+#: src/blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr ""
+
+#: build/blocks/table-of-contents/block.json
+#: src/blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "outline"
 msgstr ""

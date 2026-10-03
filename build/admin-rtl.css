@@ -415,6 +415,7 @@
   transform: translate(50%, -50%) scale(1.1);
   box-shadow: 0 0 0 14px rgba(236, 72, 153, 0.45), 0 12px 28px rgba(0, 0, 0, 0.4);
 }
+
 /* Video Modal Backdrop & Iframe Container */
 .gbb-video-modal-backdrop {
   position: fixed;

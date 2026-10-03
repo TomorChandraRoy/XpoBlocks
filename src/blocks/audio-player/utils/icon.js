@@ -101,3 +101,50 @@ export const TemplateOneSvg = () => (
     <circle cx="630" cy="300" r="8" fill="#3b82f6" />
   </svg>
 );
+
+export const TemplateTwoSvg = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 800 160"
+    width="100%"
+    height="100%"
+    style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
+  >
+    {/* Capsule Container */}
+    <rect x="10" y="20" width="780" height="120" rx="60" fill="#ffffff" stroke="#e5e7eb" strokeWidth="2" />
+
+    {/* Backward 10 */}
+    <g transform="translate(60, 80)">
+      <path d="M 0 -12 A 12 12 0 1 0 12 0" fill="none" stroke="#111827" strokeWidth="2.5" strokeLinecap="round" />
+      <polygon points="-4,-14 2,-14 -1,-8" fill="#111827" />
+      <text x="0" y="4" fontSize="9" fontWeight="bold" textAnchor="middle" fill="#111827">10</text>
+    </g>
+
+    {/* Play Button */}
+    <polygon points="120,68 140,80 120,92" fill="#111827" />
+
+    {/* Forward 10 */}
+    <g transform="translate(190, 80)">
+      <path d="M 0 -12 A 12 12 0 1 1 -12 0" fill="none" stroke="#111827" strokeWidth="2.5" strokeLinecap="round" />
+      <polygon points="4,-14 -2,-14 1,-8" fill="#111827" />
+      <text x="0" y="4" fontSize="9" fontWeight="bold" textAnchor="middle" fill="#111827">10</text>
+    </g>
+
+    {/* Current Time */}
+    <text x="240" y="85" fontSize="16" fontWeight="500" fill="#374151">0:00</text>
+
+    {/* Progress Bar */}
+    <rect x="290" y="77" width="370" height="6" rx="3" fill="#e5e7eb" />
+    <rect x="290" y="77" width="60" height="6" rx="3" fill="#9ca3af" />
+
+    {/* Duration Time */}
+    <text x="680" y="85" fontSize="16" fontWeight="500" fill="#374151">0:10</text>
+
+    {/* Speaker Volume Icon */}
+    <g transform="translate(735, 70)">
+      <polygon points="0,6 6,6 12,0 12,20 6,14 0,14" fill="#111827" />
+      <path d="M 16 6 A 6 6 0 0 1 16 14" stroke="#111827" strokeWidth="2" strokeLinecap="round" fill="none" />
+      <path d="M 19 3 A 10 10 0 0 1 19 17" stroke="#111827" strokeWidth="2" strokeLinecap="round" fill="none" />
+    </g>
+  </svg>
+);

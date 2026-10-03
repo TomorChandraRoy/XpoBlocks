@@ -5673,7 +5673,8 @@ const DynamicStyles = ({
           justify-content: ${playerAlign};
         }
 
-        ${wrapper} .xpo-audio-player-one {
+        ${wrapper} .xpo-audio-player-one,
+        ${wrapper} .xpo-audio-player-two {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(playerBg) ? `background: ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(playerBg)};` : ''}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderCss)(playerBorder)}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderRadiusCss)(playerBorderRadius)}
@@ -5694,7 +5695,8 @@ const DynamicStyles = ({
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(artistTypography)}
         }
 
-        ${wrapper} .xpo-audio-player-one__progress input {
+        ${wrapper} .xpo-audio-player-one__progress input,
+        ${wrapper} .xpo-audio-player-two__progress input {
           background: linear-gradient(
             to right,
             ${progressColor ? progressColor : '#F62477'} calc(7px + var(--progress) * 1% - 14px * var(--progress) / 100),
@@ -5702,15 +5704,18 @@ const DynamicStyles = ({
           ) !important;
         }
 
-        ${wrapper} .xpo-audio-player-one__progress input::-webkit-slider-thumb {
+        ${wrapper} .xpo-audio-player-one__progress input::-webkit-slider-thumb,
+        ${wrapper} .xpo-audio-player-two__progress input::-webkit-slider-thumb {
           background: ${progressColor ? progressColor : '#F62477'} !important;
         }
 
-        ${wrapper} .xpo-audio-player-one__progress input::-moz-range-thumb {
+        ${wrapper} .xpo-audio-player-one__progress input::-moz-range-thumb,
+        ${wrapper} .xpo-audio-player-two__progress input::-moz-range-thumb {
           background: ${progressColor ? progressColor : '#F62477'} !important;
         }
 
-        ${wrapper} .xpo-audio-player-one__volume input {
+        ${wrapper} .xpo-audio-player-one__volume input,
+        ${wrapper} .xpo-audio-player-two__volume input {
           background: linear-gradient(
             to right,
             ${controlColor ? controlColor : '#F62477'} calc(6px + var(--volume-progress) * 1% - 12px * var(--volume-progress) / 100),
@@ -5718,19 +5723,23 @@ const DynamicStyles = ({
           ) !important;
         }
 
-        ${wrapper} .xpo-audio-player-one__volume input::-webkit-slider-thumb {
+        ${wrapper} .xpo-audio-player-one__volume input::-webkit-slider-thumb,
+        ${wrapper} .xpo-audio-player-two__volume input::-webkit-slider-thumb {
           background: ${controlColor ? controlColor : '#F62477'} !important;
         }
 
-        ${wrapper} .xpo-audio-player-one__volume input::-moz-range-thumb {
+        ${wrapper} .xpo-audio-player-one__volume input::-moz-range-thumb,
+        ${wrapper} .xpo-audio-player-two__volume input::-moz-range-thumb {
           background: ${controlColor ? controlColor : '#F62477'} !important;
         }
 
-        ${timeText} {
+        ${timeText},
+        ${wrapper} .xpo-audio-player-two__time {
           ${timeColor ? `color: ${timeColor};` : ''}
         }
 
-        ${controlButtons} {
+        ${controlButtons},
+        ${wrapper} .xpo-audio-player-two__btn {
           ${controlColor ? `color: ${controlColor};` : ''}
         }
 
@@ -5756,12 +5765,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _TemplateOne__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TemplateOne */ "./src/blocks/audio-player/Components/Common/Templates/TemplateOne.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _TemplateTwo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TemplateTwo */ "./src/blocks/audio-player/Components/Common/Templates/TemplateTwo.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 const TEMPLATES = {
-  'template-1': _TemplateOne__WEBPACK_IMPORTED_MODULE_0__["default"]
+  'template-1': _TemplateOne__WEBPACK_IMPORTED_MODULE_0__["default"],
+  'template-2': _TemplateTwo__WEBPACK_IMPORTED_MODULE_1__["default"]
 };
 const AudioPlayer = ({
   attributes,
@@ -5772,7 +5784,7 @@ const AudioPlayer = ({
     selectedTemplate = 'template-1'
   } = attributes || {};
   const TemplateComponent = TEMPLATES[selectedTemplate] || TEMPLATES['template-1'];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(TemplateComponent, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(TemplateComponent, {
     attributes: attributes,
     setAttributes: setAttributes,
     id: id
@@ -5792,213 +5804,155 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _utils_useAudioPlayer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../utils/useAudioPlayer */ "./src/blocks/audio-player/utils/useAudioPlayer.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
 
 
-
+const DEFAULT_COVER_SVG = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='100%25' height='100%25' fill='%23cbd5e1'/%3E%3Ccircle cx='150' cy='150' r='50' fill='%2394a3b8'/%3E%3Ccircle cx='150' cy='150' r='15' fill='%23cbd5e1'/%3E%3C/svg%3E";
 const TemplateOne = ({
   attributes,
   id
 }) => {
   const {
     audioUrl = '',
-    text = '',
-    subtitle = '',
+    text = 'Your Audio Title',
+    subtitle = 'Artist / Author Name',
     coverUrl = '',
-    labelText = '',
+    labelText = 'Now Playing',
     timeDisplayMode = 'total'
   } = attributes || {};
-  const audioRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
-  const [isPlaying, setIsPlaying] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
-  const [progress, setProgress] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
-  const [currentTime, setCurrentTime] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
-  const [duration, setDuration] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
-  const [volume, setVolume] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(1);
-  const prevVolumeRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(1);
-  const togglePlay = () => {
-    if (!audioRef.current || !audioUrl) return;
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
-  const updateProgress = () => {
-    if (!audioRef.current) return;
-    const current = audioRef.current.currentTime;
-    const total = audioRef.current.duration || 0;
-    setCurrentTime(current);
-    setDuration(total);
-    setProgress(current / total * 100 || 0);
-  };
-  const handleProgressChange = event => {
-    const value = Number(event.target.value);
-    if (!audioRef.current || !duration) return;
-    audioRef.current.currentTime = value;
-    setCurrentTime(value);
-    setProgress(value / duration * 100 || 0);
-  };
-  const skipTime = seconds => {
-    if (!audioRef.current) return;
-    audioRef.current.currentTime += seconds;
-  };
-  const handleVolumeChange = event => {
-    const value = Number(event.target.value);
-    setVolume(value);
-    if (audioRef.current) {
-      audioRef.current.volume = value;
-    }
-  };
-  const toggleMute = () => {
-    if (volume > 0) {
-      prevVolumeRef.current = volume;
-      setVolume(0);
-      if (audioRef.current) {
-        audioRef.current.volume = 0;
-      }
-    } else {
-      const restoreVal = prevVolumeRef.current > 0 ? prevVolumeRef.current : 1;
-      setVolume(restoreVal);
-      if (audioRef.current) {
-        audioRef.current.volume = restoreVal;
-      }
-    }
-  };
-  const formatTime = time => {
-    if (!time || Number.isNaN(time)) {
-      return '00:00';
-    }
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time % 60);
-    return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-  };
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    const handleEnded = () => {
-      setIsPlaying(false);
-      setProgress(0);
-    };
-    audio.addEventListener('ended', handleEnded);
-    return () => {
-      audio.removeEventListener('ended', handleEnded);
-    };
-  }, []);
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    if (!audioUrl) {
-      setIsPlaying(false);
-      setProgress(0);
-      setCurrentTime(0);
-      setDuration(0);
-      if (audioRef.current) {
-        audioRef.current.pause();
-      }
-    }
-  }, [audioUrl]);
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    let animationFrameId;
-    const updateSmoothProgress = () => {
-      if (audioRef.current && !audioRef.current.paused) {
-        const current = audioRef.current.currentTime;
-        const total = audioRef.current.duration || 0;
-        setCurrentTime(current);
-        setDuration(total);
-        setProgress(current / total * 100 || 0);
-        animationFrameId = requestAnimationFrame(updateSmoothProgress);
-      }
-    };
-    if (isPlaying) {
-      animationFrameId = requestAnimationFrame(updateSmoothProgress);
-    } else {
-      cancelAnimationFrame(animationFrameId);
-    }
-    return () => {
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, [isPlaying]);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+
+  // অডিও প্লেয়ারের সমস্ত ব্যাকগ্রাউন্ড লজিক, বাটন ও হ্যান্ডলার কাস্টম হুক থেকে নেওয়া
+  const {
+    audioRef,
+    activeAudioUrl,
+    currentTime,
+    duration,
+    isPlaying,
+    isMuted,
+    currentVolume,
+    progressPercent,
+    volumePercent,
+    formattedCurrentTime,
+    formattedDuration,
+    formattedRemainingTime,
+    togglePlay,
+    skipTime,
+    toggleMute,
+    handleVolumeChange,
+    handlePlay,
+    handlePause,
+    handleEnded,
+    handleTimeUpdate,
+    handleLoadedMetadata,
+    handleStartSeek,
+    handleSliderChange,
+    handleEndSeek
+  } = (0,_utils_useAudioPlayer__WEBPACK_IMPORTED_MODULE_0__["default"])(audioUrl);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     className: `xpo-audio-player-one ${id}`,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("audio", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("audio", {
       ref: audioRef,
-      src: audioUrl,
-      onLoadedMetadata: updateProgress
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      src: activeAudioUrl || undefined,
+      preload: "auto",
+      onPlay: handlePlay,
+      onPause: handlePause,
+      onEnded: handleEnded,
+      onTimeUpdate: handleTimeUpdate,
+      onLoadedMetadata: handleLoadedMetadata,
+      onDurationChange: handleLoadedMetadata,
+      onCanPlay: handleLoadedMetadata,
+      onCanPlayThrough: handleLoadedMetadata,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+        children: "Your browser doesn't support HTML5 audio."
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "xpo-audio-player-one__top",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
         className: "xpo-audio-player-one__cover",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-          src: coverUrl || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='100%25' height='100%25' fill='%23cbd5e1'/%3E%3Ccircle cx='150' cy='150' r='50' fill='%2394a3b8'/%3E%3Ccircle cx='150' cy='150' r='15' fill='%23cbd5e1'/%3E%3C/svg%3E",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          src: coverUrl || DEFAULT_COVER_SVG,
           alt: "Audio Cover"
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "xpo-audio-player-one__content",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
           className: "xpo-audio-player-one__label",
-          children: labelText || 'Now Playing'
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+          children: labelText || 'No Label'
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
           className: "xpo-audio-player-one__title",
           children: text || 'Your Audio Title'
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
           className: "xpo-audio-player-one__artist",
           children: subtitle || 'Artist / Author Name'
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           className: "xpo-audio-player-one__progress",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
             type: "range",
             min: "0",
             max: duration || 100,
             step: "any",
             value: currentTime,
-            onChange: handleProgressChange,
+            onPointerDown: handleStartSeek,
+            onMouseDown: handleStartSeek,
+            onTouchStart: handleStartSeek,
+            onInput: handleSliderChange,
+            onChange: handleSliderChange,
+            onPointerUp: handleEndSeek,
+            onMouseUp: handleEndSeek,
+            onTouchEnd: handleEndSeek,
+            onClick: handleEndSeek,
             disabled: !audioUrl,
             style: {
-              '--progress': progress
+              '--progress': progressPercent
             }
-          })
-        }), timeDisplayMode !== 'none' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "xpo-audio-player-one__time",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-            children: formatTime(currentTime)
-          }), timeDisplayMode !== 'elapsed' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-            children: timeDisplayMode === 'remaining' ? `-${formatTime(Math.max(0, duration - currentTime))}` : formatTime(duration)
+          }), timeDisplayMode !== 'none' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "xpo-audio-player-one__time",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+              children: formattedCurrentTime
+            }), timeDisplayMode === 'remaining' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+              children: formattedRemainingTime
+            }), timeDisplayMode === 'total' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+              children: formattedDuration
+            })]
           })]
         })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "xpo-audio-player-one__controls",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
         type: "button",
         onClick: () => skipTime(-10),
         "aria-label": "Backward 10 seconds",
         disabled: !audioUrl,
+        title: "Backward 10 seconds",
         children: "\u25C0\u25C0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
         type: "button",
         className: `xpo-audio-player-one__play ${isPlaying ? 'is-playing' : 'is-paused'}`,
         onClick: togglePlay,
-        "aria-label": "Play audio",
+        "aria-label": isPlaying ? 'Pause' : 'Play',
         disabled: !audioUrl,
+        title: isPlaying ? 'Pause' : 'Play',
         children: isPlaying ? '❚❚' : '▶'
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
         type: "button",
         onClick: () => skipTime(10),
         "aria-label": "Forward 10 seconds",
         disabled: !audioUrl,
+        title: "Forward 10 seconds",
         children: "\u25B6\u25B6"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "xpo-audio-player-one__volume",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
           type: "button",
           onClick: toggleMute,
           className: "xpo-audio-player-one__mute-btn",
-          "aria-label": volume > 0 ? 'Mute' : 'Unmute',
-          children: volume > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
+          "aria-label": !isMuted && currentVolume > 0 ? 'Mute' : 'Unmute',
+          title: !isMuted && currentVolume > 0 ? 'Mute' : 'Unmute',
+          disabled: !audioUrl,
+          children: !isMuted && currentVolume > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
             width: "18",
             height: "18",
             viewBox: "0 0 24 24",
@@ -6007,12 +5961,12 @@ const TemplateOne = ({
             strokeWidth: "2.5",
             strokeLinecap: "round",
             strokeLinejoin: "round",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("polygon", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polygon", {
               points: "11 5 6 9 2 9 2 15 6 15 11 19 11 5"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
               d: "M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"
             })]
-          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
             width: "18",
             height: "18",
             viewBox: "0 0 24 24",
@@ -6021,29 +5975,30 @@ const TemplateOne = ({
             strokeWidth: "2.5",
             strokeLinecap: "round",
             strokeLinejoin: "round",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("polygon", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polygon", {
               points: "11 5 6 9 2 9 2 15 6 15 11 19 11 5"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
               x1: "23",
               y1: "9",
               x2: "17",
               y2: "15"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
               x1: "17",
               y1: "9",
               x2: "23",
               y2: "15"
             })]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
           type: "range",
           min: "0",
           max: "1",
           step: "0.01",
-          value: volume,
+          value: currentVolume,
           onChange: handleVolumeChange,
+          disabled: !audioUrl,
           style: {
-            '--volume-progress': volume * 100
+            '--volume-progress': volumePercent
           }
         })]
       })]
@@ -6051,6 +6006,488 @@ const TemplateOne = ({
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TemplateOne);
+
+/***/ },
+
+/***/ "./src/blocks/audio-player/Components/Common/Templates/TemplateTwo.jsx"
+/*!*****************************************************************************!*\
+  !*** ./src/blocks/audio-player/Components/Common/Templates/TemplateTwo.jsx ***!
+  \*****************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _utils_useAudioPlayer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../utils/useAudioPlayer */ "./src/blocks/audio-player/utils/useAudioPlayer.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const TemplateTwo = ({
+  attributes,
+  id
+}) => {
+  const {
+    audioUrl = '',
+    timeDisplayMode = 'total'
+  } = attributes || {};
+  const {
+    audioRef,
+    activeAudioUrl,
+    currentTime,
+    duration,
+    isPlaying,
+    isMuted,
+    currentVolume,
+    progressPercent,
+    volumePercent,
+    formattedCurrentTime,
+    formattedDuration,
+    formattedRemainingTime,
+    togglePlay,
+    skipTime,
+    toggleMute,
+    handleVolumeChange,
+    handlePlay,
+    handlePause,
+    handleEnded,
+    handleTimeUpdate,
+    handleLoadedMetadata,
+    handleStartSeek,
+    handleSliderChange,
+    handleEndSeek
+  } = (0,_utils_useAudioPlayer__WEBPACK_IMPORTED_MODULE_0__["default"])(audioUrl);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: `xpo-audio-player-two ${id}`,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("audio", {
+      ref: audioRef,
+      src: activeAudioUrl || undefined,
+      preload: "auto",
+      onPlay: handlePlay,
+      onPause: handlePause,
+      onEnded: handleEnded,
+      onTimeUpdate: handleTimeUpdate,
+      onLoadedMetadata: handleLoadedMetadata,
+      onDurationChange: handleLoadedMetadata,
+      onCanPlay: handleLoadedMetadata,
+      onCanPlayThrough: handleLoadedMetadata,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+        children: "Your browser doesn't support HTML5 audio."
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+      type: "button",
+      className: "xpo-audio-player-two__btn xpo-audio-player-two__btn--backward",
+      onClick: () => skipTime(-10),
+      disabled: !audioUrl,
+      "aria-label": "Backward 10 seconds",
+      title: "Backward 10 seconds",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+        width: "20",
+        height: "20",
+        viewBox: "0 0 24 24",
+        fill: "none",
+        stroke: "currentColor",
+        strokeWidth: "2",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+          d: "M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+          d: "M3 3v5h5"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("text", {
+          x: "12",
+          y: "15.5",
+          fontSize: "8.5",
+          fontWeight: "bold",
+          textAnchor: "middle",
+          fill: "currentColor",
+          stroke: "none",
+          children: "10"
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+      type: "button",
+      className: `xpo-audio-player-two__btn xpo-audio-player-two__btn--play ${isPlaying ? 'is-playing' : 'is-paused'}`,
+      onClick: togglePlay,
+      disabled: !audioUrl,
+      "aria-label": isPlaying ? 'Pause' : 'Play',
+      title: isPlaying ? 'Pause' : 'Play',
+      children: isPlaying ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+        width: "18",
+        height: "18",
+        viewBox: "0 0 24 24",
+        fill: "currentColor",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+          d: "M6 19h4V5H6v14zm8-14v14h4V5h-4z"
+        })
+      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+        width: "18",
+        height: "18",
+        viewBox: "0 0 24 24",
+        fill: "currentColor",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+          d: "M8 5v14l11-7z"
+        })
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+      type: "button",
+      className: "xpo-audio-player-two__btn xpo-audio-player-two__btn--forward",
+      onClick: () => skipTime(10),
+      disabled: !audioUrl,
+      "aria-label": "Forward 10 seconds",
+      title: "Forward 10 seconds",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+        width: "20",
+        height: "20",
+        viewBox: "0 0 24 24",
+        fill: "none",
+        stroke: "currentColor",
+        strokeWidth: "2",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+          d: "M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+          d: "M21 3v5h-5"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("text", {
+          x: "12",
+          y: "15.5",
+          fontSize: "8.5",
+          fontWeight: "bold",
+          textAnchor: "middle",
+          fill: "currentColor",
+          stroke: "none",
+          children: "10"
+        })]
+      })
+    }), timeDisplayMode !== 'none' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+      className: "xpo-audio-player-two__time xpo-audio-player-two__time--current",
+      children: formattedCurrentTime
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "xpo-audio-player-two__progress",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "range",
+        min: "0",
+        max: duration || 100,
+        step: "any",
+        value: currentTime,
+        onPointerDown: handleStartSeek,
+        onMouseDown: handleStartSeek,
+        onTouchStart: handleStartSeek,
+        onInput: handleSliderChange,
+        onChange: handleSliderChange,
+        onPointerUp: handleEndSeek,
+        onMouseUp: handleEndSeek,
+        onTouchEnd: handleEndSeek,
+        onClick: handleEndSeek,
+        disabled: !audioUrl,
+        "aria-label": "Progress slider",
+        style: {
+          '--progress': progressPercent
+        }
+      })
+    }), timeDisplayMode !== 'none' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+      className: "xpo-audio-player-two__time xpo-audio-player-two__time--total",
+      children: timeDisplayMode === 'remaining' ? formattedRemainingTime : formattedDuration
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "xpo-audio-player-two__volume",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+        type: "button",
+        className: "xpo-audio-player-two__btn xpo-audio-player-two__btn--volume",
+        onClick: toggleMute,
+        disabled: !audioUrl,
+        "aria-label": !isMuted && currentVolume > 0 ? 'Mute' : 'Unmute',
+        title: !isMuted && currentVolume > 0 ? 'Mute' : 'Unmute',
+        children: !isMuted && currentVolume > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+          width: "20",
+          height: "20",
+          viewBox: "0 0 24 24",
+          fill: "none",
+          stroke: "currentColor",
+          strokeWidth: "2",
+          strokeLinecap: "round",
+          strokeLinejoin: "round",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polygon", {
+            points: "11 5 6 9 2 9 2 15 6 15 11 19 11 5",
+            fill: "currentColor",
+            stroke: "none"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+            d: "M15.54 8.46a5 5 0 0 1 0 7.07"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+            d: "M19.07 4.93a10 10 0 0 1 0 14.14"
+          })]
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+          width: "20",
+          height: "20",
+          viewBox: "0 0 24 24",
+          fill: "none",
+          stroke: "currentColor",
+          strokeWidth: "2",
+          strokeLinecap: "round",
+          strokeLinejoin: "round",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polygon", {
+            points: "11 5 6 9 2 9 2 15 6 15 11 19 11 5",
+            fill: "currentColor",
+            stroke: "none"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+            x1: "23",
+            y1: "9",
+            x2: "17",
+            y2: "15"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+            x1: "17",
+            y1: "9",
+            x2: "23",
+            y2: "15"
+          })]
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "range",
+        min: "0",
+        max: "1",
+        step: "0.01",
+        value: currentVolume,
+        onChange: handleVolumeChange,
+        disabled: !audioUrl,
+        "aria-label": "Volume slider",
+        className: "xpo-audio-player-two__volume-slider",
+        style: {
+          '--volume-progress': volumePercent
+        }
+      })]
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TemplateTwo);
+
+/***/ },
+
+/***/ "./src/blocks/audio-player/utils/useAudioPlayer.js"
+/*!*********************************************************!*\
+  !*** ./src/blocks/audio-player/utils/useAudioPlayer.js ***!
+  \*********************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   formatTime: () => (/* binding */ formatTime),
+/* harmony export */   useAudioPlayer: () => (/* binding */ useAudioPlayer)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+/**
+ * সময়কে সেকেন্ড থেকে মিনিট ও সেকেন্ডের ফরম্যাটে (mm:ss) রূপান্তর করার হেল্পার ফাংশন
+ * @param {number} time
+ * @returns {string} e.g. "03:45"
+ */
+const formatTime = time => {
+  if (isNaN(time) || !time || time < 0) return '0:00';
+  const minutes = Math.floor(time / 60);
+  const seconds = Math.floor(time % 60);
+  return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+};
+
+/**
+ * অডিও প্লেয়ারের স্টেট, মেটাডাটা, কন্ট্রোলস, লোকাল Blob লোডার ও সিকিং কাস্টম হুক
+ * @param {string} audioUrl
+ */
+const useAudioPlayer = (audioUrl = '') => {
+  const [activeAudioUrl, setActiveAudioUrl] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
+  const [currentTime, setCurrentTime] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
+  const [duration, setDuration] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
+  const [isPlaying, setIsPlaying] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const [volume, setVolume] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1);
+  const [isMuted, setIsMuted] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const audioRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const isDraggingRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(false);
+
+  // ১. WordPress Studio / Localhost-এর জন্য মেমোরি Blob URL তৈরি
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    if (!audioUrl) {
+      setActiveAudioUrl('');
+      setIsPlaying(false);
+      return;
+    }
+    let isMounted = true;
+    let blobUrl = null;
+    if (audioUrl.includes('localhost') || audioUrl.includes('127.0.0.1') || audioUrl.startsWith('/')) {
+      fetch(encodeURI(audioUrl)).then(res => {
+        if (!res.ok) throw new Error('Fetch failed');
+        return res.blob();
+      }).then(blob => {
+        if (isMounted) {
+          blobUrl = URL.createObjectURL(blob);
+          setActiveAudioUrl(blobUrl);
+        }
+      }).catch(() => {
+        if (isMounted) {
+          setActiveAudioUrl(encodeURI(audioUrl));
+        }
+      });
+    } else {
+      setActiveAudioUrl(encodeURI(audioUrl));
+    }
+    return () => {
+      isMounted = false;
+      if (blobUrl) {
+        URL.revokeObjectURL(blobUrl);
+      }
+    };
+  }, [audioUrl]);
+
+  // ২. অডিও ফাইল লোড ও মেটাডাটা ইভেন্ট লিসেনার
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    setCurrentTime(0);
+    setDuration(0);
+    setIsPlaying(false);
+    if (activeAudioUrl) {
+      audio.load();
+    }
+    const checkAndSetDuration = () => {
+      if (audio.duration && !isNaN(audio.duration) && isFinite(audio.duration) && audio.duration > 0) {
+        setDuration(audio.duration);
+      }
+    };
+    if (audio.readyState >= 1) {
+      checkAndSetDuration();
+    }
+    audio.addEventListener('loadedmetadata', checkAndSetDuration);
+    audio.addEventListener('durationchange', checkAndSetDuration);
+    audio.addEventListener('canplay', checkAndSetDuration);
+    audio.addEventListener('canplaythrough', checkAndSetDuration);
+    return () => {
+      audio.removeEventListener('loadedmetadata', checkAndSetDuration);
+      audio.removeEventListener('durationchange', checkAndSetDuration);
+      audio.removeEventListener('canplay', checkAndSetDuration);
+      audio.removeEventListener('canplaythrough', checkAndSetDuration);
+    };
+  }, [activeAudioUrl]);
+
+  // ৩. Play / Pause টগল
+  const togglePlay = () => {
+    const audio = audioRef.current;
+    if (!audio || !activeAudioUrl) return;
+    if (isPlaying) {
+      audio.pause();
+    } else {
+      audio.play().catch(() => {});
+    }
+  };
+
+  // ৪. সময় এগিয়ে বা পিছিয়ে নেওয়া (যেমন: -১০ সেকেন্ড বা +১০ সেকেন্ড)
+  const skipTime = amount => {
+    const audio = audioRef.current;
+    if (!audio || !duration) return;
+    const targetTime = Math.max(0, Math.min(duration, (audio.currentTime || 0) + amount));
+    audio.currentTime = targetTime;
+    setCurrentTime(targetTime);
+  };
+
+  // ৫. ভলিউম পরিবর্তন
+  const handleVolumeChange = e => {
+    const newVol = parseFloat(e.target.value);
+    setVolume(newVol);
+    setIsMuted(newVol === 0);
+    if (audioRef.current) {
+      audioRef.current.volume = newVol;
+    }
+  };
+
+  // ৬. Mute / Unmute টগল
+  const toggleMute = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (isMuted) {
+      audio.volume = volume > 0 ? volume : 1;
+      setIsMuted(false);
+    } else {
+      audio.volume = 0;
+      setIsMuted(true);
+    }
+  };
+
+  // ৭. অডিও চলাকালীন সময় আপডেট
+  const handleTimeUpdate = () => {
+    if (audioRef.current && !isDraggingRef.current) {
+      setCurrentTime(audioRef.current.currentTime || 0);
+    }
+  };
+
+  // ৮. মেটাডাটা লোড হলে সময় নেওয়া
+  const handleLoadedMetadata = () => {
+    if (audioRef.current && !isNaN(audioRef.current.duration) && isFinite(audioRef.current.duration) && audioRef.current.duration > 0) {
+      setDuration(audioRef.current.duration);
+    }
+  };
+
+  // ৯. স্লাইডার ড্র্যাগ শুরু
+  const handleStartSeek = e => {
+    if (e && e.stopPropagation) e.stopPropagation();
+    isDraggingRef.current = true;
+  };
+
+  // ১০. স্লাইডার টানার সময় লাইভ ভ্যালু আপডেট
+  const handleSliderChange = e => {
+    const newTime = parseFloat(e.target.value);
+    setCurrentTime(newTime);
+  };
+
+  // ১১. স্লাইডার ছেড়ে দিলে অডিওতে নতুন সময় সেট করা
+  const handleEndSeek = e => {
+    if (e && e.stopPropagation) e.stopPropagation();
+    const newTime = parseFloat(e.target.value);
+    setCurrentTime(newTime);
+    if (audioRef.current) {
+      try {
+        audioRef.current.currentTime = newTime;
+      } catch {
+        // Safe failover
+      }
+    }
+    setTimeout(() => {
+      isDraggingRef.current = false;
+    }, 150);
+  };
+
+  // প্রগ্রেস ও ভলিউম পার্সেন্টেজ হিসাব
+  const progressPercent = duration > 0 ? currentTime / duration * 100 : 0;
+  const currentVolume = isMuted ? 0 : volume;
+  const volumePercent = currentVolume * 100;
+  return {
+    audioRef,
+    activeAudioUrl,
+    currentTime,
+    duration,
+    isPlaying,
+    volume,
+    isMuted,
+    currentVolume,
+    progressPercent,
+    volumePercent,
+    formattedCurrentTime: formatTime(currentTime),
+    formattedDuration: formatTime(duration),
+    formattedRemainingTime: `-${formatTime(Math.max(0, duration - currentTime))}`,
+    togglePlay,
+    skipTime,
+    toggleMute,
+    handleVolumeChange,
+    handlePlay: () => setIsPlaying(true),
+    handlePause: () => setIsPlaying(false),
+    handleEnded: () => setIsPlaying(false),
+    handleTimeUpdate,
+    handleLoadedMetadata,
+    handleStartSeek,
+    handleSliderChange,
+    handleEndSeek
+  };
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (useAudioPlayer);
 
 /***/ },
 
@@ -6399,23 +6836,19 @@ module.exports = window["wp"]["i18n"];
 /******/ 	/* webpack/runtime/chunk loaded */
 /******/ 	(() => {
 /******/ 		const deferred = [];
-/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 		__webpack_require__.O = (result, chunkIds, fn) => {
 /******/ 			if(chunkIds) {
-/******/ 				priority = priority || 0;
-/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
-/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				deferred.push([chunkIds, fn]);
 /******/ 				return;
 /******/ 			}
-/******/ 			let notFulfilled = Infinity;
 /******/ 			for (var i = 0; i < deferred.length; i++) {
-/******/ 				let [chunkIds, fn, priority] = deferred[i];
+/******/ 				let [chunkIds, fn] = deferred[i];
 /******/ 				let fulfilled = true;
 /******/ 				for (var j = 0; j < chunkIds.length; j++) {
-/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 					if (__webpack_require__.O.j(chunkIds[j])) {
 /******/ 						chunkIds.splice(j--, 1);
 /******/ 					} else {
 /******/ 						fulfilled = false;
-/******/ 						if(priority < notFulfilled) notFulfilled = priority;
 /******/ 					}
 /******/ 				}
 /******/ 				if(fulfilled) {
@@ -6429,59 +6862,34 @@ module.exports = window["wp"]["i18n"];
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			const getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = (module) => {
+/******/ 		const getter = module && module.__esModule ?
+/******/ 			() => (module['default']) :
+/******/ 			() => (module);
+/******/ 		__webpack_require__.d(getter, { a: getter });
+/******/ 		return getter;
+/******/ 	};
 /******/ 	
 /******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
-/******/ 		// define getter/value functions for harmony exports
-/******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			if(Array.isArray(definition)) {
-/******/ 				var i = 0;
-/******/ 				while(i < definition.length) {
-/******/ 					var key = definition[i++];
-/******/ 					var binding = definition[i++];
-/******/ 					if(!__webpack_require__.o(exports, key)) {
-/******/ 						if(binding === 0) {
-/******/ 							Object.defineProperty(exports, key, { enumerable: true, value: definition[i++] });
-/******/ 						} else {
-/******/ 							Object.defineProperty(exports, key, { enumerable: true, get: binding });
-/******/ 						}
-/******/ 					} else if(binding === 0) { i++; }
-/******/ 				}
-/******/ 			} else {
-/******/ 				for(var key in definition) {
-/******/ 					if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 						Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 					}
-/******/ 				}
+/******/ 	// define getter/value functions for harmony exports
+/******/ 	__webpack_require__.d = (exports, definition) => {
+/******/ 		for(var key in definition) {
+/******/ 			if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 				Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
 /******/ 			}
-/******/ 		};
-/******/ 	})();
+/******/ 		}
+/******/ 	};
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => (Object.hasOwn(obj, prop))
-/******/ 	})();
+/******/ 	__webpack_require__.o = (obj, prop) => (Object.hasOwn(obj, prop));
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = (exports) => {
+/******/ 		Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
 /******/ 	(() => {

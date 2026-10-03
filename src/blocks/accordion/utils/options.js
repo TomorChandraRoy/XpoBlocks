@@ -1,7 +1,7 @@
 import { __ } from '@wordpress/i18n';
 import { GeneralIcon, StyleIcon } from './icons';
 
-
+const textDomain = 'xpo-blocks';
 
 export const subStyleTabs = [
   {
@@ -9,7 +9,7 @@ export const subStyleTabs = [
     title: (
       <span style={{ display: 'inline-flex', alignItems: 'center' }}>
         <GeneralIcon />
-        {__('General', 'guten-builder-blocks')}
+        {__('General', textDomain)}
       </span>
     ),
   },
@@ -18,7 +18,7 @@ export const subStyleTabs = [
     title: (
       <span style={{ display: 'inline-flex', alignItems: 'center' }}>
         <StyleIcon />
-        {__('Style', 'guten-builder-blocks')}
+        {__('Style', textDomain)}
       </span>
     ),
   },

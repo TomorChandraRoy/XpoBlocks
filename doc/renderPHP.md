@@ -6,7 +6,7 @@
 if (!defined('ABSPATH')) {
 	exit;
 }
-$id = wp_unique_id( 'guten-builder-blocks-test-purpose-' );
+$id = wp_unique_id( 'xpo-block-test-purpose-' );
 ?>
 <div <?php echo get_block_wrapper_attributes(); ?>
      id='<?php echo esc_attr( $id ); ?>'
@@ -14,11 +14,11 @@ $id = wp_unique_id( 'guten-builder-blocks-test-purpose-' );
 </div>
 
 1️⃣ **কাজ কি করছে?**
---$id = wp_unique_id( 'guten-builder-blocks-test-purpose-' );--
+--$id = wp_unique_id( 'xpo-block-test-purpose-' );--
 
 প্রতিটি block render করার সময় unique ID generate করে।
 
-Prefix 'guten-builder-blocks-test-purpose-' দিয়ে শুরু হয় → final যেমন হবে: guten-builder-blocks-test-purpose-1
+Prefix 'xpo-block-test-purpose-' দিয়ে শুরু হয় → final যেমন হবে: xpo-block-test-purpose-1
 
 সুবিধা: JS/CSS targeting সহজ হয়, multiple block থাকলেও conflict হয় না।
 

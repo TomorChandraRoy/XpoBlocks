@@ -6,14 +6,14 @@ if (!defined('ABSPATH')) {
 
 $xpo_block_id = wp_unique_id( 'xpo-block-before-after-' );
 
-$xpo_wrapper_classes = array( 'xpo-before-after-container', $xpo_block_id );
+$xpo_block_wrapper_classes = array( 'xpo-before-after-container', $xpo_block_id );
 
-$xpo_wrapper_attrs = get_block_wrapper_attributes( array( 'class' => implode( ' ', $xpo_wrapper_classes ) ) );
+$xpo_block_wrapper_attrs = get_block_wrapper_attributes( array( 'class' => implode( ' ', $xpo_block_wrapper_classes ) ) );
 ?>
 
 
 <div
-	<?php echo $xpo_wrapper_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+	<?php echo $xpo_block_wrapper_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 	id="<?php echo esc_attr( $xpo_block_id ); ?>"
 	data-attributes='<?php echo esc_attr( wp_json_encode( $attributes ) ); ?>'
 ></div>
