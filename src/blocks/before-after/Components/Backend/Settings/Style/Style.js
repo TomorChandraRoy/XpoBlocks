@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
-import { PanelBody } from '@wordpress/components';
-import { ColorControl, Typography, SpacingControl, BackgroundControl } from 'tr-tools';
+import { PanelBody, __experimentalSpacer as Spacer } from '@wordpress/components';
+import { ColorControl, Typography, SpacingControl, BackgroundControl, UnitControl } from 'tr-tools';
 import { pxUnit, remUnit, emUnit, vwUnit, perUnit } from 'tr-tools/utils/options';
 const textDomain = 'xpo-blocks';
 
@@ -11,6 +11,8 @@ const Style = ({ attributes, setAttributes }) => {
 		labelTypography,
 		labelBorderRadius,
 		wrapperBorderRadius,
+		containerWidth = { desktop: '900px', tablet: '', mobile: '' },
+		containerHeight = { desktop: '', tablet: '', mobile: '' },
 	} = attributes;
 
 	return (
@@ -40,6 +42,28 @@ const Style = ({ attributes, setAttributes }) => {
       </PanelBody>
 
       <PanelBody className="bPlPanelBody" title={__('Layout & Container', textDomain)} initialOpen={false}>
+        <UnitControl
+          label={__('Max Width :', textDomain)}
+          value={containerWidth}
+          onChange={val => setAttributes({ containerWidth: val })}
+          units={[pxUnit(), remUnit(), emUnit(), vwUnit(), perUnit()]}
+          responsive={true}
+          defaultVal={{ desktop: '900px', tablet: '', mobile: '' }}
+        />
+
+        <Spacer />
+
+        <UnitControl
+          label={__('Height (Empty for Auto) :', textDomain)}
+          value={containerHeight}
+          onChange={val => setAttributes({ containerHeight: val })}
+          units={[pxUnit(), remUnit(), emUnit(), vwUnit()]}
+          responsive={true}
+          defaultVal={{ desktop: '', tablet: '', mobile: '' }}
+        />
+
+        <Spacer />
+
         <SpacingControl
           label={__('Border Radius :', textDomain)}
           value={wrapperBorderRadius}

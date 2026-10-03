@@ -5673,11 +5673,7 @@ const Edit = props => {
         proTemplates: ['template-1']
       })
     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-      ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
-        style: {
-          padding: '3px'
-        }
-      }),
+      ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)(),
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Common_DynamicStyles__WEBPACK_IMPORTED_MODULE_3__["default"], {
         attributes: attributes,
         id: id
@@ -6071,7 +6067,17 @@ const Style = ({
     labelBg,
     labelTypography,
     labelBorderRadius,
-    wrapperBorderRadius
+    wrapperBorderRadius,
+    containerWidth = {
+      desktop: '900px',
+      tablet: '',
+      mobile: ''
+    },
+    containerHeight = {
+      desktop: '',
+      tablet: '',
+      mobile: ''
+    }
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
@@ -6129,11 +6135,37 @@ const Style = ({
           left: '5px'
         }
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       className: "bPlPanelBody",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Layout & Container', textDomain),
       initialOpen: false,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.SpacingControl, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.UnitControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Max Width :', textDomain),
+        value: containerWidth,
+        onChange: val => setAttributes({
+          containerWidth: val
+        }),
+        units: [(0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.pxUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.remUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.emUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.vwUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.perUnit)()],
+        responsive: true,
+        defaultVal: {
+          desktop: '900px',
+          tablet: '',
+          mobile: ''
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.UnitControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Height (Empty for Auto) :', textDomain),
+        value: containerHeight,
+        onChange: val => setAttributes({
+          containerHeight: val
+        }),
+        units: [(0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.pxUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.remUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.emUnit)(), (0,tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_3__.vwUnit)()],
+        responsive: true,
+        defaultVal: {
+          desktop: '',
+          tablet: '',
+          mobile: ''
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(tr_tools__WEBPACK_IMPORTED_MODULE_2__.SpacingControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border Radius :', textDomain),
         value: wrapperBorderRadius,
         onChange: val => setAttributes({
@@ -6146,7 +6178,7 @@ const Style = ({
           bottom: '5px',
           left: '5px'
         }
-      })
+      })]
     })]
   });
 };
@@ -6165,8 +6197,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var tr_tools__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tr-tools */ "../tr-tools/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tr-tools/utils/options */ "../tr-tools/utils/options.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 const DynamicStyles = ({
@@ -6182,10 +6216,13 @@ const DynamicStyles = ({
     dividerStyle,
     dividerColor,
     handleColor,
-    handleIconColor
+    handleIconColor,
+    containerWidth,
+    containerHeight
   } = attributes || {};
   const mainSl = `#${id}`;
   const wrapper = mainSl;
+  const oneContainer = `${wrapper} .xpo-before-after-one`;
   const oneWrapper = `${wrapper} .xpo-before-after-one__wrapper`;
   const label = `${oneWrapper} .xpo-before-after-one__label`;
   const divider = `${oneWrapper} .xpo-before-after-one__divider`;
@@ -6199,9 +6236,14 @@ const DynamicStyles = ({
   } else {
     dividerCss = `background: ${dColor};`;
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("style", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("style", {
     dangerouslySetInnerHTML: {
       __html: `
+        ${containerWidth?.desktop ? `${oneContainer} { max-width: ${containerWidth.desktop}; }` : ''}
+
+        ${containerHeight?.desktop ? `${oneWrapper} { height: ${containerHeight.desktop}; }
+               ${oneWrapper} .xpo-before-after-one__image { height: 100%; position: absolute; inset: 0; }` : ''}
+
         ${oneWrapper} {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderRadiusCss)(wrapperBorderRadius)}
         }
@@ -6218,6 +6260,16 @@ const DynamicStyles = ({
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(labelBg) ? `background: ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(labelBg)};` : ''}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(labelTypography)}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderRadiusCss)(labelBorderRadius)}
+        }
+
+        ${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint} {
+          ${containerWidth?.tablet ? `${oneContainer} { max-width: ${containerWidth.tablet}; }` : ''}
+          ${containerHeight?.tablet ? `${oneWrapper} { height: ${containerHeight.tablet}; }` : ''}
+        }
+
+        ${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_1__.mobileBreakpoint} {
+          ${containerWidth?.mobile ? `${oneContainer} { max-width: ${containerWidth.mobile}; }` : ''}
+          ${containerHeight?.mobile ? `${oneWrapper} { height: ${containerHeight.mobile}; }` : ''}
         }
         `
     }
@@ -8890,7 +8942,7 @@ var castImmutable = (value) => value;
   \********************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"xpo-block/before-after","version":"1.0.0","title":"Before/After","description":"Interactive image comparison slider with CSS-based masking and hardware-accelerated transitions.","category":"xpo-block","keywords":["before after","image comparison","slider","photo compare","comparison"],"textdomain":"xpo-block","attributes":{"selectedTemplate":{"type":"string","default":""},"beforeImage":{"type":"object","properties":{"url":{"type":"string"},"alt":{"type":"string"}},"default":null},"afterImage":{"type":"object","properties":{"url":{"type":"string"},"alt":{"type":"string"}},"default":null},"showLabels":{"type":"boolean","default":true},"beforeLabel":{"type":"string","default":""},"afterLabel":{"type":"string","default":""},"dividerIcon":{"type":"string","default":""},"customDividerIcon":{"type":"string","default":""},"dividerIconSize":{"type":"number"},"labelColor":{"type":"string","default":""},"labelBg":{"type":"object","default":{}},"labelTypography":{"type":"object"},"labelBorderRadius":{"type":"object","default":{}},"wrapperBorderRadius":{"type":"object","default":{}},"dividerStyle":{"type":"string","default":""},"dividerColor":{"type":"string","default":""},"handleColor":{"type":"string","default":""},"handleIconColor":{"type":"string","default":""}},"supports":{"html":false,"anchor":true,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","viewScript":"file:./view.js","style":"file:./style-view.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"xpo-block/before-after","version":"1.0.0","title":"Before/After","description":"Interactive image comparison slider with CSS-based masking and hardware-accelerated transitions.","category":"xpo-block","keywords":["before after","image comparison","slider","photo compare","comparison"],"textdomain":"xpo-block","attributes":{"selectedTemplate":{"type":"string","default":""},"beforeImage":{"type":"object","properties":{"url":{"type":"string"},"alt":{"type":"string"}},"default":null},"afterImage":{"type":"object","properties":{"url":{"type":"string"},"alt":{"type":"string"}},"default":null},"showLabels":{"type":"boolean","default":true},"beforeLabel":{"type":"string","default":""},"afterLabel":{"type":"string","default":""},"dividerIcon":{"type":"string","default":""},"customDividerIcon":{"type":"string","default":""},"dividerIconSize":{"type":"number"},"labelColor":{"type":"string","default":""},"labelBg":{"type":"object","default":{}},"labelTypography":{"type":"object"},"labelBorderRadius":{"type":"object","default":{}},"wrapperBorderRadius":{"type":"object","default":{}},"dividerStyle":{"type":"string","default":""},"dividerColor":{"type":"string","default":""},"handleColor":{"type":"string","default":""},"handleIconColor":{"type":"string","default":""},"containerWidth":{"type":"object","default":{}},"containerHeight":{"type":"object","default":{}}},"supports":{"html":false,"anchor":true,"align":["wide","full"]},"editorScript":"file:./index.js","editorStyle":"file:./index.css","viewScript":"file:./view.js","style":"file:./style-view.css","render":"file:./render.php"}');
 
 /***/ }
 

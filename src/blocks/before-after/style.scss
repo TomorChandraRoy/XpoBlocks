@@ -1,27 +1,38 @@
 .wp-block-xpo-block-before-after {
+	padding: 7px;
 
 	.xpo-before-after-one {
 		width: 100%;
 		max-width: 900px;
 		margin: 0 auto;
 
-
 		&__wrapper {
 			position: relative;
 			width: 100%;
-			height: 500px;
+			height: auto;
 			overflow: hidden;
 			border-radius: 10px;
 			user-select: none;
 		}
 
 		&__image {
-			position: absolute;
-			inset: 0;
+			display: block;
 			width: 100%;
-			height: 100%;
+			height: auto;
 			object-fit: cover;
 			pointer-events: none;
+		}
+
+		&--custom-height {
+			.xpo-before-after-one__wrapper {
+				height: 500px;
+			}
+
+			.xpo-before-after-one__image {
+				height: 100%;
+				position: absolute;
+				inset: 0;
+			}
 		}
 
 		&__before-image-wrapper {
@@ -36,6 +47,9 @@
 		}
 
 		&__before-image {
+			position: absolute;
+			top: 0;
+			left: 0;
 			display: block;
 			width: 100%;
 			height: 100%;
@@ -100,17 +114,6 @@
 			margin: 0;
 			cursor: ew-resize;
 			opacity: 0;
-		}
-	}
-
-	@media (max-width: 767px) {
-
-		.xpo-before-after-one__wrapper {
-			height: 350px;
-		}
-
-		.xpo-before-after-one__before-image {
-			width: 100vw;
 		}
 	}
 }

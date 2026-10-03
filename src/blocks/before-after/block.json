@@ -93,6 +93,14 @@
     "handleIconColor": {
       "type": "string",
       "default": ""
+    },
+    "containerWidth": {
+      "type": "object",
+      "default": {}
+    },
+    "containerHeight": {
+      "type": "object",
+      "default": {}
     }
   },
   "supports": {

@@ -19,10 +19,10 @@ const TemplateOne = ({ attributes }) => {
   return (
     <div className="xpo-before-after-one">
       <div className="xpo-before-after-one__wrapper">
-        {/* After Image */}
+        {/* After Image (Base image establishing natural aspect ratio) */}
         <img src={afterUrl} alt="After" className="xpo-before-after-one__image" />
 
-        {/* Before Image */}
+        {/* Before Image (Overlay clipped by slider position) */}
         <div
           className="xpo-before-after-one__before-image-wrapper"
           style={{

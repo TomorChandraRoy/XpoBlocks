@@ -5631,8 +5631,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var tr_tools__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tr-tools */ "../tr-tools/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tr-tools/utils/options */ "../tr-tools/utils/options.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 const DynamicStyles = ({
@@ -5648,10 +5650,13 @@ const DynamicStyles = ({
     dividerStyle,
     dividerColor,
     handleColor,
-    handleIconColor
+    handleIconColor,
+    containerWidth,
+    containerHeight
   } = attributes || {};
   const mainSl = `#${id}`;
   const wrapper = mainSl;
+  const oneContainer = `${wrapper} .xpo-before-after-one`;
   const oneWrapper = `${wrapper} .xpo-before-after-one__wrapper`;
   const label = `${oneWrapper} .xpo-before-after-one__label`;
   const divider = `${oneWrapper} .xpo-before-after-one__divider`;
@@ -5665,9 +5670,14 @@ const DynamicStyles = ({
   } else {
     dividerCss = `background: ${dColor};`;
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("style", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("style", {
     dangerouslySetInnerHTML: {
       __html: `
+        ${containerWidth?.desktop ? `${oneContainer} { max-width: ${containerWidth.desktop}; }` : ''}
+
+        ${containerHeight?.desktop ? `${oneWrapper} { height: ${containerHeight.desktop}; }
+               ${oneWrapper} .xpo-before-after-one__image { height: 100%; position: absolute; inset: 0; }` : ''}
+
         ${oneWrapper} {
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderRadiusCss)(wrapperBorderRadius)}
         }
@@ -5684,6 +5694,16 @@ const DynamicStyles = ({
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(labelBg) ? `background: ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBackgroundCss)(labelBg)};` : ''}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getTypographyCss)(labelTypography)}
           ${(0,tr_tools__WEBPACK_IMPORTED_MODULE_0__.getBorderRadiusCss)(labelBorderRadius)}
+        }
+
+        ${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint} {
+          ${containerWidth?.tablet ? `${oneContainer} { max-width: ${containerWidth.tablet}; }` : ''}
+          ${containerHeight?.tablet ? `${oneWrapper} { height: ${containerHeight.tablet}; }` : ''}
+        }
+
+        ${tr_tools_utils_options__WEBPACK_IMPORTED_MODULE_1__.mobileBreakpoint} {
+          ${containerWidth?.mobile ? `${oneContainer} { max-width: ${containerWidth.mobile}; }` : ''}
+          ${containerHeight?.mobile ? `${oneWrapper} { height: ${containerHeight.mobile}; }` : ''}
         }
         `
     }

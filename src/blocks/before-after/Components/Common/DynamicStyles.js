@@ -1,10 +1,24 @@
 import { getBorderRadiusCss, getBackgroundCss, getTypographyCss } from 'tr-tools';
+import { tabBreakpoint, mobileBreakpoint } from 'tr-tools/utils/options';
 
 const DynamicStyles = ({ attributes, id }) => {
-  const { labelColor, labelBg, labelTypography, labelBorderRadius, wrapperBorderRadius, dividerStyle, dividerColor, handleColor, handleIconColor } = attributes || {};
+  const {
+    labelColor,
+    labelBg,
+    labelTypography,
+    labelBorderRadius,
+    wrapperBorderRadius,
+    dividerStyle,
+    dividerColor,
+    handleColor,
+    handleIconColor,
+    containerWidth,
+    containerHeight,
+  } = attributes || {};
 
   const mainSl = `#${id}`;
   const wrapper = mainSl;
+  const oneContainer = `${wrapper} .xpo-before-after-one`;
   const oneWrapper = `${wrapper} .xpo-before-after-one__wrapper`;
   const label = `${oneWrapper} .xpo-before-after-one__label`;
   const divider = `${oneWrapper} .xpo-before-after-one__divider`;
@@ -24,6 +38,15 @@ const DynamicStyles = ({ attributes, id }) => {
     <style
       dangerouslySetInnerHTML={{
         __html: `
+        ${containerWidth?.desktop ? `${oneContainer} { max-width: ${containerWidth.desktop}; }` : ''}
+
+        ${
+          containerHeight?.desktop
+            ? `${oneWrapper} { height: ${containerHeight.desktop}; }
+               ${oneWrapper} .xpo-before-after-one__image { height: 100%; position: absolute; inset: 0; }`
+            : ''
+        }
+
         ${oneWrapper} {
           ${getBorderRadiusCss(wrapperBorderRadius)}
         }
@@ -40,6 +63,16 @@ const DynamicStyles = ({ attributes, id }) => {
           ${getBackgroundCss(labelBg) ? `background: ${getBackgroundCss(labelBg)};` : ''}
           ${getTypographyCss(labelTypography)}
           ${getBorderRadiusCss(labelBorderRadius)}
+        }
+
+        ${tabBreakpoint} {
+          ${containerWidth?.tablet ? `${oneContainer} { max-width: ${containerWidth.tablet}; }` : ''}
+          ${containerHeight?.tablet ? `${oneWrapper} { height: ${containerHeight.tablet}; }` : ''}
+        }
+
+        ${mobileBreakpoint} {
+          ${containerWidth?.mobile ? `${oneContainer} { max-width: ${containerWidth.mobile}; }` : ''}
+          ${containerHeight?.mobile ? `${oneWrapper} { height: ${containerHeight.mobile}; }` : ''}
         }
         `,
       }}

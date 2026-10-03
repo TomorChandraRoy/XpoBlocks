@@ -1,6 +1,9 @@
 /*!***********************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/before-after/style.scss ***!
   \***********************************************************************************************************************************************************************************************************************************************************/
+.wp-block-xpo-block-before-after {
+  padding: 7px;
+}
 .wp-block-xpo-block-before-after .xpo-before-after-one {
   width: 100%;
   max-width: 900px;
@@ -9,19 +12,26 @@
 .wp-block-xpo-block-before-after .xpo-before-after-one__wrapper {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: auto;
   overflow: hidden;
   border-radius: 10px;
   -webkit-user-select: none;
           user-select: none;
 }
 .wp-block-xpo-block-before-after .xpo-before-after-one__image {
-  position: absolute;
-  inset: 0;
+  display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   pointer-events: none;
+}
+.wp-block-xpo-block-before-after .xpo-before-after-one--custom-height .xpo-before-after-one__wrapper {
+  height: 500px;
+}
+.wp-block-xpo-block-before-after .xpo-before-after-one--custom-height .xpo-before-after-one__image {
+  height: 100%;
+  position: absolute;
+  inset: 0;
 }
 .wp-block-xpo-block-before-after .xpo-before-after-one__before-image-wrapper {
   position: absolute;
@@ -34,6 +44,9 @@
   pointer-events: none;
 }
 .wp-block-xpo-block-before-after .xpo-before-after-one__before-image {
+  position: absolute;
+  top: 0;
+  right: 0;
   display: block;
   width: 100%;
   height: 100%;
@@ -92,12 +105,4 @@
   margin: 0;
   cursor: ew-resize;
   opacity: 0;
-}
-@media (max-width: 767px) {
-  .wp-block-xpo-block-before-after .xpo-before-after-one__wrapper {
-    height: 350px;
-  }
-  .wp-block-xpo-block-before-after .xpo-before-after-one__before-image {
-    width: 100vw;
-  }
 }
