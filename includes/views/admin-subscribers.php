@@ -8,12 +8,15 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+$xpo_block_subscribers_list = isset( $xpo_block_subscribers ) && is_array( $xpo_block_subscribers ) ? $xpo_block_subscribers : ( isset( $subscribers ) && is_array( $subscribers ) ? $subscribers : [] );
+$xpo_block_is_deleted       = ! empty( $xpo_block_deleted_notice ) || ! empty( $deleted_notice );
 ?>
 <div class="wrap">
 	<h1 class="wp-heading-inline"><?php esc_html_e( 'Newsletter Subscribers', 'xpo-block' ); ?></h1>
 	<hr class="wp-header-end">
 
-	<?php if ( ! empty( $deleted_notice ) ) : ?>
+	<?php if ( $xpo_block_is_deleted ) : ?>
 		<div class="notice notice-success is-dismissible" style="margin-top: 15px;">
 			<p><?php esc_html_e( 'Subscriber deleted successfully.', 'xpo-block' ); ?></p>
 		</div>
@@ -42,7 +45,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<strong style="font-size: 16px; color: #1d2327;">
 				<?php
 				/* translators: %d: Total number of subscribers. */
-				printf( esc_html__( 'Total Subscribers: %d', 'xpo-block' ), count( $subscribers ) );
+				printf( esc_html__( 'Total Subscribers: %d', 'xpo-block' ), count( $xpo_block_subscribers_list ) );
 				?>
 			</strong>
 		</div>
@@ -57,25 +60,29 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</tr>
 			</thead>
 			<tbody>
-				<?php if ( ! empty( $subscribers ) ) : ?>
-					<?php foreach ( array_reverse( $subscribers ) as $index => $sub ) :
-						$email = is_array( $sub ) ? $sub['email'] : $sub;
-						$date  = is_array( $sub ) && isset( $sub['date'] ) ? $sub['date'] : '-';
-						$delete_url = wp_nonce_url(
-							add_query_arg([
-								'page'   => 'xpo-block-subscribers',
-								'action' => 'delete',
-								'email'  => urlencode( $email ),
-							], admin_url( 'admin.php' )),
-							'xpo_block_delete_subscriber_' . $email
+				<?php if ( ! empty( $xpo_block_subscribers_list ) ) : ?>
+					<?php
+					foreach ( array_reverse( $xpo_block_subscribers_list ) as $xpo_block_index => $xpo_block_sub ) :
+						$xpo_block_email      = is_array( $xpo_block_sub ) ? $xpo_block_sub['email'] : $xpo_block_sub;
+						$xpo_block_date       = is_array( $xpo_block_sub ) && isset( $xpo_block_sub['date'] ) ? $xpo_block_sub['date'] : '-';
+						$xpo_block_delete_url = wp_nonce_url(
+							add_query_arg(
+								[
+									'page'   => 'xpo-block-subscribers',
+									'action' => 'delete',
+									'email'  => rawurlencode( $xpo_block_email ),
+								],
+								admin_url( 'admin.php' )
+							),
+							'xpo_block_delete_subscriber_' . $xpo_block_email
 						);
 						?>
 						<tr>
-							<td><?php echo esc_html( count( $subscribers ) - $index ); ?></td>
-							<td><strong><?php echo esc_html( $email ); ?></strong></td>
-							<td><?php echo esc_html( $date ); ?></td>
+							<td><?php echo esc_html( count( $xpo_block_subscribers_list ) - $xpo_block_index ); ?></td>
+							<td><strong><?php echo esc_html( $xpo_block_email ); ?></strong></td>
+							<td><?php echo esc_html( $xpo_block_date ); ?></td>
 							<td style="text-align: right; padding-right: 15px;">
-								<a href="<?php echo esc_url( $delete_url ); ?>"
+								<a href="<?php echo esc_url( $xpo_block_delete_url ); ?>"
 								   class="button button-small button-link-delete"
 								   style="color: #b32d2e; text-decoration: none;"
 								   onclick="return confirm('<?php esc_attr_e( 'Are you sure you want to delete this subscriber?', 'xpo-block' ); ?>');">

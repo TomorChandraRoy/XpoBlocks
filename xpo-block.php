@@ -28,20 +28,21 @@ require_once XPO_BLOCK_DIR_PATH . 'includes/class-xpo-block-loader.php';
 if ( !class_exists( 'Xpo_Block_Plugin' ) ) {
 	class Xpo_Block_Plugin {
 		function __construct() {
-			add_action( 'init', [ $this, 'onInit' ] ); // Register blocks
-			Xpo_Block_Loader::init(); // Loader এর মাধ্যমে Core ও Admin ফাইল লোড ও Init করা
+			add_action( 'init', [ $this, 'onInit' ] ); // Register blocks.
+			Xpo_Block_Loader::init(); // Load and initialize core and admin components via Loader.
 		}
 
 		/**
-		 * অন-ইনিট হুক (Register Dynamic Blocks)
-		 * glob() এর মাধ্যমে build/blocks ফোল্ডারের সকল সাব-ডিরেক্টরি স্ক্যান করে অটোমেটিক্যালি ব্লকসমূহ রেজিস্টার করে।
+		 * Register Dynamic Blocks on init hook.
+		 *
+		 * Scans all sub-directories in build/blocks using glob() and registers blocks automatically.
 		 */
 		function onInit() {
-			// build/blocks/ ডিরেক্টরির অন্তর্গত সকল ব্লকের ফোল্ডার পাথ স্ক্যান করা (GLOB_ONLYDIR ব্যবহার করে ফাইল বাদ দিয়ে শুধু ফোল্ডার নেওয়া হয়)
+			// Scan all block folder paths inside build/blocks/ directory (using GLOB_ONLYDIR to include only directories).
 			$blocks = glob( __DIR__ . '/build/blocks/*', GLOB_ONLYDIR );
 			if ( $blocks ) {
 				foreach ( $blocks as $block ) {
-					// প্রতিটি ব্লক ফোল্ডারের block.json রিড করে ডায়নামিকভাবে ব্লক রেজিস্টার করা
+					// Read block.json of each block folder and dynamically register the block.
 					register_block_type( $block );
 				}
 			}

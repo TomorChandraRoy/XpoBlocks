@@ -5,16 +5,18 @@ if ( !class_exists( 'Xpo_Block_API' ) ) {
 	class Xpo_Block_API {
 
 		/**
-		 * ১. ইনিশিয়ালাইজার মেথড (Initializer Method)
-		 * ওয়ার্ডপ্রেস REST API সিস্টেম ইনিশিয়ালাইজ করার জন্য `rest_api_init` হুকে `register_rest_routes` রেজিস্টার করে।
+		 * 1. Initialize REST API
+		 *
+		 * Registers custom routes on `rest_api_init` hook.
 		 */
 		public static function init() {
 			add_action( 'rest_api_init', [ __CLASS__, 'register_rest_routes' ] );
 		}
 
 		/**
-		 * ২. কাস্টম REST API রুট রেজিস্টার মেথড (Register Custom REST Routes)
-		 * প্লাগইনের প্রয়োজনীয় সকল কাস্টম এন্ডপয়েন্ট (`/xpo-block/v1/settings` এবং `/xpo-block/v1/subscribe`) রেজিস্টার করে।
+		 * 2. Register Custom REST API Routes
+		 *
+		 * Registers `/xpo-block/v1/settings` and `/xpo-block/v1/subscribe` endpoints.
 		 */
 		public static function register_rest_routes() {
 			register_rest_route( 'xpo-block/v1', '/settings', [
@@ -35,24 +37,23 @@ if ( !class_exists( 'Xpo_Block_API' ) ) {
 		}
 
 		/**
-		 * ৩. পারমিশন চেক মেথড (Check REST API Permissions)
-		 * এডমিন প্যানেলের সেটিংস পড়া ও সেভ করার জন্য শুধুমাত্র `manage_options` পারমিশনপ্রাপ্ত এডমিন ইউজারকে অনুমতি দেয়।
+		 * 3. Check REST API Permissions
+		 *
+		 * Ensures only users with `manage_options` capability can read and modify admin settings.
 		 */
 		public static function check_rest_permissions() {
 			return current_user_can( 'manage_options' );
 		}
 
 		/**
-		 * ৪. REST API সেটিংস সেভ করার মেথড (Save REST API Settings)
+		 * 4. Save REST API Settings
 		 *
-		 * এই মেথডটির প্রধান কাজসমূহ:
-		 * - ক্লায়েন্ট (Admin Dashboard) থেকে পাঠানো REST request এর JSON সেটিংস গ্রহণ করে।
-		 * - সেভ করার প্রয়োজন নেই এমন ফিল্ডগুলো (যেমন: availableBlocks, systemInfo, currentUser) বাদ দেয়।
-		 * - `activeBlocks` এর প্রতিটি ব্লক আইডি সেনিটাইজ করে বুলিয়ান (true/false) ভ্যালুতে রূপান্তর করে এবং অন্যান্য ফিল্ডগুলো সেনিটাইজ করে।
-		 * - সেনিটাইজড ডেটা `update_option()` দিয়ে 'xpo_block_settings' অপশনে ডেটাবেজে সেভ করে।
-		 * - সেভ শেষে আপডেট হওয়া সেটিংস, এভেলেবল ব্লকস, ইউজারের নাম এবং সিস্টেম ইনফোর রেসপন্স ডাটা রিটার্ন করে।
+		 * Handles saving plugin settings from the admin dashboard:
+		 * - Sanitizes active block states and general options.
+		 * - Persists updated settings to the database via `update_option()`.
+		 * - Returns updated settings, available blocks, and system diagnostic info.
 		 *
-		 * @param \WP_REST_Request $request REST API রিকোয়েস্ট অবজেক্ট।
+		 * @param \WP_REST_Request $request Full details about the request.
 		 * @return \WP_REST_Response
 		 */
 		public static function save_rest_settings( \WP_REST_Request $request ) {
@@ -112,8 +113,12 @@ if ( !class_exists( 'Xpo_Block_API' ) ) {
 		}
 
 		/**
-		 * 5. নিউজলেটার সাবস্ক্রিপশন মেথড (Subscribe Newsletter Callback - POST Request)
-		 * ভিজিটরদের প্রদানকৃত ইমেইল এড্রেস ফিল্টার ও স্যানিটাইজ করে ডাটাবেজে সেভ করে এবং ওয়ার্ডপ্রেস এডমিন ইমেইলে নোটিফিকেশন পাঠায়।
+		 * 5. Subscribe Newsletter
+		 *
+		 * Validates and saves visitor email address and sends an admin notification.
+		 *
+		 * @param \WP_REST_Request $request Full details about the request.
+		 * @return \WP_REST_Response|\WP_Error
 		 */
 		public static function subscribe_newsletter( \WP_REST_Request $request ) {
 			$params = $request->get_json_params();
@@ -164,7 +169,7 @@ if ( !class_exists( 'Xpo_Block_API' ) ) {
 					'Content-Type: text/plain; charset=UTF-8',
 					'From: ' . $site_name . ' <' . $from_email . '>',
 				];
-				@wp_mail( $admin_email, $subject, $message, $headers );
+				wp_mail( $admin_email, $subject, $message, $headers );
 			}
 
 			return rest_ensure_response([
@@ -174,4 +179,3 @@ if ( !class_exists( 'Xpo_Block_API' ) ) {
 		}
 	}
 }
-

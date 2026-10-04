@@ -4,19 +4,19 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 
-// প্রতিটি ব্লকের জন্য একটি ইউনিক আইডি (Unique Block ID) তৈরি করা
+// Generate a unique block ID for this instance.
 $xpo_block_id = wp_unique_id( 'xpo-block-faq-' );
 
-// কাস্টম কন্টেইনার ক্লাস এবং ইউনিক আইডি একসাথে অ্যারে হিসেবে রাখা
+// Collect custom wrapper container classes and the unique block ID.
 $xpo_block_wrapper_classes = array( 'xpo-accordion-container', $xpo_block_id );
 
-// WordPress Gutenberg-এর ডিফল্ট অ্যাট্রিবিউট (margin, padding, class) এবং আমাদের কাস্টম ক্লাসগুলোকে একসাথে মার্জ করা
+// Merge default Gutenberg block wrapper attributes with custom classes.
 $xpo_block_wrapper_attrs = get_block_wrapper_attributes( array( 'class' => implode( ' ', $xpo_block_wrapper_classes ) ) );
 ?>
 
 <?php
-// এই ফাঁকা div-টি Client-Side JavaScript (view.js)-এর জন্য প্লেসহোল্ডার হিসেবে কাজ করে।
-// এটি data-attributes-এর মাধ্যমে ব্লকের সমস্ত ডাটা JSON আকারে ফ্রন্টএন্ডে পাস করে।
+// Empty placeholder div for client-side JavaScript (view.js) rendering.
+// Passes block attributes to the frontend as JSON in the data-attributes property.
 ?>
 
 <div
@@ -24,4 +24,3 @@ $xpo_block_wrapper_attrs = get_block_wrapper_attributes( array( 'class' => implo
 	id="<?php echo esc_attr( $xpo_block_id ); ?>"
 	data-attributes='<?php echo esc_attr( wp_json_encode( $attributes ) ); ?>'
 ></div>
-

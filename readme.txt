@@ -45,18 +45,18 @@ Have a question, feature request, or feedback?
 
 == Installation ==
 
-=== From WordPress Dashboard ===
+= From WordPress Dashboard =
 1. Go to **Plugins** > **Add New**.
 2. Search for **XpoBlock**.
 3. Click **Install Now** and then **Activate**.
 
-=== Uploading Zip File ===
+= Uploading Zip File =
 1. Download the plugin zip file (`xpo-block.zip`).
 2. Go to **Plugins** > **Add New** > **Upload Plugin**.
 3. Choose the zip file and click **Install Now**.
 4. Activate the plugin after installation completes.
 
-=== Manual Installation ===
+= Manual Installation =
 1. Extract the `xpo-block.zip` folder.
 2. Upload the `xpo-block` directory to `/wp-content/plugins/`.
 3. Activate **XpoBlock** through the **Plugins** menu in WordPress.
@@ -80,21 +80,33 @@ Yes, all blocks are compatible with Site Editor (FSE), Block Templates, and page
 
 You can post your questions on the [WordPress support forum](https://wordpress.org/support/plugin/xpo-block/).
 
-
 == Screenshots ==
 
 1. Overview of XpoBlock in the block inserter.
 2. Customizing block settings in the inspector sidebar.
 
 
+== Copyright and Credits ==
+
+This plugin is free software, and is released under the terms of the GNU General Public License version 3 or (at your option) any later version.
+
+This plugin incorporates the following third-party resources and open-source libraries:
+
+* **Immer** - (c) Michel Weststrate, released under the MIT License ([https://github.com/immerjs/immer](https://github.com/immerjs/immer)).
+* **QRCode** - (c) Ryan Day, released under the MIT License ([https://github.com/soldair/node-qrcode](https://github.com/soldair/node-qrcode)).
+* **SVG Icons** - Feather / Lucide / WordPress Dashicons, released under MIT / GPLv2+ License.
+* **Cover Image** - Custom designed asset, released under GPLv3 or later.
+
+
 == Changelog ==
 
-= 1.0.0 - 27 September 2026 =
+= 1.0.0 - 5 October  2026 =
 * Initial release.
 
 
 == Upgrade Notice ==
 
-= 1.0.0 - 27 September 2026 =
+= 1.0.0 - 5 October 2026 =
 * Initial release.
+
 

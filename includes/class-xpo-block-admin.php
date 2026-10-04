@@ -5,13 +5,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! class_exists( 'Xpo_Block_Admin' ) ) {
 	class Xpo_Block_Admin {
-    /**
-		 * ১. ইনিশিয়ালাইজার মেথড (Initialize Hooks)
-		 * ওয়ার্ডপ্রেস এডমিন মেনু এবং সিএসএস/জেএস ফাইল লোডের অ্যাকশন হুকগুলো রেজিস্টার করে।
-		 * PHP-তে __CLASS__ হলো একটি Magic Constant (ম্যাজিক কনস্ট্যান্ট)।
-     * এটি যে ক্লাসের (Class) ভেতরে লেখা হয়, সেই ক্লাসের নামটি নির্দেশ করে।
-		 * ফাইলে ক্লাসটি হচ্ছে Xpo_Block_Admin। এর মানে হলো: add_action( 'admin_menu', [ 'Xpo_Block_Admin', 'register_admin_menu' ] );
-		 * ওয়ার্ডপ্রেসকে বলে দেওয়া হচ্ছে— এডমিন মেনু ও ফাইলগুলো রেডি করার কাজ শুরু করো।
+		/**
+		 * 1. Initialize Hooks
+		 *
+		 * Registers WordPress action hooks for admin menu, scripts/styles, and activation redirect.
 		 */
 		public static function init() {
 			add_action( 'admin_menu', [ __CLASS__, 'register_admin_menu' ] );
@@ -19,19 +16,19 @@ if ( ! class_exists( 'Xpo_Block_Admin' ) ) {
 			add_action( 'admin_init', [ __CLASS__, 'handle_activation_redirect' ] );
 		}
 
-    public static function register_admin_menu() {
+		public static function register_admin_menu() {
 
-      $svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#a7aaad"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h13A1.5 1.5 0 0 1 18 4.5v2A1.5 1.5 0 0 1 16.5 8h-13A1.5 1.5 0 0 1 2 6.5v-2zm0 6A1.5 1.5 0 0 1 3.5 9h5.5A1.5 1.5 0 0 1 10.5 10.5v5a1.5 1.5 0 0 1-1.5 1.5h-5.5A1.5 1.5 0 0 1 2 15.5v-5zm10 0A1.5 1.5 0 0 1 13.5 9h3A1.5 1.5 0 0 1 18 10.5v5a1.5 1.5 0 0 1-1.5 1.5h-3a1.5 1.5 0 0 1-1.5-1.5v-5z"/></svg>';
+			$svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#a7aaad"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h13A1.5 1.5 0 0 1 18 4.5v2A1.5 1.5 0 0 1 16.5 8h-13A1.5 1.5 0 0 1 2 6.5v-2zm0 6A1.5 1.5 0 0 1 3.5 9h5.5A1.5 1.5 0 0 1 10.5 10.5v5a1.5 1.5 0 0 1-1.5 1.5h-5.5A1.5 1.5 0 0 1 2 15.5v-5zm10 0A1.5 1.5 0 0 1 13.5 9h3A1.5 1.5 0 0 1 18 10.5v5a1.5 1.5 0 0 1-1.5 1.5h-3a1.5 1.5 0 0 1-1.5-1.5v-5z"/></svg>';
 
-      add_menu_page(
-        __( 'XpoBlock', 'xpo-block' ), // পেজের টাইটেল (Page Title)
-        __( 'XpoBlock', 'xpo-block' ), // সাইডবার মেনুর নাম (Menu Title)
-				'manage_options',              // ইউজার পারমিশন/ক্যাপাবিলিটি (Capability)
-				'xpo-block',                   // মেনু পেজ স্ল্যাগ (Menu Slug)
-				[ __CLASS__, 'render_admin_page' ], // কলব্যাক ফাংশন (Callback function to render page HTML)
-				'data:image/svg+xml;base64,' . base64_encode( $svg ), // মেনু আইকন
-				30                             // মেনুর পজিশন (Menu Position)
-      );
+			add_menu_page(
+				__( 'XpoBlock', 'xpo-block' ), // Page title.
+				__( 'XpoBlock', 'xpo-block' ), // Menu title.
+				'manage_options',              // Capability.
+				'xpo-block',                   // Menu slug.
+				[ __CLASS__, 'render_admin_page' ], // Callback function to render page HTML.
+				'data:image/svg+xml;base64,' . base64_encode( $svg ), // Menu icon.
+				30                             // Menu position.
+			);
 
 			$settings             = Xpo_Block_Core::get_settings();
 			$active_blocks        = isset( $settings['activeBlocks'] ) ? $settings['activeBlocks'] : [];
@@ -47,14 +44,15 @@ if ( ! class_exists( 'Xpo_Block_Admin' ) ) {
 					[ __CLASS__, 'render_subscribers_page' ]
 				);
 			}
-    }
+		}
 
-    /**
-     * ৩. এডমিন পেজ মার্কআপ (Render Admin Page Markup)
-		 * React Admin Dashboard অ্যাপ রেন্ডার করার জন্য মূল HTML কন্টেইনার (<div id="xpo-block-admin-root">) তৈরি করে।
-     */
-    public static function render_admin_page() {
-      ?>
+		/**
+		 * 3. Render Admin Page Markup
+		 *
+		 * Creates the main HTML container (<div id="xpo-block-admin-root">) to mount the React Admin Dashboard application.
+		 */
+		public static function render_admin_page() {
+			?>
 				<div id="xpo-block-admin-root"
 					data-info='<?php echo esc_attr( wp_json_encode( [
 					'version'         => XPO_BLOCK_VERSION,
@@ -67,7 +65,7 @@ if ( ! class_exists( 'Xpo_Block_Admin' ) ) {
 					] ) ); ?>'
 				>
 				</div>
-      <?php
+			<?php
 		}
 
 		/**
@@ -102,10 +100,12 @@ if ( ! class_exists( 'Xpo_Block_Admin' ) ) {
 				}
 			}
 
-			$subscribers = get_option( 'xpo_block_newsletter_subscribers', [] );
-			if ( ! is_array( $subscribers ) ) {
-				$subscribers = [];
+			$xpo_block_subscribers = get_option( 'xpo_block_newsletter_subscribers', [] );
+			if ( ! is_array( $xpo_block_subscribers ) ) {
+				$xpo_block_subscribers = [];
 			}
+			$subscribers              = $xpo_block_subscribers;
+			$xpo_block_deleted_notice = $deleted_notice;
 
 			// Load HTML View Template
 			$view_file = XPO_BLOCK_DIR_PATH . 'includes/views/admin-subscribers.php';
@@ -141,6 +141,7 @@ if ( ! class_exists( 'Xpo_Block_Admin' ) ) {
 			}
 
 			// 4. Do not redirect during Bulk Activation
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only check for core bulk activation query arg.
 			if ( isset( $_GET['activate-multi'] ) ) {
 				return;
 			}
@@ -167,7 +168,7 @@ if ( ! class_exists( 'Xpo_Block_Admin' ) ) {
 		 * @param string $hook The current admin page hook.
 		 */
 		public static function enqueue_admin_assets( $hook ) {
-			// শুধুমাত্র XpoBlock এবং Subscribers পেজে ফাইল লোড করা (Guard Clause)
+			// Only load assets on XpoBlock and Subscribers admin pages (Guard Clause).
 			if ( 'toplevel_page_xpo-block' !== $hook && 'xpo-block_page_xpo-block-subscribers' !== $hook ) {
 				return;
 			}
