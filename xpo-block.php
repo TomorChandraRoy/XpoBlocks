@@ -16,7 +16,7 @@
 if ( !defined( 'ABSPATH' ) ) { exit; }
 
 // Plugin Constants
-define( 'XPO_BLOCK_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.0' );
+define( 'XPO_BLOCK_VERSION', '1.0.0' );
 define( 'XPO_BLOCK_DIR_URL', plugin_dir_url( __FILE__ ) );
 define( 'XPO_BLOCK_DIR_PATH', plugin_dir_path( __FILE__ ) );
 define( 'XPO_BLOCK_BASENAME', plugin_basename( __FILE__ ) );

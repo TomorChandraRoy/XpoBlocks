@@ -1,3 +1,6 @@
+define( 'XPO_BLOCK_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.0' );
+
+
 ## Plugin Setup
 1. Find an appropriate [xpo-block](https://wordpress.org/plugins/) according to the solution of the plugin.
 2. Write the min 4-5 character prefix, plugin name, short description(up to 150 chars), long description (min 3-4 para), keywords(min 4), block name, and block description in a temporary notebook.
@@ -13,6 +16,7 @@
 11. Use `should_load_separate_core_block_assets` filter to load block assets only when the block is used on the frontend. Use `__return_true` in that filter.
 
 The folder structure that `plugin-zip` accepts is:
+
 
 ```
 /plugin-name
