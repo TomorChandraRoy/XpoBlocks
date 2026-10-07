@@ -5393,6 +5393,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Components */ "../tr-tools/Components/index.js");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils */ "../tr-tools/utils/index.js");
+/**
+ * @package tr-tools
+ * @author TomorChandraRoy
+ * @copyright 2026 TomorChandraRoy
+ * @license GPL-3.0-or-later
+ */
 
 
 

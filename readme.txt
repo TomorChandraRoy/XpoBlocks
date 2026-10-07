@@ -42,6 +42,14 @@ Xpo Blocks provides a collection of beautifully designed, easily customizable Gu
 Have a question, feature request, or feedback?
 * [Visit Support Forum](https://wordpress.org/support/plugin/xpo-blocks/)
 
+=== Source Code ===
+
+The source code of this plugin, including all uncompiled assets, is publicly available on GitHub:
+* [GitHub Repository](https://github.com/TomorChandraRoy/XpoBlocks)
+
+This plugin also uses a custom reusable package called "tr-tools". Its uncompiled source code is publicly available and licensed under GPL-3.0-or-later:
+* [tr-tools Repository](https://github.com/TomorChandraRoy/tr-tools)
+
 
 == Installation ==
 
@@ -96,6 +104,7 @@ This plugin incorporates the following third-party resources and open-source lib
 * **QRCode** - (c) Ryan Day, released under the MIT License ([https://github.com/soldair/node-qrcode](https://github.com/soldair/node-qrcode)).
 * **SVG Icons** - Feather / Lucide / WordPress Dashicons, released under MIT / GPLv2+ License.
 * **Cover Image** - Custom designed asset, released under GPLv3 or later.
+* **tr-tools** - (c) TomorChandraRoy, released under the GPL-3.0-or-later License ([https://github.com/TomorChandraRoy/tr-tools](https://github.com/TomorChandraRoy/tr-tools)).
 
 
 == Changelog ==

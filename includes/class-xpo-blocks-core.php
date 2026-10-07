@@ -11,18 +11,10 @@ if ( !class_exists( 'Xpo_Blocks_Core' ) ) {
 	 */
 	class Xpo_Blocks_Core {
 		public static function init() {
-			add_action( 'init', [ __CLASS__, 'load_textdomain' ] );
 			add_filter( 'block_categories_all', [ __CLASS__, 'register_block_category' ], 10, 2 );
 			add_filter( 'should_load_separate_core_block_assets', '__return_true' );
 		}
 
-		/**
-		 * Loads plugin textdomain for internationalization (i18n).
-		 */
-		public static function load_textdomain() {
-			// phpcs:ignore PluginCheck.CodeAnalysis.DiscouragedFunctions.load_plugin_textdomainFound
-			load_plugin_textdomain( 'xpo-blocks', false, dirname( XPO_BLOCKS_BASENAME ) . '/languages' );
-		}
 
 
 		// Register custom block category
