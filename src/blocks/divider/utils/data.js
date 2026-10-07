@@ -1,16 +1,14 @@
 import { __ } from "@wordpress/i18n";
 import { TemplateOneSvg, TemplateTwoSvg } from "./icons";
 
-const textDomain = 'xpo-blocks';
-
 export const templateData = {
-  title: __('Select Divider Template', textDomain),
-  subtitle: __('Choose a design template for your divider.', textDomain),
+  title: __('Select Divider Template', 'xpo-blocks'),
+  subtitle: __('Choose a design template for your divider.', 'xpo-blocks'),
   templates: [
     {
       id: 'template-1',
-      label: __('Template 1', textDomain),
-      tag: __('Classic Divider', ),
+      label: __('Template 1', 'xpo-blocks'),
+      tag: __('Classic Divider', 'xpo-blocks'),
       icon: TemplateOneSvg,
       attributes: {
         dividerType: 'text',
@@ -34,8 +32,8 @@ export const templateData = {
     },
     {
       id: 'template-2',
-      label: __('Template 2', ),
-      tag: __('Simple Divider', ),
+      label: __('Template 2', 'xpo-blocks'),
+      tag: __('Simple Divider', 'xpo-blocks'),
       icon: TemplateTwoSvg,
       attributes: {
         dividerWidth: { desktop: '100%', tablet: '', mobile: '' },

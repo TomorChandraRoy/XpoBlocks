@@ -1,1 +1,85 @@
-.wp-block-xpo-block-button .xpo-button{background:transparent;border:none;cursor:pointer;display:inline-block;outline-offset:4px;padding:0;position:relative;text-decoration:none;touch-action:manipulation;transition:filter .25s;-webkit-user-select:none;user-select:none}.wp-block-xpo-block-button .xpo-button .xpo-button-shadow{border-radius:12px;height:100%;right:0;position:absolute;top:0;transform:translateY(var(--shadow-default-y,2px));transition:transform .6s cubic-bezier(.3,.7,.4,1);width:100%;will-change:transform}.wp-block-xpo-block-button .xpo-button .xpo-button-edge{background:linear-gradient(-270deg,#52001b 0,#a30036 8%,#a30036 92%,#52001b);border-radius:12px;height:100%;right:0;position:absolute;top:0;width:100%}.wp-block-xpo-block-button .xpo-button .xpo-button-front{background:#f62477;border-radius:12px;color:#fff;display:block;font-size:1.1rem;padding:12px 27px;position:relative;transform:translateY(var(--button-offset-y,-4px));transition:transform .6s cubic-bezier(.3,.7,.4,1);will-change:transform}.wp-block-xpo-block-button .xpo-button:hover{filter:brightness(110%)}.wp-block-xpo-block-button .xpo-button:hover .xpo-button-front{transform:translateY(var(--button-hover-y,-6px));transition:transform .25s cubic-bezier(.3,.7,.4,1.5)}.wp-block-xpo-block-button .xpo-button:hover .xpo-button-shadow{transform:translateY(var(--shadow-hover-y,4px));transition:transform .25s cubic-bezier(.3,.7,.4,1.5)}.wp-block-xpo-block-button .xpo-button:active .xpo-button-front{transform:translateY(var(--button-active-y,-2px));transition:transform 34ms}.wp-block-xpo-block-button .xpo-button:active .xpo-button-shadow{transform:translateY(var(--shadow-active-y,1px));transition:transform 34ms}.wp-block-xpo-block-button .xpo-button:focus:not(:focus-visible){outline:none}
+/*!*****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/button/style.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************/
+.wp-block-xpo-blocks-button,
+.xpo-block-button-wrapper {
+  /* From Uiverse.io by cssbuttons-io */
+}
+.wp-block-xpo-blocks-button .xpo-button,
+.xpo-block-button-wrapper .xpo-button {
+  position: relative;
+  display: inline-block;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  -webkit-user-select: none;
+          user-select: none;
+  touch-action: manipulation;
+  text-decoration: none;
+}
+.wp-block-xpo-blocks-button .xpo-button .xpo-button-shadow,
+.xpo-block-button-wrapper .xpo-button .xpo-button-shadow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  will-change: transform;
+  transform: translateY(var(--shadow-default-y, 2px));
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+.wp-block-xpo-blocks-button .xpo-button .xpo-button-edge,
+.xpo-block-button-wrapper .xpo-button .xpo-button-edge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(to right, hsl(340, 100%, 16%) 0%, hsl(340, 100%, 32%) 8%, hsl(340, 100%, 32%) 92%, hsl(340, 100%, 16%) 100%);
+}
+.wp-block-xpo-blocks-button .xpo-button .xpo-button-front,
+.xpo-block-button-wrapper .xpo-button .xpo-button-front {
+  display: block;
+  position: relative;
+  padding: 12px 27px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: white;
+  background: #f62477;
+  will-change: transform;
+  transform: translateY(var(--button-offset-y, -4px));
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+.wp-block-xpo-blocks-button .xpo-button:hover,
+.xpo-block-button-wrapper .xpo-button:hover {
+  filter: brightness(110%);
+}
+.wp-block-xpo-blocks-button .xpo-button:hover .xpo-button-front,
+.xpo-block-button-wrapper .xpo-button:hover .xpo-button-front {
+  transform: translateY(var(--button-hover-y, -6px));
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+.wp-block-xpo-blocks-button .xpo-button:hover .xpo-button-shadow,
+.xpo-block-button-wrapper .xpo-button:hover .xpo-button-shadow {
+  transform: translateY(var(--shadow-hover-y, 4px));
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+.wp-block-xpo-blocks-button .xpo-button:active .xpo-button-front,
+.xpo-block-button-wrapper .xpo-button:active .xpo-button-front {
+  transform: translateY(var(--button-active-y, -2px));
+  transition: transform 34ms;
+}
+.wp-block-xpo-blocks-button .xpo-button:active .xpo-button-shadow,
+.xpo-block-button-wrapper .xpo-button:active .xpo-button-shadow {
+  transform: translateY(var(--shadow-active-y, 1px));
+  transition: transform 34ms;
+}
+.wp-block-xpo-blocks-button .xpo-button:focus:not(:focus-visible),
+.xpo-block-button-wrapper .xpo-button:focus:not(:focus-visible) {
+  outline: none;
+}

@@ -1,1 +1,449 @@
-.wp-block-xpo-block-audio-player{align-items:center;display:flex;width:100%}.wp-block-xpo-block-audio-player .xpo-audio-player-one{background:#fff;border:1px solid #e5e7eb;border-radius:16px;box-sizing:border-box;max-width:700px;padding:24px;width:100%}.wp-block-xpo-block-audio-player .xpo-audio-player-one__top{align-items:center;display:flex;gap:20px}.wp-block-xpo-block-audio-player .xpo-audio-player-one__cover{border-radius:12px;flex:0 0 140px;height:140px;overflow:hidden;width:140px}.wp-block-xpo-block-audio-player .xpo-audio-player-one__cover img{display:block;height:100%;object-fit:cover;width:100%}.wp-block-xpo-block-audio-player .xpo-audio-player-one__content{flex:1;min-width:0}.wp-block-xpo-block-audio-player .xpo-audio-player-one__label{color:#6b7280;display:block;font-size:13px;font-weight:600;letter-spacing:.08em;margin-bottom:6px;text-transform:uppercase}.wp-block-xpo-block-audio-player .xpo-audio-player-one__title{color:#111827;font-size:22px;line-height:1.3;margin:0 0 6px}.wp-block-xpo-block-audio-player .xpo-audio-player-one__artist{color:#6b7280;font-size:15px;margin:0 0 20px}.wp-block-xpo-block-audio-player .xpo-audio-player-one__progress input{appearance:none;background:linear-gradient(to right,#f62477 calc(7px + var(--progress)*1% - 14px*var(--progress)/100),#e5e7eb calc(7px + var(--progress)*1% - 14px*var(--progress)/100));border-radius:10px;cursor:pointer;height:6px;margin:0;width:100%}.wp-block-xpo-block-audio-player .xpo-audio-player-one__progress input:focus{box-shadow:none;outline:none}.wp-block-xpo-block-audio-player .xpo-audio-player-one__progress input::-webkit-slider-thumb{appearance:none;background:#f62477;border:0;border-radius:50%;cursor:pointer;height:14px;width:14px}.wp-block-xpo-block-audio-player .xpo-audio-player-one__progress input::-moz-range-thumb{background:#f62477;border:0;border-radius:50%;cursor:pointer;height:14px;width:14px}.wp-block-xpo-block-audio-player .xpo-audio-player-one__time{color:#9ca3af;display:flex;font-size:12px;justify-content:space-between;margin-top:8px}.wp-block-xpo-block-audio-player .xpo-audio-player-one__controls{align-items:center;display:flex;gap:18px;justify-content:center;margin-left:47px;margin-top:24px}@media(max-width:600px){.wp-block-xpo-block-audio-player .xpo-audio-player-one__controls{margin-left:0}}.wp-block-xpo-block-audio-player .xpo-audio-player-one__controls button{align-items:center;background:transparent;border:0;color:#f62477;cursor:pointer;display:flex;font-size:18px;height:42px;justify-content:center;padding:0;width:42px}.wp-block-xpo-block-audio-player .xpo-audio-player-one__controls button:focus{box-shadow:none;outline:none}.wp-block-xpo-block-audio-player .xpo-audio-player-one__controls button:disabled{color:#d1d5db;cursor:not-allowed}.wp-block-xpo-block-audio-player .xpo-audio-player-one__play{align-items:center!important;background:#f62477!important;border-radius:50%!important;color:#fff!important;display:flex!important;height:52px!important;justify-content:center!important;line-height:1!important;width:52px!important}.wp-block-xpo-block-audio-player .xpo-audio-player-one__play.is-paused{font-size:30px!important;padding-left:7px!important}.wp-block-xpo-block-audio-player .xpo-audio-player-one__play.is-playing{font-size:30px!important;padding-left:0!important}.wp-block-xpo-block-audio-player .xpo-audio-player-one__play:hover:not(:disabled){transform:scale(1.05)}.wp-block-xpo-block-audio-player .xpo-audio-player-one__play:disabled{background:#e5e7eb!important;color:#fdfcfc!important;cursor:not-allowed}.wp-block-xpo-block-audio-player .xpo-audio-player-one__mute-btn{align-items:center;background:none;border:none;color:#f62477;cursor:pointer;display:inline-flex;justify-content:center;padding:0;transition:transform .2s ease}.wp-block-xpo-block-audio-player .xpo-audio-player-one__mute-btn:focus{box-shadow:none;outline:none}.wp-block-xpo-block-audio-player .xpo-audio-player-one__mute-btn:hover{transform:scale(1.1)}.wp-block-xpo-block-audio-player .xpo-audio-player-one__volume{align-items:center;display:flex;gap:8px;margin-left:10px}.wp-block-xpo-block-audio-player .xpo-audio-player-one__volume input{appearance:none;background:linear-gradient(to right,#f62477 calc(6px + var(--volume-progress)*1% - 12px*var(--volume-progress)/100),#e5e7eb calc(6px + var(--volume-progress)*1% - 12px*var(--volume-progress)/100));border-radius:10px;cursor:pointer;height:6px;margin:0;width:80px}.wp-block-xpo-block-audio-player .xpo-audio-player-one__volume input:focus{box-shadow:none;outline:none}.wp-block-xpo-block-audio-player .xpo-audio-player-one__volume input::-webkit-slider-thumb{appearance:none;background:#f62477;border:0;border-radius:50%;cursor:pointer;height:12px;width:12px}.wp-block-xpo-block-audio-player .xpo-audio-player-one__volume input::-moz-range-thumb{background:#f62477;border:0;border-radius:50%;cursor:pointer;height:12px;width:12px}@media(max-width:600px){.wp-block-xpo-block-audio-player .xpo-audio-player-one{padding:18px}.wp-block-xpo-block-audio-player .xpo-audio-player-one__top{align-items:stretch;flex-direction:column}.wp-block-xpo-block-audio-player .xpo-audio-player-one__cover{flex-basis:auto;height:220px;width:100%}.wp-block-xpo-block-audio-player .xpo-audio-player-one__controls{flex-wrap:wrap;gap:10px}.wp-block-xpo-block-audio-player .xpo-audio-player-one__volume{justify-content:center;margin:0;width:100%}.wp-block-xpo-block-audio-player .xpo-audio-player-one__volume input{width:120px}}.wp-block-xpo-block-audio-player .xpo-audio-player-two{align-items:center;background:#fff;border:1px solid #e5e7eb;border-radius:9999px;box-shadow:0 1px 3px rgba(0,0,0,.04);box-sizing:border-box;display:flex;gap:16px;max-width:800px;padding:12px 24px;width:100%}.wp-block-xpo-block-audio-player .xpo-audio-player-two__btn{align-items:center;background:transparent;border:none;color:#111827;cursor:pointer;display:inline-flex;justify-content:center;padding:0;transition:transform .15s ease,opacity .15s ease}.wp-block-xpo-block-audio-player .xpo-audio-player-two__btn:hover:not(:disabled){opacity:.8;transform:scale(1.1)}.wp-block-xpo-block-audio-player .xpo-audio-player-two__btn:disabled{color:#9ca3af;cursor:not-allowed;opacity:.5}.wp-block-xpo-block-audio-player .xpo-audio-player-two__btn:focus{box-shadow:none;outline:none}.wp-block-xpo-block-audio-player .xpo-audio-player-two__btn--play{background:transparent;border-radius:50%;color:#111827;height:32px;width:32px}.wp-block-xpo-block-audio-player .xpo-audio-player-two__btn--backward,.wp-block-xpo-block-audio-player .xpo-audio-player-two__btn--forward,.wp-block-xpo-block-audio-player .xpo-audio-player-two__btn--volume{color:#111827}.wp-block-xpo-block-audio-player .xpo-audio-player-two__time{color:#374151;font-size:13px;font-variant-numeric:tabular-nums;font-weight:500;-webkit-user-select:none;user-select:none;white-space:nowrap}.wp-block-xpo-block-audio-player .xpo-audio-player-two__progress{align-items:center;display:flex;flex:1;min-width:60px}.wp-block-xpo-block-audio-player .xpo-audio-player-two__progress input{appearance:none;background:linear-gradient(to right,#9ca3af calc(6px + var(--progress)*1% - 12px*var(--progress)/100),#e5e7eb calc(6px + var(--progress)*1% - 12px*var(--progress)/100));border-radius:10px;cursor:pointer;height:5px;margin:0;width:100%}.wp-block-xpo-block-audio-player .xpo-audio-player-two__progress input:focus{box-shadow:none;outline:none}.wp-block-xpo-block-audio-player .xpo-audio-player-two__progress input::-webkit-slider-thumb{appearance:none;background:#111827;border:0;border-radius:50%;cursor:pointer;height:12px;-webkit-transition:transform .1s ease;transition:transform .1s ease;width:12px}.wp-block-xpo-block-audio-player .xpo-audio-player-two__progress input::-webkit-slider-thumb:hover{transform:scale(1.2)}.wp-block-xpo-block-audio-player .xpo-audio-player-two__progress input::-moz-range-thumb{background:#111827;border:0;border-radius:50%;cursor:pointer;height:12px;width:12px}.wp-block-xpo-block-audio-player .xpo-audio-player-two__volume{align-items:center;display:flex;gap:8px}.wp-block-xpo-block-audio-player .xpo-audio-player-two__volume-slider{appearance:none;background:linear-gradient(to right,#111827 calc(6px + var(--volume-progress)*1% - 12px*var(--volume-progress)/100),#e5e7eb calc(6px + var(--volume-progress)*1% - 12px*var(--volume-progress)/100));border-radius:10px;cursor:pointer;height:5px;margin:0;width:70px}.wp-block-xpo-block-audio-player .xpo-audio-player-two__volume-slider:focus{box-shadow:none;outline:none}.wp-block-xpo-block-audio-player .xpo-audio-player-two__volume-slider::-webkit-slider-thumb{appearance:none;background:#111827;border:0;border-radius:50%;cursor:pointer;height:12px;-webkit-transition:transform .1s ease;transition:transform .1s ease;width:12px}.wp-block-xpo-block-audio-player .xpo-audio-player-two__volume-slider::-webkit-slider-thumb:hover{transform:scale(1.2)}.wp-block-xpo-block-audio-player .xpo-audio-player-two__volume-slider::-moz-range-thumb{background:#111827;border:0;border-radius:50%;cursor:pointer;height:12px;width:12px}@media(max-width:600px){.wp-block-xpo-block-audio-player .xpo-audio-player-two{border-radius:24px;flex-wrap:wrap;gap:10px;padding:10px 16px}.wp-block-xpo-block-audio-player .xpo-audio-player-two__volume-slider{width:50px}}
+/*!***********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/audio-player/style.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************/
+.wp-block-xpo-blocks-audio-player,
+.xpo-block-audio-player-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one {
+  width: 100%;
+  max-width: 700px;
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: #fff;
+  box-sizing: border-box;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__top,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__top {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__cover,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__cover {
+  flex: 0 0 140px;
+  width: 140px;
+  height: 140px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__cover img,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__cover img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__content,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__content {
+  flex: 1;
+  min-width: 0;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__label,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__title,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__title {
+  margin: 0 0 6px;
+  font-size: 22px;
+  line-height: 1.3;
+  color: #111827;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__artist,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__artist {
+  margin: 0 0 20px;
+  font-size: 15px;
+  color: #6b7280;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__progress input,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__progress input {
+  width: 100%;
+  height: 6px;
+  margin: 0;
+  cursor: pointer;
+  appearance: none;
+  border-radius: 10px;
+  background: linear-gradient(to right, #f62477 calc(7px + var(--progress) * 1% - 14px * var(--progress) / 100), #e5e7eb calc(7px + var(--progress) * 1% - 14px * var(--progress) / 100));
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__progress input:focus,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__progress input:focus {
+  outline: none;
+  box-shadow: none;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__progress input::-webkit-slider-thumb,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__progress input::-webkit-slider-thumb {
+  width: 14px;
+  height: 14px;
+  appearance: none;
+  border: 0;
+  border-radius: 50%;
+  background: #f62477;
+  cursor: pointer;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__progress input::-moz-range-thumb,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__progress input::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border: 0;
+  border-radius: 50%;
+  background: #f62477;
+  cursor: pointer;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__time,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__time {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #9ca3af;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__controls,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 24px;
+  margin-left: 47px;
+}
+@media (max-width: 600px) {
+  .wp-block-xpo-blocks-audio-player .xpo-audio-player-one__controls,
+  .xpo-block-audio-player-wrapper .xpo-audio-player-one__controls {
+    margin-left: 0;
+  }
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__controls button,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__controls button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #f62477;
+  font-size: 18px;
+  cursor: pointer;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__controls button:focus,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__controls button:focus {
+  outline: none;
+  box-shadow: none;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__controls button:disabled,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__controls button:disabled {
+  color: #d1d5db;
+  cursor: not-allowed;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__play,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__play {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 50% !important;
+  background: #f62477 !important;
+  color: #fff !important;
+  line-height: 1 !important;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__play.is-paused,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__play.is-paused {
+  font-size: 30px !important;
+  padding-left: 7px !important;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__play.is-playing,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__play.is-playing {
+  font-size: 30px !important;
+  padding-left: 0 !important;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__play:hover:not(:disabled),
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__play:hover:not(:disabled) {
+  transform: scale(1.05);
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__play:disabled,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__play:disabled {
+  background: #e5e7eb !important;
+  color: #fdfcfc !important;
+  cursor: not-allowed;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__mute-btn,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__mute-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #f62477;
+  transition: transform 0.2s ease;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__mute-btn:focus,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__mute-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__mute-btn:hover,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__mute-btn:hover {
+  transform: scale(1.1);
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__volume,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__volume {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 10px;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__volume input,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__volume input {
+  width: 80px;
+  height: 6px;
+  margin: 0;
+  cursor: pointer;
+  appearance: none;
+  border-radius: 10px;
+  background: linear-gradient(to right, #f62477 calc(6px + var(--volume-progress) * 1% - 12px * var(--volume-progress) / 100), #e5e7eb calc(6px + var(--volume-progress) * 1% - 12px * var(--volume-progress) / 100));
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__volume input:focus,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__volume input:focus {
+  outline: none;
+  box-shadow: none;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__volume input::-webkit-slider-thumb,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__volume input::-webkit-slider-thumb {
+  width: 12px;
+  height: 12px;
+  appearance: none;
+  border: 0;
+  border-radius: 50%;
+  background: #f62477;
+  cursor: pointer;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-one__volume input::-moz-range-thumb,
+.xpo-block-audio-player-wrapper .xpo-audio-player-one__volume input::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: 0;
+  border-radius: 50%;
+  background: #f62477;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .wp-block-xpo-blocks-audio-player .xpo-audio-player-one,
+  .xpo-block-audio-player-wrapper .xpo-audio-player-one {
+    padding: 18px;
+  }
+  .wp-block-xpo-blocks-audio-player .xpo-audio-player-one__top,
+  .xpo-block-audio-player-wrapper .xpo-audio-player-one__top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .wp-block-xpo-blocks-audio-player .xpo-audio-player-one__cover,
+  .xpo-block-audio-player-wrapper .xpo-audio-player-one__cover {
+    width: 100%;
+    height: 220px;
+    flex-basis: auto;
+  }
+  .wp-block-xpo-blocks-audio-player .xpo-audio-player-one__controls,
+  .xpo-block-audio-player-wrapper .xpo-audio-player-one__controls {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .wp-block-xpo-blocks-audio-player .xpo-audio-player-one__volume,
+  .xpo-block-audio-player-wrapper .xpo-audio-player-one__volume {
+    width: 100%;
+    justify-content: center;
+    margin: 0;
+  }
+  .wp-block-xpo-blocks-audio-player .xpo-audio-player-one__volume input,
+  .xpo-block-audio-player-wrapper .xpo-audio-player-one__volume input {
+    width: 120px;
+  }
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-two,
+.xpo-block-audio-player-wrapper .xpo-audio-player-two {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  padding: 12px 24px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 9999px;
+  box-sizing: border-box;
+  gap: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-two__btn,
+.xpo-block-audio-player-wrapper .xpo-audio-player-two__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #111827;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-two__btn:hover:not(:disabled),
+.xpo-block-audio-player-wrapper .xpo-audio-player-two__btn:hover:not(:disabled) {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-two__btn:disabled,
+.xpo-block-audio-player-wrapper .xpo-audio-player-two__btn:disabled {
+  color: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-two__btn:focus,
+.xpo-block-audio-player-wrapper .xpo-audio-player-two__btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-two__btn--play,
+.xpo-block-audio-player-wrapper .xpo-audio-player-two__btn--play {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: transparent;
+  color: #111827;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-two__btn--backward, .wp-block-xpo-blocks-audio-player .xpo-audio-player-two__btn--forward, .wp-block-xpo-blocks-audio-player .xpo-audio-player-two__btn--volume,
+.xpo-block-audio-player-wrapper .xpo-audio-player-two__btn--backward,
+.xpo-block-audio-player-wrapper .xpo-audio-player-two__btn--forward,
+.xpo-block-audio-player-wrapper .xpo-audio-player-two__btn--volume {
+  color: #111827;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-two__time,
+.xpo-block-audio-player-wrapper .xpo-audio-player-two__time {
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  -webkit-user-select: none;
+          user-select: none;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-two__progress,
+.xpo-block-audio-player-wrapper .xpo-audio-player-two__progress {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 60px;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-two__progress input,
+.xpo-block-audio-player-wrapper .xpo-audio-player-two__progress input {
+  width: 100%;
+  height: 5px;
+  margin: 0;
+  cursor: pointer;
+  appearance: none;
+  border-radius: 10px;
+  background: linear-gradient(to right, #9ca3af calc(6px + var(--progress) * 1% - 12px * var(--progress) / 100), #e5e7eb calc(6px + var(--progress) * 1% - 12px * var(--progress) / 100));
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-two__progress input:focus,
+.xpo-block-audio-player-wrapper .xpo-audio-player-two__progress input:focus {
+  outline: none;
+  box-shadow: none;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-two__progress input::-webkit-slider-thumb,
+.xpo-block-audio-player-wrapper .xpo-audio-player-two__progress input::-webkit-slider-thumb {
+  width: 12px;
+  height: 12px;
+  appearance: none;
+  border: 0;
+  border-radius: 50%;
+  background: #111827;
+  cursor: pointer;
+  -webkit-transition: transform 0.1s ease;
+  transition: transform 0.1s ease;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-two__progress input::-webkit-slider-thumb:hover,
+.xpo-block-audio-player-wrapper .xpo-audio-player-two__progress input::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-two__progress input::-moz-range-thumb,
+.xpo-block-audio-player-wrapper .xpo-audio-player-two__progress input::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: 0;
+  border-radius: 50%;
+  background: #111827;
+  cursor: pointer;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-two__volume,
+.xpo-block-audio-player-wrapper .xpo-audio-player-two__volume {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-two__volume-slider,
+.xpo-block-audio-player-wrapper .xpo-audio-player-two__volume-slider {
+  width: 70px;
+  height: 5px;
+  margin: 0;
+  cursor: pointer;
+  appearance: none;
+  border-radius: 10px;
+  background: linear-gradient(to right, #111827 calc(6px + var(--volume-progress) * 1% - 12px * var(--volume-progress) / 100), #e5e7eb calc(6px + var(--volume-progress) * 1% - 12px * var(--volume-progress) / 100));
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-two__volume-slider:focus,
+.xpo-block-audio-player-wrapper .xpo-audio-player-two__volume-slider:focus {
+  outline: none;
+  box-shadow: none;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-two__volume-slider::-webkit-slider-thumb,
+.xpo-block-audio-player-wrapper .xpo-audio-player-two__volume-slider::-webkit-slider-thumb {
+  width: 12px;
+  height: 12px;
+  appearance: none;
+  border: 0;
+  border-radius: 50%;
+  background: #111827;
+  cursor: pointer;
+  -webkit-transition: transform 0.1s ease;
+  transition: transform 0.1s ease;
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-two__volume-slider::-webkit-slider-thumb:hover,
+.xpo-block-audio-player-wrapper .xpo-audio-player-two__volume-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+.wp-block-xpo-blocks-audio-player .xpo-audio-player-two__volume-slider::-moz-range-thumb,
+.xpo-block-audio-player-wrapper .xpo-audio-player-two__volume-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: 0;
+  border-radius: 50%;
+  background: #111827;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .wp-block-xpo-blocks-audio-player .xpo-audio-player-two,
+  .xpo-block-audio-player-wrapper .xpo-audio-player-two {
+    padding: 10px 16px;
+    gap: 10px;
+    border-radius: 24px;
+    flex-wrap: wrap;
+  }
+  .wp-block-xpo-blocks-audio-player .xpo-audio-player-two__volume-slider,
+  .xpo-block-audio-player-wrapper .xpo-audio-player-two__volume-slider {
+    width: 50px;
+  }
+}
+
+/*# sourceMappingURL=style-view.css.map*/

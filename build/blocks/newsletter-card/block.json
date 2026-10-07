@@ -1,12 +1,12 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "xpo-block/newsletter-card",
+  "name": "xpo-blocks/newsletter-card",
   "version": "1.0.0",
   "title": "Newsletter Card",
-  "category": "xpo-block",
+  "category": "xpo-blocks",
   "description": "Add a visually appealing newsletter subscription card to grow your email list and engage with your audience.",
-  "textdomain": "xpo-block",
+  "textdomain": "xpo-blocks",
   "attributes": {
     "selectedTemplate": {
       "type": "string",

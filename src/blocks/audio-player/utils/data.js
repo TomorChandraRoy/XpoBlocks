@@ -1,16 +1,13 @@
 import { __ } from "@wordpress/i18n";
 import { TemplateOneSvg, TemplateTwoSvg } from "./icon";
-const textDomain = 'xpo-blocks';
-
-
 export const templateData = {
-  title: __('Select Audio Player Template', textDomain),
-  subtitle: __('Choose a design template for your audio player block.', textDomain),
+  title: __('Select Audio Player Template', 'xpo-blocks'),
+  subtitle: __('Choose a design template for your audio player block.', 'xpo-blocks'),
   templates: [
     {
       id: 'template-1',
-      label: __('Template 1', textDomain),
-      tag: __('Modern Audio Card', textDomain),
+      label: __('Template 1', 'xpo-blocks'),
+      tag: __('Modern Audio Card', 'xpo-blocks'),
       icon: TemplateOneSvg,
       attributes: {
         audioUrl: '',
@@ -75,8 +72,8 @@ export const templateData = {
     },
     {
       id: 'template-2',
-      label: __('Template 2', textDomain),
-      tag: __('Minimal Pill Player', textDomain),
+      label: __('Template 2', 'xpo-blocks'),
+      tag: __('Minimal Pill Player', 'xpo-blocks'),
       icon: TemplateTwoSvg,
       attributes: {
         audioUrl: '',

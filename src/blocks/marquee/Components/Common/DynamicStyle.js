@@ -1,7 +1,7 @@
 import { getGradientCss } from 'tr-tools';
 
 const DynamicStyle = ({ attributes, id }) => {
-  const { itemHeight, containerMaxWidth, showFrame, frameBg, frameRadius, enableSweepAnimation, textGradient, containerBg, containerBorderColor, containerRadius } = attributes;
+  const { itemHeight, containerMaxWidth, showFrame, frameBg, frameRadius, enableSweepAnimation, textGradient, containerBg, containerBorderColor, containerRadius, logoTextBg, logoTextRadius } = attributes;
 
   // Handle older blocks where itemHeight was a number
   const getVal = (val, def) => (typeof val === 'number' ? `${val}px` : val) || def;
@@ -11,7 +11,7 @@ const DynamicStyle = ({ attributes, id }) => {
   const finalFrameRadius = typeof frameRadius === 'number' ? `${frameRadius}px` : '12px';
 
   const mainSl = `#${id}`;
-  const blockClass = `${mainSl} .wp-block-xpo-block-marquee`;
+  const blockClass = `${mainSl} .wp-block-xpo-blocks-marquee`;
   const sectionClass = `${blockClass} .xpo-logo-cloud-section`;
   const wrapperClass = `${sectionClass} .xpo-logo-cloud-wrapper`;
   const backendImgClass = `${wrapperClass} .xpo-mq-item img`;
@@ -76,6 +76,12 @@ const DynamicStyle = ({ attributes, id }) => {
               border-radius: ${finalFrameRadius} !important;
             }
           ` : ''}
+
+          #${id} .xpo-logo-text-container,
+          #${id} .xpo-logo-text {
+            background-color: ${logoTextBg || containerBg || '#ffffff'} !important;
+            border-radius: ${typeof logoTextRadius === 'number' ? `${logoTextRadius}px` : '0px'} !important;
+          }
 
           #${id} .xpo-logo-text-wave {
             background-image: ${gradientCss} !important;

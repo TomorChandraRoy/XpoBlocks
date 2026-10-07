@@ -1,10 +1,10 @@
 {
   "apiVersion": 3,
-  "name": "xpo-block/audio-player",
+  "name": "xpo-blocks/audio-player",
   "version": "1.0.0",
   "title": "Audio Player",
   "description": "Ultra-optimized Gutenberg audio player with seek controls and accessible playback UI.",
-  "category": "xpo-block",
+  "category": "xpo-blocks",
   "keywords": [
     "audio player",
     "audio",
@@ -13,7 +13,7 @@
     "sound",
     "media player"
   ],
-  "textdomain": "xpo-block",
+  "textdomain": "xpo-blocks",
   "attributes": {
     "selectedTemplate": {
       "type": "string",

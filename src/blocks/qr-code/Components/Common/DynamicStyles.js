@@ -2,7 +2,7 @@ import React from 'react';
 import { getBorderRadiusCss, getBorderCss, getTypographyCss } from 'tr-tools';
 
 const DynamicStyles = ({ attributes, id }) => {
-  const {containerBg ,containerBorder,containerRadius,downloadBtnColor,titleColor,titleTypography,descriptionColor,descriptionTypography} = attributes || {};
+  const { containerBg, containerBorder, containerRadius, downloadBtnColor, titleColor, titleTypography, descriptionColor, descriptionTypography } = attributes || {};
 
   const css = `
     #${id} .xpo-qr-container {

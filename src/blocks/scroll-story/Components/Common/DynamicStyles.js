@@ -3,7 +3,7 @@ const DynamicStyle = ({ attributes, clientId }) => {
   const { progressColor = '#3b82f6', activeTitleColor = '#1e293b', inactiveTitleColor = '#94a3b8', descColor = '#475569', imageFit = 'cover', mediaBgColor = '#f1f5f9', mediaHeight = '400px', mediaRadius = '20px', stepGap = '60px' } = attributes;
 
   // In editor, the prop clientId is passed as 'block-{id}'. Frontend fallback to generic class.
-  const mainSl = clientId ? `#${clientId}` : '.wp-block-xpo-block-scroll-story';
+  const mainSl = clientId ? `#${clientId}` : '.wp-block-xpo-blocks-scroll-story';
   const xpoCnt = `${mainSl} .xpo-scroll-story-content`;
   const xpoSPF = `${mainSl} .xpo-scroll-progress-fill`;
   const xpoSST = `${mainSl} .xpo-scroll-story-title`;

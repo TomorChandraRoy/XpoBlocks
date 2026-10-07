@@ -27,7 +27,7 @@ const Edit = props => {
           />
         </div>
       ) : (
-        <div {...useBlockProps()}>
+        <div {...useBlockProps({ id })}>
           <DynamicStyles attributes={attributes} id={id} />
           <BeforeAfter attributes={attributes} setAttributes={setAttributes} id={id} />
         </div>

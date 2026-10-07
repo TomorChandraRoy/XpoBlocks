@@ -2,10 +2,6 @@ import { __ } from '@wordpress/i18n';
 import { PanelBody, SelectControl, TextControl, Button } from '@wordpress/components';
 import { useEffect, useRef } from '@wordpress/element';
 import { MediaControl } from 'tr-tools';
-const textDomain = 'xpo-blocks';
-
-
-
 const General = ({ attributes, setAttributes, clientId }) => {
 	const { blockId, audioUrl, coverUrl, timeDisplayMode, playerAlign, text, subtitle, labelText, selectedTemplate = 'template-1' } = attributes;
 
@@ -26,85 +22,84 @@ const General = ({ attributes, setAttributes, clientId }) => {
 
 	return (
     <>
-      <PanelBody className="bPlPanelBody" title={__('Template Presets', textDomain)} initialOpen={true}>
-        <p style={{ fontSize: '12px', color: '#64748b', marginBottom: '12px' }}>{__('Switch or apply a predefined audio player template style.', textDomain)}</p>
+      <PanelBody className="bPlPanelBody" title={__('Template Presets', 'xpo-blocks')} initialOpen={true}>
+        <p style={{ fontSize: '12px', color: '#64748b', marginBottom: '12px' }}>{__('Switch or apply a predefined audio player template style.', 'xpo-blocks')}</p>
         <Button isSecondary onClick={() => setAttributes({ selectedTemplate: '' })} style={{ width: '100%', justifyContent: 'center' }}>
-          {__('Change Template', textDomain)}
+          {__('Change Template', 'xpo-blocks')}
         </Button>
       </PanelBody>
 
-      <PanelBody className="bPlPanelBody" title={__('Audio Source & Media', textDomain)} initialOpen={false}>
+      <PanelBody className="bPlPanelBody" title={__('Audio Source & Media', 'xpo-blocks')} initialOpen={false}>
         <MediaControl
-          label={__('Audio Source / URL :', textDomain)}
+          label={__('Audio Source / URL :', 'xpo-blocks')}
           value={audioUrl}
           onChange={val => setAttributes({ audioUrl: val })}
           allowedTypes={['audio']}
-          buttonLabel={__('Upload / Select Audio', textDomain)}
-          help={__('Provide a direct audio file URL (e.g., ending with .mp3, .wav) or CDN/hosting link. Shared landing pages (like Jumpshare, Dropbox) will not work.', textDomain)}
+          buttonLabel={__('Upload / Select Audio', 'xpo-blocks')}
+          help={__('Provide a direct audio file URL (e.g., ending with .mp3, .wav) or CDN/hosting link. Shared landing pages (like Jumpshare, Dropbox) will not work.', 'xpo-blocks')}
         />
 
         {!isTemplateTwo && (
           <>
             <hr />
             <MediaControl
-              label={__('Cover Image URL / Source :', textDomain)}
+              label={__('Cover Image URL / Source :', 'xpo-blocks')}
               value={coverUrl}
               onChange={val => setAttributes({ coverUrl: val })}
               allowedTypes={['image']}
-              buttonLabel={__('Upload / Select Image', textDomain)}
-              help={__('Provide a direct image URL (e.g., ending with .jpg, .png, .webp) or CDN/hosting link.', textDomain)}
+              buttonLabel={__('Upload / Select Image', 'xpo-blocks')}
+              help={__('Provide a direct image URL (e.g., ending with .jpg, .png, .webp) or CDN/hosting link.', 'xpo-blocks')}
             />
           </>
         )}
       </PanelBody>
 
       {!isTemplateTwo && (
-        <PanelBody className="bPlPanelBody" title={__('Track Information', textDomain)} initialOpen={false}>
-          <TextControl label={__('Label Text :', textDomain)} value={labelText} onChange={val => setAttributes({ labelText: val })} />
-          <TextControl label={__('Track Title :', textDomain)} value={text} onChange={val => setAttributes({ text: val })} />
-          <TextControl label={__('Artist / Author :', textDomain)} value={subtitle} onChange={val => setAttributes({ subtitle: val })} />
+        <PanelBody className="bPlPanelBody" title={__('Track Information', 'xpo-blocks')} initialOpen={false}>
+          <TextControl label={__('Label Text :', 'xpo-blocks')} value={labelText} onChange={val => setAttributes({ labelText: val })} />
+          <TextControl label={__('Track Title :', 'xpo-blocks')} value={text} onChange={val => setAttributes({ text: val })} />
+          <TextControl label={__('Artist / Author :', 'xpo-blocks')} value={subtitle} onChange={val => setAttributes({ subtitle: val })} />
         </PanelBody>
       )}
 
-{/*
-
-      <PanelBody className="bPlPanelBody" title={__('Performance Settings', textDomain)} initialOpen={false}>
+      {/*
+      <PanelBody className="bPlPanelBody" title={__('Performance Settings', 'xpo-blocks')} initialOpen={false}>
         <SelectControl
-          label={__('Preload Strategy', textDomain)}
+          label={__('Preload Strategy', 'xpo-blocks')}
           value={preloadStrategy}
           options={[
-            { label: __('Metadata Only (Recommended)', textDomain), value: 'metadata' },
-            { label: __('Auto (Load full file)', textDomain), value: 'auto' },
-            { label: __('None (Do not load)', textDomain), value: 'none' },
+            { label: __('Metadata Only (Recommended)', 'xpo-blocks'), value: 'metadata' },
+            { label: __('Auto (Load full file)', 'xpo-blocks'), value: 'auto' },
+            { label: __('None (Do not load)', 'xpo-blocks'), value: 'none' },
           ]}
           onChange={val => setAttributes({ preloadStrategy: val })}
-          help={__('Controls how much of the file the browser downloads automatically.', textDomain)}
+          help={__('Controls how much of the file the browser downloads automatically.', 'xpo-blocks')}
         />
       </PanelBody> */}
 
-      <PanelBody className="bPlPanelBody" title={__('Layout Settings', textDomain)} initialOpen={false}>
+      <PanelBody className="bPlPanelBody" title={__('Layout Settings', 'xpo-blocks')} initialOpen={false}>
         <SelectControl
-          label={__('Block Alignment', textDomain)}
+          label={__('Block Alignment', 'xpo-blocks')}
           value={playerAlign}
           options={[
-            { label: __('Left', textDomain), value: 'flex-start' },
-            { label: __('Center', textDomain), value: 'center' },
-            { label: __('Right', textDomain), value: 'flex-end' },
+            { label: __('Left', 'xpo-blocks'), value: 'flex-start' },
+            { label: __('Center', 'xpo-blocks'), value: 'center' },
+            { label: __('Right', 'xpo-blocks'), value: 'flex-end' },
           ]}
           onChange={val => setAttributes({ playerAlign: val })}
-          help={__('Player position in the container.', textDomain)}
+          help={__('Player position in the container.', 'xpo-blocks')}
         />
         <SelectControl
-          label={__('Time Display Mode', textDomain)}
+          label={__('Time Display Mode', 'xpo-blocks')}
           value={timeDisplayMode}
           options={[
-            { label: __('Hidden', textDomain), value: 'none' },
-            { label: __('Elapsed Time', textDomain), value: 'elapsed' },
-            { label: __('Remaining Time', textDomain), value: 'remaining' },
-            { label: __('Total Duration', textDomain), value: 'total' },
+            { label: __('Hidden', 'xpo-blocks'), value: 'none' },
+            { label: __('Elapsed Time', 'xpo-blocks'), value: 'elapsed' },
+            { label: __('Remaining Time', 'xpo-blocks'), value: 'remaining' },
+            { label: __('Total Duration', 'xpo-blocks'), value: 'total' },
           ]}
           onChange={val => setAttributes({ timeDisplayMode: val })}
-          help={__('Shows current, remaining, or total play times.', textDomain)}
+          help={__('Shows current, remaining, or total play times.', 'xpo-blocks')}
         />
       </PanelBody>
     </>

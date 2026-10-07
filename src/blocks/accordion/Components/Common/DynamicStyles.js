@@ -38,14 +38,14 @@ const DynamicStyles = ({ attributes, id }) => {
         ${header} {
 
         }
-        ${mainSl}.xpo-template-one-wapper .xpo-faq-header,
-        ${mainSl}.xpo-template-three-wapper .xpo-faq-item {
+        ${mainSl} .xpo-template-one-wapper .xpo-faq-header,
+        ${mainSl} .xpo-template-three-wapper .xpo-faq-item {
           ${getBackgroundCss(questionBg) ? `background: ${getBackgroundCss(questionBg)};` : ''}
           ${getBorderCss(questionBorder)}
           ${getBorderRadiusCss(questionBorderRadius)}
         }
 
-        ${mainSl}.xpo-template-two-wapper .xpo-faq-item {
+        ${mainSl} .xpo-template-two-wapper .xpo-faq-item {
           ${getBorderCss(questionBorder)}
         }
 

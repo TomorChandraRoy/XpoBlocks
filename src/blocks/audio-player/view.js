@@ -8,7 +8,7 @@ import AudioPlayer from './Components/Common/Templates/AudioPlayer';
 // পেজের সমস্ত HTML লোড সম্পন্ন হওয়ার পর স্ক্রিপ্টটি চালু হবে
 document.addEventListener('DOMContentLoaded', () => {
 
-  const containers = document.querySelectorAll('.wp-block-xpo-block-audio-player');
+  const containers = document.querySelectorAll('.wp-block-xpo-blocks-audio-player');
 
   containers.forEach(container => {
 

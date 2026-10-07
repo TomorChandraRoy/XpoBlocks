@@ -1,15 +1,14 @@
 import { __ } from '@wordpress/i18n';
-import { PanelBody } from '@wordpress/components';
+import { PanelBody, __experimentalSpacer as Spacer } from '@wordpress/components';
 import { BackgroundControl, BorderControl, ColorControl, Typography } from 'tr-tools';
-const textDomain = 'xpo-blocks';
 const Style = ({ attributes, setAttributes }) => {
   const {containerBg,containerBorder,titleColor,titleTypography,descriptionColor,descriptionTypography,inputColor,inputBg,inputBorder,inputTypography,buttonColor,buttonBg,buttonBorder,buttonTypography,} = attributes;
 
   return (
     <>
-      <PanelBody className="bPlPanelBody" title={__('Container', textDomain)} initialOpen={false}>
+      <PanelBody className="bPlPanelBody" title={__('Container', 'xpo-blocks')} initialOpen={false}>
         <BackgroundControl
-          label={__('Background :', textDomain)}
+          label={__('Background :', 'xpo-blocks')}
           value={containerBg}
           onChange={val => setAttributes({ containerBg: val })}
           defaultBackground={{
@@ -19,7 +18,7 @@ const Style = ({ attributes, setAttributes }) => {
         />
 
         <BorderControl
-          label={__('Border :', textDomain)}
+          label={__('Border :', 'xpo-blocks')}
           value={containerBorder}
           onChange={val => setAttributes({ containerBorder: val })}
           defaultBorder={{
@@ -31,15 +30,15 @@ const Style = ({ attributes, setAttributes }) => {
         />
       </PanelBody>
 
-      <PanelBody className="bPlPanelBody" title={__('Title', textDomain)} initialOpen={false}>
+      <PanelBody className="bPlPanelBody" title={__('Title', 'xpo-blocks')} initialOpen={false}>
         <ColorControl
-          label={__('Color :', textDomain)}
+          label={__('Color :', 'xpo-blocks')}
           value={titleColor}
           onChange={val => setAttributes({ titleColor: val })}
           defaultColor="#1e293b"
         />
         <Typography
-          label={__('Typography :', textDomain)}
+          label={__('Typography :', 'xpo-blocks')}
           value={titleTypography}
           onChange={val => setAttributes({ titleTypography: val })}
           defaultTypography={{
@@ -55,15 +54,15 @@ const Style = ({ attributes, setAttributes }) => {
         />
       </PanelBody>
 
-      <PanelBody className="bPlPanelBody" title={__('Description', textDomain)} initialOpen={false}>
+      <PanelBody className="bPlPanelBody" title={__('Description', 'xpo-blocks')} initialOpen={false}>
         <ColorControl
-          label={__('Color :', textDomain)}
+          label={__('Color :', 'xpo-blocks')}
           value={descriptionColor}
           onChange={val => setAttributes({ descriptionColor: val })}
           defaultColor="#64748b"
         />
         <Typography
-          label={__('Typography :', textDomain)}
+          label={__('Typography :', 'xpo-blocks')}
           value={descriptionTypography}
           onChange={val => setAttributes({ descriptionTypography: val })}
           defaultTypography={{
@@ -79,15 +78,15 @@ const Style = ({ attributes, setAttributes }) => {
         />
       </PanelBody>
 
-      <PanelBody className="bPlPanelBody" title={__('Input Field', textDomain)} initialOpen={false}>
+      <PanelBody className="bPlPanelBody" title={__('Input Field', 'xpo-blocks')} initialOpen={false}>
         <ColorControl
-          label={__('Text Color :', textDomain)}
+          label={__('Text Color :', 'xpo-blocks')}
           value={inputColor}
           onChange={val => setAttributes({ inputColor: val })}
           defaultColor="#0f172a"
         />
         <BackgroundControl
-          label={__('Background :', textDomain)}
+          label={__('Background :', 'xpo-blocks')}
           value={inputBg}
           onChange={val => setAttributes({ inputBg: val })}
           defaultBackground={{
@@ -96,7 +95,7 @@ const Style = ({ attributes, setAttributes }) => {
           }}
         />
         <BorderControl
-          label={__('Border :', textDomain)}
+          label={__('Border :', 'xpo-blocks')}
           value={inputBorder}
           onChange={val => setAttributes({ inputBorder: val })}
           defaultBorder={{
@@ -106,8 +105,9 @@ const Style = ({ attributes, setAttributes }) => {
             side: 'all',
           }}
         />
+        <Spacer/>
         <Typography
-          label={__('Typography :', textDomain)}
+          label={__('Typography :', 'xpo-blocks')}
           value={inputTypography}
           onChange={val => setAttributes({ inputTypography: val })}
           defaultTypography={{
@@ -123,15 +123,15 @@ const Style = ({ attributes, setAttributes }) => {
         />
       </PanelBody>
 
-      <PanelBody className="bPlPanelBody" title={__('Button', textDomain)} initialOpen={false}>
+      <PanelBody className="bPlPanelBody" title={__('Button', 'xpo-blocks')} initialOpen={false}>
         <ColorControl
-          label={__('Text Color :', textDomain)}
+          label={__('Text Color :', 'xpo-blocks')}
           value={buttonColor}
           onChange={val => setAttributes({ buttonColor: val })}
           defaultColor="#ffffff"
         />
         <BackgroundControl
-          label={__('Background :', textDomain)}
+          label={__('Background :', 'xpo-blocks')}
           value={buttonBg}
           onChange={val => setAttributes({ buttonBg: val })}
           defaultBackground={{
@@ -140,7 +140,7 @@ const Style = ({ attributes, setAttributes }) => {
           }}
         />
         <BorderControl
-          label={__('Border :', textDomain)}
+          label={__('Border :', 'xpo-blocks')}
           value={buttonBorder}
           onChange={val => setAttributes({ buttonBorder: val })}
           defaultBorder={{
@@ -151,7 +151,7 @@ const Style = ({ attributes, setAttributes }) => {
           }}
         />
         <Typography
-          label={__('Typography :', textDomain)}
+          label={__('Typography :', 'xpo-blocks')}
           value={buttonTypography}
           onChange={val => setAttributes({ buttonTypography: val })}
           defaultTypography={{

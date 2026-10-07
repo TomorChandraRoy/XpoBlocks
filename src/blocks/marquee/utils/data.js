@@ -1,14 +1,13 @@
 import { __ } from "@wordpress/i18n";
 import { TemplateOneSvg } from "./icons";
-const textDomain = 'xpo-blocks';
 export const templateData = {
-  title: __('Select Marquee Template', textDomain),
-  subtitle: __('Choose a design template for your marquee.', textDomain),
+  title: __('Select Marquee Template', 'xpo-blocks'),
+  subtitle: __('Choose a design template for your marquee.', 'xpo-blocks'),
   templates: [
     {
       id: 'template-1',
-      label: __('Template 1', textDomain),
-      tag: __('Logo Marquee', textDomain),
+      label: __('Template 1', 'xpo-blocks'),
+      tag: __('Logo Marquee', 'xpo-blocks'),
       icon: TemplateOneSvg,
       attributes: {
         images: [],
@@ -33,6 +32,8 @@ export const templateData = {
         frameBg: "#ffffff",
         frameRadius: 12,
         enableSweepAnimation: true,
+        logoTextBg: "#ffffff",
+        logoTextRadius: 0,
         textGradient: {
           gradientType: "linear",
           angle: 90,

@@ -44,7 +44,7 @@ const TemplateOne = ({ attributes, setAttributes }) => {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h7" />
               </svg>
               {isEditor ? (
-                <RichText tagName="span" className={`${prefix}-toc-header-text`} value={titleText} onChange={val => setAttributes({ titleText: val })} placeholder={__('Enter Table of Contents Title here....', 'xpo-block')} onClick={e => e.stopPropagation()} />
+                <RichText tagName="span" className={`${prefix}-toc-header-text`} value={titleText} onChange={val => setAttributes({ titleText: val })} placeholder={__('Enter Table of Contents Title here....', 'xpo-blocks')} onClick={e => e.stopPropagation()} />
               ) : (
                 <RichText.Content tagName="span" className={`${prefix}-toc-header-text`} value={titleText} />
               )}
@@ -68,7 +68,7 @@ const TemplateOne = ({ attributes, setAttributes }) => {
                             <polyline points="9 18 15 12 9 6"></polyline>
                           </svg>
                         )}
-                        {isEditor ? <RichText tagName="span" value={item.title} onChange={val => updateItemField(index, 'title', val)} placeholder={__('Item title...', 'xpo-block')} /> : <RichText.Content tagName="span" value={item.title} />}
+                        {isEditor ? <RichText tagName="span" value={item.title} onChange={val => updateItemField(index, 'title', val)} placeholder={__('Item title...', 'xpo-blocks')} /> : <RichText.Content tagName="span" value={item.title} />}
                       </button>
                     </li>
                   );
@@ -83,8 +83,8 @@ const TemplateOne = ({ attributes, setAttributes }) => {
       <div className={`${prefix}-toc-content-area`}>
         {isEditor ? (
           <>
-            <RichText tagName="h1" className={`${prefix}-toc-content-title`} value={contentTitle} onChange={val => setAttributes({ contentTitle: val })} placeholder={__('Enter content title...', 'xpo-block')} />
-            <RichText tagName="p" className={`${prefix}-toc-content-subtitle`} value={contentSubtitle} onChange={val => setAttributes({ contentSubtitle: val })} placeholder={__('Enter subtitle...', 'xpo-block')} />
+            <RichText tagName="h1" className={`${prefix}-toc-content-title`} value={contentTitle} onChange={val => setAttributes({ contentTitle: val })} placeholder={__('Enter content title...', 'xpo-blocks')} />
+            <RichText tagName="p" className={`${prefix}-toc-content-subtitle`} value={contentSubtitle} onChange={val => setAttributes({ contentSubtitle: val })} placeholder={__('Enter subtitle...', 'xpo-blocks')} />
           </>
         ) : (
           <>
@@ -100,8 +100,8 @@ const TemplateOne = ({ attributes, setAttributes }) => {
               <div key={sectionId || index} id={sectionId} className={`${prefix}-toc-section-block`}>
                 {isEditor ? (
                   <>
-                    <RichText tagName={section.level === 2 ? 'h2' : 'h3'} className={section.level === 2 ? `${prefix}-toc-section-heading-2` : `${prefix}-toc-section-heading-3`} value={section.title} onChange={val => updateItemField(index, 'title', val)} placeholder={__('Section heading...', 'xpo-block')} />
-                    <RichText tagName="p" className={`${prefix}-toc-section-paragraph`} value={section.paragraph || sectionParagraph} onChange={val => updateItemField(index, 'paragraph', val)} placeholder={__('Section paragraph...', 'xpo-block')} />
+                    <RichText tagName={section.level === 2 ? 'h2' : 'h3'} className={section.level === 2 ? `${prefix}-toc-section-heading-2` : `${prefix}-toc-section-heading-3`} value={section.title} onChange={val => updateItemField(index, 'title', val)} placeholder={__('Section heading...', 'xpo-blocks')} />
+                    <RichText tagName="p" className={`${prefix}-toc-section-paragraph`} value={section.paragraph || sectionParagraph} onChange={val => updateItemField(index, 'paragraph', val)} placeholder={__('Section paragraph...', 'xpo-blocks')} />
                   </>
                 ) : (
                   <>

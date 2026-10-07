@@ -1,12 +1,12 @@
 {
   "apiVersion": 3,
-  "name": "xpo-block/pricing-table",
+  "name": "xpo-blocks/pricing-table",
   "version": "1.0.0",
   "title": "Pricing Table",
   "description": "Showcase your subscription plans or products with a stunning pricing grid.",
-  "category": "xpo-block",
-  "keywords": ["xpo-block", "pricing", "price list", "table", "grid"],
-  "textdomain": "xpo-block",
+  "category": "xpo-blocks",
+  "keywords": ["xpo-blocks", "pricing", "price list", "table", "grid"],
+  "textdomain": "xpo-blocks",
   "attributes": {
     "selectedTemplate": {
       "type": "string",

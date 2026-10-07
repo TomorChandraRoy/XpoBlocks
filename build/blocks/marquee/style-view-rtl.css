@@ -1,1 +1,365 @@
-@keyframes xpo-mq-scroll{0%{transform:translateZ(0)}to{transform:translate3d(50%,0,0)}}@keyframes wave-sweep{0%{background-position:100%}to{background-position:0%}}.wp-block-xpo-block-marquee,.xpo-block-marquee-wrapper{overflow:hidden;width:100%}.wp-block-xpo-block-marquee .xpo-logo-cloud-section,.xpo-block-marquee-wrapper .xpo-logo-cloud-section{align-items:center;display:flex;justify-content:center;min-height:170px;padding:15px 20px}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper{background:#fff;border-radius:8px;margin:0 auto;max-width:1024px;padding:16px 0;position:relative;width:100%;z-index:1}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-border-beam-inner,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-border-beam-inner{background:#fff;border:1px solid #e2e8f0;border-radius:8px;inset:0;position:absolute;z-index:-1}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-text-container,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-text-container{align-items:center;display:flex;justify-content:center;right:50%;padding:0;position:absolute;top:0;transform:translate(50%,-50%);white-space:nowrap;z-index:2}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-text-container .xpo-logo-text,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-text-container .xpo-logo-text{background:#fff;color:#334155;font-size:1.25rem;font-weight:500;letter-spacing:-.01em;margin:0;padding:0 24px;text-align:center}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-text-container .xpo-logo-text .xpo-logo-text-wave,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-text-container .xpo-logo-text .xpo-logo-text-wave{-webkit-background-clip:text;background-clip:text;background-repeat:no-repeat;-webkit-text-fill-color:transparent}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-text-container .xpo-logo-text .xpo-logo-text-wave.has-sweep,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-text-container .xpo-logo-text .xpo-logo-text-wave.has-sweep{animation:wave-sweep 8s linear infinite;background-size:250% 100%}@media(max-width:640px){.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-text-container .xpo-logo-text .xpo-logo-text-wave .xpo-hide-mobile,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-text-container .xpo-logo-text .xpo-logo-text-wave .xpo-hide-mobile{display:none}}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container{display:flex;overflow:hidden;padding:20px 0;position:relative;white-space:nowrap;width:100%}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-edge-fade:after,.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-edge-fade:before,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-edge-fade:after,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-edge-fade:before{bottom:0;content:"";pointer-events:none;position:absolute;top:0;width:100px;z-index:2}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-edge-fade:before,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-edge-fade:before{background:linear-gradient(-90deg,#fff,transparent);right:0}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-edge-fade:after,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-edge-fade:after{background:linear-gradient(-270deg,#fff,transparent);left:0}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.pause-on-hover:hover .xpo-mq-track,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.pause-on-hover:hover .xpo-mq-track{animation-play-state:paused}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.slow-on-hover:hover .xpo-mq-track,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.slow-on-hover:hover .xpo-mq-track{animation-duration:calc(var(--mq-speed, 30s)*3)!important}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-lift-effect .xpo-mq-item:hover,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-lift-effect .xpo-mq-item:hover{transform:translateY(-5px)}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-frame .xpo-mq-item,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-frame .xpo-mq-item{border:1px solid rgba(0,0,0,.04);box-shadow:0 4px 15px rgba(0,0,0,.05);padding:15px}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-sibling-blur:hover .xpo-mq-item,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-sibling-blur:hover .xpo-mq-item{filter:blur(var(--mq-sibling-blur,3px));opacity:.6}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-sibling-blur .xpo-mq-item:hover,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-sibling-blur .xpo-mq-item:hover{filter:none;opacity:1;transform:scale(1.05)}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-sibling-blur.has-lift-effect .xpo-mq-item:hover,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-sibling-blur.has-lift-effect .xpo-mq-item:hover{transform:translateY(-5px) scale(1.05)}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-active-center-highlight .xpo-mq-item,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-active-center-highlight .xpo-mq-item{transition:transform .4s cubic-bezier(.25,1,.5,1),filter .4s ease,opacity .4s ease}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-active-center-highlight .xpo-mq-item.is-active-center,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-active-center-highlight .xpo-mq-item.is-active-center{transform:scale(1.18);z-index:5}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track{animation:xpo-mq-scroll linear infinite;display:flex;width:max-content;will-change:transform}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track .xpo-mq-group,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track .xpo-mq-group{align-items:center;display:flex;gap:30px;padding-left:30px}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track .xpo-mq-group .xpo-mq-item,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track .xpo-mq-group .xpo-mq-item{align-items:center;display:flex;flex-shrink:0;justify-content:center;transition:transform .3s ease}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track .xpo-mq-group .xpo-mq-item img,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track .xpo-mq-group .xpo-mq-item img{object-fit:contain;width:auto}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track .xpo-mq-group .xpo-mq-item a:focus,.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track .xpo-mq-group .xpo-mq-item img:focus,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track .xpo-mq-group .xpo-mq-item a:focus,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track .xpo-mq-group .xpo-mq-item img:focus{box-shadow:none!important;outline:none!important}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-indicator-badge,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-indicator-badge{align-items:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);background:rgba(15,23,42,.85);border:1px solid hsla(0,0%,100%,.1);border-radius:20px;box-shadow:0 4px 12px rgba(0,0,0,.15);color:#fff;display:flex;font-size:.7rem;font-weight:700;gap:6px;letter-spacing:.05em;opacity:0;padding:4px 10px;pointer-events:none;position:absolute;left:15px;top:10px;transform:translateY(-4px);transition:opacity .3s ease,transform .3s ease;z-index:10}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-indicator-badge .xpo-mq-indicator-dot,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-indicator-badge .xpo-mq-indicator-dot{animation:xpo-pulse-indicator 1.2s infinite;background-color:#ef4444;border-radius:50%;height:6px;width:6px}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-indicator-badge .xpo-mq-indicator-text,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-indicator-badge .xpo-mq-indicator-text{line-height:1}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.pause-on-hover:hover~.xpo-mq-indicator-badge,.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.slow-on-hover:hover~.xpo-mq-indicator-badge,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.pause-on-hover:hover~.xpo-mq-indicator-badge,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.slow-on-hover:hover~.xpo-mq-indicator-badge{opacity:1;transform:translateY(0)}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.slow-on-hover:hover~.xpo-mq-indicator-badge .xpo-mq-indicator-dot,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.slow-on-hover:hover~.xpo-mq-indicator-badge .xpo-mq-indicator-dot{background-color:#eab308}@keyframes xpo-pulse-indicator{0%{opacity:.5;transform:scale(.85)}50%{opacity:1;transform:scale(1.2)}to{opacity:.5;transform:scale(.85)}}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail{pointer-events:none;position:absolute;z-index:8}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-bottom,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-bottom{bottom:5px;height:3px;right:20px;left:20px}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-right,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-right{bottom:10px;left:15px;top:10px;width:3px}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail .xpo-mq-rail-track,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail .xpo-mq-rail-track{background:rgba(15,23,42,.06);border-radius:3px;display:flex;height:100%;justify-content:space-between;position:relative;width:100%}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-bottom .xpo-mq-rail-track,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-bottom .xpo-mq-rail-track{align-items:center;flex-direction:row}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-right .xpo-mq-rail-track,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-right .xpo-mq-rail-track{align-items:center;flex-direction:column}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail .xpo-mq-rail-segment,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail .xpo-mq-rail-segment{background:rgba(15,23,42,.12);border-radius:50%;flex-shrink:0}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-bottom .xpo-mq-rail-segment,.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-right .xpo-mq-rail-segment,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-bottom .xpo-mq-rail-segment,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-right .xpo-mq-rail-segment{height:3px;width:3px}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail .xpo-mq-rail-fill,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail .xpo-mq-rail-fill{background:linear-gradient(-90deg,#9c40ff,#ffaa40);border-radius:3px;height:100%;right:0;position:absolute;top:0;width:100%}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-bottom .xpo-mq-rail-fill,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-bottom .xpo-mq-rail-fill{animation:xpo-mq-rail-fill-horizontal var(--mq-speed,30s) linear infinite;animation-direction:inherit;transform-origin:right}.wp-block-xpo-block-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-right .xpo-mq-rail-fill,.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-right .xpo-mq-rail-fill{animation:xpo-mq-rail-fill-vertical var(--mq-speed,30s) linear infinite;animation-direction:inherit;background:linear-gradient(-180deg,#9c40ff,#ffaa40);transform-origin:top}@keyframes xpo-mq-rail-fill-horizontal{0%{transform:scaleX(0)}to{transform:scaleX(1)}}@keyframes xpo-mq-rail-fill-vertical{0%{transform:scaleY(0)}to{transform:scaleY(1)}}
+/*!******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/marquee/style.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************/
+@keyframes xpo-mq-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(50%, 0, 0);
+  }
+}
+@keyframes wave-sweep {
+  0% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+.wp-block-xpo-blocks-marquee,
+.xpo-block-marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section {
+  min-height: 170px;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  border-radius: 8px;
+  padding: 16px 0;
+  background: white;
+  z-index: 1;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-border-beam-inner,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-border-beam-inner {
+  position: absolute;
+  inset: 0;
+  background: white;
+  border-radius: 8px;
+  z-index: -1;
+  border: 1px solid #e2e8f0;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-text-container,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-text-container {
+  position: absolute;
+  top: 0;
+  right: 50%;
+  transform: translate(50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  z-index: 2;
+  white-space: nowrap;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-text-container .xpo-logo-text,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-text-container .xpo-logo-text {
+  background: white;
+  padding: 0 24px;
+  text-align: center;
+  font-weight: 500;
+  color: #334155;
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-text-container .xpo-logo-text .xpo-logo-text-wave,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-text-container .xpo-logo-text .xpo-logo-text-wave {
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-text-container .xpo-logo-text .xpo-logo-text-wave.has-sweep,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-text-container .xpo-logo-text .xpo-logo-text-wave.has-sweep {
+  background-size: 250% 100%;
+  animation: wave-sweep 8s linear infinite;
+}
+@media (max-width: 640px) {
+  .wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-text-container .xpo-logo-text .xpo-logo-text-wave .xpo-hide-mobile,
+  .xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-text-container .xpo-logo-text .xpo-logo-text-wave .xpo-hide-mobile {
+    display: none;
+  }
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container {
+  overflow: hidden;
+  display: flex;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  padding: 20px 0;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-edge-fade::before, .wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-edge-fade::after,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-edge-fade::before,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-edge-fade::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-edge-fade::before,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-edge-fade::before {
+  right: 0;
+  background: linear-gradient(to left, white, transparent);
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-edge-fade::after,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-edge-fade::after {
+  left: 0;
+  background: linear-gradient(to right, white, transparent);
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.pause-on-hover:hover .xpo-mq-track,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.pause-on-hover:hover .xpo-mq-track {
+  animation-play-state: paused;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.slow-on-hover:hover .xpo-mq-track,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.slow-on-hover:hover .xpo-mq-track {
+  animation-duration: calc(var(--mq-speed, 30s) * 3) !important;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-lift-effect .xpo-mq-item:hover,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-lift-effect .xpo-mq-item:hover {
+  transform: translateY(-5px);
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-frame .xpo-mq-item,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-frame .xpo-mq-item {
+  padding: 15px 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-sibling-blur:hover .xpo-mq-item,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-sibling-blur:hover .xpo-mq-item {
+  filter: blur(var(--mq-sibling-blur, 3px));
+  opacity: 0.6;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-sibling-blur .xpo-mq-item:hover,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-sibling-blur .xpo-mq-item:hover {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.05);
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-sibling-blur.has-lift-effect .xpo-mq-item:hover,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-sibling-blur.has-lift-effect .xpo-mq-item:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-active-center-highlight .xpo-mq-item,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-active-center-highlight .xpo-mq-item {
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), filter 0.4s ease, opacity 0.4s ease;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-active-center-highlight .xpo-mq-item.is-active-center,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.has-active-center-highlight .xpo-mq-item.is-active-center {
+  transform: scale(1.18);
+  z-index: 5;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track {
+  display: flex;
+  animation: xpo-mq-scroll linear infinite;
+  width: max-content;
+  will-change: transform;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track .xpo-mq-group,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track .xpo-mq-group {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding-left: 30px; /* Crucial for seamless loop: adds the final gap before the next group */
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track .xpo-mq-group .xpo-mq-item,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track .xpo-mq-group .xpo-mq-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track .xpo-mq-group .xpo-mq-item img,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track .xpo-mq-group .xpo-mq-item img {
+  width: auto;
+  object-fit: contain;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track .xpo-mq-group .xpo-mq-item a:focus,
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track .xpo-mq-group .xpo-mq-item img:focus,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track .xpo-mq-group .xpo-mq-item a:focus,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container .xpo-mq-track .xpo-mq-group .xpo-mq-item img:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content {
+  /* Interaction Indicator Badge */
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-indicator-badge,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-indicator-badge {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.05em;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-indicator-badge .xpo-mq-indicator-dot,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-indicator-badge .xpo-mq-indicator-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #ef4444; /* default red for paused */
+  animation: xpo-pulse-indicator 1.2s infinite;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-indicator-badge .xpo-mq-indicator-text,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-indicator-badge .xpo-mq-indicator-text {
+  line-height: 1;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.pause-on-hover:hover ~ .xpo-mq-indicator-badge,
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.slow-on-hover:hover ~ .xpo-mq-indicator-badge,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.pause-on-hover:hover ~ .xpo-mq-indicator-badge,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.slow-on-hover:hover ~ .xpo-mq-indicator-badge {
+  opacity: 1;
+  transform: translateY(0);
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.slow-on-hover:hover ~ .xpo-mq-indicator-badge .xpo-mq-indicator-dot,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-container.slow-on-hover:hover ~ .xpo-mq-indicator-badge .xpo-mq-indicator-dot {
+  background-color: #eab308; /* amber for slowed */
+}
+@keyframes xpo-pulse-indicator {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.85);
+    opacity: 0.5;
+  }
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content {
+  /* Segmented Progress Rail */
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail {
+  position: absolute;
+  pointer-events: none;
+  z-index: 8;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-bottom,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-bottom {
+  bottom: 5px;
+  right: 20px;
+  left: 20px;
+  height: 3px;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-right,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-right {
+  left: 15px;
+  top: 10px;
+  bottom: 10px;
+  width: 3px;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail .xpo-mq-rail-track,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail .xpo-mq-rail-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.06);
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-bottom .xpo-mq-rail-track,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-bottom .xpo-mq-rail-track {
+  flex-direction: row;
+  align-items: center;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-right .xpo-mq-rail-track,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-right .xpo-mq-rail-track {
+  flex-direction: column;
+  align-items: center;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail .xpo-mq-rail-segment,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail .xpo-mq-rail-segment {
+  background: rgba(15, 23, 42, 0.12);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-bottom .xpo-mq-rail-segment,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-bottom .xpo-mq-rail-segment {
+  width: 3px;
+  height: 3px;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-right .xpo-mq-rail-segment,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-right .xpo-mq-rail-segment {
+  width: 3px;
+  height: 3px;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail .xpo-mq-rail-fill,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail .xpo-mq-rail-fill {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-90deg, #9c40ff, #ffaa40);
+  border-radius: 3px;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-bottom .xpo-mq-rail-fill,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-bottom .xpo-mq-rail-fill {
+  transform-origin: right;
+  animation: xpo-mq-rail-fill-horizontal var(--mq-speed, 30s) linear infinite;
+  animation-direction: inherit;
+}
+.wp-block-xpo-blocks-marquee .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-right .xpo-mq-rail-fill,
+.xpo-block-marquee-wrapper .xpo-logo-cloud-section .xpo-logo-cloud-wrapper .xpo-logo-content .xpo-mq-rail.position-right .xpo-mq-rail-fill {
+  background: linear-gradient(-180deg, #9c40ff, #ffaa40);
+  transform-origin: top;
+  animation: xpo-mq-rail-fill-vertical var(--mq-speed, 30s) linear infinite;
+  animation-direction: inherit;
+}
+@keyframes xpo-mq-rail-fill-horizontal {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes xpo-mq-rail-fill-vertical {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}

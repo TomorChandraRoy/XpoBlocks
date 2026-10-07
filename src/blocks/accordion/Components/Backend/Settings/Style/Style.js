@@ -3,18 +3,15 @@ import { PanelBody, __experimentalSpacer as Spacer } from '@wordpress/components
 import { ColorControl, Typography, BackgroundControl, BorderControl, SpacingControl } from 'tr-tools';
 import { pxUnit, remUnit, emUnit, vwUnit, perUnit } from 'tr-tools/utils/options';
 import { defaultSubtitleTypo, defaultTitleTypo, defaultDescriptionTypo, defaultQuestionTypo, defaultAnswerTypo } from '../../../../utils/options';
-const textDomain = 'xpo-blocks';
-
-
 const Style = ({ attributes, setAttributes }) => {
   const { selectedTemplate = 'template-1', subtitleColor, subtitleTypography, titleColor, titleTypography, descriptionColor, descriptionTypography, questionBg = '#FFFFFF', questionBorder, questionBorderRadius, questionTypography, answerTypography, questionColor, answerColor, showHeader } = attributes;
 
   return (
     <>
       {showHeader && (
-        <PanelBody className="bPlPanelBody" title={__(' Heading',textDomain)} initialOpen={true}>
+        <PanelBody className="bPlPanelBody" title={__(' Heading', 'xpo-blocks')} initialOpen={true}>
           <ColorControl
-            label={__('Subtitle Color',textDomain)}
+            label={__('Subtitle Color', 'xpo-blocks')}
             value={subtitleColor}
             onChange={color => {
               setAttributes({ subtitleColor: color });
@@ -23,7 +20,7 @@ const Style = ({ attributes, setAttributes }) => {
           />
 
           <Typography
-            label={__('Subtitle Typography',textDomain)}
+            label={__('Subtitle Typography', 'xpo-blocks')}
             value={subtitleTypography}
             onChange={val => {
               setAttributes({ subtitleTypography: val });
@@ -32,7 +29,7 @@ const Style = ({ attributes, setAttributes }) => {
           />
 
           <ColorControl
-            label={__('Title Color',textDomain)}
+            label={__('Title Color', 'xpo-blocks')}
             value={titleColor}
             onChange={color => {
               setAttributes({ titleColor: color });
@@ -41,7 +38,7 @@ const Style = ({ attributes, setAttributes }) => {
           />
 
           <Typography
-            label={__('Title Typography',textDomain)}
+            label={__('Title Typography', 'xpo-blocks')}
             value={titleTypography}
             onChange={val => {
               setAttributes({ titleTypography: val });
@@ -50,7 +47,7 @@ const Style = ({ attributes, setAttributes }) => {
           />
 
           <ColorControl
-            label={__('Description Color',textDomain)}
+            label={__('Description Color', 'xpo-blocks')}
             value={descriptionColor}
             onChange={color => {
               setAttributes({ descriptionColor: color });
@@ -59,7 +56,7 @@ const Style = ({ attributes, setAttributes }) => {
           />
 
           <Typography
-            label={__('Description Typography',textDomain)}
+            label={__('Description Typography', 'xpo-blocks')}
             value={descriptionTypography}
             onChange={val => {
               setAttributes({ descriptionTypography: val });
@@ -69,10 +66,10 @@ const Style = ({ attributes, setAttributes }) => {
         </PanelBody>
       )}
 
-      <PanelBody className="bPlPanelBody" title={__('Q/A Content',textDomain)} initialOpen={false}>
+      <PanelBody className="bPlPanelBody" title={__('Q/A Content', 'xpo-blocks')} initialOpen={false}>
         {(selectedTemplate === 'template-1' || selectedTemplate === 'template-3') && (
           <>
-            <BackgroundControl label={__('Question Bg :',textDomain)} value={questionBg} onChange={val => setAttributes({ questionBg: val })} />
+            <BackgroundControl label={__('Question Bg :', 'xpo-blocks')} value={questionBg} onChange={val => setAttributes({ questionBg: val })} />
             <Spacer />
           </>
         )}
@@ -80,7 +77,7 @@ const Style = ({ attributes, setAttributes }) => {
         {(selectedTemplate === 'template-1' || selectedTemplate === 'template-2' || selectedTemplate === 'template-3') && (
           <>
             <BorderControl
-              label={__('Question Border :',textDomain)}
+              label={__('Question Border :', 'xpo-blocks')}
               value={questionBorder}
               onChange={val => setAttributes({ questionBorder: val })}
               defaultBorder={
@@ -106,7 +103,7 @@ const Style = ({ attributes, setAttributes }) => {
         {(selectedTemplate === 'template-1' || selectedTemplate === 'template-3') && (
           <>
             <SpacingControl
-              label={__('Border Radius :',textDomain)}
+              label={__('Border Radius :', 'xpo-blocks')}
               value={questionBorderRadius}
               onChange={val => setAttributes({ questionBorderRadius: val })}
               units={[pxUnit(), remUnit(), emUnit(), vwUnit(), perUnit()]}
@@ -116,7 +113,7 @@ const Style = ({ attributes, setAttributes }) => {
           </>
         )}
         <ColorControl
-          label={__('Question Color',textDomain)}
+          label={__('Question Color', 'xpo-blocks')}
           value={questionColor}
           onChange={color => {
             setAttributes({ questionColor: color });
@@ -125,7 +122,7 @@ const Style = ({ attributes, setAttributes }) => {
         />
 
         <Typography
-          label={__('Question Typography',textDomain)}
+          label={__('Question Typography', 'xpo-blocks')}
           value={questionTypography}
           onChange={val => {
             setAttributes({ questionTypography: val });
@@ -135,7 +132,7 @@ const Style = ({ attributes, setAttributes }) => {
 
         <Spacer />
         <ColorControl
-          label={__('Answer Color',textDomain)}
+          label={__('Answer Color', 'xpo-blocks')}
           value={answerColor}
           onChange={color => {
             setAttributes({ answerColor: color });
@@ -144,7 +141,7 @@ const Style = ({ attributes, setAttributes }) => {
         />
 
         <Typography
-          label={__('Answer Typography',textDomain)}
+          label={__('Answer Typography', 'xpo-blocks')}
           value={answerTypography}
           onChange={val => {
             setAttributes({ answerTypography: val });

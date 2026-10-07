@@ -4,23 +4,16 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 
-// Generate a unique block ID for this instance.
-$xpo_block_id = wp_unique_id( 'xpo-block-faq-' );
+$xpo_blocks_id = wp_unique_id( 'xpo-accordion-' );
 
-// Collect custom wrapper container classes and the unique block ID.
-$xpo_block_wrapper_classes = array( 'xpo-accordion-container', $xpo_block_id );
+$xpo_blocks_wrapper_classes = array( 'xpo-block-accordion-wrapper', $xpo_blocks_id );
 
-// Merge default Gutenberg block wrapper attributes with custom classes.
-$xpo_block_wrapper_attrs = get_block_wrapper_attributes( array( 'class' => implode( ' ', $xpo_block_wrapper_classes ) ) );
+$xpo_blocks_wrapper_attrs = get_block_wrapper_attributes( array( 'class' => implode( ' ', $xpo_blocks_wrapper_classes ) ) );
 ?>
 
-<?php
-// Empty placeholder div for client-side JavaScript (view.js) rendering.
-// Passes block attributes to the frontend as JSON in the data-attributes property.
-?>
 
 <div
-	<?php echo $xpo_block_wrapper_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-	id="<?php echo esc_attr( $xpo_block_id ); ?>"
+	<?php echo $xpo_blocks_wrapper_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+	id="<?php echo esc_attr( $xpo_blocks_id ); ?>"
 	data-attributes='<?php echo esc_attr( wp_json_encode( $attributes ) ); ?>'
 ></div>

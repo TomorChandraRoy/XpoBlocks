@@ -1,9 +1,6 @@
 import { useState, useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { RichText } from '@wordpress/block-editor';
-const textDomain = 'xpo-blocks';
-
-
 const TemplateOne = ({ attributes, setAttributes }) => {
   const { title, description, buttonText, successMessage, errorMessage } = attributes || {};
   const [email, setEmail] = useState('');
@@ -27,7 +24,7 @@ const TemplateOne = ({ attributes, setAttributes }) => {
     if (isEditor) return;
 
     if (!email || !email.includes('@')) {
-      setStatus({ type: 'error', message: errorMessage || __('Please enter a valid email address.', textDomain) });
+      setStatus({ type: 'error', message: errorMessage || __('Please enter a valid email address.', 'xpo-blocks') });
       return;
     }
 
@@ -35,7 +32,7 @@ const TemplateOne = ({ attributes, setAttributes }) => {
     setStatus({ type: '', message: '' });
 
     try {
-      const response = await fetch('/wp-json/xpo-block/v1/subscribe', {
+      const response = await fetch('/wp-json/xpo-blocks/v1/subscribe', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -46,13 +43,13 @@ const TemplateOne = ({ attributes, setAttributes }) => {
       const data = await response.json();
 
       if (response.ok && data.success) {
-        setStatus({ type: 'success', message: successMessage || data.message || __('Thank you for subscribing!', textDomain) });
+        setStatus({ type: 'success', message: successMessage || data.message || __('Thank you for subscribing!', 'xpo-blocks') });
         setEmail('');
       } else {
-        setStatus({ type: 'error', message: data.message || errorMessage || __('Something went wrong. Please try again.', textDomain) });
+        setStatus({ type: 'error', message: data.message || errorMessage || __('Something went wrong. Please try again.', 'xpo-blocks') });
       }
     } catch {
-      setStatus({ type: 'error', message: errorMessage || __('Connection error. Please try again later.', textDomain) });
+      setStatus({ type: 'error', message: errorMessage || __('Connection error. Please try again later.', 'xpo-blocks') });
     } finally {
       setIsSubmitting(false);
     }
@@ -69,14 +66,14 @@ const TemplateOne = ({ attributes, setAttributes }) => {
                 className="xpo-newsletter-title"
                 value={title}
                 onChange={(val) => setAttributes({ title: val })}
-                placeholder={__('Enter title...', textDomain)}
+                placeholder={__('Enter title...', 'xpo-blocks')}
               />
               <RichText
                 tagName="p"
                 className="xpo-newsletter-description"
                 value={description}
                 onChange={(val) => setAttributes({ description: val })}
-                placeholder={__('Enter description...', textDomain)}
+                placeholder={__('Enter description...', 'xpo-blocks')}
               />
             </>
           ) : (
@@ -95,7 +92,7 @@ const TemplateOne = ({ attributes, setAttributes }) => {
               name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder={__('Enter your email', textDomain)}
+              placeholder={__('Enter your email', 'xpo-blocks')}
               required
               disabled={isSubmitting}
               className="xpo-newsletter-input"
@@ -107,7 +104,7 @@ const TemplateOne = ({ attributes, setAttributes }) => {
                 className="xpo-newsletter-button"
                 value={buttonText}
                 onChange={(val) => setAttributes({ buttonText: val })}
-                placeholder={__('Button text...', textDomain)}
+                placeholder={__('Button text...', 'xpo-blocks')}
                 style={{ display: 'inline-block', textAlign: 'center' }}
               />
             ) : (
@@ -117,7 +114,7 @@ const TemplateOne = ({ attributes, setAttributes }) => {
                 className="xpo-newsletter-button"
                 style={{ opacity: isSubmitting ? 0.7 : 1 }}
               >
-                {isSubmitting ? __('Subscribing...', textDomain) : (buttonText || __('Subscribe', textDomain))}
+                {isSubmitting ? __('Subscribing...', 'xpo-blocks') : (buttonText || __('Subscribe', 'xpo-blocks'))}
               </button>
             )}
           </form>

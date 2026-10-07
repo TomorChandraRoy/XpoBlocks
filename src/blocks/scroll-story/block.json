@@ -1,11 +1,11 @@
 {
   "apiVersion": 3,
-  "name": "xpo-block/scroll-story",
+  "name": "xpo-blocks/scroll-story",
   "version": "1.0.0",
   "title": "Scroll Story",
   "description": "Showcase features or timelines with a beautiful scrolling sticky layout.",
-  "category": "xpo-block",
-  "textdomain": "xpo-block",
+  "category": "xpo-blocks",
+  "textdomain": "xpo-blocks",
   "keywords": ["scroll", "story", "sticky", "timeline", "features"],
   "attributes": {
     "selectedTemplate": {

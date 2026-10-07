@@ -18,7 +18,7 @@ const TemplateOne = ({ attributes }) => {
     showInteractionIndicator = false,
     highlightActiveCenter = false,
     showFrame = true,
-    enableSweepAnimation = true
+    enableSweepAnimation = true,
   } = attributes;
 
   const containerRef = useRef(null);
@@ -42,7 +42,7 @@ const TemplateOne = ({ attributes }) => {
       let closestItem = null;
       let minDistance = Infinity;
 
-      items.forEach((item) => {
+      items.forEach(item => {
         const rect = item.getBoundingClientRect();
         const itemCenter = rect.left + rect.width / 2;
         const distance = Math.abs(containerCenter - itemCenter);
@@ -53,7 +53,7 @@ const TemplateOne = ({ attributes }) => {
         }
       });
 
-      items.forEach((item) => {
+      items.forEach(item => {
         if (item === closestItem) {
           item.classList.add('is-active-center');
         } else {
@@ -83,11 +83,11 @@ const TemplateOne = ({ attributes }) => {
   const trackStyle = {
     animationDuration: `${speed}s`,
     animationDirection: reverseDirection ? 'reverse' : 'normal',
-    '--mq-speed': `${speed}s`
+    '--mq-speed': `${speed}s`,
   };
 
   const containerStyle = {
-    '--mq-sibling-blur': `${siblingBlurIntensity}px`
+    '--mq-sibling-blur': `${siblingBlurIntensity}px`,
   };
 
   let containerClass = 'xpo-mq-container';
@@ -155,9 +155,7 @@ const TemplateOne = ({ attributes }) => {
           {showInteractionIndicator && (
             <div className="xpo-mq-indicator-badge">
               <span className="xpo-mq-indicator-dot"></span>
-              <span className="xpo-mq-indicator-text">
-                {pauseOnHover ? 'PAUSED' : 'SLOWED'}
-              </span>
+              <span className="xpo-mq-indicator-text">{pauseOnHover ? 'PAUSED' : 'SLOWED'}</span>
             </div>
           )}
 
@@ -172,7 +170,7 @@ const TemplateOne = ({ attributes }) => {
                   className="xpo-mq-rail-fill"
                   style={{
                     animationDuration: `${speed}s`,
-                    animationDirection: reverseDirection ? 'reverse' : 'normal'
+                    animationDirection: reverseDirection ? 'reverse' : 'normal',
                   }}
                 />
               </div>

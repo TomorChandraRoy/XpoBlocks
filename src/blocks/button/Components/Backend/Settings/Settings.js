@@ -5,8 +5,6 @@ import { generalStyleTabs } from '../../../utils/options';
 import General from './General/General';
 import Style from './Style/Style';
 import { DocsLink } from 'tr-tools';
-const textDomain = 'xpo-blocks';
-
 const Settings = ({ attributes, setAttributes }) => {
   const { buttonAlign } = attributes;
   const { selectedTemplate = '' } = attributes;
@@ -18,7 +16,7 @@ const Settings = ({ attributes, setAttributes }) => {
   return (
     <>
       <InspectorControls>
-        <DocsLink link="https://xpo.com/docs/button" text={__('Documentation', textDomain)} />
+        <DocsLink link="https://xpo.com/docs/button" text={__('Documentation', 'xpo-blocks')} />
         <TabPanel className="wp-xpo-tab-panel" activeClass="wp-xpo-tab-panel-active-tab" tabs={generalStyleTabs}>
           {tab => (
             <>
@@ -34,11 +32,11 @@ const Settings = ({ attributes, setAttributes }) => {
         <AlignmentToolbar
           value={buttonAlign}
           onChange={val => setAttributes({ buttonAlign: val })}
-          describedBy={__('Button Alignment')}
+          describedBy={__('Button Alignment', 'xpo-blocks')}
           alignmentControls={[
-            { title: __('Button in left', textDomain), align: 'left', icon: 'align-left' },
-            { title: __('Button in center', textDomain), align: 'center', icon: 'align-center' },
-            { title: __('Button in right', textDomain), align: 'right', icon: 'align-right' },
+            { title: __('Button in left', 'xpo-blocks'), align: 'left', icon: 'align-left' },
+            { title: __('Button in center', 'xpo-blocks'), align: 'center', icon: 'align-center' },
+            { title: __('Button in right', 'xpo-blocks'), align: 'right', icon: 'align-right' },
           ]}
         />
       </BlockControls>

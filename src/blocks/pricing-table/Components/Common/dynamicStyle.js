@@ -5,7 +5,7 @@ const DynamicStyle = ({ attributes, clientId }) => {
   const { columns = 3, gap = 24, containerWidth = 1200, badgeTypo, badgeColor, badgeBgColor, badgeRadius, featuredCardBg, featuredCardBorder, featuredCardBoxShadow, featuredCardBorderRadius, featuredCardTitleTypo, featuredCardTitleColor, featuredCardDescTypo, featuredCardDescColor, featuredPriceColor, featuredPriceTypo, featuredPeriodTypo, featuredButtonBg, featuredButtonHoverBg, featuredButtonColor, featuredButtonHoverColor, featuredButtonBorder, featuredButtonRadius, featuredButtonTypo, featuredDividerColor, featuredFeaturesTitleColor, featuredFeaturesTitleTypo, featuredFeatureIconSize, featuredFeatureTextColor, featuredFeatureTextTypo, cardBg, cardBorder, cardBorderRadius, cardBoxShadow, cardTitleTypo, cardTitleColor, cardDescTypo, cardDescColor, priceColor, priceTypo, periodTypo, buttonBg, buttonHoverBg, buttonRadius, buttonTypo, buttonColor, buttonHoverColor, buttonBorder, dividerColor, featuresTitleColor, featuresTitleTypo, featureIconSize = 21, featureTextColor, featureTextTypo } = attributes;
 
 
-  const mainSl = `#${clientId}`;
+  const mainSl = clientId ? `#${clientId}` : '.wp-block-xpo-blocks-pricing-table';
   const xpoPricingContainer = `${mainSl} .xpo-pricing-container`;
   const xpoPricingGrid = `${xpoPricingContainer} .xpo-pricing-grid`;
   const xpoPricingCard = `${xpoPricingGrid} .xpo-pricing-card`;

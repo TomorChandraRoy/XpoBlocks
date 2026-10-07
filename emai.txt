@@ -1,0 +1,158 @@
+tomorroy - Let’s improve your plugin!
+
+Thank you for submitting your plugin, "Xpo Blocks".
+
+Our volunteer reviewers, tools, and/or AI aids identified issues in your plugin that require your attention.
+
+We’ve pended your submission to give you a chance to review and fix these common issues.
+
+🤖 Please note that this message was generated using a combination of humans, algorithms, and AI in varying proportions. It may not have been reviewed by a human. All AI outputs are marked with the ✨ emoji. Pay attention to it, it's quite accurate.
+
+Who are we?
+
+The WordPress.org Plugins Directory is a service that the WordPress community offers to the world: free hosting, distribution and updates for more than 65,000 plugins, available to every WordPress site at no cost. This is made possible by the WordPress Foundation, the donated infrastructure that supports WordPress.org, and the volunteers who keep it running.
+
+Being listed in the directory is not a commercial service and should not be taken for granted; it is an invitation to be part of this community, and it comes with the shared responsibility of keeping the directory safe and reliable for the millions of users who trust it.
+
+We, the Plugins Team, are a group of volunteers who help you identify common issues so that you can make your plugin more secure, compatible, reliable and compliant with the guidelines. For consistency and better communication, your review is assigned to a single volunteer who will assist you throughout the entire process.
+
+The review process
+
+An email envelope.	1. Read this email carefully from start to finish. Review every issue, including the linked documentation and the provided examples. Then search your codebase for other occurrences of the same issues, even if they are not explicitly mentioned in this review. Take the time to understand each issue so you can apply what you learn to your plugin going forward.
+A plugin author fixing the issues.	2. Address all identified issues, test your plugin thoroughly and upload a corrected version. If you have doubts about a specific issue, fix everything else and ask your questions alongside the update.
+
+Note: The Plugins Team volunteers are not your developers or QA team. They are here to help you identify and understand issues so that you can improve and maintain your plugin in the future. Finding and fixing these issues remains your responsibility.
+A volunteer reviewing the plugin.	3. Reply to this email thread (do not create a new email or reply to the submission confirmation). Your plugin will then be added to your reviewer's queue, and they will send you any remaining issues that are identified.
+A new review of the plugin.	4. Once no further issues remain, your plugin will be approved 🎉
+
+Fewer review cycles mean quicker approval, while multiple rounds can extend the process to weeks or months.
+
+Before you reply
+
+A warning.	Throughout the entire process, and before you reply, please ensure that:
+You have addressed all reported issues and thoroughly tested your plugin. Make sure your updated version does not introduce new issues, such as fatal errors during activation.
+You are replying to this email thread.
+Your reply is brief and to the point. Include only information that is relevant for the next review; there is no need to describe every change you made, and please avoid unnecessary verbosity or AI-generated filler.
+If you wish to alter your permalink (aka the plugin slug) "xpo-blocks", you have explicitly stated your desired permalink in your reply. Changing the display name alone is not sufficient, and permalinks cannot be altered after approval.
+You are making meaningful progress between review rounds. Updates that resolve only a small portion of the reported issues delay the review process, and the plugin may be rejected out of respect for the volunteers' time and other plugin authors waiting in the queue. Plugins rejected under these circumstances will not be reviewed again.
+You treat the review as a learning opportunity and improve your knowledge of development practices and the directory guidelines accordingly.
+Each volunteer may review hundreds of plugins every week. Following these indications and submitting a well-tested update makes the review process smoother for everyone.
+
+Response times
+
+Reviews are handled by volunteers alongside their own personal and job commitments, so response times depend entirely on their availability. You may receive a reply within a few days, after a week or two, or occasionally after a longer period. We appreciate your patience and understanding.
+
+Please avoid requesting status updates unless you have been waiting an unusually long time (a month or more). Status requests do not accelerate the review; they slow it down by taking time away from the volunteers working through the queue. If you have replied to this email thread, you are in the queue. If you believe a reply went missing, check your spam folder and other inboxes first; if you have lost this email, write to us from the same address we sent it to and request that it be resent.
+
+Guidelines
+
+In addition to code quality, security and functionality, all plugins must adhere to the guidelines you accepted when submitting this plugin. Please keep them in mind when making changes: https://developer.wordpress.org/plugins/wordpress-org/detailed-plugin-guidelines/.
+
+Please note that failure to follow the Plugins Directory guidelines is taken seriously and may result in the loss of your WordPress.org plugin hosting privileges.
+
+
+Other details
+
+We've detected some other details that you may want to check.
+
+🔴️ The source code of your plugin should be publicly accessible.
+
+By submitting a plugin to the directory, you agree to follow the guidelines:
+Guideline #1 requires that your plugin be compatible with the GPL license.
+Guideline #4 requires that plugin code cannot be obfuscated and must provide a public, maintained access to their source code and any build tools.
+
+In practice, this means that the source code of your plugin must be public and available.
+
+Open source relies on the ability for others to review, study, modify, and even fork the code. For that reason, the source used to generate any compiled or minified assets must be available in an easy-to-find location.
+
+Our automated tools detected compressed or minified files generated by build tools (such as npm, webpack, etc.), but were unable to match them to a non-compiled (human-readable and modifiable) version of the same code.
+
+Please review the reported cases and ensure that the corresponding source code is available and publicly accessible. Our volunteers will verify this during future manual reviews.
+For your own code: You may either include the source files within the plugin or provide a link to a publicly accessible source repository. In either case, please document where the source code can be found in the plugin’s readme file.
+For third-party libraries: Ensure they are properly documented. Most libraries include a header comment with the library name, version, and repository URL. If this information is not present in the file itself, please document it in the readme file.
+
+We also strongly recommend documenting any build tools and steps required to regenerate the compiled files. This helps future developers understand and maintain the plugin.
+
+From your plugin:
+build/blocks/marquee/view.js:1  ...(()=>{"use strict";var e={9034(){const e=window.ReactDOM,o=(window.wp.i18n,window.wp.element),t=window.ReactJSXRuntime;window.wp.components;window.React,window.wp.blockEditor;const r=({attributes:e,id...
+# ✨ Minified generated Marquee frontend bundle has no corresponding bundled source or public repository link.
+build/blocks/pricing-table/index.js:1  ...(()=>{"use strict";var c={3999(){const c=window.wp.blocks,l=window.wp.blockEditor,s=window.wp.i18n,e=window.wp.components,o=window.React,r=window.ReactJSXRuntime,a={background:"#FCE7F3",foreground:"#0...
+# ✨ Minified generated Pricing Table editor bundle has no corresponding bundled source or public repository link.
+build/blocks/table-of-contents/view.js:1  ...(()=>{"use strict";var e={1660(){const e=window.ReactDOM,t=window.wp.i18n,o=window.wp.element,n=window.ReactJSXRuntime;window.wp.components,window.React;const r=window.wp.blockEditor,a={inter:[100,200...
+# ✨ Minified generated Table of Contents frontend bundle has no corresponding bundled source or public repository link.
+build/blocks/divider/view.js:1  ...(()=>{"use strict";var e={9838(){const e=window.ReactDOM,t="@media (max-width: 991px)",o="@media (max-width: 767px)",i=(window.wp.i18n,window.wp.element,window.ReactJSXRuntime);window.wp.components,wi...
+# ✨ Minified generated Divider frontend bundle has no corresponding bundled source or public repository link.
+build/blocks/divider/index.js:1  ...(()=>{"use strict";var e={9711(){const e=window.wp.blocks,t=JSON.parse('{"UU":"xpo-blocks/divider"}'),o=window.wp.blockEditor,s=window.wp.i18n,i=window.wp.components,r=window.ReactJSXRuntime,n={backgr...
+# ✨ Minified generated Divider editor bundle has no corresponding bundled source or public repository link.
+build/blocks/scroll-story/view.js:1  ...(()=>{"use strict";var t={7240(){const t=window.ReactDOM,e=window.ReactJSXRuntime,s=({attributes:t,clientId:s})=>{const{progressColor:r="#3b82f6",activeTitleColor:o="#1e293b",inactiveTitleColor:l="#94...
+# ✨ Minified generated Scroll Story frontend bundle has no corresponding bundled source or public repository link.
+build/blocks/before-after/view.js:1  ...(()=>{"use strict";var e={3444(){const e=window.ReactDOM,t=(window.wp.i18n,window.wp.element),o=window.ReactJSXRuntime;window.wp.components;const n=e=>{if(!e||"object"!=typeof e)return"";const t=e.typ...
+# ✨ Minified generated Before After frontend bundle has no corresponding bundled source or public repository link.
+build/blocks/audio-player/view.js:1  ...(()=>{"use strict";var e={4072(){const e=window.ReactDOM,t=(window.wp.i18n,window.wp.element,window.ReactJSXRuntime);window.wp.components;const o=e=>{if(!e||"object"!=typeof e)return"";const t=e.type|...
+# ✨ Minified generated Audio Player frontend bundle has no corresponding bundled source or public repository link.
+... out of a total of 23 incidences.
+
+
+🟡 Translation files included
+
+We detected possible translation files (.po, .mo and/or .php) included in your plugin.
+
+Thank you for making your plugin available in multiple languages. However, plugins hosted on WordPress.org can manage translations through translate.wordpress.org, which:
+Automatically generates translation files for every locale.
+Allows the community to contribute translations in any supported language.
+Delivers translations to users through the standard WordPress translation update system.
+
+By using this, there is no need to include translation files in your plugin package. Instead, ensure that your plugin is properly internationalized (i18n). Once your plugin is published on WordPress.org, it will be ready to receive community translations through translate.wordpress.org, and translation files will be generated and distributed automatically.
+
+Example(s) from your plugin:
+xpo-blocks/languages/xpo-blocks-en_US.mo
+xpo-blocks/languages/xpo-blocks-en_US.po
+
+
+
+🔴️ Using load_plugin_textdomain() for loading the plugin translations is not needed for WordPress.org directory since WordPress 4.6.
+
+When your plugin is hosted on WordPress.org you don't longer need to include load_plugin_textdomain() for the translations under your plugin slug "xpo-blocks".
+
+Therefore you can remove that call, WordPress will automatically load the translations for you when needed.
+
+If you still support older WordPress versions you'll need to keep it, but please make sure to have the function call in a hook such as init to avoid issues for loading them too early. More information: https://make.wordpress.org/core/2024/10/21/i18n-improvements-6-7/.
+
+From your plugin:
+includes/class-xpo-blocks-core.php:24 load_plugin_textdomain('xpo-blocks', false, dirname(XPO_BLOCKS_BASENAME) . '/languages');
+
+
+
+
+👉 Your next steps
+
+This is your checklist:
+Other details
+
+If there is something that needs to be fixed, please:
+Take your time and fix it. Make sure that everything was addressed and the plugin works.
+Update your plugin files at the "Add your plugin" page, while being logged in with your account "tomorroy".
+Reply to this email.
+Please keep your reply short, direct and clear. Avoid overly verbose and long AI responses. Do not list the changes made, we don't need that, we will review the entire plugin again, we won't compare the changes. However, please share any important context or clarifications that may help us during the review.
+
+If after checking the list and do the changes you feel that everything is right or need further clarification, please reply to this email and a volunteer will help you.
+
+If you believe there is a requirement you cannot accomplish and choose not to make changes, your plugin submission will be rejected after three months.
+
+Thanks!
+
+By taking these steps, you're helping the Plugin Review Team work more efficiently — meaning your plugin (along with the thousands of others in the queue) can be reviewed faster. 🚀 We really appreciate your contribution!
+
+Disclaimers
+
+If, at any time during the review process, you wish to change your permalink (aka the plugin slug) "xpo-blocks", you must explicitly and clearly tell us what you would like it to be. Just changing it in your code and in the display name is not sufficient. Remember, permalinks cannot be altered after approval.
+This email was partially auto-generated, so please be aware that some information might not be entirely accurate. No personal data was shared with the AI during this process. If you notice any obvious errors or something seems off, feel free to reply — we’ll be happy to take a closer look and readjust this automation.
+
+Review ID: AUTOPREREVIEW xpo-blocks/tomorroy/6Oct26/T1 6Oct26/4.3 (P0TDX381524HGN)
+
+
+--
+WordPress Plugins Team | plugins@wordpress.org
+https://make.wordpress.org/plugins/
+https://developer.wordpress.org/plugins/wordpress-org/detailed-plugin-guidelines/
+https://wordpress.org/plugins/plugin-check/

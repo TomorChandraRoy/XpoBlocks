@@ -7,8 +7,6 @@ import { addIcon, arrowDownIcon, arrowUpIcon, trashIcon } from '../../../../util
 import { useState } from '@wordpress/element';
 import { UnitControl } from 'tr-tools';
 import { pxUnit, remUnit, emUnit, vwUnit, perUnit } from 'tr-tools/utils/options';
-const textDomain = 'xpo-blocks';
-
 const General = ({ attributes, setAttributes }) => {
 	const [imageUrl, setImageUrl] = useState('');
 	const {
@@ -77,27 +75,27 @@ const General = ({ attributes, setAttributes }) => {
 
 	return (
     <>
-      <PanelBody className="bPlPanelBody" title={__('Template Presets', textDomain)} initialOpen={true}>
-        <p style={{ fontSize: '12px', color: '#64748b', marginBottom: '12px' }}>{__('Switch or apply a predefined divider template style.', textDomain)}</p>
+      <PanelBody className="bPlPanelBody" title={__('Template Presets', 'xpo-blocks')} initialOpen={true}>
+        <p style={{ fontSize: '12px', color: '#64748b', marginBottom: '12px' }}>{__('Switch or apply a predefined divider template style.', 'xpo-blocks')}</p>
         <Button isSecondary onClick={() => setAttributes({ selectedTemplate: '' })} style={{ width: '100%', justifyContent: 'center' }}>
-          {__('Change Template', textDomain)}
+          {__('Change Template', 'xpo-blocks')}
         </Button>
       </PanelBody>
 
-      <PanelBody className="bPlPanelBody" title={__('Images & Links', textDomain)} initialOpen={true}>
+      <PanelBody className="bPlPanelBody" title={__('Images & Links', 'xpo-blocks')} initialOpen={true}>
         <div className="xpo-mq-url-input-container">
-          <span className="xpo-mq-url-input-label">{__('Add Image by URL (SVG/PNG/JPG)', textDomain)}</span>
+          <span className="xpo-mq-url-input-label">{__('Add Image by URL (SVG/PNG/JPG)', 'xpo-blocks')}</span>
           <div className="xpo-mq-url-input-row">
             <TextControl placeholder="https://example.com/logo.svg" value={imageUrl} onChange={setImageUrl} __nextHasNoMarginBottom={true} />
             <Button variant="secondary" onClick={addFromUrl} disabled={!imageUrl}>
-              {__('Add', textDomain)}
+              {__('Add', 'xpo-blocks')}
             </Button>
           </div>
         </div>
 
         {images.length > 0 && (
           <>
-            <ToggleControl label={__('Open links in New Tab', textDomain)} checked={openInNewTab} onChange={val => setAttributes({ openInNewTab: val })} help={__('N.B: Links will only be clickable on the live frontend.', textDomain)} />
+            <ToggleControl label={__('Open links in New Tab', 'xpo-blocks')} checked={openInNewTab} onChange={val => setAttributes({ openInNewTab: val })} help={__('N.B: Links will only be clickable on the live frontend.', 'xpo-blocks')} />
 
             <hr />
 
@@ -112,13 +110,13 @@ const General = ({ attributes, setAttributes }) => {
 
                     {/* Action Buttons */}
                     <div className="xpo-mq-image-actions">
-                      <Tooltip text={__('Move Up', textDomain)}>
+                      <Tooltip text={__('Move Up', 'xpo-blocks')}>
                         <Button isSmall variant="tertiary" icon={arrowUpIcon} onClick={() => moveImage(i, -1)} disabled={i === 0} />
                       </Tooltip>
-                      <Tooltip text={__('Move Down', textDomain)}>
+                      <Tooltip text={__('Move Down', 'xpo-blocks')}>
                         <Button isSmall variant="tertiary" icon={arrowDownIcon} onClick={() => moveImage(i, 1)} disabled={i === images.length - 1} />
                       </Tooltip>
-                      <Tooltip text={__('Remove', textDomain)}>
+                      <Tooltip text={__('Remove', 'xpo-blocks')}>
                         <Button isSmall variant="tertiary" isDestructive icon={trashIcon} onClick={() => deleteImage(i)} />
                       </Tooltip>
                     </div>
@@ -126,8 +124,8 @@ const General = ({ attributes, setAttributes }) => {
 
                   {/* URL and Link Inputs */}
                   <div className="xpo-mq-image-inputs">
-                    <TextControl label={<span>{__('Image Source URL', textDomain)}</span>} placeholder="https://..." value={img.url} onChange={val => updateImageUrl(i, val)} __nextHasNoMarginBottom={true} />
-                    <TextControl label={<span>{__('Destination Link', textDomain)}</span>} placeholder="https://..." value={img.link} onChange={val => updateLink(i, val)} __nextHasNoMarginBottom={true} />
+                    <TextControl label={<span>{__('Image Source URL', 'xpo-blocks')}</span>} placeholder="https://..." value={img.url} onChange={val => updateImageUrl(i, val)} __nextHasNoMarginBottom={true} />
+                    <TextControl label={<span>{__('Destination Link', 'xpo-blocks')}</span>} placeholder="https://..." value={img.link} onChange={val => updateLink(i, val)} __nextHasNoMarginBottom={true} />
                   </div>
                 </div>
               ))}
@@ -135,38 +133,38 @@ const General = ({ attributes, setAttributes }) => {
           </>
         )}
 
-        <MediaUploadCheck fallback={<p className="xpo-mq-permission-error">{__('You do not have permission to upload media.', textDomain)}</p>}>
+        <MediaUploadCheck fallback={<p className="xpo-mq-permission-error">{__('You do not have permission to upload media.', 'xpo-blocks')}</p>}>
           <MediaUpload
             multiple={true}
             onSelect={onSelectImages}
             allowedTypes={['image']}
             render={({ open }) => (
               <Button variant="primary" icon={addIcon} onClick={open} className="xpo-mq-add-btn">
-                {__('Add Images', textDomain)}
+                {__('Add Images', 'xpo-blocks')}
               </Button>
             )}
           />
         </MediaUploadCheck>
       </PanelBody>
 
-      <PanelBody className="bPlPanelBody" title={__('Dimensions & Layout', textDomain)} initialOpen={false}>
-        <UnitControl label={__('Container Max Width', textDomain)} value={containerMaxWidth} onChange={val => setAttributes({ containerMaxWidth: val })} units={[pxUnit(), remUnit(), emUnit(), vwUnit(), perUnit()]} defaultVal="1024px" />
+      <PanelBody className="bPlPanelBody" title={__('Dimensions & Layout', 'xpo-blocks')} initialOpen={false}>
+        <UnitControl label={__('Container Max Width', 'xpo-blocks')} value={containerMaxWidth} onChange={val => setAttributes({ containerMaxWidth: val })} units={[pxUnit(), remUnit(), emUnit(), vwUnit(), perUnit()]} defaultVal="1024px" />
         <Spacer />
-        <UnitControl label={__('Image Size', textDomain)} value={itemHeight} onChange={val => setAttributes({ itemHeight: val })} units={[pxUnit(), remUnit(), emUnit()]} defaultVal="100px" />
+        <UnitControl label={__('Image Size', 'xpo-blocks')} value={itemHeight} onChange={val => setAttributes({ itemHeight: val })} units={[pxUnit(), remUnit(), emUnit()]} defaultVal="100px" />
         <Spacer />
-        <ToggleControl label={__('Show Container Border', textDomain)} checked={showBorder} onChange={val => setAttributes({ showBorder: val })} />
+        <ToggleControl label={__('Show Container Border', 'xpo-blocks')} checked={showBorder} onChange={val => setAttributes({ showBorder: val })} />
         <Spacer />
-        <ToggleControl label={__('Show Top Text', textDomain)} checked={showTopText} onChange={val => setAttributes({ showTopText: val })} />
+        <ToggleControl label={__('Show Top Text', 'xpo-blocks')} checked={showTopText} onChange={val => setAttributes({ showTopText: val })} />
         <Spacer />
-        <ToggleControl label={__('Edge Fade Effect', textDomain)} checked={edgeFade} onChange={val => setAttributes({ edgeFade: val })} />
+        <ToggleControl label={__('Edge Fade Effect', 'xpo-blocks')} checked={edgeFade} onChange={val => setAttributes({ edgeFade: val })} />
       </PanelBody>
 
-      <PanelBody className="bPlPanelBody"  title={__('Movement & Engine', textDomain)} initialOpen={false}>
-        <RangeControl label={__('Base Speed (s)', textDomain)} value={speed} onChange={val => setAttributes({ speed: val })} min={1} max={200} help={__('Lower number means faster loop duration.', textDomain)} />
-        <ToggleControl label={__('Reverse Direction', textDomain)} checked={reverseDirection} onChange={val => setAttributes({ reverseDirection: val })} />
+      <PanelBody className="bPlPanelBody"  title={__('Movement & Engine', 'xpo-blocks')} initialOpen={false}>
+        <RangeControl label={__('Base Speed (s)', 'xpo-blocks')} value={speed} onChange={val => setAttributes({ speed: val })} min={1} max={200} help={__('Lower number means faster loop duration.', 'xpo-blocks')} />
+        <ToggleControl label={__('Reverse Direction', 'xpo-blocks')} checked={reverseDirection} onChange={val => setAttributes({ reverseDirection: val })} />
         <hr />
         <ToggleControl
-          label={__('Pause on Hover / Tap', textDomain)}
+          label={__('Pause on Hover / Tap', 'xpo-blocks')}
           checked={pauseOnHover}
           onChange={val => {
             setAttributes({ pauseOnHover: val });
@@ -174,10 +172,10 @@ const General = ({ attributes, setAttributes }) => {
               setAttributes({ hoverSlowDown: false });
             }
           }}
-          help={__('Completely stops the track when cursor is over it.', textDomain)}
+          help={__('Completely stops the track when cursor is over it.', 'xpo-blocks')}
         />
         <ToggleControl
-          label={__('Slow Down on Hover', textDomain)}
+          label={__('Slow Down on Hover', 'xpo-blocks')}
           checked={hoverSlowDown}
           onChange={val => {
             setAttributes({ hoverSlowDown: val });
@@ -185,27 +183,27 @@ const General = ({ attributes, setAttributes }) => {
               setAttributes({ pauseOnHover: false });
             }
           }}
-          help={__('Reduces velocity to 30% for a cinematic inspection feel.', textDomain)}
+          help={__('Reduces velocity to 30% for a cinematic inspection feel.', 'xpo-blocks')}
         />
       </PanelBody>
 
-      <PanelBody className="bPlPanelBody" title={ __( 'Smart Addons', textDomain ) } initialOpen={ false }>
+      <PanelBody className="bPlPanelBody" title={ __( 'Smart Addons', 'xpo-blocks' ) } initialOpen={ false }>
         <ToggleControl
-          label={ __( 'Hover Lift Effect', textDomain ) }
+          label={ __( 'Hover Lift Effect', 'xpo-blocks' ) }
           checked={ liftEffect }
           onChange={ ( val ) => setAttributes( { liftEffect: val } ) }
-          help={ __( 'Elevates the hovered logo organically.', textDomain ) }
+          help={ __( 'Elevates the hovered logo organically.', 'xpo-blocks' ) }
         />
         <hr />
         <ToggleControl
-          label={ __( 'Sibling Focus Blur', textDomain ) }
+          label={ __( 'Sibling Focus Blur', 'xpo-blocks' ) }
           checked={ siblingBlur }
           onChange={ ( val ) => setAttributes( { siblingBlur: val } ) }
-          help={ __( 'Blurs all other logos when one is hovered.', textDomain ) }
+          help={ __( 'Blurs all other logos when one is hovered.', 'xpo-blocks' ) }
         />
         { siblingBlur && (
           <RangeControl
-            label={ __( 'Blur Intensity (px)', textDomain ) }
+            label={ __( 'Blur Intensity (px)', 'xpo-blocks' ) }
             value={ siblingBlurIntensity }
             onChange={ ( val ) => setAttributes( { siblingBlurIntensity: val } ) }
             min={ 1 }
@@ -214,34 +212,34 @@ const General = ({ attributes, setAttributes }) => {
         ) }
         <hr />
         <ToggleControl
-          label={ __( 'Segmented Progress Rail', textDomain ) }
+          label={ __( 'Segmented Progress Rail', 'xpo-blocks' ) }
           checked={ showProgressRail }
           onChange={ ( val ) => setAttributes( { showProgressRail: val } ) }
-          help={ __( 'Displays a tracker based on original items.', textDomain ) }
+          help={ __( 'Displays a tracker based on original items.', 'xpo-blocks' ) }
         />
         { showProgressRail && (
           <SelectControl
-            label={ __( 'Rail Position', textDomain ) }
+            label={ __( 'Rail Position', 'xpo-blocks' ) }
             value={ progressRailPosition }
             options={ [
-              { label: __( 'Right', textDomain ), value: 'right' },
-              { label: __( 'Bottom', textDomain ), value: 'bottom' }
+              { label: __( 'Right', 'xpo-blocks' ), value: 'right' },
+              { label: __( 'Bottom', 'xpo-blocks' ), value: 'bottom' }
             ] }
             onChange={ ( val ) => setAttributes( { progressRailPosition: val } ) }
           />
         ) }
         <hr />
         <ToggleControl
-          label={ __( 'Pause / Slow State Indicator', textDomain ) }
+          label={ __( 'Pause / Slow State Indicator', 'xpo-blocks' ) }
           checked={ showInteractionIndicator }
           onChange={ ( val ) => setAttributes( { showInteractionIndicator: val } ) }
-          help={ __( 'Shows a state badge when marquee is paused or slowed.', textDomain ) }
+          help={ __( 'Shows a state badge when marquee is paused or slowed.', 'xpo-blocks' ) }
         />
         <ToggleControl
-          label={ __( 'Active Center Highlight', textDomain ) }
+          label={ __( 'Active Center Highlight', 'xpo-blocks' ) }
           checked={ highlightActiveCenter }
           onChange={ ( val ) => setAttributes( { highlightActiveCenter: val } ) }
-          help={ __( 'Scales and highlights the item closest to the center focus area.', textDomain ) }
+          help={ __( 'Scales and highlights the item closest to the center focus area.', 'xpo-blocks' ) }
         />
       </PanelBody>
     </>

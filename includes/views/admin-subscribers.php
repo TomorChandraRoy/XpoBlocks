@@ -2,23 +2,23 @@
 /**
  * Admin Subscribers View Template
  *
- * @package XpoBlock
+ * @package XpoBlocks
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$xpo_block_subscribers_list = isset( $xpo_block_subscribers ) && is_array( $xpo_block_subscribers ) ? $xpo_block_subscribers : ( isset( $subscribers ) && is_array( $subscribers ) ? $subscribers : [] );
-$xpo_block_is_deleted       = ! empty( $xpo_block_deleted_notice ) || ! empty( $deleted_notice );
+$xpo_blocks_subscribers_list = isset( $xpo_blocks_subscribers ) && is_array( $xpo_blocks_subscribers ) ? $xpo_blocks_subscribers : ( isset( $subscribers ) && is_array( $subscribers ) ? $subscribers : [] );
+$xpo_blocks_is_deleted       = ! empty( $xpo_blocks_deleted_notice ) || ! empty( $deleted_notice );
 ?>
 <div class="wrap">
-	<h1 class="wp-heading-inline"><?php esc_html_e( 'Newsletter Subscribers', 'xpo-block' ); ?></h1>
+	<h1 class="wp-heading-inline"><?php esc_html_e( 'Newsletter Subscribers', 'xpo-blocks' ); ?></h1>
 	<hr class="wp-header-end">
 
-	<?php if ( $xpo_block_is_deleted ) : ?>
+	<?php if ( $xpo_blocks_is_deleted ) : ?>
 		<div class="notice notice-success is-dismissible" style="margin-top: 15px;">
-			<p><?php esc_html_e( 'Subscriber deleted successfully.', 'xpo-block' ); ?></p>
+			<p><?php esc_html_e( 'Subscriber deleted successfully.', 'xpo-blocks' ); ?></p>
 		</div>
 	<?php endif; ?>
 
@@ -31,12 +31,12 @@ $xpo_block_is_deleted       = ! empty( $xpo_block_deleted_notice ) || ! empty( $
 			</svg>
 		</div>
 		<div style="font-size: 14px; color: #1e3a8a; line-height: 1.5;">
-			<strong style="color: #1e40af;"><?php esc_html_e( 'Note:', 'xpo-block' ); ?></strong>
-			<?php esc_html_e( 'Subscribers collected via the', 'xpo-block' ); ?>
+			<strong style="color: #1e40af;"><?php esc_html_e( 'Note:', 'xpo-blocks' ); ?></strong>
+			<?php esc_html_e( 'Subscribers collected via the', 'xpo-blocks' ); ?>
 			<span style="background: #bfdbfe; color: #1e3a8a; padding: 2px 8px; border-radius: 4px; font-weight: 600; font-size: 13px; margin: 0 2px;">
-				<?php esc_html_e( 'Newsletter Card Block', 'xpo-block' ); ?>
+				<?php esc_html_e( 'Newsletter Card Block', 'xpo-blocks' ); ?>
 			</span>
-			<?php esc_html_e( 'on your website will automatically appear here.', 'xpo-block' ); ?>
+			<?php esc_html_e( 'on your website will automatically appear here.', 'xpo-blocks' ); ?>
 		</div>
 	</div>
 
@@ -45,7 +45,7 @@ $xpo_block_is_deleted       = ! empty( $xpo_block_deleted_notice ) || ! empty( $
 			<strong style="font-size: 16px; color: #1d2327;">
 				<?php
 				/* translators: %d: Total number of subscribers. */
-				printf( esc_html__( 'Total Subscribers: %d', 'xpo-block' ), count( $xpo_block_subscribers_list ) );
+				printf( esc_html__( 'Total Subscribers: %d', 'xpo-blocks' ), count( $xpo_blocks_subscribers_list ) );
 				?>
 			</strong>
 		</div>
@@ -54,46 +54,46 @@ $xpo_block_is_deleted       = ! empty( $xpo_block_deleted_notice ) || ! empty( $
 			<thead>
 				<tr>
 					<th style="width: 60px;">#</th>
-					<th><?php esc_html_e( 'Email Address', 'xpo-block' ); ?></th>
-					<th style="width: 220px;"><?php esc_html_e( 'Subscribed Date', 'xpo-block' ); ?></th>
-					<th style="width: 100px; text-align: right; padding-right: 15px;"><?php esc_html_e( 'Actions', 'xpo-block' ); ?></th>
+					<th><?php esc_html_e( 'Email Address', 'xpo-blocks' ); ?></th>
+					<th style="width: 220px;"><?php esc_html_e( 'Subscribed Date', 'xpo-blocks' ); ?></th>
+					<th style="width: 100px; text-align: right; padding-right: 15px;"><?php esc_html_e( 'Actions', 'xpo-blocks' ); ?></th>
 				</tr>
 			</thead>
 			<tbody>
-				<?php if ( ! empty( $xpo_block_subscribers_list ) ) : ?>
+				<?php if ( ! empty( $xpo_blocks_subscribers_list ) ) : ?>
 					<?php
-					foreach ( array_reverse( $xpo_block_subscribers_list ) as $xpo_block_index => $xpo_block_sub ) :
-						$xpo_block_email      = is_array( $xpo_block_sub ) ? $xpo_block_sub['email'] : $xpo_block_sub;
-						$xpo_block_date       = is_array( $xpo_block_sub ) && isset( $xpo_block_sub['date'] ) ? $xpo_block_sub['date'] : '-';
-						$xpo_block_delete_url = wp_nonce_url(
+					foreach ( array_reverse( $xpo_blocks_subscribers_list ) as $xpo_blocks_index => $xpo_blocks_sub ) :
+						$xpo_blocks_email      = is_array( $xpo_blocks_sub ) ? $xpo_blocks_sub['email'] : $xpo_blocks_sub;
+						$xpo_blocks_date       = is_array( $xpo_blocks_sub ) && isset( $xpo_blocks_sub['date'] ) ? $xpo_blocks_sub['date'] : '-';
+						$xpo_blocks_delete_url = wp_nonce_url(
 							add_query_arg(
 								[
-									'page'   => 'xpo-block-subscribers',
+									'page'   => 'xpo-blocks-subscribers',
 									'action' => 'delete',
-									'email'  => rawurlencode( $xpo_block_email ),
+									'email'  => rawurlencode( $xpo_blocks_email ),
 								],
 								admin_url( 'admin.php' )
 							),
-							'xpo_block_delete_subscriber_' . $xpo_block_email
+							'xpo_blocks_delete_subscriber_' . $xpo_blocks_email
 						);
 						?>
 						<tr>
-							<td><?php echo esc_html( count( $xpo_block_subscribers_list ) - $xpo_block_index ); ?></td>
-							<td><strong><?php echo esc_html( $xpo_block_email ); ?></strong></td>
-							<td><?php echo esc_html( $xpo_block_date ); ?></td>
+							<td><?php echo esc_html( count( $xpo_blocks_subscribers_list ) - $xpo_blocks_index ); ?></td>
+							<td><strong><?php echo esc_html( $xpo_blocks_email ); ?></strong></td>
+							<td><?php echo esc_html( $xpo_blocks_date ); ?></td>
 							<td style="text-align: right; padding-right: 15px;">
-								<a href="<?php echo esc_url( $xpo_block_delete_url ); ?>"
+								<a href="<?php echo esc_url( $xpo_blocks_delete_url ); ?>"
 								   class="button button-small button-link-delete"
 								   style="color: #b32d2e; text-decoration: none;"
-								   onclick="return confirm('<?php esc_attr_e( 'Are you sure you want to delete this subscriber?', 'xpo-block' ); ?>');">
-									<?php esc_html_e( 'Delete', 'xpo-block' ); ?>
+								   onclick="return confirm('<?php esc_attr_e( 'Are you sure you want to delete this subscriber?', 'xpo-blocks' ); ?>');">
+									<?php esc_html_e( 'Delete', 'xpo-blocks' ); ?>
 								</a>
 							</td>
 						</tr>
 					<?php endforeach; ?>
 				<?php else : ?>
 					<tr>
-						<td colspan="4"><?php esc_html_e( 'No subscribers found yet.', 'xpo-block' ); ?></td>
+						<td colspan="4"><?php esc_html_e( 'No subscribers found yet.', 'xpo-blocks' ); ?></td>
 					</tr>
 				<?php endif; ?>
 			</tbody>

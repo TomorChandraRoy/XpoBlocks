@@ -3,9 +3,6 @@ import { useEffect, useRef } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { ItemsPanel } from 'tr-tools';
 import PanelItems from './PanelItems';
-const textDomain = 'xpo-block';
-
-
 const General = ({ attributes, setAttributes, clientId }) => {
 	const { blockId, layout, steps } = attributes;
 	const prevClientId = useRef(clientId);
@@ -23,20 +20,20 @@ const General = ({ attributes, setAttributes, clientId }) => {
 
 	return (
 		<>
-			<PanelBody className="bPlPanelBody" title={__('Layout Settings', textDomain)} initialOpen={true}>
+			<PanelBody className="bPlPanelBody" title={__('Layout Settings', 'xpo-blocks')} initialOpen={true}>
 				<SelectControl
-					label={__('Layout', textDomain)}
+					label={__('Layout', 'xpo-blocks')}
 					value={layout}
 					options={[
-						{ label: __('Sticky Right (Content Left)', textDomain), value: 'sticky-right' },
-						{ label: __('Sticky Left (Content Right)', textDomain), value: 'sticky-left' },
+						{ label: __('Sticky Right (Content Left)', 'xpo-blocks'), value: 'sticky-right' },
+						{ label: __('Sticky Left (Content Right)', 'xpo-blocks'), value: 'sticky-left' },
 					]}
 					onChange={val => setAttributes({ layout: val })}
 				/>
 			</PanelBody>
 
 			<ItemsPanel
-				title={__('Steps Manager', textDomain)}
+				title={__('Steps Manager', 'xpo-blocks')}
 				initialOpen={true}
 				items={steps}
 				onChange={newSteps => setAttributes({ steps: newSteps })}
@@ -47,7 +44,7 @@ const General = ({ attributes, setAttributes, clientId }) => {
 					mediaUrl: '',
 					lottieUrl: ''
 				}}
-				addButtonLabel={__('Add Step', textDomain)}
+				addButtonLabel={__('Add Step', 'xpo-blocks')}
 				itemTitleKey="title"
 				ItemSettings={PanelItems}
 			/>

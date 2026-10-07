@@ -4,8 +4,6 @@ import { ColorControl, UnitControl, SpacingControl, BorderControl, Typography } 
 import { pxUnit, remUnit, emUnit, vwUnit, perUnit } from 'tr-tools/utils/options';
 import { updateData } from '../../../../utils/functions';
 
-const textDomain = 'xpo-block';
-
 const Style = ({ attributes, setAttributes }) => {
   const {sidebarBorder,sidebarBorderRadius,headerBgColor,headerTextColor,iconColor,sideHeaderTypography,headerIconSize,headerBorderWidth,sidebarBgColor,sidebarItemColor,sidebarItemTypography,activeHeaderBgColor,activeTextColor,activeBorderLine,activeIconColor,activeBorderRadius,sideTextIconSize,contentBgColor,contentBorderRadius,contentBorder,contentHeaderTextColor,contentHeaderTypography,contentHeaderBorderLine,contentDescriptionColor,contentDescriptionTypography,contentTitleColor,contentTitleTypography,contentParagraphColor,contentParagraphTypography,
   } = attributes;
@@ -13,9 +11,9 @@ const Style = ({ attributes, setAttributes }) => {
   return (
     <>
       {/* --- SIDEBAR STYLE --- */}
-      <PanelBody className="bPlPanelBody" title={__('Sidebar Header', textDomain)} initialOpen={true}>
+      <PanelBody className="bPlPanelBody" title={__('Sidebar Header', 'xpo-blocks')} initialOpen={true}>
         <BorderControl
-          label={__('Sidebar Border', textDomain)}
+          label={__('Sidebar Border', 'xpo-blocks')}
           value={sidebarBorder}
           onChange={val => setAttributes({ sidebarBorder: val })}
           defaultBorder={{
@@ -27,7 +25,7 @@ const Style = ({ attributes, setAttributes }) => {
         />
         <Spacer />
         <SpacingControl
-          label={__('Sidebar Border Radius', textDomain)}
+          label={__('Sidebar Border Radius', 'xpo-blocks')}
           value={sidebarBorderRadius}
           onChange={val => setAttributes({ sidebarBorderRadius: val })}
           units={[pxUnit(), remUnit(), emUnit(), vwUnit(), perUnit()]}
@@ -35,14 +33,14 @@ const Style = ({ attributes, setAttributes }) => {
         />
         <Spacer />
 
-        <ColorControl label={__('Header Background', textDomain)} value={headerBgColor} onChange={val => setAttributes({ headerBgColor: val })} defaultColor="#f9fafb" />
+        <ColorControl label={__('Header Background', 'xpo-blocks')} value={headerBgColor} onChange={val => setAttributes({ headerBgColor: val })} defaultColor="#f9fafb" />
 
-        <ColorControl label={__('Header Text Color', textDomain)} value={headerTextColor} onChange={val => setAttributes({ headerTextColor: val })} defaultColor="#1e293b" />
-        <ColorControl label={__('Icon Color', textDomain)} value={iconColor} onChange={val => setAttributes({ iconColor: val })} defaultColor="#64748b" />
+        <ColorControl label={__('Header Text Color', 'xpo-blocks')} value={headerTextColor} onChange={val => setAttributes({ headerTextColor: val })} defaultColor="#1e293b" />
+        <ColorControl label={__('Icon Color', 'xpo-blocks')} value={iconColor} onChange={val => setAttributes({ iconColor: val })} defaultColor="#64748b" />
         <Spacer />
 
         <Typography
-          label={__('Header Typography', textDomain)}
+          label={__('Header Typography', 'xpo-blocks')}
           value={sideHeaderTypography}
           onChange={val => setAttributes({ sideHeaderTypography: val })}
           defaultTypography={{
@@ -62,11 +60,11 @@ const Style = ({ attributes, setAttributes }) => {
         />
         <Spacer />
 
-        <UnitControl label={__('Header icon Size', textDomain)} value={headerIconSize} onChange={val => setAttributes(updateData(attributes, val, 'headerIconSize'))} units={[pxUnit()]} defaultVal="20px" />
+        <UnitControl label={__('Header icon Size', 'xpo-blocks')} value={headerIconSize} onChange={val => setAttributes(updateData(attributes, val, 'headerIconSize'))} units={[pxUnit()]} defaultVal="20px" />
         <Spacer />
 
         <BorderControl
-          label={__('Border Line ', textDomain)}
+          label={__('Border Line ', 'xpo-blocks')}
           value={headerBorderWidth}
           onChange={val => setAttributes({ headerBorderWidth: val })}
           units={[pxUnit()]}
@@ -79,11 +77,11 @@ const Style = ({ attributes, setAttributes }) => {
         />
       </PanelBody>
 
-      <PanelBody className="bPlPanelBody" title={__('Sidebar Content', textDomain)} initialOpen={false}>
-        <ColorControl label={__('Content Background', textDomain)} value={sidebarBgColor} onChange={val => setAttributes({ sidebarBgColor: val })} defaultColor="#f9fafb" />
+      <PanelBody className="bPlPanelBody" title={__('Sidebar Content', 'xpo-blocks')} initialOpen={false}>
+        <ColorControl label={__('Content Background', 'xpo-blocks')} value={sidebarBgColor} onChange={val => setAttributes({ sidebarBgColor: val })} defaultColor="#f9fafb" />
         <Spacer />
         <Typography
-          label={__('Text Typography', textDomain)}
+          label={__('Text Typography', 'xpo-blocks')}
           value={sidebarItemTypography}
           onChange={val => setAttributes({ sidebarItemTypography: val })}
           defaultTypography={{
@@ -102,16 +100,16 @@ const Style = ({ attributes, setAttributes }) => {
           }}
         />
         <Spacer />
-        <ColorControl label={__('Text Color', textDomain)} value={sidebarItemColor} onChange={val => setAttributes({ sidebarItemColor: val })} defaultColor="#475569" />
+        <ColorControl label={__('Text Color', 'xpo-blocks')} value={sidebarItemColor} onChange={val => setAttributes({ sidebarItemColor: val })} defaultColor="#475569" />
         <Spacer />
-        <UnitControl label={__('Text Icon Size', textDomain)} value={sideTextIconSize} onChange={val => setAttributes(updateData(attributes, val, 'sideTextIconSize'))} units={[pxUnit()]} defaultVal="18px" />
+        <UnitControl label={__('Text Icon Size', 'xpo-blocks')} value={sideTextIconSize} onChange={val => setAttributes(updateData(attributes, val, 'sideTextIconSize'))} units={[pxUnit()]} defaultVal="18px" />
         <Spacer />
-        <ColorControl label={__('Item Active Background', textDomain)} value={activeHeaderBgColor} onChange={val => setAttributes({ activeHeaderBgColor: val })} defaultColor="#1573d1" />
+        <ColorControl label={__('Item Active Background', 'xpo-blocks')} value={activeHeaderBgColor} onChange={val => setAttributes({ activeHeaderBgColor: val })} defaultColor="#1573d1" />
         <Spacer />
-        <ColorControl label={__('Active Text Color', textDomain)} value={activeTextColor} onChange={val => setAttributes({ activeTextColor: val })} defaultColor="#ffffff" />
+        <ColorControl label={__('Active Text Color', 'xpo-blocks')} value={activeTextColor} onChange={val => setAttributes({ activeTextColor: val })} defaultColor="#ffffff" />
         <Spacer />
         <BorderControl
-          label={__('Active Border Line', textDomain)}
+          label={__('Active Border Line', 'xpo-blocks')}
           value={activeBorderLine}
           onChange={val => setAttributes({ activeBorderLine: val })}
           defaultBorder={{
@@ -122,10 +120,10 @@ const Style = ({ attributes, setAttributes }) => {
           }}
         />
         <Spacer />
-        <ColorControl label={__('Active Icon Color', textDomain)} value={activeIconColor} onChange={val => setAttributes({ activeIconColor: val })} defaultColor="#0f172a" />
+        <ColorControl label={__('Active Icon Color', 'xpo-blocks')} value={activeIconColor} onChange={val => setAttributes({ activeIconColor: val })} defaultColor="#0f172a" />
         <Spacer />
         <SpacingControl
-          label={__('Active Border Radius', textDomain)}
+          label={__('Active Border Radius', 'xpo-blocks')}
           value={activeBorderRadius}
           onChange={val => setAttributes({ activeBorderRadius: val })}
           units={[pxUnit(), remUnit(), emUnit(), vwUnit(), perUnit()]}
@@ -135,13 +133,13 @@ const Style = ({ attributes, setAttributes }) => {
       </PanelBody>
 
       {/* --- CONTENT Header STYLE --- */}
-      <PanelBody className="bPlPanelBody" title={__('Content Header', textDomain)} initialOpen={false}>
-        <ColorControl label={__('Content Background', textDomain)} value={contentBgColor} onChange={val => setAttributes({ contentBgColor: val })} defaultColor="#f9fafb" />
+      <PanelBody className="bPlPanelBody" title={__('Content Header', 'xpo-blocks')} initialOpen={false}>
+        <ColorControl label={__('Content Background', 'xpo-blocks')} value={contentBgColor} onChange={val => setAttributes({ contentBgColor: val })} defaultColor="#f9fafb" />
 
-        <SpacingControl label={__('Border Radius', textDomain)} value={contentBorderRadius} onChange={val => setAttributes({ contentBorderRadius: val })} units={[pxUnit(), remUnit(), emUnit(), vwUnit(), perUnit()]} defaultVal={{ top: '0px', right: '0px', bottom: '0px', left: '0px' }} />
+        <SpacingControl label={__('Border Radius', 'xpo-blocks')} value={contentBorderRadius} onChange={val => setAttributes({ contentBorderRadius: val })} units={[pxUnit(), remUnit(), emUnit(), vwUnit(), perUnit()]} defaultVal={{ top: '0px', right: '0px', bottom: '0px', left: '0px' }} />
         <Spacer />
         <BorderControl
-          label={__('Border', textDomain)}
+          label={__('Border', 'xpo-blocks')}
           value={contentBorder}
           onChange={val => setAttributes({ contentBorder: val })}
           defaultBorder={{
@@ -152,10 +150,10 @@ const Style = ({ attributes, setAttributes }) => {
           }}
         />
         <Spacer />
-        <ColorControl label={__('Content Header Color', textDomain)} value={contentHeaderTextColor} onChange={val => setAttributes({ contentHeaderTextColor: val })} defaultColor="#1e293b" />
+        <ColorControl label={__('Content Header Color', 'xpo-blocks')} value={contentHeaderTextColor} onChange={val => setAttributes({ contentHeaderTextColor: val })} defaultColor="#1e293b" />
         <Spacer />
         <Typography
-          label={__('Text Typography', textDomain)}
+          label={__('Text Typography', 'xpo-blocks')}
           value={contentHeaderTypography}
           onChange={val => setAttributes({ contentHeaderTypography: val })}
           defaultTypography={{
@@ -175,7 +173,7 @@ const Style = ({ attributes, setAttributes }) => {
         />
         <Spacer />
         <BorderControl
-          label={__('Border Line', textDomain)}
+          label={__('Border Line', 'xpo-blocks')}
           value={contentHeaderBorderLine}
           onChange={val => setAttributes({ contentHeaderBorderLine: val })}
           defaultBorder={{
@@ -186,10 +184,10 @@ const Style = ({ attributes, setAttributes }) => {
           }}
         />
         <Spacer />
-        <ColorControl label={__('Content Description Color', textDomain)} value={contentDescriptionColor} onChange={val => setAttributes({ contentDescriptionColor: val })} defaultColor="#6b7280" />
+        <ColorControl label={__('Content Description Color', 'xpo-blocks')} value={contentDescriptionColor} onChange={val => setAttributes({ contentDescriptionColor: val })} defaultColor="#6b7280" />
         <Spacer />
         <Typography
-          label={__('Content Description Typography', textDomain)}
+          label={__('Content Description Typography', 'xpo-blocks')}
           value={contentDescriptionTypography}
           onChange={val => setAttributes({ contentDescriptionTypography: val })}
           defaultTypography={{
@@ -211,11 +209,11 @@ const Style = ({ attributes, setAttributes }) => {
       </PanelBody>
 
       {/* --- CONTENT AREA STYLE --- */}
-      <PanelBody className="bPlPanelBody" title={__('Content  Area', textDomain)} initialOpen={false}>
-        <ColorControl label={__('Content Title Color', textDomain)} value={contentTitleColor} onChange={val => setAttributes({ contentTitleColor: val })} defaultColor="#111827" />
+      <PanelBody className="bPlPanelBody" title={__('Content  Area', 'xpo-blocks')} initialOpen={false}>
+        <ColorControl label={__('Content Title Color', 'xpo-blocks')} value={contentTitleColor} onChange={val => setAttributes({ contentTitleColor: val })} defaultColor="#111827" />
         <Spacer />
         <Typography
-          label={__('Content Title Typography', textDomain)}
+          label={__('Content Title Typography', 'xpo-blocks')}
           value={contentTitleTypography}
           onChange={val => setAttributes({ contentTitleTypography: val })}
           defaultTypography={{
@@ -235,10 +233,10 @@ const Style = ({ attributes, setAttributes }) => {
         />
         <Spacer />
 
-        <ColorControl label={__('Content Paragraph Color', textDomain)} value={contentParagraphColor} onChange={val => setAttributes({ contentParagraphColor: val })} defaultColor="#4b5563" />
+        <ColorControl label={__('Content Paragraph Color', 'xpo-blocks')} value={contentParagraphColor} onChange={val => setAttributes({ contentParagraphColor: val })} defaultColor="#4b5563" />
         <Spacer />
         <Typography
-          label={__('Content Paragraph Typography', textDomain)}
+          label={__('Content Paragraph Typography', 'xpo-blocks')}
           value={contentParagraphTypography}
           onChange={val => setAttributes({ contentParagraphTypography: val })}
           defaultTypography={{

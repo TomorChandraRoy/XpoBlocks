@@ -1,15 +1,13 @@
 import { __ } from "@wordpress/i18n";
 import { TemplateOneSvg } from "./icons";
-const textDomain = 'xpo-blocks';
-
 export const templateData = {
-  title: __('Select Before/After Template', textDomain),
-  subtitle: __('Choose a design template for your before/after slider.', textDomain),
+  title: __('Select Before/After Template', 'xpo-blocks'),
+  subtitle: __('Choose a design template for your before/after slider.', 'xpo-blocks'),
   templates: [
     {
       id: 'template-1',
-      label: __('Template 1', textDomain),
-      tag: __('Classic Slider', textDomain),
+      label: __('Template 1', 'xpo-blocks'),
+      tag: __('Classic Slider', 'xpo-blocks'),
       icon: TemplateOneSvg,
       attributes: {
         showLabels: true,

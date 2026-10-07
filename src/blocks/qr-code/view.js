@@ -4,7 +4,7 @@ import DynamicStyles from './Components/Common/DynamicStyles';
 import QRCodeBlock from './Components/Common/Templates/QRCodeBlock';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const containers = document.querySelectorAll('.wp-block-xpo-block-qr-code');
+  const containers = document.querySelectorAll('.wp-block-xpo-blocks-qr-code');
   containers.forEach(container => {
     if (container.dataset.initialized) return;
     container.dataset.initialized = 'true';

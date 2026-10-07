@@ -1,21 +1,19 @@
 import { __ } from "@wordpress/i18n";
 import { TemplateOneSvg } from "./icons";
 
-const textDomain = 'xpo-block';
-
 export const templateData = {
-  title: __('Select Table of Contents Template', textDomain),
-  subtitle: __('Choose a design template for your table of contents.', textDomain),
+  title: __('Select Table of Contents Template', 'xpo-blocks'),
+  subtitle: __('Choose a design template for your table of contents.', 'xpo-blocks'),
   templates: [
     {
       id: 'template-1',
-      label: __('Template 1', textDomain),
-      tag: __('Classic Table of Contents', textDomain),
+      label: __('Template 1', 'xpo-blocks'),
+      tag: __('Classic Table of Contents', 'xpo-blocks'),
       icon: TemplateOneSvg,
       attributes: {
-        titleText: __('Table of Contents', textDomain),
-        contentTitle: __('The Ultimate Guide to Modern Web Development', textDomain),
-        contentSubtitle: __('Explore key concepts, architecture, design patterns, and performance optimization techniques for modern web applications.', textDomain),
+        titleText: __('Table of Contents', 'xpo-blocks'),
+        contentTitle: __('The Ultimate Guide to Modern Web Development', 'xpo-blocks'),
+        contentSubtitle: __('Explore key concepts, architecture, design patterns, and performance optimization techniques for modern web applications.', 'xpo-blocks'),
         items: [
           { id: '', title: 'Understanding Modern Web Architecture', level: 2, paragraph: 'An overview of client-server models, microservices, micro-frontends, and serverless architectures.' },
           { id: '', title: 'Frontend Fundamentals', level: 2, paragraph: 'Core technologies driving modern user interfaces and user experience across responsive devices.' },

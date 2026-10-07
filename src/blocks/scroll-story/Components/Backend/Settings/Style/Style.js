@@ -2,8 +2,6 @@ import { PanelBody, SelectControl, __experimentalSpacer as Spacer } from '@wordp
 import { __ } from '@wordpress/i18n';
 import { ColorControl, UnitControl, SpacingControl } from 'tr-tools';
 import { pxUnit, remUnit, emUnit, vwUnit, perUnit } from 'tr-tools/utils/options';
-const textDomain = 'xpo-block';
-
 const Style = ({ attributes, setAttributes }) => {
 	const {
 		progressColor,
@@ -20,14 +18,14 @@ const Style = ({ attributes, setAttributes }) => {
 	const units = [pxUnit(), remUnit(), emUnit(), vwUnit(), perUnit()];
 
 	return (
-		<PanelBody className="bPlPanelBody" title={__('Style Settings', textDomain)} initialOpen={true}>
+		<PanelBody className="bPlPanelBody" title={__('Style Settings', 'xpo-blocks')} initialOpen={true}>
 			<SelectControl
-				label={__('Image Fit', textDomain)}
+				label={__('Image Fit', 'xpo-blocks')}
 				value={imageFit}
 				options={[
-					{ label: __('Cover (Fill Container)', textDomain), value: 'cover' },
-					{ label: __('Contain (Whole Image)', textDomain), value: 'contain' },
-					{ label: __('Fill (Stretch)', textDomain), value: 'fill' }
+					{ label: __('Cover (Fill Container)', 'xpo-blocks'), value: 'cover' },
+					{ label: __('Contain (Whole Image)', 'xpo-blocks'), value: 'contain' },
+					{ label: __('Fill (Stretch)', 'xpo-blocks'), value: 'fill' }
 				]}
 				onChange={val => setAttributes({ imageFit: val })}
 			/>
@@ -35,7 +33,7 @@ const Style = ({ attributes, setAttributes }) => {
 			<Spacer />
 
 			<UnitControl
-				label={__('Step Gap / Spacer :', textDomain)}
+				label={__('Step Gap / Spacer :', 'xpo-blocks')}
 				value={stepGap}
 				onChange={val => setAttributes({ stepGap: val })}
 				units={units}
@@ -45,7 +43,7 @@ const Style = ({ attributes, setAttributes }) => {
 			<Spacer />
 
 			<UnitControl
-				label={__('Media Container Height :', textDomain)}
+				label={__('Media Container Height :', 'xpo-blocks')}
 				value={mediaHeight}
 				onChange={val => setAttributes({ mediaHeight: val })}
 				units={units}
@@ -55,7 +53,7 @@ const Style = ({ attributes, setAttributes }) => {
 			<Spacer />
 
 			<SpacingControl
-				label={__('Media Border Radius :', textDomain)}
+				label={__('Media Border Radius :', 'xpo-blocks')}
 				value={mediaRadius}
 				onChange={val => setAttributes({ mediaRadius: val })}
 				units={units}
@@ -65,7 +63,7 @@ const Style = ({ attributes, setAttributes }) => {
 			<Spacer />
 
 			<ColorControl
-				label={__('Media Box Background :', textDomain)}
+				label={__('Media Box Background :', 'xpo-blocks')}
 				value={mediaBgColor}
 				onChange={val => setAttributes({ mediaBgColor: val })}
 				defaultColor="#f1f5f9"
@@ -74,7 +72,7 @@ const Style = ({ attributes, setAttributes }) => {
 			<Spacer />
 
 			<ColorControl
-				label={__('Progress Bar Color :', textDomain)}
+				label={__('Progress Bar Color :', 'xpo-blocks')}
 				value={progressColor}
 				onChange={val => setAttributes({ progressColor: val })}
 				defaultColor="#3b82f6"
@@ -83,7 +81,7 @@ const Style = ({ attributes, setAttributes }) => {
 			<Spacer />
 
 			<ColorControl
-				label={__('Active Title Color :', textDomain)}
+				label={__('Active Title Color :', 'xpo-blocks')}
 				value={activeTitleColor}
 				onChange={val => setAttributes({ activeTitleColor: val })}
 				defaultColor="#1e293b"
@@ -92,7 +90,7 @@ const Style = ({ attributes, setAttributes }) => {
 			<Spacer />
 
 			<ColorControl
-				label={__('Inactive Title Color :', textDomain)}
+				label={__('Inactive Title Color :', 'xpo-blocks')}
 				value={inactiveTitleColor}
 				onChange={val => setAttributes({ inactiveTitleColor: val })}
 				defaultColor="#94a3b8"
@@ -101,7 +99,7 @@ const Style = ({ attributes, setAttributes }) => {
 			<Spacer />
 
 			<ColorControl
-				label={__('Description Color :', textDomain)}
+				label={__('Description Color :', 'xpo-blocks')}
 				value={descColor}
 				onChange={val => setAttributes({ descColor: val })}
 				defaultColor="#475569"

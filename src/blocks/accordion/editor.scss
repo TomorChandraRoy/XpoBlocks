@@ -1,7 +1,12 @@
 /* Editor specific styling for FAQ Accordion block */
+.wp-block-xpo-blocks-accordion {
+	/* */
+}
 
-/* .wp-block-xpo-block-accordion {
-
+.bPlPanelBody .components-base-control__label,
+.bPlPanelBody label {
+	text-transform: none !important;
+	font-size: 13px !important;
 }
 
 

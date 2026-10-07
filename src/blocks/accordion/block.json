@@ -1,12 +1,12 @@
 {
   "apiVersion": 3,
-  "name": "xpo-block/accordion",
+  "name": "xpo-blocks/accordion",
   "version": "1.0.0",
   "title": "FAQ Accordion",
   "description": "High-performance responsive FAQ accordion with smooth animations and customizable themes.",
-  "category": "xpo-block",
+  "category": "xpo-blocks",
   "keywords": ["faq", "accordion", "toggle", "collapse"],
-  "textdomain": "xpo-block",
+  "textdomain": "xpo-blocks",
   "attributes": {
     "align": {
       "type": "string",

@@ -2,42 +2,42 @@ import { __ } from "@wordpress/i18n";
 import { TemplateOneSvg } from "./icons";
 
 export const templateData = {
-  title: __('Select Scroll Story Template', 'xpo-block'),
-  subtitle: __('Choose a design template for your scroll story.', 'xpo-block'),
+  title: __('Select Scroll Story Template', 'xpo-blocks'),
+  subtitle: __('Choose a design template for your scroll story.', 'xpo-blocks'),
   templates: [
     {
       id: 'template-1',
-      label: __('Template 1', 'xpo-block'),
-      tag: __('Classic Scroll Story', 'xpo-block'),
+      label: __('Template 1', 'xpo-blocks'),
+      tag: __('Classic Scroll Story', 'xpo-blocks'),
       icon: TemplateOneSvg,
       attributes: {
         selectedTemplate: 'template-1',
         layout: 'sticky-right',
         steps: [
           {
-            title: __('Welcome to our story', 'xpo-block'),
-            description: __('This is the first step. Scroll down to see the magic happen.', 'xpo-block'),
+            title: __('Welcome to our story', 'xpo-blocks'),
+            description: __('This is the first step. Scroll down to see the magic happen.', 'xpo-blocks'),
             mediaType: 'image',
             mediaUrl: '',
             lottieUrl: '',
           },
           {
-            title: __('Second Step', 'xpo-block'),
-            description: __('As you scroll, the content changes and progress updates automatically.', 'xpo-block'),
+            title: __('Second Step', 'xpo-blocks'),
+            description: __('As you scroll, the content changes and progress updates automatically.', 'xpo-blocks'),
             mediaType: 'image',
             mediaUrl: '',
             lottieUrl: '',
           },
           {
-            title: __('Third Step', 'xpo-block'),
-            description: __('You can add Lottie animations or images to showcase your story.', 'xpo-block'),
+            title: __('Third Step', 'xpo-blocks'),
+            description: __('You can add Lottie animations or images to showcase your story.', 'xpo-blocks'),
             mediaType: 'image',
             mediaUrl: '',
             lottieUrl: '',
           },
           {
-            title: __('Fourth Step', 'xpo-block'),
-            description: __('Engage your visitors with responsive sticky scrolling interactive elements.', 'xpo-block'),
+            title: __('Fourth Step', 'xpo-blocks'),
+            description: __('Engage your visitors with responsive sticky scrolling interactive elements.', 'xpo-blocks'),
             mediaType: 'image',
             mediaUrl: '',
             lottieUrl: '',

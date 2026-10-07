@@ -1,1 +1,53 @@
-.wp-block-xpo-block-divider{width:100%}.wp-block-xpo-block-divider .xpo-divider{align-items:center;color:#6b7280;display:flex;font-size:14px;line-height:1;margin:0 auto;width:100%}.wp-block-xpo-block-divider .xpo-divider:after,.wp-block-xpo-block-divider .xpo-divider:before{background-color:#d1d5db;content:"";flex:1;height:1px}.wp-block-xpo-block-divider .xpo-divider:before{margin-right:12px}.wp-block-xpo-block-divider .xpo-divider:after{margin-left:12px}.wp-block-xpo-block-divider .xpo-divider .xpo-divider-icon-wrapper{align-items:center;display:flex;flex-shrink:0;justify-content:center}.wp-block-xpo-block-divider .xpo-divider .xpo-divider-icon{align-items:center;display:flex;justify-content:center}.xpo-block-divider-template-2 .xpo-divider:after,.xpo-block-divider-template-2 .xpo-divider:before{margin:0!important}
+/*!******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/divider/style.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************/
+.wp-block-xpo-blocks-divider,
+.xpo-block-divider-wrapper {
+  width: 100%;
+}
+.wp-block-xpo-blocks-divider .xpo-divider,
+.xpo-block-divider-wrapper .xpo-divider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1;
+}
+.wp-block-xpo-blocks-divider .xpo-divider::before, .wp-block-xpo-blocks-divider .xpo-divider::after,
+.xpo-block-divider-wrapper .xpo-divider::before,
+.xpo-block-divider-wrapper .xpo-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #d1d5db;
+}
+.wp-block-xpo-blocks-divider .xpo-divider::before,
+.xpo-block-divider-wrapper .xpo-divider::before {
+  margin-right: 12px;
+}
+.wp-block-xpo-blocks-divider .xpo-divider::after,
+.xpo-block-divider-wrapper .xpo-divider::after {
+  margin-left: 12px;
+}
+.wp-block-xpo-blocks-divider .xpo-divider .xpo-divider-icon-wrapper,
+.xpo-block-divider-wrapper .xpo-divider .xpo-divider-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.wp-block-xpo-blocks-divider .xpo-divider .xpo-divider-icon,
+.xpo-block-divider-wrapper .xpo-divider .xpo-divider-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.xpo-block-divider-template-2 .xpo-divider::before,
+.xpo-block-divider-template-2 .xpo-divider::after {
+  margin: 0 !important;
+}
+
+/*# sourceMappingURL=style-view.css.map*/

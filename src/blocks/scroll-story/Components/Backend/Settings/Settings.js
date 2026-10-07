@@ -15,7 +15,7 @@ const Settings = ({ attributes, setAttributes, clientId }) => {
 
   return (
     <InspectorControls>
-      <DocsLink link="https://xpo.com/docs/scroll-story" text={__('Documentation', 'xpo-block')} />
+      <DocsLink link="https://xpoblocks.com/docs/scroll-story" text={__('Documentation', 'xpo-blocks')} />
       <TabPanel className="wp-xpo-tab-panel" activeClass="wp-xpo-tab-panel-active-tab" tabs={generalStyleTabs}>
         {tab => (
           <>

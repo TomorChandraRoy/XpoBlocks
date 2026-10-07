@@ -1,16 +1,14 @@
 import { __ } from '@wordpress/i18n';
 import { TemplateOneSvg } from './icons';
 
-const textDomain="xpo-block";
-
 export const templateData = {
-  title: __('QR Code Layouts', textDomain),
-  subtitle: __('Select a layout for your QR code generator block.', textDomain),
+  title: __('QR Code Layouts', 'xpo-blocks'),
+  subtitle: __('Select a layout for your QR code generator block.', 'xpo-blocks'),
   templates: [
     {
       id: 'template-1',
-      label: __('Frame Card Layout', textDomain),
-      tag: __('Modern frame card with dynamic title, subtitle, logo overlay, and CTA download button.', textDomain),
+      label: __('Frame Card Layout', 'xpo-blocks'),
+      tag: __('Modern frame card with dynamic title, subtitle, logo overlay, and CTA download button.', 'xpo-blocks'),
       icon: TemplateOneSvg,
       attributes: {
         qrText: 'https://wordpress.org',
@@ -29,7 +27,7 @@ export const templateData = {
         showDownloadBtn: false,
         downloadBtnText: 'Download QR Code',
         downloadBtnColor: '#10b981',
-        containerBg: '#ffffff00',
+        containerBg: '#ffffff',
         containerBorder: {
           color: '#e2e8f0',
           width: '',

@@ -1,15 +1,12 @@
 import { __ } from '@wordpress/i18n';
 import { GeneralIcon, StyleIcon } from './icons';
-const textDomain = 'xpo-blocks';
-
-
 export const generalStyleTabs = [
 	{
 		name: 'general',
 		title: (
 			<span style={{ display: 'inline-flex', alignItems: 'center' }}>
 				<GeneralIcon />
-				{__('General', textDomain)}
+				{__('General', 'xpo-blocks')}
 			</span>
 		),
 	},
@@ -18,7 +15,7 @@ export const generalStyleTabs = [
 		title: (
 			<span style={{ display: 'inline-flex', alignItems: 'center' }}>
 				<StyleIcon/>
-				{__('Style', textDomain)}
+				{__('Style', 'xpo-blocks')}
 			</span>
 		),
 	},

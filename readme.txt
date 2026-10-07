@@ -1,6 +1,6 @@
-=== XpoBlock ===
+=== Xpo Blocks ===
 Contributors: tomorroy
-Tags: xpo-block, block, pricing-table, timeline, accordion
+Tags: xpo-blocks, block, pricing-table, timeline, accordion
 Requires at least: 6.7
 Tested up to: 7.1
 Stable tag: 1.0.0
@@ -13,7 +13,7 @@ Build beautiful WordPress websites with powerful and customizable Gutenberg bloc
 == Description ==
 
 
-XpoBlock provides a collection of beautifully designed, easily customizable Gutenberg blocks to enhance your WordPress website editing experience.
+Xpo Blocks provides a collection of beautifully designed, easily customizable Gutenberg blocks to enhance your WordPress website editing experience.
 
 === Key Features & Included Blocks ===
 
@@ -31,42 +31,42 @@ XpoBlock provides a collection of beautifully designed, easily customizable Gute
 
 === How to Use ===
 
-1. Install and activate the **XpoBlock** plugin from the WordPress dashboard.
+1. Install and activate the **Xpo Blocks** plugin from the WordPress dashboard.
 2. Open any post or page in the Gutenberg Block Editor.
-3. Click the **+** (Block Inserter) button and search for **XpoBlock** or specific block names.
+3. Click the **+** (Block Inserter) button and search for **Xpo Blocks** or specific block names.
 4. Insert your desired block and customize its options from the right-hand settings sidebar.
 5. Publish or update your page!
 
 === Support & Feedback ===
 
 Have a question, feature request, or feedback?
-* [Visit Support Forum](https://wordpress.org/support/plugin/xpo-block/)
+* [Visit Support Forum](https://wordpress.org/support/plugin/xpo-blocks/)
 
 
 == Installation ==
 
 = From WordPress Dashboard =
 1. Go to **Plugins** > **Add New**.
-2. Search for **XpoBlock**.
+2. Search for **Xpo Blocks**.
 3. Click **Install Now** and then **Activate**.
 
 = Uploading Zip File =
-1. Download the plugin zip file (`xpo-block.zip`).
+1. Download the plugin zip file (`xpo-blocks.zip`).
 2. Go to **Plugins** > **Add New** > **Upload Plugin**.
 3. Choose the zip file and click **Install Now**.
 4. Activate the plugin after installation completes.
 
 = Manual Installation =
-1. Extract the `xpo-block.zip` folder.
-2. Upload the `xpo-block` directory to `/wp-content/plugins/`.
-3. Activate **XpoBlock** through the **Plugins** menu in WordPress.
+1. Extract the `xpo-blocks.zip` folder.
+2. Upload the `xpo-blocks` directory to `/wp-content/plugins/`.
+3. Activate **Xpo Blocks** through the **Plugins** menu in WordPress.
 
 
 == Frequently Asked Questions ==
 
 = Does it work with any WordPress theme? =
 
-Yes, XpoBlock is built using native WordPress Gutenberg standards and works seamlessly with all modern WordPress block and classic themes.
+Yes, Xpo Blocks is built using native WordPress Gutenberg standards and works seamlessly with all modern WordPress block and classic themes.
 
 = Can I customize individual block settings? =
 
@@ -78,11 +78,11 @@ Yes, all blocks are compatible with Site Editor (FSE), Block Templates, and page
 
 = Where can I get support? =
 
-You can post your questions on the [WordPress support forum](https://wordpress.org/support/plugin/xpo-block/).
+You can post your questions on the [WordPress support forum](https://wordpress.org/support/plugin/xpo-blocks/).
 
 == Screenshots ==
 
-1. Overview of XpoBlock in the block inserter.
+1. Overview of Xpo Blocks in the block inserter.
 2. Customizing block settings in the inspector sidebar.
 
 

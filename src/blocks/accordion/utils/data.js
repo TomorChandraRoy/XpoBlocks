@@ -1,16 +1,14 @@
 import { __ } from "@wordpress/i18n";
 import { TemplateOneSvg, TemplateTwoSvg, TemplateThreeSvg } from './icons';
-const textDomain = 'xpo-block';
-
 //Edit.js file jasche
 export const templateData = {
-  title: __('FAQ Accordion Layouts', 'textDomain'),
-  subtitle: __('Select a layout for your FAQ accordion block.', 'textDomain'),
+  title: __('FAQ Accordion Layouts', 'xpo-blocks'),
+  subtitle: __('Select a layout for your FAQ accordion block.', 'xpo-blocks'),
   templates: [
     {
       id: 'template-1',
-      label: __('Template 1', textDomain),
-      tag: __('Classic Minimal', textDomain),
+      label: __('Template 1', 'xpo-blocks'),
+      tag: __('Classic Minimal', 'xpo-blocks'),
       icon: TemplateOneSvg,
       attributes: {
         subtitle: '',
@@ -132,8 +130,8 @@ export const templateData = {
     },
     {
       id: 'template-2',
-      label: __('Template 2', textDomain),
-      tag: __('Center Aligned', textDomain),
+      label: __('Template 2', 'xpo-blocks'),
+      tag: __('Center Aligned', 'xpo-blocks'),
       icon: TemplateTwoSvg,
       attributes: {
         iconType: 'plus-minus',
@@ -155,8 +153,8 @@ export const templateData = {
     },
     {
       id: 'template-3',
-      label: __('Template 3', textDomain),
-      tag: __('FAQ Gradient', textDomain),
+      label: __('Template 3', 'xpo-blocks'),
+      tag: __('FAQ Gradient', 'xpo-blocks'),
       icon: TemplateThreeSvg,
       attributes: {
         iconType: 'chevron',

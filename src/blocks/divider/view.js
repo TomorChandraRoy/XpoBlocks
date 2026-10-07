@@ -1,9 +1,10 @@
 import { createRoot } from 'react-dom/client';
 import './style.scss';
-import DynamicStyle from './Components/Common/DynamicStyles';
+import DynamicStyles from './Components/Common/DynamicStyles';
+import Divider from './Components/Common/Templates/Divider';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const containers = document.querySelectorAll('.wp-block-xpo-block-divider');
+  const containers = document.querySelectorAll('.wp-block-xpo-blocks-divider');
 
   containers.forEach(container => {
     if (container.dataset.initialized) return;
@@ -12,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     createRoot(container).render(
       <>
-        <DynamicStyle attributes={attributes} id={container.id} />
-        <Accordion {...{ attributes }} id={container.id} />
+        <DynamicStyles attributes={attributes} id={container.id} />
+        <Divider {...{ attributes }} id={container.id} />
       </>
     );
 

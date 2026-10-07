@@ -1,9 +1,9 @@
 {
   "apiVersion": 3,
-  "name": "xpo-block/marquee",
+  "name": "xpo-blocks/marquee",
   "version": "1.0.2",
   "title": "Marquee",
-  "category": "xpo-block",
+  "category": "xpo-blocks",
   "description": "Infinite scrolling marquee optimized for logos and images with hardware-accelerated physics.",
   "keywords": [
     "marquee",
@@ -12,7 +12,7 @@
     "moving text",
     "loop text"
   ],
-  "textdomain": "xpo-block",
+  "textdomain": "xpo-blocks",
   "attributes": {
     "selectedTemplate": {
       "type": "string",
@@ -102,6 +102,14 @@
     "enableSweepAnimation": {
       "type": "boolean",
       "default": true
+    },
+    "logoTextBg": {
+      "type": "string",
+      "default": ""
+    },
+    "logoTextRadius": {
+      "type": "number",
+      "default": 0
     },
     "textGradient": {
       "type": "object",

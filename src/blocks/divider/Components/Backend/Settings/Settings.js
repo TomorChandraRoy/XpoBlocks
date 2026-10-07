@@ -5,8 +5,6 @@ import { generalStyleTabs } from '../../../utils/option';
 import General from './General/General';
 import Style from './Style/Style';
 import { DocsLink } from 'tr-tools';
-const textDomain = 'xpo-blocks';
-
 const Settings = ({ attributes, setAttributes }) => {
   const { selectedTemplate = '' } = attributes;
   const isTemplateSelected = Boolean(selectedTemplate);
@@ -16,7 +14,7 @@ const Settings = ({ attributes, setAttributes }) => {
   }
   return (
     <InspectorControls>
-      <DocsLink link="https://xpo.com/docs/divider" text={__('Documentation', textDomain)} />
+      <DocsLink link="https://xpo.com/docs/divider" text={__('Documentation', 'xpo-blocks')} />
       <TabPanel className="wp-xpo-tab-panel" activeClass="wp-xpo-tab-panel-active-tab" tabs={generalStyleTabs}>
         {tab => ( 
           <>

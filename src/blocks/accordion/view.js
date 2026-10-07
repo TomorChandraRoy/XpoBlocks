@@ -8,7 +8,7 @@ import Accordion from './Components/Frontend/Accordion';
 // পেজের সমস্ত HTML লোড সম্পন্ন হওয়ার পর স্ক্রিপ্টটি চালু হবে
 document.addEventListener('DOMContentLoaded', () => {
   // পেজে থাকা সমস্ত Accordion ব্লক কন্টেইনার খুঁজে বের করা
-  const containers = document.querySelectorAll('.wp-block-xpo-block-accordion');
+  const containers = document.querySelectorAll('.wp-block-xpo-blocks-accordion');
 
   containers.forEach(container => {
 

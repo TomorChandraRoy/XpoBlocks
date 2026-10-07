@@ -1,12 +1,12 @@
 {
   "apiVersion": 3,
-  "name": "xpo-block/before-after",
+  "name": "xpo-blocks/before-after",
   "version": "1.0.0",
   "title": "Before/After",
   "description": "Interactive image comparison slider with CSS-based masking and hardware-accelerated transitions.",
-  "category": "xpo-block",
+  "category": "xpo-blocks",
   "keywords": ["before after", "image comparison", "slider", "photo compare", "comparison"],
-  "textdomain": "xpo-block",
+  "textdomain": "xpo-blocks",
   "attributes": {
     "selectedTemplate": {
       "type": "string",

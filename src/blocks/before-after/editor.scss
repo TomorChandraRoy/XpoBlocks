@@ -1,2 +1,11 @@
 /* Editor-specific styles for Kinetic Before/After block */
+.wp-block-xpo-blocks-before-after {
+	/* */
+}
+
+.bPlPanelBody .components-base-control__label,
+.bPlPanelBody label {
+	text-transform: none !important;
+	font-size: 13px !important;
+}
 

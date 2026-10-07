@@ -8,15 +8,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Generate a unique block ID if not provided
-$xpo_block_id = ! empty( $attributes['blockId'] ) ? sanitize_html_class( $attributes['blockId'] ) : wp_unique_id( 'xpo-toc-' );
+$xpo_blocks_id = ! empty( $attributes['blockId'] ) ? sanitize_html_class( $attributes['blockId'] ) : wp_unique_id( 'xpo-toc-' );
 
 // Prepare necessary custom classes for the wrapper as an array
-$xpo_block_wrapper_classes = array('xpo-toc-container', $xpo_block_id);
+$xpo_blocks_wrapper_classes = array('xpo-toc-container', $xpo_blocks_id);
 
 // get_block_wrapper_attributes automatically applies Gutenberg sidebar styles (margin, padding, border etc.)
 // implode(' ', $wrapper_classes) converts the array of classes into a single space-separated string, 
 // which is required by the 'class' attribute.
-$xpo_block_wrapper_attrs = get_block_wrapper_attributes(array('class' => implode( ' ', $xpo_block_wrapper_classes ),));
+$xpo_blocks_wrapper_attrs = get_block_wrapper_attributes(array('class' => implode( ' ', $xpo_blocks_wrapper_classes ),));
 ?>
 
 <!-- 
@@ -24,8 +24,8 @@ $xpo_block_wrapper_attrs = get_block_wrapper_attributes(array('class' => implode
   It passes all necessary block attributes as a JSON string to the frontend via data-attributes. 
 -->
 <div 
-	<?php echo $xpo_block_wrapper_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-	id="<?php echo esc_attr( $xpo_block_id ); ?>"
+	<?php echo $xpo_blocks_wrapper_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+	id="<?php echo esc_attr( $xpo_blocks_id ); ?>"
 	data-attributes='<?php echo esc_attr( wp_json_encode( $attributes ) ); ?>'
 ></div>
 

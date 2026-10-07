@@ -1,374 +1,372 @@
 @keyframes xpo-mq-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
 
-	0% {
-		transform: translate3d(0, 0, 0);
-	}
-
-	100% {
-		transform: translate3d(-50%, 0, 0);
-	}
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
 }
 
 @keyframes wave-sweep {
+  0% {
+    background-position: 0% center;
+  }
 
-	0% {
-		background-position: 0% center;
-	}
-
-	100% {
-		background-position: 100% center;
-	}
+  100% {
+    background-position: 100% center;
+  }
 }
 
-.wp-block-xpo-block-marquee,
+.wp-block-xpo-blocks-marquee,
 .xpo-block-marquee-wrapper {
-	overflow: hidden;
-	width: 100%;
+  overflow: hidden;
+  width: 100%;
 
-	.xpo-logo-cloud-section {
-		min-height: 170px;
-		padding: 15px 20px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+  .xpo-logo-cloud-section {
+    min-height: 170px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-		.xpo-logo-cloud-wrapper {
-			position: relative;
-			width: 100%;
-			max-width: 1024px;
-			margin: 0 auto;
-			border-radius: 8px;
-			padding: 16px 0;
-			background: white;
-			z-index: 1;
+    .xpo-logo-cloud-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 1024px;
+      margin: 0 auto;
+      border-radius: 8px;
+      padding: 16px 0;
+      background: white;
+      z-index: 1;
 
-			.xpo-border-beam-inner {
-				position: absolute;
-				inset: 0;
-				background: white;
-				border-radius: 8px;
-				z-index: -1;
-				border: 1px solid #e2e8f0;
-			}
+      .xpo-border-beam-inner {
+        position: absolute;
+        inset: 0;
+        background: white;
+        border-radius: 8px;
+        z-index: -1;
+        border: 1px solid #e2e8f0;
+      }
 
-			.xpo-logo-text-container {
-				position: absolute;
-				top: 0;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				padding: 0;
-				z-index: 2;
-				white-space: nowrap;
+      .xpo-logo-text-container {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        z-index: 2;
+        white-space: nowrap;
 
-				.xpo-logo-text {
-					background: white;
-					padding: 0 24px;
-					text-align: center;
-					font-weight: 500;
-					color: #334155;
-					font-size: 1.25rem;
-					letter-spacing: -0.01em;
-					margin: 0;
+        .xpo-logo-text {
+          background: white;
+          padding: 0 24px;
+          text-align: center;
+          font-weight: 500;
+          color: #334155;
+          font-size: 1.25rem;
+          letter-spacing: -0.01em;
+          margin: 0;
 
-					.xpo-logo-text-wave {
-						background-repeat: no-repeat;
-						-webkit-background-clip: text;
-						background-clip: text;
-						-webkit-text-fill-color: transparent;
+          .xpo-logo-text-wave {
+            background-repeat: no-repeat;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
 
-						&.has-sweep {
-							background-size: 250% 100%;
-							animation: wave-sweep 8s linear infinite;
-						}
+            &.has-sweep {
+              background-size: 250% 100%;
+              animation: wave-sweep 8s linear infinite;
+            }
 
-						@media (max-width: 640px) {
+            @media (max-width: 640px) {
+              .xpo-hide-mobile {
+                display: none;
+              }
+            }
+          }
+        }
+      }
 
-							.xpo-hide-mobile {
-								display: none;
-							}
-						}
-					}
-				}
-			}
+      .xpo-logo-content {
+        .xpo-mq-container {
+          overflow: hidden;
+          display: flex;
+          white-space: nowrap;
+          position: relative;
+          width: 100%;
+          padding: 20px 0;
 
-			.xpo-logo-content {
+          &.has-edge-fade::before,
+          &.has-edge-fade::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100px;
+            z-index: 2;
+            pointer-events: none;
+          }
 
-				.xpo-mq-container {
-					overflow: hidden;
-					display: flex;
-					white-space: nowrap;
-					position: relative;
-					width: 100%;
-					padding: 20px 0;
+          &.has-edge-fade::before {
+            left: 0;
+            background: linear-gradient(to right, white, transparent);
+          }
 
-					&.has-edge-fade::before,
-					&.has-edge-fade::after {
-						content: "";
-						position: absolute;
-						top: 0;
-						bottom: 0;
-						width: 100px;
-						z-index: 2;
-						pointer-events: none;
-					}
+          &.has-edge-fade::after {
+            right: 0;
+            background: linear-gradient(to left, white, transparent);
+          }
 
-					&.has-edge-fade::before {
-						left: 0;
-						background: linear-gradient(to right, white, transparent);
-					}
+          &.pause-on-hover:hover .xpo-mq-track {
+            animation-play-state: paused;
+          }
 
-					&.has-edge-fade::after {
-						right: 0;
-						background: linear-gradient(to left, white, transparent);
-					}
+          &.slow-on-hover:hover .xpo-mq-track {
+            animation-duration: calc(var(--mq-speed, 30s) * 3) !important;
+          }
 
-					&.pause-on-hover:hover .xpo-mq-track {
-						animation-play-state: paused;
-					}
+          &.has-lift-effect .xpo-mq-item:hover {
+            transform: translateY(-5px);
+          }
 
-					&.slow-on-hover:hover .xpo-mq-track {
-						animation-duration: calc(var(--mq-speed, 30s) * 3) !important;
-					}
+          &.has-frame .xpo-mq-item {
+            padding: 15px 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+          }
 
-					&.has-lift-effect .xpo-mq-item:hover {
-						transform: translateY(-5px);
-					}
+          &.has-sibling-blur:hover .xpo-mq-item {
+            filter: blur(var(--mq-sibling-blur, 3px));
+            opacity: 0.6;
+          }
 
-					&.has-frame .xpo-mq-item {
-						padding: 15px 15px;
-						box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-						border: 1px solid rgba(0, 0, 0, 0.04);
-					}
+          &.has-sibling-blur .xpo-mq-item:hover {
+            filter: none;
+            opacity: 1;
+            transform: scale(1.05);
+          }
 
-					&.has-sibling-blur:hover .xpo-mq-item {
-						filter: blur(var(--mq-sibling-blur, 3px));
-						opacity: 0.6;
-					}
+          &.has-sibling-blur.has-lift-effect .xpo-mq-item:hover {
+            transform: translateY(-5px) scale(1.05);
+          }
 
-					&.has-sibling-blur .xpo-mq-item:hover {
-						filter: none;
-						opacity: 1;
-						transform: scale(1.05);
-					}
+          &.has-active-center-highlight .xpo-mq-item {
+            transition:
+              transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              filter 0.4s ease,
+              opacity 0.4s ease;
+          }
 
-					&.has-sibling-blur.has-lift-effect .xpo-mq-item:hover {
-						transform: translateY(-5px) scale(1.05);
-					}
+          &.has-active-center-highlight .xpo-mq-item.is-active-center {
+            transform: scale(1.18);
+            z-index: 5;
+          }
 
-					&.has-active-center-highlight .xpo-mq-item {
-						transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), filter 0.4s ease, opacity 0.4s ease;
-					}
+          .xpo-mq-track {
+            display: flex;
+            animation: xpo-mq-scroll linear infinite;
+            width: max-content;
+            will-change: transform;
 
-					&.has-active-center-highlight .xpo-mq-item.is-active-center {
-						transform: scale(1.18);
-						z-index: 5;
-					}
+            .xpo-mq-group {
+              display: flex;
+              align-items: center;
+              gap: 30px;
+              padding-right: 30px; /* Crucial for seamless loop: adds the final gap before the next group */
 
-					.xpo-mq-track {
-						display: flex;
-						animation: xpo-mq-scroll linear infinite;
-						width: max-content;
-						will-change: transform;
+              .xpo-mq-item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: transform 0.3s ease;
+                flex-shrink: 0;
 
-						.xpo-mq-group {
-							display: flex;
-							align-items: center;
-							gap: 30px;
-							padding-right: 30px; /* Crucial for seamless loop: adds the final gap before the next group */
+                img {
+                  width: auto;
+                  object-fit: contain;
+                }
 
-							.xpo-mq-item {
-								display: flex;
-								align-items: center;
-								justify-content: center;
-								transition: transform 0.3s ease;
-								flex-shrink: 0;
+                a:focus,
+                img:focus {
+                  outline: none !important;
+                  box-shadow: none !important;
+                }
+              }
+            }
+          }
+        }
 
-								img {
-									width: auto;
-									object-fit: contain;
-								}
+        /* Interaction Indicator Badge */
+        .xpo-mq-indicator-badge {
+          position: absolute;
+          top: 10px;
+          right: 15px;
+          background: rgba(15, 23, 42, 0.85);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          color: white;
+          padding: 4px 10px;
+          border-radius: 20px;
+          font-size: 0.7rem;
+          font-weight: 700;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          pointer-events: none;
+          opacity: 0;
+          transform: translateY(-4px);
+          transition:
+            opacity 0.3s ease,
+            transform 0.3s ease;
+          z-index: 10;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          letter-spacing: 0.05em;
 
-								a:focus,
- img:focus {
-									outline: none !important;
-									box-shadow: none !important;
-								}
-							}
-						}
-					}
-				}
+          .xpo-mq-indicator-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #ef4444; /* default red for paused */
+            animation: xpo-pulse-indicator 1.2s infinite;
+          }
 
-				/* Interaction Indicator Badge */
-				.xpo-mq-indicator-badge {
-					position: absolute;
-					top: 10px;
-					right: 15px;
-					background: rgba(15, 23, 42, 0.85);
-					backdrop-filter: blur(8px);
-					-webkit-backdrop-filter: blur(8px);
-					color: white;
-					padding: 4px 10px;
-					border-radius: 20px;
-					font-size: 0.7rem;
-					font-weight: 700;
-					display: flex;
-					align-items: center;
-					gap: 6px;
-					pointer-events: none;
-					opacity: 0;
-					transform: translateY(-4px);
-					transition: opacity 0.3s ease, transform 0.3s ease;
-					z-index: 10;
-					border: 1px solid rgba(255, 255, 255, 0.1);
-					box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-					letter-spacing: 0.05em;
+          .xpo-mq-indicator-text {
+            line-height: 1;
+          }
+        }
 
-					.xpo-mq-indicator-dot {
-						width: 6px;
-						height: 6px;
-						border-radius: 50%;
-						background-color: #ef4444; /* default red for paused */
-						animation: xpo-pulse-indicator 1.2s infinite;
-					}
+        .xpo-mq-container.pause-on-hover:hover ~ .xpo-mq-indicator-badge,
+        .xpo-mq-container.slow-on-hover:hover ~ .xpo-mq-indicator-badge {
+          opacity: 1;
+          transform: translateY(0);
+        }
 
-					.xpo-mq-indicator-text {
-						line-height: 1;
-					}
-				}
+        .xpo-mq-container.slow-on-hover:hover ~ .xpo-mq-indicator-badge .xpo-mq-indicator-dot {
+          background-color: #eab308; /* amber for slowed */
+        }
 
-				.xpo-mq-container.pause-on-hover:hover ~ .xpo-mq-indicator-badge,
-				.xpo-mq-container.slow-on-hover:hover ~ .xpo-mq-indicator-badge {
-					opacity: 1;
-					transform: translateY(0);
-				}
+        @keyframes xpo-pulse-indicator {
+          0% {
+            transform: scale(0.85);
+            opacity: 0.5;
+          }
 
-				.xpo-mq-container.slow-on-hover:hover ~ .xpo-mq-indicator-badge .xpo-mq-indicator-dot {
-					background-color: #eab308; /* amber for slowed */
-				}
+          50% {
+            transform: scale(1.2);
+            opacity: 1;
+          }
 
-				@keyframes xpo-pulse-indicator {
+          100% {
+            transform: scale(0.85);
+            opacity: 0.5;
+          }
+        }
 
-					0% {
-						transform: scale(0.85);
-						opacity: 0.5;
-					}
+        /* Segmented Progress Rail */
+        .xpo-mq-rail {
+          position: absolute;
+          pointer-events: none;
+          z-index: 8;
 
-					50% {
-						transform: scale(1.2);
-						opacity: 1;
-					}
+          &.position-bottom {
+            bottom: 5px;
+            left: 20px;
+            right: 20px;
+            height: 3px;
+          }
 
-					100% {
-						transform: scale(0.85);
-						opacity: 0.5;
-					}
-				}
+          &.position-right {
+            right: 15px;
+            top: 10px;
+            bottom: 10px;
+            width: 3px;
+          }
 
-				/* Segmented Progress Rail */
-				.xpo-mq-rail {
-					position: absolute;
-					pointer-events: none;
-					z-index: 8;
+          .xpo-mq-rail-track {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.06);
+            border-radius: 3px;
+            display: flex;
+            justify-content: space-between;
+          }
 
-					&.position-bottom {
-						bottom: 5px;
-						left: 20px;
-						right: 20px;
-						height: 3px;
-					}
+          &.position-bottom .xpo-mq-rail-track {
+            flex-direction: row;
+            align-items: center;
+          }
 
-					&.position-right {
-						right: 15px;
-						top: 10px;
-						bottom: 10px;
-						width: 3px;
-					}
+          &.position-right .xpo-mq-rail-track {
+            flex-direction: column;
+            align-items: center;
+          }
 
-					.xpo-mq-rail-track {
-						position: relative;
-						width: 100%;
-						height: 100%;
-						background: rgba(15, 23, 42, 0.06);
-						border-radius: 3px;
-						display: flex;
-						justify-content: space-between;
-					}
+          .xpo-mq-rail-segment {
+            background: rgba(15, 23, 42, 0.12);
+            border-radius: 50%;
+            flex-shrink: 0;
+          }
 
-					&.position-bottom .xpo-mq-rail-track {
-						flex-direction: row;
-						align-items: center;
-					}
+          &.position-bottom .xpo-mq-rail-segment {
+            width: 3px;
+            height: 3px;
+          }
 
-					&.position-right .xpo-mq-rail-track {
-						flex-direction: column;
-						align-items: center;
-					}
+          &.position-right .xpo-mq-rail-segment {
+            width: 3px;
+            height: 3px;
+          }
 
-					.xpo-mq-rail-segment {
-						background: rgba(15, 23, 42, 0.12);
-						border-radius: 50%;
-						flex-shrink: 0;
-					}
+          .xpo-mq-rail-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #9c40ff, #ffaa40);
+            border-radius: 3px;
+          }
 
-					&.position-bottom .xpo-mq-rail-segment {
-						width: 3px;
-						height: 3px;
-					}
+          &.position-bottom .xpo-mq-rail-fill {
+            transform-origin: left;
+            animation: xpo-mq-rail-fill-horizontal var(--mq-speed, 30s) linear infinite;
+            animation-direction: inherit;
+          }
 
-					&.position-right .xpo-mq-rail-segment {
-						width: 3px;
-						height: 3px;
-					}
+          &.position-right .xpo-mq-rail-fill {
+            background: linear-gradient(180deg, #9c40ff, #ffaa40);
+            transform-origin: top;
+            animation: xpo-mq-rail-fill-vertical var(--mq-speed, 30s) linear infinite;
+            animation-direction: inherit;
+          }
+        }
 
-					.xpo-mq-rail-fill {
-						position: absolute;
-						top: 0;
-						left: 0;
-						width: 100%;
-						height: 100%;
-						background: linear-gradient(90deg, #9c40ff, #ffaa40);
-						border-radius: 3px;
-					}
+        @keyframes xpo-mq-rail-fill-horizontal {
+          0% {
+            transform: scaleX(0);
+          }
 
-					&.position-bottom .xpo-mq-rail-fill {
-						transform-origin: left;
-						animation: xpo-mq-rail-fill-horizontal var(--mq-speed, 30s) linear infinite;
-						animation-direction: inherit;
-					}
+          100% {
+            transform: scaleX(1);
+          }
+        }
 
-					&.position-right .xpo-mq-rail-fill {
-						background: linear-gradient(180deg, #9c40ff, #ffaa40);
-						transform-origin: top;
-						animation: xpo-mq-rail-fill-vertical var(--mq-speed, 30s) linear infinite;
-						animation-direction: inherit;
-					}
-				}
+        @keyframes xpo-mq-rail-fill-vertical {
+          0% {
+            transform: scaleY(0);
+          }
 
-				@keyframes xpo-mq-rail-fill-horizontal {
-
-					0% {
-						transform: scaleX(0);
-					}
-
-					100% {
-						transform: scaleX(1);
-					}
-				}
-
-				@keyframes xpo-mq-rail-fill-vertical {
-
-					0% {
-						transform: scaleY(0);
-					}
-
-					100% {
-						transform: scaleY(1);
-					}
-				}
-			}
-		}
-	}
+          100% {
+            transform: scaleY(1);
+          }
+        }
+      }
+    }
+  }
 }

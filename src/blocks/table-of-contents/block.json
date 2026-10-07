@@ -1,13 +1,13 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "xpo-block/table-of-contents",
+  "name": "xpo-blocks/table-of-contents",
   "version": "1.0.0",
   "title": "Table of Contents",
   "description": "Dynamic Table of Contents block to automatically generate a list of headings.",
-  "category": "xpo-block",
+  "category": "xpo-blocks",
   "keywords": ["toc", "table of contents", "index", "outline"],
-  "textdomain": "xpo-block",
+  "textdomain": "xpo-blocks",
   "attributes": {
     "align": {
       "type": "string",

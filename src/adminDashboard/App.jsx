@@ -20,6 +20,6 @@ const App = props => {
       {activeTab === 'system' && <System {...props} />}
     </>
   );
-};
+}; 
 
 export default App;

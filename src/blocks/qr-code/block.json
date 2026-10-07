@@ -1,12 +1,12 @@
 {
   "apiVersion": 3,
-  "name": "xpo-block/qr-code",
+  "name": "xpo-blocks/qr-code",
   "version": "1.0.0",
   "title": "QR Code Generator",
-  "category": "xpo-block",
+  "category": "xpo-blocks",
   "description": "Generate dynamic and customizable QR codes with custom styling, logos, and download options.",
   "keywords": ["qr", "qrcode", "generator", "link", "barcode"],
-  "textdomain": "xpo-block",
+  "textdomain": "xpo-blocks",
   "attributes": {
     "selectedTemplate": {
       "type": "string",
