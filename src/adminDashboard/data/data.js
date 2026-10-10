@@ -1,4 +1,5 @@
 import cover from './image/cover.jpg';
+import { adminIcon } from '../../utils/icons';
 
 const slug = 'XpoBlocks';
 
@@ -17,7 +18,7 @@ export const featureBannerData = {
 export const changelogData = [
   {
     version: 'v1.0.0',
-    date: '5 October 2026',
+    date: '10 October 2026',
     badge: 'Initial Stable Release',
     badgeType: 'stable',
     summary: 'First official stable release of Xpo Blocks. Featuring 11+ high-performance Gutenberg blocks.',
@@ -47,6 +48,7 @@ export const dashboardInfo = info => {
     changelog: changelogData,
     media: {
       // logo: `https://ps.w.org/${slug}/assets/icon-128x128.png`,
+      adminIcon,
     },
   };
 };

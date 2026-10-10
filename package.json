@@ -13,10 +13,7 @@
     "format": "wp-scripts format",
     "start": "wp-scripts start --webpack-copy-php",
     "build": "wp-scripts build --webpack-copy-php",
-    "i18n-pot": "wp i18n make-pot . languages/xpo-blocks.pot && cp ./languages/xpo-blocks.pot ./languages/xpo-blocks-en_US.po",
-    "i18n-json": "wp i18n make-json languages/ --no-purge",
-    "i18n-mo": "wp i18n make-mo languages/",
-    "i18n": "npm run i18n-pot && npm run i18n-json && npm run i18n-mo",
+    "i18n": "wp i18n make-pot . languages/xpo-blocks.pot",
     "plugin-zip": "wp-scripts plugin-zip",
     "bundle": "npm run lint && npm run build && npm run i18n && npm run plugin-zip"
   },
@@ -25,7 +22,7 @@
     "qrcode": "^1.5.4"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^32.5.0", 
+    "@wordpress/scripts": "^32.5.0",
     "eslint-webpack-plugin": "^6.0.0"
   }
 }

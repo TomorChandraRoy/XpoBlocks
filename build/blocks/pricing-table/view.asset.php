@@ -8,5 +8,5 @@
 		'wp-element',
 		'wp-i18n'
 	),
-	'version' => '1a38852f6d5020f6f456'
+	'version' => '8d43cc5e02003d0fac97'
 );

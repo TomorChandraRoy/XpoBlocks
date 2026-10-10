@@ -91,7 +91,19 @@ You can post your questions on the [WordPress support forum](https://wordpress.o
 == Screenshots ==
 
 1. Overview of Xpo Blocks in the block inserter.
-2. Customizing block settings in the inspector sidebar.
+2. FAQ Accordion Templete.
+3. FAQ Accordion.
+4. Audio Templete.
+5. Audio Player.
+6. Before After Templete.
+7. Before After.
+8. Button.
+9. Divider.
+10. Marquee.
+11. Newsletter.
+12. Pricing Table.
+13. Scroll Story.
+14. Table Of Content.
 
 
 == Copyright and Credits ==
@@ -109,13 +121,13 @@ This plugin incorporates the following third-party resources and open-source lib
 
 == Changelog ==
 
-= 1.0.0 - 5 October  2026 =
+= 1.0.0 - 10 October  2026 =
 * Initial release.
 
 
 == Upgrade Notice ==
 
-= 1.0.0 - 5 October 2026 =
+= 1.0.0 - 10 October 2026 =
 * Initial release.
 
 
